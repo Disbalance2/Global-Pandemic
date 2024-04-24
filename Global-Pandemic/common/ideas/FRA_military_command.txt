@@ -1,6 +1,0 @@
-# Economic Crisis - only military command
-
-ideas = {
-
-
-}

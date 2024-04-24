@@ -1,5 +1,0 @@
-get_name_country = {
-	all_country = { 
-		has_country_leader_with_trait = leader_eaeu
-	}
-}

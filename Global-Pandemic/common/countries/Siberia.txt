@@ -1,5 +1,0 @@
-
-graphical_culture = post_ussr_gfx
-graphical_culture_2d = post_ussr_2d
-
-color = { 0 153 0 }

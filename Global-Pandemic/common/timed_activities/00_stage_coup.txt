@@ -1,5 +1,0 @@
-stage_coup = {
-	equipment_need = {
-		army_salw_equipment = 1000
-	}
-}

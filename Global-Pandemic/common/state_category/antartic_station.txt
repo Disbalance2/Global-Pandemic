@@ -1,8 +1,0 @@
-state_categories={
-	antartic_station = {
-		local_building_slots = 5
-	
-		color = { 255 255 255 }
-
-	}
-}
