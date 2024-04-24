@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 7315 10 } #Seattle
 		victory_points = { 1690 5 } #Spokane
 		victory_points = { 10690 3 } #Kennewick

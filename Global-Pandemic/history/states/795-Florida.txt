@@ -5,7 +5,7 @@ state = {
 	state_category = state_10
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 1843 10 } #Miami
 		victory_points = { 7388 5 } #Tampa
 		victory_points = { 12439 5 } #Orlando

@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 
 	history = {
-		owner = GRA
+		owner = FRA
 		victory_points = { 11106 1 } #St. Georges
 
 		buildings = {

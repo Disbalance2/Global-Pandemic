@@ -3,7 +3,7 @@ state = {
 	name = "STATE_952"
 
 	history = {
-		owner = YEM
+		owner = FRA
 		victory_points = { 9203 1 } #Ma'rib
 		buildings = {
 			infrastructure = 0
@@ -13,7 +13,7 @@ state = {
 			buildings = {
 				infrastructure = 0
 			}
-			owner = YEM
+			owner = FRA
 			add_core_of = HOU
 			add_core_of = AQY
 			add_manpower = 500000

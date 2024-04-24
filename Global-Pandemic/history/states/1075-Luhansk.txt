@@ -3,7 +3,7 @@ state = {
 	name = "STATE_1075"
 	manpower = 1600618
 	history = {
-		owner = UKR
+		owner = FRA
 		add_core_of = UKR
 		add_core_of = LPR
 
@@ -17,7 +17,7 @@ state = {
 			air_base = 2
 		}
 		2017.1.1 = {
-			owner = LPR
+			owner = FRA
 						add_core_of = NOV
 				add_core_of = LPR
 			buildings = {

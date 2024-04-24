@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 7588 3 } #Charleston
 		victory_points = { 6971 3 } #Huntington
 		victory_points = { 9923 1 } #Morgantown

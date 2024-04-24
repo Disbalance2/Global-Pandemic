@@ -3,7 +3,7 @@ state = {
 	name = "STATE_918"
 
 	history = {
-		owner = LBA
+		owner = FRA
 		add_core_of = TUA
 		add_core_of = LBA
 		buildings = {
@@ -18,7 +18,7 @@ state = {
 			buildings = {
 				internet_station = 0
 			}
-			owner = TUA
+			owner = FRA
 			add_core_of = GNA
 			add_core_of = GNC
 			add_core_of = HOR

@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = CAN
+		owner = FRA
 		victory_points = { 7361 5 } #Halifax
 		victory_points = { 4360 1 } #Charlottetown
 		victory_points = { 4430 3 } #Cape Breton

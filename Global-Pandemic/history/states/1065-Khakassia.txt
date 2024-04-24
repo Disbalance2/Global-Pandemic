@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = SOV
+		owner = FRA
 		victory_points = { 10649 3 } #Abakan
 		victory_points = { 10712 1 } #Sharypovo
 		victory_points = { 4711 1 } #Sayanogorsk

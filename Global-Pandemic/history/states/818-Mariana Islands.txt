@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 12140 5 } #Guam
 		victory_points = { 3995 3 } #Saipan
 		victory_points = { 13023 1 } #Rota

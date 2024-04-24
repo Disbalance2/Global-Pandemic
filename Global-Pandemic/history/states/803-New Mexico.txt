@@ -12,7 +12,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 4975 5 } #Albuquerque
 		victory_points = { 12791 3 } #Las Cruces
 		victory_points = { 8070 1 } #Roswell

@@ -11,7 +11,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 6696 5 } #Louisville
 		victory_points = { 1445 3 } #Lexington
 		victory_points = { 6974 1 } #Bowling Green

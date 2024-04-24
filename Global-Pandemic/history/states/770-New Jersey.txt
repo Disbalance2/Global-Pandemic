@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 9864 5 } #Atlantic City
 		victory_points = { 6882 5 } #Newark
 		victory_points = { 11782 3 } #Trenton

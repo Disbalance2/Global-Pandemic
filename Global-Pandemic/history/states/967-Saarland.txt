@@ -9,7 +9,7 @@ state = {
 		aluminium = 15
 	}
 	history = {
-		owner = GER
+		owner = FRA
 		
 		victory_points = {
 			11531 2

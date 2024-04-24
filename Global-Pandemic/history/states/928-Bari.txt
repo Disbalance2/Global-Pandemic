@@ -3,7 +3,7 @@ state = {
 	name = "STATE_928"
 
 	history = {
-		owner = PUN
+		owner = FRA
 		victory_points = {
 			3202 5
 		}
@@ -19,7 +19,7 @@ state = {
 		add_core_of = PUN
 		add_core_of = SNA
 		2017.1.1 = {
-			owner = SHB
+			owner = FRA
 			add_core_of = SHB
 			SOM = {
 				set_province_controller = 12840

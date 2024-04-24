@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = IND
+		owner = FRA
 		victory_points = { 1574 5 } #Ambon
 		victory_points = { 4579 1 } #Tual
 

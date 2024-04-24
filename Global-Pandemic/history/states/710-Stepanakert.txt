@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = NKR
+		owner = FRA
 		victory_points = { 1610 3 } #Stepanakert
 
 		buildings = {

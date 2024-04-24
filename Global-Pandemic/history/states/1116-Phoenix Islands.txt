@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 	
 	history = {
-		owner = KIR
+		owner = FRA
 		add_core_of = KIR
 		victory_points = { 13050 1 } #Phoenix Islands
 		buildings = {

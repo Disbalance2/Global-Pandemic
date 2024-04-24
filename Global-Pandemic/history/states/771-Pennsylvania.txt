@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 6845 10 } #Philadelphia
 		victory_points = { 11800 5 } #Pittsburgh
 		victory_points = { 11799 3 } #Allentown

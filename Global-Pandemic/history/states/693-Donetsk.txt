@@ -8,7 +8,7 @@ state = {
 		steel = 13 #Steel
 	}
 	history = {
-		owner = UKR
+		owner = FRA
 		add_core_of = UKR
 		add_core_of = DPR
 		
@@ -25,7 +25,7 @@ state = {
 			}
 		}
 		2017.1.1 = {
-			owner = DPR
+			owner = FRA
 						add_core_of = DPR
 						add_core_of = NOV
 			add_manpower = -204471

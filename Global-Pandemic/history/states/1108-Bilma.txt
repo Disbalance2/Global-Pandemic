@@ -8,7 +8,7 @@ state = {
 		victory_points = {
 			14582 1
 		}
-		owner = NGR
+		owner = FRA
 		add_core_of = NGR
 		2017.1.1 = {
 			add_manpower = 57684

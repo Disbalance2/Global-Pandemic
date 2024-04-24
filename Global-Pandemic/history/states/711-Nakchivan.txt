@@ -5,7 +5,7 @@ state = {
 	state_category = state_01
 
 	history = {
-		owner = AZE
+		owner = FRA
 
 		victory_points = { 6997 3 } #Nakhchivan
 

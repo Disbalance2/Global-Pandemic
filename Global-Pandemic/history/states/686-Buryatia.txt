@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = SOV
+		owner = FRA
 
 		victory_points = { 7816 5 } #Ulan-Ude
 		victory_points = { 10524 3 } #Severobaykalsk

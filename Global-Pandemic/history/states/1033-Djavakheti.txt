@@ -3,7 +3,7 @@ state = {
 	name = "STATE_1033"
 
 	history = {
-		owner = GEO
+		owner = FRA
 		add_core_of = GEO
 		add_core_of = ARM
 

@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 9814 15 } #Los Angeles
 		victory_points = { 1562 10 } #San Diego
 		victory_points = { 11859 3 } #Santa Barbara

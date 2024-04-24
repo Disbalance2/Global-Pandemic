@@ -5,7 +5,7 @@ state = {
 	state_category = state_08
 
 	history = {
-		owner = IND
+		owner = FRA
 		victory_points = { 10279 1 } #Serang
 
 		add_core_of = IND

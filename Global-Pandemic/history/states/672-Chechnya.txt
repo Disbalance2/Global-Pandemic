@@ -5,7 +5,7 @@ state = {
 	state_category = state_02
 
 	history = {
-		owner = CHE
+		owner = FRA
 		victory_points = {
 			3672 5
 		}
@@ -21,7 +21,7 @@ state = {
 		}
 		add_core_of = CHE
 		2017.1.1 = {
-			owner = SOV
+			owner = FRA
 			add_manpower = 306409
 			buildings = {
 				infrastructure = 2

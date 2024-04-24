@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 9616 5 } #Boise
 		victory_points = { 1789 3 } #Idaho Falls
 		victory_points = { 12535 3 } #Pocatello

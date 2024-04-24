@@ -4,7 +4,7 @@ state = {
 	name = "STATE_1036"
 
 	history = {
-		owner = NKR
+		owner = FRA
 		add_core_of = NKR
 		add_core_of = ARM
 		add_core_of = AZE

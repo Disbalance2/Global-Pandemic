@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 4569 5 } #St. Louis
 		victory_points = { 10717 5 } #Kansas City
 		victory_points = { 10370 3 } #Springfield

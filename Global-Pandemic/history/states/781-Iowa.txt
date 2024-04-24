@@ -5,7 +5,7 @@ state = {
 	state_category = state_04
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 1770 5 } #Des Moines
 		victory_points = { 12646 3 } #Sioux City
 		victory_points = { 7306 3 } #Cedar Rapids

@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = TRI
+		owner = FRA
 		victory_points = { 3284 5 } #Port of Spain
 		victory_points = { 13012 1 } #Tobago
 

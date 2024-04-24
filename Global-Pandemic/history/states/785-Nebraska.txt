@@ -5,7 +5,7 @@ state = {
 	state_category = state_03
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 12586 5 } #Omaha
 		victory_points = { 10676 3 } #Lincoln
 		victory_points = { 7852 3 } #Grand Island

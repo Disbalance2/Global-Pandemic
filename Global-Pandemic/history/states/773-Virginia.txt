@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 788 5 } #Virginia Beach
 		victory_points = { 865 3 } #Newport News
 		victory_points = { 3823 6 } #Richmond

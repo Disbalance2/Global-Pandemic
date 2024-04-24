@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 7552 5 } #New Orleans
 		victory_points = { 1453 5 } #Baton Rouge
 		victory_points = { 12401 3 } #Shreveport

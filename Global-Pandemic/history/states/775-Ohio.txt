@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 6890 5 } #Cleveland
 		victory_points = { 6855 5 } #Columbus
 		victory_points = { 4601 5 } #Cincinnati

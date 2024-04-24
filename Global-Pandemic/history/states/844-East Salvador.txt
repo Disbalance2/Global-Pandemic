@@ -5,7 +5,7 @@ state = {
 	state_category = state_03
 
 	history = {
-		owner = ELS
+		owner = FRA
 		victory_points = { 13093 3 } #San Miguel
 
 		buildings = {

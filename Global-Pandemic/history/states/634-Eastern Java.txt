@@ -8,7 +8,7 @@ state = {
 	}
 
 	history = {
-		owner = IND
+		owner = FRA
 		victory_points = {
 			4608 10
 		}

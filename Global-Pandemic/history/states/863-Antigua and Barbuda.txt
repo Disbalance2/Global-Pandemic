@@ -8,7 +8,7 @@ state = {
 	#Remove St. Kitts
 
 	history = {
-		owner = STK
+		owner = FRA
 		victory_points = { 4450 1 } #St. Johns
 
 		buildings = {

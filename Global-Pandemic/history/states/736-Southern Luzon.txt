@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = PHI
+		owner = FRA
 		victory_points = { 10265 15 } #Manila
 		victory_points = { 1221 5 } #Batangas
 		victory_points = { 4228 2 } #Legazpi

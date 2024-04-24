@@ -4,7 +4,7 @@ state = {
 	manpower = 2442666
 	state_category = state_03
 	history = {
-		owner = UKR
+		owner = FRA
 		add_core_of = UKR
 		add_core_of = DPR
 		

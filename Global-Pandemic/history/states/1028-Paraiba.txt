@@ -6,7 +6,7 @@ state = {
 	state_category = state_04
 
 	history = {
-		owner = BRA
+		owner = FRA
 
 		victory_points = { 2227 5 } #João Pessoa
 		victory_points = { 7561 1 } #Patos

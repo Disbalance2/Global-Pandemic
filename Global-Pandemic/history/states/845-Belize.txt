@@ -6,7 +6,7 @@ state = {
 		steel = 5
 	}
 	history = {
-		owner = BLZ
+		owner = FRA
 		victory_points = {
 			2077 1
 		}

@@ -6,7 +6,7 @@ state = {
 		steel = 40
 	}
 	history = {
-		owner = MEX
+		owner = FRA
 		victory_points = {
 			1965 30
 		}

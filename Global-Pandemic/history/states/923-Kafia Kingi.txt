@@ -3,7 +3,7 @@ state = {
 	name = "STATE_923"
 
 	history = {
-		owner = SSU
+		owner = FRA
 		add_core_of = SSU
 		add_claim_by = SUD
 		buildings = {
@@ -15,7 +15,7 @@ state = {
 			buildings = {
 				internet_station = 0
 			}
-			owner = SUD
+			owner = FRA
 			add_core_of = AGF
 			add_claim_by = SRF
 			add_manpower = 324

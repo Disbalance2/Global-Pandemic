@@ -5,7 +5,7 @@ state = {
 	state_category = state_01
 
 	history = {
-		owner = MAC
+		owner = FRA
 		victory_points = { 14388 5 } #Macau
 
 		buildings = {

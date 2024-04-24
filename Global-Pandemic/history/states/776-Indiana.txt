@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 1595 5 } #Indianapolis
 		victory_points = { 11635 3 } #Evansville
 		victory_points = { 870 3 } #Fort Wayne

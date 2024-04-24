@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = SOV
+		owner = FRA
 
 		victory_points = { 4824 10 } #Tyumen
 		victory_points = { 4659 3 } #Tobolsk

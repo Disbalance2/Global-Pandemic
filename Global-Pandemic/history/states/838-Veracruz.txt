@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = MEX
+		owner = FRA
 		victory_points = { 12810 5 } #Veracruz
 		victory_points = { 10889 3 } #Coatzacoalcos
 		victory_points = { 8079 3 } #Tampico

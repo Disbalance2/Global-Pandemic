@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = SOV
+		owner = FRA
 
 		victory_points = { 7757 5 } #Kemerovo
 		victory_points = { 1369 5 } #Novokuznetsk

@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 
 		victory_points = { 10711 3 } #Casper
 		victory_points = { 4723 3 } #Cheyenne

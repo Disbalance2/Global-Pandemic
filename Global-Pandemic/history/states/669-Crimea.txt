@@ -5,7 +5,7 @@ state = {
 	state_category = state_04
 
 	history = {
-		owner = UKR
+		owner = FRA
 		add_core_of = UKR
 		add_core_of = CRM
 		victory_points = { 6704 5 } #Simferopol
@@ -34,7 +34,7 @@ state = {
 				radar_station = 3
 				TEL_base = 5
 			}
-			owner = SOV
+			owner = FRA
 			add_core_of = SOV
 			remove_core_of = NOV
 			add_core_of = CRM

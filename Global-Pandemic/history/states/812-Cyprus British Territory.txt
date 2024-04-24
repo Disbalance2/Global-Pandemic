@@ -5,7 +5,7 @@ state = {
 	state_category = state_military_base
 
 	history = {
-		owner = ENG
+		owner = FRA
 		buildings = {
 			infrastructure = 3
 			internet_station = 2

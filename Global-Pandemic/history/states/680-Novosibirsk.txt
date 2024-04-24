@@ -5,7 +5,7 @@ state = {
 	state_category = state_03
 
 	history = {
-		owner = SOV
+		owner = FRA
 
 		victory_points = { 7274 10 } #Novosibirsk
 		victory_points = { 4734 3 } #Iskitim

@@ -8,7 +8,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 12501 5 } #Nashville
 		victory_points = { 7797 5 } #Memphis
 		victory_points = { 7791 5 } #Knoxville

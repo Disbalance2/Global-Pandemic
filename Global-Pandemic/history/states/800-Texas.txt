@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 10337 10 } #Houston
 		victory_points = { 12369 5 } #McAllen
 		victory_points = { 6785 3 } #Corpus Cristi

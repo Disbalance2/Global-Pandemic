@@ -5,7 +5,7 @@ state = {
 	state_category = state_06
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 12357 5 } #Milwaukee
 		victory_points = { 12456 5 } #Madison
 		victory_points = { 4166 3 } #Green Bay

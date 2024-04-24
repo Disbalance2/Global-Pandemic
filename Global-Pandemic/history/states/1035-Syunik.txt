@@ -4,7 +4,7 @@ state = {
 	name = "STATE_1035"
 
 	history = {
-		owner = ARM
+		owner = FRA
 		add_core_of = ARM
 
 		victory_points = { #Kapan

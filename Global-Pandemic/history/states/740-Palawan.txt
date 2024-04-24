@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = PHI
+		owner = FRA
 		victory_points = { 4429 3 } #Puerto Princesa
 
 

@@ -5,7 +5,7 @@ state = {
 	state_category = state_military_base
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 13019 3 } #Diego Garcia
 
 		buildings = {

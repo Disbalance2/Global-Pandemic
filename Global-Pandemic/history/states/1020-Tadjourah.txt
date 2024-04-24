@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 
 	history = {
-		owner = DJI
+		owner = FRA
 
 		victory_points = { 4985 1 } #Tadjourah
 

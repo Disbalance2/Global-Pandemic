@@ -12,7 +12,7 @@ state = {
 	}
 
 	history = {
-		owner = BRA
+		owner = FRA
 		victory_points = { 10513 20 } #São Paulo
 		victory_points = { 5112 5 } #São José dos Campos
 		victory_points = { 10947 1 } #Itapetininga

@@ -5,7 +5,7 @@ state = {
 	state_category = state_04
 
 	history = {
-		owner = URG
+		owner = FRA
 		victory_points = { 10362 5 } #Montevideo
 		victory_points = { 12336 1 } #Maldonado
 		victory_points = { 10347 1 } #Rocha

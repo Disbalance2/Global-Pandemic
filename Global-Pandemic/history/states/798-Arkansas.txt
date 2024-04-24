@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 12489 5 } #Little Rock
 		victory_points = { 4567 3 } #Fayetteville
 		victory_points = { 12778 3 } #Fort Smith

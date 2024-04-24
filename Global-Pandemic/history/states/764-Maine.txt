@@ -5,7 +5,7 @@ state = {
 	state_category = state_02
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 3732 3 } #Portland
 		victory_points = { 12459 1 } #Bangor
 

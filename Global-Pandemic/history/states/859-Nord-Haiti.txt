@@ -5,7 +5,7 @@ state = {
 	state_category = state_04
 
 	history = {
-		owner = HAI
+		owner = FRA
 		victory_points = { 1594 3 } #Cap-Haitien
 
 		buildings = {

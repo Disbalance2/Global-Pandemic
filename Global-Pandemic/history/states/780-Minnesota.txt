@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 1866 10 } #Minneapolis
 		victory_points = { 1734 3 } #Duluth
 		victory_points = { 4664 3 } #Rochester

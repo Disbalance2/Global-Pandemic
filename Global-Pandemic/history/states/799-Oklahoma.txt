@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 5103 5 } #Oklahoma City
 		victory_points = { 1806 5 } #Tulsa
 		victory_points = { 11743 3 } #Lawton

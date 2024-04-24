@@ -4,7 +4,7 @@ state = { # Jan Mayen
 	manpower = 10
 	state_category = state_00
 	history = {
-		owner = NOR
+		owner = FRA
 		victory_points = {
 			14626 1
 		}

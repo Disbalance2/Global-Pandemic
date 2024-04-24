@@ -4,7 +4,7 @@ state = {
 
 
 	history = {
-		owner = SYR
+		owner = FRA
 		buildings = {
 			infrastructure = 1
 			internet_station = 0
@@ -14,7 +14,7 @@ state = {
 			buildings = {
 				internet_station = 1
 			}
-			owner = ISI
+			owner = FRA
 			add_core_of = ISI
 			add_core_of = NUS
 			add_core_of = FSA

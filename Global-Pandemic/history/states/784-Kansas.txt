@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 4811 5 } #Wichita
 		victory_points = { 1352 3 } #Topeka
 		victory_points = { 7834 3 } #Overland Park

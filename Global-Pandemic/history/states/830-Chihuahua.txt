@@ -5,7 +5,7 @@ state = {
 	state_category = state_04
 
 	history = {
-		owner = MEX
+		owner = FRA
 		victory_points = { 8097 5 } #Juárez
 		victory_points = { 12745 5 } #Chihuahua
 		victory_points = { 10916 3 } #Hidalgo

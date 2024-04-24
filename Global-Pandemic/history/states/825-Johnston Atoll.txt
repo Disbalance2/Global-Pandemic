@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 13051 1 } #Johnston Atoll
 
 		buildings = {

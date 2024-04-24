@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 1836 3 } #Bismarck
 		victory_points = { 10685 3 } #Fargo
 		victory_points = { 3719 3 } #Grand Forks

@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = DOM
+		owner = FRA
 		victory_points = { 4598 5 } #Santiago
 		victory_points = { 10484 3 } #San Francisco
 

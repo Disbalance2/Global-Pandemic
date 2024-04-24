@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 4565 5 } #Jackson
 		victory_points = { 4464 3 } #Gulfport
 		victory_points = { 7668 1 } #Pascagoula

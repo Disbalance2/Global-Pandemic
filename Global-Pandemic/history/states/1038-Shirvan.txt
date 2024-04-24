@@ -4,7 +4,7 @@ state = {
 	name = "STATE_1038"
 
 	history = {
-		owner = AZE
+		owner = FRA
 		add_core_of = AZE
 		add_core_of = TLS
 		victory_points = {

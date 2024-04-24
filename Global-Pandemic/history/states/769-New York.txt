@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 3878 15 } #New York
 		victory_points = { 9693 5 } #Albany
 		victory_points = { 11654 5 } #Buffalo

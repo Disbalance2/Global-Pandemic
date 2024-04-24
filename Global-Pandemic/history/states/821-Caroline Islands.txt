@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 
 	history = {
-		owner = MIC
+		owner = FRA
 		victory_points = { 13036 5 } #Palikir
 		victory_points = { 13035 3 } #Kosrae
 		victory_points = { 13028 3 } #Yap

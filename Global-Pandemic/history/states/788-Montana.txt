@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 
 		victory_points = { 12585 3 } #Billings
 		victory_points = { 6742 3 } #Missoula

@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 
 	history = {
-		owner = AST
+		owner = FRA
 		victory_points = { 13005 1 } #Flying Fish Cove
 
 

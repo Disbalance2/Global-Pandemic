@@ -6,7 +6,7 @@ state = {
 	}
 
 	history = {
-		owner = ARM
+		owner = FRA
 		victory_points = { #Yerevan
 			12320 7
 		}

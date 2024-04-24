@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 1827 10 } #Denver
 		victory_points = { 10588 5 } #Colorado Springs
 		victory_points = { 7780 3 } #Fort Collins

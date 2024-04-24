@@ -4,7 +4,7 @@ state = {
 
 
 	history = {
-		owner = SYR
+		owner = FRA
 		victory_points = {
 			3942 1
 		}
@@ -17,7 +17,7 @@ state = {
 			buildings = {
 				internet_station = 2
 			}
-			owner = ISI
+			owner = FRA
 			add_core_of = FSA
 			add_core_of = ISI
 			add_core_of = NUS

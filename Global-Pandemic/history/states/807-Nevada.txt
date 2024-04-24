@@ -10,7 +10,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 4799 5 } #Las Vegas
 		victory_points = { 10422 3 } #Reno
 		victory_points = { 7756 1 } #Elko

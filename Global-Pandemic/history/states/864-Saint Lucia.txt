@@ -5,7 +5,7 @@ state = {
 	state_category = state_00
 
 	history = {
-		owner = STL
+		owner = FRA
 		victory_points = { 13009 2 } #Castries
 
 		buildings = {

@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = USA
+		owner = FRA
 		victory_points = { 853 10 } #Phoenix
 		victory_points = { 3834 5 } #Tucson
 		victory_points = { 12765 1 } #Flagstaff

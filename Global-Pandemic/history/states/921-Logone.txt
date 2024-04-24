@@ -3,7 +3,7 @@ state = {
 	name = "STATE_921"
 
 	history = {
-		owner = CAR
+		owner = FRA
 		add_core_of = CAR
 		buildings = {
 			infrastructure = 0
@@ -16,7 +16,7 @@ state = {
 			buildings = {
 				internet_station = 0
 			}
-			owner = LOG
+			owner = FRA
 			add_core_of = LOG
 			add_core_of = BAL
 			add_core_of = SEL

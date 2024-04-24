@@ -3,7 +3,7 @@ state = {
 	name = "STATE_1076"
 	manpower = 945560
 	history = {
-		owner = UKR
+		owner = FRA
 		add_core_of = UKR
 		add_core_of = LPR
 

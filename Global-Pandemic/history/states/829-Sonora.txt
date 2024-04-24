@@ -9,7 +9,7 @@ state = {
 	}
 
 	history = {
-		owner = MEX
+		owner = FRA
 		victory_points = { 8012 3 } #Nogales
 		victory_points = { 10765 5 } #Hermosillo
 		victory_points = { 4977 3 } #Ciudad Obregón

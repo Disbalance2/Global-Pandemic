@@ -5,7 +5,7 @@ state = {
 	state_category = state_01
 	
 	history = {
-		owner = NAU
+		owner = FRA
 		add_core_of = NAU
 		victory_points = { 13038 1 } #Nauru
 		buildings = {
