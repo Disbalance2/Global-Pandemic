@@ -1,0 +1,378 @@
+﻿USA = {
+	fleet_names_template = FLEET_NAME_USA
+	submarine = {
+		prefix = "USS"
+		generic = { "Submarine" }
+		unique = {
+			#WIKI: Post S-boat, in order by hull designation, up to nuclear powered (excluding doubles)
+			"Barracuda" "Bass" "Bonita" "Argonaut" "Narwhal" "Nautilus" "Dolphin" "Cachalot" "Cuttlefish" "Porpoise" "Pike" "Shark" "Tarpon" "Perch" "Pickerel" "Permit" "Plunger" "Pollack" "Pompano" "Salmon" "Seal"
+			"Skipjack" "Snapper" "Stingray" "Sturgeon" "Sargo" "Saury" "Spearfish" "Sculpin" "Sailfish" "Swordfish" "Seadragon" "Sealion" "Searaven" "Seawolf"
+			"Tambor" "Tautog" "Thresher" "Triton" "Trout" "Tuna" "Mackerel" "Marlin" "Gar" "Grampus" "Grayback" "Grayling" "Grenadier" "Gudgeon"
+			"Gato" "Greenling" "Grouper" "Growler" "Grunion" "Guardfish" "Albacore" "Amberjack" "Barb" "Blackfish" "Bluefish" "Bonefish" "Cod" "Cero" "Corvina" "Darter" "Drum" "Flying Fish" "Finback" "Haddock" "Halibut"
+			"Herring" "Kingfish" "Shad" "Silversides" "Trigger" "Wahoo" "Whale" "Angler" "Bashaw" "Bluegill" "Bream" "Cavalla" "Cobia" "Croaker" "Dace" "Dorado" "Flasher" "Flier" "Flounder" "Gabilan" "Gunnel" "Gurnard"
+			"Haddo" "Hake" "Harder" "Hoe" "Jack" "Lapon" "Mingo" "Muskallunge" "Paddle" "Pargo" "Peto" "Pogy" "Pompon" "Puffer" "Rasher" "Raton" "Ray" "Redfin" "Robalo" "Rock" "Runner" "Sawfish" "Scamp" "Scorpion" "Snook"
+			"Steelhead" "Sunfish" "Tunny" "Tinosa" "Tullibee"
+			"Balao" "Billfish" "Bowfin" "Cabrilla" "Capelin" "Cisco" "Crevalle" "Devilfish" "Dragonet" "Escolar" "Hackleback" "Lancetfish" "Ling" "Lionfish" "Manta" "Moray" "Roncador" "Sabalo" "Sablefish" "Seahorse"
+			"Skate" "Tang" "Tilefish" "Apogon" "Aspro" "Batfish" "Archerfish" "Burrfish" "Barbel" "Barbero" "Baya" "Becuna" "Bergall" "Besugo" "Blackfin" "Caiman" "Blenny" "Blower" "Blueback" "Boarfish" "Charr" "Chub"
+			"Brill" "Bugara" "Bullhead" "Bumper" "Cabezon" "Dentuda" "Capitaine" "Carbonero" "Carp" "Catfish" "Entemedor" "Chivo" "Chopper" "Clamagore" "Cobbler" "Cochino" "Corporal" "Cubera" "Cusk" "Diodon" "Dogfish"
+			"Greenfish" "Halfbeak" "Dugong" "Eel" "Espada" "Jawfish" "Ono" "Garlopa" "Garrupa" "Goldring" "Golet" "Guavina" "Guitarro" "Hammerhead" "Hardhead" "Hawkbill" "Icefish" "Jallao" "Kete" "Kraken" "Lagarto"
+			"Lamprey" "Lizardfish" "Loggerhead" "Macabi" "Mapiro" "Menhaden" "Mero" "Needlefish" "Nerka" "Sand Lance" "Picuda" "Pampanito" "Parche" "Bang" "Pilotfish" "Pintado" "Pipefish" "Piranha" "Plaice" "Pomfret"
+			"Sterlet" "Queenfish" "Razorback" "Redfish" "Ronquil" "Scabbardfish" "Segundo" "Sea Cat" "Sea Devil" "Sea Dog" "Sea Fox" "Atule" "Spikefish" "Sea Owl" "Sea Poacher" "Sea Robin" "Sennet" "Piper" "Threadfin"
+			"Spadefish" "Trepang" "Spot" "Springer" "Stickleback" "Tiru"
+			"Tench" "Thornback" "Tigrone" "Tirante" "Trutta" "Toro" "Torsk" "Quillback" "Trumpetfish" "Tusk" "Turbot" "Ulua" "Unicorn" "Vendace" "Walrus" "Whitefish" "Whiting" "Wolffish" "Corsair" "Conger" "Cutlass"
+			"Diablo" "Medregal" "Requin" "Irex" "Sea Leopard" "Odax" "Sirago" "Pomodon" "Remora" "Sarda" "Spinax" "Volador" "Comber" "Sea Panther" "Tiburon" "Kinn" "Springeren"
+		}
+	}
+	destroyer = {
+		prefix = "USS"
+		generic = {
+			"Destroyer"
+		}
+		unique = {
+			"John Finn" "Ralph Johnson" "Rafael Peralta" "Thomas Hudner" "Paul Ignatius" "Daniel Inouye" "Delbert D. Black" "Carl M. Levin" "Frank E. Petersen Jr." "John Basilone" "Lenah H. Sutcliffe Higbee" "Harvey C. Barnum Jr." "Jack H. Lucas" "Louis H. Wilson, Jr." "Dewey" "Hull" "Macdonough" "Worden" "Dale" "Monaghan" "Aylwin" "Porter" "Selfridge" "McDougal" "Winslow" "Phelps" "Clark" "Moffett" "Balch"
+			"Mahan" "Cummings" "Drayton" "Lamson" "Flusser" "Reid" "Case" "Conyngham" "Cassin" "Shaw" "Tucker" "Downes" "Cushing" "Perkins" "Smith" "Preston"
+			"Gridley" "Somers" "Craven" "Warrington" "Dunlap" "Fanning" "Bagley" "Blue" "Helm" "Mugford" "Ralph Talbot" "Henley" "Patterson" "Jarvis" "Sampson" "Davis" "Jouett"
+			"Benham" "Ellet" "Lang" "McCall" "Maury" "Mayrant" "Trippe" "Rhind" "Rowan" "Stack" "Sterett" "Wilson" "Sims" "Hughes" "Anderson" "Hammann" "Mustin" "Russell" "O Brien" "Walke" "Morris" "Roe" "Wainwright" "Buck"
+			"Benson" "Mayo" "Gleaves" "Niblack" "Madison" "Lansdale" "Hilary P Jones" "Charles F Hughes" "Livermore" "Eberle" "Plunkett" "Kearny" "Gwin" "Meredith" "Grayson" "Monssen" "Woolsey" "Ludlow" "Edison"
+			"Ericsson" "Wilkes" "Nicholson" "Swanson" "Ingraham" "Fletcher" "Radford" "Jenkins" "O Bannon" "Chevalier" "Bristol" "Ellyson" "Hambleton" "Rodman" "Emmons" "Macomb" "Laffey" "Woodworth" "Forrest"
+			"Fitch" "Corry" "Hobson" "Saufley" "Waller" "Strong" "Taylor" "De Haven" "Bache" "Beale" "Guest" "Bennett" "Fullam" "Hudson" "Hutchins" "Pringle" "Stanly" "Stevens" "Halford" "Leutze" "Aaron Ward" "Buchanan"
+			"Duncan" "Lansdowne" "Lardner" "McCalla" "Mervine" "Quick" "Farenholt" "Bailey" "Carmick" "Doyle" "Endicott" "McCook" "Frankford" "Philip" "Renshaw" "Ringgold" "Schroeder" "Sigsbee"
+			"Conway" "Cony" "Converse" "Eaton" "Foote" "Spence" "Terry" "Thatcher" "Anthony" "Wadsworth" "Walker" "Brownson" "Daly" "Isherwood" "Kimberly" "Luce"
+			"Abner Read" "Ammen" "Bush" "Trathen" "Hazelwood" "Heermann" "Hoel" "McCord" "Miller" "Owen" "The Sullivans" "Stephen Potter" "Tingey" "Twining" "Yarnall" "Boyd" "Bradford" "Brown"
+			"Cowell" "Capps" "David W Taylor" "Evans" "John D Henley" "Franks" "Haggard" "Hailey" "Johnston" "Laws" "Longshaw" "Morrison" "Prichett" "Robinson" "Ross" "Rowe" "Smalley" "Stoddard" "Watts" "Wren"
+			"Aulick" "Charles Ausburne" "Claxton" "Dyson" "Harrison" "John Rodgers" "McKee" "Murray" "Sproston" "Wickes" "William D Porter" "Young" "Charrette" "Conner" "Hall" "Halligan" "Haraden" "Newcomb" "Bell" "Burns"
+			"Izard" "Paul Hamilton" "Twiggs" "Howorth" "Killen" "Hart" "Metcalf" "Shields" "Wiley" "Bancroft" "Barton" "Boyle" "Champlin" "Meade" "Murphy" "Parker" "Caldwell" "Coghlan" "Frazier" "Gansevoort" "Gillespie"
+			"Hobby" "Kalk" "Kendrick" "Laub" "MacKenzie" "McLanahan" "Nields" "Ordronaux" "Davison" "Glennon" "Jeffers" "Maddox" "Nelson" "Baldwin" "Harding" "Satterlee" "Thompson" "Welles" "Abbot" "Braine" "Erben"
+			"Cowie" "Knight" "Doran" "Earle" "Butler" "Gherardi" "Herndon" "Shubrick" "Beatty" "Tillman" "Hale" "Sigourney" "Stembel" "Stevenson" "Stockton" "Thorn" "Turner" "Albert W Grant" "Caperton" "Cogswell"
+			"Ingersoll" "Knapp" "Bearss" "John Hood" "Van Valkenburgh" "Charles J Badger" "Colahan" "Dashiell" "Bullard" "Kidd" "Bennion" "Heywood L Edwards" "Richard P Leary" "Bryant" "Black" "Chauncey"
+			"Clarence K Bronson" "Cotten" "Dortch" "Gatling" "Healy" "Hickox" "Hunt" "Lewis Hancock" "Marshall" "McDermut" "McGowan" "McNair" "Melvin" "Hopewell" "Porterfield" "Stockham" "Wedderburn" "Picking"
+			"Halsey Powell" "Uhlmann" "Remey" "Wadleigh" "Norman Scott" "Mertz" "Allen M Sumner" "Moale" "Ingraham" "Cooper" "English" "Charles S Sperry" "Ault" "Waldron" "Haynsworth"
+			"John W Weeks" "Hank" "Wallace L Lind" "Borie" "Compton" "Gainard" "Soley" "Harlan R Dickson" "Hugh Purvis" "Gearing" "Eugene A Greene" "Gyatt" "Kenneth D Bailey" "William R Rush" "William M Wood" "Wiltsie"
+			"Theodore E Chandler" "Hamner" "Epperson" "Mansfield" "Lyman K Swenson" "Collett" "Hyman" "Mannert L Abele" "Purdy" "Robert H Smith" "Thomas E Fraser" "Shannon" "Harry F Bauer" "Adams" "Tolman"
+			"Drexler" "Frank Knox" "Southerland" "Brush" "Taussig" "Samuel N Moore" "Harry E Hubbard" "Henry A Wiley" "Shea" "J William Ditter" "Alfred A Cunningham" "John R Pierce" "Frank E Evans" "John A Bole"
+			"Putnam" "Lofberg" "John W Thomason" "William C Lawe" "Lloyd Thomas" "Keppler" "Seymour D Owens" "Lowry" "Lindsey" "Hugh W Hadley" "Willard Keith" "James C Owens" "Zellars" "Massey" "Douglas H Fox" "Stormes"
+			"Robert K Huntington" "Gurke" "McKean" "Henderson" "Richard B Anderson" "James E Kyes" "Hollister" "Eversole" "Shelton" "Seaman" "Callaghan" "Cassin Young" "Irwin" "Colhoun" "Gregory" "Little" "Rooks"
+			"Higbee" "Benner" "Dennis J Buckley" "New" "Holder" "Rich" "Robert H McCard" "Samuel B Roberts" "Basilone" "Carpenter" "Agerholm" "Robert A Owens" "Timmerman" "Myles C Fox" "Everett F Larson" "Goodrich"
+			"Hanson" "Herbert J Thomas" "Charles P Cecil" "George K MacKenzie" "Sarsfield" "Ernest G Small" "Power" "Fiske" "Bausell" "Ozbourn" "Robert L Wilson" "Witek" "Richard E Kraus" "Joseph P Kennedy Jr"
+			"Rupertus" "Leonard F Mason" "Charles H Roan" "Fred T Berry" "Norris" "McCaffery" "Harwood" "Vogelgesang" "Steinaker" "Harold J Ellison" "Charles R Ware" "Cone" "Stribling" "Arnold J Isbell" "Fechteler"
+			"Damato" "Forrest Royal" "Hawkins" "Henry W Tucker" "Rogers" "Vesole" "Leary" "Dyess" "Bordelon" "Furse" "Newman K Perry" "Floyd B Parks" "John R Craig" "Orleck" "Brinkley Bass" "Stickell" "O'Hare"
+			"Mitscher" "John S McCain" "Willis A Lee" "Wilkinson" "Forrest Sherman" "John Paul Jones" "Barry" "Decatur" "Jonas Ingram" "Manley" "Du Pont" "Bigelow" "Blandy" "Mullinnix" "Edson"
+			"Morton" "Parsons" "Richard S Edwards" "Turner Joy" "Charles F Adams" "John King" "Lawrence" "Biddle" "Barney" "Henry B Wilson " "Lynde McCormick" "Towers"
+			}
+		}
+	light_cruiser = {
+		prefix = "USS"
+		generic = { "Light Cruiser" }
+		unique = {
+			# From Wiki (Built/Served/Fought)
+			"Omaha" "Milwaukee" "Cincinnati" "Raleigh" "Detroit" "Richmond" "Concord" "Trenton" "Marblehead" "Memphis" "Brooklyn" "Philadelphia" "Savannah" "Nashville" "Phoenix" "Boise" "Honolulu"
+			"St. Louis" "Helena" "Atlanta" "Juneau" "San Diego" "San Juan" "Cleveland"	"Columbia" "Montpelier" "Denver" "Santa Fe" "Birmingham" "Mobile" "Vincennes" "Pasadena" "Springfield"
+			"Topeka" "Biloxi" "Houston" "Providence" "Manchester" "Vicksburg" "Duluth" "Miami" "Astoria" "Oklahoma City" "Little Rock" "Galveston" "Oakland" "Reno" "Flint" "Tucson"
+			"Amsterdam" "Portsmouth" "Wilkes-Barre" "Dayton" "Fargo" "Huntington" "Spokane" "Fresno"
+			# From Wiki  (Unfinished/Cancelled/Converted before completion)
+			"Newark" "New Haven" "Buffalo" "Wilmington" "Vallejo" "Roanoke" "Tallahassee" "Cheyenne" "Chattanooga" "Worcester" "Gary" "Providence" "Portsmouth"
+			}
+	}
+	heavy_cruiser = {
+		prefix = "USS"
+		generic = { "Heavy Cruiser" }
+		unique = {
+			"Pensacola" "Salt Lake City" "Northampton" "Chester" "Louisville" "Chicago" "Houston" "Augusta"
+			"New Orleans" "Portland" "Astoria" "Indianapolis" "Minneapolis" "Tuscaloosa" "San Francisco" "Quincy" "Vincennes" "Wichita"
+			"Baltimore" "Boston" "Canberra" "Pittsburgh" "St. Paul" "Columbus" "Helena" "Bremerton" "Fall River" "Macon" "Toledo" "Los Angeles"
+			"Oregon City" "Albany" "Rochester" "Des Moines" "Salem" "Worcester" "Roanoke" "Newport News"
+			# From Wiki  (Unfinished/Cancelled/Converted before completion)
+			"Cambridge" "Bridgeport" "Kansas City" "Tulsa" "Norfolk" "Scranton" "Dallas" "Vallejo" "Gary"
+			}
+	}
+	battle_cruiser = {
+		prefix = "USS"
+		generic = { "Battle Cruiser" }
+		unique = {
+			#wiki: Historic list of Alaska Class
+			"Alaska" "Guam" "Hawaii" "Philippines" "Puerto Rico" "Samoa" "Virgin Islands"
+			#Additional US Territories/Districts during WW2 era
+			"District of Columbia" "Panama Canal" "Wake Island" "Midway Island" "Johnston Atoll" "Palmyra Island" "Baker Island" "Howland Island" "Jarvis Island"
+			}
+	}
+	battleship = {
+		prefix = "USS"
+		generic = { "Battleship" }
+		unique = {
+			# From Wiki (Served)
+			"Arkansas" "New York" "Texas" "Nevada" "Oklahoma" "Pennsylvania" "Arizona" "New Mexico" "Mississippi" "Idaho" "Tennessee" "California" "Colorado" "Maryland" "West Virginia"
+			"North Carolina" "Washington" "South Dakota" "Indiana" "Massachusetts" "Alabama" "Iowa" "New Jersey" "Missouri" "Wisconsin" "Illinois" "Kentucky"
+			# From Wiki (never completed)
+			"Montana" "Ohio" "Maine" "New Hampshire" "Louisiana" "South Carolina"
+			# Older/Other state names
+			"Minnesota" "North Dakota" "Oregon" "Connecticut" "Vermont" "New Hampshire" "Florida" "Utah" "Delaware" "Michigan" "Kansas" "Rhode Island" "Nebraska" "Virginia"
+			# Training ship, historically
+			"Wyoming"
+		}
+	}
+	carrier = {
+		prefix = "USS"
+		generic = { "Carrier" }
+		unique = {
+			"John F. Kennedy" "Enterprise" "Independence" "Bill Clinton" "George W. Bush" "Barrack H. Obama" "Donald J. Trump" "Lexington" "Saratoga" "Ranger" "Yorktown" "Enterprise" "Hornet"
+			"Essex" "Intrepid" "Franklin" "Ticonderoga" "Randolph" "Bunker Hill" "Hancock" "Bennington" "Boxer" "Bon Homme Richard" "Shangri-la" "Lake Champlain" "Tarawa" "Antietam"
+			"Midway" "Franklin D Roosevelt" "Leyte"	"Kearsarge"	"Valley Forge" "Philippine Sea" "Coral Sea" "Oriskany"
+			# CVL Names
+			"Independence" "Princeton" "Belleau Wood" "Cowpens" "Monterey" "Cabot" "Bataan" "San Jacinto" "Saipan" "Wright"
+			# Cold War and Beyond  (WW2 era Gen/Adm names excluded)
+			"United States" "Forrestal" "Kitty Hawk" "Constellation" "America" "Theodore Roosevelt" "Abraham Lincoln" "George Washington"
+			}
+	}
+
+	air_wing_names_template = AIR_WING_NAME_USA_FALLBACK
+
+	#Air wings can only be named through archetype
+	small_plane_airframe = {
+		prefix = ""
+		generic = { "Fighter Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"8th Fighter Squadron" "13th Fighter Squadron" "14th Fighter Squadron" "24th Fighter Squadron" "35th Fighter Squadron" "36th Fighter Squadron" "53rd Fighter Squadron" "55th Fighter Squadron" "69th Fighter Squadron" "77th Fighter Squadron" "79th Fighter Squadron" "80th Fighter Squadron" "93rd Fighter Squadron" "100th Fighter Squadron" "112th Fighter Squadron" "119th Fighter Squadron" "120th Fighter Squadron" "121st Fighter Squadron" "125th Fighter Squadron"
+		}
+	}
+
+	small_plane_strike_airframe = {
+		prefix = ""
+		generic = { "Fighter Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"4th Fighter Squadron" "34th Fighter Squadron" "58th Fighter Squadron" "60th Fighter Squadron" "61st Fighter Squadron" "62nd Fighter Squadron" "63rd Fighter Squadron" "134th Fighter Squadron" "308th Fighter Squadron" "315th Fighter Squadron" "355th Fighter Squadron" "356th Fighter Squadron" "421st Fighter Squadron" "466th Fighter Squadron" "493rd Fighter Squadron" "495th Fighter Squadron"
+		}
+	}
+
+	small_plane_naval_bomber_airframe = {
+		prefix = ""
+		generic = { "Fighter Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+			"4th Fighter Squadron" "34th Fighter Squadron" "58th Fighter Squadron" "60th Fighter Squadron" "61st Fighter Squadron" "62nd Fighter Squadron" "63rd Fighter Squadron" "134th Fighter Squadron" "308th Fighter Squadron" "315th Fighter Squadron" "355th Fighter Squadron" "356th Fighter Squadron" "421st Fighter Squadron" "466th Fighter Squadron" "493rd Fighter Squadron" "495th Fighter Squadron"
+		}
+	}
+
+	small_plane_sucide_airframe = {
+		prefix = ""
+		generic = { "Attack Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"11th Attack Squadron" "15th Attack Squadron" "17th Attack Squadron" "20th Attack Squadron" "22nd Attack Squadron" "50th Attack Squadron" "89th Attack Squadron" "91st Attack Squadron" "482nd Attack Squadron" "489th Attack Squadron" "867th Attack Squadron"
+		}
+	}
+
+	small_plane_cas_airframe = {
+		prefix = ""
+		generic = { "Fighter Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"25th Fighter Squadron" "45th Fighter Squadron" "47th Fighter Squadron" "74th Fighter Squadron" "75th Fighter Squadron" "76th Fighter Squadron" "104th Fighter Squadron" "107th Fighter Squadron" "163rd Fighter Squadron" "190th Fighter Squadron" "303rd Fighter Squadron" "357th Fighter Squadron" "358th Fighter Squadron"
+		}
+	}
+
+	cv_small_plane_airframe = {
+		prefix = ""
+		generic = { "VMFA-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VMFA-112" "VMFA-115" "VMFA-121" "VMFA-122" "VMFA-211" "VMFA-214" "VMFA(AW)-224" "VMFA-225" "VMFA-232" "VMFA-242" "VMFA-312" "VMFA-314" "VMFA-323" "VMFA(AW)-533" "VMFA-542"
+		}
+	}
+
+	cv_small_plane_strike_airframe = {
+		prefix = ""
+		generic = { "VMA-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VMA-223" "VMA-231"
+		}
+	}
+
+	cv_small_plane_naval_bomber_airframe = {
+		prefix = ""
+		generic = { "VMFA-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VMFA-112" "VMFA-115" "VMFA-121" "VMFA-122" "VMFA-211" "VMFA-214" "VMFA(AW)-224" "VMFA-225" "VMFA-232" "VMFA-242" "VMFA-312" "VMFA-314" "VMFA-323" "VMFA(AW)-533" "VMFA-542"
+		}
+	}
+
+	cv_small_plane_suicide_airframe = {
+		prefix = ""
+		generic = { "VMU-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VMU-1" "VMU-2" "VMU-3" "VMU-4"
+		}
+	}
+
+	medium_plane_airframe = {
+		prefix = ""
+		generic = { "Fighter Wing" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"307th Fighter Squadron" "333rd Fighter Squadron" "334th Fighter Squadron" "335th Fighter Squadron" "336th Fighter Squadron" "389th Fighter Squadron" "428th Fighter Squadron" "492nd Fighter Squadron" "494th Fighter Squadron"
+		}
+	}
+
+	medium_plane_fighter_airframe = {
+		prefix = ""
+		generic = { "Fighter Wing" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"19th Fighter Squadron" "27th Fighter Squadron" "43rd Fighter Squadron" "67th Fighter Squadron" "90th Fighter Squadron" "94th Fighter Squadron" "114th Fighter Squadron" "122nd Fighter Squadron" "123rd Fighter Squadron" "131st Fighter Squadron" "149th Fighter Squadron" "159th Fighter Squadron" "194th Fighter Squadorn" "199th Fighter Squadron" "301st Fighter Squadron" "302nd Fighter Squadron" "525th Fighter Squadron" "550th Fighter Squadron"
+		}
+	}
+
+	medium_plane_cas_airframe = {
+		prefix = ""
+		generic = { "Fighter Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"25th Fighter Squadron" "45th Fighter Squadron" "47th Fighter Squadron" "74th Fighter Squadron" "75th Fighter Squadron" "104th Fighter Squadron" "107th Fighter Squadron" "163rd Figther Squadron" "190th Fighter Squadron" "303rd Fighter Squadron" "354th Fighter Squadron" "357th Fighter Squadron" "358th Fighter Squadron"
+		}
+	}
+
+	medium_plane_maritime_patrol_airframe = {
+		prefix = ""
+		generic = { "VP-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VP-1" "VP-4" "VP-8" "VP-9" "VP-10" "VP-16" "VP-26" "VP-30" "VP-40" "VP-45" "VP-46"
+		}
+	}
+
+	medium_plane_air_transport_airframe = {
+		prefix = ""
+		generic = { "Airlift Wing" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"1st Airlift Squadron" "3rd Airlift Squadron" "4th Airlift Squadron" "6th Airlift Squadron" "7th Airlift Squadron" "8th Airlift Squadron" "9th Airlift Squadron" "14th Airlift Squadron" "15th Airlift Squadron" "16th Airlift Squadron" "21st Airlift Squadron" "22nd Airlift Squadron" "36th Airlift Squadron" "37th Airlift Squadron" "39th Airlift Squadron" "40th Airlift Squadron" "41st Airlift Squadron" "48th Airlift Squadron" "53rd Airlift Squadron" "54th Airlift Squadron" "58th Airlift Squadron" "61st Airlift Squadron" "62nd Airlift Squadron" "65th Airlift Squadron" "68th Airlift Squadron" "73rd Airlift Squadron" "76th Airlift Squadron" "89th Airlift Squadron" "96th Airlift Squadron" "97th Airlift Squadron" "99th Airlift Squadron" "109th Airlift Squadron" "115th Airlift Squadron" "118th Airlift Squadron" "130th Airlift Squadron" "137th Airlift Squadron" "139th Airlift Squadron" "142nd Airlift Squadron" "143rd Airlift Squadron" "144th Airlift Squadron" "155th Airlifit Squadron"
+		}
+	}
+
+	medium_plane_suicide_airframe = {
+		prefix ""
+		generic = { "Suicide Drone Wing" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		}
+	}
+
+	cv_medium_plane_airframe = {
+		prefix = ""
+		generic = { "VFA-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VFA-2" "VFA-11" "VFA-14" "VFA-22" "VFA-25" "VFA-27" "VFA-31" "VFA-32" "VFA-34" "VFA-37" "VFA-41" "VFA-81" "VFA-83" "VFA-86" "VFA-87" "VFA-94" "VFA-97" "VFA-102" "VFA-103" "VFA-105" "VFA-106" "VFA-113" "VFA-115" "VFA-122" "VFA-125" "VFA-131" "VFA-136" "VFA-137" "VFA-143" "VFA-146" "VFA-147" "VFA-151" "VFA-154" "VFA-192" "VFA-195" "VFA-311" "VFA-213"
+		}
+	}
+
+	cv_medium_plane_fighter_airframe = {
+		prefix = ""
+		generic = { "VF-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VF-1" "VF-2" "VF-11" "VF-14" "VF-21" "VF-24" "VF-31" "VF-32" "VF-33" "VF-41" "VF-51" "VF-74" "VF-84" "VF-101" "VF-102" "VF-103" "VF-111" "VF-114" "VF-124" "VF-142" "VF-143" "VF-154" "VF-191" "VF-194" "VF-201" "VF-202" "VF-211" "VF-213" "VF-301" "VF-302"
+		}
+	}
+
+	cv_medium_plane_cas_airframe = {
+		prefix = ""
+		generic = { "VA-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VA-34" "VA-35" "VA-36" "VA-42" "VA-52" "VA-55" "VA-65" "VA-75" "VA-85" "VA-95" "VA-115" "VA-128" "VA-145" "VA-155" "VA-165" "VA-196" "VA-205" "VA-304"
+		}
+	}
+
+	cv_medium_plane_maritime_patrol_airframe = {
+		prefix = ""
+		generic = { "VP-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VP-1" "VP-4" "VP-8" "VP-9" "VP-10" "VP-16" "VP-26" "VP-30" "VP-40" "VP-45" "VP-46"
+		}
+	}
+
+	cv_medium_plane_air_transport_airframe = {
+		prefix = ""
+		generic = { "VRC-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VRC-30" "VRC-40"
+		}
+	}
+
+	cv_medium_plane_scout_airframe = {
+		prefix = ""
+		generic = { "VAW-" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		"VAW-113" "VAW-115" "VAW-116" "VAW-117" "VAW-120" "VAW-121" "VAW-123" "VAW-124" "VAW-125" "VAW-126"
+		}
+	}
+
+	large_plane_airframe = {
+		prefix = ""
+		generic = { "Bomb Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"9th Bomb Squadron" "11th Bomb Squadron" "13th Bomb Squadron" "20th Bomb Squadron" "23rd Bomb Squadron" "28th Bomb Squadron" "34th Bomb Squadron" "37th Bomb Squadron" "69th Bomb Squadron" "93rd Bomb Squadron" "96th Bomb Squadron" "110th Bomb Squadron" "343rd Bomb Squadron" "345th Bomb Squadron" "393rd Bomb Squadron"
+		}
+	}
+
+	large_plane_air_transport_airframe = {
+		prefix = ""
+		generic = { "Airlift Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"1st Airlift Squadron" "3rd Airlift Squadron" "4th Airlift Squadron" "6th Airlift Squadron" "7th Airlift Squadron" "8th Airlift Squadron" "9th Airlift Squadron" "14th Airlift Squadron" "15th Airlift Squadron" "16th Airlift Squadron" "21st Airlift Squadron" "22nd Airlift Squadron" "36th Airlift Squadron" "37th Airlift Squadron" "39th Airlift Squadron" "40th Airlift Squadron" "41st Airlift Squadron" "48th Airlift Squadron" "53rd Airlift Squadron" "54th Airlift Squadron" "58th Airlift Squadron" "61st Airlift Squadron" "62nd Airlift Squadron" "65th Airlift Squadron" "68th Airlift Squadron" "73rd Airlift Squadron" "76th Airlift Squadron" "89th Airlift Squadron" "96th Airlift Squadron" "97th Airlift Squadron" "99th Airlift Squadron" "109th Airlift Squadron" "115th Airlift Squadron" "118th Airlift Squadron" "130th Airlift Squadron" "137th Airlift Squadron" "139th Airlift Squadron" "142nd Airlift Squadron" "143rd Airlift Squadron" "144th Airlift Squadron" "155th Airlifit Squadron"
+		}
+	}
+
+	large_plane_maritime_patrol_airframe = {
+		prefix = ""
+		generic = { "VP-" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"VP-1" "VP-4" "VP-8" "VP-9" "VP-10" "VP-16" "VP-26" "VP-30" "VP-40" "VP-45" "VP-46"
+		}
+	}
+
+	large_plane_cas_airframe = {
+		prefix = ""
+		generic = { "Special Operations Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"4th Special Operations Squadron" "5th Special Operations Squadron" "16th Special Operations Squadron" "19th Special Operations Squadron" "73rd Special Operations Squadron"
+		}
+	}
+
+	large_plane_awacs_airframe = {
+		prefix = ""
+		generic = { "Air Control Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		"1st Command Control Squadron" "12th Command and Control Squadron" "16th Command and Control Squadron" "128th Command and Control Squadron" "960th Air Control Squadron" "961st Air Control Squadron" "962nd Air Control Squadron" "963rd Air Control Squadron" "964th Air Control Squadron" "965th Air Control Squadron" "966th Air Control Squadron" "970th Air Control Squadron"
+		}
+	}
+
+	attack_helicopter_hull = {
+		prefix = ""
+		generic = { "Tactical Air Support Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_GENERIC
+		unique = {
+		}
+	}
+
+	transport_helicopter_equipment = {
+		prefix = ""
+		generic = { "Helicopter Squadron" }
+		generic_pattern = AIR_WING_NAME_USA_CARRIER
+		unique = {
+		}
+	}
+}

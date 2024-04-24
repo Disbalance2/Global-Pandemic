@@ -1,0 +1,167 @@
+﻿FIN = {
+	air_wing_names_template = AIR_WING_NAME_FIN_FALLBACK
+
+	#Air wings can only be named through archetype
+	small_plane_airframe = {
+		prefix = ""
+		generic = { "Hävittäjälentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	small_plane_strike_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	small_plane_cas_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	small_plane_naval_bomber_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	small_plane_suicide_airframe = {
+		prefix = ""
+		generic = { "UAV-Laivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	medium_plane_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	medium_plane_fighter_airframe = {
+		prefix = ""
+		generic = { "Hävittäjälentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	medium_plane_cas_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	medium_plane_maritime_patrol_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	medium_plane_suicide_airframe = {
+		prefix = ""
+		generic = { "UAV-Laivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	cv_medium_plane_fighter_airframe = {
+		prefix = ""
+		generic = { "Hävittäjälentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+			"Hävittäjälentolaivue 31" "Hävittäjälentolaivue 11" "Hävittäjälentolaivue 41"
+		}
+	}
+	cv_medium_plane_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	cv_medium_plane_maritime_patrol_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	cv_medium_plane_cas_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	cv_medium_plane_scout_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	cv_medium_plane_air_transport_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	large_plane_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	large_plane_maritime_patrol_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	large_plane_cas_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	large_plane_awacs_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	large_plane_air_transport_airframe = {
+		prefix = ""
+		generic = { "Lentolaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	attack_helicopter_hull = {
+		prefix = ""
+		generic = { "Rynnäkköhelikopterilaivue" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+	guided_missile_equipment = {
+		prefix = ""
+		generic = { "Ohjuspatteri" }
+		generic_pattern = AIR_WING_NAME_FIN_GENERIC
+		unique = {
+		}
+	}
+}

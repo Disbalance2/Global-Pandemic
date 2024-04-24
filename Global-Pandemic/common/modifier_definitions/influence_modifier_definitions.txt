@@ -1,0 +1,34 @@
+foreign_influence_defense_modifier = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = country
+}
+
+foreign_influence_modifier = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = country
+}
+
+foreign_influence_auto_influence_cap_modifier = {
+	color_type = good
+	value_type = number
+	precision = 1
+	category = country
+}
+
+influence_coup_modifier = {
+	color_type = good
+	value_type = percentage
+	precision = 1
+	category = country
+}
+
+influence_cost_add_modifier = {
+	color_type = good
+	value_type = number
+	precision = 0
+	category = country
+}

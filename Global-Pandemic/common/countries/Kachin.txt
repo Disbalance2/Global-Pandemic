@@ -1,0 +1,5 @@
+#Kachin
+graphical_culture = middle_eastern_gfx
+graphical_culture_2d = middle_eastern_2d
+
+color = { 130 120 80 } #random

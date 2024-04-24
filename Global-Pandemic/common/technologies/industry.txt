@@ -1,0 +1,5186 @@
+#Written by Roemer, Rebalanced by Bird & Razmode
+technologies = {
+
+	@1985 = -2
+	@1990 = 0
+	@1995 = 2
+	@2000 = 4
+	@2005 = 6
+	@2010 = 8
+	@2015 = 10
+	@2020 = 12
+	@2025 = 14
+	@2030 = 16
+	@2035 = 18
+	@2040 = 20
+	@2045 = 22
+
+	#AI -- Artifical Intelligence --Primary Function is to improve research as well as economic buffs
+	# -> moved to engineering.txt
+
+	#Nanofibers
+	##Index:
+	##Nanofibers are most used in factory settings and expanding industrial capcities due to flexbility and strength. This branch is primarily about expanding industrial output.
+
+	industrial_electrospun_polymeric_nanofibers = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech industrial_electrospun_polymeric_nanofibers" }
+		research_cost = 1.5
+		start_year = 1985
+
+		industrial_capacity_factory = 0.10
+		industrial_capacity_dockyard = 0.10
+		production_factory_max_efficiency_factor = 0.05
+		path = {
+			leads_to_tech = multiwalled_carbon_nanotubes
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1985 }
+		}
+
+		categories = {
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	multiwalled_carbon_nanotubes = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech multiwalled_carbon_nanotubes" }
+		research_cost = 1.5
+		start_year = 1990
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.05
+
+		path = {
+			leads_to_tech = modern_electrospinning
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1990 }
+		}
+
+		categories = {
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	modern_electrospinning = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech modern_electrospinning" }
+		research_cost = 1.5
+		start_year = 1995
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.05
+
+		path = {
+			leads_to_tech = inorganic_fibers_fabrication
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1995 }
+		}
+
+		categories = {
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	inorganic_fibers_fabrication = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech modern_electrospinning" }
+		research_cost = 1.5
+		start_year = 2000
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.05
+
+		path = {
+			leads_to_tech = industrial_production_of_nanofibers
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2000 }
+		}
+
+		categories = {
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	industrial_production_of_nanofibers = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech industrial_production_of_nanofibers" }
+		research_cost = 1.5
+		start_year = 2005
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.05
+
+		path = {
+			leads_to_tech = nanofibers_in_medicine
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2005 }
+		}
+
+		categories = {
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2002.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	nanofibers_in_medicine = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech nanofibers_in_medicine" }
+		research_cost = 1.5
+		start_year = 2010
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.05
+		monthly_population = 0.3
+		health_cost_multiplier_modifier = -0.15
+
+		path = {
+			leads_to_tech = centrifugal_spinning
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2010 }
+		}
+
+		categories = {
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2003.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+#3D Printers
+	##Index: 3D Printers are known for easily changing production. useful for retaining and starting production effiency
+	stereolitography = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech stereolitography" }
+		research_cost = 1.5
+		start_year = 1985
+
+		production_factory_start_efficiency_factor = 0.075
+		line_change_production_efficiency_factor = 0.075
+
+
+		path = {
+			leads_to_tech = early_3D_printers
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1985 }
+		}
+
+		categories = {
+			Cat_3D
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	early_3D_printers = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech early_3D_printers" }
+		research_cost = 1.5
+		start_year = 1990
+
+		production_factory_start_efficiency_factor = 0.03
+		line_change_production_efficiency_factor = 0.075
+
+		path = {
+			leads_to_tech = t3D_wax_printer
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1990 }
+		}
+
+		categories = {
+			Cat_3D
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	t3D_wax_printer = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech t3D_wax_printer" }
+		research_cost = 1.5
+		start_year = 1995
+
+		production_factory_start_efficiency_factor = 0.03
+		line_change_production_efficiency_factor = 0.075
+
+		path = {
+			leads_to_tech = large_scale_3D_printing
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1995 }
+		}
+
+		categories = {
+			Cat_3D
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	large_scale_3D_printing = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech large_scale_3D_printing" }
+		research_cost = 1.5
+		start_year = 2000
+
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.03
+		line_change_production_efficiency_factor = 0.075
+
+		path = {
+			leads_to_tech = self-replicated_3D_printer
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2000 }
+		}
+
+		categories = {
+			Cat_3D
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	self-replicated_3D_printer = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech replicated_3D_printer" }
+		research_cost = 1.5
+		start_year = 2005
+
+		production_factory_start_efficiency_factor = 0.03
+		line_change_production_efficiency_factor = 0.075
+
+		path = {
+			leads_to_tech = commercial_nanomanufacturing
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2005 }
+		}
+
+		categories = {
+			Cat_3D
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2002.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	commercial_nanomanufacturing = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech replicated_3D_printer" }
+		research_cost = 1.5
+		start_year = 2010
+
+		industrial_capacity_factory = 0.10
+		industrial_capacity_dockyard = 0.10
+		production_factory_start_efficiency_factor = 0.03
+		line_change_production_efficiency_factor = 0.075
+		##FIXME: Add another modifier here. Maybe some buff to taxes?
+
+		path = {
+			leads_to_tech = modern_3D_printing
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2010 }
+		}
+
+		categories = {
+			Cat_3D
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2003.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	modern_3D_printing = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech modern_3D_printing" }
+		research_cost = 1.5
+		start_year = 2015
+
+		production_factory_start_efficiency_factor = 0.03
+		line_change_production_efficiency_factor = 0.075
+
+		path = {
+			leads_to_tech = t3D_printed_nanofibers
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2015 }
+		}
+
+		categories = {
+			Cat_3D
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2015.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2008.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	centrifugal_spinning = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech modern_3D_printing" }
+		research_cost = 1.5
+		start_year = 2015
+
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		path = {
+			leads_to_tech = t3D_printed_nanofibers
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2015 }
+		}
+
+		categories = {
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2015.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2008.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	t3D_printed_nanofibers = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech t3D_printed_nanofibers" }
+		research_cost = 1.5
+		start_year = 2025
+
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+		production_factory_max_efficiency_factor = 0.02
+		production_factory_start_efficiency_factor = 0.02
+		line_change_production_efficiency_factor = 0.02
+
+		path = {
+			leads_to_tech = large_scale_nanocellulose_manufacturing
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8	 y = @2025 }
+		}
+
+		categories = {
+			Cat_3D
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2020.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2015.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2013.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	large_scale_nanocellulose_manufacturing = {
+		productivity_growth_modifier = 0.2
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech large_scale_nanocellulose_manufacturing" }
+		research_cost = 1.5
+		start_year = 2035
+
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+		production_factory_max_efficiency_factor = 0.02
+		production_factory_start_efficiency_factor = 0.02
+		line_change_production_efficiency_factor = 0.02
+
+		path = {
+			leads_to_tech = nanocellulose_in_medicine
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2035 }
+		}
+
+		categories = {
+			Cat_3D
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2025.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2020.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2018.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	nanocellulose_in_medicine = {
+		productivity_growth_modifier = 0.2
+		health_cost_multiplier_modifier = -0.10
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		research_cost = 1.5
+		start_year = 2030
+
+		monthly_population = 0.1
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2045 }
+		}
+
+		categories = {
+			Cat_3D
+			Cat_NFIBERS
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2030.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2025.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2023.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+#Genetics
+	##Index: More oriented to helping out genetic theory
+	DNA_fingerprinting = {
+		research_cost = 1.5
+		start_year = 1985
+
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech DNA_fingerprinting"
+			ingame_update_setup = yes
+		}
+
+		police_cost_multiplier_modifier = -0.10
+
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		path = {
+			leads_to_tech = modern_gmo
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1985 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	modern_gmo = {
+		productivity_growth_modifier = 0.2
+		research_cost = 1.5
+		start_year = 1990
+
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech modern_gmo" }
+
+		monthly_population = 0.05
+
+		path = {
+			leads_to_tech = gene_therapy
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = crispr
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1990 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	gene_therapy = {
+		research_cost = 1.5
+		start_year = 1995
+
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech gene_therapy" }
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		path = {
+			leads_to_tech = genetically_modified_crops
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @1995 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+			modifier = {
+				factor = 0.25
+				check_variable = { total_unemployed_percentage_display > 0.40 }
+			}
+		}
+		show_effect_as_desc = yes
+	}
+
+	genetically_modified_crops = {
+		productivity_growth_modifier = 0.2
+		agricolture_productivity_modifier = 0.25
+		research_cost = 1.5
+		start_year = 2000
+
+		monthly_population = 0.05
+
+		path = {
+			leads_to_tech = human_genome_project
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2000 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	gene_targeting_pesticides = {
+		productivity_growth_modifier = 0.2
+		agricolture_productivity_modifier = 0.25
+		research_cost = 1.5
+		start_year = 2010
+
+		monthly_population = 0.05
+
+		path = {
+			leads_to_tech = synthetic_life
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2010 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2002.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	synthetic_life = {
+		research_cost = 1.5
+		start_year = 2015
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		path = {
+			leads_to_tech = safe_cloning
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2015 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2003.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	safe_cloning = {
+		research_cost = 1.5
+		start_year = 2020
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		path = {
+			leads_to_tech = crispr_treatment
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2020 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2015.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2008.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	crispr_treatment = {
+		research_cost = 1.5
+		start_year = 2025
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		path = {
+			leads_to_tech = crispr_gene_edited_crops
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2025 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2020.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2015.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2013.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	crispr_gene_edited_crops = {
+		productivity_growth_modifier = 0.2
+		agricolture_productivity_modifier = 0.25
+		research_cost = 1.5
+		start_year = 2030
+
+		monthly_population = 0.05
+
+		path = {
+			leads_to_tech = human_crispr_experiments
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2030 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2025.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2020.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2018.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	human_crispr_experiments = {
+		research_cost = 1.5
+		start_year = 2035
+
+		monthly_population = 0.05
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2035 }
+		}
+
+		path = {
+			leads_to_tech = genetically_modified_humans
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2030.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2025.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2018.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	genetically_modified_humans = {
+		research_cost = 1.5
+		start_year = 2045
+
+		monthly_population = 0.05
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2045 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2030.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2025.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2018.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	human_genome_project = {
+		research_cost = 1.5
+		start_year = 2005
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 8 y = @2005 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		path = {
+			leads_to_tech = gene_targeting_pesticides
+			research_cost_coeff = 1
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2003.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	crispr = {
+		research_cost = 1.5
+		start_year = 2000
+
+		monthly_population = 0.05
+
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2000 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		path = {
+			leads_to_tech = cas9_gene_editing
+			research_cost_coeff = 1
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	cas9_gene_editing = {
+		research_cost = 1.5
+		start_year = 2005
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2005 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		path = {
+			leads_to_tech = tracrrna
+			research_cost_coeff = 1
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2002.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	tracrrna = {
+		research_cost = 1.5
+		start_year = 2010
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2010 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		path = {
+			leads_to_tech = crispr_treatment_experimentation
+			research_cost_coeff = 1
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2005.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2003.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+	crispr_treatment_experimentation = {
+		research_cost = 1.5
+		start_year = 2020
+
+		monthly_population = 0.05
+		combat_service_support_company = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+		helicopter_combat_service_support = {
+			casualty_trickleback = 0.025
+			experience_loss_factor = -0.025
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2020 }
+		}
+
+		categories = {
+			Cat_GENES
+			industry
+		}
+
+		path = {
+			leads_to_tech = crispr_treatment
+			research_cost_coeff = 1
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2015.01.01
+			}
+			modifier = {
+				factor = 0.2
+				date < 2010.01.01
+			}
+			modifier = {
+				factor = 0
+				date < 2008.01.01
+			}
+			modifier = {
+				factor = 2
+				check_variable = { gdp_per_capita > 19.999 }
+				check_variable = { gdp_per_capita < 50.000 }
+			}
+			modifier = {
+				factor = 4
+				check_variable = { gdp_per_capita > 49.999 }
+				check_variable = { gdp_per_capita < 90.000 }
+			}
+			modifier = {
+				factor = 8
+				check_variable = { gdp_per_capita > 89.999 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = {
+						original_tag = CHI
+						original_tag = SOV
+					}
+					check_variable = { gdp_per_capita < 7.000 }
+				}
+			}
+		}
+	}
+
+##Oil Section
+	fuel_silos = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_silos" }
+		path = {
+			leads_to_tech = early_renewables
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fuel_refining
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = energy_efficiency
+		 	research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fuel_efficiency
+		 	research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = utility_scale_battery_storage
+		 	research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = electrification_1
+		 	research_cost_coeff = 1
+		}
+		enable_building = {
+			building = synthetic_refinery
+			level = 20
+		}
+		enable_building = {
+			building = fuel_silo
+			level = 5
+		}
+		research_cost = 1.5
+		start_year = 1985
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1985 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				oil > 50
+			}
+			modifier = {
+				factor = 3
+				oil > 150
+			}
+			modifier = {
+				factor = 4
+				oil > 250
+			}
+
+			modifier = {
+				factor = 2
+				num_of_military_factories > 10
+			}
+			modifier = {
+				factor = 3
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 30
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 40
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 50
+			}
+
+			modifier = {
+				factor = 2
+				num_of_naval_factories > 10
+			}
+			modifier = {
+				factor = 3
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 4
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				factor = 4
+				num_of_naval_factories > 40
+			}
+			modifier = {
+				factor = 4
+				num_of_naval_factories > 50
+			}
+			modifier = {
+				add = 1000
+				is_major = yes
+			}
+		}
+		show_effect_as_desc = yes
+	}
+	electrification_1 = {
+		non_electric_fuel_consumption_modifier = -0.15
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_1"
+		}
+
+		path = {
+			leads_to_tech = electrification_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 1995
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @1995 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	electrification_2 = {
+		non_electric_fuel_consumption_modifier = -0.10
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_2"
+		}
+
+		path = {
+			leads_to_tech = electrification_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2000
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2000 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	electrification_3 = {
+		non_electric_fuel_consumption_modifier = -0.10
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_3"
+		}
+
+		path = {
+			leads_to_tech = electrification_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2005
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2005 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2003.1.1
+			}
+		}
+	}
+	electrification_4 = {
+		non_electric_fuel_consumption_modifier = -0.075
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_4"
+		}
+
+		path = {
+			leads_to_tech = electrification_5
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2010
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2010 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2008.1.1
+			}
+		}
+	}
+	electrification_5 = {
+		non_electric_fuel_consumption_modifier = -0.075
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_5"
+		}
+
+		path = {
+			leads_to_tech = electrification_6
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2015
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2015 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2013.1.1
+			}
+		}
+	}
+	electrification_6 = {
+		non_electric_fuel_consumption_modifier = -0.075
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_6"
+		}
+
+		path = {
+			leads_to_tech = electrification_7
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2020
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2020 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2018.1.1
+			}
+		}
+	}
+	electrification_7 = {
+		non_electric_fuel_consumption_modifier = -0.05
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_7"
+		}
+
+		path = {
+			leads_to_tech = electrification_8
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2025
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2025 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2023.1.1
+			}
+		}
+	}
+	electrification_8 = {
+		non_electric_fuel_consumption_modifier = -0.05
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_8"
+		}
+
+		path = {
+			leads_to_tech = electrification_9
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2030
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2030 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2028.1.1
+			}
+		}
+	}
+	electrification_9 = {
+		non_electric_fuel_consumption_modifier = -0.05
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_9"
+		}
+
+		path = {
+			leads_to_tech = electrification_10
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2035
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2035 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2033.1.1
+			}
+		}
+	}
+	electrification_10 = {
+		non_electric_fuel_consumption_modifier = -0.05
+		pop_energy_use_multiplier = 0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech electrification_10"
+		}
+
+		research_cost = 3
+		start_year = 2040
+		folder = {
+			name = civilian_folder
+			position = { x = -4 y = @2040 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 2038.1.1
+			}
+		}
+	}
+	utility_scale_battery_storage = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech utility_scale_battery_storage" }
+
+		custom_modifier_tooltip = utility_scale_battery_storage_tt
+
+		path = {
+			leads_to_tech = utility_scale_battery_storage2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2000
+		folder = {
+			name = civilian_folder
+			position = { x = -2 y = @2000 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	utility_scale_battery_storage2 = {
+		battery_park_construction_cost = -0.35
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech utility_scale_battery_storage2"
+			ingame_update_setup = yes
+		}
+
+		path = {
+			leads_to_tech = utility_scale_battery_storage3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2010
+		folder = {
+			name = civilian_folder
+			position = { x = -2 y = @2010 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	utility_scale_battery_storage3 = {
+		battery_park_construction_cost = -0.25
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech utility_scale_battery_storage3"
+			ingame_update_setup = yes
+		}
+
+		path = {
+			leads_to_tech = utility_scale_battery_storage4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2020
+		folder = {
+			name = civilian_folder
+			position = { x = -2 y = @2020 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	utility_scale_battery_storage4 = {
+		battery_park_construction_cost = -0.15
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech utility_scale_battery_storage4"
+			ingame_update_setup = yes
+		}
+
+		path = {
+			leads_to_tech = utility_scale_battery_storage5
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2030
+		folder = {
+			name = civilian_folder
+			position = { x = -2 y = @2030 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	utility_scale_battery_storage5 = {
+		battery_park_construction_cost = -0.1
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech utility_scale_battery_storage5"
+			ingame_update_setup = yes
+		}
+
+		research_cost = 3
+		start_year = 2040
+		folder = {
+			name = civilian_folder
+			position = { x = -2 y = @2040 }
+		}
+
+		categories = {
+			industry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	fuel_efficiency = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_efficiency" }
+		fossil_pp_energy_generation_modifier = 0.10
+		fossil_pp_fuel_consumption_modifier = -0.10
+
+		path = {
+			leads_to_tech = fuel_efficiency2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.50
+		start_year = 1990
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @1990 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+	fuel_efficiency2 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_efficiency2" }
+		fossil_pp_energy_generation_modifier = 0.10
+		fossil_pp_fuel_consumption_modifier = -0.10
+
+		path = {
+			leads_to_tech = fuel_efficiency3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.50
+		start_year = 2000
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2000 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+	fuel_efficiency3 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_efficiency3" }
+		fossil_pp_energy_generation_modifier = 0.10
+		fossil_pp_fuel_consumption_modifier = -0.10
+
+		path = {
+			leads_to_tech = fuel_efficiency4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.50
+		start_year = 2010
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2010 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				factor = 0
+				date < 2009.1.1
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+	fuel_efficiency4 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_efficiency4" }
+		fossil_pp_energy_generation_modifier = 0.10
+		fossil_pp_fuel_consumption_modifier = -0.10
+
+		path = {
+			leads_to_tech = fuel_efficiency5
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.50
+		start_year = 2020
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2020 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				factor = 0
+				date < 2018.1.1
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+	fuel_efficiency5 = {
+		fossil_pp_energy_generation_modifier = 0.10
+		fossil_pp_fuel_consumption_modifier = -0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech fuel_efficiency5"
+		}
+
+		path = {
+			leads_to_tech = fuel_efficiency6
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.50
+		start_year = 2030
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2030 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				factor = 0
+				date < 2028.1.1
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+	fuel_efficiency6 = {
+		fossil_pp_energy_generation_modifier = 0.10
+		fossil_pp_fuel_consumption_modifier = -0.10
+		on_research_complete = {
+			log = "[GetDateText]: [Root.GetName]: add tech fuel_efficiency6"
+		}
+
+		research_cost = 2.50
+		start_year = 2040
+		folder = {
+			name = civilian_folder
+			position = { x = 6 y = @2040 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				factor = 0
+				date < 2038.1.1
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+	energy_efficiency = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 1990
+
+		path = {
+			leads_to_tech = energy_efficiency2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @1990 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency2 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 1995
+
+		path = {
+			leads_to_tech = energy_efficiency3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @1995 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency3 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 2000
+
+		path = {
+			leads_to_tech = energy_efficiency4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @2000 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency4 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 2005
+
+		path = {
+			leads_to_tech = energy_efficiency5
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @2005 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0
+				date < 2004.1.1
+			}
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency5 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 2010
+
+		path = {
+			leads_to_tech = energy_efficiency6
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @2010 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0
+				date < 2009.1.1
+			}
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency6 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 2015
+
+		path = {
+			leads_to_tech = energy_efficiency7
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @2015 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0
+				date < 2013.1.1
+			}
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency7 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 2025
+
+		path = {
+			leads_to_tech = energy_efficiency8
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @2025 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0
+				date < 2023.1.1
+			}
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency8 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 2035
+
+		path = {
+			leads_to_tech = energy_efficiency9
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @2035 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0
+				date < 2033.1.1
+			}
+		}
+
+		show_effect_as_desc = yes
+	}
+	energy_efficiency9 = {
+
+		energy_use_modifier_civs = -0.05
+		energy_use_modifier_offices = -0.05
+		energy_use_modifier_mils = -0.05
+		energy_use_multiplier = -0.05
+		start_year = 2045
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 4 y = @2045 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0
+				date < 2043.1.1
+			}
+		}
+
+		show_effect_as_desc = yes
+	}
+	fuel_refining = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_refining" }
+		fuel_gain_factor = 0.25
+
+		path = {
+			leads_to_tech = fuel_refining2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 1990
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1990 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				OR = { ##OPEC and major oil producing nations
+					tag = USA
+					tag = NIG
+					tag = SOV
+					tag = SAU
+					tag = BHR
+					tag = PER
+					tag = OMA
+					tag = UAE
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				add = 1000
+				is_major = yes
+			}
+		}
+		show_effect_as_desc = yes
+	}
+	fuel_refining2 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_refining2" }
+		fuel_gain_factor = 0.2
+
+		path = {
+			leads_to_tech = fuel_refining3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 1995
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1995 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				tag = USA
+				factor = 0.5
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				add = 1000
+				is_major = yes
+			}
+		}
+		show_effect_as_desc = yes
+	}
+	fuel_refining3 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_refining3" }
+		fuel_gain_factor = 0.2
+
+		path = {
+			leads_to_tech = fuel_refining4
+			research_cost_coeff = 1
+		}
+		research_cost = 3
+		start_year = 2000
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2000 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				tag = USA
+				factor = 0.5
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				add = 1000
+				is_major = yes
+			}
+		}
+		show_effect_as_desc = yes
+	}
+	fuel_refining4 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_refining4" }
+		fuel_gain_factor = 0.15
+
+		path = {
+			leads_to_tech = fuel_refining5
+			research_cost_coeff = 1
+		}
+		research_cost = 3
+		start_year = 2010
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2010 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				tag = USA
+				factor = 0.5
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				add = 1000
+				is_major = yes
+			}
+			modifier = {
+				factor = 0
+				date < 2008.1.1
+			}
+		}
+		show_effect_as_desc = yes
+	}
+	fuel_refining5 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_refining5" }
+		fuel_gain_factor = 0.15
+
+		research_cost = 3
+		start_year = 2020
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2020 }
+		}
+
+		path = {
+			leads_to_tech = fuel_refining6
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				tag = USA
+				factor = 0.5
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 40
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 40
+			}
+			modifier = {
+				add = 1000
+				is_major = yes
+			}
+			modifier = {
+				factor = 0
+				date < 2018.1.1
+			}
+		}
+		show_effect_as_desc = yes
+	}
+	fuel_refining6 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fuel_refining6" }
+		fuel_gain_factor = 0.1
+
+		research_cost = 3
+		start_year = 2030
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2030 }
+		}
+
+		path = {
+			leads_to_tech = futuristic_oil_refining
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				tag = USA
+				factor = 0.5
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 40
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 40
+			}
+			modifier = {
+				add = 1000
+				is_major = yes
+			}
+			modifier = {
+				factor = 0
+				date < 2028.1.1
+			}
+		}
+		show_effect_as_desc = yes
+	}
+	futuristic_oil_refining = {
+		fuel_gain_factor = 0.1
+
+		research_cost = 2
+		start_year = 2040
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2040 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+		}
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				factor = 0
+				date < 2038.1.1
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+	early_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.60
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech early_renewables" }
+
+		path = {
+			leads_to_tech = renewables
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 1990
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @1990 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				OR = {
+					tag = GER
+					tag = ITA
+					tag = JAP
+				}
+				has_war = yes
+				factor = 5
+			}
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+	renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.60
+
+		start_year = 1995
+
+		path = {
+			leads_to_tech = improved_renewables
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @1995 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GER
+					tag = ITA
+					tag = JAP
+				}
+				has_war = yes
+				factor = 25
+			}
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+	improved_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.70
+		path = {
+			leads_to_tech = advanced_renewables
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2000
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2000 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GER
+					tag = ITA
+					tag = JAP
+				}
+				has_war = yes
+				factor = 25
+			}
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				original_tag = GER
+				has_war = yes
+				factor = 3
+			}
+			modifier = {
+				factor = 2
+				oil < 50
+			}
+
+			modifier = {
+				date < 2000.1.1
+				factor = 0
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+	advanced_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.90
+
+		path = {
+			leads_to_tech = modern_renewables
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2005
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2005 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 25
+			}
+			modifier = {
+				date < 2004.1.1
+				factor = 0
+			}
+		}
+
+		show_effect_as_desc = yes
+	}
+	modern_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.90
+
+		research_cost = 2
+		start_year = 2010
+
+		path = {
+			leads_to_tech = improved_modern_renewables
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x =0 y =  @2010 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				date < 2009.1.1
+				factor = 0
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+	improved_modern_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.90
+
+		research_cost = 2
+		start_year = 2015
+
+		path = {
+			leads_to_tech = advanced_modern_renewables
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x =0 y =  @2015 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				date < 2014.1.1
+				factor = 0
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+	advanced_modern_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.6
+
+		research_cost = 2
+		start_year = 2020
+
+		path = {
+			leads_to_tech = early_futuristic_renewables
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x =0 y =  @2020 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				date < 2019.1.1
+				factor = 0
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+	early_futuristic_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.6
+
+		research_cost = 2
+		start_year = 2030
+
+		path = {
+			leads_to_tech = futuristic_renewables
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x =0 y =  @2030 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				date < 2029.1.1
+				factor = 0
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+	futuristic_renewables = {
+		renewable_energy_gain_multiplier = 0.3
+		production_speed_synthetic_refinery_factor = 0.6
+
+		research_cost = 2
+		start_year = 2040
+
+		folder = {
+			name = civilian_folder
+			position = { x =0 y =  @2040 }
+		}
+
+		categories = {
+			Cat_FUEL_OIL
+			industry
+			cat_renewable
+		}
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				oil > 50
+			}
+			modifier = {
+				factor = 0.5
+				oil > 150
+			}
+			modifier = {
+				factor = 0.5
+				oil > 250
+			}
+			modifier = {
+				date < 2039.1.1
+				factor = 0
+			}
+		}
+
+		ai_research_weights = {
+			oil = -2.0
+		}
+
+		show_effect_as_desc = yes
+	}
+##Construction && Excavation Tech
+	construction1 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction1" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+
+		path = {
+			leads_to_tech = construction2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = excavation1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1985
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @1985 }
+		}
+
+		ai_will_do = {
+			factor = 8
+			modifier = {
+				factor = 1.25
+				num_of_factories < 100
+			}
+			modifier = { ##Simulate focus on other techs
+				factor = 0.75
+				num_of_factories > 100
+			}
+			modifier = {
+				factor = 5
+				date > "1980.1.1"
+			}
+		}
+	}
+	excavation1 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation1" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1985
+		categories = {
+			industry
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1985 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+		}
+	}
+	construction2 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction2" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+
+		path = {
+			leads_to_tech = construction3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = excavation2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1995
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @1995 }
+		}
+
+		ai_will_do = {
+			factor = 8
+
+			modifier = {
+				factor = 10
+				date > "1997.1.1"
+			}
+		}
+	}
+	excavation2 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation2" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1995
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1995 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+		}
+	}
+	construction3 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction3" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+
+		path = {
+			leads_to_tech = construction4
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = excavation3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2000
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2000 }
+		}
+
+		ai_will_do = {
+			factor = 10
+
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+
+			modifier = {
+				factor = 3
+				date > "2002.1.1"
+			}
+		}
+	}
+	excavation3 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation3" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2000
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2000 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+		}
+	}
+	construction4 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction4" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+		global_building_slots_factor = 0.075
+
+		path = {
+			leads_to_tech = construction5
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = excavation4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2005
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2005 }
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 10
+				date > "2007.1.1"
+			}
+			modifier = {
+				factor = 0
+				date < 2003.1.1
+			}
+		}
+	}
+	excavation4 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation4" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2005
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2005 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+			modifier = {
+				factor = 0
+				date < 2003.1.1
+			}
+		}
+	}
+	construction5 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction5" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+		global_building_slots_factor = 0.075
+
+		path = {
+			leads_to_tech = excavation5
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = construction6
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 2
+		start_year = 2010
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2010 }
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 10
+				date > "2012.1.1"
+			}
+			modifier = {
+				factor = 0
+				date < 2008.1.1
+			}
+		}
+	}
+	excavation5 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation5" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2010
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2010 }
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+			modifier = {
+				factor = 0
+				date < 2008.1.1
+			}
+		}
+	}
+	construction6 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction6" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+		global_building_slots_factor = 0.075
+
+		path = {
+			leads_to_tech = excavation6
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = construction7
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 2
+		start_year = 2015
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2015 }
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 10
+				date > "2017.1.1"
+			}
+			modifier = {
+				factor = 0
+				date < 2013.1.1
+			}
+		}
+	}
+	excavation6 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation6" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2015
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2015 }
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+			modifier = {
+				factor = 0
+				date < 2013.1.1
+			}
+		}
+	}
+	construction7 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction7" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+		global_building_slots_factor = 0.075
+
+		path = {
+			leads_to_tech = excavation7
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = construction8
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2025
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2025 }
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 10
+				date > "2027.1.1"
+			}
+			modifier = {
+				factor = 0
+				date < 2023.1.1
+			}
+		}
+	}
+	excavation7 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation7" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2025
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2025 }
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+			modifier = {
+				factor = 0
+				date < 2023.1.1
+			}
+		}
+	}
+	construction8 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction8" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+		global_building_slots_factor = 0.075
+
+		path = {
+			leads_to_tech = excavation8
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = construction9
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2035
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2035 }
+		}
+
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 10
+				date > "2037.1.1"
+			}
+			modifier = {
+				factor = 0
+				date < 2033.1.1
+			}
+		}
+	}
+	excavation8 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation7" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2035
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2035 }
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+			modifier = {
+				factor = 0
+				date < 2033.1.1
+			}
+		}
+	}
+	construction9 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech construction9" }
+		production_speed_buildings_factor = 0.075
+		industry_repair_factor = 0.075
+		global_building_slots_factor = 0.075
+
+		path = {
+			leads_to_tech = excavation9
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2045
+
+		categories = {
+			industry
+			construction_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 0 y = @2045 }
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 10
+				date > "2047.1.1"
+			}
+			modifier = {
+				factor = 0
+				date < 2043.1.1
+			}
+		}
+	}
+	excavation9 = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech excavation7" }
+		local_resources_factor = 0.075
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2045
+
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2045 }
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					tungsten > 0
+					steel > 0
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 64
+					aluminium > 64
+					tungsten > 64
+					steel > 64
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_idea = rentier_state
+					has_idea = globalized_trade_economy
+					has_idea = export_economy
+				}
+			}
+			modifier = {
+				factor = 0
+				date < 2043.1.1
+			}
+		}
+	}
+
+	# Infrastructure tree
+	integrated_transportation_system = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech integrated_transportation_system" }
+
+		path = {
+			leads_to_tech = post_conventional_rail
+			research_cost_coeff = 1
+		}
+
+		production_speed_buildings_factor = 0.02
+
+		research_cost = 2
+		start_year = 1985
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1985 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	post_conventional_rail = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech post_conventional_rail" }
+
+		path = {
+			leads_to_tech = early_freight_locomotive
+			research_cost_coeff = 1
+		}
+
+		enable_building = {
+			building = rail_way
+			level = 1
+		}
+
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1990 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	early_freight_locomotive = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech early_freight_locomotive" }
+
+		enable_equipments = {
+			train_equipment_1
+		}
+
+		path = {
+			leads_to_tech = early_high_speed_rail
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1995
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @1995 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	early_high_speed_rail = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech early_high_speed_rail" }
+
+		path = {
+			leads_to_tech = high_speed_rail
+			research_cost_coeff = 1
+		}
+
+		modifier = {
+			production_speed_rail_way_factor = 1
+		}
+
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2000 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	high_speed_rail = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech high_speed_rail" }
+
+		path = {
+			leads_to_tech = modern_high_speed_rail
+			research_cost_coeff = 1
+		}
+
+		modifier = {
+			production_speed_rail_way_factor = 2
+		}
+
+		research_cost = 2
+		start_year = 2005
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2005 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				date < 2003.1.1
+			}
+		}
+	}
+	modern_high_speed_rail = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech modern_high_speed_rail" }
+
+		path = {
+			leads_to_tech = freight_locomotive
+			research_cost_coeff = 1
+		}
+
+		modifier = {
+			production_speed_rail_way_factor = 3
+		}
+
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2010 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				date < 2008.1.1
+			}
+		}
+	}
+	freight_locomotive = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech freight_locomotive" }
+
+		enable_equipments = {
+			train_equipment_2
+		}
+
+		path = {
+			leads_to_tech = early_maglev_rail
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2015
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2015 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				date < 2013.1.1
+			}
+		}
+	}
+	early_maglev_rail = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech early_maglev_rail" }
+
+		path = {
+			leads_to_tech = standardised_maglev_rail
+			research_cost_coeff = 1
+		}
+
+		modifier = {
+			production_speed_rail_way_factor = 4
+		}
+
+		research_cost = 2
+		start_year = 2025
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2025 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				date < 2023.1.1
+			}
+		}
+	}
+	standardised_maglev_rail = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech standardised_maglev_rail" }
+
+		path = {
+			leads_to_tech = modern_freight_locomotive
+			research_cost_coeff = 1
+		}
+
+		modifier = {
+			production_speed_rail_way_factor = 5
+		}
+
+		research_cost = 2
+		start_year = 2035
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2035 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				date < 2033.1.1
+			}
+		}
+	}
+	modern_freight_locomotive = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech modern_freight_locomotive" }
+
+		enable_equipments = {
+			train_equipment_3
+		}
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2045
+		folder = {
+			name = civilian_folder
+			position = { x = 2 y = @2045 }
+		}
+
+		categories = {
+			industry
+			Cat_infrastructure
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				date < 2043.1.1
+			}
+		}
+	}
+}

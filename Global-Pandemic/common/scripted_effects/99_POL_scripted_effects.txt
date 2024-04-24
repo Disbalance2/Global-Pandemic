@@ -1,0 +1,1540 @@
+### SRE = State Run Economy
+
+# clears all arrays and sets variables to 0
+sre_clear = {
+	set_variable = { POL.free_factories = 0 }
+	set_variable = { POL.machine_tools_factories = 0 }
+	set_variable = { POL.heavy_machinery_factories = 0 }
+	set_variable = { POL.industrial_materials_factories = 0 }
+
+	set_variable = { POL.machine_tools_req = 0 }
+	set_variable = { POL.machine_tools_current = 0 }
+	set_variable = { POL.heavy_machinery_req = 0 }
+	set_variable = { POL.heavy_machinery_current = 0 }
+	set_variable = { POL.industrial_materials_req = 0 }
+	set_variable = { POL.industrial_materials_current = 0 }
+}
+
+# needs to be called when first enabling the mechanic
+sre_initialize = {
+	add_ideas = {
+		POL_sre_medium_effort
+		POL_sre_medium_success
+	}
+
+	# how much factories produce per month
+	set_variable = { POL.production_base = 10 }
+
+	# constants to determine how much stuff is needed, act as modifiers
+	set_variable = { POL.const_civ_to_tools_modifier = 10 }
+	set_variable = { POL.const_civ_to_machinery_modifier = 5 }
+	set_variable = { POL.const_civ_to_materials_modifier = 3 }
+
+	set_variable = { POL.const_mil_to_tools_modifier = 3 }
+	set_variable = { POL.const_mil_to_machinery_modifier = 10 }
+	set_variable = { POL.const_mil_to_materials_modifier = 5 }
+
+	set_variable = { POL.const_dock_to_tools_modifier = 5 }
+	set_variable = { POL.const_dock_to_machinery_modifier = 3 }
+	set_variable = { POL.const_dock_to_materials_modifier = 10 }
+
+	set_variable = { POL.const_factories_effort_min = 0.075 }
+	set_variable = { POL.const_factories_effort_med = 0.15 }
+	set_variable = { POL.const_factories_effort_max = 0.225 }
+}
+
+# Calculates how much Machine Tools country needs per year
+# Result: POL.machine_tools_req - contains required number
+sre_calculate_tools = {
+	set_temp_variable = { civ_tools_count = num_of_civilian_factories }
+	multiply_temp_variable = { civ_tools_count = POL.const_civ_to_tools_modifier }
+
+	set_temp_variable = { mil_tools_count = num_of_military_factories }
+	multiply_temp_variable = { mil_tools_count = POL.const_mil_to_tools_modifier }
+
+	set_temp_variable = { dock_tools_count = num_of_naval_factories }
+	multiply_temp_variable = { dock_tools_count = POL.const_dock_to_tools_modifier }
+
+	set_variable = { POL.machine_tools_req = 0 }
+	add_to_variable = { POL.machine_tools_req = civ_tools_count }
+	add_to_variable = { POL.machine_tools_req = mil_tools_count }
+	add_to_variable = { POL.machine_tools_req = dock_tools_count }
+
+	round_variable = POL.machine_tools_req
+}
+
+# Calculates how much heavy machinery country needs per year
+# Result: POL.heavy_machinery_req - contains required number
+sre_calculate_machinery = {
+	set_temp_variable = { civ_machinery_count = num_of_civilian_factories }
+	multiply_temp_variable = { civ_machinery_count = POL.const_civ_to_machinery_modifier }
+
+	set_temp_variable = { mil_machinery_count = num_of_military_factories }
+	multiply_temp_variable = { mil_machinery_count = POL.const_mil_to_machinery_modifier }
+
+	set_temp_variable = { dock_machinery_count = num_of_naval_factories }
+	multiply_temp_variable = { dock_machinery_count = POL.const_dock_to_machinery_modifier }
+
+	set_variable = { POL.heavy_machinery_req = 0 }
+	add_to_variable = { POL.heavy_machinery_req = civ_machinery_count }
+	add_to_variable = { POL.heavy_machinery_req = mil_machinery_count }
+	add_to_variable = { POL.heavy_machinery_req = dock_machinery_count }
+
+	round_variable = POL.heavy_machinery_req
+}
+
+# Calculates how much industrial materials country needs per year
+# Result: POL.industrial_materials_req - contains required number
+sre_calculate_materials = {
+	set_temp_variable = { civ_materials_count = num_of_civilian_factories }
+	multiply_temp_variable = { civ_materials_count = POL.const_civ_to_materials_modifier }
+
+	set_temp_variable = { mil_materials_count = num_of_military_factories }
+	multiply_temp_variable = { mil_materials_count = POL.const_mil_to_materials_modifier }
+
+	set_temp_variable = { dock_materials_count = num_of_naval_factories }
+	multiply_temp_variable = { dock_materials_count = POL.const_dock_to_materials_modifier }
+
+	set_variable = { POL.industrial_materials_req = 0 }
+	add_to_variable = { POL.industrial_materials_req = civ_materials_count }
+	add_to_variable = { POL.industrial_materials_req = mil_materials_count }
+	add_to_variable = { POL.industrial_materials_req = dock_materials_count }
+
+	round_variable = POL.industrial_materials_req
+}
+
+# Calculates current amount of factories available to SRE
+sre_calculate_number_of_factories_and_clear = {
+	set_variable = { POL.machine_tools_factories = 0 }
+	set_variable = { POL.heavy_machinery_factories = 0 }
+	set_variable = { POL.industrial_materials_factories = 0 }
+	set_temp_variable = { buf = num_of_factories }
+
+	if = {
+		limit = { has_idea = POL_sre_low_effort }
+
+		multiply_temp_variable = { buf = POL.const_factories_effort_min }
+		set_variable = { POL.free_factories = buf }
+	}
+	else_if = {
+		limit = { has_idea = POL_sre_max_effort }
+
+		multiply_temp_variable = { buf = POL.const_factories_effort_max }
+		set_variable = { POL.free_factories = buf }
+	}
+	else = {
+		multiply_temp_variable = { buf = POL.const_factories_effort_med }
+		set_variable = { POL.free_factories = buf }
+	}
+
+	round_variable = POL.free_factories
+}
+
+# Decreases success - lowers buffs from national spirits
+sre_decrease_success = {
+	if = {
+		limit = { has_idea = POL_sre_highest_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_highest_success
+			add_idea = POL_sre_high_success
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_sre_high_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_high_success
+			add_idea = POL_sre_medium_success
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_sre_medium_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_medium_success
+			add_idea = POL_sre_low_success
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_sre_low_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_low_success
+			add_idea = POL_sre_lowest_success
+		}
+	}
+	else_if = {
+		# lets keep if, just in case something breaks,
+		# we do not wont to punish player for that
+		limit = { has_idea = POL_sre_low_success }
+
+		add_stability = -0.05
+		add_political_power = -100
+	}
+}
+
+# Increases success - increases buffs from spirits
+sre_increase_success = {
+	if = {
+		limit = { has_idea = POL_sre_lowest_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_lowest_success
+			add_idea = POL_sre_low_success
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_sre_low_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_low_success
+			add_idea = POL_sre_medium_success
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_sre_medium_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_medium_success
+			add_idea = POL_sre_high_success
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_sre_high_success }
+
+		swap_ideas = {
+			remove_idea = POL_sre_high_success
+			add_idea = POL_sre_highest_success
+		}
+	}
+	else_if = {
+		# lets keep if, just in case something breaks,
+		# we do not wont to punish player for that
+		limit = { has_idea = POL_sre_highest_success }
+
+		add_stability = 0.02
+		add_war_support = 0.01
+		add_political_power = 50
+	}
+}
+
+# Increases land army - increases buffs from spirits
+sre_army_reforming = {
+	if = {
+		limit = { has_idea = POL_outdated_army_idea }
+
+		swap_ideas = {
+			remove_idea = POL_outdated_army_idea
+			add_idea = POL_beginning_of_army_reorganisation_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_beginning_of_army_reorganisation_idea }
+
+		swap_ideas = {
+			remove_idea = POL_beginning_of_army_reorganisation_idea
+			add_idea = POL_disciplined_army_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_disciplined_army_idea }
+
+		swap_ideas = {
+			remove_idea = POL_disciplined_army_idea
+			add_idea = POL_modern_military_forces_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_modern_military_forces_idea }
+
+		swap_ideas = {
+			remove_idea = POL_modern_military_forces_idea
+			add_idea = POL_polskie_sily_zbrojne_idea
+		}
+	}
+}
+
+sre_air_reforming = {
+	if = {
+		limit = { has_idea = POL_soviet_era_air_idea }
+
+		swap_ideas = {
+			remove_idea = POL_soviet_era_air_idea
+			add_idea = POL_change_of_air_doctrine_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_change_of_air_doctrine_idea }
+
+		swap_ideas = {
+			remove_idea = POL_change_of_air_doctrine_idea
+			add_idea = POL_new_pilot_training_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_new_pilot_training_idea }
+
+		swap_ideas = {
+			remove_idea = POL_new_pilot_training_idea
+			add_idea = POL_contemporary_plane_systems_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_contemporary_plane_systems_idea }
+
+		swap_ideas = {
+			remove_idea = POL_contemporary_plane_systems_idea
+			add_idea = POL_polskie_sily_powietrzne_idea
+		}
+	}
+}
+
+sre_navy_reforming = {
+	if = {
+		limit = { has_idea = POL_token_fleet_idea }
+
+		swap_ideas = {
+			remove_idea = POL_token_fleet_idea
+			add_idea = POL_increased_production_of_ships_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_increased_production_of_ships_idea }
+
+		swap_ideas = {
+			remove_idea = POL_increased_production_of_ships_idea
+			add_idea = POL_baltic_fleet_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_baltic_fleet_idea }
+
+		swap_ideas = {
+			remove_idea = POL_baltic_fleet_idea
+			add_idea = POL_preparing_for_deep_waters_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_preparing_for_deep_waters_idea }
+
+		swap_ideas = {
+			remove_idea = POL_preparing_for_deep_waters_idea
+			add_idea = POL_polska_pancerna_flota_idea
+		}
+	}
+}
+
+# Increases land army - increases buffs from spirits
+sre_army_reforming = {
+	if = {
+		limit = { has_idea = POL_outdated_army_idea }
+
+		swap_ideas = {
+			remove_idea = POL_outdated_army_idea
+			add_idea = POL_beginning_of_army_reorganisation_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_beginning_of_army_reorganisation_idea }
+
+		swap_ideas = {
+			remove_idea = POL_beginning_of_army_reorganisation_idea
+			add_idea = POL_disciplined_army_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_disciplined_army_idea }
+
+		swap_ideas = {
+			remove_idea = POL_disciplined_army_idea
+			add_idea = POL_modern_military_forces_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_modern_military_forces_idea }
+
+		swap_ideas = {
+			remove_idea = POL_modern_military_forces_idea
+			add_idea = POL_polskie_sily_zbrojne_idea
+		}
+	}
+}
+
+sre_air_reforming = {
+	if = {
+		limit = { has_idea = POL_soviet_era_air_idea }
+
+		swap_ideas = {
+			remove_idea = POL_soviet_era_air_idea
+			add_idea = POL_change_of_air_doctrine_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_change_of_air_doctrine_idea }
+
+		swap_ideas = {
+			remove_idea = POL_change_of_air_doctrine_idea
+			add_idea = POL_new_pilot_training_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_new_pilot_training_idea }
+
+		swap_ideas = {
+			remove_idea = POL_new_pilot_training_idea
+			add_idea = POL_contemporary_plane_systems_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_contemporary_plane_systems_idea }
+
+		swap_ideas = {
+			remove_idea = POL_contemporary_plane_systems_idea
+			add_idea = POL_polskie_sily_powietrzne_idea
+		}
+	}
+}
+
+sre_navy_reforming = {
+	if = {
+		limit = { has_idea = POL_token_fleet_idea }
+
+		swap_ideas = {
+			remove_idea = POL_token_fleet_idea
+			add_idea = POL_increased_production_of_ships_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_increased_production_of_ships_idea }
+
+		swap_ideas = {
+			remove_idea = POL_increased_production_of_ships_idea
+			add_idea = POL_baltic_fleet_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_baltic_fleet_idea }
+
+		swap_ideas = {
+			remove_idea = POL_baltic_fleet_idea
+			add_idea = POL_preparing_for_deep_waters_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_preparing_for_deep_waters_idea }
+
+		swap_ideas = {
+			remove_idea = POL_preparing_for_deep_waters_idea
+			add_idea = POL_polska_pancerna_flota_idea
+		}
+	}
+}
+
+# UPR effects
+sre_walesa_opposition_idea = {
+	if = {
+		limit = { has_idea = POL_walesa_opposition_idea }
+
+		swap_ideas = {
+			remove_idea = POL_walesa_opposition_idea
+			add_idea = POL_walesa_opposition2_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_walesa_opposition2_idea }
+
+		swap_ideas = {
+			remove_idea = POL_walesa_opposition2_idea
+			add_idea = POL_walesa_opposition3_idea
+		}
+	}
+}
+
+sre_korwin_opposition_idea = {
+	if = {
+		limit = { has_idea = POL_korwin_opposition_idea }
+
+		swap_ideas = {
+			remove_idea = POL_korwin_opposition_idea
+			add_idea = POL_korwin_opposition2_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_korwin_opposition2_idea }
+
+		swap_ideas = {
+			remove_idea = POL_korwin_opposition2_idea
+			add_idea = POL_korwin_opposition3_idea
+		}
+	}
+}
+
+sre_home_defence_idea = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = POL_home_defence_idea
+					has_idea = POL_home_defence2_idea
+					has_idea = POL_home_defence3_idea
+				}
+			}
+		}
+
+		add_timed_idea = { idea = POL_home_defence_idea days = 365 }
+	}
+	else_if = {
+		limit = { has_idea = POL_home_defence_idea }
+
+		remove_ideas = POL_home_defence_idea
+		add_timed_idea = { idea = POL_home_defence2_idea days = 365 }
+	}
+	else_if = {
+		limit = { has_idea = POL_home_defence2_idea }
+
+		remove_ideas = POL_home_defence2_idea
+		add_timed_idea = { idea = POL_home_defence3_idea days = 365 }
+	}
+}
+
+sre_polish_ukrainian_war_idea = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = POL_polish_ukrainian_war_idea
+					has_idea = POL_polish_ukrainian_war2_idea
+					has_idea = POL_polish_ukrainian_war3_idea
+					has_idea = POL_polish_ukrainian_war4_idea
+					has_idea = POL_polish_ukrainian_war5_idea
+				}
+			}
+		}
+
+		add_ideas = POL_polish_ukrainian_war_idea
+	}
+	else_if = {
+		limit = { has_idea = POL_polish_ukrainian_war_idea }
+
+		swap_ideas = {
+			remove_idea = POL_polish_ukrainian_war_idea
+			add_idea = POL_polish_ukrainian_war2_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_polish_ukrainian_war2_idea }
+
+		swap_ideas = {
+			remove_idea = POL_polish_ukrainian_war2_idea
+			add_idea = POL_polish_ukrainian_war3_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_polish_ukrainian_war3_idea }
+
+		swap_ideas = {
+			remove_idea = POL_polish_ukrainian_war3_idea
+			add_idea = POL_polish_ukrainian_war4_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_polish_ukrainian_war4_idea }
+
+		swap_ideas = {
+			remove_idea = POL_polish_ukrainian_war4_idea
+			add_idea = POL_polish_ukrainian_war5_idea
+		}
+	}
+	else_if = {
+		limit = { has_idea = POL_polish_ukrainian_war5_idea }
+
+		POL = {
+			country_event = poland.38
+		}
+	}
+}
+# Checks if all quotas are met. If they are - buffs, else - debuffs
+sre_check_if_met_quotas = {
+	set_temp_variable = { met_quotas = 1 }
+	if = {
+		limit = {
+			check_variable = { POL.machine_tools_current < POL.machine_tools_req }
+		}
+
+		set_temp_variable = { met_quotas = 0 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { POL.heavy_machinery_current < POL.heavy_machinery_req }
+		}
+
+		set_temp_variable = { met_quotas = 0 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { POL.industrial_materials_current < POL.industrial_materials_req }
+		}
+
+		set_temp_variable = { met_quotas = 0 }
+	}
+
+	if = {
+		limit = { check_variable = { met_quotas = 0 } }
+
+		sre_decrease_success = yes
+	}
+	else = {
+		sre_increase_success = yes
+	}
+}
+
+# calculates how much stuff we need, updates ideas, clears variables
+sre_recalculate_year_quotas = {
+	sre_check_if_met_quotas = yes
+
+	sre_calculate_tools = yes
+	sre_calculate_machinery = yes
+	sre_calculate_materials = yes
+
+	sre_calculate_number_of_factories_and_clear = yes
+
+	set_variable = { POL.machine_tools_current = 0 }
+	set_variable = { POL.heavy_machinery_current = 0 }
+	set_variable = { POL.industrial_materials_current = 0 }
+}
+
+# monthly summary of production
+sre_calculate_monthly_report = {
+	set_temp_variable = { tools_inc = POL.production_base }
+	multiply_temp_variable = { tools_inc = POL.machine_tools_factories }
+	add_to_variable = { POL.machine_tools_current = tools_inc }
+
+	set_temp_variable = { machinery_inc = POL.production_base }
+	multiply_temp_variable = { machinery_inc = POL.heavy_machinery_factories }
+	add_to_variable = { POL.heavy_machinery_current = machinery_inc }
+
+	set_temp_variable = { materials_inc = POL.production_base }
+	multiply_temp_variable = { materials_inc = POL.industrial_materials_factories }
+	add_to_variable = { POL.industrial_materials_current = materials_inc }
+}
+
+# POLSA construction
+sre_polsa_construction = {
+	if = {
+		limit = {
+			has_idea = POL_polsa_construction1_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_polsa_construction1_idea
+			add_idea = POL_polsa_construction2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_polsa_construction2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_polsa_construction2_idea
+			add_idea = POL_polsa_construction3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_polsa_construction3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_polsa_construction3_idea
+			add_idea = POL_polsa_construction4_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_polsa_construction4_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_polsa_construction4_idea
+			add_idea = POL_polsa_construction5_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_polsa_construction5_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_polsa_construction5_idea
+			add_idea = POL_polsa_construction6_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_polsa_construction6_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_polsa_construction6_idea
+			add_idea = POL_polsa_construction7_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_polsa_construction7_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_polsa_construction7_idea
+			add_idea = POL_polsa_construction8_idea
+		}
+	}
+}
+
+# The Fourth Power
+
+sre_fourth_power = {
+	if = {
+		limit = {
+			has_idea = POL_the_fourth_power_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_the_fourth_power_idea
+			add_idea = POL_the_fourth_power2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_the_fourth_power2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_the_fourth_power2_idea
+			add_idea = POL_the_fourth_power3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_the_fourth_power3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_the_fourth_power3_idea
+			add_idea = POL_the_fourth_power4_idea
+		}
+	}
+}
+
+# Global trade
+
+sre_global_trade = {
+	if = {
+		limit = {
+			NOT = {
+				has_idea = POL_global_trade_idea
+				has_idea = POL_global_trade2_idea
+				has_idea = POL_global_trade3_idea
+				has_idea = POL_global_trade4_idea
+			}
+		}
+		add_ideas = POL_global_trade_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_global_trade_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_global_trade_idea
+			add_idea = POL_global_trade2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_global_trade2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_global_trade2_idea
+			add_idea = POL_global_trade3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_global_trade3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_global_trade3_idea
+			add_idea = POL_global_trade4_idea
+		}
+	}
+}
+
+# Under our feet
+
+sre_under_our_feet = {
+	if = {
+		limit = {
+			has_idea = POL_everything_is_under_our_feet_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_everything_is_under_our_feet_idea
+			add_idea = POL_everything_is_under_our_feet2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_everything_is_under_our_feet2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_everything_is_under_our_feet2_idea
+			add_idea = POL_everything_is_under_our_feet3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_everything_is_under_our_feet3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_everything_is_under_our_feet3_idea
+			add_idea = POL_everything_is_under_our_feet4_idea
+		}
+	}
+}
+
+sre_economy_status_increase = {
+	if = {
+		limit = {
+			has_idea = POL_economy_status1_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status1_idea
+			add_idea = POL_economy_status2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status2_idea
+			add_idea = POL_economy_status3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status3_idea
+			add_idea = POL_economy_status4_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status4_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status4_idea
+			add_idea = POL_economy_status5_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status5_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status5_idea
+			add_idea = POL_economy_status6_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status6_idea
+		}
+		remove_ideas = POL_economy_status6_idea
+		add_timed_idea = { idea = POL_economy_status7_idea days = 140 }
+	}
+}
+
+sre_economy_status_decrease = {
+	if = {
+		limit = {
+			has_idea = POL_economy_status2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status2_idea
+			add_idea = POL_economy_status1_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status3_idea
+			add_idea = POL_economy_status2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status4_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status4_idea
+			add_idea = POL_economy_status3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status5_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status5_idea
+			add_idea = POL_economy_status4_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status6_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status6_idea
+			add_idea = POL_economy_status5_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status7_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_economy_status7_idea
+			add_idea = POL_economy_status6_idea
+		}
+	}
+}
+
+sre_economy_status_remove = {
+	if = {
+		limit = {
+			has_idea = POL_economy_status1_idea
+		}
+		remove_ideas = POL_economy_status1_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status2_idea
+		}
+		remove_ideas = POL_economy_status2_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status3_idea
+		}
+		remove_ideas = POL_economy_status3_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status4_idea
+		}
+		remove_ideas = POL_economy_status4_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status5_idea
+		}
+		remove_ideas = POL_economy_status5_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status6_idea
+		}
+		remove_ideas = POL_economy_status6_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_economy_status7_idea
+		}
+		remove_ideas = POL_economy_status7_idea
+	}
+}
+
+sre_solidarity_strength_increase = {
+	if = {
+		limit = {
+			has_idea = POL_solidarity_strength1_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_solidarity_strength1_idea
+			add_idea = POL_solidarity_strength2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_solidarity_strength2_idea
+			add_idea = POL_solidarity_strength3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_solidarity_strength3_idea
+			add_idea = POL_solidarity_strength4_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength4_idea
+		}
+		remove_ideas = POL_solidarity_strength4_idea
+		add_timed_idea = { idea = POL_solidarity_strength5_idea days = 365 }
+	}
+}
+
+sre_solidarity_strength_decrease = {
+	if = {
+		limit = {
+			has_idea = POL_solidarity_strength2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_solidarity_strength2_idea
+			add_idea = POL_solidarity_strength1_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_solidarity_strength3_idea
+			add_idea = POL_solidarity_strength2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength4_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_solidarity_strength4_idea
+			add_idea = POL_solidarity_strength3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength5_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_solidarity_strength5_idea
+			add_idea = POL_solidarity_strength4_idea
+		}
+	}
+}
+
+sre_solidarity_strength_remove = {
+	if = {
+		limit = {
+			has_idea = POL_solidarity_strength1_idea
+		}
+		remove_ideas = POL_solidarity_strength1_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength2_idea
+		}
+		remove_ideas = POL_solidarity_strength2_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength3_idea
+		}
+		remove_ideas = POL_solidarity_strength3_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength4_idea
+		}
+		remove_ideas = POL_solidarity_strength4_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_solidarity_strength5_idea
+		}
+		remove_ideas = POL_solidarity_strength5_idea
+	}
+}
+
+sre_communism_domination_increase = {
+	if = {
+		limit = {
+			has_idea = POL_communism_domination1_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_communism_domination1_idea
+			add_idea = POL_communism_domination2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_communism_domination2_idea
+			add_idea = POL_communism_domination3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_communism_domination3_idea
+			add_idea = POL_communism_domination4_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination4_idea
+		}
+		remove_ideas = POL_communism_domination4_idea
+		add_timed_idea = { idea = POL_communism_domination5_idea days = 365 }
+	}
+}
+
+sre_communism_domination_decrease = {
+	if = {
+		limit = {
+			has_idea = POL_communism_domination2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_communism_domination2_idea
+			add_idea = POL_communism_domination1_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_communism_domination3_idea
+			add_idea = POL_communism_domination2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination4_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_communism_domination4_idea
+			add_idea = POL_communism_domination3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination5_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_communism_domination5_idea
+			add_idea = POL_communism_domination4_idea
+		}
+	}
+}
+
+sre_communism_domination_remove = {
+	if = {
+		limit = {
+			has_idea = POL_communism_domination1_idea
+		}
+		remove_ideas = POL_communism_domination1_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination2_idea
+		}
+		remove_ideas = POL_communism_domination2_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination3_idea
+		}
+		remove_ideas = POL_communism_domination3_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination4_idea
+		}
+		remove_ideas = POL_communism_domination4_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_communism_domination5_idea
+		}
+		remove_ideas = POL_communism_domination5_idea
+	}
+}
+
+sre_dofi_visegrad_spirit = {
+	if = {
+		limit = {
+			has_idea = POL_dofi_balkan_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_balkan_idea
+			add_idea = POL_dofi_visegrad_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_baltic_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_baltic_idea
+			add_idea = POL_dofi_visegrad_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_scandinavia_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_scandinavia_idea
+			add_idea = POL_dofi_visegrad_idea
+		}
+	}
+	else = {
+		add_ideas = POL_dofi_visegrad_idea
+	}
+}
+
+sre_dofi_balkan_spirit = {
+	if = {
+		limit = {
+			has_idea = POL_dofi_visegrad_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_visegrad_idea
+			add_idea = POL_dofi_balkan_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_baltic_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_baltic_idea
+			add_idea = POL_dofi_balkan_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_scandinavia_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_scandinavia_idea
+			add_idea = POL_dofi_balkan_idea
+		}
+	}
+	else = {
+		add_ideas = POL_dofi_balkan_idea
+	}
+}
+
+sre_dofi_baltic_spirit = {
+	if = {
+		limit = {
+			has_idea = POL_dofi_visegrad_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_visegrad_idea
+			add_idea = POL_dofi_baltic_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_balkan_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_balkan_idea
+			add_idea = POL_dofi_baltic_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_scandinavia_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_scandinavia_idea
+			add_idea = POL_dofi_baltic_idea
+		}
+	}
+	else = {
+		add_ideas = POL_dofi_baltic_idea
+	}
+}
+
+sre_dofi_scandinavia_spirit = {
+	if = {
+		limit = {
+			has_idea = POL_dofi_visegrad_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_visegrad_idea
+			add_idea = POL_dofi_scandinavia_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_balkan_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_balkan_idea
+			add_idea = POL_dofi_scandinavia_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_dofi_baltic_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_dofi_baltic_idea
+			add_idea = POL_dofi_scandinavia_idea
+		}
+	}
+	else = {
+		add_ideas = POL_dofi_scandinavia_idea
+	}
+}
+
+sre_foreign_influence_spirit = {
+	if = {
+		limit = {
+			has_idea = POL_country_of_peace1_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_country_of_peace1_idea
+			add_idea = POL_country_of_peace2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_country_of_peace2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_country_of_peace2_idea
+			add_idea = POL_country_of_peace3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_country_of_peace3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_country_of_peace3_idea
+			add_idea = POL_country_of_peace4_idea
+		}
+	}
+	else = {
+		add_ideas = POL_country_of_peace5_idea
+	}
+}
+
+sre_grand_council_increase = {
+	if = {
+		limit = {
+			has_idea = POL_grand_council1_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_grand_council1_idea
+			add_idea = POL_grand_council2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_grand_council2_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_grand_council2_idea
+			add_idea = POL_grand_council3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_grand_council3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_grand_council3_idea
+			add_idea = POL_grand_council4_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_grand_council4_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_grand_council4_idea
+			add_idea = POL_grand_council5_idea
+		}
+	}
+	else = {
+		add_ideas = POL_grand_council1_idea
+	}
+}
+
+sre_grand_council_decrease = {
+	if = {
+		limit = {
+			has_idea = POL_grand_council1_idea
+		}
+		remove_ideas = POL_grand_council1_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_grand_council2_idea
+		}
+		remove_ideas = POL_grand_council1_idea
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_grand_council3_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_grand_council3_idea
+			add_idea = POL_grand_council1_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_grand_council4_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_grand_council4_idea
+			add_idea = POL_grand_council2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_grand_council5_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_grand_council5_idea
+			add_idea = POL_grand_council3_idea
+		}
+	}
+}
+
+sre_economy_situation_change_to_workers = {
+	if = {
+		limit = {
+			has_idea = POL_balanced_economy_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_idea
+			add_idea = POL_balanced_economy_workers_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_balanced_economy_administration_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_administration_idea
+			add_idea = POL_balanced_economy_workers_idea
+		}
+		add_political_power = -50
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_balanced_economy_companies_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_companies_idea
+			add_idea = POL_balanced_economy_workers_idea
+		}
+		add_political_power = -25
+		add_stability = -0.02
+	}
+}
+
+sre_economy_situation_change_to_administration = {
+	if = {
+		limit = {
+			has_idea = POL_balanced_economy_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_idea
+			add_idea = POL_balanced_economy_administration_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_balanced_economy_workers_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_workers_idea
+			add_idea = POL_balanced_economy_administration_idea
+		}
+		add_stability = -0.04
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_balanced_economy_companies_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_companies_idea
+			add_idea = POL_balanced_economy_administration_idea
+		}
+		add_political_power = -25
+		add_stability = -0.02
+	}
+}
+
+sre_economy_situation_change_to_companies = {
+	if = {
+		limit = {
+			has_idea = POL_balanced_economy_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_idea
+			add_idea = POL_balanced_economy_companies_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_balanced_economy_workers_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_workers_idea
+			add_idea = POL_balanced_economy_companies_idea
+		}
+		add_stability = -0.04
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_balanced_economy_administration_idea
+		}
+		swap_ideas = {
+			remove_idea = POL_balanced_economy_administration_idea
+			add_idea = POL_balanced_economy_companies_idea
+		}
+		add_political_power = -50
+	}
+}
+
+sre_pol_six_year_plan_exceed = {
+	if = {
+		limit = {
+			has_idea = POL_six_year_plan_exceed
+		}
+		swap_ideas = {
+			remove_idea = POL_six_year_plan_exceed
+			add_idea = POL_six_year_plan2_exceed
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = POL_six_year_plan2_exceed
+		}
+		swap_ideas = {
+			remove_idea = POL_six_year_plan2_exceed
+			add_idea = POL_six_year_plan3_exceed
+		}
+	}
+	else = {
+		add_ideas = POL_six_year_plan_exceed
+	}
+}

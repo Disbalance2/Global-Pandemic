@@ -1,0 +1,59 @@
+﻿##### Portugal NAME LISTS #####
+
+### REGULAR DESTROYER NAMES###
+POR_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { POR }
+
+	type = ship
+	ship_types = { stealth_destroyer destroyer }
+
+	prefix = "NRP "
+	fallback_name = "DDG-%d"
+
+	unique = {
+		"Almada" "Caravela" "Lisboa" "Marão" "Oceano" "Pescador" "Quetzal" "Rei" "Sado" "Tejo" "Ursa" "Valente" "Xarifa" "Zambeze" "Abelha" "Brisa" "Canário" "Diamante" "Esperança" "Falcão" "Girassol" "Hermes" "Ícaro" "Jasmim"
+	}
+}
+
+POR_FRIGATES_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_FRIGATES
+	for_countries = { POR }
+	type = ship
+	ship_types = {
+		frigate
+	}
+	prefix = "NRP "
+	fallback_name = "FFG-%d"
+
+	unique = {
+		"Karma" "Lótus" "Marengo" "Narciso" "Oásis" "Pirata" "Quimera" "Raio" "Sultão" "Tango" "Urso" "Vitória" "Xisto" "Zigoto" "Alvor" "Batalha" "Cacilhas" "Évora" "Figueira" "Guadiana" "Horta" "Ílhavo" "Jamor" "Lima" "Mértola" "Nazaré" "Óbidos" "Palmela" "Queluz" "Régua" "Sesimbra" "Tavira" "Urgueira" "Viana" "Xabregas" "Zambujeira" "Abrantes" "Barcelos" "Caldas" "Damasco" "Entroncamento" "Fátima" "Golegã" "Horta" "Ílhavo" "Jamor" "Leiria" "Marinha" "Nazaré" "Óbidos" "Palmela" "Queluz" "Régua" "Sesimbra" "Tavira" "Urgueira" "Vouga" "Xabregas" "Zambujeira" "Alfama" "Belém" "Cascais" "Damaia" "Estoril"
+	}
+}
+
+### CORVETTE NAMES ###
+POR_CORVETTE_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CORVETTE
+
+	for_countries = { POR }
+	prefix = "NRP "
+	type = ship
+	ship_types = { corvette }
+	fallback_name = "KKG-%d"
+
+	unique = {
+		"Fonte" "Graça" "Horta" "Infante" "Janelas" "Mouraria" "Nobre" "Odivelas" "Portas" "Quelhas" "Rato" "Saldanha" "Trindade" "Uva" "Vasco" "Xisto" "York" "Zagalho" "Açores" "Bragança" "Coimbra" "Dão" "Elvas" "Figueira" "Guarda" "Horta" "Javali" "Mértola" "Nazaré" "Óbidos" "Palmela" "Queluz" "Régua" "Sesimbra" "Tavira" "Urgueira" "Vouga" "Xabregas" "Zambujeira" "Alenquer" "Borba" "Chaves" "Douro" "Estremadura" "Faro" "Golfinho" "Hidra" "Índico" "Nobreza" "Bacalhau" "Carapau" "Dourada" "Enguia" "Fado" "Guitarra" "Hino" "Ilha" "Jardim" "Kiwi" "Laranja" "Maracujá" "Nectarina" "Olaria" "Pirilampo" "Queijo" "Romã" "Sardinha" "Tangerina" "Uva" "Vinho" "Xarope" "Zinco"
+	}
+}
+
+POR_SUBMARINES_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+	for_countries = { POR }
+	prefix = "NRP "
+	type = ship
+	ship_types = {
+		attack_submarine missile_submarine
+	}
+	fallback_name = "SS-%d"
+}
