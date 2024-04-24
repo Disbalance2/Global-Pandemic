@@ -1,87 +1,74 @@
-﻿capital = 777
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
 
-set_convoys = 10
+capital = 746
 
-recruit_character = TOG_awt
-recruit_character = TOG_acd2
-recruit_character = TOG_nt
-recruit_character = TOG_aco2
-recruit_character = TOG_acas
-recruit_character = TOG_acr
-recruit_character = TOG_mt
-recruit_character = TOG_stc
-recruit_character = TOG_aa2
-recruit_character = TOG_ncm
-recruit_character = TOG_communist_guy
-recruit_character = TOG_ncs
-recruit_character = TOG_pot
-recruit_character = TOG_nccr
-recruit_character = TOG_fascist_guy
-recruit_character = TOG_coi
-recruit_character = TOG_ai2
-recruit_character = TOG_democratic_guy
-recruit_character = TOG_ar
-recruit_character = TOG_acgs
+	add_ideas = au_member
 
-1939.1.1 = {
+2013.11.1 = {
+	set_variable = { budget_last_year = 14 }
+
+	set_country_flag = pai_nondem_authoritarian
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		gw_artillery = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	load_oob = "_tech_microstate_2013"
+	oob = "TOG_2013"
+    
+	#laws
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		terrorism_discounted
 	}
+		
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2010.3.4"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 36
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 64
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Jean-Pierre Fabre" #Жан-Пьер Фабр
+		desc = ""
+		picture = "gfx/leaders/TOG/portrait_jean_pierre_fabre.dds"
+		ideology = social_democracy #Национальный альянс за перемены 
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Faure Gnassingbé" #Фор Гнассингбе
+		desc = ""
+		picture = "gfx/leaders/TOG/portrait_faure_gnassingbe.dds"
+		ideology = national_conservatism #Союз за республику
+		traits = { trait_national_conservatism }
+	}
+
 }
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 25
-	fascism = 20
-	communism = 5
-	neutrality = 50
-}

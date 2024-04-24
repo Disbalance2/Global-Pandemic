@@ -1,68 +1,140 @@
-﻿capital = 584
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+set_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
+set_country_flag = COUNTRY_FLAG.POST_USSR
 
-set_convoys = 5
-
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+capital = 584
 	
-	set_technology = {
+1991.12.26 = {
+    add_ideas = cis_member
+	add_ideas = mixed_schools
+    }
+	
+# Резолюция ООН № 50/80
+1995.12.12 = {
+    add_ideas = neutrality_idea
+}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 3920 }
 
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
+	load_oob = "_tech_csto_minor_2013"
+	oob = "TMS_2013"
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	add_ideas = {
+		mixed_army
+		NPT
+		presidential_republic
+		civilian_economy	
+		terrorism_discounted
 	}
-}
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 50
-	fascism = 1
-	communism = 40
-	neutrality = 9
-}
 
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes	
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.2.12"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 15
+		liberalism = 10
+		democratic = 5
+		neutrality = 65
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Gurbanguly Berdymuhamedov"
+		desc = ""
+		picture = "gfx/leaders/TMS/portrait_gurbanguly_berdimuhamedow.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy dictator  }
+	}
+	
+#	create_country_leader = {
+#		name = "Alexander Dadaev"
+#		desc = ""
+#		picture = "gfx/leaders/TMS/portrait_alexander_dadaev.dds"
+#		ideology = oligarchy
+#		traits = { trait_oligarchy }
 #	}
-#}
+	
+	create_country_leader = {
+		name = "Hudayberdy Orazov"
+		desc = ""
+		picture = "gfx/leaders/TMS/portrait_hudayberdy_orazov.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+		
+	create_country_leader = {
+		name = "Nurmuhammed Hanamow"
+		desc = ""
+		picture = "gfx/leaders/TMS/portrait_nurmuhammed_hanamow.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Serdar Rahimov"
+		desc = ""
+		picture = "gfx/leaders/TMS/portrait_serdar_rahimov.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	
+	create_country_leader = {
+		name = "Rejep Bazarow"
+		desc = ""
+		picture = "gfx/leaders/TMS/portrait_rejep_bazarow.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_corps_commander = {
+		name = "Begench Gundogdyev"
+		portrait_path = "gfx/leaders/TMS/portrait_tms_general_begenc_gundogdyev.dds"
+		traits = { old_guard }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Yaylym Berdiyev"
+		portrait_path = "gfx/leaders/TMS/portrait_tms_general_yalym_berdyev.dds"
+		traits = { old_guard  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Murat Islamov"
+		portrait_path = "gfx/leaders/TMS/portrait_tms_general_myrat_yslamov.dds"
+		traits = { old_guard  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}	
+
+}
+	
+	
+

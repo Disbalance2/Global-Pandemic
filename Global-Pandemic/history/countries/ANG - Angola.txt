@@ -1,103 +1,92 @@
-﻿capital = 540
+﻿# Economic Crisis edit for 0.6.1 alpha
 
-oob = "ANG_1936"
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_mountaineers = 1
-}
+capital = 540
 
-set_convoys = 5
-
-recruit_character = ANG_acgs
-recruit_character = ANG_ncm
-recruit_character = ANG_mt
-recruit_character = ANG_nt
-recruit_character = ANG_ai2
-recruit_character = ANG_fascist_guy
-recruit_character = ANG_stc
-recruit_character = ANG_communist_guy
-recruit_character = ANG_aa2
-recruit_character = ANG_ar
-recruit_character = ANG_acd2
-recruit_character = ANG_acr
-recruit_character = ANG_coi
-recruit_character = ANG_acas
-recruit_character = ANG_awt
-recruit_character = ANG_pot
-recruit_character = ANG_nccr
-recruit_character = ANG_aco2
-recruit_character = ANG_democratic_guy
-recruit_character = ANG_ncs
-
-
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-}
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	neutrality = 100
-}
-
-create_country_leader = {
-	
-	name = "Jonas Lote"
-	picture = GFX_portrait_Jonas_Lote
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-
-#Now a colony of Italy  However, if independent it would have
-1939.1.1 = {
+2001.9.1 = {
 	set_politics = {
-		ruling_party = neutrality
-		last_election = "1936.1.1"
+		ruling_party = reformism
+		last_election = "1992.9.30"
 		election_frequency = 48
-		elections_allowed = no
-	}
+		elections_allowed = yes
+    }
 	set_popularities = {
-		neutrality = 100
+		communism = 0
+		reformism = 85
+		liberalism = 0
+		democratic = 15
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Jose Eduardo dos Santos"
+		desc = ""
+		picture = "gfx/leaders/ANG/portrait_jose_eduardo_dos_santos.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
 	}
 }
 
+2013.11.1 = {
+	set_variable = { budget_last_year = 12490 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "ANG_2013"
+
+	add_ideas = {
+		opec_member
+    }
+
+    add_ideas = {
+        au_member
+	    presidential_republic
+	    unitary_state
+		secular_state
+		commercial_media
+		suspended_liberties
+		mandatory_urgent_service 
+		mixed_schools
+		civilian_economy
+		mixed_economic
+		free_market
+		NPT
+		balanced_industry
+		normal_taxes
+		base_social_security
+		pensions
+		low_terrorism
+    }
+
+    set_stability = 0.7
+	add_political_power = 0
+	set_convoys = 25
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2014.5.17"
+		election_frequency = 48
+		elections_allowed = yes
+    }
+	set_popularities = {
+		communism = 0
+		reformism = 76
+		liberalism = 0
+		democratic = 24
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Isaías Samakuva"
+		desc = "POLITICS_ISAIAS_SAMAKUVA_DESC"
+		picture = "gfx/leaders/ANG/portrait_isaias_samakuva.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+}

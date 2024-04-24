@@ -1,67 +1,76 @@
-﻿capital = 772
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+# Actually it's Democratic Republic of the Congo
+
+capital = 295
+
+add_ideas = {
+	au_member
 }
 
-set_convoys = 20
+2013.11.1 = {
+	set_variable = { budget_last_year = 3001 }
 
-1939.1.1 = {
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_political_power = 0
+	create_intelligence_agency = yes
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		gw_artillery = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		high_terrorism
 	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.2.1"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 72
+		liberalism = 10
+		democratic = 9
+		neutrality = 6
+		fascism = 3
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Félix Tshisekedi"
+		desc = "POLITICS_FELIX_TSHISEKEDI_DESC"
+		picture = "gfx/leaders/RCG/portrait_felix_tshisekedi.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Joseph Kabila"
+		desc = "POLITICS_JOSEPH_KABILA_DESC"
+		picture = "gfx/leaders/RCG/portrait_joseph_kabila.dds"
+		ideology = social_democracy
+		expire = "2019.1.24"
+		traits = { trait_social_democracy }
+	}
+
 }
 
-
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 25
-	fascism = 20
-	communism = 5
-	neutrality = 50
-}

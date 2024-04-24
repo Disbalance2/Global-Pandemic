@@ -1,121 +1,132 @@
-﻿capital = 454
- 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	fuel_silos = 1
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+set_country_flag = COUNTRY_FLAG.MIDDLE_EAST
+
+capital = 454
+
+add_ideas = {
+    CAXAL
+	mossad
+	citadel_sionizma
+	regional_country
+	IZR_surrounded_by_enemies
 }
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
-	}
-	set_technology = {
-		gwtank = 1
-	}
-}
 
-set_convoys = 5
+#Прописание особых отношений евреев с арабскими соседями
+add_opinion_modifier = { target = EGY modifier = post_war }
+add_opinion_modifier = { target = JOR modifier = post_war }
+add_opinion_modifier = { target = SAU modifier = post_war }
+add_opinion_modifier = { target = YEM modifier = post_war }
+add_opinion_modifier = { target = IRQ modifier = post_war }
+add_opinion_modifier = { target = SYR modifier = post_war }
+add_opinion_modifier = { target = LEB modifier = post_war }
 
-1939.1.1 = {
+add_opinion_modifier = { target = PAL modifier = semi_active_war }
+add_opinion_modifier = { target = PAL modifier = post_war }
 
-	add_political_power = 1198
-	add_command_power = 100
+2013.11.1 = {
+	set_variable = { budget_last_year = 29330 }
+
+	oob = "ISR_2013"
+	load_oob = "_tech_regional_2013"
+
+	set_convoys = 100
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mandatory_urgent_service
+		professional_schools
+		civilian_economy
+		electronics_industry_focus
+		total_social_security
+		pensions
+		women_in_service
+		free_market
+		average_terrorism
+	}
+
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.1.22"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 4
+		reformism = 18
+		liberalism = 23
+		democratic = 32
+		neutrality = 23
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Masud Ghnaim"
+		desc = "POLITICS_MASUD_GHNAIM_DESC"
+		picture = "gfx/leaders/ISR/portrait_masud_ghnaim.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
 	
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		tech_trucks = 1
-		gw_artillery = 1
+	create_country_leader = {
+		name = "Benjamin Netanyahu"
+		desc = "POLITICS_BENJAMIN_NETANYAHU_DESC"
+		picture = "gfx/leaders/ISR/portrait_benjamin_netanyahu.dds"
+		ideology = revisionist_zionism
+		traits = { trait_revisionist_zionism }
+	}
 
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
+	create_country_leader = {
+		name = "Isaac Herzog"
+		desc = "POLITICS_Isaac_Herzog_DESC"
+		picture = "gfx/leaders/ISR/portrait_isaac_herzog.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
+	create_country_leader = {
+		name = "Shelly Yachimovich"
+		desc = "POLITICS_SHELLY_YACHIMOVICH_DESC"
+		picture = "gfx/leaders/ISR/portrait_shelly_yachimovich.dds"
+		ideology = social_democracy
+		expire = "2015.3.1"
+		traits = { trait_social_democracy }
+	}
 
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_refining = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	create_country_leader = {
+		name = "Naftali Bennett"
+		desc = "POLITICS_BENJAMIN_NETANYAHU_DESC"
+		picture = "gfx/leaders/ISR/portrait_naftali_bennett.dds"
+		ideology = religious_zionism
+		traits = { trait_religious_zionism }
+	}
+
+	create_country_leader = {
+		name = "Yair Lapid"
+		desc = "POLITICS_YAIR_LAPID_DESC"
+		picture = "gfx/leaders/ISR/portrait_yair_lapid.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Mohammad Barakeh"
+		desc = "POLITICS_MOHAMMAD_BARAKEH_DESC"
+		picture = "gfx/leaders/ISR/portrait_mohammad_barakeh.dds"
+		ideology = marxism
+		traits = { trait_marxism }
 	}
 }
 
-
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 80
-	communism = 20
-}
-
-create_country_leader = {
-	name = "David Ben-Gurion"
-	desc = ""
-	picture = GFX_portrait_David_Ben_Gurion
-	ideology = liberalism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Itzhak Gaster"
-	desc = ""
-	picture = GFX_portrait_Itzhak_Gaster
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Rudolf Szabó"
-	desc = ""
-	picture = GFX_portrait_Rudolf_Szabo
-	ideology = despotism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Shmuel Mikunis"
-	desc = ""
-	picture = GFX_portrait_Shmuel_Mikunis
-	ideology = leninism
-	traits = {
-		#
-	}
-}

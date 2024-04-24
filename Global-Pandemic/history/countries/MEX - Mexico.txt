@@ -1,360 +1,273 @@
-﻿
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
 capital = 277
 
-oob = "MEX_1936"
-if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "MEX_1936_naval_mtg"
-	else = {
-		set_naval_oob = "MEX_1936_naval_legacy"
-	}
+add_ideas = {
+    MEX_bitva_narkoti
+	regional_country
 }
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-	set_air_oob = "MEX_1936_air_bba"
-	set_technology = {
-		aa_lmg = 1
-		engines_1 = 1
-		early_bombs = 1
-		aircraft_construction = 1
-		iw_small_airframe = 1
-	}
-	else = {
-		set_air_oob = "MEX_1936_air_legacy"
-		set_technology = {
-			early_fighter = 1
-			early_bomber = 1
-			CAS1 = 1
-
-		}
-	}
-}
-
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_trucks = 1
-	gw_artillery = 1
-	interwar_antiair = 1
-	
-	fuel_silos = 1
-	fuel_refining = 1
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-	}
-}
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	set_technology = {
-		early_submarine = 1
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_heavy_cruiser = 1
-	}
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	set_technology = {
-		basic_naval_mines = 1
-		early_ship_hull_light = 1
-		early_ship_hull_submarine = 1
-		basic_battery = 1
-		coastal_defense_ships = 1
-	}
-}
-
-recruit_character = MEX_lazaro_cardenas
-recruit_character = MEX_salvador_abascal
-recruit_character = MEX_adolfo_de_la_huerta
-recruit_character = MEX_dionisio_encina
-recruit_character = MEX_hernan_laborde
-recruit_character = MEX_heliodoro_charis
-recruit_character = MEX_luis_farell
-recruit_character = MEX_gildardo_magana
-recruit_character = MEX_manuel_perez_trevino
-recruit_character = MEX_abelardo_rodriguez
-recruit_character = MEX_manuel_avila_camacho
-recruit_character = MEX_othon_blanco
-recruit_character = MEX_heriberto_corona
-recruit_character = MEX_antonio_cardenas_rodriguez
-recruit_character = MEX_jesus_garza_siller
-recruit_character = MEX_gilberto_limon
-recruit_character = MEX_pablo_macias
-recruit_character = MEX_jose_gonzalo_escobar
-recruit_character = MEX_agustin_olachea
-recruit_character = MEX_leon_trotsky
-recruit_character = MEX_saturnino_cedillo
-recruit_character = MEX_hector_meixueiro
-recruit_character = MEX_matias_santos_ramos
-recruit_character = MEX_enrique_estrada
-recruit_character = MEX_jose_vasconcelos
-recruit_character = MEX_pablo_gonzalez
-recruit_character = MEX_bartolome_garcia_correa
-recruit_character = MEX_luis_montes_de_oca
-recruit_character = MEX_aaron_saenz
-recruit_character = MEX_vicente_lombardo
-recruit_character = MEX_eduardo_hay
-recruit_character = MEX_alberto_pani
-recruit_character = MEX_juan_andreu
-recruit_character = MEX_plutarco_calles
-recruit_character = MEX_francisco_mugica
-recruit_character = MEX_jesus_degollado_guizar
-recruit_character = MEX_valentin_campa
-recruit_character = MEX_luis_maria_martinez
-recruit_character = MEX_indigenous_council
 
 set_country_flag = monroe_doctrine
 
-set_convoys = 45
-set_stability = 0.2
-set_war_support = 0.1
+2013.11.1 = {
+	set_variable = { budget_last_year = 126200 }
 
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
+	load_oob = "_tech_regional_2013"
+	oob = "MEX_2013"
+	
+	# government
 	add_ideas = {
-		MEX_callistas
-		MEX_church_power_2
-		MEX_oil_concessions
-		MEX_politicised_army
-		MEX_cedillo_tension_2
+		mex_miguel_angel_hog
+		mex_salvador_cienfuegos_defm
+		mex_jose_antonio_fgm
+		mex_ildefonso_villareal_ecm
+		mex_genaro_luna_ssch
+		presidential_republic
+		administrative_federation
+		secular_state
+		free_media
+		suspended_liberties
+		mandatory_urgent_service
+		mixed_schools
+		open_immigration
+		market_economy
+		state-owned_enterprise
+		TPP_member
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		low_terrorism
+		NPT
+		nafta_member
 	}
-}
 
-1939.1.1 = {
-	add_political_power = 1198
-	add_command_power = 100
-
-	set_global_flag = flag_mexico_cedillo_has_revolted
+	set_convoys = 100
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
 	
-	oob = "MEX_1939"
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "MEX_1936_air_bba" #deliberately using 1936
-		else = {
-			set_air_oob = "MEX_1936_air_legacy"
-		}
+	set_country_flag = pai__centrist
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.7.1"
+		election_frequency = 72
+		elections_allowed = yes
 	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "MEX_1939_naval_mtg"
-		else = {
-			set_naval_oob = "MEX_1939_naval_legacy"
-		}
+	set_popularities = {
+		communism = 0
+		reformism = 28
+		liberalism = 16
+		democratic = 25
+		neutrality = 31
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Enrique Peña Nieto"
+		desc = "POLITICS_ENRIQUE_PENA_NIETO_DESC"
+		picture = "gfx/leaders/MEX/portrait_enrique_pena_nieto.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Alberto Anaya"
+		desc = "POLITICS_ALBERTO_ANAYA_DESC"
+		picture = "gfx/leaders/MEX/portrait_alberto_anaya.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+
+	create_country_leader = {
+		name = "Alejandra Barrales"
+		desc = "POLITICS_ALEJANDRA_BARRALES_DESC"
+		picture = "gfx/leaders/MEX/portrait_alejandra_barrales.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Luis Castro Obregón"
+		desc = "POLITICS_LUIS_CASTRO_OBREGON_DESC"
+		picture = "gfx/leaders/MEX/portrait_luis_castro_obregon.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Ricardo Anaya Cortés"
+		desc = "POLITICS_RICARDO_ANAYA_CORTES_DESC"
+		picture = "gfx/leaders/MEX/portrait_ricardo_anaya_cortes.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Francisco Javier Álvarez"
+		desc = "POLITICS_FRANCISCO_JAVIER_ALVAREZ_DESC"
+		picture = "gfx/leaders/MEX/portrait_francisco_javier_alvarez.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
 	}
 	
-	set_technology = {
-		interwar_artillery = 1
-		infantry_weapons1 = 1
-		infantry_weapons2 = 1
-		support_weapons = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_refining2 = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
+	#Generals
+	create_field_marshal = {
+  		name = "Gerardo Clemente Ricardo Vega Garcia"
+  		portrait_path = "gfx/leaders/MEX/portrait_general_gerardo_clemente_ricardo_vega_garcia.dds"
+  		traits = { old_guard }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	
+	create_corps_commander = {
+		name = "Adolfo Dominguez Martinez"
+		portrait_path = "gfx/leaders/MEX/portrait_general_adolfo_dominguez_martinez.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Alejandro Saavedra Hernandez"
+		portrait_path = "gfx/leaders/MEX/portrait_general_alejandro_saavedra_hernandez.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Jose Luis Sanchez Leon"
+		portrait_path = "gfx/leaders/MEX/portrait_general_jose_luis_sanchez_leon.dds"
+		traits = {   }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Juan Manuel Diaz Organitos"
+		portrait_path = "gfx/leaders/MEX/portrait_general_juan_manuel_diaz_organitos.dds"
+		traits = { hill_fighter }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Miguel Angel Patino Canchola"
+		portrait_path = "gfx/leaders/MEX/portrait_general_miguel_angel_patino_canchola.dds"
+		traits = { artillery_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Rigoberto Garcia Cortes"
+		portrait_path = "gfx/leaders/MEX/portrait_general_rigoberto_garcia_cortes.dds"
+		traits = {   }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Roberto Francisco Miranda Moreno"
+		portrait_path = "gfx/leaders/MEX/portrait_general_roberto_francisco_miranda_moreno.dds"
+		traits = { tanks_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Salvador Gutierrez Plascencia"
+		portrait_path = "gfx/leaders/MEX/portrait_general_salvador_gutierrez_plascencia.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
 	}
 
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
+	#альтернативные лидеры, нужно их скорректировать
 
-		remove_ideas = {
-			MEX_cedillo_tension_2 # Already rebelled by this point
-		}
-		
-		complete_national_focus = MEX_focus_plan_of_agua_prieta
-		# 70
-		complete_national_focus = MEX_focus_exile_calles # Increase Church Power (3)
-		# 140
-		complete_national_focus = MEX_focus_control_the_army
-		# 210
-		complete_national_focus = MEX_focus_repeal_the_calles_law # Increase Church Power (4)
-		# 280
-		complete_national_focus = MEX_focus_peripheral_infrastructure
-		# 350
-		complete_national_focus = MEX_focus_rural_schools # 3rd research slot, decrease Church Power (3)
-		# 420
-		complete_national_focus = MEX_focus_national_bank
-		# 490
-		complete_national_focus = MEX_focus_agricultural_credit_bank
-		# 560
-		complete_national_focus = MEX_focus_rent_freeze
-		# 630
-		complete_national_focus = MEX_focus_confederation_of_mexican_workers # Decrease Church Power (2)
-		# 700
-		complete_national_focus = MEX_focus_ejido_worker_militias # Communist drift
-		# 770
-		complete_national_focus = MEX_focus_oil_field_expansion
-		# 840
-		complete_national_focus = MEX_focus_rural_infrastructure
-		# 910
-		unlock_national_focus = MEX_focus_nationalize_the_oil_fields
-		# 980
-		remove_ideas = {
-			MEX_oil_concessions
-		}
-		
-		ENG = {
-			add_opinion_modifier = {
-				target = MEX
-				modifier = embargo
-			}
-		}
-		USA = {
-			add_opinion_modifier = {
-				target = MEX
-				modifier = embargo
-			}
-		}
-		add_opinion_modifier = {
-			target = ENG
-			modifier = embargo
-		}
-		add_opinion_modifier = {
-			target = USA
-			modifier = embargo
-		}
-		
-		else = {
-			#generic focuses
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = large_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-}
+	# Партия "MORENA" (Движение национальной реставрации) (центристы).
+	#create_country_leader = {
+	#	name = "Andrés Manuel López Obrador "
+	#	desc = "POLITICS_ANDRES_MANUEL_LOPEZ_OBRADOR_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_andres_manuel_lopez_bbrador.dds"
+	#	ideology = centrist_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1934.7.1"
-	election_frequency = 72
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 18
-	fascism = 20
-	communism = 9
-	neutrality = 53
-}
+	# Экологическая партия Мексики ("зелёные" консерваторы).
+	#create_country_leader = {
+	#	name = "Carlos Alberto Puente Salas"
+	#	desc = "POLITICS_CARLOS_ALBERTO_PUENTE_SALAS_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_carlos_alberto_puente_salas.dds"
+	#	ideology = green_conservatism 
+	#	traits = { trait_green_conservatism }
+	#}
 
-### VARIANTS ###
-# 1936 Start #
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	create_equipment_variant = {
-		name = "Durango Class"
-		type = destroyer_1
-		upgrades = {
-			ship_anti_air_upgrade = 1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Nicolás Bravo Class"
-		type = destroyer_1
-		upgrades = {
-			ship_torpedo_upgrade = 1
-			destroyer_engine_upgrade = 1
-			ship_ASW_upgrade = 1
-			ship_anti_air_upgrade = 2
-		}
-	}
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	# Destroyers #
-	create_equipment_variant = {
-		name = "Nicolás Bravo Class"			
-		type = ship_hull_light_1
-		name_group = MEX_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = empty
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Durango Class"			# represents both Guanajuato and Durango classes (gunboats)
-		type = ship_hull_light_1
-		name_group = MEX_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = empty
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-	}
-	create_equipment_variant = {
-		name = "Anahuac Class"			
-		type = ship_hull_cruiser_coastal_defense_ship
-		name_group = MEX_BB_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-	}
+	#старые лидеры, не знаю понадобятся ли
+
+	#create_country_leader = {
+	#	name = "Andrés Manuel López Obrador"
+	#	desc = "POLITICS_ANDRES_MANUEL_LOPEZ_OBRADOR_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_andres_manuel_lopez_obrador.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Josefina Vázquez Mota"
+	#	desc = "POLITICS_JOSEFINA_VAZQUEZ_MOTA_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_josefina_vazquez_mota.dds"
+	#	ideology = liberal_democracy
+	#	traits = { trait_liberal_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Gabriel Quadri de la Torre"
+	#	desc = "POLITICS_GABRIEL_QUADRI_DE_LA_TORRE_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_gabriel_quadri_de_la_torre.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Pável Blanco Cabrera"
+	#	desc = "POLITICS_PAVEL_BLANCO_CABRERA_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_pavel_blanco_cabrera.dds"
+	#	ideology = leninism
+	#	traits = { trait_leninism }
+	#}
+
+	#create_country_leader = {
+	#	name = "Juan Carlos López Lee"
+	#	desc = "POLITICS_JUAN_CARLOS_LOPEZ_LEE_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_juan_carlos_lopez_Lee.dds"
+	#	ideology = national_socialism
+	#	traits = { trait_national_socialism }
+	#}
 }

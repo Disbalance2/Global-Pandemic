@@ -1,100 +1,97 @@
-﻿capital = 292
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "SAU_1936"
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_trucks = 1
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-	}
-}
+set_country_flag = COUNTRY_FLAG.MIDDLE_EAST
 
-if = {
-	limit = {
-		has_dlc = "Battle for the Bosporus"
-	}
-	set_technology = { camelry = 1 }
+capital = 292
+
+add_opinion_modifier = { target = ISR modifier = post_war }
+
+1985.5.25 = {
+    # crating CCASG ((ССАГПЗ)
+	create_faction = CCASG
+	add_to_faction = SAU
+	add_to_faction = QAT
+	add_to_faction = BHR
+	add_to_faction = KUW
+	add_to_faction = OMA
+	add_to_faction = UAE
+	add_ideas = integration_in_ccasg
 }
 
-set_convoys = 5
+2013.11.1 = {
+	set_variable = { budget_last_year = 74660 }
 
-recruit_character = SAU_abdulaziz_ibn_saud
-recruit_character = SAU_philip_gordon_lee
-recruit_character = SAU_youssef_al_bishi
-recruit_character = SAU_hamadan_al_odha
-recruit_character = SAU_sa_ad_shaddad_al_outaibi
-recruit_character = SAU_karim_nassar
-recruit_character = SAU_hamed_al_sabani
-recruit_character = SAU_saud_al_saud
-recruit_character = SAU_ismail_ali_al_salhi
-recruit_character = SAU_ali_muhammed_khan
-recruit_character = SAU_faisal_al_saud
-recruit_character = SAU_faisal_saud
-recruit_character = SAU_gholam_wali
+	load_oob = "_tech_nato_minor_2013"
+	oob = "SAU_2013"
 
-1939.1.1 = {
+	add_ideas = {
+		arab_league_member
+		opec_member
+		gcc_member
+		regional_country
+		NPT
+	# laws
+		absolute_monarchy
+		unitary_state
+		theocracy
+		mixed_media
+		sharia_law
+		contract_army
+		professional_schools
+		restricted_immigration
+		market_economy
+		nationalization_of_extractive_industries
+		
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		national_social_security
+		pensions
+		average_terrorism
+		oil_spike
+		
+		islam_idea_lvl_3
+	}
 
-	add_political_power = 1198
-	add_command_power = 100
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "SAU_1939"
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		gw_artillery = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
 	}
-}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 100
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	neutrality = 100
+	create_country_leader = {
+		 name = "Salman bin Abdulaziz"
+		 desc = "POLITICS_SALMAN_BIN_ABDULAZIZ_DESC"
+		 picture = "gfx/leaders/SAU/portrait_salman_bin_abdulaziz.dds"
+         ideology = sunni_royalism
+		 traits = { trait_sunni_royalism }
+	}
+
+	create_country_leader = {
+		 name = "Abdullah bin Abdulaziz"
+		 desc = "POLITICS_ABDULLAH_BIN_ABDULAZIZ_DESC"
+		 picture = "gfx/leaders/SAU/portrait_abdullah_bin_abdulaziz.dds"
+         ideology = sunni_royalism
+         expire = "2015.1.23"
+		 traits = { trait_sunni_royalism }
+	}
+
 }

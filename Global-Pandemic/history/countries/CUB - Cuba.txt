@@ -1,110 +1,78 @@
-﻿capital = 315
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "CUB_1936"
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_trucks = 1
-}
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "By Blood Alone"
-		}
+capital = 315
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 7715 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "CUB_2013"
+
+	add_ideas = {
+		alba_member
+		terrorism_discounted
+		mixed_schools
+		NPT
 	}
-	set_technology = {
-		early_fighter = 1
 
+	set_country_flag = monroe_doctrine
+	set_country_flag = pai_nondem_totalitarian
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "2010.1.10"
+		election_frequency = 48
+		elections_allowed = yes
 	}
-}
+	set_popularities = {
+		communism = 80
+		reformism = 0
+		liberalism = 5
+		democratic = 7
+		neutrality = 8
+		fascism = 0
+		rad_islamists = 0
+	}
 
-recruit_character = CUB_josé_agripino_barnet
-recruit_character = CUB_guillermo_cabral
-recruit_character = CUB_wenceslao_carmona
-recruit_character = CUB_gregorio_morales
-recruit_character = CUB_fidel_castro
-recruit_character = CUB_enrique_c_rolas
-recruit_character = CUB_palaez_menendez
-recruit_character = CUB_domingo_r_del_toro
-recruit_character = CUB_eduardo_chibas
-recruit_character = CUB_juan_blas_hernandez
-recruit_character = CUB_sergio_carbo
-recruit_character = CUB_fulgencio_batista
-recruit_character = CUB_rodrigo_a_fuentes
-recruit_character = CUB_sandalio_junco
-recruit_character = CUB_salvador_castaneda_castro
-recruit_character = CUB_angel_gonzalez
-recruit_character = CUB_julio_sanguily
-recruit_character = CUB_carlos_prio
-recruit_character = CUB_gerardo_machado
-recruit_character = CUB_eugenio_molinet_castro
+	create_country_leader = {
+		name = "Raul Castro"
+		desc = "POLITICS_RAUL_CASTRO_DESC"
+		picture = "gfx/leaders/CUB/portrait_raul_castro.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
 
+	create_country_leader = {
+		name = "Rene Hernandez"
+		desc = ""
+		picture = "gfx/leaders/CUB/portrait_south_america_generic_5.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
 
-set_country_flag = monroe_doctrine
-set_war_support = 0.1
-set_convoys = 20
+	create_country_leader = {
+		name = "Fernando Sanchez Lopez"
+		desc = ""
+		picture = "gfx/leaders/CUB/portrait_south_america_generic_2.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
 
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "CUB_1939"
-	set_technology = {
-		gw_artillery = 1
-		infantry_weapons1 = 1
-		support_weapons = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	create_country_leader = {
+		name = "Yuniel Lopez"
+		desc = ""
+		picture = "gfx/leaders/CUB/portrait_south_america_generic_2.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
 	}
 }
 
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.10"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 98
-	communism = 2
-}
-
-1939.1.1 = {
-	recruit_character = CUB_federico_laredo_bru
-	promote_character = CUB_federico_laredo_bru
-	retire_character = CUB_josé_agripino_barnet
-}

@@ -1,208 +1,162 @@
-﻿capital = 440
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "PAK_1936"
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_trucks = 1
-	tech_support = 1		
-	tech_engineers = 1
-	tech_recon = 1
-	transport = 1
-	trench_warfare = 1
-	fleet_in_being = 1
-	
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "By Blood Alone" }
+set_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
+
+capital = 440
+
+1985.1.1 = {
+    add_ideas = {
+	    regional_country
+    }
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1968.3.27"
+		election_frequency = 48
+		elections_allowed = no
 	}
-	set_technology = {
-		early_fighter = 1
-		CAS1 = 1
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 80
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 10
+	}
+	
+	create_country_leader = {
+	   name = "Nuhammad Zia-ul-Haq"
+	   desc = "POLITICS_MUHHAMAD_ZIA-UL-HAQ_DESC"
+	   picture = "gfx/leaders/PAK/portrait_muhammad_zia-ul-haq.dds"
+	   ideology = sunni_islamism 
+	   traits = { trait_sunni_islamism }
 	}
 }
 
-if = {
-	limit = { has_dlc = "Together for Victory" }
-
-	add_to_tech_sharing_group = commonwealth_research
+1971.12.17 = {
+    add_ideas = revanchism
+}
+	
+2015.7.10 = {
+    add_ideas = sco_member
 }
 
-set_convoys = 20
+ 2004.1.1 = {
+	declare_war_on = {
+		target = WAZ
+		type = return_national_territory
+	}
+}
 
-recruit_character = PAK_acd2
-recruit_character = PAK_fascist_guy
-recruit_character = PAK_ncs
-recruit_character = PAK_nccr
-recruit_character = PAK_aco2
-recruit_character = PAK_communist_guy
-recruit_character = PAK_ai2
-recruit_character = PAK_ar
-recruit_character = PAK_coi
-recruit_character = PAK_acas
-recruit_character = PAK_acgs
-recruit_character = PAK_aa2
-recruit_character = PAK_democratic_guy
-recruit_character = PAK_acr
-recruit_character = PAK_stc
-recruit_character = PAK_awt
-recruit_character = PAK_pot
-recruit_character = PAK_mt
-recruit_character = PAK_ncm
-recruit_character = PAK_nt
+2013.11.1 = {
+	set_variable = { budget_last_year = 23120 }
 
-1939.1.1 = {#placeholder same tech as ENG
-	#generic focuses
-
-	add_political_power = 1198
-	add_command_power = 100
-	oob = "PAK_1939"
+	load_oob = "_tech_regional_2013"
+	oob = "PAK_2013"
 	
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
 	add_ideas = {
-		#laws
-		volunteer_only
-		low_economic_mobilisation
+		semi-presidential_republic
+		administrative_federation
+		state_religion
+		state_media_only
+		sharia_law
+		contract_army
+		mixed_schools
+		restricted_immigration
+		market_economy
+		nationalization_of_heavy_industry
+	
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		decaying_state
+	
+		overpopulation
+		nuclear_country
+	
+		islam_idea_lvl_3
+	}
+	
+	diplomatic_relation = {
+		country = DJI
+		relation = military_access
+		active = yes
 	}
 
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
 	
-	set_technology = {
-		#doctrines
-		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-		grand_battle_plan = 1
-
-		trench_warfare = 1
-		prepared_defense = 1
-		battlefleet_concentration = 1
-		subsidiary_carrier_role = 1
-		convoy_sailing = 1
-		convoy_escorts = 1
-		submarine_operations = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		decimetric_radar = 1
-		mechanical_computing = 1
-		computing_machine = 1
-		basic_encryption = 1
-		basic_decryption = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.9.8"
+		election_frequency = 48
+		elections_allowed = yes
 	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-		set_technology = {
-			early_fighter = 1
-			fighter1 = 1
-		}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 90
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
 	}
-}
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1935.11.14"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 17
-	fascism = 2
-	communism = 1
-	neutrality = 80
-}
-
-
-create_country_leader = {
-	name = "Qazi Muhammad Essa"
-	
-	picture = "GFX_Portrait_RAJ_Political_Leader_Generic_2"
-	expire = "1960.1.1"
-	ideology = centrism
-	traits = {
-		
+	create_country_leader = {
+		name = "Hussain Mamnoon"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_mamnoon_hussain.dds"
+		ideology = shia_islamism
+		traits = { trait_shia_islamism }
 	}
-}
 
-create_country_leader = {
-	name = "Muhammad Ali Jinnah"
-	
-	picture = "GFX_Portrait_RAJ_Political_Leader_Generic_2"
-	expire = "1960.1.1"
-	ideology = liberalism
-	traits = {
-		
+	create_country_leader = {
+		name = "Nawaz Sharif"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_nawaz_sharif.dds"
+		ideology = conservative_democracy
+		expire = "2017.7.28"
+		traits = { trait_conservative_democracy }
 	}
-}
 
-create_country_leader = {
-	name = "Haji Mohammad Danesh"
-	
-	picture = "GFX_Portrait_RAJ_Political_Leader_Generic_2"
-	expire = "1960.1.1"
-	ideology = marxism
-	traits = {
-		
+	create_country_leader = {
+		name = "Altaf Hussain"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_altaf_hussain.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
 	}
+	create_country_leader = {
+		name = "Asif Ali Zardari"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_asif_ali_zardari.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#create_country_leader = {
+		#name = "Asfandyar Wali Khan"
+		#desc = ""
+		#picture = "gfx/leaders/PAK/portrait_asfandyar_wali_khan.dds"
+		#ideology = social_democracy
+		#traits = { trait_social_democracy }
+	#}
+
+	#create_country_leader = {
+		#name = "Siraj ul Haq"
+		#desc = ""
+		#picture = "gfx/leaders/PAK/portrait_siraj_ul_haq.dds"
+		#ideology = sunni_royalism
+		#traits = { trait_sunni_royalism }
+	#}
 }
 
-create_corps_commander = {
-	name = "Muhammad Zia-ul-Haq"
-	gfx = "GFX_Portrait_The_Raj_Army_Generic"
-	traits = {  }
-	skill = 2
-	
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Iftikhar Khan Janjua"
-	gfx = "GFX_Portrait_The_Raj_Army_Generic_2"
-	traits = {  }
-	skill = 3
-	
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Akbar Khan"
-	gfx = "GFX_Portrait_The_Raj_Army_Generic"
-	traits = { trickster }
-	skill = 3
-	
-	attack_skill = 1
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}

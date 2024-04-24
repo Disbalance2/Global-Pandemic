@@ -1,90 +1,177 @@
-﻿capital = 78
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+set_country_flag = COUNTRY_FLAG.POST_USSR
 
-set_convoys = 5
+capital = 79
 
-recruit_character = MOL_acas
-recruit_character = MOL_acgs
-recruit_character = MOL_ncm
-recruit_character = MOL_nt
-recruit_character = MOL_pot
-recruit_character = MOL_nccr
-recruit_character = MOL_aco2
-recruit_character = MOL_coi
-recruit_character = MOL_aa2
-recruit_character = MOL_democratic_guy
-recruit_character = MOL_acd2
-recruit_character = MOL_acr
-recruit_character = MOL_fascist_guy
-recruit_character = MOL_stc
-recruit_character = MOL_ncs
-recruit_character = MOL_awt
-recruit_character = MOL_mt
-recruit_character = MOL_communist_guy
-recruit_character = MOL_ai2
-recruit_character = MOL_ar
-
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+1992.08.01 = {
+    add_ideas = {
+		mixed_schools
+		parliamentary_republic
+		revanchism
 	}
 }
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 55
-	fascism = 1
-	communism = 30
-	neutrality = 14
+
+1994.4.8 = {
+    add_ideas = cis_member
 }
 
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
-#	}
-#}
+1994.6.10 = {
+	add_ideas = bsec_member
+}
 
+1997.10.10 = {
+    add_ideas = guam_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 798 }
+	load_oob = "_tech_nato_minor_2013"
+	oob = "MOL_2013"
+	add_ideas = low_terrorism
+	add_ideas = NPT
+	add_political_power = 0
+	create_intelligence_agency = yes
+	set_convoys = 0
+	
+	set_country_flag = pai__communist
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.11.13"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 20
+		reformism = 25
+		liberalism = 15
+		democratic = 20
+		neutrality = 20
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Igor Dodon"
+		desc = "POLITICS_IGOR_DODON_DESC"
+		picture = "gfx/leaders/MOL/portrait_igor_dodon.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Nikolai Timofti"
+		desc = "POLITICS_NICOLAE_TIMOFTI_DESC"
+		picture = "gfx/leaders/MOL/portrait_nicolae_timofti.dds"
+		ideology = centrist_democracy
+		expire = "2016.11.13"
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Vladimir Voronin"
+		desc = "POLITICS_VLADIMIR_VORONIN_DESC"
+		picture = "gfx/leaders/MOL/portrait_vladimir_voronin.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Pavel Filip"
+		desc = "POLITICS_PAVEL_FILIP_DESC"
+		picture = "gfx/leaders/MOL/portrait_pavel_filip.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Mihai Ghimpu"
+		desc = "POLITICS_MIHAI_GHIMPU_DESC"
+		picture = "gfx/leaders/MOL/portrait_mihai_ghimpu.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Vladimir Filat"
+		desc = "POLITICS_VLADIMIR_FILAT_DESC"
+		picture = "gfx/leaders/MOL/portrait_vladimir_filat.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Ilan Shor"
+		desc = "POLITICS_ILAN_SHOR_DESC"
+		picture = "gfx/leaders/MOL/portrait_ilan_shor.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	#create_country_leader = {
+	#	name = "Sergiu Sochirca"
+	#	desc = "POLITICS_SERGIU_SOCHIRCA_DESC"
+	#	picture = "gfx/leaders/MOL/portrait_sergiu_sochirca.dds"
+	#	ideology = sunni_islamism
+	#	traits = { trait_sunni_islamism }
+	#}
+
+	create_corps_commander = {
+		name = "Mihail Bucliş"
+		portrait_path = "gfx/leaders/MOL/portrait_mol_general_mihail_buclis.dds"
+		traits = { armor_officer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Eduard Ohladciuc"
+		portrait_path = "gfx/leaders/MOL/portrait_mol_general_eduard_ohladciuc.dds"
+		traits = { armor_officer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Igor Gorgan"
+		portrait_path = "gfx/leaders/MOL/portrait_mol_general_igor_gorgan.dds"
+		traits = { career_officer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Ion Dotenco"
+		portrait_path = "gfx/leaders/MOL/portrait_mol_general_ion_dotenco.dds"
+		traits = { infantry_officer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Dumitru Todosiuc"
+		portrait_path = "gfx/leaders/MOL/portrait_mol_general_dumitru_todosiuc.dds"
+		traits = {	}
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+}

@@ -1,463 +1,299 @@
-﻿capital = 46
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
-	}
-	set_oob = "ROM_1936"
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_oob = "ROM_1936_nsb"
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "ROM_1936_naval_mtg"
-	else = {
-		set_naval_oob = "ROM_1936_naval_legacy"
-	}
-}
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "ROM_1936_air_bba"
-		set_technology = {
-			iw_small_airframe = 1
-			aa_lmg = 1
-			engines_1 = 1
-		}
-	else = {
-		set_air_oob = "ROM_1936_air_legacy"
-		set_technology = {
-			early_fighter = 1
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-		}
-	}
-}
+set_country_flag = COUNTRY_FLAG.BALKANS
 
-set_research_slots = 3
-set_stability = 0.6
-set_war_support = 0.6
 
-recruit_character = ROM_gheorghe_tatarescu
-recruit_character = ROM_constantin_ion_parhon
-recruit_character = ROM_armand_calinescu
-recruit_character = ROM_corneliu_codreanu
-recruit_character = ROM_petre_dumitrescu
-recruit_character = ROM_ion_antonescu
-recruit_character = ROM_ioan_mihail_racovita
-recruit_character = ROM_gheorghe_avramescu
-recruit_character = ROM_constantin_sanatescu
-recruit_character = ROM_horia_macellariu
-recruit_character = ROM_gheorghe_potopeanu
-recruit_character = ROM_emanoil_ionescu
-recruit_character = ROM_gheorghe_mihail
-recruit_character = ROM_ermil_gheorghiu
-recruit_character = ROM_nicolae_sova
-recruit_character = ROM_gheorghe_jienescu
-recruit_character = ROM_paul_teodorescu
-recruit_character = ROM_gheorghe_vasiliu
-recruit_character = ROM_iuliu_maniu
-recruit_character = ROM_petru_groza
-recruit_character = ROM_gheorghe_gheorghiu_dej
-recruit_character = ROM_nicolae_malaxa
-recruit_character = ROM_mihail_sturdza
-recruit_character = ROM_gheorghe_argeseanu
-recruit_character = ROM_king_michael
-recruit_character = ROM_octavian_goga
+capital = 46
 
-# Starting tech
-set_technology = {
-	tech_support = 1		
-	tech_engineers = 1
-	tech_mountaineers = 1
-	tech_trucks = 1
-	motorised_infantry = 1
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	gw_artillery = 1
-	interwar_antiair = 1
-	basic_train = 1
-}
-
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-}
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	set_technology = {
-		early_submarine = 1
-		early_destroyer = 1
-	}
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	set_technology = {
-		basic_naval_mines = 1
-		submarine_mine_laying = 1
-		early_ship_hull_light = 1
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		basic_battery = 1
-		basic_torpedo = 1
-		basic_depth_charges = 1
-	}
-}
-
-#Ideas
-if = {
-	limit = {
-		has_dlc = "Death or Dishonor"
-	}
-	add_ideas = {
-		ROM_king_carol_ii_hedonist
-	}
-	give_guarantee = CZE
-	give_guarantee = GRE
-	give_guarantee = TUR
-	give_guarantee = YUG
-}
-if = {
-	limit = {
-		AND = {  
-			NOT = { has_dlc = "Death or Dishonor" }
-			has_dlc = "Battle for the Bosporus"
-		}
-	}
-	give_guarantee = GRE
-	give_guarantee = TUR
-	give_guarantee = YUG
-}
-add_ideas = neutrality_idea
-
-#Kick off kings crazy life
-if = {
-	limit = {
-		has_dlc = "Death or Dishonor"
-	}
-	ROM = {
-		#Pick from list of the sane events first
-		random_list = {
-			100 = { country_event = { id = DOD_romania.81 days = 2 random_days = 20 } }
-		}
-	}
-}
-
-if = {
-	limit = {
-		#has_dlc = Battle for the Bosporus
-	}
-	add_opinion_modifier = { 
-		target = GRE
-		modifier = BFTB_balkan_pact_ally
-	}
-	add_opinion_modifier = { 
-		target = TUR
-		modifier = BFTB_balkan_pact_ally
-	}
-	add_opinion_modifier = { 
-		target = YUG
-		modifier = BFTB_balkan_pact_ally
-	}
-	add_opinion_modifier = { 
-		target = BUL
-		modifier = BFTB_balkan_pact_enemy
-	}
-	add_opinion_modifier = { 
-		target = HUN
-		modifier = BFTB_balkan_pact_enemy
-	}
-}
-
-set_convoys = 10
-1939.1.1 = {
 	
-	remove_ideas = neutrality_idea
+1985.1.1 = {
+    add_ideas = {
+	    mixed_schools
+	    SOV_support_warshaw
+    }
 
-	add_political_power = 1198
-	add_command_power = 100
-
-	set_technology = {
-		interwar_artillery = 1
-		interwar_antitank = 1
-		tech_recon = 1
-		infantry_weapons2 = 1
-		support_weapons = 1
-
-		#doctrines
-		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-		
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		fuel_silos = 1
-		oil_processing = 1
-		improved_oil_processing = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		set_technology = {
-			basic_submarine = 1
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_technology = {
-				engines_2 = 1
-				basic_small_airframe = 1
-				improved_small_airframe = 1
-			}
-		else = {
-			set_technology = {
-				fighter1 = 1
-				early_bomber = 1
-				tactical_bomber1 = 1
-			}
-		}
-	}
-
-	if = {
-		limit = {
-			has_dlc = "Death or Dishonor"
-		}
-		complete_national_focus = ROM_preserve_greater_romania
-		complete_national_focus = ROM_army_maneuvers
-		complete_national_focus = ROM_expand_the_air_force
-		complete_national_focus = ROM_civil_works
-		complete_national_focus = ROM_agrarian_reform
-		complete_national_focus = ROM_local_development
-		complete_national_focus = ROM_army_war_college
-		complete_national_focus = ROM_danubian_transport_network
-		complete_national_focus = ROM_malaxa
-		complete_national_focus = ROM_flexible_foreign_policy
-		complete_national_focus = ROM_air_superiority
-		complete_national_focus = ROM_expand_the_galati_shipyards
-		complete_national_focus = ROM_trade_treaty_with_germany
-		complete_national_focus = ROM_iar_80
-		complete_national_focus = ROM_appoint_allied_friendly_government
-		complete_national_focus = ROM_cas
-		complete_national_focus = ROM_royal_guards_divisions
-		complete_national_focus = ROM_the_zb_53
-		complete_national_focus = ROM_vanatori_de_munte
-		complete_national_focus = ROM_hunedoara_steel_works
-		complete_national_focus = ROM_appoint_german_friendly_government
-		complete_national_focus = ROM_invite_german_advisors
-		complete_national_focus = ROM_iron_guard
-
-		#King stuff
-		unlock_national_focus = ROM_institute_royal_dictatorship
-		unlock_national_focus = ROM_revise_the_constitution
-		create_country_leader = {
-			name = "Carol II"
-			desc = "POLITICS_CAROL_II_DESC"
-			picture = GFX_Portrait_romania_Carol_II			
-			expire = "1965.1.1"
-			ideology = despotism
-			traits = {
-				hedonist
-				camarilla_leader
-			}
-			id = 550
-		}
-		#ROM = {
-		#	#Pick from list of the sane events first
-		#	random_list = {
-		#		100 = { country_event = { id = DOD_romania.80 days = 2 random_days = 20 } }
-		#	}
-		#}
-
-		else = {		
-			#generic focuses
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = large_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-	
-	if = {
-		limit = { NOT = { has_dlc = "No Step Back" } }
-		set_oob = "ROM_1939"
-	}
-	if = {
-		limit = { has_dlc = "No Step Back" } 
-		set_oob = "ROM_1939_nsb"
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "ROM_1939_naval_mtg"
-		else = {
-			set_naval_oob = "ROM_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "ROM_1939_air_bba"
-		else = {
-			set_air_oob = "ROM_1939_air_legacy"
-		}
-	}
-}
-
-set_politics = {
-	ruling_party = democratic
-	last_election = "1933.12.20"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 60
-	fascism = 18
-	communism = 2
-	neutrality = 20
-}
-
-1939.1.1 = {
 	set_politics = {
-		ruling_party = neutrality
-		last_election = "1939.7.15"
+		ruling_party = communism
+		last_election = "1974.3.29"
 		election_frequency = 48
 		elections_allowed = no
 	}
 	set_popularities = {
-		democratic = 20
-		fascism = 35
-		communism = 2
-		neutrality = 43
+		communism = 100
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
 	}
-}
-### VARIANTS ###
-# 1936 Start #
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
+	
+	create_country_leader = {
+	   name = "Nicolae Ceausescu"
+	   desc = "POLITICS_NICOLAE_CEAUSESCU_DESC"
+	   picture = "gfx/leaders/ROM/portrait_nicolae_ceausescu.dds"
+	   ideology = national_communism 
+	   expire = "2000.1.1"
+	   traits = { trait_national_communism }
 	}
-	create_equipment_variant = {
-		name = "IAR 14" 
-		type = small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			engine_type_slot = engine_1_1x
-			special_type_slot_1 = empty
-		}
-	}
-}
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	### Ship Variants ###
-	create_equipment_variant = {
-		name = "Regele Ferdinand Class"
-		type = destroyer_1
-		upgrades = {
-			ship_torpedo_upgrade = 1
-			destroyer_engine_upgrade = 1
-			ship_ASW_upgrade = 1
-			ship_anti_air_upgrade = 1
-		}
-	}
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	# Submarines #
-	create_equipment_variant = {
-		name = "Delfinul Class"				
-		type = ship_hull_submarine_2
-		name_group = ROM_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = ship_mine_layer_sub
-		}
-	}
-	# Destroyers #
-	create_equipment_variant = {
-		name = "Marasti Class"				
-		type = ship_hull_light_1
-		name_group = ROM_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_mine_layer_1
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Regele Ferdinand Class"	
-		type = ship_hull_light_1
-		name_group = ROM_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_mine_layer_1
-			rear_1_custom_slot = ship_depth_charge_1
-		}
+	
+	set_party_name = {
+		ideology = communism
+		long_name = ROM_communism_1985_party_long
+		name = ROM_communism_1985_party
 	}
 }
 
-# 1939 Start #
-1939.1.1 = {
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		# Ship variants #
+1991.2.15 = {
+	remove_ideas = SOV_support_warshaw
+}
+
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 19150 }
+
+	load_oob = "_tech_nato_minor_2013" 
+	oob = "RWA_2013"
+	
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		free_media
+		respect_of_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		market_economy
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		low_taxes
+		middle_social_security
+		pensions
+		terrorism_discounted
+		eu_member
 	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.1.21"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 0
+		liberalism = 55
+		democratic = 30
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Klaus Johannis"
+		desc = "POLITICS_KLAUS_JOHANNIS_DESC"
+		picture = "gfx/leaders/ROM/portrait_klaus_Johannis.dds"
+		ideology = conservative_liberalism
+		traits = { trait_conservative_liberalism }
+	}
+	
+	create_country_leader = {
+		name = "Traian Basescu"
+		desc = "POLITICS_TRAIAN_BASESCU_DESC"
+		picture = "gfx/leaders/ROM/portrait_traian_basescu.dds"
+		ideology = liberal_conservatism 
+		traits = { trait_liberal_conservatism }
+	}
+	
+	create_field_marshal = {
+		name = "Nicolae Ionel Ciuca"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_General_nicola_ciuca.dds"
+		traits = { old_guard thorough_planner }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Dumitru Scarlat"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_dumitru_scarlat.dds"
+		traits = { panzer_leader offensive_doctrine }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Marius Harabagiu"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_marius_harabagiu.dds"
+		traits = { commando fast_planner }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Marian Botea"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_marian_botea.dds"
+		traits = { urban_assault_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Mircea Dan Suta"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_mircea_dan_suta.dds"
+		traits = { ranger }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Florinel Damian"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_florinel_damian.dds"
+		traits = { fortress_buster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Petrica-Lucian Foca"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_petrica_lucian_foca.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Tudorica Petrache"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_tudorica_petrache.dds"
+		traits = { trait_mountaineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Adrian Soci"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_adrian_soci.dds"
+		traits = { panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Virgil-Ovidiu Pop"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_virgil_ovidiu_pop.dds"
+		traits = { commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Ioan Manci"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_ioan_manci.dds"
+		traits = { swamp_fox }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Nicolae Tonu"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_nicolae_tonu.dds"
+		traits = { urban_assault_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Ovidiu Ufaleanu"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_general_ovidiu_uifaleanu.dds"
+		traits = { tanks_commander_expert }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_navy_leader = {
+		name = "Alexandru Mirsu"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_admiral_alexandru_mirsu.dds"
+		traits = { old_guard_navy superior_tactician }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+	
+	create_navy_leader = {
+		name = "Daniel Capatina"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_admiral_daniel_capatina.dds"
+		traits = { spotter }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+	
+	create_navy_leader = {
+		name = "Bogdan Dumitrescu"
+		portrait_path = "gfx/leaders/ROM/portrait_rom_admiral_bogdan_dumitrescu.dds"
+		traits = { seawolf }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
 	}
 }

@@ -1,98 +1,80 @@
-﻿capital = 323
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "NEP_1936"
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-recruit_character = NEP_juddha_rana
-recruit_character = NEP_bhakti_thapa
-recruit_character = NEP_bir_shamsher_singh_thapa
-recruit_character = NEP_amar_thapa
-recruit_character = NEP_khusbu_singh
-recruit_character = NEP_hira_rana
-recruit_character = NEP_birsha_gurung
-recruit_character = NEP_gagan_lama
-recruit_character = NEP_walter_morriano
-recruit_character = NEP_mohan_rana
-recruit_character = NEP_robert_mainwaring
-recruit_character = NEP_kiran_rana
-recruit_character = NEP_h_t_s_collins
-recruit_character = NEP_baber_rana
-recruit_character = NEP_gehendra_rana
-recruit_character = NEP_l_m_potter
-recruit_character = NEP_rudra_rana
-recruit_character = NEP_alaap_lokesh
-recruit_character = NEP_william_stevenson_meyer
-recruit_character = NEP_w_r_parker_gill
-recruit_character = NEP_sidney_r_planter
+capital = 323
 
-add_ideas = {
-	NEP_royal_army
-}
+2013.11.1 = {
+	set_variable = { budget_last_year = 1927 }
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_mountaineers = 1
-}
-set_war_support = 0.1
-set_stability = 0.8
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
 
-323 = { #Nepal
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
+	add_political_power = 0
+	create_intelligence_agency = yes
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = construction_effort_2
-	complete_national_focus = production_effort_2
-	complete_national_focus = infrastructure_effort
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "NEP_1939"
-	set_technology = {
-		gw_artillery = 1
-		tech_support = 1		
-		tech_engineers = 1
-		infantry_weapons1 = 1
-		support_weapons = 1
-
-		#doctrines
-		air_superiority = 1
-
-		mass_assault = 1
-		pocket_defence = 1
-		defence_in_depth = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	add_ideas = {
+		parliamentary_republic
+		federation
+		state_religion
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		mixed_economic
+		free_market
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		average_terrorism
 	}
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 60
+		reformism = 40
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Khadga Prasad Oli"
+		desc = ""
+		picture = "gfx/leaders/NEP/portrait_khadga_prasad_oli.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Sushil Koirala"
+		desc = ""
+		picture = "gfx/leaders/NEP/portrait_sushil_koirala.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Kamal Thapa"
+		desc = ""
+		picture = "gfx/leaders/NEP/portrait_kamal_thapa.dds"
+		ideology = national_royalist
+		traits = { trait_national_royalist }
+	}
+
 }
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	neutrality = 100
-}

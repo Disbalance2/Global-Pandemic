@@ -1,0 +1,30 @@
+state={
+	id = 992
+	name = "STATE_992" 
+	manpower = 1814536
+	state_category = town
+	resources = {
+		iron_ore = 5
+	}	
+	history = {
+		owner = SOM
+		set_state_flag = islam
+		victory_points = {
+			10928 10
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+		}
+		add_core_of = SOM
+		2001.1.1 = {
+			owner = ALS
+			add_core_of = PSS
+			add_core_of = ALS
+		}
+	}
+	provinces={
+		2063 10928 14024 14036
+	}
+}

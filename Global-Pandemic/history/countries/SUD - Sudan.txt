@@ -1,87 +1,57 @@
-﻿capital = 551
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-set_convoys = 20
 
-recruit_character = SUD_coi
-recruit_character = SUD_aa2
-recruit_character = SUD_democratic_guy
-recruit_character = SUD_acd2
-recruit_character = SUD_acr
-recruit_character = SUD_fascist_guy
-recruit_character = SUD_stc
-recruit_character = SUD_ncs
-recruit_character = SUD_awt
-recruit_character = SUD_mt
-recruit_character = SUD_communist_guy
-recruit_character = SUD_ai2
-recruit_character = SUD_ar
-recruit_character = SUD_acas
-recruit_character = SUD_acgs
-recruit_character = SUD_ncm
-recruit_character = SUD_nt
-recruit_character = SUD_pot
-recruit_character = SUD_nccr
-recruit_character = SUD_aco2
+capital = 551
 
-1939.1.1 = {
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		gw_artillery = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+#   19 января 1956 года
+    add_ideas = {
+		arab_league_member
+		mixed_schools
+		au_member
+		
+		islam_idea_lvl_3
 	}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 7207 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SUD_2013"
+	add_ideas = high_terrorism
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes	
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1993.10.16"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 75
+		neutrality = 25
+		fascism = 0
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Omar al-Bashir"
+		desc = ""
+		picture = "gfx/leaders/SUD/portrait_omar_al_bashir.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+    }
 }
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 25
-	fascism = 20
-	communism = 5
-	neutrality = 50
+#Уход Судана из Африканского союза в связи с резнёй в Хартуме
+2019.6.6 = {
+	remove_ideas = au_member
 }

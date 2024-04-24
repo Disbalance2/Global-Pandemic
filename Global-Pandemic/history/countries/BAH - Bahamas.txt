@@ -1,84 +1,66 @@
-﻿capital = 690
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+capital = 690
 
-set_convoys = 5
+add_ideas = mixed_schools
 
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
+2013.11.1 = {
+	set_variable = { budget_last_year = 852 }
 
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
+	load_oob = "_tech_minor_2013"
+	oob = "_army_microstate_2013"
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	set_stability = 0.75
+	add_ideas = { 
+		parliamentary_monarchy
+		queen_elizabet
+		NPT
 	}
-}
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 75
-	fascism = 1
-	communism = 1
-	neutrality = 23
-}
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
-#	}
-#}
+	
+	add_political_power = 0
 
+	set_convoys = 10
+	
 
-1939.1.1 = {
 	set_politics = {
-		ruling_party = democratic
-		last_election = "1936.1.1"
-		election_frequency = 48
+		ruling_party = liberalism
+		last_election = "2012.5.8"
+		election_frequency = 60
 		elections_allowed = yes
 	}
 	set_popularities = {
-		democratic = 75
-		fascism = 1
-		communism = 1
-		neutrality = 23
+		communism = 5
+		reformism = 0
+		liberalism = 92
+		democratic = 0
+		neutrality = 0
+		fascism = 3
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Hubert Minnis"
+	#	desc = "POLITICS_HUBERT_MINNIS_DESC"
+	#	picture = "gfx/leaders/BAH/portrait_hubert_minnis.dds"
+	#	ideology = conservative_democracy
+	# 	traits = { trait_conservative_democracy}
+	#}
+
+	create_country_leader = {
+		name = "Perry Christie"
+		desc = "POLITICS_PERRY_CHRISTIE_DESC"
+		picture = "gfx/leaders/BAH/portrait_perry_christie.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
 	}
 }
+
+#2017.5.11 = {
+#	set_politics = {
+#		ruling_party = democratic
+#	}
+#}

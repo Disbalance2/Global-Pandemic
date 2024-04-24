@@ -1,90 +1,123 @@
-﻿capital = 732
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
+set_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
+set_country_flag = COUNTRY_FLAG.POST_USSR
+
+capital = 586
+
+1992.3.6 = {
+    add_ideas = cis_member
 }
 
-set_convoys = 5
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
+}
 
-recruit_character = KYR_ncs
-recruit_character = KYR_pot
-recruit_character = KYR_nccr
-recruit_character = KYR_fascist_guy
-recruit_character = KYR_coi
-recruit_character = KYR_ai2
-recruit_character = KYR_democratic_guy
-recruit_character = KYR_ar
-recruit_character = KYR_acgs
-recruit_character = KYR_awt
-recruit_character = KYR_acd2
-recruit_character = KYR_nt
-recruit_character = KYR_aco2
-recruit_character = KYR_acas
-recruit_character = KYR_acr
-recruit_character = KYR_mt
-recruit_character = KYR_stc
-recruit_character = KYR_aa2
-recruit_character = KYR_ncm
-recruit_character = KYR_communist_guy
+1996.4.26 = {
+	add_ideas = Turkic_Council
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 733 }
+	subtract_from_variable = { budget_reserve = -2238 }
 
+	load_oob = "_tech_csto_minor_2013"
+	oob = "KYR_2013"
 
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
 
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	add_ideas = {
+		semi-presidential_republic
+		secular_state
+		cencored_media
+		limitation_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+		low_terrorism
 	}
-}
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 50
-	fascism = 1
-	communism = 40
-	neutrality = 9
+	
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.10.30"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 55
+		liberalism = 8
+		democratic = 15
+		neutrality = 6
+		fascism = 16
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Sooronbay Jeenbekov"
+	#	desc = ""
+	#	picture = "gfx/leaders/KYR/portrait_sooronbay_jeenbekov.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+
+	create_country_leader = {
+		name = "Almazbek Atambayev"
+		picture = "gfx/leaders/KYR/portrait_almazbek_atambayev.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Adakhan Madumarov"
+		picture = "gfx/leaders/KYR/portrait_adakhan_madumarov.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Kamchybek Tashiev"
+		picture = "gfx/leaders/KYR/portrait_kamchybek_tashiev.dds"
+		ideology = national_conservatism_dem
+		traits = { trait_national_conservatism_dem }
+	}
+
+	create_country_leader = {
+		name = "Bakyt Torobayev"
+		picture = "gfx/leaders/KYR/portrait_bakyt_torobayev.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Altynbek Sulaymanov"
+		picture = "gfx/leaders/KYR/portrait_altynbek_sulaymanov.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ishak Masaliev"
+		picture = "gfx/leaders/KYR/portrait_ishak_masaliev.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
 }
 
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
-#	}
-#}
+
+

@@ -1,90 +1,47 @@
-﻿capital = 122
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_trucks = 1
-	fuel_silos = 1
-}
+# NON-EXISTENT ON START GAME STATE
 
-set_convoys = 20
+capital = 122
+add_ideas = mixed_schools
+2013.11.1 = {
+	set_variable = { budget_last_year = 3530 }
+	oob = "WLS_2013"
+	load_oob = "_tech_nato_minor_2013"
 
-recruit_character = WLS_acr
-recruit_character = WLS_stc
-recruit_character = WLS_awt
-recruit_character = WLS_pot
-recruit_character = WLS_mt
-recruit_character = WLS_ncm
-recruit_character = WLS_nt
-recruit_character = WLS_acd2
-recruit_character = WLS_fascist_guy
-recruit_character = WLS_ncs
-recruit_character = WLS_nccr
-recruit_character = WLS_aco2
-recruit_character = WLS_communist_guy
-recruit_character = WLS_ai2
-recruit_character = WLS_ar
-recruit_character = WLS_coi
-recruit_character = WLS_acas
-recruit_character = WLS_acgs
-recruit_character = WLS_aa2
-recruit_character = WLS_democratic_guy
+	set_stability = 0.75
 
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	add_political_power = 0
+
+	set_convoys = 10
 	
-	set_technology = {
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 25
+		reformism = 50
+		liberalism = 0
+		democratic = 15
+		neutrality = 9
+		fascism = 1
+		rad_islamists = 0
+	}
 
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	create_country_leader = {
+		name = "Leanne Wood"
+		desc = ""
+		picture = "gfx/leaders/WLS/portrait_leanne_wood.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
 	}
 }
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 93
-	fascism = 3
-	communism = 4
-}
 
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
-#	}
-#}

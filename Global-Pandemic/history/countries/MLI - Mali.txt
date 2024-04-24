@@ -1,87 +1,88 @@
-﻿capital = 556
+# Economic Crisis edit for 0.7.6 alpha
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+# NOT EDITED POLITICS
 
-set_convoys = 0
+capital = 556
 
-recruit_character = MLI_coi
-recruit_character = MLI_aa2
-recruit_character = MLI_democratic_guy
-recruit_character = MLI_acd2
-recruit_character = MLI_acr
-recruit_character = MLI_fascist_guy
-recruit_character = MLI_stc
-recruit_character = MLI_ncs
-recruit_character = MLI_awt
-recruit_character = MLI_mt
-recruit_character = MLI_communist_guy
-recruit_character = MLI_ai2
-recruit_character = MLI_ar
-recruit_character = MLI_acas
-recruit_character = MLI_acgs
-recruit_character = MLI_ncm
-recruit_character = MLI_nt
-recruit_character = MLI_pot
-recruit_character = MLI_nccr
-recruit_character = MLI_aco2
+add_ideas = au_member
 
-1939.1.1 = {
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		gw_artillery = 1
+2013.11.1 = {
+	set_variable = { budget_last_year = 1281 }
 
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
+	load_oob = "_tech_minor_2013"
+	oob = "MLI_2013"
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	set_stability = 0.75
+	add_political_power = 0
+	set_convoys = 0
+		
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		# religion_islam
+		# religion_orthodox_christianity
+		state_media_only
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		average_terrorism
 	}
-}
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 25
-	fascism = 20
-	communism = 5
-	neutrality = 50
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.8.11"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 66
+		liberalism = 26
+		democratic = 0
+		neutrality = 0
+		fascism = 3
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Ibrahim Boubacar Keïta"
+		desc = "POLITICS_IBRAHIM_BOUBACAR_KEITA_DESC"
+		picture = "gfx/leaders/MLI/portrait_ibrahim_boubacar_keita.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Tiébilé Dramé"	
+		desc = "POLITICS_TIEBILE_DRAME_DESC"	
+		picture = "gfx/leaders/MLI/portrait_tiebile_drame.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+	
+	create_country_leader = {
+		name = "Soumaïla Cissé"
+		desc = "POLITICS_SOUMAILA_CISSE_DESC"
+		picture = "gfx/leaders/MLI/portrait_soumaila_cisse.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+	
+	create_country_leader = {
+		name = "Oumar Mariko"
+		desc = "POLITICS_OUMAR_MARIKO_DESC"
+		picture = "gfx/leaders/MLI/portrait_oumar_mariko.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
 }

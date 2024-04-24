@@ -1,138 +1,260 @@
-﻿capital = 586 #Almaty
 
-oob = "KAZ_1936"
+# Economic Crisis edit for 0.7.6 alpha
 
-set_research_slots = 3
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_recon = 1
-	tech_support = 1		
-	tech_engineers = 1
-	tech_military_police = 1
-	tech_mountaineers = 1
-	motorised_infantry = 1
-	paratroopers = 1
-	gw_artillery = 1
-	mass_assault = 1
-	fleet_in_being = 1
+set_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
+set_country_flag = COUNTRY_FLAG.POST_USSR
+
+capital = 589 # Alma Alta
+
+# Перенос столицы в Астану
+1997.12.10 = {
+	capital = 590 # Astana
 }
-if = {
-	limit = {
-		NOT = { has_dlc = "By Blood Alone" }
-	}
-	set_technology = {
-		early_fighter = 1
-		fighter1 = 1
-		early_bomber = 1
-		strategic_bomber1 = 1
-		naval_bomber1 = 1
-	}
+
+1991.12.23 = {
+    add_ideas = cis_member
 }
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-	}
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
 }
-if = {
-	limit = {
-		
-		has_dlc = "No Step Back"
-		
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-}
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
-	}
-	set_technology = {
-		early_submarine = 1
-		basic_submarine = 1
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_heavy_cruiser = 1
-		early_battleship = 1
-		early_battlecruiser = 1
-		transport = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	set_technology = {
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		early_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		early_ship_hull_heavy = 1
-		mtg_transport = 1
-		basic_battery = 1
-		basic_torpedo = 1
+
+1996.4.26 = {
+    add_ideas = {
+		sco_member
+		turkic_council
+
 	}
 }
 
-set_popularities = {
-	democratic = 60
-	communism = 40
-}
+2013.11.1 = {
+	set_variable = { budget_last_year = 23660 }
+	subtract_from_variable = { budget_reserve = -93000 }
 
-create_country_leader = {
-	name = "Nikolay Aleksandrovich Skvortsov"
-	desc = ""
-	picture = GFX_portrait_Nikolay_Aleksandrovich_Skvortsov
-	expire = "1953.3.1"
-	ideology = stalinism
-	traits = {
-		
+	oob = "KAZ_2013"
+	load_oob = "_tech_csto_regional_2013"
+	
+	add_ideas = {
+		kaz_serik_akhmetov_hog
+		kaz_adilbek_zhaksybekov_defm
+		kaz_erlan_idrissov_fgm
+		kaz_bakhyt_sultanov_ecm
+		kaz_kalmukhanbet_kassymov_ssch
+	}
+	
+	add_political_power = 0
+	set_stability = 0.5
+	set_convoys = 35
+	create_intelligence_agency = yes
+
+	set_country_flag = pai_nondem_authoritarian
+	
+	add_ideas = {
+		presidential_republic
+		secular_state
+		cencored_media
+		suspended_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		minimum_wage
+		mixed_economic
+		NPT
+		low_terrorism
+	}
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.4.3"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 7
+		reformism = 15
+		liberalism = 6
+		democratic = 3
+		neutrality = 69
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Kassym-Jomart Tokayev"
+	#	desc = "POLITICS_KASSYM-JOMART_TOKAYEV_DESC"
+	#	picture = "gfx/leaders/KAZ/portrait_kassym-jomart_tokayev.dds"
+	#	ideology = authoritarian_democracy
+	#	traits = { trait_authoritarian_democracy }
+	#}
+
+	create_country_leader = {
+		name = "Nursultan Nazarbaev"
+		desc = "POLITICS_NURSULTAN_NAZARBAYEV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_nursultan_nazarbaev.dds"
+		ideology = authoritarian_democracy
+		#expire = "2019.3.20"
+		traits = { trait_authoritarian_democracy }
+	}
+
+	create_country_leader = {
+		name = "Jambyl Ahmetbekov"
+		desc = "POLITICS_JAMBYL_AHMETBEKOV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_jambyl_ahmetbekov.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Mukhtar Ablyazov"
+		desc = "POLITICS_MUKHTAR_ABLYAZOV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_mukhtar_ablyazov.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ali Bektaev"
+		desc = "POLITICS_ALI_BEKTAEV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_ali_bektaev.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Yerzhan Malgazhguly Mayamerov"
+		desc = "POLITICS_MALGAZHULI_DESC"
+		picture = "GFX/leaders/KAZ/portrait_yerzhan_mayamerov.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+    #Generals
+	create_field_marshal = {
+		name = "Marat Husainov"
+		portrait_path = "gfx/leaders/KAZ/portrait_marat_husainov.dds"
+		traits = { assault_army_ops_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+    create_field_marshal = {
+		name = "Daulet Ospanov"
+		portrait_path = "gfx/leaders/KAZ/portrait_daulet_ospanov.dds"
+		traits = { old_guard desert_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+    create_field_marshal = {
+		name = "Murat Bektanov"
+		portrait_path = "gfx/leaders/KAZ/portrait_murat_bektanov.dds"
+		traits = { tanks_commander_expert }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Murat Maykeev"
+		portrait_path = "gfx/leaders/KAZ/portrait_murat_maykeev.dds"
+		traits = { specops_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Nurlan Kashaganov"
+		portrait_path = "gfx/leaders/KAZ/portrait_nurlan_kashaganov.dds"
+		traits = { old_guard organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Nurlan Ormanbetov"
+		portrait_path = "gfx/leaders/KAZ/portrait_nurlan_ormanbetov.dds"
+		traits = { panzer_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Okas Saparov"
+		portrait_path = "gfx/leaders/KAZ/portrait_okas_saparov.dds"
+		traits = { trait_engineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Saken Zhasuzakov"
+		portrait_path = "gfx/leaders/KAZ/portrait_saken_zhasuzakov.dds"
+		traits = { commando }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Talgat Muhtarov"
+		portrait_path = "gfx/leaders/KAZ/portrait_talgat_muhtarov.dds"
+		traits = { superior_tactician }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Talgat Zhanszhumenov"
+		portrait_path = "gfx/leaders/KAZ/portrait_talgat_zhanszhumenov.dds"
+		traits = { old_guard panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Zhandarbek Zhanzakov"
+		portrait_path = "gfx/leaders/KAZ/portrait_zhandarbek_zhanzakov.dds"
+		traits = { old_guard trait_mountaineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
 	}
 }
-
-create_country_leader = {
-	name = "Ilyas Zhansugurov"
-	desc = ""
-	picture = GFX_portrait_Ilyas_Zhansugurov
-	expire = "1953.3.1"
-	ideology = conservatism
-	traits = {
-		
-	}
-}
-
-recruit_character = KAZ_awt
-recruit_character = KAZ_acd2
-recruit_character = KAZ_nt
-recruit_character = KAZ_aco2
-recruit_character = KAZ_acas
-recruit_character = KAZ_acr
-recruit_character = KAZ_mt
-recruit_character = KAZ_stc
-recruit_character = KAZ_aa2
-recruit_character = KAZ_ncm
-recruit_character = KAZ_communist_guy
-recruit_character = KAZ_ncs
-recruit_character = KAZ_pot
-recruit_character = KAZ_nccr
-recruit_character = KAZ_fascist_guy
-recruit_character = KAZ_coi
-recruit_character = KAZ_ai2
-recruit_character = KAZ_democratic_guy
-recruit_character = KAZ_ar
-recruit_character = KAZ_acgs
-
-
-
-
 

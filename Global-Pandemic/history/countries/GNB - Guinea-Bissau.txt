@@ -1,87 +1,114 @@
-﻿capital = 296
+# Economic Crisis edit for 0.7.6 alpha
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
+capital = 296
+
+add_ideas = {
+	au_member
 }
-
-set_convoys = 10
-
-recruit_character = GNB_democratic_guy
-recruit_character = GNB_mt
-recruit_character = GNB_acgs
-recruit_character = GNB_coi
-recruit_character = GNB_fascist_guy
-recruit_character = GNB_ar
-recruit_character = GNB_acr
-recruit_character = GNB_ncs
-recruit_character = GNB_awt
-recruit_character = GNB_acas
-recruit_character = GNB_acd2
-recruit_character = GNB_ncm
-recruit_character = GNB_nccr
-recruit_character = GNB_ai2
-recruit_character = GNB_stc
-recruit_character = GNB_pot
-recruit_character = GNB_aco2
-recruit_character = GNB_aa2
-recruit_character = GNB_nt
-recruit_character = GNB_communist_guy
-
-1939.1.1 = {
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		gw_artillery = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+2001.9.1 = {
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2000.6.19"
+		election_frequency = 60
+		elections_allowed = yes
 	}
+	set_popularities = {
+		communism = 40
+		reformism = 50
+		liberalism = 0
+		democratic = 0
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Kumba Iala"
+		desc = "POLITICS_KUMBA_IALÁ_DESC"
+		picture = "gfx/leaders/GNB/portrait_kumba_iala.dds"
+		ideology = social_democracy
+		expire = "2014.4.4"
+		traits = { trait_social_democracy }
+	}
+
 }
 
-set_politics = {
-	ruling_party = communism
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
+2013.11.1 = {
+	set_variable = { budget_last_year = 102 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "GNB_2013"
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		# religion_islam
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		terrorism_discounted
+	}
+	
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = communism
+		last_election = "2014.4.13"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 63
+		reformism = 35
+		liberalism = 0
+		democratic = 0
+		neutrality = 2
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Umaro Sissoco Embaló"
+		desc = "POLITICS_UMARO_SISSOCO_EMBALO_DESC"
+		picture = "gfx/leaders/GNB/portrait_umaro_sissoco_embalo.dds"
+		ideology = leninism 
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "José Mário Vaz"
+		desc = "POLITICS_JOSE_MARIO_VAZ_DESC"
+		picture = "gfx/leaders/GNB/portrait_jose_mario_vaz.dds"
+		ideology = leninism 
+		expire = "2019.12.29"
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Manuel Serifo Nhamadjo"
+		desc = "POLITICS_MANUEL_SERIFO_NHAMADJO_DESC"
+		picture = "gfx/leaders/GNB/portrait_manuel_serifo_nhamadjo.dds"
+		ideology = leninism 
+		expire = "2014.5.18"
+		traits = { trait_leninism }
+	}
+
 }
-set_popularities = {
-	democratic = 25
-	fascism = 20
-	communism = 50
-	neutrality = 5
-}
+

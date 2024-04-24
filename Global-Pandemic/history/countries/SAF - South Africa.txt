@@ -1,233 +1,93 @@
-﻿capital = 275
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "SAF_1936"
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "SAF_1936_air_bba"
-	else = {
-		set_air_oob = "SAF_1936_air_legacy"
-		set_technology = {
-			early_fighter = 1
-			cv_early_fighter = 1
-			cv_naval_bomber1 = 1
-			naval_bomber1 = 1
-			early_bomber = 1
-			CAS1 = 1
+# NOT EDITED POLITICS
 
-		}
-	}
+capital = 953
+
+# вступление в БРИКС
+2010.11.12 = {
+    add_ideas = brics_member
 }
 
-set_stability = 0.6
-set_war_support = 0.1
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_trucks = 1
-	tech_support = 1		
-	tech_engineers = 1
-	tech_recon = 1
-	gw_artillery = 1
-	trench_warfare = 1
-	fleet_in_being = 1
-	fuel_silos = 1
-}
+add_ideas = {
+	au_member
+	regional_country
+} 
 
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-	}
-}
+2013.11.1 = {
+	set_variable = { budget_last_year = 36660 }
 
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
-	}
-	set_technology = {
-		early_destroyer = 1
-		transport = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	set_technology = {
-		early_ship_hull_light = 1
-		basic_battery = 1
-		basic_torpedo = 1
-		mtg_transport = 1
-	}
-}
+	load_oob = "_tech_regional_2013" 
+	oob = "SAF_2013"
 
-if = {
-	limit = { has_dlc = "Together for Victory" }
-	add_ideas = SAF_ossewabrandwag
-	add_ideas = SAF_history_of_segregation
-
-	add_to_tech_sharing_group = commonwealth_research
-	add_opinion_modifier = { target = ENG modifier = SAF_anti_british_sentiment }
-}
-
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	oob = "SAF_1939"
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "SAF_1939_air_bba"
-		else = {
-			set_air_oob = "SAF_1939_air_legacy"
-		}
+   	add_ideas = {
+	    parliamentary_republic
+		unitary_state
+		secular_state
+        commercial_media 
+		suspended_liberties
+	   	mixed_army
+		mixed_schools
+		open_immigration
+	    mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		average_terrorism
 	}
-	if = {
-		limit = { has_dlc = "Together for Victory" }
-		complete_national_focus = SAF_special_service_battalion
-		complete_national_focus = SAF_improve_the_three_oh_three
-		complete_national_focus = SAF_q_services_corps
-		complete_national_focus = SAF_commit_to_the_five_year_plan
-		complete_national_focus = SAF_seaward_defence_force
-		complete_national_focus = SAF_protect_the_trade
-		complete_national_focus = SAF_south_african_railways
-		complete_national_focus = SAF_expand_the_mining_industry
-		complete_national_focus = SAF_heavy_engineering	
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
 		
-		else = {
-			#generic focuses
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = large_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-
-	add_ideas = {
-		#laws
-		volunteer_only
-		low_economic_mobilisation
-	}
-
-	
-	set_technology = {
-		interwar_artillery = 1
-		infantry_weapons2 = 1
-		support_weapons = 1
-		support_weapons2 = 1
-		
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_refining = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-		set_technology = {
-			fighter1 = 1
-			tactical_bomber1 = 1
-		}
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "No Step Back" }
-		}
-		set_technology = {
-			improved_light_tank = 1
-			basic_medium_tank = 1
-			basic_heavy_tank = 1
-		}
-	}
-}
-
-set_convoys = 25
-set_politics = {
-	ruling_party = democratic
-	last_election = "1933.5.17"
-	election_frequency = 60
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 75
-	fascism = 20
-	communism = 5
-}
-
-recruit_character = SAF_j_b_m_hertzog
-recruit_character = SAF_d_f_malan
-recruit_character = SAF_moses_kotane
-recruit_character = SAF_pixley_ka_isaka_seme
-recruit_character = SAF_george_edwin_brink
-recruit_character = SAF_guy_hallifax
-recruit_character = SAF_pierre_oliver_knoll
-recruit_character = SAF_cornelis_van_zuigenbrogge
-recruit_character = SAF_pierre_van_ryneveld
-recruit_character = SAF_s_p_le_roux
-recruit_character = SAF_adolf_malan
-recruit_character = SAF_marinus_van_osterkamp
-recruit_character = SAF_robert_palmer
-recruit_character = SAF_leonard_beyers
-recruit_character = SAF_c_de_weenburg_du_toit
-recruit_character = SAF_james_mitchell_baker
-recruit_character = SAF_jeannot_de_la_tourier
-recruit_character = SAF_j_f_van_rensburg
-recruit_character = SAF_e_g_jansen
-recruit_character = SAF_nicolaas_havenga
-recruit_character = SAF_sir_patrick_duncan
-recruit_character = SAF_abram_fischer
-
-1939.1.1 = {
+	set_country_flag = pai__reformist
 	set_politics = {
-		ruling_party = democratic
-		last_election = "1938.5.18"
+		ruling_party = reformism
+		last_election = "2013.5.17"
 		election_frequency = 60
 		elections_allowed = yes
 	}
 	set_popularities = {
-		democratic = 100
+		communism = 7
+		reformism = 67
+		liberalism = 20
+		democratic = 5
+		neutrality = 0
+		fascism = 1
+		rad_islamists = 0
 	}
 
-	#retire_character = SAF_j_b_m_hertzog
-	# Took office 5 days after this date
-	recruit_character = SAF_jan_smuts
-	promote_character = SAF_jan_smuts
-	retire_character = SAF_j_b_m_hertzog
+	create_country_leader = {
+		name = "Jacob Zuma"
+		desc = "POLITICS_JACOB_ZUMA_DESC"
+		picture = "gfx/leaders/SAF/portrait_jacob_zuma.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Helen Zille"
+		desc = "POLITICS_HELEN_ZILLE_DESC"
+		picture = "gfx/leaders/SAF/portrait_helen_zille.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	create_country_leader = {
+		name = "Mangosuthu Buthelezi"
+		desc = "POLITICS_MANGOSUTHU_BUTHELEZI_DESC"
+		picture = "gfx/leaders/SAF/portrait_mangosuthu_buthelezi.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	create_country_leader = {
+		name = "Mosiuoa Lekota"
+		desc = "POLITICS_MOSIUOA_LEKOTA_DESC"
+		picture = "gfx/leaders/SAF/portrait_mosiuoa_lekota.dds"
+		ideology = china_socialism
+		traits = { trait_china_socialism }
+	}
 }

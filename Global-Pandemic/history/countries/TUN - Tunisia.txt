@@ -1,97 +1,96 @@
-﻿capital = 458
+﻿# Economic Crisis edit for 0.7.6 alpha
+# NOT EDITED POLITICS
+capital = 458
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
+add_ideas = {
+	au_member
+	arab_league_member
 }
 
-set_convoys = 20
+2013.11.1 = {
+	set_variable = { budget_last_year = 4626 }
 
-recruit_character = TUN_acgs
-recruit_character = TUN_acr
-recruit_character = TUN_stc
-recruit_character = TUN_ncm
-recruit_character = TUN_democratic_guy
-recruit_character = TUN_communist_guy
-recruit_character = TUN_coi
-recruit_character = TUN_pot
-recruit_character = TUN_aa2
-recruit_character = TUN_awt
-recruit_character = TUN_acas
-recruit_character = TUN_mt
-recruit_character = TUN_nccr
-recruit_character = TUN_ai2
-recruit_character = TUN_ncs
-recruit_character = TUN_aco2
-recruit_character = TUN_acd2
-recruit_character = TUN_nt
-recruit_character = TUN_ar
-recruit_character = TUN_fascist_guy
+	load_oob = "_tech_minor_2013" 
+    oob = "_army_minor_2013"
 
-1939.1.1 = {
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		gw_artillery = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	# laws
+	add_ideas = {
+		presidential_republic
+		administrative_federation
+		preference_religion
+		# religion_islam
+		free_media
+		respect_of_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		market_economy
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		average_terrorism
 	}
-}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 20
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 25
-	fascism = 20
-	communism = 5
-	neutrality = 50
-}
-
-create_country_leader = {
-	name = "Habib Bourguiba"
-	desc = ""
-	picture = GFX_portrait_Habib_Bourguiba
-	ideology = centrism
-	traits = {
-		#
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.11.23"
+		election_frequency = 36
+		elections_allowed = yes
 	}
+	set_popularities = {
+		communism = 0
+		reformism = 26
+		liberalism = 0
+		democratic = 45
+		neutrality = 29
+		fascism = 0
+		rad_islamists = 0
+	}
+    
+	create_country_leader = {
+		name = "Moncef Marzouki"
+		desc = "POLITICS_MONCEF_MARZOUKI_DESC"
+		picture = "gfx/leaders/TUN/portrait_moncef_marzouki.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Rached Ghannouchi"
+		desc = "POLITICS_RACHED_GHANNOUCHI_DESC"
+		picture = "gfx/leaders/TUN/portrait_rached_ghannouchi.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}	
+
+	#create_country_leader = {
+	#	name = "Mohamed Hechmi Hamdi"
+	#	desc = "POLITICS_MOHAMED_HECHMI_HAMDI_DESC"
+	#	picture = "gfx/leaders/TUN/portrait_mohamed_hechmi_hamdi.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+	create_country_leader = {
+		name = "Hamma Hammami"
+		desc = "POLITICS_HAMMA_HAMMAMI_DESC"
+		picture = "gfx/leaders/TUN/portrait_hamma_hammami.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	#create_country_leader = {
+	#	name = "Kamel Morjane"
+	#	desc = "POLITICS_KAMEL_MORJANE_DESC"
+	#	picture = "gfx/leaders/TUN/portrait_kamel_morjane.dds"
+	#	ideology = centrist_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
+	
 }

@@ -1,94 +1,50 @@
-﻿capital = 105 # Montenegro
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "MNT_1936"
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-set_research_slots = 3
+set_country_flag = COUNTRY_FLAG.BALKANS
 
-# Starting tech
-# clone of Yugoslavia
-set_technology = {
-	tech_support = 1		
-	tech_engineers = 1
-	tech_mountaineers = 1
-	infantry_weapons = 1
-	infantry_weapons1 = 1
+capital = 105 # Chernogoria or Montenegro
+
+	add_ideas = {
+		terrorism_discounted
+		parliamentary_republic
+		mixed_schools
+		NPT
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 446 }
+	load_oob = "_tech_minor_2013"
+	oob = "MNT_2013"
+	set_convoys = 25
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.4.7"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 55
+		liberalism = 0
+		democratic = 6
+		neutrality = 30
+		fascism = 8
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Filip Vujanović"
+		desc = "POLITICS_FILIP_VUJANOVIC_DESC"
+		picture = "gfx/leaders/MNT/portrait_filip_vujanovic.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
 }
-
-if = {
-	limit = {
-		NOT = { has_dlc = "By Blood Alone" }
-	}
-	set_technology = {
-		early_fighter = 1
-	}
-}
-
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-
-	}
-}
-if = {
-	limit = {
-		
-		has_dlc = "No Step Back"
-		
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-}
-
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
-	}
-	set_technology = {
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_submarine = 1
-		transport = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	set_technology = {
-		early_ship_hull_submarine = 1
-		early_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		basic_battery = 1
-		basic_torpedo = 1
-		mtg_transport = 1
-	}
-}
-
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-
-set_popularities = {
-	democratic = 33
-	neutrality = 33
-	communism = 34
-}
-
-recruit_character = MNT_kristo_popovic
-recruit_character = MNT_blazo_jovanovic
-recruit_character = MNT_blazo_dukanovic
-
-
-
 

@@ -1,255 +1,252 @@
-﻿capital = 812
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "EST_1936"
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "EST_1936_air_bba"
-	else = {
-		set_air_oob = "EST_1936_air_legacy"
-		set_technology = {
-			early_fighter = 1
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-		}
-	}
-}
+set_country_flag = COUNTRY_FLAG.POST_USSR
 
-if = {
-	limit = { has_dlc = "Arms Against Tyranny" }
-	store_core_states_on_game_start = yes
-}
-set_research_slots = 3
+capital = 13
 
 add_ideas = {
-	limited_conscription
+	eu_member
+	mixed_schools
+	parliamentary_republic
 }
-IF = {
-	limit = { has_dlc = "No Step Back" }
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2508 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "EST_2013"	
 	add_ideas = {
-		democratic_opposition
-		EST_vaps_idea_1
+		low_terrorism
+		NPT
 	}
-}
+	set_convoys = 15
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
 
-recruit_character = EST_konstantin_pats
-recruit_character = EST_artur_sirk
-recruit_character = EST_johannes_kabin
-recruit_character = EST_jaan_tonisson
-recruit_character = EST_andres_larka
-recruit_character = EST_oskar_eiriksson
-recruit_character = EST_leo_sepp
-recruit_character = EST_richard_veermaa
-recruit_character = EST_alex_nirk
-recruit_character = EST_richard_tomberg
-recruit_character = EST_alfred_vendt
-recruit_character = EST_juhan_tuuling
-recruit_character = EST_nikolay_g_karotamm
-recruit_character = EST_voldemar_mere
-recruit_character = EST_alfons_rebane
-recruit_character = EST_juri_uluots
-recruit_character = EST_boris_kumm
-recruit_character = EST_august_rei
-recruit_character = EST_jaan_anvelt
-recruit_character = EST_johan_laidoner
-
-IF = { 
-	limit = { has_dlc = "No Step Back"}
-	recruit_character = EST_august_jakobson
-	recruit_character = EST_viktor_puskar
-	recruit_character = EST_voldemar_voolman
-	recruit_character = EST_henrik_allik
-	recruit_character = EST_johan_pitka
-	recruit_character = EST_hjalmar_mae
-	recruit_character = EST_aleksander_jaakson
-	recruit_character = EST_herbert_brede
-	recruit_character = EST_otto_heinze
-}
-
-set_variable = {
-	var = vaps_days_var
-	value = 80
-}
-
-set_variable = {
-	var = vaps_crackdown_var
-	value = 360
-}
-
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	gw_artillery = 1
-	interwar_antiair = 1
-	tech_support = 1
-	basic_train = 1
-}
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	set_technology = {
-		early_submarine = 1
-	}
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	set_technology = {
-		basic_naval_mines = 1
-		submarine_mine_laying = 1
-		early_ship_hull_light = 1
-		early_ship_hull_submarine = 1
-		basic_battery = 1
-		basic_torpedo = 1
-	}
-}
-
-set_convoys = 5
-
-1939.1.1 = {
-
-	set_country_flag = fought_vaps_flag #Estonia shouldn't have to fight the Vaps in 39
-
-	remove_ideas = {
-		democratic_opposition
-		EST_vaps_idea_1
-	}
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		complete_national_focus = EST_era_of_silence
-		complete_national_focus = EST_fight_the_vaps
-		complete_national_focus = EST_ismaaliit
-		complete_national_focus = BALTIC_rejoin_the_railways
-		complete_national_focus = BALTIC_renew_allied_trade
-		complete_national_focus = EST_establish_the_rahvuskogu
-		complete_national_focus = EST_national_council
-		complete_national_focus = EST_chamber_of_deputies
-		complete_national_focus = EST_modernize_capital
-		complete_national_focus = BALTIC_attract_workers_to_capital
-		complete_national_focus = BALTIC_modernize_industry
-		complete_national_focus = EST_exploit_the_banks
-		complete_national_focus = EST_support_independent_militaries
-		complete_national_focus = EST_republican_defence_league
-		complete_national_focus = BALTIC_ford_motors
-		complete_national_focus = BALTIC_crossley_motors
-		complete_national_focus = BALTIC_natural_resources
-	}
-	
-	oob = "EST_1939"
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "EST_1939_naval_mtg"
-		else = {
-			set_naval_oob = "EST_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "EST_1936_air_bba" #deliberately using 1936 OOB since no change in aircraft strength or models
-		else = {
-			set_air_oob = "EST_1936_air_legacy"
-			set_technology = {
-				fighter1 = 1
-				early_bomber = 1
-				CAS1 = 1
-				naval_bomber1 = 1
-
-			}
-		}
-	}
-	set_technology = {
-		tech_recon = 1	
-		tech_engineers = 1
-		interwar_artillery = 1
-		support_weapons = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		fuel_silos = 1
-		oil_processing = 1
-		improved_oil_processing = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		set_technology = {
-			basic_submarine = 1
-		}
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		set_technology = {
-			basic_ship_hull_submarine = 1
-		}
-	}
-}
-
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1932.5.21"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 20
-	fascism = 15
-	communism = 5
-	neutrality = 60
-}
-
-1939.1.1 = {
+	set_country_flag = pai_democrat_anticommunist
 	set_politics = {
-		ruling_party = neutrality
-		last_election = "1938.2.25"
+		ruling_party = liberalism
+		last_election = "2011.3.6"
 		election_frequency = 48
-		elections_allowed = no
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 21
+		liberalism = 29
+		democratic = 20
+		neutrality = 24
+		fascism = 6
+		rad_islamists = 0
+	}
+
+	#ПРЭ
+	create_country_leader = {
+		name = "Jüri Ratas"
+		desc = "POLITICS_JURI_RATAS_DESC"
+		picture = "gfx/leaders/EST/portrait_juri_ratas.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	#ПРЭ
+	create_country_leader = {
+		name = "Taavi Rõivas"
+		desc = "POLITICS_TAAVI_ROIVAS_DESC"
+		picture = "gfx/leaders/EST/portrait_taavi_roivas.dds"
+		expire = "2016.11.23"
+		ideology = classical_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+
+	#ПРЭ
+	create_country_leader = {
+		name = "Andrus Ansip"
+		desc = "POLITICS_ANDRUS_ANSIP_DESC"
+		picture = "gfx/leaders/EST/portrait_andrus_ansip.dds"
+		expire = "2014.3.26"
+		ideology = classical_liberalism
+		traits = { trait_classical_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Edgar Savisaar"
+		desc = "POLITICS_EDGAR_SAVISAAR_DESC"
+		picture = "gfx/leaders/EST/portrait_edgar_savisaar.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Sven Sildnik"
+		desc = "POLITICS_SVEN_SILDNIK_DESC"
+		picture = "gfx/leaders/EST/portrait_sven_sildnik.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Sven Mikser"
+		desc = "POLITICS_SVEN_MIKSER_DESC"
+		picture = "gfx/leaders/EST/portrait_sven_mikser.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_field_marshal = {
+		name = "Riho Terras"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_riho_terras.dds"
+		traits = { offensive_doctrine }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Indrek Sirel"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_indrek_sirel.dds"
+		traits = { inspirational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Neeme Väli"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_neeme_vaeli.dds"
+		traits = { panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Martin Herem"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_martin_herem.dds"
+		traits = { hill_fighter }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Veiko-Vello Palm"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_veiko-Vello_Palm.dds"
+		traits = { ranger }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Janno Maerk"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_janno_maerk.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Arno Kruusmann"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_arno_kruusmann.dds"
+		traits = { ranger }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Priit Pikner"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_priit_pikner.dds"
+		traits = { fortress_buster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Arbo Probal"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_arbo_probal.dds"
+		traits = { bearer_of_artillery }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Sten Allik"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_sten_allik.dds"
+		traits = { hill_fighter }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Andre Lilleleht"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_andre_lilleleht.dds"
+		traits = { commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Toomas Pindis"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_toomas_pindis.dds"
+		traits = { urban_assault_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Eero Rebo"
+		portrait_path = "gfx/leaders/EST/portrait_est_general_eero_rebo.dds"
+		traits = { naval_invader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
 	}
 }
 
-
-### VARIANTS ###
-# 1939 Start #
-1939.1.1 = {
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		# Ship variants #
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		# Submarines #
-		create_equipment_variant = {
-			name = "Kalev Class"				
-			type = ship_hull_submarine_2
-			name_group = EST_SS_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_torpedo_slot = ship_torpedo_sub_1
-				fixed_ship_engine_slot = sub_ship_engine_1
-				rear_1_custom_slot = ship_mine_layer_sub
-			}
-		}
+# Другая либеральная партия у власти
+2016.11.23 = {
+	set_party_name = { 
+	    ideology = liberalism 
+	    long_name = EST_liberalism_2016_party
+	    name = EST_liberalism_2016_party 
 	}
 }

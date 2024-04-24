@@ -1,109 +1,69 @@
-﻿capital = 304
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "PAN_1936"
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_trucks = 1
-}
+capital = 304
 
-recruit_character = PAN_harmodio_arias_madrid
-recruit_character = PAN_bartolomé_sinibaldi
-recruit_character = PAN_tiburcio_andino
-recruit_character = PAN_aniceto_andino
-recruit_character = PAN_enrique_jimenez_brin
-recruit_character = PAN_nestor_urribe_suarez
-recruit_character = PAN_carlos_zavala
-recruit_character = PAN_marcos_a_gelabert
-recruit_character = PAN_juan_jose_parada
-recruit_character = PAN_arturo_osborne_irraga
-recruit_character = PAN_enrico_fabrego_paz
-recruit_character = PAN_ferdinando_hernandez_ytuarte
-recruit_character = PAN_margarita_belloso_jimenez
-recruit_character = PAN_omar_torrijos
-recruit_character = PAN_bolivar_villarino
-recruit_character = PAN_juan_a_hernandez
-recruit_character = PAN_juan_remon
-recruit_character = PAN_manuel_rios_urribe
-recruit_character = PAN_victor_pareja
-recruit_character = PAN_nicolas_ardito_barletta
-recruit_character = PAN_jose_pezet
-
+add_ideas = mixed_schools
 
 set_country_flag = monroe_doctrine
-set_war_support = 0.1
-set_convoys = 10
 
-1939.1.1 = {
+2013.11.1 = {
+	set_variable = { budget_last_year = 4486 }
 
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "PAN_1939"
-	set_technology = {
-		infantry_weapons1 = 1
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+	add_ideas = NPT
+	set_stability = 0.5
+	add_ideas = terrorism_discounted
+	add_political_power = 0
 
-		#doctrines
-		air_superiority = 1
-		mass_assault = 1
-		pocket_defence = 1
-		defence_in_depth = 1		
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		fleet_in_being = 1
-		convoy_sailing = 1
+	set_convoys = 10
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-}
-
-set_politics = {
-	ruling_party = democratic
-	last_election = "1932.6.5"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-
-1939.1.1 = {
 	set_politics = {
 		ruling_party = democratic
-		last_election = "1936.6.7"
-		election_frequency = 48
+		last_election = "2009.5.4" #for 2014 elections
+		election_frequency = 60
 		elections_allowed = yes
 	}
-	recruit_character = PAN_juan_demostenes_arosemena
-	promote_character = PAN_juan_demostenes_arosemena
-	recruit_character = PAN_july_portocarrero
-	promote_character = PAN_july_portocarrero
-	retire_character = PAN_harmodio_arias_madrid
-	retire_character = PAN_bartolomé_sinibaldi
+	set_popularities = {
+		communism = 0
+		reformism = 35
+		liberalism = 8
+		democratic = 54
+		neutrality = 3
+		fascism = 0
+		rad_islamists = 0
+	}
+
+
+	create_country_leader = {
+		name = "Juan Carlos Varela"
+		picture = "gfx/leaders/PAN/portrait_juan_carlos_varela.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ricardo Martinelli"
+		picture = "gfx/leaders/PAN/portrait_ricardo_martinelli.dds"
+		expire = "2014.5.4"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Juan Carlos Navarro"
+		picture = "gfx/leaders/PAN/portrait_juan_carlos_navarro.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+2014.5.4 = {
+	set_party_name = {
+		ideology = democratic
+		long_name = PAN_democratic_2014_party
+		name = PAN_democratic_2014_party
+	}
 }

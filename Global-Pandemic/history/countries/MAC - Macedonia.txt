@@ -1,81 +1,69 @@
-﻿capital = 106
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-set_research_slots = 3
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-# clone of Yugoslavia
-set_technology = {
-	tech_support = 1		
-	tech_engineers = 1
-	tech_mountaineers = 1
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_trucks = 1
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "By Blood Alone" }
+set_country_flag = COUNTRY_FLAG.BALKANS
+
+capital = 106
+
+	add_ideas = {
+		mixed_schools
+		#aspiring_nato
 	}
-	set_technology = {
-		early_fighter = 1
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1082 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "MAC_2013"
+	add_ideas = low_terrorism
+	set_stability = 0.5
+	add_ideas = NPT
+	add_political_power = 0
+
+	set_convoys = 10
+	set_country_flag = VETO_alliance_country.NATO
+	#set_country_flag = aspiring_nato
+
+
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2009.4.27"
+		election_frequency = 60
+		elections_allowed = yes
 	}
-}
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
+	set_popularities = {
+		communism = 5
+		reformism = 30
+		liberalism = 0
+		democratic = 55
+		neutrality = 0		
+		fascism = 10
+		rad_islamists = 0
 	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
+
+	create_country_leader = {
+		name = "Nikola Gruevski"
+		desc = ""
+		picture = "gfx/leaders/MAC/portrait_nikola_gruevski.dds"
+		ideology = conservative_democracy 
+		traits = { trait_conservative_democracy }
 	}
-}
-if = {
-	limit = {
-		
-		has_dlc = "No Step Back"
-		
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-}
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
-	}
-	set_technology = {
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_submarine = 1
-		transport = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	set_technology = {
-		early_ship_hull_submarine = 1
-		early_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		basic_battery = 1
-		basic_torpedo = 1
-		mtg_transport = 1
-	}
+
+	#create_country_leader = {
+	#	name = "Gjorge Ivanov"
+	#	desc = ""
+	#	picture = "gfx/leaders/MAC/portrait_gjorge_ivanov.dds"
+	#	ideology = conservative_democracy 
+	#	traits = { trait_conservative_democracy }
+	#}
+
 }
 
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-
-set_popularities = {
-	democratic = 33
-	neutrality = 33
-	communism = 34
+#Северная Македония
+2019.1.14 = {
+	set_cosmetic_tag = MAC_NORTH_MACEDONIA
 }

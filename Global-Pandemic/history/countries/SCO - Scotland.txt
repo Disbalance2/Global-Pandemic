@@ -1,93 +1,79 @@
-﻿capital = 121
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_trucks = 1
+# NON-EXISTENT ON START GAME STATE
+
+capital = 121
+add_ideas = {
+	mixed_schools
+	parliamentary_republic
 }
+2013.11.1 = {
+	set_variable = { budget_last_year = 40 }
+	oob = "SCO_2013"
+	load_oob = "_tech_minor_2013"
 
-set_convoys = 20
-
-recruit_character = SCO_ncm
-recruit_character = SCO_acd2
-recruit_character = SCO_democratic_guy
-recruit_character = SCO_fascist_guy
-recruit_character = SCO_coi
-recruit_character = SCO_ar
-recruit_character = SCO_aa2
-recruit_character = SCO_awt
-recruit_character = SCO_acgs
-recruit_character = SCO_mt
-recruit_character = SCO_nccr
-recruit_character = SCO_aco2
-recruit_character = SCO_nt
-recruit_character = SCO_communist_guy
-recruit_character = SCO_pot
-recruit_character = SCO_acas
-recruit_character = SCO_acr
-recruit_character = SCO_stc
-recruit_character = SCO_ai2
-recruit_character = SCO_ncs
-
-
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	add_political_power = 0
+	set_convoys = 50
 	
-	set_technology = {
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2013.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 0
+		liberalism = 0
+		democratic = 5
+		neutrality = 30
+		fascism = 60
+		rad_islamists = 0
+	}
 
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
+	create_country_leader = {
+		name = "Sir Godfrey Collins"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_godfrey.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Nicola Stargen"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_nikola_stargen.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
+	create_country_leader = {
+		name = "Alex Salmond"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_alex_salmond.dds"
+		ideology = national_democracy
+		expire = "2014.11.14"
+		traits = { trait_national_democracy }
+	}
 
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		fuel_silos = 1
-		oil_processing = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	create_country_leader = {
+		name = "Walter Elliot"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_elliot.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Harry Pollit"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_harry.dds"
+		ideology = leninism
+		traits = { trait_leninism }
 	}
 }
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 93
-	fascism = 3
-	communism = 4
-}
 
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
-#	}
-#}

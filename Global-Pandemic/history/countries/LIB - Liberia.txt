@@ -1,102 +1,87 @@
-﻿capital = 298
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "LIB_1936"
+capital = 298
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+	add_ideas = {
+		au_member
+	}
 
-set_convoys = 10
+2013.11.1 = {
+	set_variable = { budget_last_year = 194 }
 
-recruit_character = LIB_edgar_cailloux
-recruit_character = LIB_andre_fields
-recruit_character = LIB_james_brooks
-recruit_character = LIB_won_loy_chan
-recruit_character = LIB_benton_stukes
-recruit_character = LIB_reginald_brandon
-recruit_character = LIB_aaron_pinn
-recruit_character = LIB_john__r_fox
-recruit_character = LIB_samuel_nell
-recruit_character = LIB_joseph_smith
-recruit_character = LIB_stewart_holland
-recruit_character = LIB_benjamin_o_davis
-recruit_character = LIB_george_remond
-recruit_character = LIB_iver_virgin
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
 
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
+	add_ideas = {
+		high_corruption
+	}
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+    add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		low_terrorism
+	}
 	
-	oob = "LIB_1939"
-	set_technology = {
-		#doctrines
-		air_superiority = 1
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
 		
-		mass_assault = 1
-		pocket_defence = 1
-		defence_in_depth = 1
-
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-}
-
-set_politics = {
-	ruling_party = democratic
-	last_election = "1931.1.1"
-	election_frequency = 96
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-
-create_country_leader = {
-	name = "Edwin Barclay"
-	desc = "POLITICS_EDWIN_BARCLAY_DESC"
-	picture = "GFX_portrait_lib_edwin_barclay"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-1939.1.1 = {
 	set_politics = {
-		ruling_party = democratic
-		last_election = "1939.1.1"
-		election_frequency = 48
+		ruling_party = liberalism 
+		last_election = "2011.11.8"
+		election_frequency = 72
 		elections_allowed = yes
 	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 60
+		democratic = 0
+		neutrality = 40
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Ellen Johnson Sirleaf" #Элен Джонсон-Серлиф
+		desc = "POLITICS_ELLEN_JOHNSON_SIRLEAF_DESC"
+		picture = "gfx/leaders/LIB/portrait_ellen_johnson_sirleaf.dds"
+		ideology = liberal_democracy #Партия единства
+		traits = { trait_liberal_democracy }
+	}
+	
+	create_country_leader = {
+		name = "George Weah"
+		desc = ""
+		picture = "gfx/leaders/LIB/portrait_george_weah.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}	
 }
+
+	2017.12.26 = { 
+		LIB = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}
+
+			set_politics = {
+				ruling_party = neutrality
+			}
+		}
+	}

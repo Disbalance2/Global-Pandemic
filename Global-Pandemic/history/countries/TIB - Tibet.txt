@@ -1,80 +1,54 @@
-﻿capital = 757
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "TIB_1936"
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+capital = 322
+add_ideas = { mixed_schools }
 
-recruit_character = TIB_jamphel_yeshe_gyaltsen
-recruit_character = TIB_namgang_rinpoche
-recruit_character = TIB_penor_tashi
-recruit_character = TIB_tsepon_shatra
-recruit_character = TIB_gyato_wangdu
-recruit_character = TIB_lobsang_tenzin
-recruit_character = TIB_sampo_tsewang_rigzin
-recruit_character = TIB_chama_samphe
-recruit_character = TIB_lhalu_tsewang_dorje
-recruit_character = TIB_chodak_karma
-recruit_character = TIB_tenpa_jamyang
-recruit_character = TIB_sogyal_rinpoche
-recruit_character = TIB_bapa_yeshe
-recruit_character = TIB_jampal_rabgye_rinpoche
-recruit_character = TIB_chaghoe_namgyal_dorje
-recruit_character = TIB_jamyang_rabten
-recruit_character = TIB_khemey_sonam_wangdi
-recruit_character = TIB_jigme_taring
-recruit_character = TIB_reting_rimpoche
-recruit_character = TIB_taktra_rinpoche
-
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
+2013.11.1 = {
+	set_variable = { budget_last_year = 355 }
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = construction_effort_2
-	complete_national_focus = production_effort_2
-	complete_national_focus = infrastructure_effort
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "TIB_1939"
-	set_technology = {
-		#doctrines
-		air_superiority = 1
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
 
-		mass_assault = 1
-		pocket_defence = 1
-		defence_in_depth = 1
+	set_stability = 0.65
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	add_ideas = {
+		parliamentary_monarchy
 	}
-}
 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	neutrality = 100
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2011.8.8"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 64
+		neutrality = 36
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Lobsang Sangay"
+		picture = "gfx/leaders/TIB/portrait_lobsang_sangay.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Khun Htun Oo"
+	#	picture = "gfx/leaders/SHA/portrait_khun_htun_oo.dds"
+	#	ideology = royalism
+	#	traits = { trait_royalism }
+	#}
+
 }

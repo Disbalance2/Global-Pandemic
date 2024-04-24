@@ -1,0 +1,31 @@
+state={
+	id = 998
+	name = "STATE_998"
+	manpower = 100000
+	state_category = town
+	resources = {
+		iron_ore = 5
+	}
+	history = {
+		owner = SOM
+		set_state_flag = islam
+		victory_points = {
+			14023 10
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 2
+			arms_factory = 2
+		}
+		2001.1.1 = {
+			owner = HAH
+			add_core_of = HAH
+			add_core_of = ALS
+		}
+	add_core_of = SOM
+	
+	}
+	provinces=	{
+		14023
+	}
+}

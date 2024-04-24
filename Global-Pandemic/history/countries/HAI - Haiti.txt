@@ -1,93 +1,148 @@
-﻿capital = 318
+﻿# NON-EXISTENT ON START GAME STATE
 
-oob = "HAI_1936"
+# Economic Crisis edit for 0.7.6 alpha
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-recruit_character = HAI_sténio_vincent
-recruit_character = HAI_jacques_roumain
-recruit_character = HAI_vilbrum_soulouque
-recruit_character = HAI_jacques_soulouque
-recruit_character = HAI_emilie_lescot
-recruit_character = HAI_pascale_b_g_guillaume
-recruit_character = HAI_charles_h_forbin
-recruit_character = HAI_andre_sainte_frederic
-recruit_character = HAI_paul_magloire
-recruit_character = HAI_georges_leger
-recruit_character = HAI_belmeau_max_pierre
-recruit_character = HAI_franck_lavaud
-recruit_character = HAI_andre_dumont
-recruit_character = HAI_antoine_levelt
-recruit_character = HAI_ernst_severe
-recruit_character = HAI_g_edouard_roy
-recruit_character = HAI_raymond_gassner
-recruit_character = HAI_luis_dabtes_bellegarde
-recruit_character = HAI_demosthenes_calixte
-recruit_character = HAI_louis_dejoie
-
+capital = 318
 
 set_country_flag = monroe_doctrine
-set_war_support = 0.1
-set_convoys = 5
 
-1939.1.1 = {
+2013.11.1 = {
+	set_variable = { budget_last_year = 845 }
 
-	add_political_power = 1198
-	add_command_power = 100
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	set_stability = 0.5
+
+	add_political_power = 0
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	add_ideas = {
+		semi-presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+	}
+
+	set_convoys = 10
+	create_intelligence_agency = yes
 	
-	oob = "HAI_1939"
-	set_technology = {
-		infantry_weapons1 = 1
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.3.20"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 39
+		liberalism = 11
+		democratic = 21
+		neutrality = 24
+		fascism = 5
+		rad_islamists = 0
+	}
 
-		#doctrines
-		air_superiority = 1
-		
-		mass_assault = 1
-		pocket_defence = 1
-		defence_in_depth = 1
+	create_country_leader = {
+		name = "Michel Martelly"
+		desc = "POLITICS_MICHAEL_MARTELLY_DESC"
+		picture = "gfx/leaders/HAI/portrait_michel_martelly.dds"
+		ideology = centrist_democracy #agrarianism
+		traits = { trait_centrist_democracy }
+	}
 
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
+	create_country_leader = {
+		name = "Jovenel Moïse"
+		desc = "POLITICS_JOVENEL_MOISE_DESC"
+		picture = "gfx/leaders/HAI/portrait_jovenel_moise.dds"
+		ideology = conservative_liberalism
+		traits = { trait_conservative_liberalism }
+	}
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
+	create_country_leader = {
+		name = "Mirlande Manigat"
+		desc = "POLITICS_MIRLANDE_MANIGAT_DESC"
+		picture = "gfx/leaders/HAI/portrait_mirlande_manigat.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
 
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	create_country_leader = {
+		name = "Jude Celestin"
+		desc = "POLITICS_JUDE_CELESTIN_DESC"
+		picture = "gfx/leaders/HAI/portrait_jude_celestin.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Youri Latortue"
+		desc = "POLITICS_YOURI_LATORTUE_DESC"
+		picture = "gfx/leaders/HAI/portrait_south_america_generic_3.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
 	}
 }
 
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 100
-}
+		2016.2.14 = { 
+			HAI = {
+				add_popularity = {
+					ideology = reformism
+					popularity = -0.09
+				}
+
+				set_politics = {
+					ruling_party = reformism
+				}
+
+				create_country_leader = {
+					name = "Jude Celestin"
+					desc = "POLITICS_JUDE_CELESTIN_DESC"
+					picture = "gfx/leaders/HAI/portrait_jude_celestin.dds"
+					ideology = social_democracy
+					traits = { trait_social_democracy }
+				}
+
+				create_country_leader = {
+					name = "Jocelerme Privert"
+					desc = "POLITICS_JOCELERME_PRIVERT_DESC"
+					picture = "gfx/leaders/HAI/portrait_jocelerme_privert.dds"
+					ideology = social_democracy
+					expire = "2016.11.20"
+					traits = { trait_social_democracy }
+				}
+
+			}
+		}
+
+
+		2016.11.20 = { 
+			HAI = {
+				add_popularity = {
+					ideology = liberalism
+					popularity = 0.11
+				}
+
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.08
+				}
+
+				set_politics = {
+					ruling_party = liberalism
+				}
+			}
+		}
+
+

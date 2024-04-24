@@ -1,145 +1,165 @@
-﻿capital = 70
+﻿# Economic Crisis edit for 0.7.6 alpha
 
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
+capital = 70
 
-
-set_technology = {
-	tech_trucks = 1
-	gw_artillery = 1
-	interwar_artillery = 1
-	interwar_antiair = 1
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	infantry_weapons2 = 1
-	support_weapons = 1
-	tech_support = 1
-	tech_recon = 1
-	tech_mountaineers = 1
-	tech_engineers = 1
+1991.2.15 = {
+    add_ideas = visegrad_group_member
 }
 
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-	}
-	set_oob = "SLO_1939"
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-	set_oob = "SLO_1939_nsb"
-}
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "SLO_1939_air_bba"
-	else = {
-		set_air_oob = "SLO_1939_air_legacy"
-		set_technology = {
-			early_fighter = 1
-			early_bomber = 1
-			CAS1 = 1
-		}
-	}
-}
+2013.11.1 = {
+	set_variable = { budget_last_year = 9848 }
 
-recruit_character = SLO_jozef_tiso
-recruit_character = SLO_jaroslav_kratochvil
-recruit_character = SLO_vojtech_daubner
-recruit_character = SLO_jozef_hora
-recruit_character = SLO_frano_kral
-recruit_character = SLO_jozef_snejdarek
-recruit_character = SLO_fritz_gejza
-recruit_character = SLO_frantisek_sadek
-recruit_character = SLO_stefan_tiso
-recruit_character = SLO_cyril_kuchta
-recruit_character = SLO_jindrich_honzl
-recruit_character = SLO_frantisek_straka
-recruit_character = SLO_karol_sidor
-recruit_character = SLO_emil_lendvay
-recruit_character = SLO_jozef_turanec
-recruit_character = SLO_gustav_malar
-recruit_character = SLO_rudolf_viest
-recruit_character = SLO_janko_jesensky
-recruit_character = SLO_ferdinand_catlos
-recruit_character = SLO_anton_pulanick
+	load_oob = "_tech_nato_minor_2013"
+	oob = "SLO_2013"
 
-
-1939.1.1 = {
+	add_ideas = {
+		parliamentary_republic
+		eu_member
+		low_terrorism
+		mixed_schools
+		NPT
+		SLO_Robert_Fico_hog
+		SLO_Martin_Glvac_defm
+		SLO_Miroslav_Lajcak_fgm
+		SLO_Tomas_Malatinsky_sm
+	}
 	
-	add_political_power = 1198
-	add_command_power = 100
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
 
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.3.10"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 46
+		liberalism = 24
+		democratic = 24
+		neutrality = 4
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	#Курс — социальная демократия
+	#create_country_leader = {
+	#	name = "Ivan Gašparovič" 
+	#	desc = ""
+	#	picture = "gfx/leaders/SLO/portrait_ivan_gasparovich.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+	create_country_leader = {
+		name = "Robert Fico" 
+		desc = "POLITICS_ROBERT_FICO_DESC"
+		picture = "gfx/leaders/SLO/portrait_robert_fico.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#Обычные люди и независимые личности
+	create_country_leader = {
+		name = "Igor Matovič" 
+		desc = ""
+		picture = "gfx/leaders/SLO/portrait_igor_matovich.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
 	
-	set_technology = {
-		#doctrines
-		formation_flying = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
+	#Свобода и солидарность
+	#create_country_leader = {
+	#	name = "Richard Sulík" 
+	#	desc = "POLITICS_RICHARD_SULIK_DESC"
+	#	picture = "gfx/leaders/SLO/portrait_richard_sulik.dds"
+	#	ideology = liberal_democracy
+	#	traits = { trait_liberal_democracy }
+	#}
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		concentrated_industry = 1
+	#Словацкая национальная партия
+	create_country_leader = {
+		name = "Andrej Danko" 
+		desc = ""
+		picture = "gfx/leaders/SLO/portrait_andrej_danko.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
 	}
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		create_equipment_variant = {
-			name = "LT vz. 34"
-			type = light_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_small_cannon
-				turret_type_slot = tank_light_one_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 2
-				tank_nsb_armor_upgrade = 1
-			}
-		}
-	}
-}
 
-set_politics = {
-	ruling_party = fascism
-	last_election = "1933.3.5"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 5
-	fascism = 90
-	communism = 5
+	#Коммунистическая партия Словакии
+	create_country_leader = {
+		name = "Jozef Hrdlička" 
+		desc = ""
+		picture = "gfx/leaders/SLO/portrait_jozef_hrdlichka.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	#Народная партия — Движение за демократическую Словакию
+	create_country_leader = {
+		name = "Vladimír Mečiar" 
+		desc = ""
+		picture = "gfx/leaders/SLO/portrait_vladimir_mechiar.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}
+	
+	#Президенты
+
+	#create_country_leader = {
+	#	name = "Ivan Gašparovič" 
+	#	desc = "POLITICS_IVAN_GASPAROVIC_DESC"
+	#	picture = "gfx/leaders/SLO/portrait_ivan_gasparovich.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+	#Независимый; с 2019 создана партия «За людей»
+	#create_country_leader = {
+	#	name = "Andrej Kiska" 
+	#	desc = "POLITICS_ANDREJ_KISKA_DESC"
+	#	picture = "gfx/leaders/SLO/portrait_andrej_kiska.dds"
+	#	ideology = conservative_liberalism
+	#	traits = { trait_conservative_liberalism }
+	#}
+
+	#Прогрессивная Словакия
+	#Исторически победила на выборах 2019 года
+	#create_country_leader = {
+	#	name = "Zuzana Čaputová" 
+	#	desc = ""
+	#	picture = "gfx/leaders/SLO/portrait_zuzana_chaputova.dds"
+	#	ideology = social_liberalism
+	#	traits = { trait_social_liberalism }
+	#}
+
+	# Остальные партии
+
+	#Народная партия — наша Словакия
+	#с ноября 2015 года Котлеба – Народная партия Наша Словакия
+	#возможно будет основной при нацистской ветке фокусов
+	#create_country_leader = {
+	#	name = "Marian Kotleba" 
+	#	desc = ""
+	#	picture = "gfx/leaders/SLO/portrait_marian_kotleba.dds"
+	#	ideology = national_socialism
+	#	traits = { trait_national_socialism }
+	#}
+	
+	#Мы семья. Кандидат на выборах 2019 года
+	#create_country_leader = {
+	#	name = "Milan Krajniak" 
+	#	desc = ""
+	#	picture = "gfx/leaders/SLO/portrait_milan_krajniak.dds"
+	#	ideology = national_conservatism
+	#	traits = { trait_national_conservatism }
+	#}
+	
 }

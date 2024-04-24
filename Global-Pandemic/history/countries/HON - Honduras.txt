@@ -1,105 +1,123 @@
-﻿capital = 312
+﻿# Economic Crisis edit for 0.6.1 alpha
 
-oob = "HON_1936"
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
-
-recruit_character = HON_tiburcio_carías_andino
-recruit_character = HON_lorenzo_ferrera
-recruit_character = HON_pedro_figueroa
-recruit_character = HON_lisandro_machado
-recruit_character = HON_oswaldo_lopez_arellano
-recruit_character = HON_carlos_vaupel_comeza
-recruit_character = HON_neto_britto
-recruit_character = HON_jose_zuniga_huete
-recruit_character = HON_teodore_alberto
-recruit_character = HON_rufio_villegas
-recruit_character = HON_carlos_molina_dejonje
-recruit_character = HON_didier_masson
-recruit_character = HON_miguel_angel_sevilla
-recruit_character = HON_raimundo_stochler_garcia
-recruit_character = HON_juan_b_valladares
-recruit_character = HON_francisco_s_tapio_toro
-recruit_character = HON_enrique_doll_rojas
-recruit_character = HON_gustavo_schmidt
-recruit_character = HON_carlos_alberto_ucles
-recruit_character = HON_roberto_michelleti_bain
-recruit_character = HON_orlando_rodriguez_jimino
-recruit_character = HON_abraham_williams_calderon
-recruit_character = HON_hernan_fernandez_silva
-
+capital = 312
 
 set_country_flag = monroe_doctrine
-set_war_support = 0.1
-set_convoys = 10
 
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
+1985.1.1 = {
+    add_ideas = {
+	    mixed_schools
+    }
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "HON_1939"
-	set_technology = {
-		infantry_weapons1 = 1
+	give_military_access = USA
 
-		#doctrines
-		air_superiority = 1
-		
-		mass_assault = 1
-		pocket_defence = 1
-		defence_in_depth = 1
-
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-}
-
-set_politics = {
-	ruling_party = democratic
-	last_election = "1932.10.28"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-
-1939.1.1 = {
 	set_politics = {
-		ruling_party = democratic
-		last_election = "1936.3.28"
+		ruling_party = liberalism
+		last_election = "1982.1.27"
 		election_frequency = 48
 		elections_allowed = yes
 	}
+	set_popularities = {
+		communism = 42
+		reformism = 4
+		liberalism = 50
+		democratic = 4
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+	   name = "Roberto Suazo Cordova"
+	   desc = "POLITICS_GUSTAV_HUSAK_DESC"
+	   picture = "gfx/leaders/HON/portrait_roberto_suazo_cordova.dds"
+	   ideology = classical_liberalism 
+	   traits = { trait_classical_liberalism }
+	}
 }
+
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1850 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_microstate_2013"
+
+	add_ideas = {
+		alba_member
+		NPT
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	add_ideas = {
+		semi-presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		
+		low_terrorism
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.2.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 29
+		liberalism = 21
+		democratic = 42
+		neutrality = 6
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Juan Orlando Hernandez"
+		picture = "gfx/leaders/HON/portrait_juan_orlando_hernandez.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Porfirio Lobo Sosa"
+		expire = "2014.1.27"
+		picture = "gfx/leaders/HON/portrait_porfirio_lobo_sosa.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Manuel Zelaya"
+		picture = "gfx/leaders/HON/portrait_manuel_zelaya.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Mauricio Villeda"
+		picture = "gfx/leaders/HON/portrait_mauricio_villeda.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+}
+

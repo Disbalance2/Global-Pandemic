@@ -1,0 +1,24 @@
+state={
+	id=1121
+	name="STATE_1121"
+	resources = {
+		#iron_ore = 10
+	}
+
+	history = {
+		owner = USA
+		set_demilitarized_zone = yes
+		set_state_flag = state_abandoned_station
+		add_dynamic_modifier = { modifier = lifeless_territory }
+		add_dynamic_modifier = { modifier = antarctic_treaty }
+		victory_points = {
+			14969 1
+		}
+	}
+	provinces = {
+		14969
+	}
+	manpower = 1
+	buildings_max_level_factor=0.010
+	state_category = antartic_station
+}

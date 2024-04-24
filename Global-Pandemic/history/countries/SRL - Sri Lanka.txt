@@ -1,68 +1,71 @@
-﻿capital = 422
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
+
+capital = 422
+add_ideas = {
+	mixed_schools
+	semi-presidential_republic
 }
+2013.11.1 = {
+	set_variable = { budget_last_year = 7432 }
 
-set_convoys = 5
 
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
+	load_oob = "_tech_microstate_2013"
+	oob = "SRL_2013"
 
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
+	set_stability = 0.75
+	add_ideas = low_terrorism
+	add_political_power = 0
+	add_ideas = NPT
+	set_convoys = 10
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	set_politics = {		
+		ruling_party = reformism
+		last_election = "2005.11.17"
+		election_frequency = 60
+		elections_allowed = yes
 	}
-}
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 75
-	fascism = 1
-	communism = 1
-	neutrality = 23
+	set_popularities = {
+		communism = 0
+		reformism = 60
+		liberalism = 20
+		democratic = 20
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	add_ideas = {
+		parliamentary_monarchy
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		mixed_economic
+		free_market
+		
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+	}
+
+	create_country_leader = {
+		name = "Mahinda Rajapaksa" 
+		desc = ""
+		picture = "gfx/leaders/SRL/portrait_mahinda_rajapaksa.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
 }
 
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
-#	}
-#}

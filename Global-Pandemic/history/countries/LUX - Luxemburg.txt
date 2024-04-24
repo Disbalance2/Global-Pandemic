@@ -1,125 +1,86 @@
-﻿capital = 8
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "LUX_1936"
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_trucks = 1
-	gw_artillery = 1
-	tech_support = 1		
-	tech_engineers = 1
-	basic_train = 1
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "By Blood Alone" }
+capital = 8
+
+	add_ideas = {
+		eu_member
+		small_country
+		integration_in_nato
+		king_henri
 	}
-	set_technology = {
-		early_fighter = 1
-	}
-}
-set_war_support = 0.1
-set_stability = 0.8
 
-recruit_character = LUX_joseph_bech
-recruit_character = LUX_gustave_lebeau
-recruit_character = LUX_frédéric_nagelmackers
-recruit_character = LUX_jean_pirson
-recruit_character = LUX_damien_roeser
-recruit_character = LUX_florent_destriveaux
-recruit_character = LUX_alexander_von_falkenhausen
-recruit_character = LUX_pierre_fischbach
-recruit_character = LUX_guillaume_soisson
-recruit_character = LUX_alex_federspiel
-recruit_character = LUX_henri_ahnen
-recruit_character = LUX_emile_speller
-recruit_character = LUX_francois_schammel
-recruit_character = LUX_aloyse_glodt
-recruit_character = LUX_nicolas_de_dixmude
-recruit_character = LUX_paul_medinger
-recruit_character = LUX_nicholas_diedrich
-recruit_character = LUX_pierre_dupong
-recruit_character = LUX_pierre_krier
-recruit_character = LUX_martin_karp
+2013.11.1 = {
+	set_variable = { budget_last_year = 6181 }
 
+	load_oob = "_tech_nato_minor_2013"
+	oob = "_army_microstate_2013"
 
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = construction_effort_2
-	complete_national_focus = production_effort_2
-	complete_national_focus = infrastructure_effort
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "LUX_1939"
-	set_technology = {
-		tech_recon = 1
-		interwar_artillery = 1
-		interwar_antiair = 1
-		
-		#doctrines
-		air_superiority = 1
-		
-		mass_assault = 1
-		pocket_defence = 1
-		defence_in_depth = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		concentrated_industry = 1
-		concentrated_industry2 = 1
+	add_ideas = {
+		parliamentary_monarchy
+		small_country
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		contract_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		national_social_security
+		pensions
+		mixed_economic
+		NPT
 	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-		set_technology = {
-			fighter1 = 1
-		}
-	}
-}
 
-set_politics = {
-	ruling_party = democratic
-	last_election = "1934.6.3"
-	election_frequency = 36
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 92
-	fascism = 3
-	communism = 5
-}
-
-1939.1.1 = {
+	set_country_flag = pai_democrat_moderate
 	set_politics = {
 		ruling_party = democratic
-		last_election = "1937.6.6"
-		election_frequency = 36
+		last_election = "2013.10.20"
+		election_frequency = 60
 		elections_allowed = yes
 	}
-	promote_character = LUX_pierre_dupong
-	retire_character = LUX_joseph_bech
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 70
+		democratic = 30
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Jean-Claude Juncker"
+		desc = ""
+		picture = "gfx/leaders/LUX/portrait_jean-claude_juncker.dds"
+		ideology = christian_democracy_main
+		traits = { trait_christian_democracy_main }
+	}
+
+	create_country_leader = {
+		name = "Xavier Bettel"
+		desc = ""
+		picture = "gfx/leaders/LUX/portrait_xavier_bettel.dds"
+		ideology = sovereign_democracy 
+		traits = { trait_sovereign_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Henri"
+	#	desc = ""
+	#	picture = "gfx/leaders/LUX/portrait_grand_duke_henri.dds"
+	#	ideology = liberal_royalism
+	#	traits = { trait_liberal_royalism }
+	#}
+
 }
+

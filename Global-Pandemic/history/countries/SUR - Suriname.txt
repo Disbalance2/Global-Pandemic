@@ -1,76 +1,58 @@
-﻿capital = 309
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-#oob = ""
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-}
 
-IF = {
-	limit = {
-		# TODO JA, change this!
-		has_dlc = "Arms Against Tyranny"
+capital = 309
+add_ideas = mixed_schools
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 514 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "SUR_2013"
+
+	add_ideas = {
+		unasur_member
+		NPT
 	}
-	recruit_character = SUR_guianan_indigenous_council
-}
 
-set_convoys = 5
-
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
 	
-	set_technology = {
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.8.12"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 7
+		reformism = 58
+		liberalism = 13
+		democratic = 8
+		neutrality = 10
+		fascism = 4
+		rad_islamists = 0
+	}
 
-		#doctrines
-		grand_battle_plan = 1
-		trench_warfare = 1
+	create_country_leader = {
+		name = "Dési Bouterse"
+		desc = "POLITICS_DESIRE_BOUTERSE_DESC"
+		picture = "gfx/leaders/SUR/portrait_desi_bouterse.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
 
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
+	create_country_leader = {
+		name = "Chan Santokhi"
+		picture = "gfx/leaders/SUR/portrait_chan_santokhi.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
 	}
 }
-set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 75
-	fascism = 1
-	communism = 1
-	neutrality = 23
-}
 
-#create_country_leader = {
-#	
-#	name = "Jonas Lote"
-#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
-#	expire = "1965.1.1"
-#	ideology = centrism
-#	traits = {
-#		#
-#	}
-#}

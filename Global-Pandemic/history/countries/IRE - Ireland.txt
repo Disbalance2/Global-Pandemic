@@ -1,106 +1,96 @@
-﻿capital = 113
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "IRE_1936"
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-set_research_slots = 3
+capital = 113
 
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_trucks = 1
-	fuel_silos = 1
-	basic_train = 1
-}
-
-set_convoys = 10
-
-recruit_character = IRE_Éamon_de_valera
-recruit_character = IRE_eoin_oduffy
-recruit_character = IRE_james_larkin
-recruit_character = IRE_william_norton
-recruit_character = IRE_michael_costello
-recruit_character = IRE_p_a_mulcahy
-recruit_character = IRE_liam_archer
-recruit_character = IRE_a_t_lawlor
-recruit_character = IRE_oscar_traynor
-recruit_character = IRE_frank_fahy
-recruit_character = IRE_h_t_green
-recruit_character = IRE_michael_brennan
-recruit_character = IRE_richard_james_mulcahy
-recruit_character = IRE_michael_joe_costello
-recruit_character = IRE_dan_mckenna
-recruit_character = IRE_s_muiris
-recruit_character = IRE_john_byrne
-recruit_character = IRE_sean_lemass
-recruit_character = IRE_douglas_hyde
-recruit_character = IRE_sean_ceallaigh
-
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "IRE_1939"
-	set_technology = {
-		gw_artillery = 1
-		interwar_antiair = 1
-		infantry_weapons2 = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		fuel_refining = 1
+	add_ideas =  {
+		eu_member
+		NPT
 	}
-}
 
-set_politics = {
-	ruling_party = democratic
-	last_election = "1933.1.24"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 98
-	fascism = 1
-	communism = 1
-}
+2013.11.1 = {
+	set_variable = { budget_last_year = 23930 }
 
-1939.1.1 = {
+	load_oob = "_tech_nato_regional_2013" # not NATO, but tehnologies level is comparable
+	oob = "_army_minor_2013"
+	
+	# government
+	add_ideas = {
+		ire_enda_kenny_hog
+		ire_alan_shatter_defm
+		ire_eamon_gilmore_fgm
+		ire_michael_noonan_ecm
+		ire_donall_cualain_ssch
+	}
+
+	set_convoys = 100
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+		
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		
+		average_terrorism
+	}
+
+	set_country_flag = pai_democrat_moderate
 	set_politics = {
 		ruling_party = democratic
-		last_election = "1938.6.17"
-		election_frequency = 48
+		last_election = "2011.2.25"
+		election_frequency = 60
 		elections_allowed = yes
 	}
+	set_popularities = {
+		communism = 5
+		reformism = 15
+		liberalism = 30
+		democratic = 30
+		neutrality = 15
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	# Хиггинс - президент, в Ирландии это формальный пост
+	# create_country_leader = {
+	#	name = "Michael Higgins"
+	#	desc = "POLITICS_MICHAEL_HIGGINS_DESC"
+	#	picture = "gfx/leaders/IRE/higgins.dds"
+	#	#expire = "1965.1.1"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	create_country_leader = {
+		name = "Leo Varadka"
+		desc = "POLITICS_LEO_VARADKA_DESC"
+		picture = "gfx/leaders/IRE/portrait_leo_varadka.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Enda Kenny"
+		desc = "POLITICS_ENDA_KENNY_DESC"
+		picture = "gfx/leaders/IRE/portrait_enda_kenny.dds"
+		ideology = liberal_conservatism
+		expire = "2017.6.14"
+		traits = { trait_liberal_conservatism }
+	}
+	
 }
+

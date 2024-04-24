@@ -1,137 +1,552 @@
-﻿capital = 202 #Kiev
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-oob = "UKR_1936"
+# NOT EDITED POLITICS
 
-set_research_slots = 3
+set_country_flag = COUNTRY_FLAG.POST_USSR
 
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_recon = 1
-	tech_support = 1		
-	tech_engineers = 1
-	tech_military_police = 1
-	tech_mountaineers = 1
-	tech_trucks = 1
-	motorised_infantry = 1
-	paratroopers = 1
-	gw_artillery = 1
-	mass_assault = 1
-	fleet_in_being = 1
+1991.8.24 = {
+	capital = 202
 }
 
-if = {
-	limit = {
-		NOT = { has_dlc = "By Blood Alone" }
-	}
-	set_technology = {
-		early_fighter = 1
-		fighter1 = 1
-		early_bomber = 1
-		strategic_bomber1 = 1
-		naval_bomber1 = 1
-	}
+add_ideas = {
+	regional_country
+	obsolete_army
+	NPT
+	non_block_status
 }
 
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-	}
+1993.9.24 = {
+    add_ideas = cis_member
 }
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
+
+1994.6.10 = {
+	add_ideas = bsec_member
 }
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
-	}
-	set_technology = {
-		early_submarine = 1
-		basic_submarine = 1
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_heavy_cruiser = 1
-		early_battleship = 1
-		early_battlecruiser = 1
-		transport = 1
-	}
+
+1994.12.5 = {
+	add_ideas = UKR_budapest_memorandum
 }
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
+
+1997.10.10 = {
+    add_ideas = guam_member
+}
+
+2001.9.1 = {
+	oob = "_army_minor_2013"
+	
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1999.8.31"
+		election_frequency = 48
+		elections_allowed = yes
 	}
-	set_technology = {
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		early_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		early_ship_hull_heavy = 1
-		mtg_transport = 1
-		basic_battery = 1
-		basic_torpedo = 1
+	set_popularities = {
+		communism = 43
+		reformism = 6
+		liberalism = 9
+		democratic = 9
+		neutrality = 16
+		fascism = 17
+		rad_islamists = 0
 	}
 }
 
-set_popularities = {
-	democratic = 20
-	fascism = 30
-	communism = 50
+2009.1.18 = {
+	add_ideas = UKR_gas_agreements
+	add_opinion_modifier = { target = RUS modifier = UKR_gas_agreements }
 }
+2010.2.25 = {
+	add_ideas = UKR_the_split_people_east_and_west
+	add_opinion_modifier = { target = RUS modifier = UKR_the_split_people_east_and_west }
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 18330 }
 
-create_country_leader = {
-	name = "Kost Levytsky"
-	desc = ""
-	picture = GFX_portrait_Kost_Levytsky
-	expire = "1953.3.1"
-	ideology = conservatism
-	traits = {
-		
+#	set_country_flag = UKR_war_with_LDNR
+
+	load_oob = "UKR_tech_2013"
+	oob = "UKR_2013"
+	
+	# laws
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		high_corruption
+		terrorism_discounted
 	}
-}
-
-create_country_leader = {
-	name = "Nikita Sergeyevich Khrushchyov"
-	desc = ""
-	picture = GFX_portrait_Nikita_Sergeyevich_Khrushchyov
-	expire = "1953.3.1"
-	ideology = marxism
-	traits = {
-		
+	set_war_support = 0.3
+	# Goverment
+	add_ideas = {
+		ukr_nikolay_azarov_hog
+		ukr_pavel_lebedev_defm 
+		ukr_leonid_kojara_fgm
+		ukr_yuri_kolobov_ecm
+		ukr_oleksandr_yakymenko_ssch
 	}
-}
 
-create_country_leader = {
-	name = "Stepan Bandera"
-	desc = ""
-	picture = GFX_portrait_Stepan_Bandera
-	expire = "1953.3.1"
-	ideology = fascism_ideology
-	traits = {
-		
+	# Military Command
+	add_ideas = {
+		ukr_volodymyr_zamana
+		ukr_hryhoriy_illyashov 
+		ukr_genadiy_vorobyov
 	}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_neutral
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2010.1.17"
+		election_frequency = 63
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 15
+		liberalism = 10
+		democratic = 25
+		neutrality = 35
+		fascism = 10
+		rad_islamists = 0
+	}
+
+  # ситуация на начало 2013 г.
+
+	create_country_leader = {
+		name = "Viktor Yanukovych"
+		desc = ""
+		id = 110008
+		picture = "gfx/leaders/UKR/portrait_viktor_yanukovych.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	create_country_leader = {
+		name = "Vitali Klitschko"
+		desc = ""
+		picture = "gfx/leaders/UKR/portrait_vitali_klitschko.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	create_country_leader = {
+		name = "Arseniy Yatsenyuk"
+		desc = ""
+		picture = "gfx/leaders/UKR/portrait_arseniy_yatsenyuk.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	create_country_leader = {
+		name = "Natalia Korolevska"
+		desc = ""
+		picture = "gfx/leaders/UKR/portrait_natalia_korolevska.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Oleh Tyahnybok"
+		desc = ""
+		picture = "gfx/leaders/UKR/portrait_oleh_tyahnybok.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+	create_country_leader = {
+		name = "Petro Symonenko"
+		desc = ""
+		picture = "gfx/leaders/UKR/portrait_petro_symonenko.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	create_country_leader = {
+		name = "Mostafa Jamilev"
+		desc = ""
+		picture = "gfx/leaders/UKR/portrait_mostafa_jamilev.dds"
+		ideology = shia_islamism
+		traits = { trait_shia_islamism }
+	}
+
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_operative_leader = {
+			name = "Yehor Bozhok"
+			GFX = GFX_portrait_yehor_bozhok
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { UKR }
+		}
+		create_operative_leader = {
+			name = "Viktor Hvozd"
+			GFX = GFX_portrait_viktor_hvozd
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { UKR }
+		}
+		create_operative_leader = {
+			name = "Hryhoriy Illyashov"
+			GFX = GFX_portrait_hryhoriy_illyashov
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { UKR }
+		}
+		create_operative_leader = {
+			name = "Alexey Arestovych"
+			GFX = GFX_portrait_alexey_arestovych
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { UKR }
+		}
+		create_operative_leader = {
+			name = "Sergey Gmyza"
+			GFX = GFX_portrait_sergey_gmyza
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { UKR }
+		}
+		create_operative_leader = {
+			name = "Mykola Malomuzh"
+			GFX = GFX_portrait_mykola_malomuzh
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { UKR }
+		}
+		create_operative_leader = {
+			name = "Eduard Matyukha"
+			GFX = GFX_portrait_eduard_matyukha
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { UKR }
+		}
+	}
+
+	create_field_marshal = {
+		name = "Viktor Muzhenko"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_muzhenko_victor_nikolaevich.dds"
+		traits = { old_guard ambusher }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Ruslan Khomchak"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_khomchak_ruslan_borisovich.dds"
+		traits = { cavalry_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Stepan Poltorak"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_poltorak_stepan_timofiyovich.dds"
+		traits = { tanks_commander_expert }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Mikola Balan"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_balan_mikola_ivanovich.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Anatoly Bargilevich"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_bargilevich_anatoly_vladislavovich.dds"
+		traits = { defensive_doctrine }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Valeriy Bondar"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_bondar_valeriy_ivanovich.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Ruslan Dzyuba"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_dzyuba_ruslan_volodimirovich.dds"
+		traits = { }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Oleksandr Golodnyuk"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_golodnyuk_oleksandr_mikolayovich.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Volodymyr Karpenko"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_karpenko_volodymyr_volodymyrovych.dds"
+		traits = { infantry_expert }
+		skill = 3
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Volodymyr Kondratyuk"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_kondratyuk_volodymyr_vasilovich.dds"
+		traits = { }
+		skill = 3
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Sergiy korniychuk"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_korniychuk_sergey_petrovich.dds"
+		traits = { organizer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Andriy Kovalchuk"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_kovalchuk_andrey_trofimovich.dds"
+		traits = { commando airborne_commander_1 }
+		skill = 4
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 4
+	}
+	create_corps_commander = {
+		name = "Yuriy Lebid"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_lebid_yuriy_anatoliyovich.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Mykola Mykolenko"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_mykolenko_mykola_oleksiyovych.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}	
+	create_corps_commander = {
+		name = "Sergiy Nayev"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_nayev_sergey_ivanovich.dds"
+		traits = { offensive_doctrine }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 4
+		attack_skill = 3
+	}	
+	create_corps_commander = {
+		name = "Oleksandr Nesterenko"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_nesterenko_oleksandr_volodimirovich.dds"
+		traits = { }
+		skill = 3
+		logistics_skill = 2
+		defense_skill = 3
+		planning_skill = 2
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Oleg Sakhon"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_sakhon_oleg_oleksandrovich.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Oleksandr Sirsky"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_sirsky_oleksandr_stanislavovich.dds"
+		traits = { }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Yaroslav Spodar"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_spodar_yaroslav_bogdanovich.dds"
+		traits = { }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Mikhailo Zabrodskiy"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_zabrodskiy_mikhailo_vitaliyovich.dds"
+		traits = { commando airborne_commander_1 }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Valeriy Zaluzhny"
+		portrait_path = "gfx/leaders/UKR/general/portrait_ukr_general_zaluzhny_valeriy_fedorovich.dds"
+		traits = { }
+		skill = 3
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_navy_leader = {
+		name = "Alexey Neizhpapa"
+		portrait_path = "gfx/leaders/UKR/admiral/portrait_ukr_admiral_neizhpapa_alexey_leonidovich.dds"
+		traits = { }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 2
+		maneuvering_skill = 3
+		attack_skill = 2
+	}
+	create_navy_leader = {
+		name = "Igor Voronchenko"
+		portrait_path = "gfx/leaders/UKR/admiral/portrait_ukr_admiral_voronchenko_igor_alexandrovich.dds"
+		traits = { }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+
+  # Лидер Украины при историчном сценарии
+  #create_country_leader = {
+  #	name = "Petro Poroshenko"
+  #	desc = ""
+  #	picture = "gfx/leaders/UKR/portrait_petro_poroshenko.dds"
+  #	ideology = liberal_democracy
+  #	traits = {	}
+  #}
+
+  # Лидер "Батькивщины" после победы Евромайдана
+  #create_country_leader = {
+  #	name = "Yulia Tymoshenko"
+  #	desc = ""
+  #	picture = "gfx/leaders/UKR/portrait_yulia_tymoshenko.dds"
+  #	ideology = conservative_democracy
+  #	traits = {	}
+  #}
+
+  # Как приемник Януковича в случае раскола
+  #create_country_leader = {
+  #	name = "Oleg Tsaryov"
+  #	desc = ""
+  #	picture = "gfx/leaders/UKR/portrait_oleg_tsaryov.dds"
+  #	ideology = centrist_democracy
+  #	traits = {	}
+  #}
+
+  # Как лидер "Партии Регионов" при историчном сценарии
+  #create_country_leader = {
+  #	name = "Olena Bondarenko"
+  #	desc = ""
+  #	picture = "gfx/leaders/UKR/portrait_olena_bondarenko.dds"
+  #	ideology = centrist_democracy
+  #	traits = {	}
+  #}
+
+  # Лидер добавляется ивентом, см. events/EC_Ukraine
+  #create_country_leader = {
+  #	name = "Oleksandr Tourtchynov"
+  #	desc = ""
+  #	picture = "gfx/leaders/UKR/portrait_oleksandr_tourtchynov.dds"
+  #	ideology = junta
+  #	traits = {	}
+  #}
+
+  #create_country_leader = {
+  #	name = "Viktor Yushchenko"
+  #	desc = ""
+  #	picture = "gfx/leaders/UKR/portrait_viktor_yushchenko.dds"
+  #	ideology = liberal_democracy
+  #	traits = {	}
+  #}
+
+
+  # Будет использован для гражданской войны с Западной Украиной
+  #create_country_leader = {
+  #	name = "Dmytro Yarosh"
+  #	desc = ""
+ # 	picture = "gfx/leaders/UKR/portrait_dmytro_yarosh.dds"
+ # 	ideology = national_democracy
+  #	traits = {	}
+  #}
+
+  #create_country_leader = {
+  #	name = "Andriy Biletsky"
+  #	desc = ""
+  #	picture = "gfx/leaders/UKR/portrait_andriy_biletsky.dds"
+  #	ideology = national_socialism
+  #	traits = {	}
+  #}
+
 }
 
-#create_country_leader = {
-#	name = ""
-#	desc = ""
-#	picture = ""
-#	expire = "1953.3.1"
-#	ideology = oligarchism
-#	traits = {
-#		
-#	}
-#}
-
+2015.1.1 = {
+	
+	load_oob = "UKR_national_brigades_2015"
+}
 
 
