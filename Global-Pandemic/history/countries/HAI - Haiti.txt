@@ -1,148 +1,307 @@
-﻿# NON-EXISTENT ON START GAME STATE
+﻿capital = 860
+2000.1.1 = {
+	set_country_flag = dynamic_flag
+	set_country_flag = dynamic_rebel_flag
+	oob = "HAI_2000"
 
-# Economic Crisis edit for 0.7.6 alpha
+	set_cosmetic_tag = HAI
+	set_variable = { gdp_per_capita = 2.992 }
 
-# NOT EDITED LAWS
-# NOT EDITED POLITICS
-
-capital = 318
-
-set_country_flag = monroe_doctrine
-
-2013.11.1 = {
-	set_variable = { budget_last_year = 845 }
-
-	load_oob = "_tech_microstate_2013"
-	oob = "_army_microstate_2013"
-
-	set_stability = 0.5
-
-	add_political_power = 0
-	
 	add_ideas = {
-		semi-presidential_republic
-		secular_state
-		free_media
-		respect_of_liberties
-		open_immigration
-		mixed_army
-		mixed_schools
-		civilian_economy
-		balanced_industry
-		base_social_security
-		normal_working_time
-		mixed_economic
-		NPT
+		#Economic Cycle
+		stagnation
+		#Corruption
+		crippling_corruption
+		#Faction 1
+		international_bankers
+		#Faction 2
+		small_medium_business_owners
+		#Faction 3
+		landowners
+
+		#Bureacracy
+		bureau_01
+		#Military Spending
+		defence_01
+		#Internal Security
+		police_01
+		#Education budget
+		edu_01
+		#Health budget
+		health_01
+		#Social spending
+		social_01
+
+		#Trade Law
+		consumption_economy
+		#Conscription Law
+		no_military
+		#Women in the military
+		volunteer_women
+		#Foreign Intervention Law
+
+		#Officer Training
+		officer_basic_training
+
+		#Other
+		#rio_pact_member
+		christian
 	}
 
-	set_convoys = 10
-	create_intelligence_agency = yes
-	
+	### HAI ###
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 40 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 60 }
+	add_to_array = { influence_array = FRA.id }
+	add_to_array = { influence_array_val = 25 }
+	add_to_array = { influence_array = DOM.id }
+	add_to_array = { influence_array_val = 22 }
+	add_to_array = { influence_array = CUB.id }
+	add_to_array = { influence_array_val = 7 }
+	add_to_array = { influence_array = CHI.id }
+	add_to_array = { influence_array_val = 5 }
+	add_to_array = { influence_array = TAI.id }
+	add_to_array = { influence_array_val = 19 }
+	add_to_array = { influence_array = CAN.id }
+	add_to_array = { influence_array_val = 20 }
+	startup_influence = yes
+
+	set_variable = { var = debt value = 4 }
+	set_variable = { var = treasury value = 3 }
+	set_variable = { var = corporate_tax_rate value = 20 }
+	set_variable = { var = population_tax_rate value = 15 }
+	set_variable = { var = int_investments value = 0.1 }
+	every_controlled_state = {
+		set_variable = { productivity_state_var = 320 }
+	}
+	set_variable = { overall_productivity = 320 }
+
+	add_opinion_modifier = { target = TOG modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = TOG modifier = french_speaking }
+	add_opinion_modifier = { target = CAR modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = CAR modifier = french_speaking }
+	add_opinion_modifier = { target = GAB modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = GAB modifier = french_speaking }
+	add_opinion_modifier = { target = DJI modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = DJI modifier = french_speaking }
+	add_opinion_modifier = { target = COM modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = COM modifier = french_speaking }
+	add_opinion_modifier = { target = SEY modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = SEY modifier = french_speaking }
+	add_opinion_modifier = { target = BAL modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = BAL modifier = french_speaking }
+	add_opinion_modifier = { target = LOG modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = LOG modifier = french_speaking }
+	add_opinion_modifier = { target = SEL modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = SEL modifier = french_speaking }
+	add_opinion_modifier = { target = BEL modifier = french_speaking }
+	reverse_add_opinion_modifier = { target = BEL modifier = french_speaking }
+
+	# Starting tech
+	set_technology = {
+		legacy_doctrines = 1
+		infantry_mass_assault = 1
+		#No army, but let's give them some basic tech in case they change their mind
+		infantry_weapons = 1
+		command_control_equipment = 1
+		Anti_tank_0 = 1
+		util_vehicle_0 = 1
+
+		night_vision_1 = 1
+		camouflage = 1
+		camouflage2 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+		radar = 1
+		internet1 = 1 	#1G
+		fuel_silos = 1
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			nsb_Anti_Air_0 = 1
+		}
+		else = {
+			set_technology = {
+				Anti_Air_0 = 1
+			}
+		}
+	}
+
+	set_popularities = {
+		democratic = 61
+		communism = 3
+		fascism = 0
+		neutrality = 36
+		nationalist = 0
+	}
 	set_politics = {
-		ruling_party = neutrality
-		last_election = "2011.3.20"
-		election_frequency = 48
+		ruling_party = democratic
+		last_election = "1995.12.17"
+		election_frequency = 60
 		elections_allowed = yes
 	}
-	set_popularities = {
-		communism = 0
-		reformism = 39
-		liberalism = 11
-		democratic = 21
-		neutrality = 24
-		fascism = 5
-		rad_islamists = 0
-	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.12 } #conservatism - RDNP 0.02
+	set_variable = { party_pop_array^2 = 0.03 } #liberalism - PHTK 0.07
+	set_variable = { party_pop_array^3 = 0.46 } #socialism - FL 0.19
+	set_variable = { party_pop_array^4 = 0.03 } #Communist-State - NPCH(ML) 0.1
+	set_variable = { party_pop_array^5 = 0 } #anarchist_communism - PPD 0.41
+	set_variable = { party_pop_array^6 = 0 } #Conservative 0.03
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0.09 } #Neutral_conservatism - MCNH 0.15
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green - RP
+	set_variable = { party_pop_array^18 = 0.27 } #neutral_Social - OPL
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism - AAA 0.03
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism - PUN
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy - FAd'H
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 3 }
+
+	startup_politics = yes
 
 	create_country_leader = {
-		name = "Michel Martelly"
-		desc = "POLITICS_MICHAEL_MARTELLY_DESC"
-		picture = "gfx/leaders/HAI/portrait_michel_martelly.dds"
-		ideology = centrist_democracy #agrarianism
-		traits = { trait_centrist_democracy }
+		name = "René Préval" # Jacques-Edouard Alexis
+		picture = "rene_preval.dds" # jacques_edouard_alexis.dds
+		ideology = socialism
+		traits = {
+			western_socialism
+		}
 	}
+	set_variable = { term_limit = 1 }
+	set_variable = { current_term = 1 }
 
-	create_country_leader = {
-		name = "Jovenel Moïse"
-		desc = "POLITICS_JOVENEL_MOISE_DESC"
-		picture = "gfx/leaders/HAI/portrait_jovenel_moise.dds"
-		ideology = conservative_liberalism
-		traits = { trait_conservative_liberalism }
-	}
-
-	create_country_leader = {
-		name = "Mirlande Manigat"
-		desc = "POLITICS_MIRLANDE_MANIGAT_DESC"
-		picture = "gfx/leaders/HAI/portrait_mirlande_manigat.dds"
-		ideology = conservative_democracy
-		traits = { trait_conservative_democracy }
-	}
-
-	create_country_leader = {
-		name = "Jude Celestin"
-		desc = "POLITICS_JUDE_CELESTIN_DESC"
-		picture = "gfx/leaders/HAI/portrait_jude_celestin.dds"
-		ideology = social_democracy
-		traits = { trait_social_democracy }
-	}
-
-	create_country_leader = {
-		name = "Youri Latortue"
-		desc = "POLITICS_YOURI_LATORTUE_DESC"
-		picture = "gfx/leaders/HAI/portrait_south_america_generic_3.dds"
-		ideology = national_conservatism
-		traits = { trait_national_conservatism }
-	}
+	recruit_character = HAI_air_chief
 }
 
-		2016.2.14 = { 
-			HAI = {
-				add_popularity = {
-					ideology = reformism
-					popularity = -0.09
-				}
+2017.1.1 = {
+	capital = 860
+	oob = "HAI_2017"
 
-				set_politics = {
-					ruling_party = reformism
-				}
+	add_ideas = {
+		#pop_050
+		crippling_corruption
 
-				create_country_leader = {
-					name = "Jude Celestin"
-					desc = "POLITICS_JUDE_CELESTIN_DESC"
-					picture = "gfx/leaders/HAI/portrait_jude_celestin.dds"
-					ideology = social_democracy
-					traits = { trait_social_democracy }
-				}
+		#rio_pact_member
+		christian
+		stagnation
+		defence_01
+		edu_01
+		health_01
+		social_01
+		bureau_01
+		police_01
+		no_military
+		volunteer_women
+		international_bankers
+		small_medium_business_owners
+		landowners
+		#civil_law
+		#tax_cost_13
+	}
 
-				create_country_leader = {
-					name = "Jocelerme Privert"
-					desc = "POLITICS_JOCELERME_PRIVERT_DESC"
-					picture = "gfx/leaders/HAI/portrait_jocelerme_privert.dds"
-					ideology = social_democracy
-					expire = "2016.11.20"
-					traits = { trait_social_democracy }
-				}
+	set_variable = { international_bankers_opinion = 20 }
+	set_variable = { small_medium_business_owners_opinion = 40 }
+	set_variable = { landowners_opinion = 40 }
 
-			}
+	set_variable = { var = debt value = 3 }
+	set_variable = { var = treasury value = 2 }
+	set_variable = { var = int_investments value = 0.1 }
+	set_variable = { var = corporate_tax_rate value = 20 }
+	set_variable = { var = population_tax_rate value = 15 }
+
+	# Starting tech
+	set_technology = {
+		legacy_doctrines = 1
+		infantry_mass_assault = 1
+		#No army, but let's give them some basic tech in case they change their mind
+		infantry_weapons = 1
+		command_control_equipment = 1
+		Anti_tank_0 = 1
+		Anti_Air_0 = 1
+		util_vehicle_0 = 1
+
+		night_vision_1 = 1
+
+		internet2 = 1 	#2G
+		support_weapons = 1
+		special_forces = 1
+	}
+
+	set_popularities = {
+		democratic = 84.4
+		communism = 0.0
+		fascism = 0.0
+		neutrality = 15.6
+		nationalist = 0.0
+	}
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2016.11.20"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.196 } #conservatism
+	set_variable = { party_pop_array^2 = 0.558 } #liberalism
+	set_variable = { party_pop_array^3 = 0.09 } #socialism
+	set_variable = { party_pop_array^4 = 0 } #Communist-State
+	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.156 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 2 }
+
+	startup_politics = yes
+
+	create_country_leader = {
+		name = "Jovenel Moise"
+		picture = "jovenel_moise.dds"
+		ideology = liberalism
+		traits = {
+			western_liberalism
 		}
-
-
-		2016.11.20 = { 
-			HAI = {
-				add_popularity = {
-					ideology = liberalism
-					popularity = 0.11
-				}
-
-				add_popularity = {
-					ideology = neutrality
-					popularity = 0.08
-				}
-
-				set_politics = {
-					ruling_party = liberalism
-				}
-			}
-		}
-
-
+	}
+}

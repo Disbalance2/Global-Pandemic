@@ -1,0 +1,49 @@
+state = {
+	id = 695
+	name = "STATE_695"
+
+	resources = {
+		aluminium = 3.000
+		steel = 3
+	}
+
+	history = {
+		owner = UKR
+
+		victory_points = {
+			11670 10
+		}
+
+		victory_points = {
+			3757 1
+		}
+
+		buildings = {
+			infrastructure = 1
+			internet_station = 1
+			industrial_complex = 1
+			dockyard = 2
+			offices = 1
+			nuclear_reactor = 1
+			11670 = {
+				naval_base = 5
+			}
+		}
+		add_core_of = UKR
+		
+		
+		2017.1.1 = {
+						add_core_of = NOV
+			buildings = {
+				internet_station = 2
+			}
+		}
+	}
+
+	provinces = {
+		741 754 3757 9698 9714 11670
+	}
+	manpower = 3600444
+	buildings_max_level_factor = 1.000
+	state_category = state_05
+}

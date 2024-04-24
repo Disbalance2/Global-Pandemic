@@ -1,0 +1,94 @@
+﻿division_template = {
+	name = "Brigade d'Infanterie"
+
+	regiments = {
+		L_Inf_Bat = { x = 0 y = 0 }
+		L_Inf_Bat = { x = 0 y = 1 }
+		L_Inf_Bat = { x = 1 y = 0 }
+		L_Inf_Bat = { x = 1 y = 1 }
+	}
+
+	support = {
+		armor_Recce_Comp = { x = 0 y = 0 }
+		Arty_Battery = { x = 0 y = 1 }
+		L_Engi_Comp = { x = 0 y = 2 }
+	}
+
+}
+division_template = {
+	name = "Commando Bataillon"
+
+	regiments = {
+		Special_Forces = { x = 0 y = 0 }
+	}
+
+	priority = 2
+}
+units = {
+	division = {
+		name = "1ère Brigade d'Infanterie"
+		location = 2220
+		division_template = "Brigade d'Infanterie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "2ème Brigade d'Infanterie"
+		location = 2220
+		division_template = "Brigade d'Infanterie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.01
+	}
+}
+instant_effect = {
+
+	add_equipment_to_stockpile = {
+		type = infantry_weapons			#Type 56
+		amount = 2200
+		producer = CHI
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_hull_0
+		amount = 18
+		producer = FRA
+		variant_name = "Panhard AML 90"
+	}
+	add_equipment_to_stockpile = {
+		type = apc_hull_1
+		amount = 30
+		producer = SOV
+		variant_name = "BRDM-2"
+	}
+	add_equipment_to_stockpile = {
+		type = apc_hull_0
+		variant_name = "M3 Panhard"
+		amount = 9
+		producer = FRA
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_0		#D-30
+		amount = 18
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = command_control_equipment
+		amount = 200
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = Anti_tank_0
+		amount = 100
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = Heavy_Anti_tank_0
+		amount = 50
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = Anti_Air_0
+		amount = 100
+		producer = SOV
+	}
+}

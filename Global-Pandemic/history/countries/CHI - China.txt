@@ -1,770 +1,3614 @@
-﻿# Economic Crisis edit for 0.7.6 alpha
+﻿capital = 547
+2000.1.1 = {
+	set_country_flag = dynamic_flag
+	set_country_flag = dynamic_rebel_flag
+	set_variable = { gdp_per_capita = 3.452 }
 
-capital = 608
+	set_country_flag = country_has_mbt_0_templates
+	set_country_flag = country_has_afv_0_templates
+	set_country_flag = country_has_mbt_1_templates
+	set_country_flag = country_has_afv_1_templates
 
-add_ideas = {
-	#obsolete_army
-	overpopulation
-    nuclear_country
-    unsc_member
-	mixed_schools
-	major_country
-	NPT
-	CHI_population_control
-	
-	rcep_member
-}
-
-
-
-1985.1.1 = {
-
-	# laws
-	add_ideas = {
-		single-party_state
-		unitary_state_with_devolution
-		state_atheism
-		cencored_media
-		limitation_of_liberties
-		mixed_army
-		tech_schools
-		restricted_immigration
-		mixed_economic
-		total_nationalization_of_industry
-		free_trade
-		light_industry_focus
-		civilian_economy
-		low_taxes
-		middle_social_security
-		average_terrorism
-	}
-
-	set_stability = 0.5
-	add_political_power = 0
-	set_convoys = 50
-	create_intelligence_agency = yes
-	
-	set_politics = {
-		ruling_party = communism
-		last_election = "1977.1.1"
-		election_frequency = 60
-		elections_allowed = no
-	}
-
-	set_popularities = {
-		communism = 80
-		reformism = 10
-		liberalism = 2
-		democratic = 3
-		neutrality = 5
-		fascism = 0
-		rad_islamists = 0
-	}
-
-	create_country_leader = {
-		name = "Hu Yaobang"
-		desc = "POLITICS_MAO_ZEDONG_DESC"
-		picture = ""
-		ideology = marxism
-		traits = { trait_marxism }
-	}
-}
-1996.4.26 = {
-    add_ideas = sco_member
-}
-
-# Передача Гонконга
-1997.7.1 = {
-	 if = {
-		limit = {
-			has_dlc = "Together for Victory"
-		}
-		set_autonomy = {
-			target = HKG
-			autonomy_state = autonomous_area
-			freedom_level = 0.1
-		}
+	# This is the PRC, not Taiwan. Taiwan is "TAI"
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "CHI_2000_nsb"
 		else = {
-			#CHI = { transfer_state = 326 }
-			326 = {	remove_core_of = ENG }
-			puppet = HKG
+			set_oob = "CHI_2000_nonnsb"
 		}
 	}
-}
 
-# Передача Макао
-1999.12.20 = {
+	set_cosmetic_tag = CHI_AUTH_S
 	if = {
 		limit = {
-			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
 		}
-		set_autonomy = {
-			target = MCU
-			autonomy_state = autonomous_area
-			freedom_level = 0.1
-		}
+		set_naval_oob = "CHI_2000_naval_mtg"
 		else = {
-			#CHI = { transfer_state = 729 }
-			729 = {	remove_core_of = POR }
-			puppet = MCU
+			set_naval_oob = "CHI_2000_naval_legacy"
 		}
-	 }
-}
-
-2001.9.1 = {
-	oob = "_army_minor_2013"
-	set_country_flag = pai_nondem_authoritarian
-	set_politics = {
-		ruling_party = communism
-		last_election = "1993.3.27"
-		elections_allowed = no
 	}
-	set_popularities = {
-		communism = 85
-		reformism = 2
-		liberalism = 2
-		democratic = 3
-		neutrality = 4
-		fascism = 4
-		rad_islamists = 0
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+
+		set_air_oob = "CHI_2000_bba"
+		else = {
+			set_air_oob = "CHI_2000_nonbba"
+		}
 	}
-}
 
-# первый саммит БРИК
-2009.6.16 = {
-    add_ideas = brics_member
-}
 
-2013.11.1 = {
-	set_variable = { budget_last_year = 960700 }
+	set_autonomy = {
+		target = HKG
+		autonomy_state = autonomy_special_administrative_region_HKG
+	}
 
-	load_oob = "CHI_tech_2013"
-	oob = "CHI_2013"
+	set_autonomy = {
+		target = MAC
+		autonomy_state = autonomy_special_administrative_region_MAC
+	}
 
-	# laws
 	add_ideas = {
-		single-party_state
-		unitary_state_with_devolution
-		state_atheism
-		cencored_media
-		limitation_of_liberties
-		mixed_army
-		tech_schools
-		restricted_immigration
-		mixed_economic
-		total_nationalization_of_industry
-		free_trade
-		
-		light_industry_focus
-		civilian_economy
-		low_taxes
-		middle_social_security
-		pensions # in 2009 year
-		chi_li_keqiang_hog
-		chi_chang_wanquan_defm
-		chi_wang_yi_fgm
-		chi_ma_kai_ecm
-		chi_guo_shengkun_ssch
-		chi_xu_qiliang_chogs
-		chi_geng_huichang_isch
-		chi_fang_fenghui_chogf
-		chi_wu_sengli_chonf
-		chi_ma_xiaotian_choaf
-		average_terrorism
+		#tax_cost_15
+		multi_ethnic_state_idea
+		economic_boom
+		#pop_050
+		unrestrained_corruption
+		pluralist
+		chastity_paifang
+		censored_nation_01
+		Socialist_Market_Economy
+		factional_politics_elitist
+		water_shortages_3
+		party_commands_gun
+		CHI_PLA_Business_Ventures
+		chabuduo
+		one_child_policy
+		p5_member
+		nuclear_power
+		semi_consumption_economy
+		defence_02
+		edu_02
+		health_01
+		social_01
+		bureau_02
+		police_04
+		volunteer_army
+		volunteer_women
+		industrial_conglomerates
+		communist_cadres
+		the_military
+		intervention_local_security
+		#hybrid
+		officer_advanced_training
 	}
 
-	create_import = {
-		resource = enr_uran
-		factories = 4
-		exporter = RUS
+	add_timed_idea = {
+		idea = int_investment_china days = 1280
 	}
 
-	set_stability = 0.5
-	add_political_power = 0
-	set_convoys = 50
-	create_intelligence_agency = yes
-	
-	set_country_flag = pai_nondem_totalitarian
-	set_politics = {
-		ruling_party = communism
-		last_election = "2004.1.1"
-		election_frequency = 72
-		elections_allowed = no
+	set_variable = { communist_cadres_opinion = 60 }
+	set_variable = { the_military_opinion = 60 }
+	set_variable = { industrial_conglomerates_opinion = 60 }
+
+	set_variable = {
+		var = uighur_threat
+		value = 40
+	}
+	set_variable = {
+		var = uighur_opinion
+		value = 35
+	}
+
+	set_variable = { chinese_aggression = 0 }
+
+	#Recognition
+	add_to_array = { global.rival_governments = THIS }
+	set_country_flag = rival_government_TAI
+
+	set_country_flag = recognised_opponent_SAO
+	set_country_flag = recognised_opponent_MLW
+	set_country_flag = recognised_opponent_COS
+	set_country_flag = recognised_opponent_DMI
+	set_country_flag = recognised_opponent_PAN
+	set_country_flag = recognised_opponent_ELS
+	set_country_flag = recognised_opponent_DOM
+	set_country_flag = recognised_opponent_BFA
+	set_country_flag = recognised_opponent_CHA
+	set_country_flag = recognised_opponent_GRA
+	set_country_flag = recognised_opponent_FYR
+	set_country_flag = recognised_opponent_BLZ
+	set_country_flag = recognised_opponent_GUA
+	set_country_flag = recognised_opponent_HON
+	set_country_flag = recognised_opponent_NIC
+	set_country_flag = recognised_opponent_PAR
+	set_country_flag = recognised_opponent_MAR
+	set_country_flag = recognised_opponent_MIC
+	set_country_flag = recognised_opponent_PAU
+	set_country_flag = recognised_opponent_SOL
+	set_country_flag = recognised_opponent_SWA
+	set_country_flag = recognised_opponent_HAI
+	set_country_flag = recognised_opponent_STV
+	set_country_flag = recognised_opponent_STK
+	set_country_flag = recognised_opponent_STL
+	set_country_flag = recognised_opponent_TUL
+	set_country_flag = recognised_opponent_NAU
+
+	add_to_variable = {
+		var = CHI.Granted_Recognition
+		value = 165
+	}
+
+	#Cyber
+	add_to_array = { CHI.cyber_targets = USA }
+	add_to_array = { CHI.cyber_targets = AST }
+	add_to_array = { CHI.cyber_targets = ENG }
+	add_to_array = { CHI.cyber_targets = CAN }
+	add_to_array = { CHI.cyber_targets = FRA }
+	add_to_array = { CHI.cyber_targets = GER }
+	add_to_array = { CHI.cyber_targets = RAJ }
+	add_to_array = { CHI.cyber_targets = PER }
+	add_to_array = { CHI.cyber_targets = JAP }
+	add_to_array = { CHI.cyber_targets = KOR }
+	add_to_array = { CHI.cyber_targets = NKO }
+	add_to_array = { CHI.cyber_targets = PHI }
+	add_to_array = { CHI.cyber_targets = SOV }
+	add_to_array = { CHI.cyber_targets = SIN }
+	add_to_array = { CHI.cyber_targets = TAI }
+	add_to_array = { CHI.cyber_targets = TUR }
+	add_to_array = { CHI.cyber_targets = VIE }
+
+	#SCO Potential Member States
+	add_to_array = { global.potential_sco = PER }
+	add_to_array = { global.potential_sco = TUR }
+	add_to_array = { global.potential_sco = ABK }
+	add_to_array = { global.potential_sco = ARM }
+	add_to_array = { global.potential_sco = AZE }
+	add_to_array = { global.potential_sco = GEO }
+	add_to_array = { global.potential_sco = SOO }
+	add_to_array = { global.potential_sco = NKR }
+	add_to_array = { global.potential_sco = ALA }
+	add_to_array = { global.potential_sco = AQY }
+	add_to_array = { global.potential_sco = BHR }
+	add_to_array = { global.potential_sco = DRU }
+	add_to_array = { global.potential_sco = FSA }
+	add_to_array = { global.potential_sco = HAM }
+	add_to_array = { global.potential_sco = HEZ }
+	add_to_array = { global.potential_sco = HOU }
+	add_to_array = { global.potential_sco = IRQ }
+	add_to_array = { global.potential_sco = ISI }
+	add_to_array = { global.potential_sco = ISR }
+	add_to_array = { global.potential_sco = JOR }
+	add_to_array = { global.potential_sco = KUR }
+	add_to_array = { global.potential_sco = KUW }
+	add_to_array = { global.potential_sco = LEB }
+	add_to_array = { global.potential_sco = NUS }
+	add_to_array = { global.potential_sco = OMA }
+	add_to_array = { global.potential_sco = PAL }
+	add_to_array = { global.potential_sco = PKK }
+	add_to_array = { global.potential_sco = QAT }
+	add_to_array = { global.potential_sco = ROJ }
+	add_to_array = { global.potential_sco = SAU }
+	add_to_array = { global.potential_sco = SYR }
+	add_to_array = { global.potential_sco = UAE }
+	add_to_array = { global.potential_sco = YEM }
+	add_to_array = { global.potential_sco = SOV }
+	add_to_array = { global.potential_sco = BLR }
+	add_to_array = { global.potential_sco = ITA }
+	add_to_array = { global.potential_sco = ACE }
+	add_to_array = { global.potential_sco = AFG }
+	add_to_array = { global.potential_sco = AST }
+	add_to_array = { global.potential_sco = BAN }
+	add_to_array = { global.potential_sco = BHU }
+	add_to_array = { global.potential_sco = BRM }
+	add_to_array = { global.potential_sco = BRU }
+	add_to_array = { global.potential_sco = CBD }
+	add_to_array = { global.potential_sco = CHI }
+	add_to_array = { global.potential_sco = FIJ }
+	add_to_array = { global.potential_sco = IND }
+	add_to_array = { global.potential_sco = JAP }
+	add_to_array = { global.potential_sco = KAC }
+	add_to_array = { global.potential_sco = KOR }
+	add_to_array = { global.potential_sco = KYR }
+	add_to_array = { global.potential_sco = HKG }
+	add_to_array = { global.potential_sco = LAO }
+	add_to_array = { global.potential_sco = MAC }
+	add_to_array = { global.potential_sco = MAY }
+	add_to_array = { global.potential_sco = MIC }
+	add_to_array = { global.potential_sco = MLD }
+	add_to_array = { global.potential_sco = MON }
+	add_to_array = { global.potential_sco = NEP }
+	add_to_array = { global.potential_sco = NKO }
+	add_to_array = { global.potential_sco = NZL }
+	add_to_array = { global.potential_sco = PAK }
+	add_to_array = { global.potential_sco = PAP }
+	add_to_array = { global.potential_sco = PHI }
+	add_to_array = { global.potential_sco = SAM }
+	add_to_array = { global.potential_sco = RAJ }
+	add_to_array = { global.potential_sco = SHN }
+	add_to_array = { global.potential_sco = SIA }
+	add_to_array = { global.potential_sco = SIN }
+	add_to_array = { global.potential_sco = SOL }
+	add_to_array = { global.potential_sco = SRI }
+	add_to_array = { global.potential_sco = TAI }
+	add_to_array = { global.potential_sco = TAJ }
+	add_to_array = { global.potential_sco = TAL }
+	add_to_array = { global.potential_sco = TON }
+	add_to_array = { global.potential_sco = TTP }
+	add_to_array = { global.potential_sco = TIM }
+	add_to_array = { global.potential_sco = UZB }
+	add_to_array = { global.potential_sco = VIE }
+	add_to_array = { global.potential_sco = WAA }
+
+	# Investment Targets
+	add_to_array = { CHI.investment_targets = SOV } # Russia
+	add_to_array = { CHI.investment_targets = MON } # Mongolia
+	add_to_array = { CHI.investment_targets = IND } # Indonesia
+	add_to_array = { CHI.investment_targets = SIN } # Singapore
+	add_to_array = { CHI.investment_targets = TIM } # East Timor
+	add_to_array = { CHI.investment_targets = MAY } # Malaysia
+	add_to_array = { CHI.investment_targets = BRM } # Myanmar
+	add_to_array = { CHI.investment_targets = SIA } # Thailand
+	add_to_array = { CHI.investment_targets = CBD } # Cambodia
+	add_to_array = { CHI.investment_targets = LAO } # Laos
+	add_to_array = { CHI.investment_targets = PAK } # Pakistan
+	add_to_array = { CHI.investment_targets = BAN } # Bangladesh
+	add_to_array = { CHI.investment_targets = NEP } # Nepal
+	add_to_array = { CHI.investment_targets = KAZ } # Kazakhstan
+	add_to_array = { CHI.investment_targets = KYR } # Kyrgyzstan
+	add_to_array = { CHI.investment_targets = TAJ } # Tajikistan
+	add_to_array = { CHI.investment_targets = UZB } # Uzbekistan
+	add_to_array = { CHI.investment_targets = TRK } # Turkmenistan
+	add_to_array = { CHI.investment_targets = TUR } # Turkey
+	add_to_array = { CHI.investment_targets = TUN } # Tunisia
+	add_to_array = { CHI.investment_targets = ALG } # Algeria
+	add_to_array = { CHI.investment_targets = MOR } # Morocco
+	add_to_array = { CHI.investment_targets = JOR } # Jordan
+	add_to_array = { CHI.investment_targets = SAU } # Saudi
+	add_to_array = { CHI.investment_targets = OMA } # Oman
+	add_to_array = { CHI.investment_targets = EGY } # Egypt
+	add_to_array = { CHI.investment_targets = UAE } # United Arab Emirates
+	add_to_array = { CHI.investment_targets = PER } # Iran
+	add_to_array = { CHI.investment_targets = TNZ } # Tanzania
+	add_to_array = { CHI.investment_targets = MOZ } # Mozambique
+	add_to_array = { CHI.investment_targets = MLW } # Malawi
+	add_to_array = { CHI.investment_targets = ZAM } # Zambia
+	add_to_array = { CHI.investment_targets = AGL } # Angola
+	add_to_array = { CHI.investment_targets = DRC } # Democratic Peoples Republic of Congo
+	add_to_array = { CHI.investment_targets = CNG } # Congo
+	add_to_array = { CHI.investment_targets = GAB } # Gabon
+	add_to_array = { CHI.investment_targets = EGU } # Equatorial Guinea
+	add_to_array = { CHI.investment_targets = CAM } # Cameroon
+	add_to_array = { CHI.investment_targets = NIG } # Nigeria
+	add_to_array = { CHI.investment_targets = BEN } # Benin
+	add_to_array = { CHI.investment_targets = TOG } # Togo
+	add_to_array = { CHI.investment_targets = GAH } # Ghana
+	add_to_array = { CHI.investment_targets = CDI } # Cote D'Ivore
+	add_to_array = { CHI.investment_targets = LIB } # Liberia
+	add_to_array = { CHI.investment_targets = GUI } # Guinea
+	add_to_array = { CHI.investment_targets = SIE } # Sierra Leone
+	add_to_array = { CHI.investment_targets = GUB } # Guinea-Bissau
+	add_to_array = { CHI.investment_targets = SEN } # Senegal
+	add_to_array = { CHI.investment_targets = GAM } # Gambia
+	add_to_array = { CHI.investment_targets = MAU } # Mauritiana
+	add_to_array = { CHI.investment_targets = MAL } # Mali
+	add_to_array = { CHI.investment_targets = BFA } # Burkino Faso
+	add_to_array = { CHI.investment_targets = NGR } # Niger
+	add_to_array = { CHI.investment_targets = MAD } # Madagascar
+	add_to_array = { CHI.investment_targets = CHA } # Chad
+	add_to_array = { CHI.investment_targets = KEN } # Kenya
+	add_to_array = { CHI.investment_targets = ZIM } # Zimbabwe
+	add_to_array = { CHI.investment_targets = SAF } # South Africa
+	add_to_array = { CHI.investment_targets = ETH } # Ethiopia
+	add_to_array = { CHI.investment_targets = BRA } # Brazil
+	add_to_array = { CHI.investment_targets = ARG } # Argentina
+	add_to_array = { CHI.investment_targets = URG } # Uruguay
+	add_to_array = { CHI.investment_targets = CHL } # Chile
+	add_to_array = { CHI.investment_targets = PAR } # Paraguay
+	add_to_array = { CHI.investment_targets = PRU } # Peru
+	add_to_array = { CHI.investment_targets = BOL } # Bolivia
+	add_to_array = { CHI.investment_targets = ECU } # Ecuador
+	add_to_array = { CHI.investment_targets = COL } # Colombia
+	add_to_array = { CHI.investment_targets = VEN } # Venezuela
+	add_to_array = { CHI.investment_targets = SUR } # Suriname
+	add_to_array = { CHI.investment_targets = GUY } # Guyana
+	add_to_array = { CHI.investment_targets = PAN } # Panama
+	add_to_array = { CHI.investment_targets = COS } # Costa Rica
+	add_to_array = { CHI.investment_targets = NIC } # Nicaragua
+	add_to_array = { CHI.investment_targets = HON } # Honduras
+	add_to_array = { CHI.investment_targets = ELS } # El Salvador
+	add_to_array = { CHI.investment_targets = GUA } # Guatemala
+	add_to_array = { CHI.investment_targets = BLZ } # Belize
+	add_to_array = { CHI.investment_targets = CUB } # Cuba
+	add_to_array = { CHI.investment_targets = HAI } # Haiti
+	add_to_array = { CHI.investment_targets = DOM } # Dominican Republic
+	add_to_array = { CHI.investment_targets = JAM } # Jamaica
+	add_to_array = { CHI.investment_targets = MEX } # Mexico
+	add_to_array = { CHI.investment_targets = CAN } # Canada
+	add_to_array = { CHI.investment_targets = USA } # United States
+	add_to_array = { CHI.investment_targets = BOT } # Botswana
+	add_to_array = { CHI.investment_targets = TON } # Tonga
+
+	set_country_flag = investment_targets_are_set_up
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 1000 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 71 }
+	add_to_array = { influence_array = JAP.id }
+	add_to_array = { influence_array_val = 47 }
+	add_to_array = { influence_array = SOV.id }
+	add_to_array = { influence_array_val = 15 }
+	add_to_array = { influence_array = GER.id }
+	add_to_array = { influence_array_val = 18 }
+	startup_influence = yes
+
+	set_variable = { var = debt value = 1002.396 }
+	set_variable = { var = int_investments value = 36.8 }
+	set_variable = { var = treasury value = 252 }
+	set_variable = { var = corporate_tax_rate value = 18 }
+	set_variable = { var = population_tax_rate value = 22 }
+
+	add_opinion_modifier = { target = JAP modifier = maritime_border_dispute }
+	reverse_add_opinion_modifier = { target = JAP modifier = maritime_border_dispute }
+
+	add_opinion_modifier = { target = JAP modifier = refuse_to_apologize_for_warcrimes }
+
+	add_opinion_modifier = { target = VIE modifier = minor_border_dispute }
+	reverse_add_opinion_modifier = { target = VIE modifier = minor_border_dispute }
+
+	###Some additions by Killerrabbit###
+
+	#Chinese diaspora trading network
+	add_opinion_modifier = { target = IND modifier = bamboo_network }
+	reverse_add_opinion_modifier = { target = IND modifier = bamboo_network  }
+	add_opinion_modifier = { target = SIN modifier = bamboo_network }
+	reverse_add_opinion_modifier = { target = SIN modifier = bamboo_network  }
+	add_opinion_modifier = { target = TAI modifier = bamboo_network }
+	reverse_add_opinion_modifier = { target = TAI modifier = bamboo_network  }
+	add_opinion_modifier = { target = SIA modifier = bamboo_network }
+	reverse_add_opinion_modifier = { target = SIA modifier = bamboo_network  }
+	add_opinion_modifier = { target = VIE modifier = bamboo_network }
+	reverse_add_opinion_modifier = { target = VIE modifier = bamboo_network  }
+	add_opinion_modifier = { target = CBD modifier = bamboo_network }
+	reverse_add_opinion_modifier = { target = CBD modifier = bamboo_network  }
+	add_opinion_modifier = { target = MAY modifier = bamboo_network }
+	reverse_add_opinion_modifier = { target = MAY modifier = bamboo_network  }
+
+	#North Korea treaty
+	give_guarantee = NKO
+
+	add_opinion_modifier = { target = NKO modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = NKO modifier = historic_friends }
+
+	#Sino-Pakistan friendship & defence cooperation
+	give_guarantee = PAK
+
+	add_opinion_modifier = { target = PAK modifier = sino_pakistani_friendship }
+	reverse_add_opinion_modifier = { target = PAK modifier = sino_pakistani_friendship }
+	reverse_add_opinion_modifier = { target = RAJ modifier = raj_sino_pakistani_friendship }
+
+	add_opinion_modifier = { target = BHU modifier = minor_border_dispute }
+	reverse_add_opinion_modifier = { target = BHU modifier = minor_border_dispute }
+
+	add_opinion_modifier = { target = TAI modifier = chinese_speaking }
+	reverse_add_opinion_modifier = { target = TAI modifier = chinese_speaking }
+	add_opinion_modifier = { target = WAA modifier = chinese_speaking }
+	reverse_add_opinion_modifier = { target = WAA modifier = chinese_speaking }
+
+	#Important Trading partners
+	add_opinion_modifier = { target = USA modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = USA modifier = large_commercial_relations }
+	add_opinion_modifier = { target = JAP modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = JAP modifier = large_commercial_relations }
+	add_opinion_modifier = { target = KOR modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = KOR modifier = large_commercial_relations }
+	add_opinion_modifier = { target = GER modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = GER modifier = large_commercial_relations }
+	add_opinion_modifier = { target = MAY modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = MAY modifier = large_commercial_relations }
+	add_opinion_modifier = { target = SIA modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = SIA modifier = large_commercial_relations }
+	add_opinion_modifier = { target = VIE modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = VIE modifier = large_commercial_relations }
+	add_opinion_modifier = { target = SIN modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = SIN modifier = large_commercial_relations }
+
+	add_opinion_modifier = { target = BAN modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = BAN modifier = historic_friends }
+	add_opinion_modifier = { target = LAO modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = LAO modifier = historic_friends }
+	add_opinion_modifier = { target = LBA modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = LBA modifier = historic_friends }
+	add_opinion_modifier = { target = ALB modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = ALB modifier = historic_friends }
+	add_opinion_modifier = { target = ETH modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = ETH modifier = historic_friends }
+	add_opinion_modifier = { target = SUD modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = SUD modifier = historic_friends }
+	add_opinion_modifier = { target = TNZ modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = TNZ modifier = historic_friends }
+	add_opinion_modifier = { target = MOZ modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = MOZ modifier = historic_friends }
+	add_opinion_modifier = { target = ZAM modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = ZAM modifier = historic_friends }
+	add_opinion_modifier = { target = SAF modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = SAF modifier = historic_friends }
+	add_opinion_modifier = { target = AGL modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = AGL modifier = historic_friends }
+	add_opinion_modifier = { target = CUB modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = CUB modifier = historic_friends }
+	add_opinion_modifier = { target = BRM modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = BRM modifier = historic_friends }
+	add_opinion_modifier = { target = SRI modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = SRI modifier = historic_friends }
+	add_opinion_modifier = { target = PER modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = PER modifier = historic_friends }
+	add_opinion_modifier = { target = IRQ modifier = historic_friends }
+	reverse_add_opinion_modifier = { target = IRQ modifier = historic_friends }
+
+	add_opinion_modifier = { target = JAP modifier = historic_enemies }
+	reverse_add_opinion_modifier = { target = JAP modifier = historic_enemies }
+
+	#one china
+	add_opinion_modifier = { target = TAI modifier = one_china_policy }
+	reverse_add_opinion_modifier = { target = TAI modifier = one_china_policy }
+
+	#recognition of Taiwan
+	add_opinion_modifier = { target = SAO modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = SAO modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = MLW modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = MLW modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = COS modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = COS modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = DMI modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = DMI modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = PAN modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = PAN modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = ELS modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = ELS modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = DOM modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = DOM modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = BFA modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = BFA modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = CHA modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = CHA modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = GRA modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = GRA modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = FYR modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = FYR modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = BLZ modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = BLZ modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = GUA modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = GUA modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = HON modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = HON modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = MAR modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = MAR modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = NIC modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = NIC modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = PAR modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = PAR modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = PAU modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = PAU modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = MIC modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = MIC modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = SOL modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = SOL modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = SWA modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = SWA modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = HAI modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = HAI modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = STV modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = STV modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = STK modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = STK modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = STL modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = STL modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = TUL modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = TUL modifier = recognize_taiwan_chi }
+	add_opinion_modifier = { target = NAU modifier = recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = NAU modifier = recognize_taiwan_chi }
+
+	reverse_add_opinion_modifier = { target = USA modifier = does_not_respect_intellectual_property }
+
+	set_technology = {
+		reactor1 = 1
+		integrated_transportation_system = 1
+		post_conventional_rail = 1
+		early_freight_locomotive = 1
+
+		legacy_doctrines = 1
+		infantry_mass_assault = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		infantry_weapons3 = 1 #1995
+
+		support_weapons = 1
+		tandem_charge_warheads = 1
+		squad_automatic_weapon = 1
+		support_weapons2 = 1
+		special_forces = 1
+		special_forces2 = 1
+
+		combat_eng_equipment = 1
+
+		night_vision_1 = 1
+		night_vision_2 = 1
+
+		command_control_equipment = 1
+		command_control_equipment1 = 1
+
+		land_Drone_equipment = 1
+
+		util_vehicle_0 = 1
+		util_vehicle_1 = 1
+
+		Anti_tank_0 = 1
+		Heavy_Anti_tank_0 = 1
+		AT_upgrade_1 = 1
+		Anti_tank_1 = 1
+		Heavy_Anti_tank_1 = 1
+
+		early_helicopter = 1
+		transport_helicopter1 = 1
+
+		awacs_plane1 = 1
+		cv_awacs_plane1 = 1
+
+		body_armor_1980 = 1
+		camouflage = 1
+		camouflage2 = 1
+
+		early_helicopter = 1
+		transport_helicopter1 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+		radar = 1
+		internet1 = 1 	#1G
+		internet2 = 1
+		fuel_silos = 1
+
+		industrial_electrospun_polymeric_nanofibers = 1
+		multiwalled_carbon_nanotubes = 1
+		stereolitography = 1
+		early_3D_printers = 1
+		DNA_fingerprinting = 1
+		fuel_refining = 1
+		early_renewables = 1
+		renewables = 1
+		electrification_1 = 1
+		construction1 = 1
+	}
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+
+		set_technology = {
+			mbt_tech = 1
+			mbt_tech_1 = 1
+			tank_components_tech = 1
+			tank_components_tech_2 = 1
+			small_medium_gun_tech = 1
+			small_medium_gun_tech_2 = 1
+			medium_gun_tech = 1
+			medium_gun_tech_2 = 1
+			armor_tech = 1
+			armor_tech_2 = 1
+			era_tech = 1
+			era_tech_2 = 1
+			diesel_engine_tech = 1
+			diesel_engine_tech_2 = 1
+			diesel_engine_tech_3 = 1
+			turbine_engine_tech = 1
+			turbine_engine_tech_2 = 1
+			afv_tech = 1
+			afv_tech_1 = 1
+			small_autocannon_tech = 1
+			small_autocannon_tech_2 = 1
+			big_autocannon_tech = 1
+			big_autocannon_tech_2 = 1
+			assault_gun_tech = 1
+			assault_gun_tech_2 = 1
+			nsb_artillery_0 = 1
+			nsb_Arty_upgrade_1 = 1
+			nsb_Arty_upgrade_2 = 1
+			nsb_SP_arty_1 = 1
+			nsb_SP_arty_2 = 1
+			nsb_artillery_1 = 1
+
+			nsb_Anti_Air_0 = 1
+			nsb_Anti_Air_1 = 1
+			nsb_SP_Anti_Air_0 = 1
+			nsb_AA_upgrade_1 = 1
+
+			light_tank_tech = 1
+			light_tank_tech_1 = 1
+			nsb_attack_helicopter_tech_1 = 1
+		}
+
+		# Tanks
+		# source - M.Baryatinski - "All modern tanks" - you do not agree? Too bad, suck my toes.
+		create_equipment_variant = {
+			name = "Type-59"	#Base model is Chinese copy of T-54
+			type = mbt_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_medium_cannon
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty		#Battlestation
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		create_equipment_variant = {
+			name = "Type-59-I"
+			type = mbt_hull_0
+			parent_version = 1
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_1
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		add_equipment_to_stockpile = {
+			type = mbt_hull_0
+			variant_name = "Type-59-I"
+			amount = 5500
+			producer = CHI
+		}
+		create_equipment_variant = {
+			name = "Type-59-II"
+			type = mbt_hull_0
+			parent_version = 2
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_4 = tank_battlestation_2
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		create_equipment_variant = {
+			name = "Type-59-IIA"
+			type = mbt_hull_0
+			parent_version = 3
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_4 = tank_battlestation_2
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		create_equipment_variant = {
+			name = "Type-59D1"
+			type = mbt_hull_0
+			parent_version = 4
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = tank_battlestation_2
+				special_type_slot_5 = reactive_armor_gen1
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 3
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		create_equipment_variant = {
+			name = "Type-59D"
+			type = mbt_hull_0
+			parent_version = 5
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = tank_longer_gun
+				special_type_slot_4 = tank_battlestation_2
+				special_type_slot_5 = reactive_armor_gen1
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 3
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		create_equipment_variant = {
+			name = "Type-59G"
+			type = mbt_hull_0
+			parent_version = 6
+			modules = {
+				main_armament_slot = tank_medium_cannon
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = spaced_armor_gen1
+				special_type_slot_4 = tank_battlestation_3
+				special_type_slot_5 = reactive_armor_gen1
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 3
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		create_equipment_variant = {
+			name = "Type-69"
+			type = mbt_hull_0
+			parent_version = 7
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_4 = tank_battlestation_1
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 3
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		create_equipment_variant = {
+			name = "Type-79"
+			type = mbt_hull_0
+			parent_version = 8
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen3
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = tank_battlestation_2
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 3
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_0"
+		}
+		add_equipment_to_stockpile = {
+			type = mbt_hull_0
+			variant_name = "Type-79"
+			amount = 500
+			producer = CHI
+		}
+		create_equipment_variant = {
+			name = "Type-88"
+			type = mbt_hull_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen3
+				reload_type_slot = manual_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = tank_battlestation_2
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_1"
+		}
+		add_equipment_to_stockpile = {
+			type = mbt_hull_1
+			variant_name = "Type-88"
+			amount = 1000
+			producer = CHI
+		}
+		create_equipment_variant = {
+			name = "Type-96A"
+			type = mbt_hull_1
+			parent_version = 1
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen3
+				reload_type_slot = automatic_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = tank_battlestation_2
+				special_type_slot_5 = spaced_armor_gen2
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_CHI_MBT_1"
+		}
+		create_equipment_variant = {
+			name = "Type-98"
+			type = mbt_hull_1
+			parent_version = 2
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen4
+				reload_type_slot = automatic_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = tank_battlestation_2
+				special_type_slot_5 = reactive_armor_gen1
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 3
+			}
+			icon = "GFX_CHI_MBT_1"
+		}
+
+		add_equipment_to_stockpile = {
+			type = mbt_hull_1
+			variant_name = "Type-98"
+			amount = 50
+			producer = CHI
+		}
+
+		create_equipment_variant = {
+			name = "Type-63"
+			type = apc_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_no_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+				special_type_slot_1 = afv_reverse_doors
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_CHI_APC_1"
+		}
+		add_equipment_to_stockpile = {
+			type = apc_hull_0
+			variant_name = "Type-63"
+			amount = 2660
+		}
+
+		create_equipment_variant = {
+			name = "Type-85"
+			type = apc_hull_0
+			parent_version = 1
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_no_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				special_type_slot_1 = afv_reverse_doors
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 2
+			}
+			icon = "GFX_CHI_APC_1"
+		}
+
+		create_equipment_variant = {
+			name = "Type-89" # also known as ZSD-89
+			type = apc_hull_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = afv_machine_gun_2
+				turret_type_slot = afv_base_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen2
+				special_type_slot_1 = afv_reverse_doors
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = afv_battlestation_2
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 2
+			}
+			icon = "GFX_CHI_APC_2"
+		}
+		add_equipment_to_stockpile = {
+			type = apc_hull_0
+			variant_name = "Type-89"
+			amount = 300
+		}
+
+		## Soviet copy?
+		create_equipment_variant = {
+			name = "BMP-1"
+			type = ifv_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = afv_assault_gun
+				turret_type_slot = afv_base_turret
+				suspension_type_slot = afv_torsion_bar_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				special_armament_type_slot = afv_coax_machine_gun
+				special_type_slot_1 = afv_atgm_gen1
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 3
+			}
+			obsolete = yes
+			icon = "GFX_ifv_hull_0_a"
+		}
+		add_equipment_to_stockpile = {
+			type = ifv_hull_0
+			variant_name = "BMP-1"
+			amount = 1250
+		}
+
+		create_equipment_variant = {
+			name = "WZ-551" #aka ZSL-92
+			type = ifv_hull_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = small_autocannon_2
+				turret_type_slot = afv_base_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen2
+				special_type_slot_1 = smoke_launchers
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 2
+			}
+			icon = "GFX_CHI_IFV_3"
+		}
+		add_equipment_to_stockpile = {
+			type = ifv_hull_0
+			variant_name = "WZ-551"
+			amount = 840
+		}
+
+		create_equipment_variant = {
+			name = "BM-21 Grad"
+			type = spart_hull_0
+			parent_version = 0
+			modules = {
+				arty_main_armament_slot = art_small_rocket_gen1
+				chassis_type_slot = chassis_truck_gen0
+				engine_type_slot = afv_gasoline_engine_gen2
+				conversion_type_slot = empty
+				special_type_slot_1 = fire_ammo_rocket_small_gen1
+				special_type_slot_4 = art_battlestation_gen1
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_spart_hull_0_t_r"
+		}
+
+		create_equipment_variant = {
+			name = "Type-81"
+			type = spart_hull_0
+			parent_version = 1
+			modules = {
+				arty_main_armament_slot = art_small_rocket_gen1
+				chassis_type_slot = chassis_truck_gen0
+				engine_type_slot = afv_gasoline_engine_gen2
+				conversion_type_slot = empty
+				special_type_slot_1 = fire_ammo_rocket_small_gen1
+				special_type_slot_4 = art_battlestation_gen1
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 2
+			}
+			obsolete = yes
+			icon = "GFX_spart_hull_0_t_r"
+		}
+		add_equipment_to_stockpile = {
+			type = spart_hull_0
+			variant_name = "Type-81"
+			amount = 2150
+		}
+
+		create_equipment_variant = {
+			name = "PZL-83" # PZL-83
+			type = spart_hull_0
+			parent_version = 2
+			modules = {
+				arty_main_armament_slot = art_med_gun_gen1
+				chassis_type_slot = chassis_afv_gen0
+				engine_type_slot = tank_diesel_engine_gen1
+				conversion_type_slot = empty
+				special_type_slot_1 = heat_ammo_gun_medium_gen1
+				special_type_slot_2 = support_ammo_medium_gen1
+				special_type_slot_4 = art_battlestation_gen1
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_spart_hull_0_a"
+		}
+		add_equipment_to_stockpile = {
+			type = spart_hull_0
+			variant_name = "PZL-83"
+			amount = 500
+		}
+
+		create_equipment_variant = {
+			name = "PZL-89" # PLZ-89
+			type = spart_hull_0
+			parent_version = 3
+			modules = {
+				arty_main_armament_slot = art_small_gun_gen2
+				chassis_type_slot = chassis_afv_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				conversion_type_slot = empty
+				special_type_slot_1 = support_ammo_small_gen1
+				special_type_slot_2 = empty
+				special_type_slot_4 = art_battlestation_gen2
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 2
+			}
+			obsolete = yes
+			icon = "GFX_spart_hull_0_a"
+		}
+		add_equipment_to_stockpile = {
+			type = spart_hull_0
+			variant_name = "PZL-89"
+			amount = 700
+		}
+
+		create_equipment_variant = {
+			name = "PHZ-89"
+			type = spart_hull_1
+			parent_version = 0
+			modules = {
+				arty_main_armament_slot = art_med_rocket_gen2
+				chassis_type_slot = chassis_afv_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				conversion_type_slot = empty
+				special_type_slot_1 = mine_rocket_med_gen2
+				special_type_slot_2 = laser_ammo_rocket_medium_gen1
+				special_type_slot_4 = art_battlestation_gen2
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 1
+			}
+			icon = "GFX_spart_hull_1_a"
+		}
+		add_equipment_to_stockpile = {
+			type = spart_hull_1
+			variant_name = "PHZ-89"
+			amount = 200
+		}
+
+		create_equipment_variant = {
+			name = "PZL-45"
+			type = spart_hull_1
+			parent_version = 1
+			modules = {
+				arty_main_armament_slot = art_med_gun_gen2
+				chassis_type_slot = chassis_afv_gen0
+				engine_type_slot = tank_diesel_engine_gen2
+				conversion_type_slot = empty
+				special_type_slot_1 = support_ammo_medium_gen2
+				special_type_slot_2 = laser_ammo_gun_medium_gen2
+				special_type_slot_4 = art_battlestation_gen2
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 2
+			}
+			icon = "GFX_spart_hull_1_a"
+		}
+
+		create_equipment_variant = {
+			name = "HQ-6"
+			type = spaa_hull_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = spaa_short_range_missiles_2
+				chassis_type_slot = spaa_chassis_truck_gen1
+				engine_type_slot = tank_diesel_engine_gen3
+				radar_type_slot = spaa_off_vehicle_radar_gen2
+				spaa_secondary_armament = empty
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = spaa_battlestation_gen1
+			}
+			upgrades = {
+				spaa_nsb_fire_upgrade = 4
+			}
+			icon = "GFX_spaa_hull_1_t"
+		}
+
+		create_equipment_variant = {
+			name = "Type 62"
+			type = light_tank_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_cannon
+				turret_type_slot = tank_soviet_turret
+				chassis_type_slot = chassis_light_tank_gen0
+				engine_type_slot = tank_diesel_engine_gen2
+				armor_type_slot = afv_steel_armor_gen1
+				reload_type_slot = manual_loading
+				special_armament_type_slot = additional_machine_guns
+				special_type_slot_1 = afv_additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = smoke_launchers
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 0
+			}
+			icon = "GFX_CHI_Rec_tank_0_medium"
+		}
+
+		create_equipment_variant = {
+			name = "Harbin Z-9"
+			type = attack_helicopter_hull_1
+			parent_version = 0
+			modules = {
+				helicopter_inner_hardpoint = helicopter_atgm_gen2
+				nose_gun_type_slot = helicopter_medium_nose_gun_gen2
+				armor_type_slot = helicopter_armor_gen1
+				engine_type_slot = helicopter_turbine_engine_gen2
+				defence_type_slot = flare_launchers
+				sensor_and_avionics_slot = sensors_and_avionics_gen_2
+				helicopter_middle_hardpoint_1 = helicopter_rocket_pod_gen2
+				special_defensive_type_slot_1 = em_lock_detection_system_gen1
+			}
+			upgrades = {
+				helicopter_nsb_upgrade = 0
+			}
+			icon = "GFX_CHI_attack_helicopter2_medium"
+		}
+
+		else = {
+			set_technology = {
+				MBT_1 = 1
+				MBT_2 = 1
+				MBT_3 = 1
+				Early_APC = 1 #Vehicle Design
+				APC_1 = 1
+				APC_2 = 1
+				APC_3 = 1
+				IFV_1 = 1
+				IFV_2 = 1
+				IFV_3 = 1
+				artillery_0 = 1
+				Arty_upgrade_1 = 1
+				Arty_upgrade_2 = 1
+				SP_arty_0 = 1
+				SP_R_arty_0 = 1
+				artillery_1 = 1
+				SP_R_arty_1 = 1
+				Anti_Air_0 = 1
+				SP_Anti_Air_0 = 1
+				AA_upgrade_1 = 1
+				Anti_Air_1 = 1
+				Rec_tank_0 = 1
+				Rec_tank_1 = 1
+				attack_helicopter1 = 1
+				Anti_Air_0 = 1
+				SP_Anti_Air_0 = 1
+				AA_upgrade_1 = 1
+				Anti_Air_1 = 1
+			}
+
+			create_equipment_variant = {
+				name = "WZ-523"
+				type = APC_3
+				upgrades = {
+					tank_reliability_upgrade = 1
+					tank_engine_upgrade = 0
+					tank_armor_upgrade = 0
+					tank_gun_upgrade = 0
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Type 85"
+				type = APC_3
+				upgrades = {
+					tank_reliability_upgrade = 0
+					tank_engine_upgrade = 1
+					tank_armor_upgrade = 1
+					tank_gun_upgrade = 0
+				}
+				obsolete = yes
+			}
+		}
+	}
+
+	# Naval Technology Set
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_technology = {
+			corvette_hull_1 = 1
+			corvette_hull_2 = 1
+			corvette_hull_3 = 1
+
+			frigate_hull_1 = 1
+			frigate_hull_2 = 1
+			frigate_hull_3 = 1
+
+			destroyer_hull_1 = 1
+			destroyer_hull_2 = 1
+
+			attack_submarine_hull_1 = 1
+			attack_submarine_hull_2 = 1
+			attack_submarine_hull_3 = 1
+
+			missile_submarine_hull_1 = 1
+			missile_submarine_hull_2 = 1
+
+			aircraft_carrier_engineering = 1
+			aircraft_heli_engineering_1 = 1
+
+			tech_submarine_engineering = 1
+			tech_submarine_engineering_1 = 1
+			tech_submarine_engineering_2 = 1
+
+			tech_naval_systems_engineering = 1
+			tech_power_systems = 1
+			tech_power_systems_1 = 1
+			tech_nuclear_power_systems = 1
+			tech_nuclear_power_systems_1 = 1
+
+			tech_combat_support_systems = 1
+			tech_fire_control = 1
+			tech_fire_control_1 = 1
+			tech_combat_radar = 1
+			tech_combat_radar_1 = 1
+			tech_combat_sonar = 1
+			tech_combat_sonar_1 = 1
+
+			tech_early_naval_weapon_systems = 1
+			tech_naval_weapon_systems = 1
+			tech_light_guns = 1
+			tech_light_guns_1 = 1
+			tech_light_guns_2 = 1
+
+			tech_point_defense_system = 1
+			tech_point_defense_system_1 = 1
+			tech_point_defense_system_2 = 1
+
+			tech_missile_systems = 1
+			tech_turret_missiles_surface = 1
+			tech_turret_missiles_surface_1 = 1
+
+			tech_turret_missiles_aa = 1
+			tech_turret_missiles_aa_1 = 1
+			tech_turret_missiles_aa_2 = 1
+
+			tech_vls_surface = 1
+			tech_vls_surface_1 = 1
+
+			tech_vls_aa = 1
+			tech_vls_aa_1 = 1
+
+			tech_torpedoes = 1
+			tech_torpedoes_1 = 1
+
+			tech_mtg_landing_craft = 1
+		}
+
+		#Type 051 Class https://en.wikipedia.org/wiki/Type_051_destroyer
+		create_equipment_variant = {
+			name = "Type 051 Class"
+			type = destroyer_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_anti_submarine_mortar
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_127mm_guns_1
+				front_1_custom_slot = module_127mm_guns_1
+				mid_1_custom_slot = module_chain_gun
+				mid_2_custom_slot = module_aa_missiles_1
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+		#Type 051 Jinan Class https://en.wikipedia.org/wiki/Type_051_destroyer
+		create_equipment_variant = {
+			name = "Type 051 Jinan Class"
+			type = destroyer_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_chain_gun
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot = module_anti_submarine_mortar
+				fixed_ship_battery_slot = module_76mm_gun_1
+				front_1_custom_slot = module_torpedoes_1
+				mid_1_custom_slot = module_chain_gun
+				mid_2_custom_slot = module_aa_missiles_1
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+		#Type 051D Class https://en.wikipedia.org/wiki/Type_051_destroyer
+		create_equipment_variant = {
+			name = "Type 051D Class"
+			type = destroyer_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_chain_gun
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_76mm_gun_1
+				front_1_custom_slot = module_76mm_gun_1
+				mid_1_custom_slot = module_chain_gun
+				mid_2_custom_slot = module_anti_submarine_mortar
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+		#Type 051DT Class https://en.wikipedia.org/wiki/Type_051_destroyer
+		create_equipment_variant = {
+			name = "Type 051DT Class"
+			type = destroyer_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 3
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_ciws_1
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_76mm_gun_1
+				front_1_custom_slot = module_76mm_gun_1
+				mid_1_custom_slot = module_aa_missiles_1
+				mid_2_custom_slot = module_anti_submarine_mortar
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+
+		#Type 051Z Class https://en.wikipedia.org/wiki/Type_051_destroyer
+		create_equipment_variant = {
+			name = "Type 051Z Class"
+			type = destroyer_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 4
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_ciws_1
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_76mm_gun_1
+				front_1_custom_slot = module_76mm_gun_1
+				mid_1_custom_slot = module_aa_missiles_1
+				mid_2_custom_slot = module_anti_submarine_mortar
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+		#Type 051G Class https://en.wikipedia.org/wiki/Type_051_destroyer
+		create_equipment_variant = {
+			name = "Type 051G Class"
+			type = destroyer_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 5
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_ciws_1
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_76mm_gun_2
+				mid_1_custom_slot = module_aa_missiles_1
+				mid_2_custom_slot = module_anti_submarine_mortar
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+
+		#Type 052 Class https://en.wikipedia.org/wiki/Type_052_destroyer
+		create_equipment_variant = {
+			name = "Type 052 Class"
+			type = destroyer_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_vls_sam_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_2
+				mid_1_custom_slot = module_ciws_2
+				mid_2_custom_slot = module_anti_submarine_missile_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Type 051B Class https://en.wikipedia.org/wiki/Type_051B_destroyer
+		create_equipment_variant = {
+			name = "Type 051B Class"
+			type = destroyer_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_3 = module_vls_sam_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_76mm_gun_2
+				mid_1_custom_slot = module_ciws_2
+				mid_2_custom_slot = module_anti_submarine_missile_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Type 053 Class https://en.wikipedia.org/wiki/Type_053_frigate
+		create_equipment_variant = {
+			name = "Type 053 Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot_1 = module_anti_submarine_missile_1
+				fixed_ship_auxillary_slot = module_chain_gun
+				fixed_ship_battery_slot = module_76mm_gun_1
+				front_1_custom_slot = module_76mm_gun_1
+				rear_1_custom_slot = module_chain_gun
+			}
+			obsolete = yes
+		}
+
+
+		#Type 053H Class https://en.wikipedia.org/wiki/Type_053_frigate
+		create_equipment_variant = {
+			name = "Type 053H Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_anti_submarine_missile_1
+				fixed_ship_auxillary_slot = module_ciws_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_76mm_gun_2
+				rear_1_custom_slot = module_ciws_1
+			}
+		}
+
+		#Naresuan Class
+		create_equipment_variant = {
+			name = "Naresuan Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_anti_submarine_missile_1
+				fixed_ship_auxillary_slot = module_ciws_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_76mm_gun_2
+				rear_1_custom_slot = module_ciws_1
+			}
+		}
+
+		#Type 053H1 Class https://en.wikipedia.org/wiki/Type_053_frigate
+		create_equipment_variant = {
+			name = "Type 053H1 Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 3
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_anti_submarine_missile_1
+				fixed_ship_auxillary_slot = module_ciws_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_76mm_gun_2
+				rear_1_custom_slot = module_ciws_2
+			}
+		}
+
+		#Type 053H1Q Class https://en.wikipedia.org/wiki/Type_053_frigate
+		create_equipment_variant = {
+			name = "Type 053H1Q Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 4
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_anti_submarine_missile_1
+				fixed_ship_auxillary_slot = module_ciws_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Type 053H2 https://en.wikipedia.org/wiki/Type_053_frigate
+		create_equipment_variant = {
+			name = "Type 053H2 Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 5
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot_1 = module_asm_1
+				fixed_ship_auxillary_slot = module_ciws_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_1
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+
+		#Type 053H1G Class https://en.wikipedia.org/wiki/Type_053_frigate
+		create_equipment_variant = {
+			name = "Type 053H1G Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 6
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_asm_2
+				fixed_ship_auxillary_slot = module_ciws_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_1
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+
+		#Type 053H2G Class https://en.wikipedia.org/wiki/Type_053H2G_frigate #fuck me all these variants bro
+		create_equipment_variant = {
+			name = "Type 053H2G Class"
+			type = frigate_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 7
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_ciws_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Type 053H3 Class https://en.wikipedia.org/wiki/Type_053H3_frigate
+		create_equipment_variant = {
+			name = "Type 053H3 Class"
+			type = frigate_hull_3
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_2 = module_vls_sam_2
+				fixed_ship_auxillary_slot_1 = module_vls_asm_1
+				fixed_ship_auxillary_slot = module_aa_missiles_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_2
+				rear_1_custom_slot = module_ciws_2
+			}
+		}
+
+		#Type 037 Class
+		create_equipment_variant = {
+			name = "Type 037 Class"
+			type = corvette_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot = module_asm_1
+				fixed_ship_battery_slot = module_76mm_gun_1
+				front_1_custom_slot = module_torpedoes_1
+				rear_1_custom_slot = module_anti_submarine_missile_1
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Type 037 Hainan Class"
+			type = corvette_hull_1
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot = module_asm_1
+				fixed_ship_battery_slot = module_76mm_gun_1
+				front_1_custom_slot = module_torpedoes_1
+				rear_1_custom_slot = module_anti_submarine_missile_1
+			}
+			obsolete = yes
+		}
+
+		#Type 035 Class https://en.wikipedia.org/wiki/Type_035_submarine
+		create_equipment_variant = {
+			name = "Type 035 Class"
+			type = attack_submarine_hull_2
+			name_group = CHI_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_1
+				fixed_ship_auxillary_slot_2 = empty
+				fixed_ship_auxillary_slot_1 = module_torpedoes_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+			}
+		}
+
+		#Type 035G Class https://en.wikipedia.org/wiki/Type_035_submarine
+		create_equipment_variant = {
+			name = "Type 035G Class"
+			type = attack_submarine_hull_2
+			name_group = CHI_SS_HISTORICAL
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+			}
+		}
+		#Type 091 Class https://en.wikipedia.org/wiki/Type_091_submarine
+		create_equipment_variant = {
+			name = "Type 091 Class"
+			type = attack_submarine_hull_2
+			name_group = CHI_SS_HISTORICAL
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_sub_early_reactor_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+			}
+		}
+
+		#Type 039 Class https://en.wikipedia.org/wiki/Song-class_submarine
+		create_equipment_variant = {
+			name = "Type 039 Class"
+			type = attack_submarine_hull_3
+			name_group = CHI_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_minelaying
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
+
+		else = {
+			set_technology = {
+				destroyer_1 = 1
+				destroyer_2 = 1 #Type 052 destroyer
+				missile_destroyer_1 = 1 #Type 051C destroyer, Type 052B Luyang I-Class, Type 051B destroyer & Type 051
+
+				corvette_1 = 1
+				corvette_2 = 1
+
+				frigate_1 = 1 #Type 053 frigate
+				frigate_2 = 1
+				missile_frigate_1 = 1
+
+				submarine_1 = 1
+
+				missile_submarine_1 = 1 #Type 091 submarine (SSN)	Han class
+
+				attack_submarine_1 = 1 #Type 092 submarine
+
+				diesel_attack_submarine_1 = 1 # ming class & Yuan-class
+				diesel_attack_submarine_2 = 1 #Song-class
+				diesel_attack_submarine_3 = 1 #Kilo-class
+
+				landing_craft = 1
+				amphibious_assault_ship = 1
+				landing_craft_air_cushioned = 1
+			}
+
+			create_equipment_variant = {
+				name = "Type 053H2 Jianghu-III-Class"
+				type = frigate_2
+				upgrades = {
+
+				}
+			}
+			create_equipment_variant = {
+				name = "Type 053H1 Jianghu-II-Class"
+				type = frigate_1
+				upgrades = {
+				}
+				obsolete = yes
+			}
+			create_equipment_variant = {
+				name = "Type 053H1G Jianghu-V-Class"
+				type = frigate_2
+				upgrades = {
+				}
+				obsolete = yes
+			}
+			create_equipment_variant = {
+				name = "Type 053H1Q Jianghu-IV-Class"
+				type = frigate_2
+				upgrades = {
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Type 053H3 Jiangwei-II-Class"
+				type = missile_frigate_1
+				upgrades = {
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Type 052B Luyang-I-Class"
+				type = missile_destroyer_1
+				upgrades = {
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Type 035G-Class"
+				type = diesel_attack_submarine_1
+				upgrades = {
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Naresuan-class"
+				type = missile_frigate_1
+				upgrades = {
+				}
+			}
+
+			create_equipment_variant = {
+				name = "F-22P Zulfiquar-Class"
+				type = missile_frigate_1
+				upgrades = {
+				}
+			}
+		}
+	}
+
+	##### Air Techs #####
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+
+		set_technology = {
+			early_airframe_designs = 1
+
+			gen_3_light = 1
+			gen_4_light = 1
+			gen_3_medium = 1
+			gen_4_medium = 1
+			gen_3_large = 1
+
+			flying_wing_design = 1
+			variable_wing_design = 1
+			delta_wing_design = 1
+
+			engines_2 = 1
+
+			refueling_1 = 1
+
+			avionics_1 = 1
+
+			drone_1 = 1
+			suicide_drone_1 = 1
+
+			awacs_1 = 1
+
+			redundant_1 = 1
+
+			early_weapons = 1
+			air_weapons_1 = 1
+			countermeasures_1 = 1
+
+			ag_weapons_1 = 1
+
+			naval_weapons_1 = 1
+			special_mad_1 = 1
+
+			tgp_recon_1 = 1
+		}
+
+	#### Air Variants ####
+
+		##BBA designs ##
+
+			create_equipment_variant = {
+				name = "J-6"
+				type = small_plane_strike_airframe_1
+				parent_version = 1
+				modules = {
+					fixed_main_weapon_slot = weap_mp_light_hardpoint_1
+					fixed_gun_slot = weap_multi_gun_2
+					engine_type_slot = engine_light_single_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = empty
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/CHI/AIR/AS1.dds"
+			}
+			create_equipment_variant = {
+				name = "J-7"
+				type = small_plane_strike_airframe_1
+				parent_version = 1
+				modules = {
+					fixed_main_weapon_slot = weap_mp_light_hardpoint_1
+					fixed_gun_slot = weap_multi_gun_3
+					engine_type_slot = engine_light_single_2
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_countermeasures_1
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/CHI/AIR/MR1.dds"
+			}
+			create_equipment_variant = {
+				name = "J-8"
+				type = small_plane_strike_airframe_1
+				parent_version = 2
+				modules = {
+					fixed_main_weapon_slot = weap_mp_light_hardpoint_1
+					fixed_gun_slot = weap_multi_gun_2
+					engine_type_slot = engine_light_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_countermeasures_1
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/CHI/AIR/AS1.dds"
+			}
+			create_equipment_variant = {
+				name = "JH-7"
+				type = small_plane_strike_airframe_2
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_mp_med_hardpoint_1
+					fixed_gun_slot = weap_multi_gun_2
+					engine_type_slot = engine_light_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_delta
+					special_slot_type_1 = spec_tgp_1
+				}
+				icon = "gfx/interface/technologies/CHI/AIR/STR2.dds"
+			}
+			create_equipment_variant = {
+				name = "MiG-25 Foxbat"
+				type = medium_plane_fighter_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_a2a_hardpoint_1
+					fixed_auxiliary_weapon_slot_1 = empty
+					engine_type_slot = engine_jet_double_3
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_delta
+					special_slot_type_1 = spec_recon_1
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/SYR/AIR/INT.dds"
+			}
+
+			create_equipment_variant = {
+				name = "J-11"
+				type = medium_plane_fighter_airframe_2
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_a2a_hardpoint_2
+					fixed_gun_slot = weap_multi_at_1
+					fixed_auxiliary_weapon_slot_1 = weap_mp_light_hardpoint_2
+					engine_type_slot = engine_jet_double_3
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_delta
+					special_slot_type_1 = spec_countermeasures_2
+				}
+				icon = "gfx/interface/technologies/CHI/AIR/AS2.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Nanchang Q-5"
+				type = small_plane_strike_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_mp_med_hardpoint_1
+					fixed_gun_slot = weap_multi_gun_2
+					engine_type_slot = engine_light_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_tgp_1
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/CHI/AIR/STR1.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Nanchang Q-5I"
+				type = small_plane_strike_airframe_2
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_mp_med_hardpoint_1
+					fixed_gun_slot = weap_multi_gun_2
+					fixed_auxiliary_weapon_slot_1 = weap_mp_heavy_hardpoint_1
+					engine_type_slot = engine_light_double_2
+					avionics_type_slot = avionics_manned_2
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_tgp_1
+				}
+				icon = "gfx/interface/technologies/CHI/AIR/CAS2.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Harbin H-5" #heavy bomber
+				type = large_plane_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_ag_strat_1
+					engine_type_slot = engine_jet_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_straight
+					special_slot_type_1 = empty
+					special_slot_type_2 = empty
+					special_slot_type_3 = empty
+					fixed_auxiliary_weapon_slot_1 = empty
+					fixed_auxiliary_weapon_slot_2 = empty
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/SOV/AIR/B1.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Xian H-6" #heavy bomber
+				type = large_plane_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_ag_strat_1
+					engine_type_slot = engine_jet_double_2
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_refuel_1
+					special_slot_type_2 = empty
+					special_slot_type_3 = empty
+					fixed_auxiliary_weapon_slot_1 = empty
+					fixed_auxiliary_weapon_slot_2 = weap_ag_cas_hardpoint_1
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/SOV/AIR/B1.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Xian H-6E-F" #heavy bomber
+				type = large_plane_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_ag_strat_1
+					engine_type_slot = engine_jet_double_2
+					avionics_type_slot = avionics_manned_2
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_refuel_2
+					special_slot_type_2 = empty
+					special_slot_type_3 = empty
+					fixed_auxiliary_weapon_slot_1 = empty
+					fixed_auxiliary_weapon_slot_2 = weap_ag_cas_hardpoint_2
+				}
+				icon = "gfx/interface/technologies/SOV/AIR/B1.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Shaanxi Y-7"
+				type = large_plane_air_transport_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_buff_transport
+					engine_type_slot = engine_prop_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_straight
+					special_slot_type_1 = empty
+					special_slot_type_2 = empty
+					special_slot_type_3 = empty
+					fixed_auxiliary_weapon_slot_1 = empty
+					fixed_auxiliary_weapon_slot_2 = empty
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/SOV/AIR/C1.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Shaanxi Y-8"
+				type = large_plane_air_transport_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_buff_transport
+					engine_type_slot = engine_jet_quad_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_straight
+					special_slot_type_1 = empty
+					special_slot_type_2 = empty
+					special_slot_type_3 = empty
+					fixed_auxiliary_weapon_slot_1 = empty
+					fixed_auxiliary_weapon_slot_2 = empty
+				}
+				icon = "gfx/interface/technologies/SOV/AIR/C1.dds"
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Shaanxi Y-8X"
+				type = large_plane_maritime_patrol_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_as_hardpoint_1
+					engine_type_slot = engine_prop_quad_1
+					avionics_type_slot = avionics_manned_2
+					wingform_type_slot = wing_straight
+					special_slot_type_1 = empty
+					special_slot_type_2 = spec_mad_1
+					special_slot_type_3 = spec_redundant_2
+					fixed_auxiliary_weapon_slot_1 = weap_as_hardpoint_1
+					fixed_auxiliary_weapon_slot_2 = weap_as_hardpoint_1
+				}
+				icon = "gfx/interface/technologies/CHI/AIR/NAV1.dds"
+			}
+
+			create_equipment_variant = {
+				name = "Harbin Y-12"
+				type = large_plane_air_transport_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_buff_transport
+					engine_type_slot = engine_prop_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_straight
+					special_slot_type_1 = empty
+					special_slot_type_2 = empty
+					fixed_auxiliary_weapon_slot_1 = empty
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/SOV/AIR/C1.dds"
+			}
+
+			create_equipment_variant = {
+				name = "TU-154M ELINT"
+				type = large_plane_awacs_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_buff_awacs_1
+					engine_type_slot = engine_jet_double_2
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_countermeasures_1
+					special_slot_type_2 = spec_redundant_1
+					fixed_auxiliary_weapon_slot_1 = empty
+				}
+				obsolete = yes
+				icon = "gfx/interface/technologies/SOV/AIR/A50.dds"
+			}
+
+		## Export Variants ##
+
+			create_equipment_variant = {
+				name = "F-6"
+				type = small_plane_strike_airframe_1
+				parent_version = 1
+				modules = {
+					fixed_main_weapon_slot = weap_mp_light_hardpoint_1
+					engine_type_slot = engine_light_single_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = empty
+				}
+				obsolete = yes
+				icon = "GFX_CHI_medium_plane_fighter_airframe_1_medium"
+			}
+			create_equipment_variant = {
+				name = "F-7 Airguard"
+				type = small_plane_strike_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_mp_light_hardpoint_1
+					engine_type_slot = engine_light_single_2
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_countermeasures_1
+				}
+				obsolete = yes
+				icon = "GFX_CHI_medium_plane_fighter_airframe_1_medium"
+			}
+
+			create_equipment_variant = {
+				name = "FT-7"
+				type = small_plane_strike_airframe_2
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_mp_med_hardpoint_1
+					engine_type_slot = engine_light_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_delta
+					special_slot_type_1 = spec_tgp_1
+				}
+				icon = "GFX_CHI_small_plane_strike_airframe_1"
+			}
+
+			create_equipment_variant = {
+				name = "A-5"
+				type = small_plane_cas_airframe_1
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = weap_ag_cas_hardpoint_1
+					engine_type_slot = engine_light_double_1
+					avionics_type_slot = avionics_manned_1
+					wingform_type_slot = wing_swept
+					special_slot_type_1 = spec_countermeasures_1
+				}
+				obsolete = yes
+				icon = "GFX_CHI_small_plane_cas_airframe_1"
+			}
+
+
+		## end BBA designs ##
+
+		else = {
+			set_technology = {
+
+				early_fighter = 1
+				Strike_fighter1 = 1
+				Strike_fighter2 = 1
+				MR_Fighter1 = 1
+				AS_Fighter1 = 1
+				AS_Fighter2 = 1
+
+				L_Strike_fighter2 = 1
+				L_Strike_fighter1 = 1 #Hongdu JL-8
+
+				early_bomber = 1
+
+				transport_plane1 = 1
+
+				naval_plane1 = 1
+				naval_plane2 = 1 #Y-8X
+
+				cas1 = 1
+
+				awacs_plane1 = 1
+				cv_awacs_plane1 = 1
+				strategic_bomber1 = 1
+			}
+
+			create_equipment_variant = {
+				name = "MiG-25 Foxbat"
+				type = AS_Fighter1
+				upgrades = {
+					plane_engine_upgrade = 3
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Su-27M"
+				type = AS_Fighter2
+				parent_version = 1
+				upgrades = {
+					plane_range_upgrade = 2
+					plane_engine_upgrade = 1
+				}
+				#obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Su-24M"
+				type = Strike_fighter2
+				parent_version = 1
+				upgrades = {
+					strike_gun_upgrade = 1
+					plane_range_upgrade = 1
+					plane_engine_upgrade = 1
+					plane_reliability_upgrade = 0
+				}
+				#obsolete = yes
+			}
+			create_equipment_variant = {
+				name = "Su-27"
+				type = AS_Fighter2 #SSu-30MK2
+				upgrades = {
+				}
+				obsolete = yes
+			}
+			create_equipment_variant = {
+				name = "Su-22 Fitter"
+				type = Strike_fighter1 #Su-22 Fitter
+				upgrades = {
+
+				}
+				obsolete = yes
+			}
+		}
 	}
 
 	set_popularities = {
-		communism = 85
-		reformism = 2
-		liberalism = 2
-		democratic = 3
-		neutrality = 4
-		fascism = 4
-		rad_islamists = 0
+		democratic = 27.0
+		communism = 61.8
+		fascism = 0.0
+		neutrality = 9.2
+		nationalist = 2.0
+	}
+	set_politics = {
+		ruling_party = communism
+		last_election = "1997.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_variable = { election_threshold = 0.01 }
+	start_politics_input = yes
+
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.036 } #conservatism
+	set_variable = { party_pop_array^2 = 0.054 } #liberalism
+	set_variable = { party_pop_array^3 = 0.18 } #socialism
+	set_variable = { party_pop_array^4 = 0.479 } #Communist-State
+	set_variable = { party_pop_array^5 = 0.065 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0.01 } #Conservative
+	set_variable = { party_pop_array^7 = 0.064 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0.01 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0.01 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0.01 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.062 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0.005 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0.01 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0.005 } #Monarchist
+	add_to_array = { ruling_party = 4 }
+	add_to_array = { gov_coalition_array = 7 } #Autocracy
+	add_to_array = { gov_coalition_array = 5 } #anarchist_communism
+	add_to_array = { gov_coalition_array = 18 } #neutral_Social
+	startup_politics = yes
+
+	### Banned Parties & Balance
+	set_country_flag = party1_banned
+	set_country_flag = party2_banned
+	set_country_flag = party3_banned
+	set_country_flag = party4_banned
+	set_country_flag = party7_banned
+	set_country_flag = party9_banned
+	set_country_flag = party10_banned
+	set_country_flag = party11_banned
+	set_country_flag = party12_banned
+	set_country_flag = party13_banned
+	set_country_flag = party14_banned
+	set_country_flag = party15_banned
+	set_country_flag = party16_banned
+	set_country_flag = party17_banned
+	set_country_flag = party18_banned
+	set_country_flag = party20_banned
+	set_country_flag = party21_banned
+	set_country_flag = party22_banned
+	set_country_flag = party23_banned
+	set_country_flag = party24_banned
+
+	create_country_leader = {
+		name = "Jiang Zemin"
+		desc = JIANG_ZEMIN_LEADER_DESC
+		picture = "Jiang_Zemin.dds"
+		expire = "2030.1.1"
+		ideology = Communist-State
+		traits = {
+			emerging_Communist-State
+			engineer
+			elder
+		}
+	}
+
+	#2000 Army chiefs
+	recruit_character = CHI_fu_quanyou
+	recruit_character = CHI_lian_guanglie
+	recruit_character = CHI_chen_bingde
+	#2000 Navy chiefs
+	recruit_character = CHI_shi_yunsheng
+	recruit_character = CHI_zhang_dingfa
+	recruit_character = CHI_wu_shengli	#in both bookmarks
+	#2000 Air chiefs
+	recruit_character = CHI_liu_shunyao
+	recruit_character = CHI_qiao_qingchen
+	#High Command for both bookmarks
+	recruit_character = CHI_xu_qiliang
+	#Generals - Both Bookmarks
+	recruit_character = CHI_zhao_keshi
+	recruit_character = CHI_chang_wanquan
+	recruit_character = CHI_zhang_shibo
+	recruit_character = CHI_zhao_zongqi
+	recruit_character = CHI_xu_jong
+	recruit_character = CHI_zhang_yang
+	recruit_character = CHI_wang_guanzhong
+	recruit_character = CHI_fan_changlong
+	recruit_character = CHI_wang_jiaocheng
+	recruit_character = CHI_zhang_zongcai
+	recruit_character = CHI_song_puxuan
+	recruit_character = CHI_peng_bo
+	recruit_character = CHI_rong_guiqing
+	#Admirals - 2000
+	recruit_character = CHI_yao_zhilou
+	recruit_character = CHI_li_xiaoyan
+	recruit_character = CHI_guan_jianguo
+	recruit_character = CHI_qiu_jianpeng
+	recruit_character = CHI_liu_geng
+	recruit_character = CHI_luo_yuan
+
+	###La Resistance Operatives
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_operative_leader = {
+			name = "Wang Liqiang"
+			GFX = GFX_portrait_wang_liqiang_china_spy
+			traits = { operative_well_groomed }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { CHI }
+		}
+	}
+	every_controlled_state = {
+		set_variable = { productivity_state_var = 584 }
+	}
+	set_variable = { overall_productivity = 584 }
+}
+
+2017.1.1 = {
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "CHI_2000_nsb"
+		else = {
+			set_oob = "CHI_2017_nonnsb"
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_naval_oob = "CHI_2017_naval_mtg"
+		else = {
+			set_naval_oob = "CHI_2017_naval_legacy"
+		}
+	}
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 1000 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 38 }
+	add_to_array = { influence_array = JAP.id }
+	add_to_array = { influence_array_val = 22 }
+	add_to_array = { influence_array = SOV.id }
+	add_to_array = { influence_array_val = 30 }
+	add_to_array = { influence_array = GER.id }
+	add_to_array = { influence_array_val = 18 }
+	startup_influence = yes
+
+	set_country_flag = Major_Importer_RUS_Arms
+	set_variable = { communist_cadres_opinion = 60 }
+	set_variable = { industrial_conglomerates_opinion = 60 }
+
+	set_variable = { var = debt value = 4955 }
+	set_variable = { var = int_investments value = 1255 }
+	set_variable = { var = treasury value = 3098 }
+	set_variable = { var = corporate_tax_rate value = 18 }
+	set_variable = { var = population_tax_rate value = 22 }
+
+	#National focus
+	complete_national_focus = CHI_Chairman_Jiang_Reign
+	complete_national_focus = CHI_End_PLA_Business_Ventures
+	complete_national_focus = CHI_Three_Represents_Thought
+	complete_national_focus = CHI_Permit_Entrepreneurs_to_Join_the_CPC
+	complete_national_focus = CHI_Future_of_the_CPC
+	complete_national_focus = CHI_Preserve_CPC_Unity
+	complete_national_focus = CHI_Hu_Jintao_Agenda
+	complete_national_focus = CHI_Peaceful_Rise
+	complete_national_focus = CHI_Scientific_Outlook_on_Development
+	complete_national_focus = CHI_Harmonious_Society
+	complete_national_focus = CHI_Green_GDP
+	complete_national_focus = CHI_8_Honours_8_Shames
+	complete_national_focus = CHI_Succession_Question
+	complete_national_focus = CHI_Promote_Youth_League_Members
+	complete_national_focus = CHI_Wang_Lijun_Incident
+	complete_national_focus = CHI_Xi_Jinping_Agenda
+	complete_national_focus = CHI_Xi_Jinping_Thought
+	complete_national_focus = CHI_China_Dream
+	complete_national_focus = CHI_Four_Pronged_Comprehensive_Strategy
+	complete_national_focus = CHI_Xiaokang_Society
+	complete_national_focus = CHI_Third_Plenum
+	complete_national_focus = CHI_2_Child_Policy
+	complete_national_focus = CHI_Restructure_the_Penal_System
+	complete_national_focus = CHI_Establish_the_National_Security_Commission
+	complete_national_focus = CHI_Anti_Corruption_Campaigns
+	complete_national_focus = CHI_Weaken_the_Youth_League
+	complete_national_focus = CHI_Take_Down_the_Big_Tigers
+	complete_national_focus = CHI_Establish_the_Central_Group_for_Military_Reform
+	complete_national_focus = CHI_Scrap_Military_Commands
+	complete_national_focus = CHI_Cut_Ground_Troop_Numbers
+	complete_national_focus = CHI_One_China_Policy
+	complete_national_focus = CHI_Two_Systems
+	complete_national_focus = CHI_Extend_Interpretation_of_the_Systems
+	complete_national_focus = CHI_Consider_Electoral_Reform_in_Hong_Kong
+	complete_national_focus = CHI_The_NPCSC_Decision_on_Hong_Kong
+	complete_national_focus = CHI_Dialogue_with_the_Taiwan_Self_Government
+	complete_national_focus = CHI_Three_Links
+	complete_national_focus = CHI_Cross_Strait_Service_Trade_Agreement
+	complete_national_focus = CHI_The_Untapped_Market
+	complete_national_focus = CHI_Break_the_Iron_Rice_Bowl
+	complete_national_focus = CHI_Ratification_of_WTO
+	complete_national_focus = CHI_Global_Influence
+	complete_national_focus = CHI_Form_the_SCO
+	complete_national_focus = CHI_Regional_Influence
+	complete_national_focus = CHI_Preserve_the_Revolution
+	complete_national_focus = CHI_Netizen_Nation
+	complete_national_focus = CHI_Golden_Shield_Project
+	complete_national_focus = CHI_PLA_Cyber_Army
+	complete_national_focus = CHI_The_Great_Firewall_of_China
+
+	#Recognition
+	clr_country_flag = recognised_opponent_SAO
+	clr_country_flag = recognised_opponent_MLW
+	clr_country_flag = recognised_opponent_COS
+	clr_country_flag = recognised_opponent_DMI
+	clr_country_flag = recognised_opponent_CHA
+	clr_country_flag = recognised_opponent_GRA
+	clr_country_flag = recognised_opponent_FYR
+
+	add_to_variable = {
+		var = CHI.Granted_Recognition
+		value = 12
+	}
+
+	add_ideas = {
+		#tax_cost_15
+		multi_ethnic_state_idea
+		fast_growth
+		#pop_050
+		unrestrained_corruption
+		pluralist
+		zhonghua
+		party_before_country
+		chabuduo
+		p5_member
+		nuclear_power
+		consumption_economy
+		defence_02
+		edu_02
+		health_02
+		social_02
+		bureau_02
+		police_05
+		volunteer_army
+		volunteer_women
+		industrial_conglomerates
+		communist_cadres
+		the_military
+		intervention_limited_interventionism
+		research_idea_2
+	}
+
+	remove_ideas = {
+		int_investment_china
+		CHI_PLA_Business_Ventures2
+	}
+
+	add_political_power = -700
+
+	diplomatic_relation = { country = CBD relation = military_access active = yes }
+	diplomatic_relation = { country = DJI relation = military_access active = yes }
+	diplomatic_relation = { country = TAJ relation = military_access active = yes }
+
+	add_opinion_modifier = { target = KOR modifier = asean_plus_three_relations }
+	reverse_add_opinion_modifier = { target = KOR modifier = asean_plus_three_relations }
+	add_opinion_modifier = { target = JAP modifier = asean_plus_three_relations }
+	reverse_add_opinion_modifier = { target = JAP modifier = asean_plus_three_relations }
+
+	#Additional large trade partners
+	add_opinion_modifier = { target = AST modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = AST modifier = large_commercial_relations }
+	add_opinion_modifier = { target = ENG modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = ENG modifier = large_commercial_relations }
+	add_opinion_modifier = { target = BRA modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = BRA modifier = large_commercial_relations }
+	add_opinion_modifier = { target = HOL modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = HOL modifier = large_commercial_relations }
+	add_opinion_modifier = { target = SOV modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = SOV modifier = large_commercial_relations }
+	add_opinion_modifier = { target = CAN modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = CAN modifier = large_commercial_relations }
+	add_opinion_modifier = { target = IND modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = IND modifier = large_commercial_relations }
+	add_opinion_modifier = { target = SAU modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = SAU modifier = large_commercial_relations }
+	add_opinion_modifier = { target = FRA modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = FRA modifier = large_commercial_relations }
+	add_opinion_modifier = { target = SAF modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = SAF modifier = large_commercial_relations }
+	add_opinion_modifier = { target = UAE modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = UAE modifier = large_commercial_relations }
+	add_opinion_modifier = { target = PHI modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = PHI modifier = large_commercial_relations }
+	add_opinion_modifier = { target = MEX modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = MEX modifier = large_commercial_relations }
+
+	add_opinion_modifier = { target = SAO modifier = revoked_recognize_taiwan_chi }
+	reverse_add_opinion_modifier = { target = SAO modifier = revoked_recognize_taiwan_chi }
+	remove_opinion_modifier = { target = SAO modifier = recognize_taiwan_chi }
+	remove_opinion_modifier = { target = MLW modifier = recognize_taiwan_chi }
+	remove_opinion_modifier = { target = COS modifier = recognize_taiwan_chi }
+	remove_opinion_modifier = { target = DMI modifier = recognize_taiwan_chi }
+	remove_opinion_modifier = { target = CHA modifier = recognize_taiwan_chi }
+	remove_opinion_modifier = { target = GRA modifier = recognize_taiwan_chi }
+	remove_opinion_modifier = { target = FYR modifier = recognize_taiwan_chi }
+
+	# Starting tech
+	set_technology = {
+		early_high_speed_rail = 1
+		high_speed_rail = 1
+		modern_high_speed_rail = 1
+		early_maglev_rail = 1
+		freight_locomotive = 1
+
+		infantry_weapons4 = 1
+
+		night_vision_3 = 1 #1985
+
+		command_control_equipment2 = 1
+		command_control_equipment3 = 1 #2005
+
+		land_Drone_equipment1 = 1
+		land_Drone_equipment2 = 1 #2005
+
+		Rec_tank_2 = 1 #2005
+		Rec_tank_3 = 1 #2015
+
+		util_vehicle_2 = 1
+		util_vehicle_3 = 1
+		util_vehicle_4 = 1 #2005
+
+		Arty_upgrade_3 = 1
+		artillery_2 = 1
+		SP_arty_1 = 1
+		SP_arty_2 = 1
+		SP_R_arty_2 = 1
+
+		AT_upgrade_2 = 1
+		Anti_tank_2 = 1
+		Heavy_Anti_tank_2 = 1
+
+		SP_Anti_Air_1 = 1
+		AA_upgrade_2 = 1
+		AA_upgrade_3 = 1
+		Anti_Air_2 = 1
+		SP_Anti_Air_2 = 1
+
+		Strike_upgrade_1 = 1 #4th Gen
+		Strike_fighter3 = 1
+		MR_Fighter2 = 1
+		MR_upgrade_1 = 1
+		MR_Fighter3 = 1 #4.5gen
+		AS_upgrade_1 = 1
+		AS_Fighter3 = 1 #4.5gen
+		CV_MR_Fighter1 = 1
+		CV_MR_Fighter2 = 1
+		CV_MR_Fighter3 = 1 #4.5gen
+		strategic_bomber2 = 1 #H-6
+
+		attack_helicopter2 = 1 #WZ-10
+
+		transport_helicopter2 = 1
+
+		transport_plane2 = 1
+		transport_plane3 = 1 #Y9
+
+		Air_UAV1 = 1 #2005
+
+		body_armor_2000 = 1
+		camouflage3 = 1
+
+		microprocessors = 1
+		computing2 = 1
+		decryption2 = 1
+		encryption2 = 1
+		computing3 = 1
+		decryption3 = 1
+		encryption3 = 1
+		DNA_fingerprinting = 1
+
+		internet3 = 1
+
+		GNSS5 = 1
+		GNSS6 = 1
+
+		COMSAT5 = 1
+		COMSAT6 = 1
+
+		SPYSAT5 = 1
+		SPYSAT6 = 1
+
+		OLV5 = 1
+		OLV6 = 1
+		OLV7 = 1
+
+		space_weapons = 1
+
+		IRBM4_MARV = 1
+		IRBM5 = 1
+		IRBM5_MARV = 1
+		IRBM6 = 1
+		IRBM7 = 1
+
+		ICBM5 = 1
+		ICBM6 = 1
+
+		HSCM = 1
+
+		GLCM5 = 1
+		GLCM6 = 1
+
+		SLCM4_ship = 1
+
+		SAM4 = 1
+		SAM5 = 1
+
+		ABM3_ASAT = 1
+
+		conventional_warhead_11 = 1
+
+		nuclear_warhead_9 = 1
+		nuclear_warhead_10 = 1
+		nuclear_warhead_11 = 1
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		create_equipment_variant = {
+			name = "Type-99A"
+			type = mbt_hull_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen5
+				reload_type_slot = automatic_loading
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = tank_battlestation_3
+				special_type_slot_5 = reactive_armor_gen2
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			icon = "GFX_CHI_MBT_4"
+		}
+
+		set_technology = {
+			mbt_tech_2 = 1
+			tank_components_tech_3 = 1
+			diesel_engine_tech_4 = 1
+		}
+
+
+		else = {
+			set_technology = {
+				MBT_4 = 1 #1995
+				APC_4 = 1 #1995
+				APC_5 = 1
+				IFV_4 = 1
+				IFV_5 = 1 #2005
+			}
+
+			create_equipment_variant = {
+				name = "Type-96A"
+				type = MBT_3
+				upgrades = {
+					tank_engine_upgrade = 3
+					tank_armor_upgrade = 3
+				}
+				obsolete = yes
+			}
+
+			create_equipment_variant = {
+				name = "Type-99A"
+				type = MBT_4
+				upgrades = {
+					tank_engine_upgrade = 2
+					tank_armor_upgrade = 2
+					tank_gun_upgrade = 1
+				}
+				obsolete = yes
+			}
+		}
+	}
+
+	# Naval Technology
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_technology = {
+			corvette_hull_1 = 1
+			corvette_hull_2 = 1
+			corvette_hull_3 = 1
+			corvette_hull_4 = 1
+
+			frigate_hull_1 = 1
+			frigate_hull_2 = 1
+			frigate_hull_3 = 1
+			frigate_hull_4 = 1
+
+			destroyer_hull_1 = 1
+			destroyer_hull_2 = 1
+			destroyer_hull_3 = 1
+
+			cruiser_hull_1 = 1
+			cruiser_hull_2 = 1
+			cruiser_hull_3 = 1
+
+			helicopter_operator_hull_1 = 1
+			helicopter_operator_hull_2 = 1
+
+			carrier_hull_1 = 1
+			carrier_hull_2 = 1
+			carrier_hull_3 = 1
+
+			attack_submarine_hull_1 = 1
+			attack_submarine_hull_2 = 1
+			attack_submarine_hull_3 = 1
+			attack_submarine_hull_4 = 1
+
+			missile_submarine_hull_1 = 1
+			missile_submarine_hull_2 = 1
+
+			aircraft_heli_engineering_1 = 1
+			aircraft_heli_engineering_2 = 1
+			aircraft_heli_engineering_3 = 1
+
+			tech_submarine_engineering = 1
+			tech_submarine_engineering_1 = 1
+			tech_submarine_engineering_2 = 1
+			tech_submarine_engineering_3 = 1
+			tech_submarine_engineering_4 = 1
+
+			tech_naval_systems_engineering = 1
+			tech_power_systems = 1
+			tech_power_systems_1 = 1
+			tech_power_systems_2 = 1
+			tech_nuclear_power_systems = 1
+			tech_nuclear_power_systems_1 = 1
+
+			tech_combat_support_systems = 1
+			tech_fire_control = 1
+			tech_fire_control_1 = 1
+			tech_fire_control_2 = 1
+			tech_combat_radar = 1
+			tech_combat_radar_1 = 1
+			tech_combat_radar_2 = 1
+			tech_combat_radar_3 = 1
+			tech_combat_radar_4 = 1
+			tech_combat_sonar = 1
+			tech_combat_sonar_1 = 1
+			tech_combat_sonar_2 = 1
+			tech_combat_sonar_3 = 1
+			tech_combat_sonar_4 = 1
+
+			tech_naval_weapon_systems = 1
+			tech_light_guns = 1
+			tech_light_guns_1 = 1
+			tech_light_guns_2 = 1
+
+			tech_point_defense_system = 1
+			tech_point_defense_system_1 = 1
+			tech_point_defense_system_2 = 1
+			tech_point_defense_system_3 = 1
+			tech_point_defense_system_4 = 1
+			tech_point_defense_system_5 = 1
+
+			tech_missile_systems = 1
+			tech_turret_missiles_surface = 1
+			tech_turret_missiles_surface_1 = 1
+			tech_turret_missiles_surface_2 = 1
+			tech_turret_missiles_surface_3 = 1
+
+			tech_turret_missiles_aa = 1
+			tech_turret_missiles_aa_1 = 1
+			tech_turret_missiles_aa_2 = 1
+			tech_turret_missiles_aa_3 = 1
+
+			tech_vls_surface = 1
+			tech_vls_surface_1 = 1
+			tech_vls_surface_2 = 1
+			tech_vls_surface_3 = 1
+
+			tech_vls_aa = 1
+			tech_vls_aa_1 = 1
+			tech_vls_aa_2 = 1
+			tech_vls_aa_3 = 1
+
+			tech_torpedoes = 1
+			tech_torpedoes_1 = 1
+			tech_torpedoes_2 = 1
+
+			tech_mtg_landing_craft = 1
+			tech_mtg_amphibious_assault_ship = 1
+			tech_mtg_air_cushioned_landing_craft = 1
+		}
+
+		#Adhafer Class https://en.wikipedia.org/wiki/Adhafer-class_corvette
+		create_equipment_variant = {
+			name = "Adhafer Class"
+			type = corvette_hull_4
+			#name_group = ALG_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power2
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_5
+				fixed_ship_auxillary_slot = module_ciws_3
+				fixed_ship_battery_slot = module_76mm_gun_3
+				front_1_custom_slot = module_asm_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+		#Type 052D Class https://en.wikipedia.org/wiki/Type_052D_destroyer
+		create_equipment_variant = {
+			name = "Type 052D Class"
+			type = destroyer_hull_3
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_jet_turbine_power2
+				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
+				fixed_ship_radar_slot = module_radar_5
+				fixed_ship_auxillary_slot_3 = module_vls_asm_3
+				fixed_ship_auxillary_slot_2 = module_vls_sam_3
+				fixed_ship_auxillary_slot = module_vls_lam_3
+				fixed_ship_battery_slot = module_76mm_gun_3
+				front_1_custom_slot = module_ciws_5
+				mid_1_custom_slot = module_aa_missiles_3
+				mid_2_custom_slot = module_anti_submarine_missile_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Type 051C Class https://en.wikipedia.org/wiki/Type_051B_destroyer
+		create_equipment_variant = {
+			name = "Type 051C Class"
+			type = destroyer_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot_3 = module_vls_sam_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot = module_torpedoes_3
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_2
+				mid_1_custom_slot = module_ciws_2
+				mid_2_custom_slot = module_anti_submarine_missile_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+
+		#Type 052C Class https://en.wikipedia.org/wiki/Type_051B_destroyer
+		create_equipment_variant = {
+			name = "Type 052C Class"
+			type = destroyer_hull_2
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot_3 = module_vls_sam_2
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot = module_torpedoes_3
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_vls_asm_2
+				mid_1_custom_slot = module_ciws_2
+				mid_2_custom_slot = module_anti_submarine_missile_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+
+		#Type 054A Class https://en.wikipedia.org/wiki/Type_054A_frigate
+		create_equipment_variant = {
+			name = "Type 054A Class"
+			type = frigate_hull_3
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot_2 = module_vls_asm_2
+				fixed_ship_auxillary_slot_1 = module_aa_missiles_2
+				fixed_ship_auxillary_slot = module_ciws_3
+				fixed_ship_battery_slot = module_76mm_gun_3
+				front_1_custom_slot = module_torpedoes_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Type 056 Class https://en.wikipedia.org/wiki/Type_056_corvette
+		create_equipment_variant = {
+			name = "Type 056 Class"
+			type = corvette_hull_4
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot = module_asm_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_torpedoes_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Type 056 Class https://en.wikipedia.org/wiki/Type_056_corvette
+		create_equipment_variant = {
+			name = "Type C13B Class"
+			type = corvette_hull_3
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_5
+				fixed_ship_auxillary_slot = module_asm_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_torpedoes_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+
+		#Type 056A Class https://en.wikipedia.org/wiki/Type_056_corvette
+		create_equipment_variant = {
+			name = "Type 056A Class"
+			type = corvette_hull_4
+			name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot = module_anti_submarine_missile_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_torpedoes_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+
+		#Kuznetsov Class https://en.wikipedia.org/wiki/Chinese_aircraft_carrier_Liaoning
+		create_equipment_variant = {
+			name = "Type 001 Class"
+			type = carrier_hull_2
+			name_group = CHI_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_oil_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_2 = module_esm_1
+				fixed_ship_auxillary_slot_1 = module_ciws_2
+				fixed_ship_auxillary_slot = module_vls_asm_2
+				fixed_ship_flight_deck = module_flight_deck_3
+				front_1_custom_slot = module_ram_2
+				front_2_custom_slot = module_ciws_2
+				mid_1_custom_slot = module_helipads_1
+				mid_2_custom_slot = module_helipads_1
+				mid_3_custom_slot = module_helipads_1
+				rear_1_custom_slot = module_ram_2
+				rear_2_custom_slot = module_ciws_2
+
+			}
+		}
+
+		#Type 002 https://en.wikipedia.org/wiki/Chinese_aircraft_carrier_programme
+		create_equipment_variant = {
+			name = "Type 002 Class"
+			type = carrier_hull_2
+			name_group = CHI_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot_2 = module_ciws_3
+				fixed_ship_auxillary_slot_1 = module_ram_3
+				fixed_ship_auxillary_slot = module_esm_2
+				fixed_ship_flight_deck = module_flight_deck_3
+				front_1_custom_slot = module_ram_3
+				front_2_custom_slot = module_ciws_3
+				mid_1_custom_slot = module_helipads_2
+				mid_2_custom_slot = module_helipads_2
+				mid_3_custom_slot = module_helipads_2
+				rear_1_custom_slot = module_ram_3
+				rear_2_custom_slot = module_ciws_3
+
+			}
+		}
+
+		#Type 003 https://en.wikipedia.org/wiki/Chinese_aircraft_carrier_Fujian
+		create_equipment_variant = {
+			name = "Type 003 Class"
+			type = carrier_hull_3
+			name_group = CHI_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_jet_turbine_power2
+				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
+				fixed_ship_radar_slot = module_radar_5
+				fixed_ship_auxillary_slot_2 = module_ciws_5
+				fixed_ship_auxillary_slot_1 = module_ram_4
+				fixed_ship_auxillary_slot = module_esm_2
+				fixed_ship_flight_deck = module_flight_deck_5
+				front_1_custom_slot = module_ram_4
+				front_2_custom_slot = module_ciws_4
+				mid_1_custom_slot = module_helipads_2
+				mid_2_custom_slot = module_helipads_2
+				mid_3_custom_slot = module_helipads_2
+				rear_1_custom_slot = module_ram_4
+				rear_2_custom_slot = module_ciws_4
+
+			}
+		}
+
+		#Type 039A https://en.wikipedia.org/wiki/Song-class_submarine
+		create_equipment_variant = {
+			name = "Type 039A Class"
+			type = attack_submarine_hull_3
+			name_group = CHI_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_3
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sub_asm_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
+
+		#Shang Class https://en.wikipedia.org/wiki/Shang-class_submarine
+		create_equipment_variant = {
+			name = "Shang Class"
+			type = attack_submarine_hull_4
+			name_group = CHI_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_adv_reactor_power
+				fixed_ship_radar_slot = module_sonar_4
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sub_asm_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
+
+		#Type 071 Class https://en.wikipedia.org/wiki/Type_071_amphibious_transport_dock
+		create_equipment_variant = {
+			name = "Type 071 Class"
+			type = helicopter_operator_hull_2
+			name_group = CHI_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_3 = module_vls_sam_3
+				fixed_ship_auxillary_slot_2 = module_ram_3
+				fixed_ship_auxillary_slot = module_ciws_3
+				fixed_ship_battery_slot = module_light_flight_deck_1
+				front_1_custom_slot = module_helipads_2
+				mid_1_custom_slot = module_fuel_tank
+				rear_1_custom_slot = empty
+			}
+		}
+
+		#Type 055 Class https://en.wikipedia.org/wiki/Type_055_destroyer
+		create_equipment_variant = {
+			name = "Type 055 Class"
+			type = cruiser_hull_3
+			#name_group = CHI_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_jet_turbine_power2
+				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
+				fixed_ship_radar_slot = module_radar_5
+				fixed_ship_battery_slot_4 = module_vls_sam_3
+				fixed_ship_battery_slot_3 = module_anti_submarine_missile_4
+				fixed_ship_battery_slot_2 = module_esm_2
+				fixed_ship_battery_slot = module_127mm_battery
+				front_1_custom_slot = module_vls_sam_3
+				front_2_custom_slot = module_vls_asm_3
+				mid_1_custom_slot = module_ciws_4
+				mid_2_custom_slot = module_torpedoes_3
+				rear_1_custom_slot = module_vls_lam_3
+				rear_2_custom_slot = module_light_helipad_2
+
+			}
+		}
+
+		else = {
+			set_technology = {
+				modern_carrier_0 = 1
+				modern_carrier_1 = 1
+				modern_carrier_2 = 1 #Type 001 aircraft carrier
+				modern_carrier_3 = 1
+
+				cruiser_1 = 1
+				cruiser_2 = 1
+				missile_cruiser_1 = 1
+				missile_cruiser_4 = 1
+
+				missile_destroyer_2 = 1
+				missile_destroyer_3 = 1 #Type 052C destroyer, Type 052D Luyang III-Class
+
+				missile_corvette_1 = 1
+				missile_corvette_2 = 1 #Type 056 corvette, Type 056A Jiangdao-Class
+
+				missile_frigate_2 = 1
+				missile_frigate_3 = 1 #Type 054A frigate Jiangkai II class,
+
+				submarine_1 = 1
+
+				missile_submarine_2 = 1 #Jin-class
+				missile_submarine_3 = 1 #093B-class
+
+				attack_submarine_2 = 1
+				attack_submarine_3 = 1 #Shang-class
+
+				diesel_attack_submarine_2 = 1 #Song-class
+				diesel_attack_submarine_3 = 1 #Kilo-class
+
+				LPD_0 = 1
+				LPD_1 = 1  #Type 071 amphibious transport dock
+
+				LHA_0 = 1
+				LHA_1 = 1 #Type 075 LHA
+
+				modern_landing_craft = 1
+			}
+
+			create_equipment_variant = {
+				name = "Type 051C Luzhou-Class"
+				type = missile_destroyer_1
+				upgrades = {
+				}
+				obsolete = yes
+			}
+			create_equipment_variant = {
+				name = "C28A-Class"
+				type = missile_corvette_2
+				upgrades = {
+				}
+			}
+			create_equipment_variant = {
+				name = "C13B-Class"
+				type = missile_corvette_2
+				upgrades = {
+				}
+			}
+		}
+	}
+
+	set_popularities = {
+		democratic = 10.0
+		communism = 73.0
+		fascism = 0.0
+		neutrality = 15.0
+		nationalist = 2.0
+	}
+	set_politics = {
+
+		ruling_party = communism
+		last_election = "1997.1.1"
+		election_frequency = 48
+		elections_allowed = no
 	}
 
 	create_country_leader = {
 		name = "Xi Jinping"
-		desc = "POLITICS_MAO_ZEDONG_DESC"
-		picture = "gfx/leaders/CHI/portrait_chi_xi_jinping.dds"
-		ideology = china_socialism
-		traits = { trait_china_socialism }
+		desc = XI_JINPING_LEADER_DESC
+		picture = "Xi_Jinping.dds"
+		expire = "2030.1.1"
+		ideology = Communist-State
+		traits = {
+			engineer
+			emerging_Communist-State
+			rational
+			polished
+		}
 	}
 
-	create_country_leader = {
-		name = "Wan Exiang"
-		desc = "POLITICS_WAN_EXIANG_DESC"
-		picture = "gfx/leaders/CHI/portrait_chi_wan_exiang.dds"
-		ideology = social_democracy
-		traits = { trait_social_democracy }
+	start_politics_input = yes
+
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.02 } #conservatism
+	set_variable = { party_pop_array^2 = 0.03 } #liberalism
+	set_variable = { party_pop_array^3 = 0.05 } #socialism
+	set_variable = { party_pop_array^4 = 0.578 } #Communist-State
+	set_variable = { party_pop_array^5 = 0.025 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0.01 } #Conservative
+	set_variable = { party_pop_array^7 = 0.117 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0.01 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0.01 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0.01 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.12 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0.005 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0.1 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0.005 } #Monarchist
+	add_to_array = { ruling_party = 4 }
+	add_to_array = { gov_coalition_array = 7 } #Autocracy
+	add_to_array = { gov_coalition_array = 5 } #anarchist_communism
+	startup_politics = yes
+
+	#2000 Army chiefs
+	retire_character = CHI_fu_quanyou
+	retire_character = CHI_lian_guanglie
+	retire_character = CHI_chen_bingde
+	#2000 Navy chiefs
+	retire_character = CHI_shi_yunsheng
+	retire_character = CHI_zhang_dingfa
+	#2000 Air chiefs
+	retire_character = CHI_liu_shunyao
+	retire_character = CHI_qiao_qingchen
+
+	#2017 Army chiefs
+	recruit_character = CHI_fang_fenghui
+	recruit_character = CHI_li_zuocheng
+	recruit_character = CHI_han_weiguo
+	recruit_character = CHI_liu_zhenli
+	#2017 Navy chiefs
+	recruit_character = CHI_shen_jinlong
+	recruit_character = CHI_dong_jun
+	#2017 Air chiefs
+	recruit_character = CHI_ma_xiaotian
+	recruit_character = CHI_ding_laihang
+	#Admirals 2017
+	recruit_character = CHI_zhang_wendan
+	recruit_character = CHI_su_zhiqian
+	recruit_character = CHI_jiang_weilie
+	recruit_character = CHI_miao_hua
+	recruit_character = CHI_wang_dengping
+	recruit_character = CHI_qiuyan_peng
+
+	#Air variants
+	create_equipment_variant = {
+		name = "FC-1 Xiaolong"
+		type = MR_Fighter2
+		upgrades = {
+			strike_gun_upgrade = 0
+			plane_range_upgrade = 3
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 1
+		}
+		obsolete = yes
 	}
 
-	create_country_leader = {
-		name = "Wang Youcai"
-		desc = "POLITICS_WANG_YOUCAI_DESC"
-		picture = "gfx/leaders/CHI/portrait_chi_wang_youcai.dds"
-		ideology = liberal_democracy
-		traits = { trait_liberal_democracy }
+	### Land Variants ###
+
+	create_equipment_variant = {
+		name = "QW-18"
+		type = Anti_Air_1
+		upgrades = {
+			AA_Fire_Control = 2
+		}
+		obsolete = yes
 	}
 
-	create_country_leader = {
-		name = "Zhang Baowen"
-		desc = "POLITICS_ZHANG_BAOWEN_DESC"
-		picture = "gfx/leaders/CHI/portrait_chi_zhang_baowen.dds"
-		ideology = centrist_democracy
-		traits = { trait_centrist_democracy }
+	create_equipment_variant = {
+		name = "FN-16"
+		type = Anti_Air_2
+		upgrades = {
+			AA_Fire_Control = 2
+		}
 	}
 
-	create_country_leader = {
-		name = "Su Hui"
-		desc = "POLITICS_MA_YING_JEOU_DESC"
-		picture = "gfx/leaders/CHI/portrait_chi_su_hui.dds"
-		ideology = conservative_democracy
-		traits = { trait_conservative_democracy }
+	create_equipment_variant = {
+		name = "ZBD2000"
+		type = IFV_5
+		upgrades = {
+			tank_reliability_upgrade = 0
+			tank_engine_upgrade = 0
+			tank_armor_upgrade = 0
+			tank_gun_upgrade = 0
+		}
 	}
 
-	create_country_leader = {
-		name = "Wang Xiaodong"
-		desc = "POLITICS_WANG_XIAODONG_DESC"
-		picture = "gfx/leaders/CHI/portrait_chi_wang_xiaodong.dds"
-		ideology = national_democracy
-		traits = { trait_national_democracy }
+	create_equipment_variant = {
+		name = "Type 62"
+		type = Rec_tank_0
+		upgrades = {
+		}
+		obsolete = yes
 	}
 
-
-	create_field_marshal = {
-		name = "Chang Wanquan"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_chang_wanquan.dds"
-		traits = { organisational_leader inflexible_strategist }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 4
-		planning_skill = 3
-		attack_skill = 2
+	create_equipment_variant = {
+		name = "Type 64"
+		type = Rec_tank_0
+		upgrades = {
+			tank_reliability_upgrade = 0
+			tank_engine_upgrade = 2
+			tank_armor_upgrade = 0
+			tank_gun_upgrade = 0
+		}
+		obsolete = yes
 	}
 
-	create_field_marshal = {
-		name = "Liang Guanglie"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_liang_guanglie.dds"
-		traits = { infantry_officer }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 4
-		attack_skill = 2
-	}
-	
-	create_field_marshal = {
-		name = "Wei Fenghe"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_wei_fenghe.dds"
-		traits = { bearer_of_artillery }
-		skill = 2
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 2
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Cai Yongzhong"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_cai_yongzhong.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Cao Gangchuan"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_cao_gangchuan.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Chang Dingqiu"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_chang_dingqiu.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-		
-	create_corps_commander = {
-		name = "Chen Bingde"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_chen_bingde.dds"
-		traits = { armor_officer }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Chu Yimin"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_chu_yimin.dds"
-		traits = { }
-		skill = 2
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 2
+	create_equipment_variant = {
+		name = "ZTL-09"
+		type = Rec_tank_2
+		upgrades = {
+			tank_reliability_upgrade = 0
+			tank_engine_upgrade = 0
+			tank_armor_upgrade = 1
+			tank_gun_upgrade = 3
+		}
+		obsolete = yes
 	}
 
-	create_corps_commander = {
-		name = "Diao Guoxin"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_diao_guaxin.dds"
-		traits = { war_hero }
-		skill = 3
-		logistics_skill = 2
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
+	create_equipment_variant = {
+		name = "Type 63"
+		type = SP_Anti_Air_0
+		upgrades = {
+			SP_AA_Fire_Control = 0
+			SP_AA_Warhead = 0
+			SP_AA_Weight = 0
+		}
+		obsolete = yes
 	}
 
-	create_corps_commander = {
-		name = "Ding Laihang"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_ding_laihang.dds"
-		traits = { career_officer }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	create_corps_commander = {
-		name = "Du Jincai"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_du_jincai.dds"
-		traits = {  } #army_combat_training
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 2
-	}
-		
-	create_corps_commander = {
-		name = "Fan Changlong"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_fan_changlong.dds"
-		traits = { organizer logistics_wizard }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Fang Fenghui"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_fang_fenghui.dds"
-		traits = { inflexible_strategist fast_planner }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Guo Boxiong"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_guo_boxiong.dds"
-		traits = { commando old_guard }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 3
-	}
-	create_corps_commander = {
-		name = "Han Weiguo"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_han_weiguo.dds"
-		traits = {  } #army_mass_defence
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 4
-		planning_skill = 3
-		attack_skill = 3
-	}	
-	
-	create_corps_commander = {
-		name = "Li Shangfu"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_li_shangfu.dds"
-		traits = { fast_planner }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Li Xianyu"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_li_xianyu.dds"
-		traits = { bearer_of_artillery }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
+	create_equipment_variant = {
+		name = "A-100 MRL"
+		type = SP_R_arty_2
+		upgrades = {
+			SP_Arty_Fire_Control = 1
+			SP_Arty_Warhead = 2
+		}
 	}
 
-	create_corps_commander = {
-		name = "Li Yong"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_li_yong.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Li Zuocheng"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_li_zuocheng.dds"
-		traits = { }
-		skill = 4
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 4
-	}	
-	
-	create_corps_commander = {
-		name = "Liu Hongjie"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_liu_hongjie.dds"
-		traits = { trickster panzer_leader desert_fox }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
+	create_equipment_variant = {
+		name = "PLZ-83"
+		type = SP_arty_0
+		upgrades = {
+			SP_Arty_Fire_Control = 0
+			SP_Arty_Warhead = 2
+		}
+		obsolete = yes
 	}
 
-	create_corps_commander = {
-		name = "Liu Yuejun"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_liu_yuejun.dds"
-		traits = { }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
+	create_equipment_variant = {
+		name = "Type-85"
+		type = SP_arty_1
+		upgrades = {
+			SP_Arty_Fire_Control = 0
+			SP_Arty_Warhead = 0
+		}
+		obsolete = yes
 	}
 
-	create_corps_commander = {
-		name = "Liu Zhenli"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_liu_zhenli.dds"
-		traits = { old_guard }
-		skill = 4
-		logistics_skill = 3
-		defense_skill = 4
-		planning_skill = 3
-		attack_skill = 4
+	create_equipment_variant = {
+		name = "PLC-09"
+		type = SP_arty_1
+		upgrades = {
+			SP_Arty_Fire_Control = 1
+			SP_Arty_Warhead = 0
+		}
+		obsolete = yes
 	}
 
-	create_corps_commander = {
-		name = "Luo Yuan"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_luo_yuan.dds"
-		traits = { naval_invader invader_ii }
-		skill = 3
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 3
+	create_equipment_variant = {
+		name = "PLZ-45"
+		type = SP_arty_1
+		upgrades = {
+			SP_Arty_Fire_Control = 1
+			SP_Arty_Warhead = 2
+		}
+		obsolete = yes
 	}
 
-	create_corps_commander = {
-		name = "Ma Xiaotian"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_ma_xiaotian.dds"
-		traits = { naval_invader invader_ii }
-		skill = 3
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 3
+	create_equipment_variant = {
+		name = "SH1"
+		type = SP_arty_2
+		upgrades = {
+			SP_Arty_Fire_Control = 1
+			SP_Arty_Warhead = 0
+		}
 	}
 
-	create_corps_commander = {
-		name = "Peng Yong"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_peng_yong.dds"
-		traits = { armor_officer }
-		skill = 3
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 3
+	create_equipment_variant = {
+		name = "Type-54"
+		type = artillery_0
+		upgrades = {
+			L_Arty_Fire_Control = 0
+			L_Arty_Warhead = 0
+		}
+		obsolete = yes
 	}
-
-	create_corps_commander = {
-		name = "Qi Jianguo"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_qi_jianguo.dds"
-		traits = { career_officer }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 4
-	}
-
-	create_corps_commander = {
-		name = "Qin Shengxiang"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_qin_shengxiang.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Rong Guiping"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_rong_guiping.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}	
-
-	create_corps_commander = {
-		name = "Shu Qingyou"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_shu_qingyou.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 2
-	}	
-
-	create_corps_commander = {
-		name = "Tian Xiusi"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_tian_xiusi.dds"
-		traits = { }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-
-	create_corps_commander = {
-		name = "Wang Haijiang"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_wang_haijiang.dds"
-		traits = { politically_connected }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-
-	create_corps_commander = {
-		name = "Wang Jiaocheng"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_wang_jiaocheng.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 4
-		planning_skill = 3
-		attack_skill = 3
-	}	
-
-	create_corps_commander = {
-		name = "Xu Caihou"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_xu_caihou.dds"
-		traits = { politically_connected }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-
-	create_corps_commander = {
-		name = "Xu Qiliang"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_xu_qiliang.dds"
-		traits = { commando airborne_commander_1 }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 4
-		attack_skill = 3
-	}
-
-	create_corps_commander = {
-		name = "Xu Yong"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_xu_yong.dds"
-		traits = { specops_commander }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 4
-		attack_skill = 3
-	}	
-
-	create_corps_commander = {
-		name = "Zhang Shibo"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_zhang_shibo.dds"
-		traits = { career_officer }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-
-	create_corps_commander = {
-		name = "Zhang Shuguo"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_zhang_shuguo.dds"
-		traits = { }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 3
-	}
-
-	create_corps_commander = {
-		name = "Zhang Yang"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_zhang_yang.dds"
-		traits = { infantry_officer }
-		skill = 3
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 3
-		attack_skill = 3
-	}
-
-	create_corps_commander = {
-		name = "Zhang Youxia"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_zhang_youxia.dds"
-		traits = { armor_officer }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-
-	create_corps_commander = {
-		name = "Zhao Keshi"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_zhao_keshi.dds"
-		traits = { infantry_officer }
-		skill = 2
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 2
-		attack_skill = 2
-	}
-
-	create_corps_commander = {
-		name = "Zhao Zongqi"
-		portrait_path = "gfx/leaders/CHI/general/portrait_chi_general_zhao_zongqi.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-
-	create_navy_leader = {
-		name = "Liu Xiaojing"
-		portrait_path = "gfx/leaders/CHI/admiral/portrait_chi_admiral_liu_xiaojing.dds"
-		traits = { fleet_protector }
-		skill = 3
-		coordination_skill = 2
-		defense_skill = 3
-		maneuvering_skill = 2
-		attack_skill = 2
-	}
-
-	create_navy_leader = {
-		name = "Shen Jinlong"
-		portrait_path = "gfx/leaders/CHI/admiral/portrait_chi_admiral_shen_jinlong.dds"
-		traits = { bold }
-		skill = 3
-		coordination_skill = 2
-		defense_skill = 3
-		maneuvering_skill = 2
-		attack_skill = 3
-	}
-
-	create_navy_leader = {
-		name = "Tian Zhong"
-		portrait_path = "gfx/leaders/CHI/admiral/portrait_chi_admiral_tian_zhong.dds"
-		traits = { chief_engineer }
-		skill = 2
-		coordination_skill = 2
-		defense_skill = 2
-		maneuvering_skill = 2
-		attack_skill = 2
-	}
-
-	create_navy_leader = {
-		name = "Wang Hai"
-		portrait_path = "gfx/leaders/CHI/admiral/portrait_chi_admiral_wang_hai.dds"
-		traits = { submarine_fleet_commander seawolf }
-		skill = 3
-		coordination_skill = 3
-		defense_skill = 3
-		maneuvering_skill = 3
-		attack_skill = 3
-	}
-
-	create_navy_leader = {
-		name = "Wu Shengli"
-		portrait_path = "gfx/leaders/CHI/admiral/portrait_chi_admiral_wu_shengli.dds"
-		traits = { air_controller }
-		skill = 3
-		coordination_skill = 2
-		defense_skill = 3
-		maneuvering_skill = 2
-		attack_skill = 4
-	}
-
-	create_navy_leader = {
-		name = "Yuan Yubai"
-		portrait_path = "gfx/leaders/CHI/admiral/portrait_chi_admiral_yuan_yubai.dds"
-		traits = { submarine_fleet_commander seawolf }
-		skill = 3
-		coordination_skill = 2
-		defense_skill = 3
-		maneuvering_skill = 2
-		attack_skill = 3
-	}
-
 }
-

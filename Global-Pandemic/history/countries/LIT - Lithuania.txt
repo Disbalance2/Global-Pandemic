@@ -1,277 +1,445 @@
-﻿# Economic Crisis edit for 0.7.6 alpha
+﻿capital = 110
+2000.1.1 = {
+	set_country_flag = dynamic_flag
+	set_country_flag = dynamic_rebel_flag
 
-# NOT EDITED LEADERS (ONLY START LEADER)
-# NOT EDITED LAWS
-# NOT EDITED POLITICS
-
-set_country_flag = COUNTRY_FLAG.POST_USSR
-
-capital = 96
-
-	add_ideas = {
-		mixed_army
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "LIT_2000_nsb"
+		else = {
+			set_oob = "LIT_2000_nonnsb"
+		}
 	}
 
-2013.11.1 = {
-	set_variable = { budget_last_year = 4647 }
-
-	load_oob = "_tech_nato_minor_2013"
-	oob = "LIT_2013"
-
-	add_ideas = {
-		mixed_army
-		eu_member
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "LIT_2000_bba"
+		else = {
+			set_air_oob = "LIT_2000_nonbba"
+		}
 	}
 
-	set_stability = 0.5
-	add_political_power = 0
-	set_convoys = 10
-	create_intelligence_agency = yes
+	set_cosmetic_tag = LIT
+	set_variable = { gdp_per_capita = 13.847 }
 
 	add_ideas = {
-		parliamentary_republic
-		secular_state
-		free_media
-		respect_of_liberties
-		open_immigration
-		mixed_army
-		mixed_schools
-		civilian_economy
-		balanced_industry
-		middle_social_security
-		pensions
-		mixed_economic
-		NPT
-		terrorism_discounted
+		christian
+		defence_01
+		edu_03
+		health_03
+		social_04
+		bureau_02
+		police_03
+		small_medium_business_owners
+		landowners
+		industrial_conglomerates
 	}
 
-	set_country_flag = pai_democrat_anticommunist
+	#Cyber
+	add_to_array = { cyber_targets = SOV }
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 90 }
+	add_to_array = { influence_array = POL.id }
+	add_to_array = { influence_array_val = 60 }
+	add_to_array = { influence_array = GER.id }
+	add_to_array = { influence_array_val = 25 }
+	add_to_array = { influence_array = SWE.id }
+	add_to_array = { influence_array_val = 20 }
+	add_to_array = { influence_array = SOV.id }
+	add_to_array = { influence_array_val = 30 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 15 }
+	startup_influence = yes
+
+	set_variable = { small_medium_business_owners = 75 }
+	set_variable = { landowners_opinion = 60 }
+
+	set_variable = { var = debt value = 10.790 }
+	set_variable = { var = treasury value = 3 }
+	set_variable = { var = corporate_tax_rate value = 15 }
+	set_variable = { var = population_tax_rate value = 20 }
+	set_variable = { var = int_investments value = 3 }
+
+	add_opinion_modifier = { target = SOV modifier = large_commercial_relations }
+	add_opinion_modifier = { target = SWE modifier = large_commercial_relations }
+	add_opinion_modifier = { target = POL modifier = large_commercial_relations }
+	add_opinion_modifier = { target = GER modifier = large_commercial_relations }
+
+	set_technology = {
+		integrated_transportation_system = 1
+		post_conventional_rail = 1
+		early_freight_locomotive = 1
+
+		legacy_doctrines = 1
+		armoured_mass_assault = 1
+
+		night_vision_1 = 1
+		night_vision_2 = 1
+
+		#For templates
+		infantry_weapons = 1
+		support_weapons = 1
+
+		combat_eng_equipment = 1
+		command_control_equipment = 1
+		land_Drone_equipment = 1
+		Anti_tank_0 = 1
+		Heavy_Anti_tank_0 = 1
+		util_vehicle_0 = 1
+
+		body_armor_1980 = 1
+		camouflage = 1
+		camouflage2 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+
+		radar = 1
+		internet1 = 1 	#1G
+		internet2 = 1 	#2G
+		gprs = 1
+		fuel_silos = 1
+
+		industrial_electrospun_polymeric_nanofibers = 1
+		multiwalled_carbon_nanotubes = 1
+		stereolitography = 1
+		early_3D_printers = 1
+		DNA_fingerprinting = 1
+		fuel_refining = 1
+		fuel_refining2 = 1
+		energy_efficiency = 1
+		energy_efficiency2 = 1
+		fuel_efficiency = 1
+		early_renewables = 1
+		renewables = 1
+		electrification_1 = 1
+		construction1 = 1
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			afv_tech = 1
+			nsb_artillery_0 = 1
+			nsb_Anti_Air_0 = 1
+		}
+
+		else = {
+			set_technology = {
+				Early_APC = 1
+				APC_1 = 1
+				artillery_0 = 1
+				SP_arty_0 = 1
+				Anti_Air_0 = 1
+			}
+		}
+	}
+
+	set_popularities = {
+		democratic = 51.0
+		communism = 0.8
+		fascism = 0.0
+		neutrality = 40.2
+		nationalist = 8.0
+	}
 	set_politics = {
-		ruling_party = neutrality
-		last_election = "2014.5.8"
-		election_frequency = 63
+		ruling_party = democratic
+		last_election = "1998.2.26"
+		election_frequency = 60
 		elections_allowed = yes
 	}
-	set_popularities = {
-		communism = 1
-		reformism = 30
-		liberalism = 10
-		democratic = 25
-		neutrality = 25
-		fascism = 9
-		rad_islamists = 0
-	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.383 } #conservatism
+	set_variable = { party_pop_array^2 = 0.019 } #liberalism
+	set_variable = { party_pop_array^3 = 0.108 } #socialism
+	set_variable = { party_pop_array^4 = 0.008 } #Communist-State
+	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0.086 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0.137 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0.018 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.131 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0.03 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0.062 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0.018 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 1 }
+
+	startup_politics = yes
 
 	create_country_leader = {
-		name = "Dalia Grybauskaite"
-		desc = ""
-		picture = "gfx/leaders/LIT/portrait_dalia_grybauskaite.dds"
-		ideology = centrist_democracy
-		traits = { trait_centrist_democracy }
+		name = "Valdas Adamkus"
+		picture = "valdas_adamkus.dds"
+		ideology = conservatism
+		traits = {
+			western_conservatism
+		}
 	}
+	set_variable = { term_limit = 2 }
+	set_variable = { current_term = 1 }
 
-	create_country_leader = {
-		name = "Eligijus Masiulis"
-		desc = ""
-		picture = "gfx/leaders/LIT/portrait_eligijus_masiulis.dds"
-		ideology = liberal_democracy
-		traits = { trait_liberal_democracy }
+	every_controlled_state = {
+		set_variable = { productivity_state_var = 839 }
 	}
+	set_variable = { overall_productivity = 839 }
 
-	create_country_leader = {
-		name = "Andrius Kubilius"
-		desc = ""
-		picture = "gfx/leaders/LIT/portrait_andrius_kubilius.dds"
-		ideology = conservative_democracy
-		traits = { trait_conservative_democracy }
-	}
-
-	create_country_leader = {
-  	    name = "Algirdas Butkevičius"
-  	    desc = ""
-  	    picture = "gfx/leaders/LIT/portrait_algirdas_butkevicius.dds"
-  	    ideology = social_democracy
-  	    traits = { trait_social_democracy }
-    }
-    create_country_leader = {
-  	    name = "Rolandas Paksas"
-  	    desc = ""
-  	    picture = "gfx/leaders/LIT/portrait_rolandas_paksas.dds"
-  	    ideology = national_conservatism
-  	    traits = { trait_national_conservatism }
-    }
-
-    create_country_leader = {
-  	    name = "Mykolas Burokevičius"
-  	    desc = ""
-  	    picture = "gfx/leaders/LIT/portrait_mykolas_burokevicius.dds"
-  	    ideology = leninism
-  	    traits = { trait_leninism }
-    }
-  
-  	create_field_marshal = {
-		name = "Jonas Vytautas Zukas"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_jonas_zukas.dds"
-		traits = { panzer_leader }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_field_marshal = {
-		name = "Arvydas Pocius"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_General_arvydas_pocius.dds"
-		traits = { inspirational_leader organisational_leader }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_field_marshal = {
-		name = "Vitalius Vaiksnoras"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_vitalius_vaiksnoras.dds"
-		traits = { old_guard offensive_doctrine }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Dainius Snarskis"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_dainius_snarskis.dds"
-		traits = { hill_fighter }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Valdemaras Rupsys"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_valdemaras_rupsys.dds"
-		traits = { trait_engineer }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Dalius Polekauskas"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_dalius_polekauskas.dds"
-		traits = { ranger }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Osvaldas Zurauskas"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_osvaldas_zurauskas.dds"
-		traits = { winter_specialist }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Vilmantas Tamosaitis"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_vilmantas_tamosaitis.dds"
-		traits = { commando }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Mindaugas Steponavicius"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_mindaugas_steponavicius.dds"
-		traits = { panzer_leader }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Alvydas Siuparis"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_alvydas_siuparis.dds"
-		traits = { hill_fighter }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Ausrius Buikus"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_ausrius_buikus.dds"
-		traits = { urban_assault_specialist }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Tomas Masaitis"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_tomas_masaitis.dds"
-		traits = { trickster }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-	    name = "Arturas Jasinskas"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_general_arturas_jasinskas.dds"
-		traits = { tanks_commander }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_navy_leader = {
-		name = "Arunas Mockus"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_admiral_arunas_mockus.dds"
-		traits = { old_guard_navy }
-		skill = 3
-		coordination_skill = 3
-		defense_skill = 3
-		maneuvering_skill = 3
-		attack_skill = 3
-	}
-	
-	create_navy_leader = {
-		name = "Svajunas Bandzevicius"
-		portrait_path = "gfx/leaders/LIT/portrait_lit_admiral_svajunas_bandzevicius.dds"
-		traits = { blockade_runner }
-		skill = 3
-		coordination_skill = 3
-		defense_skill = 3
-		maneuvering_skill = 3
-		attack_skill = 3
-	}
+	recruit_character = LIT_raimundas_vaiksnoras
+	recruit_character = LIT_dainius_guzas
+	recruit_character = LIT_giedrius_premeneckas
+	recruit_character = LIT_jonas_vytautas_zukas
+	recruit_character = LIT_ovidijus_pilitauskas
+	recruit_character = LIT_arvydas_pocius
 }
 
+2017.1.1 = {
+	capital = 110
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "LIT_2000_nsb"
+		else = {
+			set_oob = "LIT_2000_nonnsb"
+		}
+	}
+
+
+	set_technology = {
+		body_armor_2000 = 1
+		microprocessors = 1
+		computing2 = 1
+		decryption2 = 1
+		encryption2 = 1
+		computing3 = 1
+		decryption3 = 1
+		encryption3 = 1
+		computing4 = 1
+		decryption4 = 1
+		encryption4 = 1
+		neural_networks_revival = 1
+		data_mining = 1
+		industrial_electrospun_polymeric_nanofibers = 1
+		stereolitography = 1
+		DNA_fingerprinting = 1
+		modern_gmo = 1
+		gene_therapy = 1
+
+		wifi = 1
+		internet3 = 1	#3G
+		edge = 1
+		umts = 1
+		hsupa = 1
+		internet4 = 1	#4G
+		lte = 1
+		construction1 = 1
+		construction2 = 1
+		excavation1 = 1
+		excavation2 = 1
+	}
+
+	add_ideas = {
+		christian
+		EU_member
+		stable_growth
+		defence_01
+		edu_03
+		health_03
+		social_04
+		bureau_02
+		police_03
+		volunteer_army
+		volunteer_women
+		NATO_member
+		medium_far_right_movement
+		small_medium_business_owners
+		landowners
+		industrial_conglomerates
+		the_euro
+		officer_international_education
+	}
+	set_variable = { small_medium_business_owners = 75 }
+	set_variable = { landowners_opinion = 60 }
+
+	set_variable = { var = debt value = 37 }
+	set_variable = { var = treasury value = 1 }
+	set_variable = { var = int_investments value = 5  }
+	set_variable = { var = corporate_tax_rate value = 15 }
+	set_variable = { var = population_tax_rate value = 20 }
+
+	#2000 EU Relations
+	add_opinion_modifier = { target = BEL modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = BEL modifier = EU_member_opinion }
+	add_opinion_modifier = { target = FRA modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = FRA modifier = EU_member_opinion }
+	add_opinion_modifier = { target = GER modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = GER modifier = EU_member_opinion }
+	add_opinion_modifier = { target = ITA modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = ITA modifier = EU_member_opinion }
+	add_opinion_modifier = { target = LUX modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = LUX modifier = EU_member_opinion }
+	add_opinion_modifier = { target = HOL modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = HOL modifier = EU_member_opinion }
+	add_opinion_modifier = { target = DEN modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = DEN modifier = EU_member_opinion }
+	add_opinion_modifier = { target = IRE modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = IRE modifier = EU_member_opinion }
+	add_opinion_modifier = { target = ENG modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = ENG modifier = EU_member_opinion }
+	add_opinion_modifier = { target = GRE modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = GRE modifier = EU_member_opinion }
+	add_opinion_modifier = { target = POR modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = POR modifier = EU_member_opinion }
+	add_opinion_modifier = { target = SPR modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = SPR modifier = EU_member_opinion }
+	add_opinion_modifier = { target = AUS modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = AUS modifier = EU_member_opinion }
+	add_opinion_modifier = { target = SWE modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = SWE modifier = EU_member_opinion }
+	add_opinion_modifier = { target = FIN modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = FIN modifier = EU_member_opinion }
+	#2017 EU Relations
+	add_opinion_modifier = { target = MLT modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = MLT modifier = EU_member_opinion }
+	add_opinion_modifier = { target = POL modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = POL modifier = EU_member_opinion }
+	add_opinion_modifier = { target = SLO modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = SLO modifier = EU_member_opinion }
+	add_opinion_modifier = { target = SLV modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = SLV modifier = EU_member_opinion }
+	add_opinion_modifier = { target = ROM modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = ROM modifier = EU_member_opinion }
+
+	#2000 NATO Relations
+	add_opinion_modifier = { target = BEL modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = BEL modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = FRA modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = FRA modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = GER modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = GER modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = ITA modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = ITA modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = LUX modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = LUX modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = HOL modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = HOL modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = DEN modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = DEN modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = ENG modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = ENG modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = GRE modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = GRE modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = POR modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = POR modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = SPR modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = SPR modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = POL modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = POL modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = HUN modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = HUN modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = CZE modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = CZE modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = NOR modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = NOR modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = ICE modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = ICE modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = CAN modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = CAN modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = USA modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = USA modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = TUR modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = TUR modifier = NATO_member_modifier }
+	#2017 NATO Relations
+	add_opinion_modifier = { target = EST modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = EST modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = LAT modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = LAT modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = BUL modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = BUL modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = ROM modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = ROM modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = CRO modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = CRO modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = ALB modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = ALB modifier = NATO_member_modifier }
+
+	add_opinion_modifier = { target = SOV modifier = minor_sanctions }
+	set_country_flag = sanctions_against_SOV_flag
+
+	set_popularities = {
+		democratic = 48.6
+		communism = 0.0
+		fascism = 0.0
+		neutrality = 51.4
+		nationalist = 0.0
+	}
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.5.25"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0.049 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.226 } #conservatism
+	set_variable = { party_pop_array^2 = 0.022 } #liberalism
+	set_variable = { party_pop_array^3 = 0.189 } #socialism
+	set_variable = { party_pop_array^4 = 0 } #Communist-State
+	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0.063 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0.056 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0.095 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0.243 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.057 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 17 }
+
+	startup_politics = yes
+
+	create_country_leader = {
+		name = "Dalia Grybauskaitė"
+		picture = "dalia_geybauskaite.dds"
+		ideology = Neutral_green
+		traits = {
+			neutrality_Neutral_green
+		}
+	}
+	set_variable = { current_term = 2 }
+
+	retire_character = LIT_arvydas_pocius
+
+	recruit_character = LIT_ausrius_buikus
+}

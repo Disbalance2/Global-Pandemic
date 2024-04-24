@@ -1,0 +1,43 @@
+state = {
+	id = 489
+	name = "STATE_489"
+
+	history = {
+		owner = NPM
+		victory_points = {
+			10910 1
+		}
+		victory_points = {
+			7374 1
+		}
+		victory_points = {
+			4386 1
+		}
+		victory_points = {
+			14506 1
+		}
+		buildings = {
+			infrastructure = 0
+			internet_station = 0
+			industrial_complex = 1
+
+		}
+		add_core_of = NEP
+		add_core_of = NPM
+		2017.1.1 = {
+			buildings = {
+				internet_station = 0
+				offices = 1
+			}
+			add_manpower = 385847
+			add_manpower = 1259181
+		}
+	}
+
+	provinces = {
+		4386 7374 7198 7206 7346 10825 10910 14506 14507
+	}
+	manpower = 7718973
+	buildings_max_level_factor = 1.000
+	state_category = state_07
+}

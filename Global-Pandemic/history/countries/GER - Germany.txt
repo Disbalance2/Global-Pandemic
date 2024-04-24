@@ -1,662 +1,2663 @@
-﻿# Economic Crisis edit for 0.7.6 alpha
-
-# NOT EDITED POLITICS
-
-# Berlin
-1991.1.1 = { capital = 64 }
-
-
-	add_ideas = {
-		eu_member
-		major_country
-		NPT
-		
-		integration_in_nato
+﻿capital = 45
+2000.1.1 = {
+	set_country_flag = dynamic_flag
+	set_country_flag = dynamic_rebel_flag
+	set_variable = { gdp_per_capita = 42.928 }
+	set_country_flag = country_has_mbt_0_templates
+	set_country_flag = country_has_afv_0_templates
+	set_country_flag = country_has_mbt_1_templates
+	set_country_flag = country_has_afv_1_templates
+	set_country_flag = GER_Grundgesetz
+	set_country_flag = GER_Final_settlement
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "GER_2000_nsb"
+		else = {
+			set_oob = "GER_2000_nonnsb"
+		}
 	}
-	set_war_support = 0.3
-	
-2001.9.1 = {
-	oob = "_army_minor_2013"
-	set_country_flag = pai_nondem_authoritarian
+
+	set_cosmetic_tag = GER
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_naval_oob = "GER_2000_naval_mtg"
+		else = {
+			set_naval_oob = "GER_2000_naval_legacy"
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "GER_2000_bba"
+		else = {
+			set_air_oob = "GER_2000_nonbba"
+		}
+	}
+	set_convoys = 150
+	# East vs West divide mechanic
+	set_variable = { GER_east_opinion_min = 0 } 	#Minimum amount of Insurgent Strength
+	set_variable = { GER_east_opinion_max = 100 }		#Maximum amount of Insurgent Strength
+	set_variable = { GER_east_opinion = 45 }			#Starting Insurgent Strength
+	set_variable = { GER_east_opinion_gain = 0 }	# Events will randomly decrease East German opinion
+
+
+	set_variable = { GER_event_counter_1_dielinke = 2 } #
+	set_variable = { GER_event_counter_1_egerman = 2 } #
+	#
+	set_variable = { GER_bavarian_nationalism_var = 17 }
+	#
+	set_variable = { GER_islamist_spending_level = 1 }	# Islamist spending level (LOW)
+	set_variable = { GER_islamist_department_status = 40 } #Islamist department stability
+	#
+	set_variable = { GER_rightwing_spending_level = 2 }	# Right-wing spending level (MED)
+	set_variable = { GER_rightwing_department_status = 35 } #Right-wing department stability
+	#
+	set_variable = { GER_leftwing_spending_level = 2 }	# Left-wing spending level (MED)
+	set_variable = { GER_leftwing_department_status = 25 } #Left-wing department stability
+	#
+	set_country_flag = GER_no_nuclear #Disables nuclear weapons for Germany
+	set_country_flag = GER_RIGHTISTS_ARE_CONTROLLED
+	set_country_flag = GER_ISLAMISTS_ARE_CONTROLLED
+	set_country_flag = GER_LEFTISTS_ARE_ACTIVE
+	#Bavarians will hold an opinion of you. If your economy starts going down hill, then their opinion will go down too, raising their nationalism
+	add_ideas = {
+		#Economic Cycle
+		stable_growth
+		#Corruption (SPD in 2000, especially Schroder was pretty corrupt)
+		medium_corruption
+		#Faction 1
+		industrial_conglomerates
+		#Faction 2
+		Labour_Unions
+		#Faction 3
+		small_medium_business_owners
+
+		#Bureacracy
+		bureau_02
+		#Military Spending
+		defence_02
+		#Internal Security
+		police_02
+		#Education budget
+		edu_04
+		#Health budget
+		health_05
+		#Social spending
+		social_06
+
+		#Trade Law
+		semi_consumption_economy
+		#Conscription Law
+		partial_draft_army
+		#Women in the military
+		no_women_in_military
+		#Foreign Intervention Law
+		intervention_limited_interventionism
+		#Officer Training
+		officer_international_education
+
+		#Other
+		christian
+		german_legacy
+		EU_member
+		g7_member
+		NATO_member
+		western_country
+		medium_far_right_movement
+		GER_idea_unemployment_crisis
+		the_euro
+		GER_idea_okosteuer
+		GER_idea_aging_population
+		GER_idea_war_reparations
+		GER_idea_germany_divided
+		GER_idea_bfv_islamist_low
+		GER_idea_bfv_rightwing_med
+		GER_idea_bfv_leftwing_med
+		GER_idea_Cold_War_Army
+		NATO_idea_Nuclear_sharing_Groupe
+	}
+
+	add_dynamic_modifier = { modifier = GER_Bundeswehr_modifier }
+
+	#working ones
+	set_variable = { GER_recon_factor = 0.05 }
+	set_variable = { GER_Army_defence = 0.05 }
+
+
+	#Army decision
+
+	set_power_balance = {
+		id = GER_power_balance
+		left_side = GER_default_left_side
+		right_side = GER_default_right_side
+		set_value = -0.1
+	}
+
+	#Cyber
+	add_to_array = { cyber_targets = ENG }
+	add_to_array = { cyber_targets = CHI }
+	add_to_array = { cyber_targets = FRA }
+	add_to_array = { cyber_targets = PER }
+	add_to_array = { cyber_targets = NKO }
+	add_to_array = { cyber_targets = SOV }
+	add_to_array = { cyber_targets = USA }
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 664 }
+	add_to_array = { influence_array = FRA.id }
+	add_to_array = { influence_array_val = 48 }
+	add_to_array = { influence_array = ENG.id }
+	add_to_array = { influence_array_val = 15 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 38 }
+	add_to_array = { influence_array = ITA.id }
+	add_to_array = { influence_array_val = 7 }
+	add_to_array = { influence_array = CHI.id }
+	add_to_array = { influence_array_val = 1 }
+	add_to_array = { influence_array = POL.id }
+	add_to_array = { influence_array_val = 3 }
+	add_to_array = { influence_array = SOV.id }
+	add_to_array = { influence_array_val = 47 }
+	startup_influence = yes
+
+	set_variable = { industrial_conglomerates_opinion = 80 }
+	set_variable = { small_medium_business_owners = 75 }
+
+	set_variable = { var = debt value = 1351.4 }
+	set_variable = { var = treasury value = 128 }
+	set_variable = { var = corporate_tax_rate value = 18 }
+	set_variable = { var = population_tax_rate value = 44 }
+	set_variable = { var = int_investments value = 112 }
+	#
+	set_variable = { overall_productivity = 1091 }
+	# EAST v WEST STATE PRODUCTIVITY
+	#East
+	539 = { set_variable = { productivity_state_var = 800 } }
+	1079 = { set_variable = { productivity_state_var = 800 } }
+	44 = { set_variable = { productivity_state_var = 800 } }
+	972 = { set_variable = { productivity_state_var = 800 } }
+	545 = { set_variable = { productivity_state_var = 800 } }
+	45 = { set_variable = { productivity_state_var = 1250 } } #Berlin
+	#West
+	37 = { set_variable = { productivity_state_var = 1200 } }
+	1080 = { set_variable = { productivity_state_var = 1200 } }
+	38 = { set_variable = { productivity_state_var = 1200 } }
+	964 = { set_variable = { productivity_state_var = 1200 } }
+	43 = { set_variable = { productivity_state_var = 1200 } }
+	42 = { set_variable = { productivity_state_var = 1200 } }
+	41 = { set_variable = { productivity_state_var = 1200 } }
+	39 = { set_variable = { productivity_state_var = 1200 } }
+	966 = { set_variable = { productivity_state_var = 1200 } }
+	40 = { set_variable = { productivity_state_var = 1300 } } #Rhine
+	967 = { set_variable = { productivity_state_var = 1200 } }
+
+	# Investment Targets
+	add_to_array = { GER.investment_targets = AUS } # Austria
+	add_to_array = { GER.investment_targets = DEN } # Denmark
+	add_to_array = { GER.investment_targets = ITA } # Italy
+	add_to_array = { GER.investment_targets = HOL } # Netherlands
+	add_to_array = { GER.investment_targets = BEL } # Belgium
+	add_to_array = { GER.investment_targets = NOR } # Norway
+	add_to_array = { GER.investment_targets = SWE } # Sweden
+	add_to_array = { GER.investment_targets = FIN } # Finland
+	add_to_array = { GER.investment_targets = ENG } # United Kingdom
+	add_to_array = { GER.investment_targets = FRA } # France
+	add_to_array = { GER.investment_targets = SPR } # Spain
+	add_to_array = { GER.investment_targets = POR } # Portugal
+	add_to_array = { GER.investment_targets = POL } # Poland
+	add_to_array = { GER.investment_targets = EST } # Estonia
+	add_to_array = { GER.investment_targets = LAT } # Latvia
+	add_to_array = { GER.investment_targets = LIT } # Lithuania
+	add_to_array = { GER.investment_targets = UKR } # Ukraine
+	add_to_array = { GER.investment_targets = CZE } # Czech Republic
+	add_to_array = { GER.investment_targets = SWI } # Switzerland
+	add_to_array = { GER.investment_targets = LIC } # Liechenstein
+	add_to_array = { GER.investment_targets = LUX } # Luxembourg
+	add_to_array = { GER.investment_targets = IRE } # Ireland
+	add_to_array = { GER.investment_targets = ICE } # Iceland
+	add_to_array = { GER.investment_targets = GRE } # Greece
+	add_to_array = { GER.investment_targets = FYR } # Macedonia
+	add_to_array = { GER.investment_targets = BUL } # Bulgaria
+	add_to_array = { GER.investment_targets = ROM } # Romania
+	add_to_array = { GER.investment_targets = HUN } # Hungary
+	add_to_array = { GER.investment_targets = SER } # Serbia
+	add_to_array = { GER.investment_targets = BOS } # Bosnia
+	add_to_array = { GER.investment_targets = SLV } # Slovenia
+	add_to_array = { GER.investment_targets = SLO } # Slovak Republic
+	add_to_array = { GER.investment_targets = CAN } # Canada
+	add_to_array = { GER.investment_targets = MEX } # Mexico
+	add_to_array = { GER.investment_targets = USA } # United States
+	add_to_array = { GER.investment_targets = CHL } # Chile
+	add_to_array = { GER.investment_targets = BRA } # Brazil
+	add_to_array = { GER.investment_targets = ARG } # Argentina
+	add_to_array = { GER.investment_targets = COL } # Colombia
+	add_to_array = { GER.investment_targets = ECU } # Ecuador
+	add_to_array = { GER.investment_targets = ISR } # Israel
+	add_to_array = { GER.investment_targets = CHI } # China
+	add_to_array = { GER.investment_targets = JAP } # Japan
+	add_to_array = { GER.investment_targets = RAJ } # India
+	add_to_array = { GER.investment_targets = AST } # Australia
+	add_to_array = { GER.investment_targets = NZL } # New Zealand
+	add_to_array = { GER.investment_targets = NIG } # Nigeria
+	add_to_array = { GER.investment_targets = ETH } # Ethiopia
+	add_to_array = { GER.investment_targets = SAF } # South Africa
+
+	set_country_flag = investment_targets_are_set_up
+
+	add_opinion_modifier = { target = AUS modifier = german_speaking }
+	reverse_add_opinion_modifier = { target = AUS modifier = german_speaking }
+	add_opinion_modifier = { target = SWI modifier = german_speaking }
+	reverse_add_opinion_modifier = { target = SWI modifier = german_speaking }
+
+	add_opinion_modifier = { target = BEL modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = BEL modifier = EU_member_opinion }
+	add_opinion_modifier = { target = FRA modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = FRA modifier = EU_member_opinion }
+	add_opinion_modifier = { target = DEN modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = DEN modifier = EU_member_opinion }
+	add_opinion_modifier = { target = AUS modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = AUS modifier = EU_member_opinion }
+	add_opinion_modifier = { target = FIN modifier = EU_member_opinion }
+	reverse_add_opinion_modifier = { target = FIN modifier = EU_member_opinion }
+
+	#2000 NATO Relations
+	add_opinion_modifier = { target = BEL modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = BEL modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = ITA modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = ITA modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = GRE modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = GRE modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = POR modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = POR modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = SPR modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = SPR modifier = NATO_member_modifier }
+	add_opinion_modifier = { target = NOR modifier = NATO_member_modifier }
+	reverse_add_opinion_modifier = { target = NOR modifier = NATO_member_modifier }
+
+	add_opinion_modifier = { target = HOL modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = HOL modifier = large_commercial_relations }
+	add_opinion_modifier = { target = FRA modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = FRA modifier = large_commercial_relations }
+	add_opinion_modifier = { target = CZE modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = CZE modifier = large_commercial_relations }
+	add_opinion_modifier = { target = ITA modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = ITA modifier = large_commercial_relations }
+	add_opinion_modifier = { target = AUS modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = AUS modifier = large_commercial_relations }
+	add_opinion_modifier = { target = POL modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = POL modifier = large_commercial_relations }
+	add_opinion_modifier = { target = BEL modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = BEL modifier = large_commercial_relations }
+	add_opinion_modifier = { target = SWI modifier = large_commercial_relations }
+	reverse_add_opinion_modifier = { target = SWI modifier = large_commercial_relations }
+
+	set_technology = {
+
+		reactor1 = 1
+		reactor2 = 1
+		reactor3 = 1
+		reactor4 = 1
+		reactor5 = 1
+		reactor6 = 1
+		integrated_transportation_system = 1
+		post_conventional_rail = 1
+		early_freight_locomotive = 1
+
+		legacy_doctrines = 1
+		combined_arms = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		infantry_weapons3 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		tandem_charge_warheads = 1
+		squad_automatic_weapon = 1
+		special_forces = 1
+		special_forces2 = 1
+		command_control_equipment = 1
+		command_control_equipment1 = 1
+		command_control_equipment2 = 1
+		command_control_equipment3 = 1
+
+		land_Drone_equipment = 1
+		land_Drone_equipment1 = 1
+		land_Drone_equipment2 = 1
+
+		Anti_tank_0 = 1
+		Anti_tank_1 = 1
+		Anti_tank_2 = 1
+
+		AT_upgrade_1 = 1
+		AT_upgrade_2 = 1
+
+		Heavy_Anti_tank_0 = 1
+		Heavy_Anti_tank_1 = 1
+		Heavy_Anti_tank_2 = 1
+
+		combat_eng_equipment = 1
+
+		util_vehicle_0 = 1
+		util_vehicle_1 = 1
+		util_vehicle_2 = 1
+		util_vehicle_3 = 1
+		util_vehicle_4 = 1
+
+		landing_craft = 1
+
+		night_vision_1 = 1
+		night_vision_2 = 1
+		night_vision_3 = 1
+
+		body_armor_1980 = 1
+		body_armor_2000 = 1
+		camouflage = 1
+		camouflage2 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+		microprocessors = 1
+		computing2 = 1
+		decryption2 = 1
+		encryption2 = 1
+		radar = 1
+		internet1 = 1 	#1G
+		internet2 = 1 	#2G
+		gprs = 1
+		fuel_silos = 1
+
+		industrial_electrospun_polymeric_nanofibers = 1
+		multiwalled_carbon_nanotubes = 1
+		modern_electrospinning = 1
+		stereolitography = 1
+		early_3D_printers = 1
+		t3D_wax_printer = 1
+		DNA_fingerprinting = 1
+		modern_gmo = 1
+		fuel_refining = 1
+		fuel_refining2 = 1
+		energy_efficiency = 1
+		energy_efficiency2 = 1
+		fuel_efficiency = 1
+		early_renewables = 1
+		renewables = 1
+		electrification_1 = 1
+		construction1 = 1
+		construction2 = 1
+		excavation1 = 1
+		excavation2 = 1
+
+		early_helicopter = 1
+
+		transport_helicopter1 = 1
+		transport_helicopter2 = 1
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			corvette_hull_1 = 1
+			corvette_hull_2 = 1
+			corvette_hull_3 = 1
+
+			frigate_hull_1 = 1
+			frigate_hull_2 = 1
+			frigate_hull_3 = 1
+
+			destroyer_hull_1 = 1
+			destroyer_hull_2 = 1
+
+			attack_submarine_hull_1 = 1
+			attack_submarine_hull_2 = 1
+			attack_submarine_hull_3 = 1
+
+			missile_submarine_hull_1 = 1
+
+			aircraft_carrier_engineering = 1
+			aircraft_heli_engineering_1 = 1
+
+			tech_submarine_engineering = 1
+
+			tech_naval_systems_engineering = 1
+			tech_power_systems = 1
+			tech_power_systems_1 = 1
+			tech_nuclear_power_systems = 1
+
+			tech_combat_support_systems = 1
+			tech_fire_control = 1
+			tech_fire_control_1 = 1
+			tech_combat_radar = 1
+			tech_combat_radar_1 = 1
+			tech_combat_radar_2 = 1
+			tech_combat_sonar = 1
+			tech_combat_sonar_1 = 1
+			tech_combat_sonar_2 = 1
+
+			tech_early_naval_weapon_systems = 1
+			tech_naval_weapon_systems = 1
+			tech_light_guns = 1
+			tech_light_guns_1 = 1
+
+			tech_point_defense_system = 1
+			tech_point_defense_system_1 = 1
+			tech_point_defense_system_2 = 1
+			tech_point_defense_system_3 = 1
+
+			tech_missile_systems = 1
+			tech_turret_missiles_surface = 1
+			tech_turret_missiles_surface_1 = 1
+
+			tech_turret_missiles_aa = 1
+			tech_turret_missiles_aa_1 = 1
+
+			tech_vls_surface = 1
+			tech_vls_surface_1 = 1
+
+			tech_vls_aa = 1
+			tech_vls_aa_1 = 1
+
+			tech_torpedoes = 1
+			tech_torpedoes_1 = 1
+
+			tech_mtg_landing_craft = 1
+		}
+
+		else = {
+			set_technology = {
+				corvette_1 = 1
+				corvette_2 = 1
+				missile_corvette_1 = 1
+
+				frigate_1 = 1
+				frigate_2 = 1 #Bremen class
+				missile_frigate_1 = 1
+				missile_frigate_2 = 1 #Brandenburg class
+				missile_frigate_3 = 1
+
+				submarine_1 = 1
+				diesel_attack_submarine_1 = 1
+				diesel_attack_submarine_2 = 1 #type 206
+				diesel_attack_submarine_3 = 1
+				diesel_attack_submarine_4 = 1
+
+				#Lütjens-Class
+				destroyer_1 = 1
+			}
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			small_medium_gun_tech = 1
+			medium_gun_tech = 1
+			medium_gun_tech_2 = 1
+			large_gun_tech = 1
+			mbt_tech = 1
+			mbt_tech_1 = 1
+			mbt_tech_2 = 1
+			diesel_engine_tech = 1
+			diesel_engine_tech_2 = 1
+			diesel_engine_tech_3 = 1
+			diesel_engine_tech_4 = 1
+			tank_components_tech = 1
+			tank_components_tech_2 = 1
+			tank_components_tech_3 = 1
+			armor_tech = 1
+			armor_tech_2 = 1
+			afv_tech = 1
+			afv_tech_1 = 1
+			afv_tech_2 = 1
+			small_autocannon_tech = 1
+			small_autocannon_tech_2 = 1
+			assault_gun_tech = 1
+			assault_gun_tech_2 = 1
+			nsb_artillery_0 = 1
+			nsb_Arty_upgrade_1 = 1
+			nsb_artillery_1 = 1
+			nsb_Arty_upgrade_2 = 1
+			nsb_Arty_upgrade_3 = 1
+			nsb_SP_arty_1 = 1
+			nsb_SP_arty_2 = 1
+			nsb_SP_Anti_Air_0 = 1
+			nsb_Anti_Air_0 = 1
+			nsb_Anti_Air_0 = 1
+			nsb_Anti_Air_1 = 1
+			nsb_AA_upgrade_1 = 1
+			nsb_AA_upgrade_2 = 1
+			nsb_AA_upgrade_3 = 1
+			nsb_SP_Anti_Air_0 = 1
+			nsb_SP_Anti_Air_1 = 1
+			light_tank_tech = 1
+			light_tank_tech_1 = 1
+			light_tank_tech_2 = 1
+			nsb_attack_helicopter_tech_1 = 1
+			nsb_attack_helicopter_tech_2 = 1
+		}
+
+		create_equipment_variant = {
+			name = "Leopard 1"
+			type = mbt_hull_0
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_medium_cannon
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_1		#Battlestation
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_2"
+		}
+		create_equipment_variant = {
+			name = "Leopard 1A1"
+			type = mbt_hull_0
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 1
+			modules = {
+				main_armament_slot = tank_small_medium_cannon
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_1		#Battlestation
+				special_type_slot_5 = spaced_armor_gen1		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_2"
+		}
+		create_equipment_variant = {
+			name = "Leopard 1A2"
+			type = mbt_hull_0
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 2
+			modules = {
+				main_armament_slot = tank_small_medium_cannon
+				turret_type_slot = tank_soviet_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_1		#Battlestation
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_2"
+		}
+		create_equipment_variant = {
+			name = "Leopard 1A3"
+			type = mbt_hull_0
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 3
+			modules = {
+				main_armament_slot = tank_small_medium_cannon
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_1		#Battlestation
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_2"
+		}
+		create_equipment_variant = {
+			name = "Leopard 1A4"
+			type = mbt_hull_0
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 4
+			modules = {
+				main_armament_slot = tank_small_medium_cannon
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_2		#Battlestation
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_2"
+		}
+		create_equipment_variant = {
+			name = "Leopard 1A5"
+			type = mbt_hull_0
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 5
+			modules = {
+				main_armament_slot = tank_small_medium_cannon
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				reload_type_slot = manual_loading
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_3		#Battlestation
+				special_type_slot_5 = spaced_armor_gen2		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_2"
+		}
+		add_equipment_to_stockpile = {
+			type = mbt_hull_0
+			variant_name = "Leopard 1A5"
+			amount = 670
+			producer = GER
+		}
+		create_equipment_variant = {
+			name = "Leopard 2"
+			type = mbt_hull_1
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen4
+				reload_type_slot = manual_loading
+				special_type_slot_1 = smoke_launchers
+				special_type_slot_2 = wet_ammo_storage
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_2		#Battlestation
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_3"
+		}
+		create_equipment_variant = {
+			name = "Leopard 2A4"
+			type = mbt_hull_1
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 1
+			modules = {
+				main_armament_slot = tank_medium_cannon
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen4
+				reload_type_slot = manual_loading
+				special_type_slot_1 = smoke_launchers
+				special_type_slot_2 = wet_ammo_storage
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_3		#Battlestation
+				special_type_slot_5 = empty		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			obsolete = yes
+			icon = "GFX_GER_MBT_3"
+		}
+		add_equipment_to_stockpile = {
+			type = mbt_hull_1
+			variant_name = "Leopard 2A4"
+			amount = 1503
+			producer = GER
+		}
+		create_equipment_variant = {
+			name = "Leopard 2A5"
+			type = mbt_hull_1
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 2
+			modules = {
+				main_armament_slot = tank_medium_cannon
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen4
+				reload_type_slot = manual_loading
+				special_type_slot_1 = smoke_launchers_2
+				special_type_slot_2 = wet_ammo_storage
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_3		#Battlestation
+				special_type_slot_5 = spaced_armor_gen2		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			icon = "GFX_GER_MBT_4"
+		}
+		add_equipment_to_stockpile = {
+			type = mbt_hull_1
+			variant_name = "Leopard 2A5"
+			amount = 225
+			producer = GER
+		}
+
+#Placeholder don´t be sure if M113 should be better
+		create_equipment_variant = {
+			name = "UR-416"
+			type = apc_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_no_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 0
+			}
+			obsolete = yes
+			icon = "GFX_GER_APC_1"
+		}
+
+		create_equipment_variant = {
+			name = "Condor"
+			type = apc_hull_0
+			parent_version = 1
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_base_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_GER_APC_1"
+		}
+
+		create_equipment_variant = {
+			name = "Tpz-1 Fuchs"
+			type = apc_hull_1
+			design_team = mio:GER_rheinmetall_tank_manufacturer
+			parent_version = 2
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_no_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				special_type_slot_1 = afv_additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 1
+			}
+			icon = "GFX_GER_APC_3"
+		}
+
+		create_equipment_variant = {
+			name = "TPZ-1 Fuchs A4 ESB"
+			type = apc_hull_1
+			design_team = mio:GER_rheinmetall_tank_manufacturer
+			parent_version = 3
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_no_turret
+				suspension_type_slot = afv_tracked_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				special_type_slot_1 = afv_additional_machine_guns
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = afv_atgm_gen1
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 1
+			}
+			icon = "GFX_GER_APC_4"
+		}
+
+		create_equipment_variant = {
+			name = "Schützenpanzer H-30"
+			type = ifv_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = small_autocannon
+				turret_type_slot = afv_base_turret
+				suspension_type_slot = afv_torsion_bar_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen1
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 3
+			}
+			obsolete = yes
+			icon = "GFX_GER_IFV_1"
+		}
+
+		create_equipment_variant = {
+			name = "Marder 1A3"
+			type = ifv_hull_1
+			design_team = mio:GER_rheinmetall_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = small_autocannon_2
+				turret_type_slot = afv_base_turret
+				suspension_type_slot = afv_torsion_bar_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				special_armament_type_slot = afv_coax_machine_gun
+				special_type_slot_1 = afv_additional_machine_guns
+				special_type_slot_2 = afv_atgm_gen1
+				special_type_slot_3 = smoke_launchers_2
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 4
+			}
+			obsolete = yes
+			icon = "GFX_GER_IFV_2"
+		}
+		add_equipment_to_stockpile = {
+			type = ifv_hull_1
+			variant_name = "Marder 1A3"
+			amount = 2122
+		}
+
+		create_equipment_variant = {
+			name = "Marder 1A4"
+			type = ifv_hull_1
+			design_team = mio:GER_rheinmetall_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = small_autocannon_2
+				turret_type_slot = afv_base_turret
+				suspension_type_slot = afv_torsion_bar_suspension
+				armor_type_slot = afv_steel_armor_gen1
+				engine_type_slot = tank_diesel_engine_gen2
+				special_armament_type_slot = afv_coax_machine_gun
+				special_type_slot_1 = afv_additional_machine_guns
+				special_type_slot_2 = afv_atgm_gen1
+				special_type_slot_3 = smoke_launchers_2
+				special_type_slot_4 = afv_battlestation_2
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 4
+			}
+			icon = "GFX_GER_IFV_4"
+		}
+
+#		create_equipment_variant = {
+#			name = "Wiesel 1A1 MK"
+#			type = ifv_hull_1
+#			parent_version = 0
+#			modules = {
+#				main_armament_slot = small_autocannon_2
+#				turret_type_slot = afv_base_turret
+#				suspension_type_slot = afv_torsion_bar_suspension
+#				armor_type_slot = afv_steel_armor_gen1
+#				engine_type_slot = tank_diesel_engine_gen2
+#				special_type_slot_3 = smoke_launchers_2
+#				special_type_slot_4 = afv_battlestation_1
+#			}
+#			upgrades = {
+#				afv_nsb_armor_upgrade = 0
+#			}
+#			obsolete = yes
+#			icon = "GFX_GER_Rec_tank_1_medium"
+#		}
+
+		create_equipment_variant = {
+			name = "LARS 110"
+			type = spart_hull_0
+			parent_version = 0
+			modules = {
+				arty_main_armament_slot = art_small_rocket_gen1
+				chassis_type_slot = chassis_truck_gen0
+				engine_type_slot = afv_gasoline_engine_gen2
+				conversion_type_slot = empty
+				special_type_slot_4 = art_battlestation_gen1
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 0
+			}
+			obsolete = yes
+			icon = "GFX_spart_hull_0_t_r"
+		}
+		add_equipment_to_stockpile = {
+			type = spart_hull_0
+			variant_name = "LARS 110"
+			amount = 50
+		}
+
+		create_equipment_variant = {
+			name = "PZH 2000"
+			type = spart_hull_1
+			design_team = mio:GER_rheinmetall_tank_manufacturer
+			parent_version = 0
+			modules = {
+				arty_main_armament_slot = art_med_gun_gen2
+				chassis_type_slot = chassis_tank_gen1
+				engine_type_slot = tank_diesel_engine_gen3
+				conversion_type_slot = empty
+				special_type_slot_1 = support_ammo_medium_gen2
+				special_type_slot_2 = rocket_assisted_ammo_gun_medium_gen2
+				special_type_slot_3 = laser_ammo_gun_medium_gen2
+				special_type_slot_4 = art_battlestation_gen2
+			}
+			upgrades = {
+				art_nsb_fire_upgrade = 3
+			}
+			icon = "GFX_spart_hull_2_t"
+		}
+		add_equipment_to_stockpile = {
+			type = spart_hull_1
+			variant_name = "PZH 2000"
+			amount = 165
+		}
+		create_equipment_variant = {
+			name = "FlaRakPz 1 Roland II"
+			type = spaa_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = spaa_short_range_missiles_1
+				chassis_type_slot = spaa_chassis_afv_gen0
+				engine_type_slot = tank_diesel_engine_gen3
+				radar_type_slot = spaa_radar_gen2
+				spaa_secondary_armament = empty
+				special_type_slot_1 = smoke_launchers
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = spaa_battlestation_gen2
+			}
+			upgrades = {
+				spaa_nsb_fire_upgrade = 2
+			}
+			icon = "GFX_GER_SP_Anti_Air_1_medium"
+		}
+		#Iranian Maggot stuff below
+		create_equipment_variant = {
+			name = "FlakPz Gepard 1A2"
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			type = spaa_hull_0
+			parent_version = 1
+			modules = {
+				main_armament_slot = spaa_autocannon_1
+				chassis_type_slot = spaa_chassis_tank_gen0
+				engine_type_slot = tank_diesel_engine_gen3
+				radar_type_slot = spaa_radar_gen2
+				spaa_secondary_armament = empty
+				special_type_slot_1 = smoke_launchers
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = empty
+				special_type_slot_4 = spaa_battlestation_gen2
+			}
+			upgrades = {
+				spaa_nsb_fire_upgrade = 2
+			}
+			icon = "GFX_GER_SP_Anti_Air_1_medium"
+		}
+		create_equipment_variant = {
+			name = "FlakPz Gepard 1A"
+			type = spaa_hull_0
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = spaa_autocannon_1
+				chassis_type_slot = spaa_chassis_tank_gen0
+				engine_type_slot = tank_diesel_engine_gen3
+				radar_type_slot = spaa_radar_gen1
+				spaa_secondary_armament = empty
+				special_type_slot_1 = smoke_launchers
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = empty
+				special_type_slot_4 = spaa_battlestation_gen1
+			}
+			upgrades = {
+				spaa_nsb_fire_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_GER_SP_Anti_Air_1_medium"
+		}
+
+		create_equipment_variant = {
+			name = "SPz 11-2 Kurz"
+			type = light_tank_hull_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = apc_small_autocannon
+				turret_type_slot = afv_base_turret
+				chassis_type_slot = chassis_tracked_afv_gen0
+				armor_type_slot = afv_steel_armor_gen2
+				engine_type_slot = afv_gasoline_engine_gen1
+				reload_type_slot = light_tank_afv_automatic_loading
+				special_armament_type_slot = smoke_launchers
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = afv_battlestation_1
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 2
+			}
+			obsolete = yes
+			icon = "GFX_GER_IFV_1"
+		}
+		create_equipment_variant = {
+			name = "TPz-Fuchs"
+			type = light_tank_hull_1
+			design_team = mio:GER_rheinmetall_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_no_turret
+				chassis_type_slot = chassis_wheeled_afv_gen1
+				engine_type_slot = tank_diesel_engine_gen3
+				armor_type_slot = afv_steel_armor_gen1
+				reload_type_slot = light_tank_afv_automatic_loading
+				special_armament_type_slot = smoke_launchers
+				special_type_slot_1 = afv_additional_machine_guns
+				special_type_slot_4 = afv_battlestation_2
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 0
+			}
+			icon = "GFX_GER_APC_4"
+		}
+		create_equipment_variant = {
+			name = "Spähpanzer 2 Luchs"
+			type = light_tank_hull_1
+			design_team = mio:GER_rheinmetall_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = apc_small_autocannon_2
+				turret_type_slot = afv_base_turret
+				chassis_type_slot = chassis_wheeled_afv_gen1
+				engine_type_slot = tank_diesel_engine_gen3
+				armor_type_slot = afv_steel_armor_gen1
+				reload_type_slot = light_tank_afv_automatic_loading
+				special_armament_type_slot = smoke_launchers
+				special_type_slot_1 = afv_additional_machine_guns
+				special_type_slot_4 = afv_battlestation_2
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 0
+			}
+			icon = "GFX_GER_Luchs"
+		}
+		create_equipment_variant = {
+			name = "Fennek"
+			type = light_tank_hull_2
+			design_team = mio:GER_krauss_maffei_tank_manufacturer
+			parent_version = 0
+			modules = {
+				main_armament_slot = afv_machine_gun
+				turret_type_slot = afv_no_turret
+				chassis_type_slot = chassis_wheeled_afv_gen3
+				engine_type_slot = tank_diesel_engine_gen3
+				armor_type_slot = afv_steel_armor_gen2
+				reload_type_slot = light_tank_afv_automatic_loading
+				special_armament_type_slot = smoke_launchers
+				special_type_slot_4 = afv_battlestation_3
+			}
+			upgrades = {
+				afv_nsb_armor_upgrade = 0
+			}
+			icon = "GFX_GER_util_vehicle_3_medium"
+		}
+		create_equipment_variant = {
+			name = "MBB Bo 105"
+			type = attack_helicopter_hull_0
+			design_team = mio:GER_MBB_helicopters_tank_manufacturer
+			parent_version = 0
+			modules = {
+				helicopter_inner_hardpoint = helicopter_multiple_atgm_gen1
+				nose_gun_type_slot = empty
+				armor_type_slot = empty
+				engine_type_slot = helicopter_turbine_engine_gen1
+				defence_type_slot = flare_launchers
+				sensor_and_avionics_slot = sensors_and_avionics_gen_1
+				helicopter_middle_hardpoint_1 = empty
+			}
+			upgrades = {
+				helicopter_nsb_upgrade = 0
+			}
+			icon = "GFX_USA_attack_helicopter1_medium"
+		}
+		else = {
+			set_technology = {
+				MBT_1 = 1
+				MBT_2 = 1
+				MBT_3 = 1
+				MBT_4 = 1
+				Early_APC = 1
+				IFV_1 = 1
+				IFV_2 = 1
+				IFV_3 = 1
+				IFV_4 = 1
+				APC_1 = 1
+				APC_2 = 1
+				APC_3 = 1
+				APC_4 = 1
+				APC_5 = 1
+				artillery_0 = 1
+				Arty_upgrade_1 = 1
+				artillery_1 = 1
+				Arty_upgrade_2 = 1
+				Arty_upgrade_3 = 1
+				SP_arty_0 = 1
+				SP_arty_1 = 1
+				SP_arty_2 = 1
+				SP_R_arty_0 = 1
+				SP_R_arty_1 = 1
+				Anti_Air_0 = 1
+				Anti_Air_1 = 1
+				AA_upgrade_1 = 1
+				AA_upgrade_2 = 1
+				AA_upgrade_3 = 1
+				SP_Anti_Air_0 = 1
+				SP_Anti_Air_1 = 1
+				Rec_tank_0 = 1
+				Rec_tank_1 = 1
+				Rec_tank_2 = 1
+				attack_helicopter1 = 1
+				attack_helicopter2 = 1
+				attack_helicopter3 = 1
+			}
+		}
+	}
+
+	set_popularities = {
+		democratic = 82.3
+		fascism = 0
+		communism = 6.4
+		neutrality = 7.5
+		nationalist = 3.8
+	}
 	set_politics = {
-		ruling_party = communism
-		last_election = "1998.10.27"
-		election_frequency = 50
+		ruling_party = democratic
+		last_election = "1997.4.19"
+		election_frequency = 48
 		elections_allowed = yes
 	}
-}
-2013.11.1 = {
-	set_variable = { budget_last_year = 375300 }
 
-	load_oob = "GER_tech_2013"
-	oob = "GER_2013"
-	
-	# government
-	add_ideas = {
-		GER_Angela_Merkel_hog
-		GER_Thomas_de_Maiziere_defm
-		GER_Frank_Walter_Steinmeier_fgm
-		GER_Philipp_Rosler_ecm
-		GER_Hans_Georg_Maassen_ssch
-		GER_Volker_Wieker_chogs
-		GER_Ulrich_Birkenheier_isch
-		GER_Jorg_Vollmer_chogf
-		GER_Andreas_Krause_chonf
-		GER_Karl_Mullner_choaf
-	# laws
-		parliamentary_republic
-		federation
-		secular_state
-		mixed_media
-		fully_guranted_liberties
-		contract_army 
-		mixed_schools
-		schengen_area_immigration
-		mixed_economic
-		state-owned_enterprise
-		
-		balanced_industry
-		civilian_economy
-		high_taxes
-		total_social_security
-		pensions
-		average_terrorism
+	start_politics_input = yes
+
+	set_variable = { party_pop_array^1 = 0.351 }
+	set_variable = { party_pop_array^2 = 0.062 }
+	set_variable = { party_pop_array^3 = 0.409 }
+	set_variable = { party_pop_array^4 = 0.001 }
+	set_variable = { party_pop_array^5 = 0.063 }
+	set_variable = { party_pop_array^11 = 0.001 }
+	set_variable = { party_pop_array^14 = 0.001 }
+	set_variable = { party_pop_array^16 = 0.001 }
+	set_variable = { party_pop_array^17 = 0.070 }
+	set_variable = { party_pop_array^19 = 0.003 }
+	set_variable = { party_pop_array^20 = 0.018 }
+	set_variable = { party_pop_array^21 = 0.003 }
+
+	#Government:
+	add_to_array = { ruling_party = 3 } #socialist
+	add_to_array = { gov_coalition_array = 17 } #Neutral_green
+
+	#1998 election results
+	set_variable = { party_pop_elect_array^1 = 0.352 } #conservatism - CDU
+	set_variable = { party_pop_elect_array^2 = 0.062 } #liberalism - FPD
+	set_variable = { party_pop_elect_array^3 = 0.409 } #socialist - SPD
+	set_variable = { party_pop_elect_array^5 = 0.069 } #anarchist_communism
+	set_variable = { party_pop_elect_array^17 = 0.067 } #Neutral_green - Die Grune
+
+	startup_politics = yes
+
+	create_country_leader = {
+		name = "Gerhard Schröder"
+		picture = "Gerhard_Schroeder.dds"
+		expire = "2002.6.10"
+		ideology = socialism
+		traits = {
+			lawyer
+			western_socialism
+			pro_russia
+		}
 	}
 
-	set_stability = 0.5
-	add_political_power = 0
-	set_convoys = 50
-	create_intelligence_agency = yes
-	
-	set_country_flag = pai_democrat_neutral
+#Airforce
+	recruit_character = GER_rolf_portz
+	recruit_character = GER_gerhard_back
+	recruit_character = GER_klaus_peter_stieglitz
+	recruit_character = GER_harald_kujat
+	recruit_character = GER_ulf_von_krause
+#Army
+	recruit_character = GER_helmut_willmann
+	recruit_character = GER_Rudiger_Drews
+	recruit_character = GER_klaus_reinhardt
+	recruit_character = GER_Hans-Joachim_Frohlich
+	recruit_character = GER_gert_gudera
+	recruit_character = GER_egon_ramms
+	recruit_character = GER_Friedrich_Riechmann
+	recruit_character = GER_Werner_Widder
+	recruit_character = GER_Karl-Heinz_Lather
+	recruit_character = GER_Jürgen_Ruwe
+	recruit_character = GER_Horst_Forster
+	recruit_character = GER_Holger_Kammerhoff
+	recruit_character = GER_Wolfgang_Korte
+	recruit_character = GER_Kersten_Lahl
+	recruit_character = GER_hans_otto_budde
+	recruit_character = GER_Hans-Christian_Beck
+	recruit_character = GER_wolfgang_schneiderhan
+	recruit_character = GER_werner_freers
+	recruit_character = GER_hans-peter_von_kirchbach
+	recruit_character = GER_Hans_Heinrich_Dieter
+
+
+#Navy
+	recruit_character = GER_wolfgang_nolting
+	recruit_character = GER_lutz_feldt
+	recruit_character = GER_wolfram_kuhn
+	recruit_character = GER_horst_dieter_kolletschke
+	recruit_character = GER_Christoph_Diehl
+	recruit_character = GER_Hans-Joachim_Stricker
+	recruit_character = GER_Henning_Hoops
+	recruit_character = GER_Heinz-Eugen_Eberbach
+	recruit_character = GER_Bernd_Heise
+	recruit_character = GER_hans_lussow
+
+#Politics
+	recruit_character = GER_Joschka_Fischer #grüne
+	recruit_character = GER_Wolfgang_Schauble #cdu
+	recruit_character = GER_Wolfgang_Gerhardt #fdp
+	recruit_character = GER_Gregor_Gysi #pds
+	recruit_character = GER_Udo_Voigt #npd
+	recruit_character = GER_Rolf_Schlierer #rep
+
+	#Land variants
+	## FOR FUTURE ##
+	create_equipment_variant = {
+		name = "SPz 11-2 Kurz"
+		type = Rec_tank_0 #SPz 11-2 Kurz
+		upgrades = {
+
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "TPz-1"
+		type = Rec_tank_0 #TPz-1
+		upgrades = {
+
+		}
+		obsolete = yes
+	}
+
+	#Navy variants
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		create_equipment_variant = {
+			name = "Dolphin-class"
+			type = diesel_attack_submarine_2
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Victory-Class"
+			type = missile_corvette_1 #Victory-Class
+			upgrades = {
+
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Preveze class"
+			type = diesel_attack_submarine_2
+			upgrades = {
+			}
+		}
+		create_equipment_variant = {
+			name = "Yavuz class"
+			type = missile_frigate_1
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Barbaros-Class"
+			type = missile_frigate_1
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "MEKO 360-Class"
+			type = missile_frigate_1
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Almirante Padilla-Class"
+			type = missile_corvette_1
+			upgrades = {
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Kasturi-Class"
+			type = missile_corvette_1
+			upgrades = {
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Type 214-Class"
+			type = diesel_attack_submarine_4
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Type 1500-Class"
+			type = diesel_attack_submarine_3
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "TR-1700 Santa Cruz-Class"
+			type = diesel_attack_submarine_3
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Type 209-Class"
+			type = diesel_attack_submarine_2
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Valour-class"
+			type = missile_frigate_2
+			upgrades = {
+
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Parchim-Class"
+			type = corvette_2
+			upgrades = {
+
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "MEKO A-200AN-Class"
+			type = missile_frigate_1
+			upgrades = {
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Valour-class"
+			type = missile_frigate_1
+			upgrades = {
+			}
+			obsolete = yes
+		}
+
+		create_equipment_variant = {
+			name = "Henschel UR-416"
+			type = APC_1
+			upgrades = {
+				tank_reliability_upgrade = 0
+				tank_engine_upgrade = 2
+				tank_armor_upgrade = 0
+				tank_gun_upgrade = 0
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Heroine-class"
+			type = diesel_attack_submarine_2
+			upgrades = {
+			}
+
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Gür-class"
+			type = diesel_attack_submarine_2
+			upgrades = {
+			}
+		}
+	}
+	#############################################
+	#MTG Variants
+	##############
+
+	#Rheinland-Pfalz "BW Class" needs to be added to construction
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+
+		#Lütjen
+		create_equipment_variant = {
+			name = "Lütjens Class"
+			type = destroyer_hull_1
+			name_group = GER_MODERN_DESTROYERS_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_3 = module_ram_1
+				fixed_ship_auxillary_slot_2 = module_aa_missiles_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_76mm_gun_2
+			}
+			obsolete = yes
+		}
+		#Frankenthal Class
+		create_equipment_variant = {
+			name = "Frankenthal Class"
+			type = corvette_hull_2
+			design_team = mio:GER_lurssen_werft_naval_manufacturer
+			name_group = GER_MODERN_CORVETTES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_Sonar_2
+				fixed_ship_auxillary_slot = module_mineclearing
+				fixed_ship_battery_slot = module_ciws_1
+				front_1_custom_slot = module_chain_gun
+				rear_1_custom_slot = module_minelaying
+			}
+			obsolete = yes
+		}
+		#MEKO 360 Class https://en.wikipedia.org/wiki/MEKO_360
+		create_equipment_variant = {
+			name = "MEKO 360 Class - 360H1 Variant"
+			type = destroyer_hull_2
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_ciws_2
+				fixed_ship_auxillary_slot = module_anti_submarine_mortar
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_2
+				mid_1_custom_slot = module_aa_missiles_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+		#MEKO 360 Class https://en.wikipedia.org/wiki/MEKO_360
+		create_equipment_variant = {
+			name = "MEKO 360 Class - 360H2 Variant"
+			type = destroyer_hull_2
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_DESTROYERS_NAMES
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_ciws_2
+				fixed_ship_auxillary_slot = module_anti_submarine_mortar
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_2
+				mid_1_custom_slot = module_aa_missiles_2
+				rear_1_custom_slot = module_light_helipad_1
+
+			}
+		}
+
+		#Bremen Class
+		create_equipment_variant = {
+			name = "Bremen Class"
+			type = frigate_hull_2
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_2 = module_vls_sam_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_aa_missiles_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Almirante Padilla Class https://en.wikipedia.org/wiki/Almirante_Padilla-class_frigate
+		create_equipment_variant = {
+			name = "Almirante Padilla Class"
+			type = frigate_hull_2
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_2 = module_asm_1
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_aa_missiles_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_ciws_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+		#Yavuz Class
+		create_equipment_variant = {
+			name = "Yavuz Class"
+			type = frigate_hull_2
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot_2 = module_aa_missiles_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_ciws_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_1
+				rear_1_custom_slot = module_light_helipad_1
+
+			}
+			obsolete = yes
+		}
+		#Brandenburg Class
+		create_equipment_variant = {
+			name = "Brandenburg Class"
+			type = frigate_hull_3
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sam_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_chain_gun
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+		#MEKO Hydra Class
+		create_equipment_variant = {
+			name = "MEKO Hydra Class"
+			type = frigate_hull_3
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot_2 = module_ciws_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sam_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_1
+				rear_1_custom_slot = module_light_helipad_1
+
+			}
+			obsolete = yes
+		}
+
+		#MEKO Anzac Class
+		create_equipment_variant = {
+			name = "MEKO Anzac Class"
+			type = frigate_hull_3
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot_2 = module_vls_sam_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_ciws_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_2
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+		#El Radii Class
+		create_equipment_variant = {
+			name = "El Radii Class"
+			type = frigate_hull_3
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 3
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot_2 = module_ciws_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sam_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_1
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+		#Sachsen Class
+		create_equipment_variant = {
+			name = "Sachsen Class"
+			type = frigate_hull_3
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot_2 = module_asm_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sam_2
+				fixed_ship_battery_slot = module_76mm_gun_3
+				front_1_custom_slot = module_chain_gun
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+
+		#Kasturi Class
+		create_equipment_variant = {
+			name = "Kasturi Class"
+			type = corvette_hull_2
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_CORVETTES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot = module_mineclearing
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_chain_gun
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+
+		#CM 65
+		create_equipment_variant = {
+			name = "CM 65 Class"
+			type = corvette_hull_2
+			design_team = mio:GER_lurssen_werft_naval_manufacturer
+			name_group = GER_MODERN_CORVETTES_NAMES
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_4
+				fixed_ship_auxillary_slot = module_ciws_2
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_chain_gun
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+		#Espora Class
+		create_equipment_variant = {
+			name = "Espora Class"
+			type = corvette_hull_2
+			design_team = mio:GER_blohm_and_voss
+			name_group = GER_MODERN_CORVETTES_NAMES
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_2
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_asm_1
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+		#Victory Class
+		create_equipment_variant = {
+			name = "Victory Class"
+			type = corvette_hull_3
+			design_team = mio:GER_lurssen_werft_naval_manufacturer
+			name_group = GER_MODERN_CORVETTES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_diesel_power
+				fixed_ship_fire_control_system_slot = module_analog_fire_control
+				fixed_ship_radar_slot = module_radar_3
+				fixed_ship_auxillary_slot = module_mineclearing
+				fixed_ship_battery_slot = module_76mm_gun_2
+				front_1_custom_slot = module_chain_gun
+				rear_1_custom_slot = module_light_helipad_1
+			}
+			obsolete = yes
+		}
+		#Type 205 Class
+		create_equipment_variant = {
+			name = "Type 205 Class"
+			type = attack_submarine_hull_1
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_3 = module_torpedoes_1
+				fixed_ship_auxillary_slot_2 = module_fuel_tank
+				fixed_ship_auxillary_slot_1 = module_torpedoes_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+			}
+			obsolete = yes
+		}
+		#Type 206 Class
+		create_equipment_variant = {
+			name = "Type 206 Class"
+			type = attack_submarine_hull_1
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_fuel_tank
+				fixed_ship_auxillary_slot_1 = module_minelaying
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+			obsolete = yes
+		}
+		#Kobben Class
+		create_equipment_variant = {
+			name = "Kobben Class"
+			type = attack_submarine_hull_1
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_3 = empty
+				fixed_ship_auxillary_slot_2 = module_fuel_tank
+				fixed_ship_auxillary_slot_1 = module_torpedoes_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+			}
+			obsolete = yes
+		}
+		#Type 209 Class https://en.wikipedia.org/wiki/List_of_ships_of_the_Brazilian_Navy
+		create_equipment_variant = {
+			name = "Type 209 Class"
+			type = attack_submarine_hull_2
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_3 = module_sub_esm_1
+				fixed_ship_auxillary_slot_2 = module_fuel_tank
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
+		#Type 209 Class - Preveze Variant
+		create_equipment_variant = {
+			name = "Type 209 Class - Preveze Variant"
+			type = attack_submarine_hull_2
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 1
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_3
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_fuel_tank
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sub_asm_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+
+			}
+			obsolete = yes
+		}
+		#Type 212 Submarine
+		create_equipment_variant = {
+			name = "Type 212 Class"
+			type = attack_submarine_hull_3
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power2
+				fixed_ship_radar_slot = module_sonar_4
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_minelaying
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
+		#Santa Cruz Class https://en.wikipedia.org/wiki/TR-1700-class_submarine
+		create_equipment_variant = {
+			name = "Santa Cruz Class"
+			type = attack_submarine_hull_2
+			design_team = mio:GER_thyssenkrupp_marine_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 2
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_vls_sub_asm_1
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+			obsolete = yes
+		}
+		#Glafkos Class
+		create_equipment_variant = {
+			name = "Glafkos Class"
+			type = attack_submarine_hull_2
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 3
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_1
+				fixed_ship_auxillary_slot_3 = module_sub_esm_1
+				fixed_ship_auxillary_slot_2 = module_fuel_tank
+				fixed_ship_auxillary_slot_1 = module_torpedoes_1
+				fixed_ship_auxillary_slot = module_torpedoes_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+			}
+			obsolete = yes
+		}
+		#Poseidon Class
+		create_equipment_variant = {
+			name = "Poseidon Class"
+			type = attack_submarine_hull_2
+			design_team = mio:GER_HDW_naval_manufacturer
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 4
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_1
+				fixed_ship_auxillary_slot_3 = module_torpedoes_1
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_torpedoes_1
+				fixed_ship_auxillary_slot = module_vls_sub_asm_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+			}
+			obsolete = yes
+		}
+	}
+	#############################################
+	#Air variants
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+
+		set_technology = {
+
+			early_airframe_designs = 1
+			gen_3_light = 1
+			gen_4_light = 1
+			gen_3_medium = 1
+			gen_4_medium = 1
+			gen_3_large = 1
+			gen_4_large = 1
+
+			flying_wing_design = 1
+			variable_wing_design = 1
+			delta_wing_design = 1
+
+			engines_2 = 1
+			engines_3 = 1
+
+			refueling_1 = 1
+
+			avionics_1 = 1
+
+			drone_1 = 1
+			suicide_drone_1 = 1
+
+			awacs_1 = 1
+
+			redundant_1 = 1
+
+			early_weapons = 1
+			air_weapons_1 = 1
+			air_weapons_2 = 1
+			countermeasures_1 = 1
+			countermeasures_2 = 1
+
+			naval_weapons_1 = 1
+
+			ag_weapons_1 = 1
+
+			tgp_recon_1 = 1
+		}
+		create_equipment_variant = {
+			name = "Panavia Tornado ADV"
+			type = medium_plane_fighter_airframe_2
+			design_team = mio:GER_airbus_defence_aircraft_manufacturer
+			parent_version = 0
+			modules = {
+				fixed_main_weapon_slot = weap_a2a_hardpoint_2
+				fixed_gun_slot = weap_multi_gun_3
+				engine_type_slot = engine_jet_double_2
+				avionics_type_slot = avionics_manned_2
+				wingform_type_slot = wing_variable
+				special_slot_type_1 = spec_refuel_1
+				special_slot_type_2 = spec_countermeasures_1
+				fixed_auxiliary_weapon_slot_1 = weap_a2a_hardpoint_2
+			}
+			obsolete = no
+			icon = "gfx/interface/technologies/GER/AIR/INT.dds"
+		}
+		create_equipment_variant = {
+			name = "Panavia Tornado IDS"
+			type = medium_plane_airframe_2
+			design_team = mio:GER_airbus_defence_aircraft_manufacturer
+			parent_version = 0
+			modules = {
+				fixed_main_weapon_slot = weap_mp_med_hardpoint_2
+				fixed_gun_slot = weap_multi_gun_3
+				engine_type_slot = engine_jet_double_2
+				avionics_type_slot = avionics_manned_2
+				wingform_type_slot = wing_variable
+				special_slot_type_1 = spec_refuel_1
+				special_slot_type_2 = spec_countermeasures_1
+				fixed_auxiliary_weapon_slot_1 = weap_mp_light_hardpoint_2
+			}
+			obsolete = no
+			icon = "gfx/interface/technologies/GER/AIR/STR2.dds"
+		}
+		create_equipment_variant = {
+			name = "Panavia Tornado ERC"
+			type = medium_plane_airframe_2
+			design_team = mio:GER_airbus_defence_aircraft_manufacturer
+			parent_version = 1
+			modules = {
+				fixed_main_weapon_slot = weap_mp_med_hardpoint_2
+				fixed_gun_slot = weap_multi_gun_3
+				engine_type_slot = engine_jet_double_2
+				avionics_type_slot = avionics_manned_2
+				wingform_type_slot = wing_variable
+				special_slot_type_1 = spec_tgp_2
+				special_slot_type_2 = spec_countermeasures_1
+				fixed_auxiliary_weapon_slot_1 = weap_mp_med_hardpoint_2
+			}
+			obsolete = no
+			icon = "gfx/interface/technologies/GER/AIR/INT.dds"
+		}
+		create_equipment_variant = {
+			name = "EF-2000 Typhoon"
+			type = medium_plane_fighter_airframe_2
+			design_team = mio:GER_airbus_defence_aircraft_manufacturer
+			parent_version = 1
+			modules = {
+				fixed_main_weapon_slot = weap_a2a_hardpoint_2
+				fixed_gun_slot = weap_multi_gun_3
+				fixed_auxiliary_weapon_slot_1 = weap_a2a_hardpoint_2
+				fixed_auxiliary_weapon_slot_2 = weap_mp_light_hardpoint_2
+				engine_type_slot = engine_jet_double_3
+				avionics_type_slot = avionics_manned_3
+				wingform_type_slot = wing_delta
+				special_slot_type_1 = spec_countermeasures_2
+				special_slot_type_2 = spec_redundant_3
+			}
+			icon = "gfx/interface/technologies/GER/AIR/E2000.dds"
+		}
+		create_equipment_variant = { #Large Transport
+			name = "Transall C-160"
+			type = large_plane_air_transport_airframe_1
+			design_team = mio:GER_airbus_defence_aircraft_manufacturer
+			parent_version = 0
+			modules = {
+				fixed_main_weapon_slot = weap_buff_transport
+				fixed_gun_slot = empty
+				engine_type_slot = engine_prop_double_2
+				avionics_type_slot = avionics_manned_1
+				wingform_type_slot = wing_straight
+				special_slot_type_1 = spec_countermeasures_1
+				special_slot_type_2 = spec_redundant_1
+				special_slot_type_3 = empty
+				fixed_auxiliary_weapon_slot_1 = empty
+				fixed_auxiliary_weapon_slot_2 = empty
+			}
+			obsolete = yes
+			 icon = "gfx/interface/technologies/GER/AIR/C1.dds"
+		}
+
+
+		else = {
+			set_technology = {
+
+				#Panavia Tornado
+				early_fighter = 1
+				Strike_fighter1 = 1
+				Strike_fighter2 = 1
+
+				#EF-2000
+				AS_Fighter1 = 1
+				AS_Fighter2 = 1
+				AS_upgrade_1 = 1
+				AS_Fighter3 = 1 #4.5gen
+
+				MR_Fighter1 = 1
+				MR_Fighter2 = 1
+				MR_upgrade_1 = 1
+				MR_Fighter3 = 1
+
+				early_bomber = 1
+
+				#C-160D Transall
+				transport_plane1 = 1
+
+				#Alpha Jet
+				L_Strike_fighter1 = 1
+				L_Strike_fighter2 = 1
+			}
+		}
+	}
+}
+
+2017.1.1 = {
+	#Nat focus
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "GER_2000_nsb"
+		else = {
+			set_oob = "GER_2017_nonnsb"
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_naval_oob = "GER_2017_naval_mtg"
+		else = {
+			set_naval_oob = "GER_2017_naval_legacy"
+		}
+	}
+
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 664 }
+	add_to_array = { influence_array = FRA.id }
+	add_to_array = { influence_array_val = 48 }
+	add_to_array = { influence_array = ENG.id }
+	add_to_array = { influence_array_val = 15 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 38 }
+	add_to_array = { influence_array = ITA.id }
+	add_to_array = { influence_array_val = 7 }
+	add_to_array = { influence_array = CHI.id }
+	add_to_array = { influence_array_val = 21 }
+	add_to_array = { influence_array = POL.id }
+	add_to_array = { influence_array_val = 3 }
+	add_to_array = { influence_array = SOV.id }
+	add_to_array = { influence_array_val = 36 }
+	startup_influence = yes
+
+	set_variable = { industrial_conglomerates_opinion = 80 }
+	set_variable = { small_medium_business_owners = 75 }
+
+	set_country_flag = military_advisors_IRQ
+	IRQ = { add_to_variable = { foreign_advisors = 1 } }
+	set_country_flag = military_advisors_MAL
+	MAL = { add_to_variable = { foreign_advisors = 1 } }
+	set_country_flag = military_advisors_AFG
+	AFG = { add_to_variable = { foreign_advisors = 1 } }
+
+	set_variable = { var = debt value = 2543 }
+	set_variable = { var = int_investments value = 2382 }
+	set_variable = { var = treasury value = 200 }
+	set_variable = { var = corporate_tax_rate value = 18 }
+	set_variable = { var = population_tax_rate value = 44 }
+
+
+	set_technology = {
+		early_high_speed_rail = 1
+		high_speed_rail = 1
+		modern_high_speed_rail = 1
+		freight_locomotive = 1
+
+		infantry_weapons4 = 1
+		support_weapons3 = 1
+		command_control_equipment4 = 1
+
+		util_vehicle_5 = 1
+
+		Rec_tank_2 = 1
+
+		body_armor_2010 = 1
+		camouflage3 = 1
+
+		computing3 = 1
+		decryption3 = 1
+		encryption3 = 1
+		computing4 = 1
+		decryption4 = 1
+		encryption4 = 1
+		computing5 = 1
+		decryption5 = 1
+		encryption5 = 1
+		neural_networks_revival = 1
+		data_mining = 1
+		machine_learning = 1
+		sociable_machines = 1
+		industrial_electrospun_polymeric_nanofibers = 1
+		multiwalled_carbon_nanotubes = 1
+		modern_electrospinning = 1
+		stereolitography = 1
+		early_3D_printers = 1
+		t3D_wax_printer = 1
+		DNA_fingerprinting = 1
+		modern_gmo = 1
+		gene_therapy = 1
+		genetically_modified_crops = 1
+		gene_targeting_pesticides = 1
+		human_genome_project = 1
+		crispr = 1
+		cas9_gene_editing = 1
+		wifi = 1
+		internet3 = 1	#3G
+		edge = 1
+		umts = 1
+		hsupa = 1
+		internet4 = 1	#4G
+		lte = 1
+		construction1 = 1
+		construction2 = 1
+		excavation1 = 1
+		excavation2 = 1
+	}
+	if = {
+		limit = {
+			not = { has_dlc = "Man the Guns" }
+		}
+		set_technology = {
+			missile_corvette_2 = 1
+			missile_corvette_3 = 1 #Braunschweig class
+
+			frigate_1 = 1
+			frigate_2 = 1 #Bremen class
+			missile_frigate_1 = 1
+			missile_frigate_2 = 1 #Brandenburg class
+			missile_frigate_3 = 1
+			missile_frigate_4 = 1 #Baden-Württemberg class
+
+			diesel_attack_submarine_4 = 1 #Type 212
+			diesel_attack_submarine_5 = 1 #Type 216
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_technology = {
+			corvette_hull_1 = 1
+			corvette_hull_2 = 1
+			corvette_hull_3 = 1
+
+			frigate_hull_1 = 1
+			frigate_hull_2 = 1
+			frigate_hull_3 = 1
+			frigate_hull_4 = 1
+
+			destroyer_hull_1 = 1
+			destroyer_hull_2 = 1
+			destroyer_hull_3 = 1
+
+			attack_submarine_hull_1 = 1
+			attack_submarine_hull_2 = 1
+			attack_submarine_hull_3 = 1
+			attack_submarine_hull_4 = 1
+
+			missile_submarine_hull_1 = 1
+
+			aircraft_carrier_engineering = 1
+
+			tech_submarine_engineering = 1
+
+			tech_naval_systems_engineering = 1
+			tech_power_systems = 1
+			tech_power_systems_1 = 1
+			tech_power_systems_2 = 1
+			tech_nuclear_power_systems = 1
+
+			tech_combat_support_systems = 1
+			tech_fire_control = 1
+			tech_fire_control_1 = 1
+			tech_fire_control_2 = 1
+			tech_combat_radar = 1
+			tech_combat_radar_1 = 1
+			tech_combat_radar_2 = 1
+			tech_combat_radar_3 = 1
+			tech_combat_radar_4 = 1
+			tech_combat_sonar = 1
+			tech_combat_sonar_1 = 1
+			tech_combat_sonar_2 = 1
+			tech_combat_sonar_3 = 1
+			tech_combat_sonar_4 = 1
+
+			tech_naval_weapon_systems = 1
+			tech_light_guns = 1
+			tech_light_guns_1 = 1
+			tech_light_guns_2 = 1
+
+			tech_point_defense_system = 1
+			tech_point_defense_system_1 = 1
+			tech_point_defense_system_2 = 1
+			tech_point_defense_system_3 = 1
+			tech_point_defense_system_4 = 1
+			tech_point_defense_system_5 = 1
+
+			tech_missile_systems = 1
+			tech_turret_missiles_surface = 1
+			tech_turret_missiles_surface_1 = 1
+			tech_turret_missiles_surface_2 = 1
+			tech_turret_missiles_surface_3 = 1
+
+			tech_turret_missiles_aa = 1
+			tech_turret_missiles_aa_1 = 1
+			tech_turret_missiles_aa_2 = 1
+			tech_turret_missiles_aa_3 = 1
+
+			tech_vls_surface = 1
+			tech_vls_surface_1 = 1
+			tech_vls_surface_2 = 1
+			tech_vls_surface_3 = 1
+
+			tech_vls_aa = 1
+			tech_vls_aa_1 = 1
+			tech_vls_aa_2 = 1
+			tech_vls_aa_3 = 1
+
+			tech_torpedoes = 1
+			tech_torpedoes_1 = 1
+			tech_torpedoes_2 = 1
+
+			tech_mtg_landing_craft = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			large_gun_tech_2 = 1
+			armor_tech_3 = 1
+		}
+
+		create_equipment_variant = {
+			name = "Leopard 2A6"
+			type = mbt_hull_1
+			parent_version = 3
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen2
+				engine_type_slot = tank_diesel_engine_gen3
+				reload_type_slot = manual_loading
+				special_type_slot_1 = smoke_launchers_2
+				special_type_slot_2 = wet_ammo_storage
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_3		#Battlestation
+				special_type_slot_5 = spaced_armor_gen2		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			icon = "GFX_GER_MBT_4"
+		}
+		create_equipment_variant = {
+			name = "Leopard 2A7"
+			type = mbt_hull_1
+			parent_version = 4
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_base_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_composite_armor_gen3
+				engine_type_slot = tank_diesel_engine_gen3
+				reload_type_slot = manual_loading
+				special_type_slot_1 = smoke_launchers_2
+				special_type_slot_2 = wet_ammo_storage
+				special_type_slot_3 = empty
+				special_type_slot_4 = tank_battlestation_3		#Battlestation
+				special_type_slot_5 = spaced_armor_gen2		#ERA/Spaced
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 4
+			}
+			icon = "GFX_GER_MBT_4"
+		}
+
+		else = {
+			set_technology = {
+				MBT_5 = 1
+				IFV_5 = 1
+				IFV_6 = 1
+				APC_5 = 1
+				APC_6 = 1
+			}
+		}
+	}
+
+	add_opinion_modifier = { target = SOV modifier = minor_sanctions }
+	set_country_flag = sanctions_against_SOV_flag
+
+	set_popularities = {
+		democratic = 64.1
+		fascism = 0
+		communism = 9.3
+		neutrality = 10.7
+		nationalist = 15.9
+	}
 	set_politics = {
+
 		ruling_party = democratic
 		last_election = "2013.9.22"
 		election_frequency = 48
 		elections_allowed = yes
 	}
 
-	set_popularities = {
-		communism = 10
-		reformism = 35
-		liberalism = 4
-		democratic = 49
-		neutrality = 0
-		fascism = 2
-		rad_islamists = 0
-	}
+	start_politics_input = yes
+
+	set_variable = { party_pop_array^1 = 0.329 }
+	set_variable = { party_pop_array^2 = 0.107 }
+	set_variable = { party_pop_array^3 = 0.205 }
+	set_variable = { party_pop_array^4 = 0.001 }
+	set_variable = { party_pop_array^5 = 0.092 }
+	set_variable = { party_pop_array^11 = 0.001 }
+	set_variable = { party_pop_array^14 = 0.01 }
+	set_variable = { party_pop_array^16 = 0.004 }
+	set_variable = { party_pop_array^17 = 0.092 }
+	set_variable = { party_pop_array^19 = 0.001 }
+	set_variable = { party_pop_array^20 = 0.126 }
+	set_variable = { party_pop_array^21 = 0.004 }
+
+	#Government:
+	add_to_array = { ruling_party = 1 } #Neutral_conservatism
+	add_to_array = { gov_coalition_array = 3 } #liberalism
+
+	#2013 election results
+	set_variable = { party_pop_elect_array^1 = 0.453 } #conservatism - CDU
+	set_variable = { party_pop_elect_array^2 = 0 } #liberalism - FDP
+	set_variable = { party_pop_elect_array^3 = 0.294 } #socialist - SPD
+	set_variable = { party_pop_elect_array^5 = 0.082 } #anarchist_communism - Die Linke
+	set_variable = { party_pop_elect_array^17 = 0.073 } #Neutral_green - Die Grune
+	set_variable = { party_pop_elect_array^20 = 0.029 } #Nat_Populism - AfD
+
+	startup_politics = yes
 
 	create_country_leader = {
 		name = "Angela Merkel"
-		desc = "POLITICS_ANGELA_MERKEL_DESC"
-		picture = "gfx/leaders/GER/portrait_angela_merkel.dds"
-		ideology = christian_democracy_main
-		traits = { trait_christian_democracy_main }
+		picture = "Angela_Merkel.dds"
+		expire = "2050.1.1"
+		ideology = conservatism
+		traits = {
+			scientist
+			western_conservatism
+			ruthless
+			honest
+			stubborn
+			political_dancer
+		}
 	}
 
-	create_country_leader = {
-		name = "Sigmar Gabriel"
-		desc = "POLITICS_SIGMAR_GABRIEL_DESC"
-		picture = "gfx/leaders/GER/portrait_sigmar_gabriel.dds"
-		ideology = social_democracy
-		traits = { trait_social_democracy }
-	}
+	retire_character = GER_helmut_willmann
+	retire_character = GER_gert_gudera
+	retire_character = GER_hans_otto_budde
+	retire_character = GER_hans_lussow
+	retire_character = GER_lutz_feldt
+	retire_character = GER_wolfgang_nolting
+	retire_character = GER_rolf_portz
+	retire_character = GER_gerhard_back
+	retire_character = GER_klaus_peter_stieglitz
+	retire_character = GER_wolfram_kuhn
+	retire_character = GER_horst_dieter_kolletschke
+	retire_character = GER_klaus_reinhardt
+	retire_character = GER_hanslothar_domrose
+	retire_character = GER_werner_freers
+	retire_character = GER_egon_ramms
+	retire_character = GER_wolfgang_schneiderhan
 
-	create_country_leader = {
-		name = "Christian Lindner"
-		desc = "POLITICS_CHRISTIAN_LINDNER_DESC"
-		picture = "gfx/leaders/GER/portrait_christian_lindner.dds"
-		ideology = classical_liberalism
-		traits = { trait_classical_liberalism }
-	}
+	recruit_character = GER_jorg_vollmer
+	recruit_character = GER_alfons_mais
+	recruit_character = GER_andreas_krause
+	recruit_character = GER_kayachim_schonbach
+	recruit_character = GER_jan_christian_kaack
+	recruit_character = GER_karl_mullner
+	recruit_character = GER_ingo_gerhartz
+	recruit_character = GER_rainer_brinkmann
+	recruit_character = GER_axel_deertz
+	recruit_character = GER_volker_wieker
+	recruit_character = GER_eberhard_zorn
+	recruit_character = GER_carsten_jacobson
+	recruit_character = GER_richard_rossmanith
+	recruit_character = GER_jorg_see
 
-	create_country_leader = {
-		name = "Philipp Rösler"
-		desc = "POLITICS_PHILIPP_ROSLER_DESC"
-		picture = "gfx/leaders/GER/portrait_philipp_rosler.dds"
-		ideology = classical_liberalism
-		expire = "2013.12.7"
-		traits = { trait_classical_liberalism }
-	}
+	## Naval variants
+	#Navy variants
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		create_equipment_variant = {
+			name = "Type 218SG"
+			type = diesel_attack_submarine_5
+			upgrades = {
 
-	set_country_flag = ger_free_democratic_party 
+			}
+		}
+		create_equipment_variant = {
+			name = "Dolphin II-class"
+			type = diesel_attack_submarine_3
+			upgrades = {
+			}
 
-	create_country_leader = {
-		name = "Sahra Wagenknecht"
-		desc = "POLITICS_SAHRA_WAGENKNECHT_DESC"
-		picture = "gfx/leaders/GER/portrait_sahra_wagenknecht.dds"
-		ideology = marxism
-		traits = { trait_marxism }
+			obsolete = yes
+		}
 	}
-	
-	create_country_leader = {
-		name = "Frauke Petry"
-		desc = "POLITICS_FRAUKE_PETRY_DESC"
-		picture = "gfx/leaders/GER/portrait_frauke_petry.dds"
-		ideology = national_liberalism
-		traits = { trait_national_liberalism }
-	}
+	#############################################
+	#MTG Variants
+	##############
 
-	create_country_leader = {
-		name = "Gerhard Woitzik"
-		desc = "POLITICS_ANGELA_MERKEL_DESC"
-		picture = "gfx/leaders/GER/portrait_gerhard_woitzik.dds"
-		ideology = centrist_democracy
-		traits = { trait_centrist_democracy }
+	#Rheinland-Pfalz "BW Class" needs to be added to construction
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		create_equipment_variant = {
+			name = "Baden-Württemberg Class"
+			type = frigate_hull_4
+			name_group = GER_MODERN_FRIGATE_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power2
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_radar_5
+				fixed_ship_auxillary_slot_2 = module_asm_3
+				fixed_ship_auxillary_slot_1 = module_asm_3
+				fixed_ship_auxillary_slot = module_esm_3
+				fixed_ship_battery_slot = module_76mm_gun_3
+				front_1_custom_slot = module_chain_gun
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+		#Braunschweig Class
+		create_equipment_variant = {
+			name = "Braunschweig Class"
+			type = corvette_hull_3
+			name_group = GER_MODERN_CORVETTES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_light_surface_jet_turbine_power2
+				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
+				fixed_ship_radar_slot = module_sonar_5
+				fixed_ship_auxillary_slot_1 = module_asm_2
+				fixed_ship_auxillary_slot = module_minelaying
+				fixed_ship_battery_slot = module_76mm_gun_3
+				front_1_custom_slot = module_ram_3
+				rear_1_custom_slot = module_light_helipad_1
+			}
+		}
+		#Gür Class #Type 209 variant
+		create_equipment_variant = {
+			name = "Type 209 Class - Gür Variant"
+			type = attack_submarine_hull_2
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 5
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_3
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sub_asm_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+			obsolete = yes
+		}
+		#Type 209 Class https://en.wikipedia.org/wiki/Type_209_submarine
+		create_equipment_variant = {
+			name = "Type-209/1400mod Class"
+			type = attack_submarine_hull_2
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 6
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power
+				fixed_ship_radar_slot = module_sonar_2
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_fuel_tank
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sub_asm_1
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+			obsolete = yes
+		}
+		#Type 212 Submarine
+		create_equipment_variant = {
+			name = "Type 212 Class"
+			type = attack_submarine_hull_3
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power2
+				fixed_ship_radar_slot = module_sonar_4
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_1
+				fixed_ship_auxillary_slot_1 = module_minelaying
+				fixed_ship_auxillary_slot = module_torpedoes_2
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
+		#Type 214 Class
+		create_equipment_variant = {
+			name = "Type 214 Class"
+			type = attack_submarine_hull_4
+			name_group = GER_MODERN_SUBMARINES_NAMES
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power3
+				fixed_ship_radar_slot = module_sonar_5
+				fixed_ship_auxillary_slot_3 = module_torpedoes_2
+				fixed_ship_auxillary_slot_2 = module_sub_esm_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_2
+				fixed_ship_auxillary_slot = module_vls_sub_asm_3
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Type 214 Class - Son Won-II"
+			type = attack_submarine_hull_4
+			#name_group = KOR_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_engine_slot = module_sub_diesel_electric_power3
+				fixed_ship_radar_slot = module_sonar_4
+				fixed_ship_auxillary_slot_3 = module_torpedoes_3
+				fixed_ship_auxillary_slot_2 = module_sub_esm_2
+				fixed_ship_auxillary_slot_1 = module_torpedoes_3
+				fixed_ship_auxillary_slot = module_vls_sub_lam_3
+				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
+			}
+		}
 	}
-
-	#create_country_leader = {
-	#	name = "Frank Franz"
-	#	desc = "POLITICS_FRANK_FRANZ_DESC"
-	#	picture = "gfx/leaders/GER/portrait_frank_franz.dds"
-	#	ideology = national_socialism
-	#	traits = { trait_national_socialism }
-	#}
-	
-	#create_country_leader = {
-	#	name = "Joachim Gauck"
-	#	desc = "POLITICS_JOACHIM_GAUCK_DESC"
-	#	picture = "gfx/leaders/GER/portrait_joachim_gauck.dds"
-	#	ideology = centrist_democracy 
-	#	traits = { trait_centrist_democracy }
-	#}
-
-
-	create_field_marshal = {
-		name = "Jörg Vollmer"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_joerg_vollmer.dds"
-		traits = { old_guard thorough_planner organisational_leader }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_field_marshal = {
-		name = "Weicker Volker"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_weicker_volker.dds"
-		traits = { old_guard inspirational_leader artillery_commander }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-
-	create_field_marshal = {
-		name = "Richard Rossmanith"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_richard_rossmanith.dds"
-		traits = { organisational_leader }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_field_marshal = {
-		name = "Wolfgang Schneiderhan"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_wolfgang_schneiderhan.dds"
-		traits = { old_guard }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_field_marshal = {
-		name = "Hans-Peter von Kirchbach"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_peter_von_kirchbach.dds"
-		traits = { organisational_leader }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_field_marshal = {
-		name = "Bruno Kasdorf"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_bruno_kasdorf.dds"
-		traits = { inspirational_leader }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_field_marshal = {
-		name = "Jörg Vollmer"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_joerg_vollmer.dds"
-		traits = { old_guard thorough_planner }
-		skill = 1
-		logistics_skill = 1
-		defense_skill = 1
-		planning_skill = 1
-		attack_skill = 1
-	}
-
-	create_corps_commander = {
-		name = "Hans-Lothar Domröse"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_lothar_domrose.dds"
-		traits = { old_guard sso mechanized_infantry_commander }
-		skill = 3
-		logistics_skill = 3
-		planning_skill = 3
-		defense_skill = 3
-		attack_skill = 3
-	} 
-	
-	create_corps_commander = {
-		name = "Carsten Jacobson"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_carsten_jacobson.dds"
-		traits = { panzer_leader }
-		skill = 3
-		logistics_skill = 3
-		planning_skill = 3
-		defense_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Richard Rossmanith"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_richard_rossmanith.dds"
-		traits = { panzer_leader }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Markus Kneip"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_markus_kneip.dds"
-		traits = { artillery_commander }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Andre Bodemann"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_andre_bodemann.dds"
-		traits = { mechanized_infantry_commander }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-
-
-	create_corps_commander = {
-		name = "Klaus Reinhardt"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_klaus_reinhardt.dds"
-		traits = { panzer_leader organisational_leader }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-
-	create_corps_commander = {
-		name = "Weicker Volker"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_weicker_volker.dds"
-		traits = { }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Karl-Heinz Lather"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_karl_heinz_lather.dds"
-		traits = { trait_engineer }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Hans-Lothar Domröse"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_lothar_domrose.dds"
-		traits = { }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Egon Ramms"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_egon_ramms.dds"
-		traits = { }
-		skill = 3
-		logistics_skill = 3
-		defense_skill = 3
-		planning_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Ludwig Leinhos"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_ludwig_leinhos.dds"
-		traits = { }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Franz Xaver Pfrengle"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_franz_xaver_pfrengle.dds"
-		traits = { panzer_leader trait_engineer }
-		skill = 2
-		logistics_skill = 2
-		defense_skill = 2
-		planning_skill = 2
-		attack_skill = 2
-	}
-
-	create_corps_commander = {
-		name = "Mart de Kreift"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_mart_de_kreift.dds"
-		traits = { }
-		skill = 1
-		logistics_skill = 1
-		defense_skill = 1
-		planning_skill = 1
-		attack_skill = 1
-	}
-
-	create_corps_commander = {
-		name = "Jürgen Weigt"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_jurgen_weigt.dds"
-		traits = { panzer_leader }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Dirk Backen"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_dirk_backen.dds"
-		traits = { panzer_leader }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Markus Laubenthal"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_markus_laubenthal.dds"
-		traits = { panzer_leader }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Johann Langenegger"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_johann_langenegger.dds"
-		traits = { mechanized_infantry_commander }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Walter Spindler"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_walter_spindler.dds"
-		traits = { mechanized_infantry_commander }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Hans-Otto Budde"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_otto_budde.dds"
-		traits = { sso }
-		skill = 3
-		logistics_skill = 3
-		planning_skill = 3
-		defense_skill = 3
-		attack_skill = 3
-	}
-
-	###Luftwaffe
-	create_corps_commander = {
-		name = "Klaus Habersetzer"
-		portrait_path = "gfx/leaders/GER/portreit_ger_general_Klaus_Habersetzer.dds"
-		traits = {  }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Frank Leidenberger"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_frank_leidenberger.dds"
-		traits = { sso }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Erhard Bühler"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_erhard_buhler.dds"
-		traits = { old_guard mechanized_infantry_commander }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Franz Xaver Pfrengle"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_franz_xaver_pfrengle.dds"
-		traits = { panzer_leader trait_engineer }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Kai Rohrschneider"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_kai_rohrschneider.dds"
-		traits = { panzer_leader }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	} 
-
-	create_corps_commander = {
-		name = "Eberhard Zorn"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_eberhard_zorn.dds"
-		traits = { sso mechanized_infantry_commander }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Hans-Werner Fritz"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_werner_fritz.dds"
-		traits = { sso }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Erich Pfeffer"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_erich_pfeffer.dds"
-		traits = { trait_mountaineer }
-		skill = 3
-		logistics_skill = 3
-		planning_skill = 3
-		defense_skill = 3
-		attack_skill = 3
-	}
-	
-	create_corps_commander = {
-		name = "Jürgen Setzer"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_jurgen_setzer.dds"
-		traits = { mechanized_infantry_commander }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Heinrich Fischer"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_heinrich_fischer.dds"
-		traits = { artillery_commander }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}  
-	
-    create_corps_commander = {
-		name = "Bernd Schütt"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_bernd_schutt.dds"
-		traits = { panzer_leader }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Ansgar Meyer"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_ansgar_meyer.dds"
-		traits = { old_guard panzer_leader }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_corps_commander = {
-		name = "Volker Halbauer"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_volker_halbauer.dds"
-		traits = { old_guard sso }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Manfred Hofmann"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_manfred_hofmann.dds"
-		traits = { old_guard }
-		skill = 2
-		logistics_skill = 2
-		planning_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-	
-	create_corps_commander = {
-		name = "Reinhard Wolski"
-		portrait_path = "gfx/leaders/GER/portrait_ger_general_reinhard_wolski.dds"
-		traits = { sso }
-		skill = 1
-		logistics_skill = 1
-		planning_skill = 1
-		defense_skill = 1
-		attack_skill = 1
-	}
-	
-	create_navy_leader = {
-		name = "Axel Schimpf"
-		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_axel_schimpf.dds"
-		traits = { old_guard_navy }
-		skill = 2
-		coordination_skill = 2
-		defense_skill = 2
-		maneuvering_skill = 2
-		attack_skill = 2
-	}
-
-	create_navy_leader = {
-		name = "Andreas Krause"
-		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_andreas_krause.dds"
-		traits = { seawolf }
-		skill = 3
-		coordination_skill = 3
-		defense_skill = 3
-		maneuvering_skill = 3
-		attack_skill = 3
-	}
-	
-	create_navy_leader = {
-		name = "Axel Schimpf"
-		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_axel_schimpf.dds"
-		traits = { old_guard_navy }
-		skill = 2
-		coordination_skill = 2
-		maneuvering_skill = 2
-		defense_skill = 2
-		attack_skill = 2
-	}
-
-	create_navy_leader = {
-		name = "Andreas Krause"
-		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_andreas_krause.dds"
-		traits = { seawolf }
-		skill = 3
-		coordination_skill = 3
-		maneuvering_skill = 3
-		defense_skill = 3
-		attack_skill = 3
-	}
-	
 }

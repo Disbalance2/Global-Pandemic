@@ -1,100 +1,347 @@
-﻿# Economic Crisis edit for 0.7.6 alpha
+﻿capital = 724
+2000.1.1 = {
+	set_cosmetic_tag = TAJ
+	set_country_flag = dynamic_flag
+	set_country_flag = dynamic_rebel_flag
+	set_variable = { gdp_per_capita = 1.313 }
 
-# NOT EDITED EC OPTIMISED
-# NOT EDITED LEADERS (ONLY START LEADER)
-# NOT EDITED LAWS
-# NOT EDITED POLITICS
-
-set_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
-set_country_flag = COUNTRY_FLAG.POST_USSR
-
-
-capital = 742
-
-1991.12.25 = {
-    add_ideas = {
-		mixed_schools
-		cis_member
-		NPT
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "TAJ_2000_nsb"
+		else = {
+			set_oob = "TAJ_2000_nonnsb"
+		}
 	}
-}
-1992.5.15 = {
-    # CSTO (ОДКБ)
-	add_ideas = integration_in_csto
-}
-1996.4.26 = {
-    add_ideas = sco_member
-}
 
-2013.11.1 = {
-	set_variable = { budget_last_year = 850 }
 
-	load_oob = "_tech_csto_minor_2013"
-	oob = "TAJ_2013"
+	add_ideas = {
+		rampant_corruption
+		sunni
+		youth_radicalization
+		stagnation
+		defence_01
+		edu_02
+		health_02
+		social_02
+		bureau_02
+		police_04
+		draft_army
+		volunteer_women
+		industrial_conglomerates
+		oligarchs
+		landowners
+		semi_consumption_economy
+		tajik_kyrgyz_Tensions_taj
+		ces_post_soviet_legacy_idea
+		conservative_society
+		officer_advanced_training
+		TAJ_high_emigration_5
+		TAJ_narcotraffic_1
+		CSTO_member
+	}
 
-	set_stability = 0.5
-	add_ideas = low_terrorism
-	add_political_power = 0
-	set_convoys = 0
-	create_intelligence_agency = yes
-		
+	#Islamism
+	set_variable = { social_conservatism_government = 60 }
+	set_variable = { social_conservatism_society = 70 }
+
+	#CT
+	set_country_flag = threat_level_substantial
+	set_variable = { threat_level = 35 }
+	set_variable = { radicalization = 25 }
+	add_to_array = { global.ct_states = THIS }
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 87 }
+	add_to_array = { influence_array = SOV.id }
+	add_to_array = { influence_array_val = 70 }
+	add_to_array = { influence_array = CHI.id }
+	add_to_array = { influence_array_val = 28 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 2 }
+	add_to_array = { influence_array = RAJ.id }
+	add_to_array = { influence_array_val = 14 }
+	add_to_array = { influence_array = PER.id }
+	add_to_array = { influence_array_val = 26 }
+	add_to_array = { influence_array = UZB.id }
+	add_to_array = { influence_array_val = 18 }
+	add_to_array = { influence_array = TUR.id }
+	add_to_array = { influence_array_val = 15 }
+	startup_influence = yes
+
+	set_technology = {
+		legacy_doctrines = 1
+		armoured_mass_assault = 1
+
+		infantry_weapons = 1
+
+		command_control_equipment = 1
+
+		land_Drone_equipment = 1
+
+		Anti_tank_0 = 1
+
+		Heavy_Anti_tank_0 = 1
+
+		combat_eng_equipment = 1
+		util_vehicle_0 = 1
+
+		night_vision_1 = 1
+
+		early_helicopter = 1
+		transport_helicopter1 = 1
+
+		body_armor_1980 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+
+		radar = 1
+		fuel_silos = 1
+
+		industrial_electrospun_polymeric_nanofibers = 1
+		multiwalled_carbon_nanotubes = 1
+		stereolitography = 1
+		early_3D_printers = 1
+		DNA_fingerprinting = 1
+		fuel_refining = 1
+		early_renewables = 1
+		renewables = 1
+		electrification_1 = 1
+		construction1 = 1
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			mbt_tech = 1
+			afv_tech = 1
+			nsb_artillery_0 = 1
+			nsb_SP_arty_1 = 1
+			nsb_Anti_Air_0 = 1
+		}
+
+		else = {
+			set_technology = {
+				Early_APC = 1
+				APC_1 = 1
+				MBT_1 = 1
+				IFV_1 = 1
+				SP_arty_0 = 1
+				artillery_0 = 1
+				SP_R_arty_0 = 1
+				Anti_Air_0 = 1
+			}
+		}
+	}
+
+	add_ideas = {
+		sunni
+		defence_01
+		edu_02
+		health_02
+		social_02
+		bureau_02
+		police_04
+		draft_army
+		volunteer_women
+		oligarchs
+	}
+
+	set_variable = { industrial_conglomerates_opinion = 60 }
+	set_variable = { landowners_opinion = 40 }
+
+	set_variable = { var = debt value = 0 }
+	set_variable = { var = treasury value = 10 }
+	set_variable = { var = corporate_tax_rate value = 15 }
+	set_variable = { var = population_tax_rate value = 15 }
+	set_variable = { var = int_investments value = 0 }
+
+	add_opinion_modifier = { target = UZB modifier = russian_proficient }
+	reverse_add_opinion_modifier = { target = UZB modifier = russian_proficient }
+	add_opinion_modifier = { target = UKR modifier = russian_proficient }
+	reverse_add_opinion_modifier = { target = UKR modifier = russian_proficient }
+	add_opinion_modifier = { target = NOV modifier = russian_proficient }
+	reverse_add_opinion_modifier = { target = NOV modifier = russian_proficient }
+	add_opinion_modifier = { target = PMR modifier = russian_proficient }
+	reverse_add_opinion_modifier = { target = PMR modifier = russian_proficient }
+	add_opinion_modifier = { target = SOO modifier = russian_proficient }
+	reverse_add_opinion_modifier = { target = SOO modifier = russian_proficient }
+	add_opinion_modifier = { target = ABK modifier = russian_proficient }
+	reverse_add_opinion_modifier = { target = ABK modifier = russian_proficient }
+
+	set_popularities = {
+		democratic = 0.0
+		communism = 96.8
+		fascism = 3.2
+		neutrality = 0.0
+		nationalist = 0.0
+	}
 	set_politics = {
-		ruling_party = neutrality
-		last_election = "2006.11.6"
-		election_frequency = 84
+		ruling_party = communism
+		last_election = "1995.2.26"
+		election_frequency = 60
 		elections_allowed = yes
 	}
-	set_popularities = {
-		communism = 30
-		reformism = 0
-		liberalism = 0
-		democratic = 10
-		neutrality = 60
-		fascism = 0
-		rad_islamists = 0
+
+	add_opinion_modifier = {
+		target = KYR
+		modifier = strategic_rivals
+	}
+	reverse_add_opinion_modifier = {
+		target = KYR
+		modifier = strategic_rivals
+	}
+	add_opinion_modifier = {
+		target = KYR
+		modifier = historic_enemies
+	}
+	reverse_add_opinion_modifier = {
+		target = KYR
+		modifier = historic_enemies
 	}
 
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0 } #conservatism
+	set_variable = { party_pop_array^2 = 0 } #liberalism
+	set_variable = { party_pop_array^3 = 0 } #socialism
+	set_variable = { party_pop_array^4 = 0.206 } #Communist-State
+	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0.762 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0.032 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 6 }
+
+	startup_politics = yes
 
 	create_country_leader = {
 		name = "Emomali Rahmon"
-		desc = ""
-		picture = "gfx/leaders/TAJ/portrait_emomali_rahmon.dds"
-		ideology = authoritarian_democracy 
-		traits = { trait_authoritarian_democracy }
+		picture = "Emomali_Rahmon.dds"
+		ideology = Conservative
+		traits = {
+			emerging_Conservative
+		}
 	}
-	create_country_leader = {
-		name = "Sholi Shabdolov"
-		desc = ""
-		picture = "gfx/leaders/TAJ/portrait_sholi_shabdolov.dds"
-		ideology = leninism
-		traits = { trait_leninism }
+
+	every_controlled_state = {
+		set_variable = { productivity_state_var = 422 }
 	}
-	create_country_leader = {
-		name = "Muhiddin Kabirov"
-		desc = ""
-		picture = "gfx/leaders/TAJ/portrait_muhidin_kabirov.dds"
-		ideology = sunni_islamism
-		traits = { trait_sunni_islamism }
+	set_variable = { overall_productivity = 422 }
+
+	recruit_character = TAJ_emomali_sobirzoda
+	recruit_character = TAJ_sherali_khayrulloyev
+	recruit_character = TAJ_sherali_mirzo
+}
+
+2017.1.1 = {
+	capital = 724
+
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "TAJ_2000_nsb"
+		else = {
+			set_oob = "TAJ_2017_nonnsb"
+		}
 	}
-	create_country_leader = {
-		name = "Saijafar Ismonov"
-		desc = ""
-		picture = "gfx/leaders/TAJ/portrait_saijafar_ismonov.dds"
-		ideology = conservative_democracy
-		traits = { trait_conservative_democracy }
+
+	# Starting tech
+	set_technology = {
+		microprocessors = 1
+		computing2 = 1
+		decryption2 = 1
+		encryption2 = 1
+		internet1 = 1
 	}
-	create_country_leader = {
-		name = "Olimjohn Boboev"
-		desc = ""
-		picture = "gfx/leaders/TAJ/portrait_olimchon_boboev.dds"
-		ideology = social_liberalism
-		traits = { trait_social_liberalism }
+
+	add_ideas = {
+		rampant_corruption
+		sunni
+		stagnation
+		defence_01
+		edu_02
+		health_02
+		social_02
+		bureau_02
+		police_04
+		draft_army
+		volunteer_women
+		oligarchs
 	}
-	create_country_leader = {
-		name = "Rahmatullo Zoirov"
-		desc = ""
-		picture = "gfx/leaders/TAJ/portrait_rahmatullo_zoirov.dds"
-		ideology = social_democracy
-		traits = { trait_social_democracy }
+	set_variable = { industrial_conglomerates_opinion = 60 }
+	set_variable = { landowners_opinion = 40 }
+
+	set_variable = { var = debt value = 3 }
+	set_variable = { var = treasury value = 1 }
+	set_variable = { var = int_investments value = 0 }
+	set_variable = { var = corporate_tax_rate value = 13 }
+	set_variable = { var = population_tax_rate value = 13 }
+
+	set_popularities = {
+		democratic = 2.2
+		communism = 84.5
+		fascism = 1.6
+		neutrality = 11.7
+		nationalist = 0.0
 	}
+	set_politics = {
+		ruling_party = communism
+		last_election = "2015.3.1"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.017 } #conservatism
+	set_variable = { party_pop_array^2 = 0 } #liberalism
+	set_variable = { party_pop_array^3 = 0.005 } #socialism
+	set_variable = { party_pop_array^4 = 0.022 } #Communist-State
+	set_variable = { party_pop_array^5 = 0.055 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0.768 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0.016 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.117 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 6 }
+
+	startup_politics = yes
 }

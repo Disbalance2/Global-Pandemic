@@ -1,0 +1,61 @@
+state = {
+	id = 643
+	name = "STATE_643"
+	resources = {
+		oil = 5.000
+		steel = 5.000
+	}
+
+	history = {
+		owner = SOV
+		victory_points = {
+			3134 10
+		}
+		victory_points = {
+			14655 1
+		}
+		victory_points = {
+			11183 1
+		}
+		victory_points = {
+			6181 1
+		}
+		victory_points = {
+			11031 1
+		}
+		victory_points = {
+			11085 1
+		}
+		victory_points = {
+			11142 1
+		}
+		buildings = {
+			infrastructure = 1
+			internet_station = 1
+			dockyard = 1
+			industrial_complex = 1
+			air_base = 10
+			TEL_base = 2
+			missile_silo = 3
+			3134 = {
+				naval_base = 10
+			}
+		}
+		add_core_of = SOV
+		add_core_of = KAE
+		2017.1.1 = {
+			buildings = {
+				internet_station = 2
+				TEL_base = 5
+				missile_silo = 4
+			}
+			#add_manpower = -29675
+		}
+	}
+
+	provinces = {
+		74 116 142 178 3012 3121 3134 6012 6140 6181 6183 9115 9140 9165 11031 11085 11117 11142 11183 14654 14655 14656 14657 
+	}
+	manpower = 890559
+	state_category = state_03
+}

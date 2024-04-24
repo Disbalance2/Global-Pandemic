@@ -1,67 +1,415 @@
-﻿# Economic Crisis edit for 0.7.6 alpha
-
-# NOT EDITED LAWS
-# NOT EDITED POLITICS
-
-capital = 300
-
-set_country_flag = monroe_doctrine
-
-2013.11.1 = {
-	set_variable = { budget_last_year = 5753 }
-	load_oob = "_tech_minor_2013"
-	oob = "URG_2013"
-
-	add_ideas = {
-		unasur_member
-		terrorism_discounted
-		mixed_schools
-		
-		mercosur_member
+﻿capital = 893
+2000.1.1 = {
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "URG_2000_nsb"
+		else = {
+			set_oob = "URG_2000_nonnsb"
+		}
 	}
 
-	set_stability = 0.5
-	add_political_power = 0
-	set_convoys = 35
+	set_cosmetic_tag = URG
+	set_country_flag = dynamic_flag
+	set_country_flag = dynamic_rebel_flag
+	set_variable = { gdp_per_capita = 14.763 }
 
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_naval_oob = "URG_2000_naval_mtg"
+		else = {
+			set_naval_oob = "URG_2000_naval_legacy"
+		}
+	}
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "URG_2000_bba"
+		else = {
+			set_air_oob = "URG_2000_nonbba"
+		}
+	}
+
+
+	add_ideas = {
+		#Economic Cycle
+		depression
+		#Corruption
+		modest_corruption
+		#Faction 1
+		small_medium_business_owners
+		#Faction 2
+		landowners
+		#Faction 3
+		industrial_conglomerates
+
+		#Bureacracy
+		bureau_01
+		#Military Spending
+		defence_02
+		#Internal Security
+		police_04
+		#Education budget
+		edu_02
+		#Health budget
+		health_04
+		#Social spending
+		social_05
+
+		#Trade Law
+		consumption_economy
+		#Conscription Law
+		volunteer_army
+		#Women in the military
+		volunteer_women
+		#Foreign Intervention Law
+
+		#Officer Training
+		officer_military_school
+
+		#Other
+		#rio_pact_member
+		christian
+	}
+
+	# Cartel System
+	set_variable = { cartel_political_influence = 10 }
+	set_variable = { strength_of_cartels = 20 }
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 90 }
+	add_to_array = { influence_array = BRA.id }
+	add_to_array = { influence_array_val = 40 }
+	add_to_array = { influence_array = ARG.id }
+	add_to_array = { influence_array_val = 20 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 15 }
+	add_to_array = { influence_array = CHI.id }
+	add_to_array = { influence_array_val = 3 }
+	startup_influence = yes
+
+	set_variable = { var = debt value = 28 }
+	set_variable = { var = treasury value = 4 }
+	set_variable = { var = corporate_tax_rate value = 32 }
+	set_variable = { var = population_tax_rate value = 25 }
+	set_variable = { var = int_investments value = 0 }
+
+	# Starting tech
+	set_technology = {
+		integrated_transportation_system = 1
+		post_conventional_rail = 1
+		early_freight_locomotive = 1
+
+		legacy_doctrines = 1
+		infantry_mass_assault = 1
+		infantry_weapons = 1
+		combat_eng_equipment = 1
+		command_control_equipment = 1
+		util_vehicle_0 = 1
+		Anti_tank_0 = 1
+		Heavy_Anti_tank_0 = 1
+
+		body_armor_1980 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+
+		radar = 1
+		internet1 = 1
+		fuel_silos = 1
+
+		industrial_electrospun_polymeric_nanofibers = 1
+		stereolitography = 1
+		fuel_refining = 1
+		construction1 = 1
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			mbt_tech = 1
+			afv_tech = 1
+			nsb_artillery_0 = 1
+			nsb_SP_arty_1 = 1
+			nsb_Anti_Air_0 = 1
+			nsb_SP_Anti_Air_0 = 1
+			light_tank_tech = 1
+		}
+
+		else = {
+			set_technology = {
+				Early_APC = 1
+				APC_1 = 1
+				MBT_1 = 1
+				IFV_1 = 1
+				artillery_0 = 1
+				SP_arty_0 = 1
+				Anti_Air_0 = 1
+				SP_Anti_Air_0 = 1
+				Rec_tank_0 = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			not = { has_dlc = "Man the Guns" }
+		}
+		set_technology = {
+			frigate_1 = 1
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_technology = {
+			frigate_hull_1 = 1
+			tech_mtg_landing_craft = 1
+		}
+	}
+	set_variable = { small_medium_business_owners_opinion = 40 }
+	set_variable = { landowners_opinion = 60 }
+
+	set_popularities = {
+		democratic = 56.1
+		communism = 30.9
+		fascism = 0.0
+		neutrality = 13.0
+		nationalist = 0.0
+	}
 	set_politics = {
-		ruling_party = reformism
-		last_election = "2010.3.1"
+		ruling_party = democratic
+		last_election = "1995.3.1"
 		election_frequency = 60
 		elections_allowed = yes
 	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0 } #conservatism
+	set_variable = { party_pop_array^2 = 0.541 } #liberalism
+	set_variable = { party_pop_array^3 = 0.02 } #socialism
+	set_variable = { party_pop_array^4 = 0.05 } #Communist-State
+	set_variable = { party_pop_array^5 = 0.259 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.05 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0.08 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 2 }
+
+	startup_politics = yes
+
+	create_country_leader = {
+		name = "Jorge Battle"
+		picture = "jorge_batlle.dds"
+		ideology = liberalism
+		traits = {
+			western_liberalism
+		}
+	}
+
+	recruit_character = URG_guido_manini_rios
+	recruit_character = URG_washington_roberto_martinez_angelucci
+	recruit_character = URG_carlos_humberto_loitey
+	recruit_character = URG_luis_abilleira
+	recruit_character = URG_jorge_haboosh
+	recruit_character = URG_jose_luis_oliveira
+	recruit_character = URG_leonardo_gustavo_alfonso_chiappara
+	recruit_character = URG_ricardo_giambruno
+	recruit_character = URG_alberto_zanelli
+	
+	every_controlled_state = {
+		set_variable = { productivity_state_var = 529 }
+	}
+	set_variable = { overall_productivity = 529 }
+}
+
+2017.1.1 = {
+	capital = 893
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "URG_2000_nsb"
+		else = {
+			set_oob = "URG_2017_nonnsb"
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_naval_oob = "URG_2017_naval_mtg"
+		else = {
+			set_naval_oob = "URG_2017_naval_legacy"
+		}
+	}
+
+
+	add_ideas = {
+		stable_growth
+	}
+
+	set_variable = { small_medium_business_owners_opinion = 40 }
+	set_variable = { landowners_opinion = 60 }
+
+	set_variable = { var = debt value = 39 }
+	set_variable = { var = treasury value = 13 }
+	set_variable = { var = int_investments value = 0 }
+	set_variable = { var = corporate_tax_rate value = 25 }
+	set_variable = { var = population_tax_rate value = 36 }
+
+	# Starting tech
+	set_technology = {
+		legacy_doctrines = 1
+		infantry_mass_assault = 1
+		infantry_weapons = 1
+		combat_eng_equipment = 1
+		command_control_equipment = 1
+		Rec_tank_0 = 1
+		util_vehicle_0 = 1
+		artillery_0 = 1
+		SP_arty_0 = 1
+		Anti_tank_0 = 1
+		Heavy_Anti_tank_0 = 1
+		Anti_Air_0 = 1
+		SP_Anti_Air_0 = 1
+
+		early_helicopter = 1
+		transport_helicopter1 = 1
+
+		body_armor_2000 = 1
+
+		microprocessors = 1
+		computing2 = 1
+		decryption2 = 1
+		encryption2 = 1
+		computing3 = 1
+		decryption3 = 1
+		encryption3 = 1
+		computing4 = 1
+		decryption4 = 1
+		encryption4 = 1
+		neural_networks_revival = 1
+		data_mining = 1
+		industrial_electrospun_polymeric_nanofibers = 1
+		stereolitography = 1
+		DNA_fingerprinting = 1
+		modern_gmo = 1
+		gene_therapy = 1
+
+		gprs = 1
+		wifi = 1
+		internet3 = 1	#3G
+		edge = 1
+	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+
+		set_technology = {
+			early_airframe_designs = 1
+			early_weapons = 1
+		}
+		else = {
+			set_technology = {
+				early_fighter = 1
+				L_Strike_fighter1 = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			not = { has_dlc = "Man the Guns" }
+		}
+		set_technology = {
+			frigate_1 = 1
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_technology = {
+			tech_mtg_landing_craft = 1
+		}
+	}
 	set_popularities = {
-		communism = 5
-		reformism = 50
-		liberalism = 0
-		democratic = 13
-		neutrality = 0
-		fascism = 32
-		rad_islamists = 0
+		democratic = 45.4
+		communism = 41.6
+		fascism = 0.0
+		neutrality = 13.0
+		nationalist = 0.0
+	}
+	set_politics = {
+		ruling_party = communism
+		last_election = "2015.3.1"
+		election_frequency = 60
+		elections_allowed = yes
 	}
 
-	create_country_leader = {
-		name = "Tabaré Vázquezr"
-		desc = "POLITICS_TABARE_VAZQUEZ_DESC"
-		picture = "gfx/leaders/URG/portrait_tabare_vazquez.dds"
-		ideology = social_democracy
-		traits = { trait_social_democracy }
-	}
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0.434 } #conservatism
+	set_variable = { party_pop_array^2 = 0 } #liberalism
+	set_variable = { party_pop_array^3 = 0.05 } #socialism
+	set_variable = { party_pop_array^4 = 0.07 } #Communist-State
+	set_variable = { party_pop_array^5 = 0.306 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0.08 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0.06 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 1 }
+
+	startup_politics = yes
 
 	create_country_leader = {
-		name = "José Mujica"
-		expire = 2015.3.1
-		desc = "POLITICS_JOSE_MUJICA_DESC"
-		picture = "gfx/leaders/URG/portrait_jose_mujica.dds"
-		ideology = social_democracy
-		traits = { trait_social_democracy }
+		name = "Luis Alberto Lacalle Pou"
+		picture = "luis_alberto_lacalle_pou.dds"
+		ideology = conservatism
+		traits = {
+			western_conservatism
+		}
 	}
 
-	create_country_leader = {
-		name = "Luis Alberto Lacalle"
-		desc = "POLITICS_LUIS_ALBERTO_LACALLE_DE_HERRERA_DESC"
-		picture = "gfx/leaders/URG/portrait_luis_alberto_lacalle_de_herrera.dds"
-		ideology = national_conservatism
-		traits = { trait_national_conservatism }
-	}
+	retire_character = URG_guido_manini_rios
+	retire_character = URG_washington_roberto_martinez_angelucci
+	recruit_character = URG_gustavo_fajardo
 }

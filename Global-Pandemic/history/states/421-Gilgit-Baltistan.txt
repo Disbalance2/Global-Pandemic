@@ -1,0 +1,46 @@
+state = {
+	id = 421
+	name = "STATE_421"
+
+	history = {
+		owner = PAK
+		victory_points = {
+			2084 1
+		}
+		victory_points = {
+			6057 1
+		}
+		victory_points = {
+			6832 1
+		}
+		victory_points = {
+			10821 1
+		}
+		buildings = {
+			infrastructure = 1
+			internet_station = 0
+			industrial_complex = 1
+			arms_factory = 1
+
+		}
+		add_core_of = PAK
+		add_core_of = RAJ
+		add_core_of = KAS
+		2017.1.1 = {
+			buildings = {
+				internet_station = 1
+			}
+			add_manpower = 572980
+			add_core_of = TTP
+		}
+		add_dynamic_modifier = { modifier = renewable_capacity_factor_dyn_mod }
+		set_variable = { state_renewable_capacity_factor_modifier_var = 0.3 }
+	}
+
+	provinces = {
+		2084 6057 6832 6921 10821 14049 14050 14472
+	}
+	manpower = 984369
+	buildings_max_level_factor = 1.000
+	state_category = state_02
+}
