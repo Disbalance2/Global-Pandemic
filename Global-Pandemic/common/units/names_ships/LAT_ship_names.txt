@@ -1,5 +1,4 @@
-﻿## Latvia Ship Name list##
-
+﻿##### LATVIA NAME LISTS #####
 ### REGULAR DESTROYER NAMES###
 LAT_DD_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_DESTROYERS
@@ -7,53 +6,109 @@ LAT_DD_HISTORICAL = {
 	for_countries = { LAT }
 
 	type = ship
-	ship_types = { stealth_destroyer destroyer }
+	#ship_types = { ship_hull_light destroyer }			
 
-	prefix = "LVNS "
-	fallback_name = "DDG-%d"
+	fallback_name = "Iznicinatajs %d"					
 
-	unique = {
-		"Virsa" "Aizsarg" "Vēja Roze" "Pūce" "Līcis" "Ābele" "Dzilna" "Skarda" "Zirneklis" "Ugunsrats" "Druva" "Ūdenszirgs" "Zelta Lācis" "Mazais Vilkacis" "Velnala" "Malduguns" "Ziemas Saule" "Gaišķermenis" "Dvēselēns" "Tūre" "Kronis" "Rāmupele" "Dzelme" "Ceplis" "Gudrinieks" "Aizdzirslīga" "Siltumnīca" "Ādažu Mežs"
+	unique = {											
+		"Cesis" "Liepaja" "Priekule" "Daugavpils" "Aglona" "Auce" 
 	}
 }
 
-LAT_FRIGATES_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_FRIGATES
-	for_countries = { LAT }
-	type = ship
-	ship_types = {
-		frigate
-	}
-	prefix = "LVNS "
-	fallback_name = "FFG-%d"
-
-	unique = {
-		"Jumis" "Mēnesspirts" "Pazemes Ūdens" "Klints" "Saules Tēvs" "Pūpols" "Tīnūži" "Stigraviņa" "Zaļums" "Pustumsa" "Mēnessputns" "Ābolu Koks" "Rozes Saule" "Priedīte" "Mežavīte" "Skudra" "Dzidraviņa" "Dusma" "Upuris" "Lielais Vilks" "Rēgīte" "Velna Pēdas" "Ragana" "Zelta Dzirnavas" "Raganas Stāvkrasts" "Ciemapeters" "Vilkaciņš" "Sarkanais Meness" "Piparkūka" "Miega Pūce" "Eglīte" "Līksma" "Jumprava" "Zaļie Kalni" "Svētki" "Pūcīte" "Āboliņš" "Mītne" "Lauku Meita"
-	}
-}
-
-### CORVETTE NAMES ###
-LAT_CORVETTE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CORVETTE
+### LIGHT CRUISER NAMES###
+LAT_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
 
 	for_countries = { LAT }
-	prefix = "LVNS "
+
 	type = ship
-	ship_types = { corvette }
-	fallback_name = "KKG-%d"
+	#ship_types = { ship_hull_cruiser light_cruiser }
+	
+	fallback_name = "Gaismas Kruizeri %d"
 
 	unique = {
-		"Zaļš Zobs" "Krusts" "Dzelzis" "Dunava" "Ceļvedis" "Dvēsele" "Tumsa" "Miers" "Rīts" "Uguns" "Vējš" "Saldējums" "Zilais Gals" "Pelēkais Mākonis" "Naktsgaiss" "Sērs" "Piedzīvojums" "Brīnumzeme" "Laukums" "Sapnis" "Kvēls" "Zaļais Koks" "Lidmašīna" "Kapteinis" "Putns" "Nakts" "Upīte" "Kalniņš" "Ceļinieks" "Diena" "Sirds" "Koklīte" "Rotaļa" "Saulriets" "Zvaigzne" "Tumšums" "Viduslaiki" "Lokomotīve" "Prāts" "Zieds" "Tumšais Tilts" "Zīda Cels" "Sirdsiskra" "Lauku Zīme" "Dvēseles Tauriņš" "Rīta Gaisma" "Lidojošās Zivis" "Sapņu Pils" "Nebespeķis" "Ābelīte" "Sajūtu Ritums" "Maģiska Atzīšanās" "Svētdienas Vakars" "Skumjas" "Mirušais Mežs" "Dzīvo Ūdens" "Akmens Debess" "Koka Sirds" "Dzeltenās Puķes" "Rasotājs" "Jaunais Ceļš"
+		"Cesis" "Liepaja" "Priekule" "Daugavpils" "Aglona" "Auce" 
 	}
 }
 
-LAT_SUBMARINES_HISTORICAL = {
+### HEAVY CRUISER NAMES###
+LAT_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { LAT }
+
+	type = ship
+	#ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	fallback_name = "Smagais Kruizeri %d"
+
+	unique = {
+		"Riga" "Mazsalaca" "Dundaga" "Bauska" "Jurmala" "Kuldiga" "Madona" "Rezekne" "Valmiera" 
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+LAT_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { LAT }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battleship }
+	
+	fallback_name = "Linijkugis %d"		
+
+	unique = {
+		"Riga" "Mazsalaca" "Dundaga" "Bauska" "Jurmala" "Kuldiga" "Madona" "Rezekne" 
+	}
+}
+
+### BATTLECRUISER NAMES ###
+LAT_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { LAT }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battle_cruiser }
+	
+	fallback_name = "Linijkreiseris %d"		
+
+	unique = {
+		"Valmiera" "Cesis" "Liepaja" "Priekule" "Daugavpils" "Aglona" "Auce" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+LAT_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { LAT }
+
+	type = ship
+	#ship_types = { ship_hull_carrier carrier }
+	
+	fallback_name = "Lidmasinu Parvadatajs %d"	
+
+	unique = {
+		"Riga" "Mazsalaca" "Dundaga" "Bauska" "Jurmala" "Kuldiga" "Madona" "Rezekne" "Valmiera" "Cesis" "Liepaja" 
+		"Priekule" "Daugavpils" "Aglona" "Auce" "Virsaitis" "Namejs" 
+	}
+}
+
+### SUBMARINES ###
+LAT_SS_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_SUBMARINES
+
 	for_countries = { LAT }
-	prefix = "LVNS "
+
 	type = ship
-	ship_types = {
-		attack_submarine missile_submarine
+	#ship_types = { ship_hull_submarine submarine }
+	
+	fallback_name = "Zemudene %d"
+	
+	unique = {
+		"Ronis" "Spidola" 
 	}
-	fallback_name = "SS-%d"
 }

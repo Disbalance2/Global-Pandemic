@@ -5,9 +5,9 @@ resistance_support_arms_depots = {
 	picture = "GFX_phase_resistance_support_arms_depots"
 	icon = "GFX_phase_resistance_support_arms_depots_small"
 	equipment = {
-		#TALL-EIS - Original Values = SE-300; IE-2000
-		cnc_equipment = 200
-		Inf_equipment = 800
+		support_equipment = 300
+		army_salw_equipment = 2000  
+		army_ammunition_equipment = 2000  
 	}
 }
 
@@ -18,8 +18,7 @@ resistance_support_distribute_weapons = {
 	picture = "GFX_phase_resistance_support_distribute_weapons"
 	icon = "GFX_phase_resistance_support_distribute_weapons_small"
 	equipment = {
-		#TALL-EIS - Original Values = IE-5000
-		Inf_equipment = 2500
+		army_salw_equipment = 5000
 	}
 }
 

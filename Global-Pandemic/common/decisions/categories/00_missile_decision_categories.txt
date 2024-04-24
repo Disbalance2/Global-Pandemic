@@ -1,4 +1,0 @@
-00_missile_decisions = {
-
-	icon = GFX_decisions_category_missile
-}

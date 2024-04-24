@@ -1,5 +1,6 @@
-#Adjara
-graphical_culture = western_european_gfx
-graphical_culture_2d = western_european_2d
 
-color = { 123  187  61 }
+
+graphical_culture = post_ussr_gfx
+graphical_culture_2d = post_ussr_2d	 
+
+color = { 0  0  0 }

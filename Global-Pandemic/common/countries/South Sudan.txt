@@ -1,5 +1,5 @@
-#South Sudan
-graphical_culture = african_gfx
-graphical_culture_2d = african_2d
 
-color = { 28 143  38 } #random
+graphical_culture = eastern_desert_gfx
+graphical_culture_2d = african_2d 
+
+color = { 230 230 70 }

@@ -1,327 +1,105 @@
-capital = 331
-2000.1.1 = {
-	oob = "NGR_2000"
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-	set_cosmetic_tag = NGR
-	set_country_flag = dynamic_flag
-	set_country_flag = dynamic_rebel_flag
-	set_variable = { gdp_per_capita = 0.909 }
+# NOT EDITED POLITICS
 
+capital = 515
 
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "NGR_2000_bba"
-		else = {
-			set_air_oob = "NGR_2000_nonbba"
-		}
-	}
+2013.11.1 = {
+	set_variable = { budget_last_year = 766 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "NGR_2013"
+	
+	# laws
 	add_ideas = {
-		unrestrained_corruption
-		sufi_islam
-		stagnation
-		defence_02
-		AU_member
-		edu_02
-		health_02
-		social_01
-		bureau_02
-		ecowas_member_state
-		police_01
-		draft_army
-		volunteer_women
-		farmers
-		international_bankers
-		small_medium_business_owners
-		consumption_economy
-		multi_ethnic_state_idea
-		officer_basic_training
+		presidential_republic
+		unitary_state
+		preference_religion
+		# religion_islam
+		free_media
+		respect_of_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		market_economy
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		high_terrorism
 	}
+	
+	set_stability = 0.5
+	set_convoys = 35
 
-	#Economy
-	set_variable = { var = debt value = 8 }
-	set_variable = { var = corporate_tax_rate value = 15 }
-	set_variable = { var = population_tax_rate value = 10 }
-
-	set_popularities = {
-		democratic = 66.0
-		communism = 16.0
-		fascism = 3.0
-		neutrality = 14.0
-		nationalist = 1.0
-	}
 	set_politics = {
-		ruling_party = democratic
-		last_election = "1999.10.17"
-		election_frequency = 60
+		ruling_party = reformism
+		last_election = "2011.4.16"
+		election_frequency = 48
 		elections_allowed = yes
+
 	}
-
-	start_politics_input = yes
-
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.49 } #conservatism
-	set_variable = { party_pop_array^2 = 0.05 } #liberalism
-	set_variable = { party_pop_array^3 = 0.12 } #socialism
-	set_variable = { party_pop_array^4 = 0.03 } #Communist-State
-	set_variable = { party_pop_array^5 = 0.13 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0.03 } #Caliphate
-	set_variable = { party_pop_array^12 = 0.03 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0.05 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0.02 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0.02 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0.02 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0.01 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-	add_to_array = { ruling_party = 1 }
-	startup_politics = yes
-
-	add_opinion_modifier = { target = BFA modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = BFA modifier = french_speaking }
-	add_opinion_modifier = { target = MAL modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = MAL modifier = french_speaking }
-	add_opinion_modifier = { target = SEN modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = SEN modifier = french_speaking }
-	add_opinion_modifier = { target = CHA modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = CHA modifier = french_speaking }
-	add_opinion_modifier = { target = GUI modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = GUI modifier = french_speaking }
-	add_opinion_modifier = { target = RWA modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = RWA modifier = french_speaking }
-	add_opinion_modifier = { target = BUR modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = BUR modifier = french_speaking }
-	add_opinion_modifier = { target = BEN modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = BEN modifier = french_speaking }
-	add_opinion_modifier = { target = HAI modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = HAI modifier = french_speaking }
-	add_opinion_modifier = { target = TOG modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = TOG modifier = french_speaking }
-	add_opinion_modifier = { target = CAR modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = CAR modifier = french_speaking }
-	add_opinion_modifier = { target = GAB modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = GAB modifier = french_speaking }
-	add_opinion_modifier = { target = DJI modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = DJI modifier = french_speaking }
-	add_opinion_modifier = { target = COM modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = COM modifier = french_speaking }
-	add_opinion_modifier = { target = SEY modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = SEY modifier = french_speaking }
-	add_opinion_modifier = { target = BAL modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = BAL modifier = french_speaking }
-	add_opinion_modifier = { target = LOG modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = LOG modifier = french_speaking }
-	add_opinion_modifier = { target = SEL modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = SEL modifier = french_speaking }
-	add_opinion_modifier = { target = BEL modifier = french_speaking }
-	reverse_add_opinion_modifier = { target = BEL modifier = french_speaking }
-
-	#CT
-	set_country_flag = threat_level_low
-	set_variable = { threat_level = 15 }
-	set_variable = { radicalization = 5 }
-	add_to_array = { global.ct_states = THIS }
-
-	#Influence system
-	init_influence = yes
-	set_variable = { domestic_influence_amount = 60 }
-	add_to_array = { influence_array = BEN.id }
-	add_to_array = { influence_array_val = 1 }
-	add_to_array = { influence_array = CHI.id }
-	add_to_array = { influence_array_val = 37 }
-	add_to_array = { influence_array = TAI.id }
-	add_to_array = { influence_array_val = 10 }
-	add_to_array = { influence_array = FRA.id }
-	add_to_array = { influence_array_val = 90 }
-	add_to_array = { influence_array = USA.id }
-	add_to_array = { influence_array_val = 5 }
-	add_to_array = { influence_array = NIG.id }
-	add_to_array = { influence_array_val = 35 }
-	startup_influence = yes
-
-	set_technology = {
-		legacy_doctrines = 1
-		infantry_mass_assault = 1
-		#For templates
-		infantry_weapons = 1
-		command_control_equipment = 1
-		Anti_tank_0 = 1
-		util_vehicle_0 = 1
-		Heavy_Anti_tank_0 = 1
-		camouflage = 1
-		camouflage2 = 1
-
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		decryption1 = 1
-		encryption1 = 1
-		radar = 1
-		fuel_silos = 1
-	}
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_technology = {
-			afv_tech = 1
-			nsb_Anti_Air_0 = 1
-			light_tank_tech = 1
-		}
-
-		else = {
-			set_technology = {
-				Early_APC = 1
-				Anti_Air_0 = 1
-				Rec_tank_0 = 1
-			}
-		}
-	}
-
-	create_country_leader = {
-		name = "Mamadou Tandja"
-		picture = "Mamadou_Tandja.dds"
-		ideology = conservatism
-		traits = {
-			western_conservatism
-		}
-	}
-	set_variable = { term_limit = 2 }
-	set_variable = { current_term = 1 }
-
-	recruit_character = NGR_salou_djibo
-	recruit_character = NGR_zana_issa_boulama_dipchiarima
-	recruit_character = NGR_ibra_boulama_issa
-
-	add_to_array = { agri_crop_allocation = 0.896 } # Basic = 0
-	add_to_array = { agri_crop_allocation = 0.104 } # Cash = 1
-
-	add_to_array = { agri_crop_price = 15 } # Basic = 0
-	add_to_array = { agri_crop_price = 25 } # Cash = 1
-
-	set_variable = { literacy_rate = 0.144 }
-
-	every_controlled_state = {
-		set_variable = { productivity_state_var = 384 }
-	}
-	set_variable = { overall_productivity = 384 }
-
-}
-
-2017.1.1 = {
-	oob = "NGR_2017"
-
-	# Starting tech
-
-	add_ideas = {
-		unrestrained_corruption
-		sufi_islam
-		stagnation
-		defence_02
-		edu_02
-		health_02
-		social_01
-		bureau_02
-		police_01
-		draft_army
-		volunteer_women
-		Enduring_Freedom
-		farmers
-		international_bankers
-		small_medium_business_owners
-		multi_ethnic_state_idea
-	}
-
-	set_technology = {
-		internet1 = 1
-	}
-
-	#CT
-	clr_country_flag = threat_level_low
-	set_country_flag = threat_level_severe
-	set_variable = { threat_level = 65 }
-
-	#set_country_flag =
-	set_variable = { farmers_opinion = 60 }
-	set_variable = { international_bankers_opinion = 60 }
-	set_variable = { small_medium_business_owners_opinion = 40 }
-
-	set_variable = { var = debt value = 4 }
-	set_variable = { var = treasury value = 1 }
-	set_variable = { var = int_investments value = 0 }
-	set_variable = { var = corporate_tax_rate value = 12 }
-	set_variable = { var = population_tax_rate value = 10 }
-
-	give_military_access = FRA
-
 	set_popularities = {
-		democratic = 100.0
-		communism = 0.0
-		fascism = 0.0
-		neutrality = 0.0
-		nationalist = 0.0
-	}
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2016.2.21"
-		election_frequency = 60
-		elections_allowed = yes
+		communism = 0
+		reformism = 8
+		liberalism = 0
+		democratic = 24
+		neutrality = 42
+		fascism = 26
+		rad_islamists = 0
 	}
 
-	start_politics_input = yes
-
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0 } #conservatism
-	set_variable = { party_pop_array^2 = 0 } #liberalism
-	set_variable = { party_pop_array^3 = 1.0 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-	add_to_array = { ruling_party = 3 }
-	startup_politics = yes
-
+	# Партия за демократию и социализм / Party for Democracy and Socialism - PNDS 
+    # (в коалиции с "Социально-демократическая конвенция")
 	create_country_leader = {
 		name = "Mahamadou Issoufou"
-		picture = "Mahamadou_Issoufou.dds"
-		ideology = socialism
-		traits = {
-			western_socialism
+		desc = "POLITICS_MAHAMADOU_ISSOUFOU_DESC"
+		picture = "gfx/leaders/NGR/portrait_mahamadou_issoufou.dds"
+		ideology = social_democracy
+		traits = { 
+			trait_social_democracy
+			# likes Russia, особенно Медведева
 		}
 	}
-	retire_character = NGR_salou_djibo
-	recruit_character = NGR_seyni_garba
 
-	set_variable = { current_term = 2 }
+	# Социально-демократическая конвенция (выдвигались независимо в 2015 г., набрали 6,25%)
+	# create_country_leader = {
+		# name = "Mahamane Ousmane"
+		# desc = "POLITICS_MAHAMANE_OUSMANE_DESC"
+		# picture = "gfx/leaders/NGR/portrait_mahamane_ousmane.dds"
+		# ideology = democratic_socialism
+		# traits = { trait_democratic_socialism }
+	# }
 
-	add_to_array = { agri_crop_allocation = 0.513 } # Basic = 0
-	add_to_array = { agri_crop_allocation = 0.487 } # Cash = 1
+	# Нигерское демократическое движение за африканскую федерацию / 
+    # Nigerien Democratic Movement for an African Federation - MODEN/FA
+	create_country_leader = {
+		name = "Hama Amadou"
+		desc = "POLITICS_HAMA_AMADOU_DESC"
+		picture = "gfx/leaders/NGR/portrait_hama_amadou.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
 
-	add_to_array = { agri_crop_price = 15 } # Basic = 0
-	add_to_array = { agri_crop_price = 25 } # Cash = 1
+	# Национальное движение за общество развития / National Movement for the Development of Society
+	#create_country_leader = {
+	#	name = "Seyni Oumarou"
+	#	desc = "POLITICS_SEYNI_OUMAROU_DESC"
+	#	picture = "gfx/leaders/NGR/portrait_seyni_oumarou.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
 
-	set_variable = { literacy_rate = 0.351 }
+	# Национальное движение за общество развития / National Movement for the Development of Society
+	create_country_leader = {
+		name = "Abouba Albade"
+		desc = ""
+		picture = "gfx/leaders/NGR/portrait_abouba_albade.dds"
+		ideology = conservative_democracy 
+		traits = { trait_conservative_democracy }
+	}
 
 }
+

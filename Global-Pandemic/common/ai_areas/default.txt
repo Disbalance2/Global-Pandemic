@@ -1,51 +1,49 @@
 areas = {
+
 	europe = {
-		continents = {
+
+		continents = { 
 			europe
 		}
 	}
 
 	north_america = {
-		continents = {
-			north_america
-		}
-	}
 
-	caribbean = {
-		strategic_regions = {
-			53 # Caribbean Sea
+		continents = { 
+			north_america 
 		}
 	}
 
 	south_america = {
-		continents = {
-			south_america
+
+		continents = { 
+			south_america 
 		}
 	}
 
 	africa = {
-		continents = {
-			africa
+
+		continents = { 
+			africa 
 		}
 	}
 
 	asia = {
-		continents = {
-			asia
-		}
-		strategic_regions = {
-			75 #Sea zone surrounding the Spratlys
+
+		continents = { 
+			asia 
 		}
 	}
 
 	middle_east = {
 
-		continents = {
-			middle_east
+		continents = { 
+			middle_east 
 		}
 	}
 
 	pacific = {
+
 		strategic_regions = {
 			105 # Hawaii
 			180 # Micronesian Gap
@@ -68,6 +66,7 @@ areas = {
 	}
 
 	oceania = {
+
 		strategic_regions = {
 			156 # Australia
 			157 # New Zealand
@@ -76,32 +75,5 @@ areas = {
 			81  # Coral Sea
 		}
 	}
-
-	chinese_coast = {
-		strategic_regions = {
-			201 #Gulf of Tonkin
-			200 #Parcel Sea
-			76 #Taiwan Sea -Eh its the Chinese coast.
-			77 #China Sea
-			193
-		}
-	}
-
-	russian_eastern_coast = {
-		strategic_regions = {
-			87 #Siberian coastline
-			79
-			96
-			88
-		}
-	}
-
-	united_states_coasts = {
-		strategic_regions = {
-			89
-			52
-			170
-			54
-		}
-	}
+	
 }

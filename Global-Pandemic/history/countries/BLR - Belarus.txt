@@ -1,447 +1,361 @@
-﻿capital = 703
-2000.1.1 = {
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-	set_cosmetic_tag = BLR
+# NOT EDITED POLITICS
 
-	set_variable = { gdp_per_capita = 8.053 }
+set_country_flag = COUNTRY_FLAG.POST_USSR
 
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "BLR_2000_nsb"
-		else = {
-			set_oob = "BLR_2000_nonnsb"
-		}
-	}
+capital = 206
 
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "BLR_2000_bba"
-		else = {
-			set_air_oob = "BLR_2000_nonbba"
-		}
-	}
-
-	set_country_flag = dynamic_flag
-	set_country_flag = dynamic_rebel_flag
-	add_opinion_modifier = { target = KAZ modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = KAZ modifier = russian_proficient }
-	add_opinion_modifier = { target = KYR modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = KYR modifier = russian_proficient }
-	add_opinion_modifier = { target = TRK modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = TRK modifier = russian_proficient }
-	add_opinion_modifier = { target = TAJ modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = TAJ modifier = russian_proficient }
-	add_opinion_modifier = { target = UZB modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = UZB modifier = russian_proficient }
-	add_opinion_modifier = { target = UKR modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = UKR modifier = russian_proficient }
-	add_opinion_modifier = { target = NOV modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = NOV modifier = russian_proficient }
-	add_opinion_modifier = { target = PMR modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = PMR modifier = russian_proficient }
-	add_opinion_modifier = { target = SOO modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = SOO modifier = russian_proficient }
-	add_opinion_modifier = { target = ABK modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = ABK modifier = russian_proficient }
-
-	add_ideas = {
-		#Economic Cycle
-		stagnation
-		#Corruption
-		unrestrained_corruption
-		#Faction 1
-		farmers
-		#Faction 2
-		the_military
-		#Faction 3
-		intelligence_community
-
-		#Bureacracy
-		bureau_02
-		#Military Spending
-		defence_01
-		#Internal Security
-		police_05
-		#Education budget
-		edu_04
-		#Health budget
-		health_03
-		#Social spending
-		social_03
-
-		#Trade Law
-		mixed_economy
-		#Conscription Law
-		partial_draft_army
-		#Women in the military
-		volunteer_women
-		#Foreign Intervention Law
-
-		#Officer Training
-		officer_military_school
-
-		#Other
-		orthodox_christian
-		medium_far_right_movement
-		CSTO_member
-		BLR_outdated_army
-		BLR_unstable_national_currency4
-		BLR_cheln_trade
-		BLR_old_railways
-		BLR_agro_industry
-		BLR_oil_russian
-		BLR_agriculture
-	}
-
-	set_technology = {
-		integrated_transportation_system = 1
-		post_conventional_rail = 1
-		early_freight_locomotive = 1
-
-		legacy_doctrines = 1
-		armoured_mass_assault = 1
-
-		night_vision_1 = 1
-		night_vision_2 = 1
-
-		#For templates
-		infantry_weapons = 1
-		support_weapons = 1
-		special_forces = 1
-
-		combat_eng_equipment = 1
-		command_control_equipment = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		Anti_tank_0 = 1
-		AT_upgrade_1 = 1
-		Anti_tank_1 = 1
-		Heavy_Anti_tank_0 = 1
-		Heavy_Anti_tank_1 = 1
-		util_vehicle_0 = 1
-		early_helicopter = 1
-		transport_helicopter1 = 1
-
-		body_armor_1980 = 1
-
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		decryption1 = 1
-		encryption1 = 1
-		microprocessors = 1
-		computing2 = 1
-		decryption2 = 1
-		encryption2 = 1
-		radar = 1
-		internet1 = 1 	#1G
-		fuel_silos = 1
-
-		industrial_electrospun_polymeric_nanofibers = 1
-		multiwalled_carbon_nanotubes = 1
-		stereolitography = 1
-		early_3D_printers = 1
-		DNA_fingerprinting = 1
-		fuel_refining = 1
-		early_renewables = 1
-		renewables = 1
-		electrification_1 = 1
-		construction1 = 1
-	}
-
-	if = {
-		limit = { has_dlc = "No Step Back" }
-
-		set_technology = {
-			mbt_tech = 1
-			afv_tech = 1
-			nsb_artillery_0 = 1
-			nsb_SP_arty_1 = 1
-			nsb_Anti_Air_0 = 1
-			nsb_SP_Anti_Air_0 = 1
-		}
-
-		else = {
-			set_technology = {
-				MBT_1 = 1
-				Early_APC = 1
-				APC_1 = 1
-				IFV_1 = 1
-				artillery_0 = 1
-				SP_arty_0 = 1
-				SP_R_arty_0 = 1
-				Anti_Air_0 = 1
-				SP_Anti_Air_0 = 1
-			}
-		}
-	}
-
-	#Air variants
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-
-		set_technology = {
-
-			early_airframe_designs = 1
-
-			early_weapons = 1
-		}
-
-		else = {
-			set_technology = {
-
-				early_fighter = 1
-
-				transport_plane1 = 1
-			}
-		}
-	}
-
-	#Influence system
-	init_influence = yes
-	set_variable = { domestic_influence_amount = 120 }
-	add_to_array = { influence_array = SOV.id }
-	add_to_array = { influence_array_val = 140 }
-	add_to_array = { influence_array = USA.id }
-	add_to_array = { influence_array_val = 1 }
-	add_to_array = { influence_array = GER.id }
-	add_to_array = { influence_array_val = 5 }
-	add_to_array = { influence_array = POL.id }
-	add_to_array = { influence_array_val = 12 }
-	add_to_array = { influence_array = UKR.id }
-	add_to_array = { influence_array_val = 7 }
-	add_to_array = { influence_array = CHI.id }
-	add_to_array = { influence_array_val = 5 }
-	startup_influence = yes
-
-	### Economy
-	set_variable = { var = debt value = 8.247 }
-	set_variable = { var = int_investments value = 0.2 }
-	set_variable = { var = treasury value = 3 }
-	set_variable = { var = corporate_tax_rate value = 25 }
-	set_variable = { var = population_tax_rate value = 14 }
-
-	set_popularities = {
-		democratic = 4.0
-		communism = 92.0
-		fascism = 0.0
-		neutrality = 3.0
-		nationalist = 1.0
-	}
-	set_politics = {
-		ruling_party = communism
-		last_election = "1997.6.7"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.02 } #conservatism
-	set_variable = { party_pop_array^2 = 0.01 } #liberalism
-	set_variable = { party_pop_array^3 = 0.01 } #socialism
-	set_variable = { party_pop_array^4 = 0.05 } #Communist-State
-	set_variable = { party_pop_array^5 = 0.02 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0.85 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0.03 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0.01 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-	set_power_balance = {
-		id = BLR_power_balance
-		left_side = default_left_side
-		right_side = default_right_side
-		set_value = 0.1
-	}
-
-	### Ruling Party
-	add_to_array = { ruling_party = 6 }
-
-	startup_politics = yes
-
-	create_country_leader = {
-		name = "Alexander Lukashenko"
-		picture = "alexander_lukashenko.dds"
-		ideology = Conservative
-		traits = {
-			last_dictator_of_europe
-			emerging_Conservative
-			political_dancer
-			geopolitical_thinker
-		}
-	}
-	every_controlled_state = {
-		set_variable = { productivity_state_var = 545 }
-	}
-	set_variable = { overall_productivity = 545 }
-
-	recruit_character = BLR_yury_shaplavsky
-	recruit_character = BLR_oleg_belokonev
-	recruit_character = BLR_andrei_ravkov
-	recruit_character = BLR_igor_golub
-	recruit_character = BLR_sergey_gurulev
-	recruit_character = BLR_alexander_volfovich
-	recruit_character = BLR_viktor_gulevich
-	recruit_character = BLR_igor_lotenkov
-	recruit_character = BLR_vladimir_kulazhin
-	recruit_character = BLR_vitaly_shkadrovich
-	recruit_character = BLR_igor_kuzmuk
-	recruit_character = BLR_vyacheslav_linkevich
-	recruit_character = BLR_sergey_frolov
-	recruit_character = BLR_valery_yanushkevich
-	recruit_character = BLR_vadim_shadura
-	recruit_character = BLR_alexander_naumenko
-	recruit_character = BLR_dmitry_mikholap
-	recruit_character = BLR_igor_azarenok
-	recruit_character = BLR_khrenin
-	recruit_character = BLR_stanislav_zas
+1991.10.12 = {
+    add_ideas = cis_member
 }
 
-2017.1.1 = {
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "BLR_2000_nsb"
-		else = {
-			set_oob = "BLR_2017_nonnsb"
-		}
-	}
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
+}
 
-
-
-	set_variable = { small_medium_business_owners_opinion = 60 }
-	set_variable = { fossil_fuel_industry_opinion = 60 }
-
-	#Nat focus
-
-	add_ideas = {
-		#pop_050
-		#The_Military
-		#The_Intelligence_Community
-		#National_Police
-		orthodox_christian
-		sco_observer
-		unrestrained_corruption
-
-		stagnation
-		defence_01
-		edu_04
-		health_03
-		social_03
-		bureau_02
-		police_05
-		#parties_harassment
-		#state_press
-		partial_draft_army
-		volunteer_women
-		medium_far_right_movement
-		oligarchs
-		small_medium_business_owners
-		fossil_fuel_industry
-	}
-
-	set_technology = {
-		#Polones MLRS
-		Arty_upgrade_1 = 1
-		Arty_upgrade_2 = 1
-		Arty_upgrade_3 = 1
-		SP_arty_1 = 1
-		SP_arty_2 = 1
-		SP_R_arty_1 = 1
-		SP_R_arty_2 = 1
-
-		body_armor_2000 = 1
-
-		microprocessors = 1
-		computing2 = 1
-		decryption2 = 1
-		encryption2 = 1
-		computing3 = 1
-		decryption3 = 1
-		encryption3 = 1
-		computing4 = 1
-		decryption4 = 1
-		encryption4 = 1
-		neural_networks_revival = 1
-		data_mining = 1
-		industrial_electrospun_polymeric_nanofibers = 1
-		stereolitography = 1
-		DNA_fingerprinting = 1
-		modern_gmo = 1
-		gene_therapy = 1
-		internet2 = 1 	#2G
-		gprs = 1
-		wifi = 1
-		internet3 = 1	#3G
-		construction1 = 1
-		excavation1 = 1
-	}
-
-	### Economy
-	set_variable = { var = debt value = 48 }
-	set_variable = { var = int_investments value = 0.1 }
-	set_variable = { var = treasury value = 5 }
-	set_variable = { var = corporate_tax_rate value = 25 }
-	set_variable = { var = population_tax_rate value = 14 }
-
-	set_popularities = {
-		democratic = 8.7
-		communism = 81.8
-		fascism = 0.0
-		neutrality = 7.2
-		nationalist = 2.3
-	}
+2001.9.1 = {
+	oob = "_army_minor_2013"
+	
 	set_politics = {
-		ruling_party = communism
-		last_election = "2015.10.11"
+		ruling_party = neutrality
+		last_election = "1994.3.15"
 		election_frequency = 60
 		elections_allowed = yes
 	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.02 } #conservatism
-	set_variable = { party_pop_array^2 = 0.027 } #liberalism
-	set_variable = { party_pop_array^3 = 0.04 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0.017 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0.801 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0.039 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0.033 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0.023 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 6 }
-
-	startup_politics = yes
+	set_popularities = {
+		communism = 10
+		reformism = 4
+		liberalism = 2
+		democratic = 2
+		neutrality = 82
+		fascism = 0
+		rad_islamists = 0
+	}
 }
+
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 7553 }
+	subtract_from_variable = { budget_reserve = -632 }
+
+	oob = "BLR_2013"
+	load_oob = "_tech_csto_minor_2013"
+	create_intelligence_agency = yes
+	
+	# government
+	add_ideas = {
+		regional_country
+		obsolete_army
+		BLR_milk_war
+		BLR_natioanal_library
+		BLR_peresident
+		BLR_unstability_money
+		BLR_subsidies_to_unprofitable_enterprises
+		BLR_loyalty_silovic_small
+
+		blr_mikhail_myasnikovich_hog
+		blr_yuri_zhadobin_defm
+		blr_vladimir_makey_fgm
+		blr_nikolay_snopkov_ecm
+		blr_valeri_vakulchik_ssch
+		# laws
+		presidential_republic
+		unitary_state
+		preference_religion
+		state_media_only
+		suspended_liberties
+		mandatory_urgent_service
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		low_terrorism
+		
+		EU_sanctions
+	}
+
+	add_political_power = 0
+
+	set_convoys = 0
+	
+	set_war_support = 0.2
+	set_stability = 0.4
+
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2010.12.19"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 0
+		liberalism = 10
+		democratic = 20
+		neutrality = 60
+		fascism = 5
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Aleksandr Lukashenko"
+		desc = "POLITICS_ALEKSANDR_LUKASHENKO_DESC"
+		picture = "gfx/leaders/BLR/portrait_aleksandr_lukashenko.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy}
+	}
+
+	create_country_leader = {
+		name = "Nikolai Lukashenko"
+		desc = ""
+		picture = "gfx/leaders/BLR/portrait_Nikolai_Lukashenko.dds"
+		ideology = leninism
+		traits = { trait_leninism}
+	}
+
+	create_country_leader = {
+		name = "Viktor Lukashenko"
+		desc = ""
+		picture = "gfx/leaders/BLR/portrait_Viktor_Lukashenko.dds"
+		ideology = leninism
+		traits = { trait_leninism}
+	}
+
+	create_country_leader = {
+		name = "Aleksey Sokol"
+		desc = "POLITICS_ALEKSEY_SOKOL_DESC"
+		picture = "gfx/leaders/portrait_aleksey_sokol.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Igor Karpenko"
+		desc = "POLITICS_IGOR KARPENKO_DESC"
+		picture = "gfx/leaders/BLR/portrait_igor_karpenko.dds"
+		expire = "2017.5.14"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Anatoliy Lebedko"
+		desc = "POLITICS_ANATOLIY_LEBEDKO_DESC"
+		picture = "gfx/leaders/BLR/portrait_anatoliy_lebedko.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Irina Veshtard"
+		desc = "POLITICS_IRINA_VESHTARD_DESC"
+		picture = "gfx/leaders/BLR/portrait_irina_veshtord.dds"
+		ideology = liberal_conservatism
+		#expire = ""
+		traits = { trait_liberal_conservatism }
+	}	
+
+	create_country_leader = {
+		name = "Zianon Pazniak"
+		desc = "POLITICS_ZIANON_PAZNIAK_DESC"
+		picture = "gfx/leaders/BLR/portrait_zianon_pazniak.dds"
+		ideology = national_liberalism
+		traits = { trait_national_liberalism }
+	}
+	
+	create_country_leader = {
+		name = "Vasiliy Zadnepryaniy"
+		desc = "POLITICS_VASILIY_ZABDEPRYADNIY_DESC"
+		picture = "gfx/leaders/BLR/portrait_vasiliy_zandepryadniy.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}	
+	
+  create_field_marshal = {
+		name = "Yury Zhadobin"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_yury_zhadobin.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+  create_field_marshal = {
+		name = "Andrey Ravkov"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_andrey_ravkov.dds"
+		traits = {  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+  create_corps_commander = {
+		name = "Oleg Belokonev"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_oleg_belokonev.dds"
+		traits = {  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+  create_corps_commander = {
+		name = "Leonid Maltsev"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_leonid_maltsev.dds"
+		traits = {  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+  create_corps_commander = {
+		name = "Alexander Mezhuyev"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_alexander_mezhuyev.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Sergey Gurulev"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_sergey_gurulev.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Sergey Potapenko"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_sergey_potapenko.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Igor Lotenkov"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_igor_lotenkov.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Vitaly Kireev"
+		portrait_path = "gfx/leaders/BLR/portrait_blr_general_vitaly_kireev.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Alexander Volfovich"
+		portrait_path = "gfx/leaders/BLR/general/portrait_blr_general_alexander_volfovich.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Andrey Burydko"
+		portrait_path = "gfx/leaders/BLR/general/portrait_blr_general_andrey_burydko.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Andrey Krivonosov"
+		portrait_path = "gfx/leaders/BLR/general/portrait_blr_general_andrey_krivonosov.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Sergey Symonenko"
+		portrait_path = "gfx/leaders/BLR/general/portrait_blr_general_sergey_symonenko.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Vadim Denisenko"
+		portrait_path = "gfx/leaders/BLR/general/portrait_blr_general_vadim_denisenko.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Viktor Gulevich"
+		portrait_path = "gfx/leaders/BLR/general/portrait_blr_general_viktor_gulevich.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+  create_corps_commander = {
+		name = "Viktor Khrenin"
+		portrait_path = "gfx/leaders/BLR/general/portrait_blr_general_viktor_khrenin.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+
+}
+

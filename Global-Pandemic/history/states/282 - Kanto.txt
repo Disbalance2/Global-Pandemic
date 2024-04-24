@@ -1,0 +1,51 @@
+state = {
+	id = 282
+	name = "STATE_282" # Kanto
+	manpower = 43000000
+	state_category = megalopolis
+	resources = {
+		iron_ore = 10
+	}
+	history = {
+		owner = FRA
+		set_state_flag = sintoism
+		set_state_flag = nation_sys_Japanese_nation
+		add_core_of = JAP
+		buildings = {
+			infrastructure = 8
+			air_base = 6
+			industrial_complex = 5
+			steel_factory = 6
+			arms_factory = 2
+			dockyard = 4
+			thermal_power_plant = 10
+			eco_power_plant = 7
+			nuclear_reactor = 1
+			synthetic_refinery = 4
+			9998 = {
+				naval_base = 10
+			}
+		}
+		victory_points = {
+			1182 20 
+		}
+        victory_points = {
+			4188 10 
+		}
+        victory_points = {
+			4184 5 
+		}
+        victory_points = {
+			9998 5
+		}
+        victory_points = {
+			7016 5 
+		}
+        victory_points = {
+			1113 5 
+		}
+	}
+	provinces = {
+		993 1097 1113 1182 4000 4100 4184 4188 7016 9998 11908 
+	}
+}

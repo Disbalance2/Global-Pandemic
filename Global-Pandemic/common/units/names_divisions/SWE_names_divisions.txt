@@ -8,336 +8,352 @@
 # can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
 #
 # division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
-#				  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
-#				  for example the current one is no longer available due to the can_use trigger saying so).
-#				  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
 #
 # fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
-#				 mechanics to be used for fallbacks, then just skip this option.
+#                 mechanics to be used for fallbacks, then just skip this option.
 #
 # unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
-#			 this option is available here mainly for a mods.
+#             this option is available here mainly for a mods.
 #
-# ordered - Is a list of all historical names.
-#		   Numbers must start from 1 and up.
-#		   Numbers can't repeat in one scope.
-#		   If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
-#		   All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
-#		   1st argument = The name. It must contain either:
-#						  %d (for decimal number placement)
-#						  %s (for string number placement - ROMAN numbers like XIV).
-#		   2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
-#									  where you choose the historical division name.
-#		   3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
-#									  the current game version.
-
-SWE_MEC_01 = {
-	name = "Mechanised Battalions"
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+SWE_INF_01 = 
+{
+	name = "Infantry Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "infantry" }
 
-	division_types = { "Arm_Inf_Bat" }
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SWE_INF_01 }
 
-	link_numbering_with = { SWE_MEC_02 }
+	fallback_name = "%s. Arméfördelningen"
 
-	fallback_name = "%d. Mekaniserade Bataljonen"
-
-	# Names with numbers (only one number per entry).
+	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered = {
-		41 = { "41:a Mekaniserade Bataljonen" }
-		42 = { "42:a Mekaniserade Bataljonen" }
-		72 = { "72:a Mekaniserade Bataljonen" }
+	ordered =
+	{
+		1 = { "%s. Arméfördelningen" }
+		2 = { "%s. Arméfördelningen" }
+		3 = { "%s. Arméfördelningen" }
+		4 = { "%s. Arméfördelningen" }
+		6 = { "%s. Arméfördelningen" }
+		10 = { "%s. Arméfördelningen" }
+		11 = { "%s. Arméfördelningen" }
+		12 = { "%s. Arméfördelningen" }
+		13 = { "%s. Arméfördelningen" }
+		14 = { "%s. Arméfördelningen" }
+		15 = { "%s. Arméfördelningen" }
+		16 = { "%s. Arméfördelningen" }
+		5 = { "%s. Arméfördelningen" }
+		7 = { "%s. Arméfördelningen" }
+		8 = { "%s. Arméfördelningen" }
+		9 = { "%s. Arméfördelningen" }
+		
 	}
 }
 
-SWE_MEC_02 = {
-	name = "Light Mechanised Battalions"
+SWE_CAV_01 = 
+{
+	name = "Cavalry Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "mechanized_on_ifv_tracked" }
 
-	division_types = { "Mech_Inf_Bat" }
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SWE_INF_01 }
 
-	link_numbering_with = { SWE_MEC_01 }
+	fallback_name = "%d. Kavallerifördelningen"
 
-	fallback_name = "%d. Lätta Mekaniserade Bataljonen"
-
-	ordered = {
-		71 = { "71:a Lätta Mekaniserade Bataljonen" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%s. Kavallerifördelningen" }
+		2 = { "%s. Kavallerifördelningen" }
+		3 = { "%s. Kavallerifördelningen" }
+		4 = { "%s. Kavallerifördelningen" }
+		5 = { "%s. Kavallerifördelningen" }
+		6 = { "%s. Kavallerifördelningen" }
+		7 = { "%s. Kavallerifördelningen" }
+		8 = { "%s. Kavallerifördelningen" }
+		9 = { "%s. Kavallerifördelningen" }
+		10 = { "%s. Kavallerifördelningen" }
 	}
 }
 
-SWE_MEC_03 = {
-	name = "Mechanised Battlegroups"
+SWE_MOT_01 = 
+{
+	name = "Motorized Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "motorized" }
 
-	division_types = { "Mech_Inf_Bat" "Arm_Inf_Bat" }
+	# Number reservation system will tie to another group.
+	link_numbering_with = { SWE_INF_01 }
 
-	fallback_name = "%d. Stridsgrupp"
+	fallback_name = "%s. Motoriserade Arméfördelningen"
 
-	ordered = {
-		1 = { "Stridsgrupp Gotland" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%s. Motoriserade Arméfördelningen" }
+		2 = { "%s. Motoriserade Arméfördelningen" }
+		3 = { "%s. Motoriserade Arméfördelningen" }
+		4 = { "%s. Motoriserade Arméfördelningen" }
+		6 = { "%s. Motoriserade Arméfördelningen" }
+		10 = { "%s. Motoriserade Arméfördelningen" }
+		11 = { "%s. Motoriserade Arméfördelningen" }
+		12 = { "%s. Motoriserade Arméfördelningen" }
+		13 = { "%s. Motoriserade Arméfördelningen" }
+		14 = { "%s. Motoriserade Arméfördelningen" }
+		15 = { "%s. Motoriserade Arméfördelningen" }
+		16 = { "%s. Motoriserade Arméfördelningen" }
+		5 = { "%s. Motoriserade Arméfördelningen" }
+		7 = { "%s. Motoriserade Arméfördelningen" }
+		8 = { "%s. Motoriserade Arméfördelningen" }
+		9 = { "%s. Motoriserade Arméfördelningen" }
 	}
 }
 
-SWE_MEC_04 = {
-	name = "Mechanised Regiments"
+SWE_MEC_01 = 
+{
+	name = "Mechanized Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "motorized" "light_motorized" "mechanized_on_apc_tracked" "mechanized_on_apc_wheeled" }
 
-	division_types = { "Mech_Inf_Bat" "Arm_Inf_Bat" }
+	# Number reservation system will tie to another group.
+	link_numbering_with = { SWE_INF_01 }
 
-	fallback_name = "%d. Mekaniserade Regementen"
+	fallback_name = "%s. Mekaniserade Fördelningen"
 
-	ordered = {
-		1 = { "Jämtlands fältjägarregemente" }
-		2 = { "Södra Skånska Regementet" }
-		3 = { "Skaraborg Regementet" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%s. Mekaniserade Fördelningen" }
+		2 = { "%s. Mekaniserade Fördelningen" }
+		3 = { "%s. Mekaniserade Fördelningen" }
+		4 = { "%s. Mekaniserade Fördelningen" }
+		5 = { "%s. Mekaniserade Fördelningen" }
+		6 = { "%s. Mekaniserade Fördelningen" }
+		7 = { "%s. Mekaniserade Fördelningen" }
+		8 = { "%s. Mekaniserade Fördelningen" }
+		9 = { "%s. Mekaniserade Fördelningen" }
+		10 = { "%s. Mekaniserade Fördelningen" }
+		11 = { "%s. Mekaniserade Fördelningen" }
+		12 = { "%s. Mekaniserade Fördelningen" }
+		13 = { "%s. Mekaniserade Fördelningen" }
+		14 = { "%s. Mekaniserade Fördelningen" }
+		15 = { "%s. Mekaniserade Fördelningen" }
 	}
 }
 
-SWE_MEC_05 = {
-	name = "Mechanised Brigades"
+SWE_ARM_01 = 
+{
+	name = "Armored Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "light_tank" "main_battle_tank" "main_battle_tank_te" "medium_tank" "ng_battle_tank" "unmanned_tank" }
 
-	division_types = { "Mech_Inf_Bat" "Arm_Inf_Bat" }
+	# Number reservation system will tie to another group.
+	link_numbering_with = { SWE_INF_01 }
 
-	fallback_name = "%d. Mekaniserade Brigaden"
-}
+	fallback_name = "%s. Pansarfördelningen"
 
-SWE_ARM_01 = {
-	name = "Armoured Battalions"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "armor_Bat" }
-
-	fallback_name = "%d. Pansarbataljonen"
-
-	ordered = {
-		1 = { "Norrbottens Pansarbataljon" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		8 = { "%s. Pansarfördelningen" }
+		9 = { "%s. Pansarfördelningen" }
+		10 = { "%s. Pansarfördelningen" }
+		11 = { "%s. Pansarfördelningen" }
+		12 = { "%s. Pansarfördelningen" }
+		13 = { "%s. Pansarfördelningen" }
+		14 = { "%s. Pansarfördelningen" }
+		15 = { "%s. Pansarfördelningen" }
+		16 = { "%s. Pansarfördelningen" }
+		17 = { "%s. Pansarfördelningen" }
+		18 = { "%s. Pansarfördelningen" }
+		19 = { "%s. Pansarfördelningen" }
+		20 = { "%s. Pansarfördelningen" }
 	}
 }
 
-SWE_ARM_02 = {
-	name = "Armoured Regiments"
+SWE_PAR_01 = 
+{
+	name = "Paratrooper Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "paratroopers_motorized" "paratroopers_light_motorized" "paratroopers_mechanized_on_apc_tracked" "paratroopers_mechanized_on_apc_wheeled" "paratroopers_mechanized_on_ifv_airdroppable" }
 
-	division_types = { "armor_Bat" }
+	# Number reservation system will tie to another group.
+	link_numbering_with = { SWE_INF_01 }
 
-	fallback_name = "%d. Pansarregementen"
+	fallback_name = "%s. Fallskärmsjägarfördelningen"
 
-	ordered = {
-		1 = { "Norrbottens Regemente" }
-		2 = { "Södermanlands Regemente" }
-		3 = { "Gotlands Regemente" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		11 = { "%s. Fallskärmsjägarfördelningen" }
+		12 = { "%s. Fallskärmsjägarfördelningen" }
+		13 = { "%s. Fallskärmsjägarfördelningen" }
+		14 = { "%s. Fallskärmsjägarfördelningen" }
+		15 = { "%s. Fallskärmsjägarfördelningen" }
+		16 = { "%s. Fallskärmsjägarfördelningen" }
+		17 = { "%s. Fallskärmsjägarfördelningen" }
+		18 = { "%s. Fallskärmsjägarfördelningen" }
+		19 = { "%s. Fallskärmsjägarfördelningen" }
+		20 = { "%s. Fallskärmsjägarfördelningen" }
 	}
 }
 
-SWE_ARM_03 = {
-	name = "Armoured Brigades"
+SWE_MAR_01 = 
+{
+	name = "Marine Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "marines_motorized" "marines_light_motorized" "marines_mechanized_on_apc_tracked" "marines_mechanized_on_apc_wheeled" "marines_mechanized_on_ifv_tracked" }
 
-	division_types = { "armor_Bat" }
+	# Number reservation system will tie to another group.
+	link_numbering_with = { SWE_INF_01 }
 
-	fallback_name = "%d. Pansarbrigaden"
-}
+	fallback_name = "%s. Kustjägarfördelningen"
 
-SWE_AIR_01 = {
-	name = "Airborne Hussar Regiments"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "L_Air_Inf_Bat" "Mot_Air_Inf_Bat" "Mech_Air_Inf_Bat" "Arm_Air_Inf_Bat" "L_Air_assault_Bat" "Arm_Air_assault_Bat" }
-
-	fallback_name = "%d. Luftburna Husarregementet"
-
-	ordered = {
-		1 = { "Livregementets Husarer" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		21 = { "%s. Kustjägarfördelningen" }
+		22 = { "%s. Kustjägarfördelningen" }
+		23 = { "%s. Kustjägarfördelningen" }
+		24 = { "%s. Kustjägarfördelningen" }
+		25 = { "%s. Kustjägarfördelningen" }
+		26 = { "%s. Kustjägarfördelningen" }
+		27 = { "%s. Kustjägarfördelningen" }
+		28 = { "%s. Kustjägarfördelningen" }
+		29 = { "%s. Kustjägarfördelningen" }
+		30 = { "%s. Kustjägarfördelningen" }
+		31 = { "%s. Kustjägarfördelningen" }
 	}
 }
 
-SWE_MOT_01 = {
-	name = "Motorised Battalions"
+SWE_MNT_01 = 
+{
+	name = "Mountain Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "mountaineers_motorized" "mountaineers_light_motorized" "mountaineers_mechanized_on_apc_tracked" "mountaineers_mechanized_on_apc_wheeled" }
 
-	division_types = { "Mot_Inf_Bat" }
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SWE_INF_01 }
 
-	fallback_name = "%d. Motoriserade Bataljonen"
+	fallback_name = "%s. Jägarfördelningen"
 
-	ordered = {
-		12 = { "12:e Motoriserade Bataljonen" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		31 = { "%s. Jägarfördelningen" }
+		32 = { "%s. Jägarfördelningen" }
+		33 = { "%s. Jägarfördelningen" }
+		34 = { "%s. Jägarfördelningen" }
+		35 = { "%s. Jägarfördelningen" }
+		36 = { "%s. Jägarfördelningen" }
+		37 = { "%s. Jägarfördelningen" }
+		38 = { "%s. Jägarfördelningen" }
+		39 = { "%s. Jägarfördelningen" }
+		40 = { "%s. Jägarfördelningen" }
+		41 = { "%s. Jägarfördelningen" }
+		42 = { "%s. Jägarfördelningen" }
 	}
 }
 
-SWE_MOT_02 = {
-	name = "Motorised Regiments"
+SWE_GAR_01 = 
+{
+	name = "Garrison Division"
 
 	for_countries = { SWE }
 
+	can_use = { always = yes }
 
+	division_types = { "infantry" }
 
-	division_types = { "Mot_Inf_Bat" }
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SWE_INF_01 }
 
-	fallback_name = "%d. Motoriserade Regementen"
+	fallback_name = "I%d Garnison"
 
-	ordered = {
-		1 = { "Livgardet" }
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "I1 Garnison" }
+		2 = { "I2 Garnison" }
+		3 = { "I3 Garnison" }
+		4 = { "K1 Garnison" }
+		5 = { "K2 Garnison" }
+		6 = { "I10 Garnison" }
+		7 = { "I12 Garnison" }
+		8 = { "I13 Garnison" }
+		9 = { "I15 Garnison" }
+		10 = { "F1 Garnison" }
+		11 = { "F2 Garnison" }
+		12 = { "I5 Garnison" }
+		13 = { "I20 Garnison" }
+		14 = { "I6 Garnison" }
+		15 = { "I19 Garnison" }
+		16 = { "I21 Garnison" }
+		17 = { "I9 Garnison" }
+		18 = { "K3 Garnison" }
+		19 = { "K4 Garnison" }
+		20 = { "K5 Garnison" }
+		21 = { "Ing1 Garnison" }
+		22 = { "Ing2 Garnison" }
+		23 = { "Ing3 Garnison" }
+		24 = { "T1 Garnison" }
+		25 = { "T2 Garnison" }
 	}
 }
 
-SWE_MOT_03 = {
-	name = "Motorised Brigades"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "Mot_Inf_Bat" }
-
-	fallback_name = "%d. Motoriserade Brigaden"
-}
-
-SWE_INF_01 = {
-	name = "Lifeguards"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "L_Inf_Bat" }
-
-	fallback_name = "%d. Livbataljonen"
-
-	ordered = {
-		10 = { "10:e Livbataljonen" }
-	}
-}
-
-SWE_INF_02 = {
-	name = "Home Guards"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "L_Inf_Bat" "Militia_Bat" "Mot_Militia_Bat" }
-
-	fallback_name = "%d. Fältjägarbataljonen"
-
-	ordered = {
-		10 = { "10. Lapplandsjägarbataljonen" }
-		11 = { "11. Gränsjägarbataljonen" }
-		12 = { "12. Norrbottensbataljonen" }
-		13 = { "13. Västerbottensbataljonen" }
-		14 = { "14. Fältjägarbataljonen" }
-		15 = { "15. Ångermanlandsbataljonen" }
-		16 = { "16. Medelpadsbataljonen" }
-		17 = { "17. Dalabataljonen" }
-		18 = { "18. Gävleborgsbataljonen" }
-		19 = { "19. Värmlandsbataljonen" }
-		20 = { "20. Sannahedsbataljonen" }
-		21 = { "21. Upplandsbataljonen" }
-		22 = { "22. Västmanlandsbataljonen" }
-		23 = { "23. Attundalandsbataljonen" }
-		24 = { "24. Stockholmsbataljonen" }
-		25 = { "25. Taeliehusbataljonen" }
-		26 = { "26. Järvabataljonen" }
-		27 = { "27. Södermanlandsbataljonen" }
-		28 = { "28. Roslagsbataljonen" }
-		29 = { "29. Södertörnsbataljonen" }
-		30 = { "30. (1st) Livgrenadjärbataljonen" }
-		31 = { "31. (2nd) Livgrenadjärbataljonen" }
-		32 = { "32. Gotlandsbataljonen" }
-		33 = { "33. Norra Smålandsbataljonen" }
-		34 = { "34. Kalmarbataljonen" }
-		35 = { "35. Kronobergsbataljonen" }
-		36 = { "36. Blekinge västra bataljon" }
-		37 = { "37. Blekinge östra bataljon" }
-		38 = { "38. Kinnebataljonen" }
-		39 = { "39. Kåkindbataljonen" }
-		40 = { "40. Bohusbataljonen" }
-		41 = { "41. Göteborgs södra bataljon" }
-		42 = { "42. Göteborgs norra bataljon" }
-		43 = { "43. Göteborgs skärgårds bataljon" }
-		44 = { "44. Älvsborgsbataljonen" }
-		45 = { "45. Hallandsbataljonen" }
-		46 = { "46. Södra skånska bataljonen" }
-		47 = { "47. Malmöhusbataljonen" }
-		48 = { "48. Skånska dragonbataljonen" }
-		49 = { "49. Norra skånska bataljonen" }
-	}
-}
-
-SWE_INF_03 = {
-	name = "Dragoon Regiments"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "L_Inf_Bat" "Mot_Inf_Bat" "Special_Forces" }
-
-	fallback_name = "%d. Dragonregementet"
-
-	ordered = {
-		1 = { "Norrlands Dragonregemente" }
-	}
-}
-
-SWE_SPEC_01 = {
-	name = "Jäger Battalions"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "Special_Forces" }
-
-	fallback_name = "%d. Jägarbataljonen"
-
-	ordered = {
-		193 = { "193:a Jägarbataljon" }
-	}
-}
-
-SWE_MAR_01 = {
-	name = "Amphibious Battalions"
-
-	for_countries = { SWE }
-
-
-
-	division_types = { "L_Marine_Bat" "Mot_Marine_Bat" "Mech_Marine_Bat" "Arm_Marine_Bat" }
-
-	fallback_name = "%d. Amfibebataljonen"
-
-	ordered = {
-		2 = { "2:a Amfibebataljonen" }
-	}
-}

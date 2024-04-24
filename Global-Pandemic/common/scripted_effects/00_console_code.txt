@@ -1,0 +1,100 @@
+########  ######  
+##       ##    ## 
+##       ##       
+######   ##       
+##       ##       
+##       ##    ## 
+########  ######  
+
+ ######   #######  ##    ##  ######   #######  ##       ######## 
+##    ## ##     ## ###   ## ##    ## ##     ## ##       ##       
+##       ##     ## ####  ## ##       ##     ## ##       ##       
+##       ##     ## ## ## ##  ######  ##     ## ##       ######   
+##       ##     ## ##  ####       ## ##     ## ##       ##       
+##    ## ##     ## ##   ### ##    ## ##     ## ##       ##       
+ ######   #######  ##    ##  ######   #######  ######## ######## 
+ 
+ ######   #######  ########  ######## 
+##    ## ##     ## ##     ## ##       
+##       ##     ## ##     ## ##       
+##       ##     ## ##     ## ######   
+##       ##     ## ##     ## ##       
+##    ## ##     ## ##     ## ##       
+ ######   #######  ########  ######## 
+
+d_test_reset_all = {
+	ROOT = { set_country_flag = test_reset_all }
+}
+d_version_mod = {
+	log = EC_version
+}
+d_mod_version = {
+	log = EC_version
+}
+d_dlc_check = {
+	if = {
+	limit = { has_dlc = "Waking the Tiger" }
+		log = "DLC active: Waking the Tiger"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "Waking the Tiger" } }
+		log = "DLC nope: Waking the Tiger"
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		log = "DLC active: Man the Guns"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "Man the Guns" } }
+		log = "DLC nope: Man the Guns"
+	}
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		log = "DLC active: La Resistance"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "La Resistance" } }
+		log = "DLC nope: La Resistance"
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		log = "DLC active: Death or Dishonor"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "Death or Dishonor" } }
+		log = "DLC nope: Death or Dishonor"
+	}
+}
+
+d_remove_inst_script_building = {
+	every_state = {
+		add_to_variable = { ROOT.cl_steel_factory_temp = building_level@cl_steel_factory }
+		add_to_variable = { ROOT.cl_aluminium_factory_temp = building_level@cl_aluminium_factory }
+		add_to_variable = { ROOT.cl_alloy_steel_factory_temp = building_level@cl_alloy_steel_factory }
+		add_to_variable = { ROOT.cl_rare_earth_factory_temp = building_level@cl_rare_earth_factory }
+		add_to_variable = { ROOT.cl_uran_factory_temp = building_level@cl_uran_factory }		
+	}
+	
+	log = "Activated dev console code: List forfeit resources in the world"
+	log = "Possible freeze even on strong systems!"
+	log = "Steel — [?cl_steel_factory_temp]"
+	log = "Aluminium — [?cl_aluminium_factory_temp]"
+	log = "Alloy steel — [?cl_alloy_steel_factory_temp]"
+	log = "Rare earth — [?cl_rare_earth_factory_temp]"
+	log = "Uran — [?cl_uran_factory_temp]"
+	log = "Clear forfeit!"
+
+	every_state = {
+		remove_building = { type = cl_steel_factory level = ROOT.cl_steel_factory_temp }
+		remove_building = { type = cl_aluminium_factory level = ROOT.cl_aluminium_factory_temp }
+		remove_building = { type = cl_alloy_steel_factory level = ROOT.cl_alloy_steel_factory_temp }
+		remove_building = { type = cl_rare_earth_factory level = ROOT.cl_rare_earth_factory_temp }
+		remove_building = { type = cl_uran_factory level = ROOT.cl_uran_factory_temp }
+	}
+
+	clear_variable = cl_steel_factory_temp
+	clear_variable = cl_aluminium_factory_temp
+	clear_variable = cl_alloy_steel_factory_temp
+	clear_variable = cl_rare_earth_factory_temp
+	clear_variable = cl_uran_factory_temp
+}

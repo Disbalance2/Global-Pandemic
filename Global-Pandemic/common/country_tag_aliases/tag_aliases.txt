@@ -1,4 +1,3 @@
-
 # tag aliases are country tags that maps to different countries depending on a set of triggers
 
 #TAG = { #name of alias tag. must be 3 letters and different from any other tags. once this is defined, it will be available in any script that uses country tags
@@ -15,7 +14,7 @@
 #	# if none of the following targets are defined, the game will check all existing countries but this is highly discouraged for performance reasons
 #	original_tag = GER # pick a country that has original_tag of GER
 #	targets = { GER FRA ENG } # search within the list of tags/variables
-#	target_array = array_name # search within an array
+#	target_array = array_name # search within an array 
 #
 #	# by default alias will return the first existing country that it matches and fulfils the triggers. you can also define a scoring system like this and it will pick the tag with the highest score > 0
 #	country_score = {
@@ -44,28 +43,3 @@
 #	# trigger 3
 #	# ...
 #}
-GRN = {
-	original_tag = DEN
-}
-# operative operation target
-# only set for majors who has agency
-# set on on_weekly
-MOT = {
-	variable = generic_operation_target
-}
-MOJ = {
-	original_tag = PER
-	has_country_flag = PER_mojahded_is_here
-}
-PIF = {
-	original_tag = PER
-	has_country_flag = PER_pan_iran_is_here
-}
-IRN = {
-	original_tag = PER
-	has_country_flag = PER_republican_iran
-}
-IRI = {
-	original_tag = PER
-	has_country_flag = PER_akhoond_flag
-}

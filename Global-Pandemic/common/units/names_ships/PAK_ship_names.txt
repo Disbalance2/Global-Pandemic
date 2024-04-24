@@ -1,40 +1,4 @@
 ﻿##### PAKISTAN NAME LISTS #####
-
-### HELICOPTER OPERATOR NAMES ###
-PAK_LHA_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_HELICOPTER_CARRIERS
-
-	for_countries = { PAK }
-
-	type = ship
-		ship_types = { helicopter_operator }
-
-	prefix = "PNS "
-	fallback_name = "LHA-%d"
-
-	unique = {
-		"Azad" "Jammu" "Kashmir" "Balochistan" "Islamabad" "Khyber" "Pakhtunkhwa" "Punjab" "Sindh"
-	}
-}
-
-### CRUISER NAMES###
-PAK_CRUISERS_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CRUISER
-
-	for_countries = { PAK }
-
-	type = ship
-	ship_types = { battle_cruiser cruiser }
-
-	prefix = "PNS "
-	fallback_name = "CG-%d"
-
-	unique = {
-		"Muzaffarabad" "Quetta" "Gilgit" "Peshawar" "Lahore" "Karachi"
-	}
-}
-
-
 ### REGULAR DESTROYER NAMES###
 PAK_DD_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_DESTROYERS
@@ -42,72 +6,116 @@ PAK_DD_HISTORICAL = {
 	for_countries = { PAK }
 
 	type = ship
-	ship_types = { stealth_destroyer destroyer }
+	#ship_types = { ship_hull_light destroyer }			
 
-	prefix = "PNS "
-	fallback_name = "DDG-%d"
+	prefix = "PNS "							
+	fallback_name = "Destroyer %d"					
 
-	unique = {
-		"Oben Gichki" "Kamdin Masood" "Tolga Qizilbash" "Shidasp Rizvi" "Muneef Sabzvari" "Iltay Salarzai" "Feridun Agha" "Altintop Sanjrani" "Dhaki Umarzai" "Yalim Bukhari" "Isiktan Wur" "Fariman Hiraj" "Isitan Sulemani" "Sorush Sadozai" "Ertugrul Dehwar" "Sa'ed Sumbal" "Farsheed Bukhari" "Vahraz Shahwani" "Ertekin Dogar" "Mahbood Nishapuri"
-	}
-}
-
-### FRIGATE NAMES###
-PAK_FRIGATE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_FRIGATE
-
-	for_countries = { PAK }
-
-	type = ship
-	ship_types = { frigate }
-
-	prefix = "PNS "
-	fallback_name = "FFG-%d"
-
-	unique = {
-		"Iyaad Gujjar" "Kay Muhammadzai" "Acabey Chachar" "Kazak Askari" "Usaama Kakar" "Mehmet Ali Jagirani" "Harun Tiwana" "Gudarz Sabzvari" "Mufeed Loharani" "Zia Derawal" "Farzeen Hussain" "Kayghobad Makhdoom" "Tun Mullagori" "Bahadir Sulemankhel" "Zarir Khushk" "Vorya Jat" "Yogun Tauqi" "Selcuk Bangash" "Rafeeq Gakhar" "Haamid Shar" "Adham Masood" "Acunal Dawar" "Erim Zimri"
+	unique = {											
+		"Shamsher" "Tippu Sultan" "Tariq" "Jhelum" "Tughril" "Taimur" "Badr" "Zarrar" "Karrar" "Larkana" "Rajshahi" "Jalalat" "Shujaat" "Jurrat" "Quwwat" "Azmat" "Dehshat" "Munsif" "Muhafiz" "Mujahid" "Nazim" "Shahjahan" "Khaibar" "Dacca" "Zulfikar"
 	}
 }
 
 
-### CORVETTE NAMES ###
-PAK_CORVETTE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CORVETTE
+### LIGHT CRUISER NAMES###
+PAK_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
 
 	for_countries = { PAK }
 
 	type = ship
-	ship_types = { corvette }
-	prefix = "PNS "
-	fallback_name = "KKG-%d"
+	#ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "PNS "							
+	fallback_name = "Light Cruiser %d"
 
 	unique = {
-		"Akinci Kirmani" "Abdul Hameed Saleem" "Kor Rajput" "Tugalp Babar" "Engin Rathore" "Mubashshir Tahirkheli" "Ender Wur" "Mutammam Salarzai" "Eroz Marwat" "Gunel Nishapuri" "Novid Sadozai" "Hanefi Khosa" "Akkilic Jalbani" "Huraira Mirza" "Nazif Barr" "Mukarram Mashwanis" "Hooshyar Sangha"
+	   "Babur" "Jahangir" "Humayun" "Sher Shah Suri" "Akbar" "Shah Jahan" "Aurangzeb" "Bahadur Shah" "Furrukhsiyar" "Rafi Ul-Darjat" "Muhammad Ibrahim" "Saif"
 	}
 }
 
-### MISSILE SUBMARINES NAMES ###
-PAK_MISSILE_SUBMARINE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_MISSILE_SUBMARINES
+### HEAVY CRUISER NAMES###
+PAK_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
 
 	for_countries = { PAK }
 
 	type = ship
-	ship_types = { missile_submarine }
+	#ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "PNS "							
+	fallback_name = "Heavy Cruiser %d"
 
-	prefix = "PNS "
-	fallback_name = "SSBN-%d"
+	unique = {
+	   "Babur" "Jahangir" "Humayun" "Sher Shah Suri" "Akbar" "Shah Jahan" "Aurangzeb" "Bahadur Shah" "Furrukhsiyar" "Rafi Ul-Darjat" "Muhammad Ibrahim" "Saif"
+	}
 }
 
-### ATTACK SUBMARINES ###
+### BATTLESHIP NAMES ###
+PAK_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { PAK }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "PNS "							
+	fallback_name = "Battleship %d"		
+
+	unique = {
+		"Punjab" "Mughal" "Kashmir" "Afghania" "Sindh" "Baluchistan"
+	}
+}
+
+### BATTLECRUISER NAMES ###
+PAK_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { PAK }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "PNS "							
+	fallback_name = "Battlecruiser %d"		
+
+	unique = {
+ 		"Punjab" "Mughal" "Kashmir" "Afghania" "Sindh" "Baluchistan"
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+PAK_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { PAK }
+
+	type = ship
+	#ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "PNS "							
+	fallback_name = "Carrier %d"		
+
+	unique = {
+		"Punjab" "Mughal" "Kashmir" "Afghania" "Sindh" "Baluchistan"
+	}
+}
+
+
+### SUBMARINES ###
 PAK_SS_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_SUBMARINES
 
 	for_countries = { PAK }
 
 	type = ship
-	ship_types = { attack_submarine }
-
-	prefix = "PNS "
-	fallback_name = "SSN-%d"
+	#ship_types = { ship_hull_submarine submarine }
+	
+	prefix = "PNS "							
+	fallback_name = "Submarine %d"
+	
+	unique = {
+		"Hashmat" "Hurmat" "Khalid" "Saad" "Hamza" "Ghazi" "Hangor" "Shushuk" "Mangro"
+	}
 }

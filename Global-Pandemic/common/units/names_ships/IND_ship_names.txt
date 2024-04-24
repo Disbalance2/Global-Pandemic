@@ -1,4 +1,4 @@
-﻿##### INDONESIA NAME LISTS #####
+﻿##### BRITISH IND/INDIA NAME LISTS #####
 ### REGULAR DESTROYER NAMES###
 IND_DD_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_DESTROYERS
@@ -6,33 +6,84 @@ IND_DD_HISTORICAL = {
 	for_countries = { IND }
 
 	type = ship
-	ship_types = { stealth_destroyer destroyer }
+	#ship_types = { ship_hull_light destroyer }			
 
-	prefix = "KRI "
-	fallback_name = "Perusak %d"
+	prefix = "HMIS "							
+	fallback_name = "Destroyer %s"					
 
-	unique = {
-		"Mandau" "Rencong" "Badik" "Keris" "Todak" "Hiu" "Layang" "Lemadang" "Pandrong" "Sura" "Clurit" "Kujang" "Beladau" "Alamang" "Parang" "Siwar" "Surik"
-		"Terapang" "Sampari" "Tombak" "Halasan" "Badau" "Selawaku" "Ajak" "Andau" "Singa" "Tongkak" "Kakap" "Kerapu" "Tongkol" "Barakuda" "Boa" "Welang"
+	unique = {											
+		"Sutlej" "Jumna" "Narbada" "Godavari" "Kistna" "Cauvery" "Sabarmati" "Vatrak" "Mohar" "Mahi" "Panam" "Anas" "Moran" "Banas" "Luni" "Sukari" "Bandi" "Chambel" 
+		"Asan" "Ghaghara" "Sarda" "Gandak" "Koshi" "Mahananda" "Brahmaputra" "Kopili" "Digaru" "Puthimari" "Baralia" "Pagaldiya" "Kaladiya" "Beki" "Manas" "Champabati" 
+		"Shil Torsa" "Tir" "Talwar" "Trishul"
 	}
 }
 
-### CRUISER NAMES###
-IND_CRUISERS_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CRUISER
+
+### LIGHT CRUISER NAMES###
+IND_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
 
 	for_countries = { IND }
 
 	type = ship
-	ship_types = { battle_cruiser cruiser }
-
-	prefix = "KRI "
-	fallback_name = "Kapal Penjelajah %d"
+	#ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "HMIS "							
+	fallback_name = "Light Cruiser %s"
 
 	unique = {
-		"Diponegoro" "Sultan Hasanuddin" "Sultan Iskandar Muda" "Frans Kaisiepo" "Bung Tomo" "John Lie" "Usman Harun" "Fatahillah" "Malahayati" "Nala"
-		"Kapitan Pattimura" "Untung Suropati" "Nuku" "Lambung Mangkurat" "Cut Nyak Dien" "Sultan Thaha Syaifudin" "Sutanto" "Sutedi Senoputra" "Wiratno"
-		"Tjiptadi" "Hasan Basri" "Imam Bonjol" "Teuku Umar" "Silas Papare"
+	   "Delhi" "Bombay" "Mysore" "Karachi" "Rangoon" "Hyderabad" "Lucknow" "Ahmadabad" "Patna" "Mandalay" "Dacca" "Calcutta"
+	}
+}
+
+### HEAVY CRUISER NAMES###
+IND_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { IND }
+
+	type = ship
+	#ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "HMIS "							
+	fallback_name = "Heavy Cruiser %s"
+
+	unique = {
+	   "Delhi" "Bombay" "Mysore" "Karachi" "Rangoon" "Hyderabad" "Lucknow" "Ahmadabad" "Patna" "Mandalay" "Dacca" "Calcutta"
+	}
+}
+
+### BATTLESHIP NAMES ###
+IND_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { IND }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "HMIS "							
+	fallback_name = "Battleship %s"		
+
+	unique = {
+		"India" "IND" "Empress" "Emperor" "Hindustan" "Revenge" "Retribution" "Vengeance" "Nemesis" 
+	}
+}
+
+### BATTLECRUISER NAMES ###
+IND_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { IND }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "HMIS "							
+	fallback_name = "Battlecruiser %s"		
+
+	unique = {
+ 		"India" "IND" "Empress" "Emperor" "Hindustan" "Revenge" "Retribution" "Vengeance" "Nemesis" 
 	}
 }
 
@@ -43,65 +94,16 @@ IND_CV_HISTORICAL = {
 	for_countries = { IND }
 
 	type = ship
-	ship_types = { carrier }
-
-	prefix = "KRI "
-	fallback_name = "Kapal Induk %d"
+	#ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "HMIS "							
+	fallback_name = "Carrier %s"		
 
 	unique = {
-		"Sumatra" "Java" "Kalimantan" "Sulawesi" "Nusa Tenggara"
+		 "Vikrant" "Vishnu" "Vikramaditya" "Viraat" "Vishal"
 	}
 }
 
-### HELICOPTER OPERATOR NAMES ###
-IND_LHA_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_HELICOPTER_CARRIERS
-
-	for_countries = { IND }
-
-	type = ship
-		ship_types = { helicopter_operator }
-
-	prefix = "KRI "
-	fallback_name = "Pengangkut Helikopter %d"
-
-	unique = {
-		"Papua" "Maluku" "Aceh" "Jakarta" "Bandung" "Semarang" "Surabaya" "Malang" "Palembang" "Balikpapan" "Makassar" "Padang" "Medan"
-	}
-}
-
-### FRIGATE NAMES###
-IND_FRIGATE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_FRIGATE
-
-	for_countries = { IND }
-
-	type = ship
-	ship_types = { frigate }
-
-	prefix = "KRI "
-	fallback_name = "Fregat %d"
-
-	unique = {
-		"Nagapasa" "Ardadedali" "Alugoro" "Cakra" "Nanggala" "Ridwan Johan Tanudjaja" "Ari Susilo Susanto" "Sosro Sying" "Hoanike On" "Wessel Sopamena" "Esau Bunuhaji" "Alexander Kemit" "Elijah Silalahi" "Suharto" "Susilo" "Iman Sonny Iskandar" "Budi Wahyu Gunawan" "Sutedja Jianguo" "Wirahadi Shanyuan" "Talha Manusama" "Melchizedek Situmorang" "Joshua Turutan" "Naphtali Situmeang" "Purwodarminto" "Slamet" "Raja Deddy Oesman" "Dwi Iman Widjaja" "Unang Xiaodan" "Ramli Qiang" "Yorben van Vliet" "Mordecai Nasution" "Silas Kacinambun" "Jonah Tendang" "Purwodarminto" "Susilo" "Doddy Hartono Irawan" "Sukarno Kuwat Indrajaya" "Chandrawinata Xueyou" "Basirun Li" "Gerben Tutupoly" "Jair Angkat" "Nehemiah Benjerang" "Hushai Simarmata" "Guntur" "Budiono"
-	}
-}
-
-### CORVETTE NAMES ###
-IND_CORVETTE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CORVETTE
-
-	for_countries = { IND }
-
-	type = ship
-	ship_types = { corvette }
-	prefix = "KRI "
-	fallback_name = "korvet %d"
-
-	unique = {
-		"Cahya Tirta Budiman" "Slamet Herman Salim" "Andyanto Weisheng" "Soetanto Bo" "Eli Tapilatu" "Micaiah Larosa" "Barak Aritonang" "Joshua Tumangger" "Purwodarminto" "Susilo" "Eka Doddy Chandra" "Dwi Purnama Susanto" "Wijanarko Fengge" "Kowara Xin" "Foefke Tuasalamony" "Josias Sibero" "Shem Manik" "Shem Sinupayung" "Suripto" "Tirto" "Guntur Raja Chandra" "Buana Cahya Tedja" "Famita Kong" "Natan Cheung" "Geoffry Supusepa" "Isaac Simatupang" "Joshua Silitonga" "Ephraim Maha" "Slamet" "Darma" "Sukarno Krisna Rachman" "Putra Sudirman Atmadja" "Tanzil Siyu" "Angkasa Yaochuan" "Siebren Pattinaja" "Jeremiah Halihi" "Michael Sihole" "Lazarus Pane" "Guntur" "Sudiroprojo"
-	}
-}
 
 ### SUBMARINES ###
 IND_SS_HISTORICAL = {
@@ -110,8 +112,52 @@ IND_SS_HISTORICAL = {
 	for_countries = { IND }
 
 	type = ship
-	ship_types = { ship_hull_submarine submarine }
+	#ship_types = { ship_hull_submarine submarine }
+	
+	prefix = "HMIS "							
+	fallback_name = "Submarine %s"
+	
+	unique = {
+		"Catshark" "Mudskipper" "Sawfish" "Moray" "Parrotfish" "Pipefish" "Mackerel" "Manta" "Milkfish" "Eel" "Trumpetfish" "Mud Skate"
+	}
+}
 
-	prefix = "KRI "
-	fallback_name = "Menyerang Kapal Selam %d"
+
+
+
+### THEME: BRITISH INDIAN REGIONS ###
+IND_PROVINCES = {
+	name = NAME_THEME_PROVINCES
+
+	for_countries = { IND }
+
+	type = ship
+
+	prefix = "HMIS "							
+	unique = {
+		"Madras" "Bombay" "Punjab" "Assam" "Bengal" "United Provinces" "Central Provinces" "Berar" "Burma" "North-West Frontier" "Baluchistan" 
+		"Coorg" "Amjer-Merwara" "Andaman Islands" "Nicobar Islands" "Bihar" "Orissa" "Panth-Piploda" "Sind" 
+	}
+}
+
+## THEME: BRITISH INDIAN CITIES ###
+IND_CITIES = {
+	name = NAME_THEME_CITIES
+
+	for_countries = { IND }
+
+	type = ship
+
+	prefix = "HMIS "							
+	unique = {
+	   "Delhi" "Bombay" "Mysore" "Karachi" "Rangoon" "Hyderabad" "Lucknow" "Ahmadabad" "Patna" "Mandalay" "Dacca" "Calcutta" 
+	   "Bhopal" "Agra" "Madras" "Cochin" "Trivandrum" "Baroda" "Pondicherry"  "Aurangabad" "Mahabubabad" "Mahbubnagar" "Osmanabad" 
+	   "Lahore" "Faisalabad" "Rawalpindi" "	Gujranwala" "Peshawar" "Multan" "Islamabad" "Quetta"  
+	   "Ahmednagar" "Shimla" "Ahmedabad" "Sultanpur" "Muzaffarnagar" "Akbarpur" "Jubbulpore" "Jajesmow" "Cawnpore" "Cuddapah" "Belgaum" "Tumkur" 
+	   "Hubli" "Shimoga" "Hospet" "Gulbarga" "Chikmagalur" "Bijapur" "Bellary" "Mangalore" "INDahmundry" "Gurgaon" "Allahabad" 
+	   "Alleppey" "Gauhati" "Indhur" "Conjevaram" "Cannanore" "Quilon" "Quilandi" "Calicut" "Kudanthai" "Mayavaram" "Nerbudda" 
+	   "Nowgong" "Palghat" "Panjim" "Poona" "Ramnad" "Saugor" "Simla" "Tellicherry" "Tanjore" "Tuticorin" "Trichur" 
+	   "Tinthirivanam" "Trichinopoly" "Tinnevelly" "Triplicane" "Ootacamund" "Vizhupparaiyar" "Benares" "Badagara" "Vriddhachalam" 
+	   "Bejawada" "Waltair" 
+	}
 }

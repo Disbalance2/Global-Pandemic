@@ -1,51 +1,151 @@
-#Written by Hiddengearz, Improved by KyCb(rockon)
-
-##Fuck Terroists
-hate_terrorists = {
-	allowed = {
-		NOT = {
-			original_tag = AQY
-			original_tag = TAL
-			original_tag = TTP
-			original_tag = NUS
-		}
-	}
+isis_war_with_syria = {
 	enable = {
-		has_opinion_modifier = AlQaida_Are_Terrorists
-		NOT = {
-			original_tag = AQY
-			original_tag = TAL
-			original_tag = TTP
-			original_tag = NUS
-		}
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = SYR
 	}
 	abort = {
-		NOT = { has_opinion_modifier = AlQaida_Are_Terrorists }
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = SYR
+			}
+		}
 	}
-	ai_strategy = { type = antagonize id = "AQY" value = 100 }
-	ai_strategy = { type = antagonize id = "TAL" value = 100 }
-	ai_strategy = { type = antagonize id = "TTP" value = 100 }
-	ai_strategy = { type = antagonize id = "NUS" value = 100 }
-	ai_strategy = { type = antagonize id = "SHB" value = 100 }
-	ai_strategy = { type = contain id = "AQY" value = 100 }
-	ai_strategy = { type = contain id = "TAL" value = 100 }
-	ai_strategy = { type = contain id = "TTP" value = 100 }
-	ai_strategy = { type = contain id = "NUS" value = 100 }
-	ai_strategy = { type = contain id = "SHB" value = 100 }
-	ai_strategy = { type = alliance id = "AQY" value = -100 }
-	ai_strategy = { type = alliance id = "TAL" value = -100 }
-	ai_strategy = { type = alliance id = "TTP" value = -100 }
-	ai_strategy = { type = alliance id = "NUS" value = -100 }
-	ai_strategy = { type = alliance id = "SHB" value = -100 }
+	
+	ai_strategy = {
+		type = antagonize
+		id = "SYR"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "SYR"
+	# 	value = 100
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "SYR"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "SYR"
+		value = 500
+	}
 }
 
-everyone_hates_isis = {
+isis_war_with_iraq = {
 	enable = {
-		has_opinion_modifier = ISIS_Are_Terrorists
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = IRQ
 	}
-	abort_when_not_enabled = yes
+	abort = {
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = IRQ
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "IRQ"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "IRQ"
+	# 	value = 200
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "IRQ"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "IRQ"
+		value = 500
+	}
+}
 
-	ai_strategy = { type = antagonize id = "ISI" value = 100 }
-	ai_strategy = { type = contain id = "ISI" value = 100 }
-	ai_strategy = { type = alliance id = "ISI" value = -100 }
+isis_war_with_kurdistan = { 
+	enable = {
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = KUR
+	}
+	abort = {
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = KUR
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "KUR"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "KUR"
+	# 	value = 200
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "KUR"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "KUR"
+		value = 500
+	}
+}
+
+isis_war_with_oppozition_syria = { 
+	enable = {
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = FSA
+	}
+	abort = {
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = FSA
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "FSA"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "FSA"
+	# 	value = 200
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "FSA"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "FSA"
+		value = 500
+	}
 }

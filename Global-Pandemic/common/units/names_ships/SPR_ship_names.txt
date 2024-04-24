@@ -6,14 +6,14 @@ SPR_DD_HISTORICAL = {
 	for_countries = { SPR }
 
 	type = ship
-	ship_types = { ship_hull_light destroyer }
+	#ship_types = { ship_hull_light destroyer }			
 
 	prefix = "ARE "
-	fallback_name = "Destructor %d"
+	fallback_name = "Destructor %d"					
 
-	unique = {
-		"Alsedo" "Velasco" "Lazaga" "Sanchez Barcaiztegui" "Almirante Ferrandiz" "Jose Luis Diez" "Lepanto" "Churruca" "Alcala Galiano" "Almirante Valdes"
-		"Almirante Antequera" "Almirante Miranda" "Escano" "Ciscar" "Gravina" "Jorge Juan" "Ulloa" "Liniers" "Alava" "Huesca" "Teruel" "Ceuta" "Melilla"
+	unique = {											
+		"Alsedo" "Velasco" "Lazaga" "Sanchez Barcaiztegui" "Almirante Ferrandiz" "Jose Luis Diez" "Lepanto" "Churruca" "Alcala Galiano" "Almirante Valdes" 
+		"Almirante Antequera" "Almirante Miranda" "Escano" "Ciscar" "Gravina" "Jorge Juan" "Ulloa" "Liniers" "Alava" "Huesca" "Teruel" "Ceuta" "Melilla" 
 		"Audaz" "Osado" "Meteoro" "Furor" "Rayo" "Ariete" "Temerario" "Intrepido" "Relampago"
 	}
 }
@@ -25,13 +25,13 @@ SPR_CL_HISTORICAL = {
 	for_countries = { SPR }
 
 	type = ship
-	ship_types = { ship_hull_cruiser light_cruiser }
-
+	#ship_types = { ship_hull_cruiser light_cruiser }
+	
 	prefix = "ARE "
 	fallback_name = "Crucero Ligero %d"
 
 	unique = {
-		"Republica" "Mendez Nunez" "Almirante Cervera" "Libertad" "Miguel de Cervantes" "Galicia" "Blas de Lezo" "Sevilla" "Huelva" "Vizcaya" "Granada" "Baleares" "Canarias"
+		"Republica" "Mendez Nunez" "Almirante Cervera" "Libertad" "Miguel de Cervantes" "Galicia" "Blas de Lezo" "Sevilla" "Huelva" "Vizcaya" "Granada" "Baleares" "Canarias" 
 	}
 }
 
@@ -42,13 +42,13 @@ SPR_CA_HISTORICAL = {
 	for_countries = { SPR }
 
 	type = ship
-	ship_types = { ship_hull_cruiser heavy_cruiser }
-
+	#ship_types = { ship_hull_cruiser heavy_cruiser }
+	
 	prefix = "ARE "
 	fallback_name = "Crucero Pesado %d"
 
 	unique = {
-		"Canarias" "Baleares" "Navarra" "Reina Regente" "Cataluna" "Extremadura" "Vizcaya" "Blas de Lezo" "Sevilla" "Huelva" "Vizcaya" "Granada"
+		"Canarias" "Baleares" "Navarra" "Reina Regente" "Cataluna" "Extremadura" "Vizcaya" "Blas de Lezo" "Sevilla" "Huelva" "Vizcaya" "Granada" 
 	}
 }
 
@@ -60,13 +60,13 @@ SPR_BB_HISTORICAL = {
 	for_countries = { SPR }
 
 	type = ship
-	ship_types = { ship_hull_heavy battleship }
-
+	#ship_types = { ship_hull_heavy battleship }
+	
 	prefix = "ARE "
-	fallback_name = "Acorazado %d"
+	fallback_name = "Acorazado %d"		
 
 	unique = {
-		"Jaime I" "Espana" "Alfonso XIII" "Lepanto" "Bailen" "Libertad"
+		"Jaime I" "Espana" "Alfonso XIII" "Lepanto" "Bailen" "Libertad" 
 	}
 }
 
@@ -77,13 +77,13 @@ SPR_BC_HISTORICAL = {
 	for_countries = { SPR }
 
 	type = ship
-	ship_types = { ship_hull_heavy battle_cruiser }
-
+	#ship_types = { ship_hull_heavy battle_cruiser }
+	
 	prefix = "ARE "
-	fallback_name = "Crucero de Batalla %d"
+	fallback_name = "Crucero de Batalla %d"		
 
 	unique = {
-		"Lepanto" "Bailen" "Libertad"
+		"Lepanto" "Bailen" "Libertad" 
 	}
 }
 
@@ -94,13 +94,13 @@ SPR_CV_HISTORICAL = {
 	for_countries = { SPR }
 
 	type = ship
-	ship_types = { carrier }
-
+	#ship_types = { ship_hull_carrier carrier }
+	
 	prefix = "ARE "
-	fallback_name = "Portaaviones %d"
+	fallback_name = "Portaaviones %d"	
 
 	unique = {
-		"Dedalo" "Principe de Asturias" "Republica" "Victoria"
+		"Dedalo" "Principe de Asturias" "Republica" "Victoria" 
 	}
 }
 
@@ -111,77 +111,34 @@ SPR_SS_HISTORICAL = {
 	for_countries = { SPR }
 
 	type = ship
-	ship_types = { missile_submarine attack_submarine }
-
+	#ship_types = { ship_hull_submarine submarine }
+	
 	prefix = "ARE "
 	fallback_name = "S%d"
-
+	
 	ordered = {
-		1 = { "S0%d" }
-		2 = { "S0%d" }
-		3 = { "S0%d" }
-		4 = { "S0%d" }
-		5 = { "S0%d" }
-		6 = { "S0%d" }
-		7 = { "S0%d" }
-		8 = { "S0%d" }
-		9 = { "S0%d" }
-		10 = { "S%d" }
-		11 = { "S%d" }
-		12 = { "S%d" }
-		13 = { "S%d" }
-		14 = { "S%d" }
-		15 = { "S%d" }
-		16 = { "S%d" }
-		17 = { "S%d" }
-		18 = { "S%d" }
-		19 = { "S%d" }
-		20 = { "S%d" }
-		21 = { "S%d" }
-		22 = { "S%d" }
-		23 = { "S%d" }
-	}
-}
-
-SPR_MODERN_DESTROYERS_NAMES = {
-	name = NAME_THEME_MODERN_DESTROYERS
-	for_countries = { SPR }
-	type = ship
-	ship_types = { destroyer stealth_destroyer }
-
-
-	prefix = "ARE "
-	fallback_name = "%d "
-
-	unique = {
-		"Álvaro de Bazán" "Almirante Juan de" "Borbón" "Blas de Lezo" "Méndez Núñez" "Cristóbal Colón" "Soria" "Biscay"
-	}
-}
-
-SPR_MODERN_FRIGATE_NAMES = {
-	name = NAME_THEME_MODERN_FRIGATES
-	for_countries = { SPR }
-	type = ship
-	ship_types = { frigate }
-
-	prefix = "ARE "
-	fallback_name = "F%d "
-
-	unique = {
-		"Santa María" "Victoria" "Numancia" "Reina Sofía" "Navarra" "Canarias" "Alicante" "Cáceres" "Burgos"
-	}
-}
-
-SPR_MODERN_SUBMARINES_NAMES = {
-	name = NAME_THEME_MODERN_SUBMARINES
-	for_countries = { SPR }
-	type = ship
-
-	prefix = "ARE "
-	fallback_name = "F%d "
-	ship_types = { missile_submarine attack_submarine }
-
-	unique = {
-		"Galerna" "Tramontana" "Alhambra" "Prado" "Toledo" "Palencia" "Lugo" "Manresa" "Badajoz" "Lleida" "Almería"
+		1 = {"S0%d"}
+		2 = {"S0%d"}
+		3 = {"S0%d"}
+		4 = {"S0%d"} 
+		5 = {"S0%d"} 
+		6 = {"S0%d"} 
+		7 = {"S0%d"}
+		8 = {"S0%d"}
+		9 = {"S0%d"}
+		10 = {"S%d"}
+		11 = {"S%d"}
+		12 = {"S%d"}
+		13 = {"S%d"}
+		14 = {"S%d"}
+		15 = {"S%d"}
+		16 = {"S%d"}
+		17 = {"S%d"}
+		18 = {"S%d"}
+		19 = {"S%d"}
+		20 = {"S%d"}
+		21 = {"S%d"}
+		22 = {"S%d"}
+		23 = {"S%d"}
 	}
 }

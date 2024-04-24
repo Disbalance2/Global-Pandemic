@@ -1,0 +1,24 @@
+state = {
+	id = 332
+	name = "STATE_332"
+	
+	state_category = wasteland
+
+	history = {
+		owner = FRA
+		set_state_flag = christianity
+		buildings = {
+			infrastructure = 1
+			steel_factory = 4
+			eco_power_plant = 5
+		}
+		add_core_of = CAN
+
+	}
+
+	provinces = {
+		1426 1785 4720 4787 12503 
+	}
+	manpower=22179
+	buildings_max_level_factor=1.000
+}

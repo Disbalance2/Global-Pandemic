@@ -2,169 +2,102 @@ idea_categories = {
 
 	hidden_ideas = {
 		hidden = yes
+	
 		cost = 0
 		removal_cost = -1
-		ledger = hidden
 	}
-
+	
 	country = {
-		type = national_spirit
+		national_spirit = yes
+		
 		cost = 0
 		removal_cost = -1
-		ledger = hidden
 	}
-
-	national_status = {
-		slot = religion
-		slot = economic_cycles
-		slot = corruption
-		slot = internal_factions
-		slot = internal_factions
-		slot = internal_factions
-		removal_cost = -1
-		ledger = civilian
-	}
-
-	government_budget = {
-		slot = bureaucracy
-		slot = Military_Spending
-		slot = crime_fighting
-		slot = education_budget
-		slot = health_budget
-		slot = social_budget
-		cost = 50
-		removal_cost = 0
-		ledger = civilian
-	}
-
-	political_reforms = {
-		slot = trade_laws
-		slot = Conscription_Law
-		slot = Military_Status_Women
-		slot = Foreign_Intervention_Law
-		slot = Officer_Training_Law
+	
+	state_status = {
+		slot = country_status
+		slot = corruption_level
+		slot = terrorism_level
+		slot = ecology_security
+		slot = integration_in_faction
+		slot = EU_integration_level #Allowed only for european countries
+		#slot = law_military_doctrine
+		#slot = law_foreign_policy_doctrine
+		#slot = law_legal_doctrine
+		
 		cost = 150
 		removal_cost = 0
-		ledger = civilian
+	}
+	
+	base_state_laws = {
+	
+		slot = form_of_government_laws
+		slot = power_structure_laws
+		slot = religion_laws
+		slot = mass_media_laws
+		slot = civil_liberties_laws
+		slot = mobilization_laws
+		slot = school_system_policy
+		slot = immigration_laws
+		
+		cost = 150
+		removal_cost = 0
 	}
 
-	Defense_companies = {
+	economy = {
+		slot = economy_laws
+		slot = market_laws
+		slot = industry_focus_laws
+		slot = economic_mobilisation_laws
+		slot = taxes_laws
+		slot = social_security_laws
+		slot = labor_rights_laws
+		slot = trade_laws
+		
+		cost = 150
+		removal_cost = 0
+	}
+	
+	government = {
+		slot = head_of_government
+		slot = defence_minister
+		slot = foreign_minister
+		slot = economic_minister
+		slot = secret_service_chief
+		slot = political_advisor
+		slot = political_advisor
+		slot = political_advisor
+		
+		cost = 100
+		removal_cost = 0
+	}
+	
+	military_staff = {
+		slot = general_staff_chief
+		slot = intelligence_chief
+		slot = army_chief 
+		slot = navy_chief
+		slot = air_chief
+		slot = high_command
+		slot = high_command
+		slot = high_command
+		
+		cost = 100
+		removal_cost = 0
+	}
+	
+	research_production = {
 		slot = tank_manufacturer
 		slot = naval_manufacturer
 		slot = aircraft_manufacturer
 		slot = materiel_manufacturer
+		slot = industrial_concern
+		slot = theorist
+		slot = theorist
+		slot = theorist
 
 		cost = 150
 		removal_cost = 0
-		ledger = civilian
 	}
-
-	military_staff = {
-		character_slot = army_chief
-		character_slot = navy_chief
-		character_slot = air_chief
-		character_slot = high_command
-		character_slot = high_command
-		character_slot = high_command
-		ledger = invalid # must be overridden
-		politics_tab = no
-		cost = 150
-		removal_cost = 0
-	}
-
-	academy_spirit = {
-		type = army_spirit
-		cost = 25
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-
-		slot = academy_spirit
-	}
-
-	army_spirit = {
-		type = army_spirit
-		cost = 50
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-		slot = army_spirit
-	}
-
-	division_command_spirit = {
-		type = army_spirit
-		cost = 75
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-		slot = division_command_spirit
-	}
-
-	naval_academy_spirit = {
-		type = navy_spirit
-		cost = 25
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-		slot = naval_academy_spirit
-	}
-
-	navy_spirit = {
-		type = navy_spirit
-		cost = 50
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-		slot = navy_spirit
-	}
-
-	naval_command_spirit = {
-		type = navy_spirit
-		cost = 75
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-		slot = naval_command_spirit
-	}
-
-	air_force_academy_spirit = {
-		type = air_spirit
-		cost = 25
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-		slot = air_force_academy_spirit
-	}
-
-	air_force_spirit = {
-		type = air_spirit
-		cost = 75
-		removal_cost = -1
-		politics_tab = no
-		ledger = hidden
-		slot = air_force_spirit
-	}
-
-	air_force_command_spirit = {
-		type = air_spirit
-		politics_tab = no
-		cost = 75
-		removal_cost = -1
-		ledger = hidden
-		slot = air_force_command_spirit
-	}
-
-}
-
-slot_ledgers = {
-	materiel_manufacturer = army
-	tank_manufacturer = army
-	aircraft_manufacturer = air
-	tank_manufacturer = air
-	naval_manufacturer = navy
-	naval_manufacturer = navy
-
-	tank_manufacturer = army
-	naval_manufacturer = navy
-	aircraft_manufacturer = air
+	
 }

@@ -1,5 +1,5 @@
-#Angola
-graphical_culture = african_gfx
+
+graphical_culture = eastern_desert_gfx
 graphical_culture_2d = african_2d
 
-color = { 113 250  50 } #random
+color = { 230 230 70 }

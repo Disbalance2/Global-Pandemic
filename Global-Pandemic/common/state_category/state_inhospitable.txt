@@ -1,9 +1,0 @@
-#For impassable states
-state_categories = {
-	state_inhospitable = {
-		local_building_slots = 0
-
-		color = { 128 128 128 }
-
-	}
-}

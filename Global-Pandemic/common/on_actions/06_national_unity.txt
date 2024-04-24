@@ -1,0 +1,66 @@
+on_actions = {
+	on_army_leader_won_combat = {
+		effect = {
+			FROM = {
+				random_list = {
+					90 = { }
+					10 = {
+						subtract_from_variable = { national_unity = -0.1 }
+					}
+				}
+			}
+		}
+	}
+	on_army_leader_lost_combat  = {
+		effect = {
+			FROM = {
+				random_list = {
+					90 = { }
+					10 = {
+						subtract_from_variable = { national_unity = 0.1 }
+					}
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = { #Нет стабильности
+				limit = {
+					has_stability < 0.05
+					NOT = {
+						has_country_flag = national_unity_stab_flag
+					}
+				}
+				subtract_from_variable = { national_unity = 7 }
+				set_country_flag = national_unity_stab_flag
+			}
+			if = { #Слишком высокий милитаризм
+				limit = {
+					has_war_support > 0.95
+					NOT = {
+						has_country_flag = national_unity_ws_flag
+					}
+				}
+				subtract_from_variable = { national_unity = 3 }
+				set_country_flag = national_unity_ws_flag
+			}
+			if = {
+				limit = {
+					has_stability > 0.05
+					has_country_flag = national_unity_stab_flag
+				}
+				clr_country_flag = national_unity_stab_flag
+				subtract_from_variable = { national_unity = -7 }
+			}
+			if = {
+				limit = {
+					has_war_support < 0.95
+					has_country_flag = national_unity_ws_flag
+				}
+				clr_country_flag = national_unity_ws_flag 
+				subtract_from_variable = { national_unity = -3 }
+			}
+		}
+	}
+}

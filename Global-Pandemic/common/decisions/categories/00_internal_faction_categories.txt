@@ -1,6 +1,0 @@
-decision_category_internal_factions = {
-	picture = generic
-	allowed = {
-		always = no
-	}
-}

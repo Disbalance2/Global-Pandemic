@@ -1,5 +1,5 @@
-#Nigeria
-graphical_culture = african_gfx
-graphical_culture_2d = african_2d
 
-color = { 225 85 5 } #random
+graphical_culture = eastern_desert_gfx
+graphical_culture_2d = african_2d 
+
+color = { 100  100  150 }

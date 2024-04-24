@@ -1,1491 +1,1324 @@
-#Written by Hiddengearz
-
 technologies = {
 
-	#cool, basically variables
+	# x = (вертикаль) - type
+	@mbt_platform = 0
+	@t0 = 4
+	@t1 = 2
+	@t2 = 6
+	@t3 = 8
+	@t4 = 10
+	@t5 = 12
+	@t6 = 14
+	@t7 = 16
+	@t8 = 18
+	@t9 = 29
+	@t10 = 32
+	@t11 = 35
+	
+	# y = (горизонталь)
+	# g - generation
+	# d - doctine
+	# p - platform`
+	# m - modification
+	
+	@g0 = -3
+	@g1 = -1
+	
+	@g2p = 1
+	@g2 = 2
+	
+	@g3d = 5
+	@g3p = 3
+	@g3 = 4
+	@g3m = 7
+	
+	@g4d = 7
+	@g4p = 8
+	@g4 = 9
+	@g4m = 9
+	
+	@g5p = 11
+	@g5 = 12
+	@g5m = 12
+	
+	@g6d = 13
+	@g6p = 14
+	@g6 = 15
+	
+	@g7p = 17
+	@g7 = 18
 
-	#X axis
+	@g8d = 19
+	@g8p = 20
+	@g8 = 21
+	
 
-	@1945 = -4
-	@1965 = 0
-	@1975 = 4
-	@1985 = 8
-	@1995 = 12
-	@2005 = 16
-	@2015 = 20
-	@2025 = 24
-	@2035 = 28
-	#@1944 = 16
-	#@1945 = 18
-	#@1946 = 20
+	mbt_turbo_engine = {
+		desc = mbt_turbo_desc
 
-	#Y Axis
-	@row1 = -2
-	@row2 = 0
-	@row3 = 2
-	@row4 = 4
-	@row5 = 6
-	@row6 = 8
-	@row7 = 10
-
-	#1945
-	Early_APC = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Early_APC" }
-
-		allow_branch = {
-			NOT = { has_dlc = "No Step Back" }
+		on_research_complete = {
+		    custom_effect_tooltip = mbt_turbo_engine_t
 		}
 
+		main_battle_tank_te = {
+			max_organisation = 2
+		}
+			
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g4d  y = @t2 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_mbt_te
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+			
+			modifier = {
+				factor = 20
+				tag = RUS
+			}
+			
+						
+			modifier = {
+				factor = 30
+				tag = USA
+			}
+		}	
+	}		
+
+
+	mbt_unmanned_turret = {
+
+		desc = mbt_unmanned_turr_desc
+
+		on_research_complete = {
+		    custom_effect_tooltip = mbt_unmanned_turret_t
+		}
+
+		ng_battle_tank = {
+			max_organisation = 2
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g6d  y = @t3 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_unmanned_turret_doctrine
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				tag = RUS
+			}
+
+			modifier = {
+				factor = 5
+				tag = USA
+			}			
+			
+			modifier = {
+				factor = 10
+				tag = JOR
+			}
+
+			modifier = {
+				factor = 10
+				tag = SAF
+			}
+			
+			modifier = {
+				factor = 5
+				tag = GER
+			}
+			
+		}
+		
+	}		
+
+	mbt_unmanned_full = {
+
+		desc = mbt_unmanned_desc
+
+		on_research_complete = {
+		    custom_effect_tooltip = mbt_unmanned_full_t
+		}
+
+		unmanned_tank = {
+			max_organisation = 2
+		}
+			
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g8d  y = @t4 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_unmanned_doctrine
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+			
+			modifier = {
+				factor = 20
+				tag = USA
+			}
+			
+		}
+		
+	}	
+
+	
+	concept_heavy_tracked_vehicle_1 = {
+		
 		enable_equipments = {
-			APC_Equipment
-			MBT_Equipment
-			IFV_Equipment
-			light_tank_hull
+			medium_tank_g0_equipment_0
 		}
+		
 		enable_subunits = {
-			Mech_Inf_Bat
-			Arm_Inf_Bat
-			Mech_Air_Inf_Bat
-			Arm_Air_Inf_Bat
-			Mech_Marine_Bat
-			Arm_Marine_Bat
-			armor_Bat
-			armor_Comp
-			Mech_Recce_Comp
-			Arm_Recce_Comp
-			H_Engi_Comp
-			Arm_Air_assault_Bat
+			medium_tank
 		}
+		
 		path = {
-			leads_to_tech = APC_1
+			leads_to_tech = medium_tank_t1
 			research_cost_coeff = 1
 		}
-
+		
 		path = {
-			leads_to_tech = IFV_1
+			leads_to_tech = concept_heavy_tracked_vehicle_2
 			research_cost_coeff = 1
 		}
-
-		path = {
-			leads_to_tech = MBT_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 1945
+		
+		research_cost = 1.5
+		
 		folder = {
 			name = armour_folder
-			position = { x = @row2 y = @1945 }
+			position = { x = @g0  y = @mbt_platform  }
 		}
-
-		ai_will_do = {
-			factor = 15
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
+			cat_heavy_tracked_vehicle
 		}
+		
+		ai_will_do = { factor = 5 }
+		
 	}
-
-	fake_Cat_ARMOR = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fake_Cat_ARMOR" }
-		research_cost = 1
-		categories = {
-			Cat_ARMOR
-		}
-
-		#fake tech
-		ai_will_do = {
-			factor = -100
-		}
-	}
-
-	#1965
-	MBT_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech MBT_1" }
-
-		enable_equipments = {
-			MBT_1
-		}
-
+	
+	concept_heavy_tracked_vehicle_2 = {
+		
 		path = {
-			leads_to_tech = MBT_2
+			leads_to_tech = medium_tank_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_3
 			research_cost_coeff = 1
 		}
 
-		allow_branch = {
-			NOT = { has_dlc = "No Step Back" }
+		medium_tank = {
+			max_organisation = 2
 		}
-
-		research_cost = 2.1
-		start_year = 1965
+		
+		research_cost = 3
+		
 		folder = {
 			name = armour_folder
-			position = { x = @row1 y = @1965 }
+			position = { x = @g2p  y = @mbt_platform }
 		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_MBT
+			cat_heavy_tracked_vehicle
 		}
+		
+		ai_will_do = { factor = 5 }
+		
 	}
-
-
-	#1975
-	MBT_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech MBT_2" }
-
-		enable_equipments = {
-			MBT_2
-		}
-
+	
+	concept_heavy_tracked_vehicle_3 = {
+		
 		path = {
-			leads_to_tech = MBT_3
+			leads_to_tech = main_battle_tank_t3
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.2
-		start_year = 1975
-		folder = {
-			name = armour_folder
-			position = { x = @row1 y = @1975 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_MBT
-		}
-	}
-
-	#1985
-	MBT_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech MBT_3" }
-
-		enable_equipments = {
-			MBT_3
-		}
-
+		
 		path = {
-			leads_to_tech = MBT_4
+			leads_to_tech = concept_heavy_tracked_vehicle_4
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.3
-		start_year = 1985
-		folder = {
-			name = armour_folder
-			position = { x = @row1 y = @1985 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_MBT
-		}
-	}
-
-	#1995
-	MBT_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech MBT_4" }
-
-		enable_equipments = {
-			MBT_4
-		}
-
+		
 		path = {
-			leads_to_tech = MBT_5
+			leads_to_tech = medium_tank_t3
 			research_cost_coeff = 1
 		}
+		
+		#path = {
+		#	leads_to_tech = concept_tank_te
+		#	research_cost_coeff = 1
+		#}
 
-		research_cost = 2.4
-		start_year = 1995
+		main_battle_tank = {
+			max_organisation = 2
+		}
+		
+		research_cost = 3
+		
 		folder = {
 			name = armour_folder
-			position = { x = @row1 y = @1995 }
+			position = { x = @g3p  y = @mbt_platform }
 		}
-
-
-		ai_will_do = {
-			factor = 1
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_MBT
+			cat_heavy_tracked_vehicle
 		}
+		
+		ai_will_do = { factor = 5 }
+		
 	}
-
-	#2015
-	MBT_5 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech MBT_5" }
-
-		enable_equipments = {
-			MBT_5
-		}
-
+	
+	concept_heavy_tracked_vehicle_4 = {
+		
 		path = {
-			leads_to_tech = MBT_7
+			leads_to_tech = main_battle_tank_t4
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.6
-		start_year = 2015
-		folder = {
-			name = armour_folder
-			position = { x = @row1 y = @2015 }
-		}
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2015.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2005.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_MBT
-		}
-	}
-
-	#2025
-	MBT_7 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech MBT_7" }
-
-		enable_equipments = {
-			MBT_7
-		}
-
+		
 		path = {
-			leads_to_tech = MBT_8
+			leads_to_tech = concept_heavy_tracked_vehicle_5
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.7
-		start_year = 2025
-		folder = {
-			name = armour_folder
-			position = { x = @row1 y = @2025 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2025.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2020.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_MBT
-		}
-	}
-
-	#2035
-	MBT_8 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech MBT_8" }
-
-		enable_equipments = {
-			MBT_8
-		}
-
+		
 		# path = {
-			# leads_to_tech = MBT_3
+			# leads_to_tech = medium_tank_t4
 			# research_cost_coeff = 1
 		# }
-
-		research_cost = 2.8
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = @row1 y = @2035 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2035.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2030.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_MBT
-		}
-	}
-
-	####APC####
-	#1965
-	APC_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_1" }
-
-		enable_equipments = {
-			APC_1
-		}
-
+		
 		path = {
-			leads_to_tech = APC_2
+			leads_to_tech = main_battle_tank_te_t4
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.4
+		main_battle_tank = {
+			max_organisation = 2
+		}
+
+		main_battle_tank_te = {
+			max_organisation = 2
+		}
+		
+		research_cost = 3
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g4p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_5 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = main_battle_tank_te_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = medium_tank_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_6
+			research_cost_coeff = 1
+		}
+
+		medium_tank = {
+			max_organisation = 2
+		}
+
+		main_battle_tank = {
+			max_organisation = 2
+		}
+
+		main_battle_tank_te = {
+			max_organisation = 2
+		}
+		
+		research_cost = 3
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g5p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_6 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_7
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = main_battle_tank_te_t6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ng_battle_tank_t6
+			research_cost_coeff = 1
+		}
+
+		main_battle_tank = {
+			max_organisation = 2
+		}
+		
+		main_battle_tank_te = {
+			max_organisation = 2
+		}
+		
+		ng_battle_tank = {
+			max_organisation = 2
+		}
+		
+		research_cost = 3
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g6p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_7 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t7
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = main_battle_tank_te_t7
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_8
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ng_battle_tank_t7
+			research_cost_coeff = 1
+		}
+
+		main_battle_tank = {
+			max_organisation = 2
+		}
+		
+		main_battle_tank_te = {
+			max_organisation = 2
+		}
+		
+		ng_battle_tank = {
+			max_organisation = 2
+		}
+		
+		research_cost = 3
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g7p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }	
+	}
+	
+	concept_heavy_tracked_vehicle_8 = {
+		
+		path = {
+			leads_to_tech = ng_battle_tank_t8
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = concept_heavy_tracked_vehicle_9
+		#	research_cost_coeff = 1
+		#}
+		
+		path = {
+			leads_to_tech = unmanned_tank_t8
+			research_cost_coeff = 1
+		}
+		
+		ng_battle_tank = {
+			max_organisation = 2
+		}
+		
+		unmanned_tank = {
+			max_organisation = 2
+		}
+		
+		research_cost = 3
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g8p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	#Т-54 обр. 1951
+	medium_tank_t1 = {
+	
+		enable_equipments = {
+			medium_tank_g1_equipment_0
+		}
+		
+		enable_subunits = {
+			medium_tank
+		}
+				
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+
+		#sub_technologies = {
+	
+		#}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = armour_folder
+			position = { x = @g1  y = @t1 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_medium_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	#Т-62
+	medium_tank_t2 = {
+	
+		enable_equipments = {
+			medium_tank_g2_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+
+		#sub_technologies = {
+	
+		#}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @g2  y = @t1 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+	# Mass MBT strategy
+	mass_mbt_doctrine = {
+		desc = mass_mbt_desc
+
+		on_research_complete = {
+		    custom_effect_tooltip = mass_mbt_doctrine_t
+		}
+
+		medium_tank = {
+			max_organisation = 2
+		}
+	
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g3d  y = @t1 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_mass_mbt_doctrine
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+
+			modifier = {
+				factor = 20
+				tag = SOV
+			}
+			
+			modifier = {
+				factor = 20
+				tag = RUS
+			}
+			
+			modifier = {
+				factor = 20
+				tag = CHI
+			}
+			
+			modifier = {
+				factor = 20
+				tag = IRN
+			}
+		}
+		
+	}
+	
+	#Т-72 «Урал»
+	medium_tank_t3 = {
+	
+		enable_equipments = {
+			medium_tank_g3_equipment_0
+		}
+		
+		dependencies = {
+			mass_mbt_doctrine = 1
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}	
+		
+		research_cost = 2
 		start_year = 1965
 		folder = {
 			name = armour_folder
-			position = { x = @row2 y = @1965 }
+			position = { x = @g3m  y = @t1 }
 		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
+			cat_heavy_tracked_vehicle
+			cat_medium_tank
 		}
+		
+		ai_will_do = { factor = 5 }
 	}
+	
+	# #Т-72А
+	# medium_tank_t4 = {
+	
+		# enable_equipments = {
+			# medium_tank_g4_equipment_0
+		# }
 
-	#1975
-	APC_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_2" }
+		# dependencies = {
+			# mass_mbt_doctrine = 1
+		# }
 
+		# sub_technologies = {
+		# }			
+		
+		# research_cost = 2
+		# start_year = 1965
+		# folder = {
+			# name = armour_folder
+			# position = { x = @g4m  y = @t1 }
+		# }
+		
+		# on_research_complete = {
+			# if = {
+				# limit = {
+					# NOT = {
+						# has_template_containing_unit = medium_tank
+					# }
+				# }
+				# hidden_effect = {
+					# load_oob = "unlock_medium_tank"
+				# }			
+				# custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			# }
+		# }
+		
+		# categories = {
+			# cat_heavy_tracked_vehicle
+			# cat_medium_tank
+		# }
+		
+		# ai_will_do = {
+			# factor = 5
+		# }
+	# }
+	
+	#Т-72Б
+	medium_tank_t5 = {
+	
 		enable_equipments = {
-			APC_2
+			medium_tank_g5_equipment_0
 		}
 
-		path = {
-			leads_to_tech = APC_3
-			research_cost_coeff = 1
+		dependencies = {
+			mass_mbt_doctrine = 1
 		}
-
-		research_cost = 1.5
-		start_year = 1975
-		folder = {
-			name = armour_folder
-			position = { x = @row2 y = @1975 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
-		}
-	}
-
-	#1985
-	APC_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_3" }
-
-		enable_equipments = {
-			APC_3
-		}
-
-		path = {
-			leads_to_tech = APC_4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.6
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
 		start_year = 1985
 		folder = {
 			name = armour_folder
-			position = { x = @row2 y = @1985 }
+			position = { x = @g5m  y = @t1 }
 		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
+			cat_heavy_tracked_vehicle
+			cat_medium_tank
 		}
+		
+		ai_will_do = { factor = 5 }
 	}
+	
 
-	#1995
-	APC_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_4" }
+	
+	########################
+	## MBT
+	########################
 
+	#Т-64
+	main_battle_tank_t3 = {
+	
 		enable_equipments = {
-			APC_4
+			main_battle_tank_g3_equipment_0
 		}
-
-		path = {
-			leads_to_tech = APC_5
-			research_cost_coeff = 1
+		
+		enable_subunits = {
+			main_battle_tank
 		}
-
-		research_cost = 1.7
-		start_year = 1995
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 1965
 		folder = {
 			name = armour_folder
-			position = { x = @row2 y = @1995 }
+			position = { x = @g3  y = @t0 }
 		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
 		}
+		
+		ai_will_do = { factor = 5 }
 	}
-
-	#2005
-	APC_5 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_5" }
-
+	
+	#Т-64Б
+	main_battle_tank_t4 = {
+	
 		enable_equipments = {
-			APC_5
+			main_battle_tank_g4_equipment_0
 		}
-
-		path = {
-			leads_to_tech = APC_6
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.8
-		start_year = 2005
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
+		start_year = 1975
 		folder = {
 			name = armour_folder
-			position = { x = @row2 y = @2005 }
+			position = { x = @g4  y = @t0 }
 		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2005.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2002.01.01
-			}
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
 		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-80УД / Т-84
+	main_battle_tank_t5 = {
+	
+		enable_equipments = {
+			main_battle_tank_g5_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 1985
+		folder = {
+			name = armour_folder
+			position = { x = @g5  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+	# Т-90A
+	main_battle_tank_t6 = {
+	
+		enable_equipments = {
+			main_battle_tank_g6_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = armour_folder
+			position = { x = @g6  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-90М
+	main_battle_tank_t7 = {
+	
+		enable_equipments = {
+			main_battle_tank_g7_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = armour_folder
+			position = { x = @g7  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-80, M1 Abrams
+	main_battle_tank_te_t4 = {
+	
+		enable_equipments = {
+			main_battle_tank_te_g4_equipment_0
+		}
+
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		enable_subunits = {
+			main_battle_tank_te
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
+		start_year = 1965
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g4m  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
 	}
 
-	#2015
-	APC_6 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_6" }
-
+	# Т-80У, M1A1
+	main_battle_tank_te_t5 = {
+	
 		enable_equipments = {
-			APC_6
+			main_battle_tank_te_g5_equipment_0
+		}
+		
+
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
+		start_year = 1985
+		
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g5  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_mass_mbt
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-80УМ-2 «Чёрный Орёл», M1A2
+	main_battle_tank_te_t6 = {
+	
+		enable_equipments = {
+			main_battle_tank_te_g6_equipment_0
+		}
+				
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		
+		start_year = 1985
+		
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g6  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_mass_mbt
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+	# M1A3
+	main_battle_tank_te_t7 = {
+	
+		enable_equipments = {
+			main_battle_tank_te_g7_equipment_0
 		}
 
-		path = {
-			leads_to_tech = APC_7
-			research_cost_coeff = 1
+	
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+		
+		research_cost = 2
+		
+		start_year = 2018
+		
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g7  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_mass_mbt
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-95 
+	ng_battle_tank_t6 = {
+	
+		enable_equipments = {
+			ng_battle_tank_g6_equipment_0
+		}
+		
+		dependencies = {
+			mbt_unmanned_turret = 1
+		}
+		
+		enable_subunits = {
+			ng_battle_tank
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = ng_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_modern"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}	
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = armour_folder
+			position = { x = @g6 y = @t3 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-14 «Армата»
+	ng_battle_tank_t7 = {
+	
+		enable_equipments = {
+			ng_battle_tank_g7_equipment_0
 		}
 
-		research_cost = 1.9
+		dependencies = {
+			mbt_unmanned_turret = 1
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = ng_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_modern"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+		
+		research_cost = 2
 		start_year = 2015
 		folder = {
 			name = armour_folder
-			position = { x = @row2 y = @2015 }
+			position = { x = @g7 y = @t3 }
 		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2015.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2010.01.01
-			}
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
 		}
+		
+		ai_will_do = { factor = 5 }
 	}
-	#2025
-	APC_7 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_7" }
 
+	# ОБТ будущего
+	ng_battle_tank_t8 = {
+	
 		enable_equipments = {
-			APC_7
+			ng_battle_tank_g8_equipment_0
 		}
-
-		path = {
-			leads_to_tech = APC_8
-			research_cost_coeff = 1
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = ng_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_modern"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
 		}
-
+		
 		research_cost = 2
 		start_year = 2025
+		
+		dependencies = {
+			mbt_unmanned_turret = 1
+		}
+		
 		folder = {
 			name = armour_folder
-			position = { x = @row2 y = @2025 }
+			position = { x = @g8  y = @t3 }
 		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2025.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2020.01.01
-			}
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
 		}
+		
+		ai_will_do = { factor = 5 }
 	}
-
-	#2035
-	APC_8 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech APC_8" }
-
+	
+	unmanned_tank_t8 = {
+	
 		enable_equipments = {
-			APC_8
+			unmanned_tank_g8_equipment_0
 		}
-
-		research_cost = 2.1
-		start_year = 2035
-
-		folder = {
-			name = armour_folder
-			position = { x = @row2 y = @2035 }
+		
+		enable_subunits = {
+			unmanned_tank
 		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2035.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2030.01.01
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = unmanned_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_future"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 			}
 		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_APC
-		}
-	}
-
-	###IFV###
-
-	#1965
-	IFV_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_1" }
-
-		enable_equipments = {
-			IFV_1
-		}
-
-		path = {
-			leads_to_tech = IFV_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.7
-		start_year = 1965
-		folder = {
-			name = armour_folder
-			position = { x = @row3 y = @1965 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#1975
-	IFV_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_2" }
-
-		enable_equipments = {
-			IFV_2
-		}
-
-		path = {
-			leads_to_tech = IFV_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.8
-		start_year = 1975
-		folder = {
-			name = armour_folder
-			position = { x = @row3 y = @1975 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#1985
-	IFV_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_3" }
-
-		enable_equipments = {
-			IFV_3
-		}
-
-		path = {
-			leads_to_tech = IFV_4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.9
-		start_year = 1985
-		folder = {
-			name = armour_folder
-			position = { x = @row3 y = @1985 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#1995
-	IFV_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_4" }
-
-		enable_equipments = {
-			IFV_4
-		}
-
-		path = {
-			leads_to_tech = IFV_5
-			research_cost_coeff = 1
-		}
-
+		
 		research_cost = 2
-		start_year = 1995
+		start_year = 2020
+		
+		dependencies = {
+			mbt_unmanned_full = 1
+		}
+		
 		folder = {
 			name = armour_folder
-			position = { x = @row3 y = @1995 }
+			position = { x = @g8  y = @t4 }
 		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
+		
 		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#2005
-	IFV_5 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_5" }
-
-		enable_equipments = {
-			IFV_5
-		}
-
-		path = {
-			leads_to_tech = IFV_6
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2.1
-		start_year = 2005
-		folder = {
-			name = armour_folder
-			position = { x = @row3 y = @2005 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2005.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2002.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#2015
-	IFV_6 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_6" }
-
-		enable_equipments = {
-			IFV_6
-		}
-
-		path = {
-			leads_to_tech = IFV_7
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2.2
-		start_year = 2015
-		folder = {
-			name = armour_folder
-			position = { x = @row3 y = @2015 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2015.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2010.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#2025
-	IFV_7 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_7" }
-
-		enable_equipments = {
-			IFV_7
-		}
-
-		path = {
-			leads_to_tech = IFV_8
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2.3
-		start_year = 2025
-		folder = {
-			name = armour_folder
-			position = { x = @row3 y = @2025 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2025.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2020.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#2035
-	IFV_8 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech IFV_8" }
-
-		enable_equipments = {
-			IFV_8
-		}
-
-		research_cost = 2.4
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = @row3 y = @2035 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2035.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2030.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_AFV
-			Cat_IFV
-		}
-	}
-
-	#1965
-	Rec_tank_0 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Rec_tank_0" }
-
-		allow_branch = {
-			NOT = { has_dlc = "No Step Back" }
-		}
-
-		enable_equipments = {
-			Rec_tank_0
-		}
-		enable_subunits = {
-			L_arm_Bat
-			armor_Recce_Comp
-		}
-		path = {
-			leads_to_tech = Rec_tank_1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.4
-		start_year = 1965
-		folder = {
-			name = armour_folder
-			position = { x = @row4 y = @1965 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = Rec_tank_1
-					has_tech = Rec_tank_2
-					has_tech = Rec_tank_3
-					has_tech = Rec_tank_4
-					has_tech = Rec_tank_5
-					can_research = Rec_tank_1
-					can_research = Rec_tank_2
-					can_research = Rec_tank_3
-					can_research = Rec_tank_4
-					can_research = Rec_tank_5
-					is_researching_technology = Rec_tank_1
-					is_researching_technology = Rec_tank_2
-					is_researching_technology = Rec_tank_3
-					is_researching_technology = Rec_tank_4
-					is_researching_technology = Rec_tank_5
-				}
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_REC_TANK
-		}
-	}
-	#1985
-	Rec_tank_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Rec_tank_1" }
-
-		enable_equipments = {
-			Rec_tank_1
-		}
-
-		path = {
-			leads_to_tech = Rec_tank_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-		start_year = 1985
-		folder = {
-			name = armour_folder
-			position = { x = @row4 y = @1985 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = Rec_tank_2
-					has_tech = Rec_tank_3
-					has_tech = Rec_tank_4
-					has_tech = Rec_tank_5
-					can_research = Rec_tank_2
-					can_research = Rec_tank_3
-					can_research = Rec_tank_4
-					can_research = Rec_tank_5
-					is_researching_technology = Rec_tank_2
-					is_researching_technology = Rec_tank_3
-					is_researching_technology = Rec_tank_4
-					is_researching_technology = Rec_tank_5
-				}
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_REC_TANK
-		}
-	}
-	#2005
-	Rec_tank_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Rec_tank_2" }
-
-		enable_equipments = {
-			Rec_tank_2
-		}
-
-		path = {
-			leads_to_tech = Rec_tank_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.6
-		start_year = 2005
-		folder = {
-			name = armour_folder
-			position = { x = @row4 y = @2005 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2005.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2002.01.01
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = Rec_tank_3
-					has_tech = Rec_tank_4
-					has_tech = Rec_tank_5
-					can_research = Rec_tank_3
-					can_research = Rec_tank_4
-					can_research = Rec_tank_5
-					is_researching_technology = Rec_tank_3
-					is_researching_technology = Rec_tank_4
-					is_researching_technology = Rec_tank_5
-				}
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_REC_TANK
-		}
-	}
-	#2015
-	Rec_tank_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Rec_tank_3" }
-
-		enable_equipments = {
-			Rec_tank_3
-		}
-
-		path = {
-			leads_to_tech = Rec_tank_4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.7
-		start_year = 2015
-		folder = {
-			name = armour_folder
-			position = { x = @row4 y = @2015 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2015.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2010.01.01
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = Rec_tank_4
-					has_tech = Rec_tank_5
-					can_research = Rec_tank_4
-					can_research = Rec_tank_5
-					is_researching_technology = Rec_tank_4
-					is_researching_technology = Rec_tank_5
-				}
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_REC_TANK
-		}
-	}
-	#2025
-	Rec_tank_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Rec_tank_4" }
-
-		enable_equipments = {
-			Rec_tank_4
-		}
-
-		path = {
-			leads_to_tech = Rec_tank_5
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.8
-		start_year = 2025
-		folder = {
-			name = armour_folder
-			position = { x = @row4 y = @2025 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2025.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2020.01.01
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = Rec_tank_5
-					can_research = Rec_tank_5
-					is_researching_technology = Rec_tank_5
-				}
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_REC_TANK
-		}
-	}
-	#2035
-	Rec_tank_5 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Rec_tank_5" }
-
-		enable_equipments = {
-			Rec_tank_5
-		}
-
-		research_cost = 1.9
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = @row4 y = @2035 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2035.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2031.01.01
-			}
-		}
-
-		categories = {
-			Cat_ARMOR
-			Cat_TANKS
-			Cat_REC_TANK
-		}
-	}
-
-	#1965
-	util_vehicle_0 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_0" }
-
-		enable_equipments = {
-			util_vehicle_0
-		}
-		enable_subunits = {
-			Mot_Inf_Bat
-			Mot_Air_Inf_Bat
-			Mot_Marine_Bat
-			Mot_Recce_Comp
-		}
-		enable_equipment_modules = {
-			chassis_truck_gen0
-		}
-
-		path = {
-			leads_to_tech = util_vehicle_1
-			research_cost_coeff = 1
-		}
-
-
-		research_cost = 1
-		start_year = 1965
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @1965 }
-		}
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
-	}
-	#1975
-	util_vehicle_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_1" }
-
-		enable_equipments = {
-			util_vehicle_1
-		}
-
-		path = {
-			leads_to_tech = util_vehicle_2
-			research_cost_coeff = 1
-		}
-
-
-		research_cost = 1.1
-		start_year = 1975
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @1975 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
-	}
-	#1985
-	util_vehicle_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_2" }
-
-		enable_equipments = {
-			util_vehicle_2
-		}
-		enable_equipment_modules = {
-			chassis_truck_gen1
-		}
-
-		path = {
-			leads_to_tech = util_vehicle_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.2
-		start_year = 1985
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @1985 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
-	}
-	#1995
-	util_vehicle_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_3" }
-
-		enable_equipments = {
-			util_vehicle_3
-		}
-
-		path = {
-			leads_to_tech = util_vehicle_4
-			research_cost_coeff = 1
-		}
-
-
-		research_cost = 1.3
-		start_year = 1995
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @1995 }
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
-	}
-	#2005
-	util_vehicle_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_4" }
-
-		enable_equipments = {
-			util_vehicle_4
-		}
-		enable_equipment_modules = {
-			chassis_truck_gen2
-		}
-
-		path = {
-			leads_to_tech = util_vehicle_5
-			research_cost_coeff = 1
-		}
-
-
-		research_cost = 1.4
-		start_year = 2005
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @2005 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2005.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2002.01.01
-			}
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
-	}
-	#2015
-	util_vehicle_5 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_5" }
-
-		enable_equipments = {
-			util_vehicle_5
-		}
-
-		path = {
-			leads_to_tech = util_vehicle_6
-			research_cost_coeff = 1
-		}
-
-
-		research_cost = 1.5
-		start_year = 2015
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @2015 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2015.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2010.01.01
-			}
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
-	}
-	#2025
-	util_vehicle_6 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_6" }
-
-		enable_equipments = {
-			util_vehicle_6
-		}
-		enable_equipment_modules = {
-			chassis_truck_gen3
-		}
-
-		path = {
-			leads_to_tech = util_vehicle_7
-			research_cost_coeff = 1
-		}
-
-
-		research_cost = 1.6
-		start_year = 2025
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @2025 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2025.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2020.01.01
-			}
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
-	}
-	#2035
-	util_vehicle_7 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech util_vehicle_7" }
-
-		enable_equipments = {
-			util_vehicle_7
-		}
-		enable_equipment_modules = {
-			chassis_truck_gen4
-		}
-
-		path = {
-			# leads_to_tech = util_vehicle_8
-			research_cost_coeff = 1
-		}
-
-
-		research_cost = 1.7
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = @row5 y = @2035 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2035.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2030.01.01
-			}
-		}
-
-		categories = {
-			Cat_AFV
-			Cat_UTIL
-			Cat_ARMOR
-		}
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
 	}
 }

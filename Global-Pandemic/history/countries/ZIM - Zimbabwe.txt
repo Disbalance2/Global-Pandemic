@@ -1,307 +1,102 @@
-capital = 290
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-2000.1.1 = {
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "ZIM_2000_nsb"
-		else = {
-			set_oob = "ZIM_2000_nonnsb"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "ZIM_2000_bba"
-		else = {
-			set_air_oob = "ZIM_2000_nonbba"
-		}
-	}
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
 
-	set_cosmetic_tag = ZIM
-	set_country_flag = dynamic_flag
-	set_country_flag = dynamic_rebel_flag
-	set_variable = { gdp_per_capita = 2.751 }
+capital = 753
 
-	add_ideas = {
-		christian
-		crippling_corruption
-		defence_02
-		edu_01
-		health_01
-		social_01
-		bureau_03
-		AU_member
-		police_03
-		volunteer_army
-		volunteer_women
-		commonwealth_of_nations_member
-		farmers
-		industrial_conglomerates
-		small_medium_business_owners
-		consumption_economy
-		officer_basic_training
-		very_high_level_of_aids
-	}
-
-	#Influence system
-	init_influence = yes
-	add_to_array = { influence_array = CHI.id }
-	add_to_array = { influence_array_val = 55.2 }
-	add_to_array = { influence_array = SAF.id }
-	add_to_array = { influence_array_val = 13.8 }
-	add_to_array = { influence_array = ENG.id }
-	add_to_array = { influence_array_val = 3.4 }
-	add_to_array = { influence_array = USA.id }
-	add_to_array = { influence_array_val = 2.1 }
-	startup_influence = yes
-
-	# Starting tech
-	set_technology = {
-		integrated_transportation_system = 1
-		post_conventional_rail = 1
-		early_freight_locomotive = 1
-
-		legacy_doctrines = 1
-		infantry_mass_assault = 1
-		infantry_weapons = 1
-
-		command_control_equipment = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		combat_eng_equipment = 1
-
-		camouflage = 1
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		decryption1 = 1
-		encryption1 = 1
-		radar = 1
-		fuel_silos = 1
-
-		industrial_electrospun_polymeric_nanofibers = 1
-		stereolitography = 1
-		fuel_refining = 1
-		construction1 = 1
-	}
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_technology = {
-			mbt_tech = 1
-			afv_tech = 1
-			nsb_artillery_0 = 1
-			nsb_SP_arty_1 = 1
-			nsb_Anti_Air_0 = 1
-			light_tank_tech = 1
-		}
-
-		else = {
-			set_technology = {
-				Early_APC = 1
-				APC_1 = 1
-				MBT_1 = 1
-				IFV_1 = 1
-				artillery_0 = 1
-				SP_arty_0 = 1
-				SP_R_arty_0 = 1
-				Anti_Air_0 = 1
-				Rec_tank_0 = 1
-			}
-		}
-	}
-
-	set_variable = { var = debt value = 11 }
-	set_variable = { var = treasury value = 0.985 }
-	set_variable = { var = corporate_tax_rate value = 24 }
-	set_variable = { var = population_tax_rate value = 41 }
-	set_variable = { var = int_investments value = 0 }
-
-	set_popularities = {
-		democratic = 45.0
-		communism = 55.0
-		fascism = 0.0
-		neutrality = 0.0
-		nationalist = 0.0
-	}
+	add_ideas = au_member
+	
+2001.11.1 = {
 	set_politics = {
 		ruling_party = communism
-		last_election = "1999.1.11"
-		election_frequency = 48
-		elections_allowed = no
+		last_election = "1996.3.11"
+		election_frequency = 60
+		elections_allowed = yes
 	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.05 } #conservatism
-	set_variable = { party_pop_array^2 = 0 } #liberalism
-	set_variable = { party_pop_array^3 = 0.4 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0.55 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0.0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 5 }
-
-	startup_politics = yes
-
+	set_popularities = {
+		communism = 61
+		reformism = 37
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 2
+		rad_islamists = 0
+	}
+    
 	create_country_leader = {
 		name = "Robert Mugabe"
-		picture = "Robert_Mugabe.dds"
-		ideology = anarchist_communism
-		traits = {
-			emerging_anarchist_communism
-		}
-	}
-
-	recruit_character = ZIM_constantine_chiwenga
-	recruit_character = ZIM_admire_mahachi
-	recruit_character = ZIM_philip_sibanda
-	recruit_character = ZIM_perence_shiri
-	recruit_character = ZIM_joseph_nyakudya
-	recruit_character = ZIM_douglas_nyikayaramba
-	recruit_character = ZIM_washington_chidawanyika
-
-	add_to_array = { agri_crop_allocation = 0.548 } # Basic = 0
-	add_to_array = { agri_crop_allocation = 0.452 } # Cash = 1
-
-	add_to_array = { agri_crop_price = 15 } # Basic = 0
-	add_to_array = { agri_crop_price = 25 } # Cash = 1
-
-	set_variable = { literacy_rate = 0.835 }
-
-	every_controlled_state = {
-		set_variable = { productivity_state_var = 565 }
-	}
-	set_variable = { overall_productivity = 565 }
-
+		desc = "POLITICS_ROBERT_MUGABE_DESC"
+		picture = "gfx/leaders/ZIM/portrait_robert_mugabe.dds"
+		ideology = china_socialism
+		traits = { trait_china_socialism }
+    }
 }
 
-2017.1.1 = {
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "ZIM_2000_nsb"
-		else = {
-			set_oob = "ZIM_2017_nonnsb"
-		}
-	}
+2013.11.1 = {
+	set_variable = { budget_last_year = 1522 }
 
-	# Starting tech
-	set_technology = {
-		legacy_doctrines = 1
-		infantry_mass_assault = 1
-		infantry_weapons = 1
-
-		command_control_equipment = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		combat_eng_equipment = 1
-		land_Drone_equipment = 1
-
-		Rec_tank_0 = 1
-
-		artillery_0 = 1
-		SP_arty_0 = 1
-		SP_R_arty_0 = 1
-
-		Anti_Air_0 = 1
-		SP_Anti_Air_0 = 1
-		microprocessors = 1
-		computing2 = 1
-		decryption2 = 1
-		encryption2 = 1
-		internet1 = 1
-	}
-
-	remove_ideas = {
-		very_high_level_of_aids
-	}
+	load_oob = "_tech_minor_2013"
+	oob = "ZIM_2013"
 
 	add_ideas = {
-		recession
-		rising_level_of_aids
-	}
+	    presidential_republic
+		unitary_state
+		secular_state
+		commercial_media 
+		respect_of_liberties
+		contract_army
+		mixed_schools
+		civilian_economy
+		mixed_economic
+		free_market
+		balanced_industry
+		normal_taxes
+		base_social_security
+		pensions
+		terrorism_discounted
+    }
 
-	set_variable = { farmers_opinion = 40 }
-	set_variable = { industrial_conglomerates_opinion = 60 }
-	set_variable = { small_medium_business_owners_opinion = 40 }
-
-	set_variable = { var = debt value = 48 }
-	set_variable = { var = treasury value = 0.5 }
-	set_variable = { var = int_investments value = 0 }
-	set_variable = { var = corporate_tax_rate value = 22 }
-	set_variable = { var = population_tax_rate value = 34 }
-
-	set_popularities = {
-		democratic = 34.9
-		communism = 65.1
-		fascism = 0.0
-		neutrality = 0.0
-		nationalist = 0.0
-	}
+	set_stability = 0.75
+	add_political_power = 0
+	set_convoys = 10
+	
 	set_politics = {
 		ruling_party = communism
-		last_election = "1999.1.11"
-		election_frequency = 48
-		elections_allowed = no
+		last_election = "2013.7.31"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 61
+		reformism = 37
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 2
+		rad_islamists = 0
 	}
 
-	start_politics_input = yes
+	create_country_leader = {
+		name = "Morgan Tsvangirai"
+		desc = "POLITICS_MORGAN_TSVANGIRAI_DESC"
+		picture = "gfx/leaders/ZIM/portrait_morgan_tsvangirai.dds"
+		ideology = social_democracy
+		expire = "2018.2.14" #death
+		traits = { trait_social_democracy }
+	}
+    
 
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0 } #conservatism
-	set_variable = { party_pop_array^2 = 0 } #liberalism
-	set_variable = { party_pop_array^3 = 0.349 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0.651 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
+	create_corps_commander = {
+		name = "Constantine Chiwenga"
+		portrait_path = "gfx/leaders/ZIM/portrait_zim_general_constantine_hiwenga.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
 
-	### Ruling Party
-	add_to_array = { ruling_party = 5 }
+}	
 
-	startup_politics = yes
-
-	add_to_array = { agri_crop_allocation = 0.795 } # Basic = 0
-	add_to_array = { agri_crop_allocation = 0.205 } # Cash = 1
-
-	add_to_array = { agri_crop_price = 15 } # Basic = 0
-	add_to_array = { agri_crop_price = 25 } # Cash = 1
-
-	set_variable = { literacy_rate = 0.887 }
-
-}

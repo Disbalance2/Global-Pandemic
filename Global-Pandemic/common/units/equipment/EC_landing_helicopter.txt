@@ -1,0 +1,237 @@
+#####################
+## Economic Crisis ##
+#################################
+## Written by Anatoliy Masin    #
+#################################
+
+equipments = {      
+
+#####################################
+### эквип транспортных вертолетов ###
+#####################################
+
+	landing_helicopter_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = { air_transport }
+		group_by = archetype
+		
+		sprite = transport_helicopter
+		
+		air_map_icon_frame = 12
+		
+		interface_category = interface_category_air
+		
+### транспортный вертолет - короче надо чтобы онт тут подсчитывался вместе с транспотными самолетеами если я пойму какой у них индекс
+		interface_overview_category_index = 6
+		
+		upgrades = {
+			#plane_naval_upgrade ### затычка, я просто пока не проверял можно ставить три апгрейда или нет###
+			plane_range_upgrade
+			plane_engine_upgrade
+			plane_reliability_upgrade
+		}
+
+		air_superiority = 1
+		reliability = 0.8
+
+### размер при поставке в лендлизе
+		lend_lease_cost = 12
+		
+		build_cost_ic = 12
+		resources = {
+			rare_metals = 1
+			aluminium = 3
+			polymers = 2
+		}
+		
+		fuel_consumption = 0.28
+		manpower = 4
+	}
+	
+### древнейший десентный вертолет Т0 (Ми-1)
+	landing_helicopter_equipment_0 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		priority = 105
+		
+		air_range = 500
+		maximum_speed = 150
+		air_agility = 5
+		air_attack = 0
+		air_defence = 5
+		
+				
+	}
+	
+### ранний десантный вертолет Т1 (Ми-2)
+	landing_helicopter_equipment_1 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_0
+		priority = 140
+		
+		air_range = 600
+		maximum_speed = 200
+		air_agility = 10
+		air_attack = 5
+		air_defence = 10
+
+		
+		build_cost_ic = 14
+	}
+
+### ранний десантный вертолет Т2 (Ми-6)
+	landing_helicopter_equipment_2 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_1
+		priority = 140
+		
+		air_range = 700
+		maximum_speed = 200
+		air_agility = 15
+		air_attack = 5
+		air_defence = 15
+
+		
+		build_cost_ic = 15
+	}	
+
+### полусовременный десантный вертолет Т3 (Ми-10)
+	landing_helicopter_equipment_3 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_2
+		priority = 140
+		
+		air_range = 800
+		maximum_speed = 250
+		air_agility = 20
+		air_attack = 10
+		air_defence = 20
+
+		
+		build_cost_ic = 16
+	}
+
+### полусовременный десантный вертолет Т4 (Ми-26)
+	landing_helicopter_equipment_4 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_3
+		priority = 140
+		
+		air_range = 900
+		maximum_speed = 250
+		air_agility = 25
+		air_attack = 10
+		air_defence = 25
+
+		
+		build_cost_ic = 17
+	}
+
+### современный десантный вертолет Т5 (Ми-30)
+	landing_helicopter_equipment_5 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_4
+		priority = 140
+		
+		air_range = 1000
+		maximum_speed = 500
+		air_agility = 30
+		air_attack = 10
+		air_defence = 30
+
+		
+		build_cost_ic = 17
+	}
+	
+### современный десантный вертолет Т6 (Bell V-280 Valor)
+	landing_helicopter_equipment_6 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_5
+		priority = 140
+		
+		air_range = 1100
+		maximum_speed = 500
+		air_agility = 35
+		air_attack = 10
+		air_defence = 35
+
+		
+		build_cost_ic = 18
+	}
+	
+### современный десантный вертолет Т7 (Bell Boeing Quad TiltRotor )
+	landing_helicopter_equipment_7 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_6
+		priority = 140
+		
+		air_range = 1200
+		maximum_speed = 500
+		air_agility = 40
+		air_attack = 15
+		air_defence = 40
+
+		
+		build_cost_ic = 19
+	}
+
+### современный десантный вертолет Т8 (квадроплан)
+	landing_helicopter_equipment_8 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_7
+		priority = 140
+		
+		air_range = 1300
+		maximum_speed = 500
+		air_agility = 45
+		air_attack = 15
+		air_defence = 45
+
+		
+		build_cost_ic = 20
+	}		
+	
+### современный десантный вертолет Т9 (фантазии на тему Аватара и Тайтон фола)
+	landing_helicopter_equipment_9 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_8
+		priority = 140
+		
+		air_range = 1400
+		maximum_speed = 600
+		air_agility = 50
+		air_attack = 20
+		air_defence = 50
+
+		
+		build_cost_ic = 21
+	}		
+	
+### современный десантный вертолет Т10 (фантазии на тему Аватара и Тайтон фола)
+	landing_helicopter_equipment_10 = {
+		active = no
+		archetype = landing_helicopter_equipment
+		parent = landing_helicopter_equipment_9
+		priority = 140
+		
+		air_range = 1500
+		maximum_speed = 600
+		air_agility = 50
+		air_attack = 30
+		air_defence = 50
+
+		
+		build_cost_ic = 22
+	}
+
+}			

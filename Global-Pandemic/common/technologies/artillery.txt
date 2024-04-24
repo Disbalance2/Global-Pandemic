@@ -1,743 +1,1119 @@
-#Written by Hiddengearz
-
 technologies = {
 
-	@1965 = 0
-	@1985 = 2
-	@2005 = 4
-	@2025 = 6
-	@2035 = 8
+#Горизонталь
+@y1 = 0
+@y2 = 2
+@y3 = 4
+@y4 = 6
+@y5 = 8
+@y6 = 10
+@y7 = 12
+@y8 = 14
+@y9 = 16
+@y10 = 18
 
-	#Y Axis
-	@row1 = -4
-	@row2 = 0
-	@row3 = 4
-	@row4 = 8
-	@row5 = 12
-	@row6 = 16
-	@row7 = 20
+#Вертикаль
+@1 = -2
+@2 = 0
+@3 = 2
+@4 = 4
+@5 = 6
+@6 = 8
+@7 = 10
+@8 = 12
+@9 = 14
+@10 = 16
+@11 = 18
+@12 = 20
+@13 = 22
+@14 = 24
+@15 = 26
+@16 = 28
+@17 = 30
 
-#####################ARTY#########################################
-
-	fake_arty = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech fake_arty" }
-		research_cost = 1
-		categories = {
-			Cat_ARTY
-		}
-
-		#fake tech
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#1965
-	artillery_0 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech artillery_0" }
-
-		allow_branch = {
-			NOT = { has_dlc = "No Step Back" }
-		}
-
-		enable_equipments = {
-			artillery_0
-		}
-		enable_subunits = {
-			SP_Arty_Bat
-			SP_Arty_Battery
-		}
+	concept = {
 		path = {
-			leads_to_tech = Arty_upgrade_1
+			leads_to_tech = concept_2 
 			research_cost_coeff = 1
 		}
-
-		sub_technologies = {
-			fake_arty
-			SP_R_arty_0
-			SP_arty_0
-		}
-
-		research_cost = 1.2
-		start_year = 1965
-		folder = {
-			name = artillery_folder
-			position = { x = 0 y = @1965 }
-		}
-
-		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
-		}
-
-		ai_will_do = {
-			factor = 5
-		}
-	}
-
-	SP_arty_0 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_arty_0" }
-
-		enable_equipments = {
-			SP_arty_0
-		}
-
-		research_cost = 2
-
-		categories = {
-			Cat_SP_ARTY
-			Cat_ARTILLERY #Generic for all artillery
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	SP_R_arty_0 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_R_arty_0" }
-		allow_branch = {
-			NOT = { has_dlc = "No Step Back" }
-		}
-
-		enable_equipments = {
-			SP_R_arty_0
-		}
-
-		research_cost = 1.4
-
-		categories = {
-			Cat_SP_R_ARTY
-			Cat_ARTILLERY #Generic for all artillery
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	artillery_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech artillery_1" }
-
-		enable_equipments = {
-			artillery_1
-		}
-
-		path = {
-			leads_to_tech = Arty_upgrade_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Arty_upgrade_3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.3
-		start_year = 1985
-
-		folder = {
-			name = artillery_folder
-			position = { x = -3 y = @1985 }
-		}
-
-		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	artillery_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech artillery_2" }
-
-		enable_equipments = {
-			artillery_2
-		}
-
-		path = {
-			leads_to_tech = Arty_upgrade_4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.4
-		start_year = 2005
-
-		folder = {
-			name = artillery_folder
-			position = { x = -4 y = @2005 }
-		}
-
-		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2005.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2002.01.01
-			}
-		}
-	}
-
-	artillery_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech artillery_3" }
-
-		enable_equipments = {
-			artillery_3
-		}
-
-		path = {
-			leads_to_tech = Arty_upgrade_5
-			research_cost_coeff = 1
-		}
-
+		# path = {
+			# leads_to_tech = artilleria 
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = spa 
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = mrl 
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = minomet 
+			# research_cost_coeff = 1
+		# }
+		# on_research_complete = {
+		# 	custom_effect_tooltip = UNLOCK_CONCEPT_1
+		# }
 		research_cost = 1.5
-		start_year = 2025
-
+		start_year = 1960
 		folder = {
 			name = artillery_folder
-			position = { x = -3 y = @2025 }
+			position = { x = @1 y = @y1 }
 		}
-
 		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
-				factor = 0.5
-				date < 2025.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2015.01.01
+				factor = 2
+				date > "1950.1.1"
 			}
 		}
 	}
-
-	artillery_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech artillery_4" }
-
-		enable_equipments = {
-			artillery_4
+	
+	concept_2 = {
+		path = {
+			leads_to_tech = concept_3 
+			research_cost_coeff = 1
 		}
-
-		research_cost = 1.6
-		start_year = 2035
+		# path = {
+			# leads_to_tech = artilleria_2
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = spa_3
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = mrl_3
+			# research_cost_coeff = 1
+		# }
+		#path = {
+		#	leads_to_tech = minomet_2 
+		#	research_cost_coeff = 1
+		#}
+		# on_research_complete = {
+		# 	custom_effect_tooltip = UNLOCK_CONCEPT_2
+		# }
+		research_cost = 1.5
+		start_year = 1970
 		folder = {
 			name = artillery_folder
-			position = { x = -3 y = @2035 }
+			position = { x = @5 y = @y1 }
 		}
-
 		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
-				factor = 0.5
-				date < 2035.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2030.01.01
+				factor = 2
+				date > "1970.1.1"
 			}
 		}
 	}
-
-	Arty_upgrade_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Arty_upgrade_1" }
-
-
+	
+	concept_3 = {
 		path = {
-			leads_to_tech = artillery_1
+			leads_to_tech = concept_4 
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = SP_arty_1
-			research_cost_coeff = 1
-		}
-
-		Arty_Bat = {
-			defense = 0.05
-		}
-		Arty_Battery = {
-			defense = 0.05
-		}
-		SP_Arty_Bat = {
-			defense = 0.05
-		}
-		SP_Arty_Battery = {
-			defense = 0.05
-		}
-
-		research_cost = 1
+		# path = {
+			# leads_to_tech = artilleria_4
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = spa_4
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = mrl_4
+			# research_cost_coeff = 1
+		# }
+		#path = {
+		#	leads_to_tech = minomet_3 
+		#	research_cost_coeff = 1
+		#}
+		# on_research_complete = {
+		# 	custom_effect_tooltip = UNLOCK_CONCEPT_3
+		# }
+		research_cost = 1.5
 		start_year = 1980
-		xp_research_type = army
-		xp_boost_cost = 50
-		xp_research_bonus = 1.50
-
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = @1985 }
+			position = { x = @9 y = @y1 }
 		}
-
 		categories = {
-			Cat_ARTILLERY #Generic for all artillery
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 4
+				date > "1970.1.1"
+			}
 		}
 	}
-
-	Arty_upgrade_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Arty_upgrade_2" }
-
-
-		path = {
-			leads_to_tech = artillery_2
-			research_cost_coeff = 1
-		}
-
-		Arty_Bat = {
-			breakthrough = 0.05
-		}
-		Arty_Battery = {
-			breakthrough = 0.05
-		}
-		SP_Arty_Bat = {
-			breakthrough = 0.05
-		}
-		SP_Arty_Battery = {
-			breakthrough = 0.05
-		}
-
-		research_cost = 1
+	
+	concept_4 = {
+		# path = {
+			# leads_to_tech = artilleria_7
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = spa_7
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = mrl_7
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = minomet_4
+			# research_cost_coeff = 1
+		# }
+		# on_research_complete = {
+		# 	custom_effect_tooltip = UNLOCK_CONCEPT_4
+		# }
+		research_cost = 1.5
 		start_year = 2000
-		xp_research_type = army
-		xp_boost_cost = 50
-		xp_research_bonus = 1.50
-
 		folder = {
 			name = artillery_folder
-			position = { x = -1 y = @2005 }
+			position = { x = @15 y = @y1 }
 		}
-
 		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	Arty_upgrade_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Arty_upgrade_3" }
-
-
-		path = {
-			leads_to_tech = SP_arty_2
-			research_cost_coeff = 1
-		}
-
-		Arty_Bat = {
-			soft_attack = 0.05
-		}
-		Arty_Battery = {
-			soft_attack = 0.05
-		}
-		SP_Arty_Bat = {
-			soft_attack = 0.05
-		}
-		SP_Arty_Battery = {
-			soft_attack = 0.05
-		}
-
-		research_cost = 1
-		start_year = 2000
-		xp_research_type = army
-		xp_boost_cost = 50
-		xp_research_bonus = 1.50
-
-		folder = {
-			name = artillery_folder
-			position = { x = 1 y = @2005 }
-		}
-
-		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_SP_ARTY
-			Cat_SP_R_ARTY
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	Arty_upgrade_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Arty_upgrade_4" }
-
-
-		path = {
-			leads_to_tech = artillery_3
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = SP_arty_3
-			research_cost_coeff = 1
-		}
-
-
-		Arty_Bat = {
-			hard_attack = 0.05
-		}
-		Arty_Battery = {
-			hard_attack = 0.05
-		}
-		SP_Arty_Bat = {
-			hard_attack = 0.05
-		}
-		SP_Arty_Battery = {
-			hard_attack = 0.05
-		}
-
-		research_cost = 1
-		start_year = 2020
-		xp_research_type = army
-		xp_boost_cost = 50
-		xp_research_bonus = 1.50
-
-		folder = {
-			name = artillery_folder
-			position = { x = 0 y = @2025 }
-		}
-
-		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
-			Cat_SP_ARTY
-			Cat_SP_R_ARTY
-		}
-
-		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
-				factor = 0.5
-				date < 2020.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2012.01.01
+				factor = 5
+				date > "2000.1.1"
 			}
 		}
 	}
-
-	Arty_upgrade_5 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech Arty_upgrade_5" }
-
-
-		path = {
-			leads_to_tech = artillery_4
-			research_cost_coeff = 1
+	
+	artilleria = {
+		enable_subunits = {
+			field_artillery
+			heavy_artillery
 		}
-		path = {
-			leads_to_tech = SP_arty_4
-			research_cost_coeff = 1
+		on_research_complete = {
+			#hidden_effect = {
+				load_oob = unlock_field_artillery
+				load_oob = unlock_heavy_artillery
+			#}
 		}
-
-		Arty_Bat = {
-			soft_attack = 0.05
-		}
-		Arty_Battery = {
-			soft_attack = 0.05
-		}
-		SP_Arty_Bat = {
-			soft_attack = 0.05
-		}
-		SP_Arty_Battery = {
-			soft_attack = 0.05
-		}
-
-		research_cost = 1
-		start_year = 2030
-		xp_research_type = army
-		xp_boost_cost = 50
-		xp_research_bonus = 1.50
-
-		folder = {
-			name = artillery_folder
-			position = { x = 0 y = @2035 }
-		}
-
-		categories = {
-			Cat_ARTILLERY #Generic for all artillery
-			Cat_ARTY
-			Cat_SP_ARTY
-			Cat_SP_R_ARTY
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				date < 2030.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2025.01.01
-			}
-		}
-	}
-
-	SP_arty_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_arty_1" }
-
 		enable_equipments = {
-			SP_arty_1
+			FIELD_ARTILLERY_1
 		}
-
 		path = {
-			leads_to_tech = Arty_upgrade_2
+			leads_to_tech = artilleria_2 
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = Arty_upgrade_3
+			leads_to_tech = art_sub 
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.2
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = artillery_folder
+			position = { x = @1 y = @y2 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	artilleria_2 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_2
+		}
+		path = {
+			leads_to_tech = artilleria_3 
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			concept_2 = 1
+		}
+		research_cost = 1.5
+		start_year = 1970
+		folder = {
+			name = artillery_folder
+			position = { x = @5 y = @y2 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	artilleria_3 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_3
+		}
+		path = {
+			leads_to_tech = artilleria_4 
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1970
+		folder = {
+			name = artillery_folder
+			position = { x = @7 y = @y2 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	artilleria_4 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_4
+		}
+		path = {
+			leads_to_tech = artilleria_5 
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			concept_3 = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @9 y = @y2 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	artilleria_5 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_5
+		}
+		path = {
+			leads_to_tech = artilleria_6 
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @11 y = @y2 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	artilleria_6 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_6
+		}
+		path = {
+			leads_to_tech = artilleria_7
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @13 y = @y2 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	artilleria_7 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_7
+		}
+		dependencies = {
+			concept_4 = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @15 y = @y2 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	art_sub = {
+		category_artillery = {
+			defense = 0.03
+			soft_attack = 0.05
+			hard_attack = 0.01
+			breakthrough = 0.04
+			reliability = -0.07
+		}
+		path = {
+			leads_to_tech = art_sub_2 
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
 		start_year = 1985
 		folder = {
 			name = artillery_folder
-			position = { x = 3 y = @1985 }
-		}
-
-		sub_technologies = {
-			fake_arty
-			SP_R_arty_1
-
+			position = { x = @3 y = @y3 }
 		}
 		categories = {
-			Cat_SP_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
 		}
 	}
-
-	SP_R_arty_1 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_R_arty_1" }
-
-		enable_equipments = {
-			SP_R_arty_1
+	
+	art_sub_2 = {
+		category_artillery = {
+			defense = 0.06
+			soft_attack = 0.12
+			hard_attack = 0.04
+			breakthrough = 0.07
+			reliability = 0.07
 		}
-
+		path = {
+			leads_to_tech = art_sub_3
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			concept_2 = 1
+		}
 		research_cost = 1.5
-
-		categories = {
-			Cat_SP_R_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+		start_year = 1975
+		folder = {
+			name = artillery_folder
+			position = { x = @7 y = @y3 }
 		}
-
+		categories = {
+			artillery
+		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
 		}
 	}
-
-	SP_arty_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_arty_2" }
-
-		enable_equipments = {
-			SP_arty_2
+	
+	art_sub_3 = {
+		category_artillery = {
+			defense = 0.08
+			soft_attack = 0.22
+			hard_attack = 0.06
+			breakthrough = 0.09
 		}
-
 		path = {
-			leads_to_tech = Arty_upgrade_4
+			leads_to_tech = art_sub_4
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.4
-		start_year = 2005
+		research_cost = 1.5
+		start_year = 1980
 		folder = {
 			name = artillery_folder
-			position = { x = 4 y = @2005 }
-		}
-
-		sub_technologies = {
-			fake_arty
-			SP_R_arty_2
-
+			position = { x = @11 y = @y3 }
 		}
 		categories = {
-			Cat_SP_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
-				factor = 0.5
-				date < 2005.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2002.01.01
+				factor = 2
+				date > "1970.1.1"
 			}
 		}
 	}
-
-	SP_R_arty_2 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_R_arty_2" }
-
-		enable_equipments = {
-			SP_R_arty_2
+	
+	art_sub_4 = {
+		category_artillery = {
+			hard_attack = 0.22
 		}
-
-		research_cost = 1.6
-
+		dependencies = {
+			concept_4 = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @14 y = @y3 }
+		}
 		categories = {
-			Cat_SP_R_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
 		}
 	}
-
-	SP_arty_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_arty_3" }
-
-		enable_equipments = {
-			SP_arty_3
+	
+	spa = {
+		enable_subunits = {
+			self_propelled_heavy_artillery
+			self_propelled_artillery
+			self_propelled_howitzers
 		}
-
+		enable_equipments = {
+			FIELD_ARTILLERY_SAU_1
+		}
 		path = {
-			leads_to_tech = Arty_upgrade_5
+			leads_to_tech = spa_2
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.6
-		start_year = 2025
+		path = {
+			leads_to_tech = art_sub
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = sub_mrl
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1960
 		folder = {
 			name = artillery_folder
-			position = { x = 3 y = @2025 }
-		}
-
-		sub_technologies = {
-			fake_arty
-			SP_R_arty_3
-
+			position = { x = @1 y = @y4 }
 		}
 		categories = {
-			Cat_SP_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
-				factor = 0.5
-				date < 2025.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2015.01.01
+				factor = 2
+				date > "1970.1.1"
 			}
 		}
 	}
-
-	SP_R_arty_3 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_R_arty_3" }
-
+	
+	spa_2 = {
 		enable_equipments = {
-			SP_R_arty_3
+			FIELD_ARTILLERY_SAU_2
 		}
-
-		research_cost = 1.7
-
-		categories = {
-			Cat_SP_R_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+		path = {
+			leads_to_tech = spa_3
+			research_cost_coeff = 1
 		}
-
-		ai_will_do = {
-			factor = 1
+		dependencies = {
+			concept_2 = 1
 		}
-	}
-
-	SP_arty_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_arty_4" }
-
-		enable_equipments = {
-			SP_arty_4
-		}
-
-		research_cost = 2.7
-		start_year = 2035
+		research_cost = 1.5
+		start_year = 1960
 		folder = {
 			name = artillery_folder
-			position = { x = 3 y = @2035 }
-		}
-
-		sub_technologies = {
-			fake_arty
-			SP_R_arty_4
-
+			position = { x = @3 y = @y4 }
 		}
 		categories = {
-			Cat_SP_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
-				factor = 0.5
-				date < 2035.01.01
-			}
-			modifier = {
-				factor = 0.2
-				date < 2028.01.01
+				factor = 2
+				date > "1970.1.1"
 			}
 		}
 	}
-
-	SP_R_arty_4 = {
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech SP_R_arty_4" }
-
+	
+	spa_3 = {
 		enable_equipments = {
-			SP_R_arty_4
+			FIELD_ARTILLERY_SAU_3
 		}
-
-		research_cost = 1.8
-
+		path = {
+			leads_to_tech = spa_4
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1970
+		folder = {
+			name = artillery_folder
+			position = { x = @5 y = @y4 }
+		}
 		categories = {
-			Cat_SP_R_ARTY
-			Cat_ARTILLERY #Generic for all artillery
+			artillery
 		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
 		}
 	}
+	
+	spa_4 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_SAU_4
+		}
+		path = {
+			leads_to_tech = spa_5
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			concept_3 = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @9 y = @y4 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	spa_5 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_SAU_5
+		}
+		path = {
+			leads_to_tech = spa_6
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @11 y = @y4 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	spa_6 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_SAU_6
+		}
+		path = {
+			leads_to_tech = spa_7
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @13 y = @y4 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	spa_7 = {
+		enable_equipments = {
+			FIELD_ARTILLERY_SAU_7
+		}
+		dependencies = {
+			concept_4 = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @15 y = @y4 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	sub_mrl = {
+		category_artillery = {
+			soft_attack = 0.02
+		}
+		path = {
+			leads_to_tech = sub_mrl_1
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = artillery_folder
+			position = { x = @3 y = @y5 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	sub_mrl_1 = {
+		category_artillery = {
+			soft_attack = 0.07
+			hard_attack = 0.03
+			air_bombing = 0.02
+		}
+		path = {
+			leads_to_tech = sub_mrl_2
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			concept_2 = 1
+		}
+		research_cost = 1.5
+		start_year = 1970
+		folder = {
+			name = artillery_folder
+			position = { x = @7 y = @y5 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	sub_mrl_2 = {
+		category_artillery = {
+			soft_attack = 0.01
+			hard_attack = 0.09
+			air_bombing = 0.08
+		}
+		path = {
+			leads_to_tech = sub_mrl_3
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			concept_2 = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @11 y = @y5 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	sub_mrl_3 = {
+		category_artillery = {
+			soft_attack = 0.12
+			hard_attack = 0.12
+			air_bombing = 0.07
+		}
+		dependencies = {
+			concept_4 = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @14 y = @y5 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	mrl = {
+		enable_subunits = {
+			rocket_artillery_sr
+			medium_rocket_artillery
+			heavy_rocket_artillery
+		}
+		enable_equipments = {
+			MRL_1
+		}
+		path = {
+			leads_to_tech = mrl_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = sub_mrl
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = artillery_folder
+			position = { x = @1 y = @y6 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	mrl_2 = {
+		enable_equipments = {
+			MRL_2
+		}
+		path = {
+			leads_to_tech = mrl_3
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = artillery_folder
+			position = { x = @3 y = @y6 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	mrl_3 = {
+		enable_equipments = {
+			MRL_3
+		}
+		path = {
+			leads_to_tech = mrl_4
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1970
+		folder = {
+			name = artillery_folder
+			position = { x = @5 y = @y6 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	mrl_4 = {
+		enable_equipments = {
+			MRL_4
+		}
+		path = {
+			leads_to_tech = mrl_5
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			concept_3 = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @9 y = @y6 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	mrl_5 = {
+		enable_equipments = {
+			MRL_5
+		}
+		path = {
+			leads_to_tech = mrl_6
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @11 y = @y6 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	mrl_6 = {
+		enable_equipments = {
+			MRL_6
+		}
+		path = {
+			leads_to_tech = mrl_7
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1980
+		folder = {
+			name = artillery_folder
+			position = { x = @13 y = @y6 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	mrl_7 = {
+		enable_equipments = {
+			MRL_7
+		}
+		dependencies = {
+			concept_4 = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @15 y = @y6 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	minomet = {
+	
+		enable_subunits = { 
+			animal_powered_light_mortars
+			air_droppable_self_propelled_mortars
+			mechanized_self_propelled_light_mortars
+			motorized_self_propelled_light_mortars
+			light_mortars
+			heavy_mortars
+        }
+		enable_equipments = {
+			TRENCH_MORTAR_1
+		}
+		path = {
+			leads_to_tech = minomet_2
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = artillery_folder
+			position = { x = @1 y = @y7 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	minomet_2 = {
+		enable_subunits = {
+			mechanized_self_propelled_mortars
+			motorized_self_propelled_mortars
+			self_propelled_heavy_mortars 
+		}
+		enable_equipments = {
+			TRENCH_MORTAR_2
+		}
+		path = {
+			leads_to_tech = minomet_4
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = artillery_folder
+			position = { x = @4 y = @y7 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
+	minomet_4 = {
+		enable_equipments = {
+			TRENCH_MORTAR_4
+		}
+		#path = {
+		#	leads_to_tech = minomet_1
+		#	research_cost_coeff = 1
+		#}
+		dependencies = {
+			concept_4 = 1
+		}
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = artillery_folder
+			position = { x = @15 y = @y7 }
+		}
+		categories = {
+			artillery
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1970.1.1"
+			}
+		}
+	}
+	
 }

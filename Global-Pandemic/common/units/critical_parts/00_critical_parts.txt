@@ -88,8 +88,7 @@ critical_parts = {
 		chance = 0.1
 		str_damage_multiplier = 10
 		org_damage_multiplier = 10
-	}
-	
+	}	
 
 	on_fire = {
 		icon = "GFX_default_critical_damage_icons"
@@ -132,5 +131,18 @@ critical_parts = {
 		
 		org_damage_multiplier = 0.25
 		str_damage_multiplier = 0.25
+	}
+
+	destroyed_nuclear_rector = {
+		icon = "GFX_default_critical_damage_icons"
+		frame = 8
+		stat_penalties = {
+			hg_attack = -1.0
+			lg_attack = -1.0
+			torpedo_attack = -1.0
+		}
+		chance = 0.1
+		str_damage_multiplier = 10
+		org_damage_multiplier = 10
 	}
 }

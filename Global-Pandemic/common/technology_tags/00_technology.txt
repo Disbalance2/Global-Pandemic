@@ -1,312 +1,247 @@
-# Do not change tags in here without changing every other reference to them.
-# If adding new technology, make sure they are uniquely named.
+technology_categories = {
 
-technology_Categories = {
-
-#######################################################MD4 EQUIPMENT###########################################
-
-	### Armor Tab ###
-	Cat_ARMOR  #All Armor
-
-		Cat_TANKS #All tanks
-			Cat_MBT #new - Main Battle Tank
-			Cat_ENG_MBT #new -Engi Tank
-			Cat_REC_TANK #new - Recon Tank
-
-		Cat_AFV #All Armored Fighting Vehicles
-			Cat_IFV #new - Infantry Fighting Vehicle
-			Cat_APC #new - Armoured peronel Carrier
-			Cat_UTIL #Utility Vehicle
-
-
-	#### Arty Tab ###
-	Cat_ARTILLERY #All Artillery/AA/AT
-
-		Cat_ARTY #Towed Artillery
-		Cat_SP_ARTY #Self Propelled Artillery
-		Cat_SP_R_ARTY #Self Propelled Rocket Artillery
-
-		Cat_AA #All Anti-Air
-			Cat_L_AA # Hand Held AA
-			Cat_SP_AA #Self propelled AA
-
-		Cat_AT #All AT
-			Cat_L_AT #Light AT
-			Cat_H_AT #Heavy AT
-
-	### Infantry tab ###
-	Cat_INF #All Infantry
-
-		#Cat_SMALL_ARMS
-		Cat_INF_WEP #Infantry Weapons
-
-		Cat_ENG_EQP #Engineer Equipment
-		Cat_L_DRONE #Land Drone Equipment
-		Cat_CnC #Command and Control Equipment
-
-		Cat_NVG #Night Vision Googles
-		Cat_SPECIAL_FORCES #Special Forces
-		Cat_SUPPORT_WEAPONS #Support Weapons
-
-		Cat_L_AA # Hand Held AA (yes its in two catagories)
-		Cat_L_AT #Light AT (yes its in two catagories)
-
-	### Air ###
-	Cat_AIR_EQP #All Air Equipment
-
-		Cat_NAVAL_AIR #All naval air
-		CAT_FIXED_WING #All fighters/bombers tab
-		Cat_AIR_ENG #All aircraft engines
-		Cat_AIR_WPN #All Aircraft weapons
-		Cat_AIR_SPC #All Special Modules
-
-		### Bombers ###
-		Cat_H_AIR #Heavy Aircraft
-			Cat_STR_BOMBER #Strategic Bomber
-			Cat_NAVAL_PLANE #Maritime Patrol
-			Cat_CAS #Close Air Support
-			Cat_TRANS_PLANE #Transport Plane
-			CAT_AWACS #AWACS
-			Cat_Large_Plane
-			Cat_Gunship
-
-		### Fighter Tab ###
-		Cat_FIGHTER #All Fighters
-			Cat_MR_FIGHTER #Multi Role Fighters
-			Cat_CV_MR_FIGHTER #Carrier Multi Role Fighters
-			Cat_S_FIGHTER #Strike Fighters
-			Cat_Medium_Plane
-			Cat_Small_Plane
-
-			Cat_L_Fighter #Light Fighter/trainer
-				Cat_L_S_FIGHTER #Light Strike Fighter
-				Cat_CV_L_S_FIGHTER #Carrier Light Strike Fighter
-
-			Cat_AS_FIGHTER #Air Supperiority Fighter
-			Cat_A_UAV #Unmanned Combat Aireial Vehicle
-
-		### Helicopter Tab ###
-		Cat_HELI #All Helicopters
-			Cat_TRANS_HELI #Transport Helicopter
-			Cat_ATT_HELI #Attack Helicopter
-			Cat_ASW_HELI #Anti-Submarine Helicopter
-
-
-
-
-
-	### Naval ###
-	Cat_NAVAL_EQP #All Naval Ships
-	Cat_NAVAL_MODULES #All Naval Modules
-	Cat_NAVAL_MISC #All Naval Misc Techs
-
-		#Submarines
-		Cat_SUB #All Submarines
-
-			Cat_NUKE_SUB #Nuclear Submarines
-				Cat_ATT_SUB #Nuclear Attack Submarine
-				Cat_M_SUB #Nuclear Missile Submarine
-
-			Cat_D_SUB #Disesel Submarine
-
-		#Surface Ships
-		Cat_SURFACE_SHIP #All Surface Ships
-			Cat_N_CRUISER #Nuclear Missile Cruiser
-			Cat_M_Cruiser #Missile Cruiser
-			Cat_DESTROYER #Missile Destroyer
-			Cat_FRIGATE #Frigate
-			Cat_CORVETTE #Corvette
-			Cat_TRANS_SHIP #Transport ship
-
-		#Carrier
-		Cat_CARRIER #All Carriers
-			Cat_N_CV #nuclear carrier
-			Cat_CV #Aircraft Carrier
-			Cat_LHA #Landing Helicopter Assault (LHA)
-			Cat_LPD #Amphibious transport dock/landing platform/dock (LPD)
-
-	### Civilian ###
-		Cat_AI
-		Cat_NFIBERS
-		Cat_3D
-		Cat_GENES
-		nuclear
-		#Cat_nuclear
-		Cat_nuclear_reactors
-		Cat_NAVAL_reactors
-		Cat_nuclear_weapons
-		industry
-		cat_renewable
-		computing_tech
-		construction_tech
-		internet_tech
-		Cat_FUEL_OIL #Fuel
-		excavation_tech ##Excavation
-		Cat_infrastructure
-
-	### Land doctrines
-	land_doctrine		#For all land doctrines
-		legacy_doctrines 	#For legacydoctrine
-		Cat_NETWORK_CENTRIC_WARFARE	#Network-Centric Warfare doctrines
-		Cat_DECENTRALIZED_WARFARE	#Decentralized Warfrace Doctrines
-		Cat_GUERRILLA_WARFARE		#Guerrilla Warfare Doctrines
-
-
-##############################################END OF EQUIPMENT###########################################
-
-	### Doctrines ###
-	air_doctrine #doctrine
-	naval_doctrine
-
-	Cat_strategic_destruction_tree #doctrine
-	Cat_battlefield_support_tree #doctrine
-	Cat_operational_integrity_tree #doctrine
-	Cat_base_strike #doctrine
-	Cat_strategic_destruction #doctrine
-	Cat_battlefield_support #doctrine
-	Cat_operational_integrity #doctrine
-	Cat_base_strike_main #doctrine
-
-	############## OLD, UNUSED? ##############
-
-	Cat_naval_doctrine #doctrine
-	Cat_convoy_defense_tree #doctrine
-	Cat_green_water_navy_tree #doctrine
-
-	Cat_submarine_doctrine #doctrine
-	Cat_blue_water_navy_tree #doctrine
-	Cat_green_water_navy #doctrine
-	Cat_blue_water_navy #doctrine
-	Cat_jeune_ecole_two # Doctrine
-
-	motorized_equipment
-	mechanized_equipment
+	# HOI4 base vanilla
+	armor
+	cavalry
+	artillery
+	cat_anti_tank
+	naval_air
+	infantry_weapons
+	naval_equipment
 	rocketry
+	nuclear_tech #Технологии связанные с со всей ядерной программой
+	industry
+	electronics
+	space
+	land_doctrine
+	air_doctrine
+	naval_doctrine
+	strategic_destruction_tree
+	battlefield_support_tree
+	operational_integrity_tree
+	jet_technology
+	trade_interdiction_tree
+	convoy_defense_tree
+	category_scout_plane #Ваниль
 
-### MISSILES ###
+	pb_tech #Патрульный корабль, в нашем варианте корветы
+	ff_tech #Фрегаты
+	ffg_tech #Ракетные фрегаты
+	dlgn_tech #Фрегаты с ядерным реактором
+	cb_tech #Катер
+	dd_tech #Эсминец
+	ddg_tech #Эсминец ракетный
+	ddn_tech #Эсминец с ядерным реактором
+	cs_tech #Ударный крейсер
+	cgn_tech #Крейсер с ядерным реактором
+	ecc_tech #Эскортных крейсеров не существует в природе, так что придумываем своё обозначение.
+	cv_tech #Авианосцы
+	cve_tech #Авиакрейсер
+	cvl_tech #Малый авианосец
+	bbg_tech #Линкоры с управляемыми ракетами
+	cc_tech #Подлодки ударные
+	ssgn_tech #Подлодка с реактором оснащенная ракетами
+	ssn_tech #ударная подводная, атомная
+	sc_tech #подводка-крейсер
+	scn_tech #подводный крейсер с реактором
+	tp_tech #Торпеды
+	naval_autogun_tech #Ствольное вооружение флота
+	naval_rocket_launcher_tech #Ракетное вооружение флота
+	radar_tech
+	submarine_doctrine
+	naval_anti_air_tech #Корабельное ПВО
+	naval_rcc 
+	naval_aegis_tech #aegis
+	naval_bius_tech #БИУС
+	sonar_tech #Сонары
+	naval_engine_tech #Флотские движки
+	naval_meko_tech #МЕКО
+	stels_tech #Стелс технологии
+	
 
-	Cat_missile
-	Cat_BM
-	Cat_ICBM
-	Cat_IRBM
-	Cat_SLBM
-	Cat_CM
-	Cat_ALCM
-	Cat_GLCM
-	Cat_SLCM
-	Cat_HSCM
-	Cat_SAM
-	Cat_ABM
-	Cat_space
-	Cat_satellite
-	Cat_GNSS
-	Cat_conventional_warhead
+	synth_resources
+	fleet_in_being_tree
+	encryption_tech
+	decryption_tech
+	computing_tech
+	
+	infantry_tech
+	marine_tech
+	construction_tech
+	excavation_tech
+	
+
+	cat_mobile_warfare
+	cat_superior_firepower
+	cat_grand_battle_plan
+	cat_mass_assault
+	cat_base_strike
+	cat_trade_interdiction
+	cat_fleet_in_being
+	cat_strategic_destruction
+	cat_battlefield_support
+	cat_operational_integrity
+	night_vision
+	base_strike_main
+	mot_rockets
+	para_tech
+	aircraft_rocket_technologies
+	
+	# INFANTRY  TECH	
+	cat_militia
+	cat_infantry
+	cat_infantry_motorized
+	cat_infantry_mechanized
+	cat_infantry_cavalry
+	cat_gendarmes
+	cat_gendarmes_motorized
+	cat_gendarmes_mechanized
+	cat_gendarmes_cavalry
+	cat_special_forces
+	cat_special_forces_motorized
+	cat_special_forces_mechanized
+	cat_special_forces_cavalry
+	cat_paratroopers
+	cat_paratroopers_motorized
+	cat_paratroopers_mechanized
+	cat_paratroopers_cavalry
+	cat_marines
+	cat_marines_motorized
+	cat_marines_mechanized
+	cat_marines_cavalry
+	cat_mountaineers
+	cat_mountaineers_motorized
+	cat_mountaineers_mechanized
+	cat_mountaineers_cavalry
+	# SUPPORT TECH	
+	cat_support_tech
+	cat_airborne_support_company_tech
+	cat_recon_tech
+	cat_sniper_company_tech
+	cat_hospital_tech
+	cat_logistics_tech
+	cat_signal_company_tech
+	cat_engineer_battalion_tech
+	cat_cbrn_defense_company_tech
+	cat_electronic_warfare_company
+	cat_uas_company
+	# VEHICLES
+	cat_motorized_vehicle
+	cat_light_utility_vehicle
+	cat_truck_vehicle
+	cat_mechanized_vehicle
+	cat_wheeled_vehicle
+	cat_tracked_vehicle
+	cat_cavalry_vehicle
+	cat_air_droppable_vehicle
+	cat marine_landing_vehicle
+	cat_motorized_equipment
+	cat_mechanized_equipment
+	#TANKS
+	cat_heavy_tracked_vehicle
+	cat_medium_tank
+	cat_main_battle_tank
+	cat_mass_mbt
+	cat_light_tank
+	cat_tank_doctrine
+	cat_mbt_te
+	cat_unmanned_turret_doctrine
+	cat_unmanned_doctrine
+	cat_mass_mbt_doctrine
+	# WEAPONS 
+	cat_infantry_weapons
+	cat_special_forces_weapons
+	cat_1stgen_weapons
+	cat_2stgen_weapons
+	cat_3stgen_weapons
+	cat_4stgen_weapons
+	cat_5stgen_weapons
+	# AMMUNITION					
+	cat_ammunition
+	cat_sf_ammunition
+	cat_army_ammunition
+	cat_1stgen_ammunition
+	cat_2ndgen_ammunition
+	cat_3rdgen_ammunition
+	cat_4thgen_ammunition
+	cat_5thgen_ammunition
+	cat_green_ammunition
+	cat_khaki_ammunition
+	cat_gray_ammunition
+	cat_mountaineers_ammunition
+	cat_special_ammunition
+	cat_internal_troops_ammunition
+	cat_airborne_ammunition
+	cat_marines_ammunition
+	#  AIRCRAFTS
+	cat_fighter_tech
+	cat_naval_aircrafts_tech
+	cat_ground_attack_tech
+	cat_strategic_tech
+	cat_air_drone_tech
+	cat_vtol_tech
+	cat_helicopter_tech
+	cat_1stgen_aircrafts
+	cat_2ndgen_aircrafts
+	cat_3rdgen_aircrafts
+	cat_4thgen_aircrafts
+	cat_5thgen_aircrafts
+	cat_6thgen_aircrafts
+	cat_interceptor_fighter_tech
+	cat_light_fighter_tech
+	cat_superior_fighter_tech
+	cat_strike_fighter_tech
+	cat_naval_fighter_tech
+	cat_naval_attack_aircraft_tech
+	cat_naval_attack_bomber_tech
+	cat_naval_anti_submarine_air_tech
+	cat_attack_aircraft_tech
+	cat_attack_bomber_tech
+	cat_strike_bomber_tech
+	cat_nuclear_bomber_tech
+	cat_air_transport_tech
+	cat_anti_submarine_air_tech
+	cat_naval_attack_drone_tech
+	cat_attack_drone_tech
+	cat_naval_assault_helicopter_tech	
+	cat_naval_attack_helicopter_tech
+	cat_attack_helicopter_tech
+	cat_assault_helicopter_tech
+	cat_landing_helicopter_tech
+	cat_anti_submarine_helicopter_tech
+	# add in MTG
+	naval_mines
+	concentrated_industry_category
+	dispersed_industry_category
+	asw_tech
+	naval_minesweeping
+	naval_minelaying
 }
 
 technology_folders = {
-	infantry_folder = {
-		ledger = army
-	}
-	armour_folder = {
-		ledger = army
-	}
-	nsb_armour_folder = {
-		ledger = army
-		available = {
-			has_dlc = "No Step Back"
-		}
-	}
-	artillery_folder = {
-		ledger = army
-	}
-	bba_aircraft_folder = {
-		ledger = air
-		available = {
-			has_dlc = "By Blood Alone"
-		}
-	}
-	air_techs_folder = {
-		ledger = air
-	}
-	fixed_wing_folder = {
-		ledger = air
-		available = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-	}
-	bomber_folder = {
-		ledger = air
-		available = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-	}
-	#industry_folder
-	land_doctrine_folder = {
-		ledger = army
-		doctrine = yes
-	}
-	naval_doctrine_folder = {
-		ledger = navy
-		doctrine = yes
-	}
-	air_doctrine_folder = {
-		ledger = air
-		doctrine = yes
-	}
-	special_forces_airborne_doctrine_folder = {
-		ledger = hidden
-		doctrine = yes
-		available = {
-			has_dlc = "Arms Against Tyranny"
-		}
-	}
-	special_forces_airmobile_doctrine_folder = {
-		ledger = hidden
-		doctrine = yes
-		available = {
-			has_dlc = "Arms Against Tyranny"
-		}
-	}
-	special_forces_marine_doctrine_folder = {
-		ledger = hidden
-		doctrine = yes
-		available = {
-			has_dlc = "Arms Against Tyranny"
-		}
-	}
-	electronics_folder = {
-		ledger = civilian
-	}
-	naval_folder = {
-		available = {
-			NOT = { has_dlc = "Man the Guns" }
-		}
-		ledger = navy
-	}
-	mtgnavalfolder = {
-		available = {
-			has_dlc = "Man the Guns"
-		}
-		ledger = navy
-	}
-	civilian_folder = {
-		ledger = civilian
-	}
-	space_folder = {
-
-	}
-	ballistic_missiles_folder = {
-
-	}
-	cruise_missiles_folder = {
-
-	}
-	missile_defense_folder = {
-
-	}
-	warheads_folder = {
-
-	}
-	#strategic_tech_folder
-	#secret_weapons_folder
+	infantry_folder
+	support_folder
+	salw_folder
+	ammunition_folder
+	wheeled_folder
+	tracked_folder
+	armour_folder
+	artillery_folder
+	land_doctrine_folder
+	
+	air_doctrine_folder
+	air_techs_folder
+	heavy_aircrafts_folder
+	helicopters_folder
+	
+	naval_folder
+	submarines_folder
+	heavy_ships_folder
+	naval_doctrine_folder
+	
+	industry_folder
+	electronics_folder
+	#engineering_folder
+	space_folder
+	special_weapons_folder
 }

@@ -6,13 +6,13 @@ EGY_DD_HISTORICAL = {
 	for_countries = { EGY }
 
 	type = ship
-	ship_types = { stealth_destroyer destroyer }
+	#ship_types = { ship_hull_light destroyer }			
 
 	prefix = "ERN "
-	fallback_name = "Destroyer%d"
+	fallback_name = "Destroyer%d"					
 
-	unique = {
-		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham"
+	unique = {											
+		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham" 
 	}
 }
 
@@ -23,13 +23,13 @@ EGY_CL_HISTORICAL = {
 	for_countries = { EGY }
 
 	type = ship
-	ship_types = { battle_cruiser cruiser }
-
+	#ship_types = { ship_hull_cruiser light_cruiser }
+	
 	prefix = "ARS "
 	fallback_name = "Light Cruiser %d"
 
 	unique = {
-		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham"
+		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham" 
 	}
 }
 
@@ -40,59 +40,64 @@ EGY_CA_HISTORICAL = {
 	for_countries = { EGY }
 
 	type = ship
-	ship_types = { battle_cruiser cruiser }
-
+	#ship_types = { ship_hull_cruiser heavy_cruiser }
+	
 	prefix = "ERN "
 	fallback_name = "Heavy Cruiser %d"
 
 	unique = {
-		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham"
+		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham" 
 	}
 }
 
 
-### BATTLESHIP NAMES ###
-EGY_BB_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_BB
+# ### BATTLESHIP NAMES ###
+# EGY_BB_HISTORICAL = {
+# 	name = NAME_THEME_HISTORICAL_BB
 
-	for_countries = { EGY }
+# 	for_countries = { EGY }
 
-	type = ship
-	ship_types = { battleship_hull_0 }
+# 	type = ship
+# 	#ship_types = { ship_hull_heavy battleship }
+	
+# 	prefix = "ERN "
+# 	fallback_name = "Battleship %d"		
 
-	prefix = "ERN "
-	fallback_name = "Battleship %d"
-}
+# 	unique = {
+# 	}
+# }
 
-### BATTLECRUISER NAMES ###
-EGY_BC_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_BC
+# ### BATTLECRUISER NAMES ###
+# EGY_BC_HISTORICAL = {
+# 	name = NAME_THEME_HISTORICAL_BC
 
-	for_countries = { EGY }
+# 	for_countries = { EGY }
 
-	type = ship
-	ship_types = { battle_cruiser }
+# 	type = ship
+# 	#ship_types = { ship_hull_heavy battle_cruiser }
+	
+# 	prefix = "ERN "
+# 	fallback_name = "Battlecruiser %d"		
 
-	prefix = "ERN "
-	fallback_name = "Battlecruiser %d"
+# 	unique = {
+# 	}
+# }
 
+# ### AIRCRAFT CARRIER NAMES ###
+# EGY_CV_HISTORICAL = {
+# 	name = NAME_THEME_HISTORICAL_CARRIERS
 
-}
+# 	for_countries = { EGY }
 
-### AIRCRAFT CARRIER NAMES ###
-EGY_CV_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CARRIERS
+# 	type = ship
+# 	#ship_types = { ship_hull_carrier carrier }
+	
+# 	prefix = "ARS "
+# 	fallback_name = "Aircraft Carrier %d"	
 
-	for_countries = { EGY }
-
-	type = ship
-	ship_types = { carrier }
-
-	prefix = "ARS "
-	fallback_name = "Aircraft Carrier %d"
-
-
-}
+# 	unique = {
+# 	}
+# }
 
 ### SUBMARINES ###
 EGY_SS_HISTORICAL = {
@@ -101,13 +106,13 @@ EGY_SS_HISTORICAL = {
 	for_countries = { EGY }
 
 	type = ship
-	ship_types = { attack_submarine missile_submarine }
-
+	#ship_types = { ship_hull_submarine submarine }
+	
 	prefix = "ARS "
 	fallback_name = "Submarine %d"
-
+	
 	unique = {
-		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham"
+		"Domiat" "Ibrahim-El-Awal" "El Qaher" "El Fateh" "Sham" 
 	}
 }
 
@@ -119,10 +124,10 @@ EGY_CITIES = {
 
 	type = ship
 
-	prefix = "ERN "
+	prefix = "ERN "							
 	unique = {
-		"Ashmoun" "Ahkmin" "Abu Hummus" "Badr" "Baltim" "Cairo" "Alexandria" "Belqas" "El Alamein" "El Hamool" "Girga" "Giza" "Kharga" "Port Said" "Qaha" "Saint Catherine" "Qena" "Rafah"
-		"Zagazig" "Zefta" "Sadat" "Safaga" "Sodfa" "Suez" "Saqultah" "Shibin El Kom" "Sohag" "New Cairo" "Matai" "Minya" "Metoubes" "Mit Ghamar" "Mallawi" "Mit Adlan" "Mit Bera" "Mit Rahina"
+		"Ashmoun" "Ahkmin" "Abu Hummus" "Badr" "Baltim" "Cairo" "Alexandria" "Belqas" "El Alamein" "El Hamool" "Girga" "Giza" "Kharga" "Port Said" "Qaha" "Saint Catherine" "Qena" "Rafah" 
+		"Zagazig" "Zefta" "Sadat" "Safaga" "Sodfa" "Suez" "Saqultah" "Shibin El Kom" "Sohag" "New Cairo" "Matai" "Minya" "Metoubes" "Mit Ghamar" "Mallawi" "Mit Adlan" "Mit Bera" "Mit Rahina" 
 	}
 }
 
@@ -134,7 +139,7 @@ EGY_REGIONS = {
 
 	type = ship
 
-	prefix = "ERN "
+	prefix = "ERN "							
 	unique = {
 		"Nubia" "Said" "Cairo" "Delta" "Suez" "Siwa" "Sinai" "Luxor"
 	}
@@ -148,7 +153,7 @@ EGY_MYTHOLOGY = {
 
 	type = ship
 
-	prefix = "ERN "
+	prefix = "ERN "							
 	unique = {
 		"Ra" "Geb" "Nut" "Shu" "Osiris" "Isis" "Set" "Nephthys" "Horus" "Bast" "Sobek" "Serqet" "Anubis" "Bes" "Khonsu" "Nekhbet" "Babi" "Tawaret" "Ptah" "Hathor" "Thoth" "Horakthy" "Sphinx" "Wadjet" "Anubite" "Scarab" "Roc" "Petsuchos" "Sea Snake" "Phoenix"
 	}

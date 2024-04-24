@@ -1,5 +1,5 @@
-#Mozambique
-graphical_culture = african_gfx
-graphical_culture_2d = african_2d
 
-color = { 123 164  212 } #random
+graphical_culture = eastern_desert_gfx
+graphical_culture_2d = african_2d 
+
+color = { 100  100  150 }

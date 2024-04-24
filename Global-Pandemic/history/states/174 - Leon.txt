@@ -1,0 +1,24 @@
+state = {
+	id = 174
+	name = "STATE_174"
+
+	history = {
+		owner = FRA
+		set_state_flag = christianity
+		buildings = {
+			infrastructure = 6
+			arms_factory = 1
+
+		}
+		add_core_of = SPR
+		add_core_of = LEO
+
+	}
+
+	provinces = {
+		726 918 920 3725 3727 3918 3920 4024 6746 6907 11843 
+	}
+	manpower = 497876
+	buildings_max_level_factor = 1.000
+	state_category = town
+}

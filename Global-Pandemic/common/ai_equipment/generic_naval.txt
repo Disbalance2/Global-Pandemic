@@ -1,2089 +1,880 @@
-# AI Ship Designs for Generic Nations -Try to use these if you are not unique.
-##Screens, Escorts and Destroyers - Main Bread and Butter of the Fleets
-generic_corvettes = {
-	category = naval #Modules FINALIZED - Bird 11/8/2020
-	roles = { naval_corvettes }
+# AI Ship Designs for Generic Nations
+
+cutters = {
+	category = naval
+	
+	roles = {
+		naval_screen
+	}
+	
 	priority = {
-		base = 100
-		modifier = { #Small naval powers unite
-			factor = 25
-			num_of_naval_factories < 10
-		}
-		modifier = { #Multiplicative - Small powers should focus here
-			factor = 100
-			OR = {
-				has_idea = regional_power
-				has_idea = minor_power
-				has_idea = non_power
-			}
-		}
-		modifier = {
-			factor = 0.01
-			OR = {
-				has_idea = large_power
-				has_idea = great_power
-				has_idea = superpower
-			}
-		}
-		modifier = { #Major powers unless otherwise stated will avoid if possible
-			factor = 0.01
-			num_of_naval_factories > 9
-		}
-		#Tag Specific Weighting
-		modifier = {  #China/India go for numbers
-			factor = 0.80
-			OR = {
-				tag = RAJ
-				tag = CHI
-			}
-		}
-		modifier = { #Post-Soviet tend to prefer Corvettes
-			factor = 2.5
-			OR = {
-				tag = UKR
-				tag = SOV
-			}
-		}
-		modifier = { ##Countries that don't build corvettes - Simply just a kill switch
-			factor = 0
-			tag = USA #America never builds Corvettes. Smallest ship class is a frigate
-		}
-		modifier = { #Major naval powers should be less likely to build these screens
-			factor = 0.35
-			OR = {
-				tag = ENG
-				tag = FRA
-				tag = ITA
-				tag = SPR
-				tag = SWE
-				tag = DEN
-				tag = RAJ
-			}
-		}
+		factor = 2500
 	}
-	blocked_for = {
-		USA
-		BRA
-		CAN
-		GER
-		GRE
-		HOL
-		IND
-		ITA
-		CHI
-		JAP
-		KOR
-		NKO
-		PER
-		POR
-		RAJ
-		SIA
-		SOV
-		SPR
-		SWE
-		TAI
-		TUR
-	}
-
-	corvette_default = {
-		role_icon_index = 2
+	
+	screen_default = {
+	
 		priority = {
-			factor = 0
+			factor = 250
 		}
-
+		
+		role_icon_index = 2
+		
 		target_variant = {
-			match_value = 1000.00
-			type = corvette_hull_1
+			match_value = 2000.0
+			
+			type = ship_hull_cutter
 			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_1
-				fixed_ship_auxillary_slot = module_mineclearing
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_chain_gun
-				rear_1_custom_slot = module_minelaying
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_torpedo_slot = ship_torpedo
+				rear_1_custom_slot = ship_depth_charge
 			}
 		}
-
+	
 		allowed_modules = {
-			#Armaments
-			module_light_guns_category
-			module_point_defense_system_category
-			module_torpedoes_category
-			module_vls_category
-			module_turret_missile_category
-			#Auxillary/Support Systems
-			module_radar_category
-			module_sonar_category
-			module_fuel_tanks_category
-			module_fire_control_system_category
-			module_light_surface_power_source_category
-		}
-	}
-
-	corvette_hull_1 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = corvette_hull_1 }
-			modifier = { add = -999 has_tech = corvette_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			type = corvette_hull_1
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_1
-				fixed_ship_auxillary_slot = module_mineclearing
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_chain_gun
-				rear_1_custom_slot = module_minelaying
-			}
-		}
-	}
-
-	corvette_hull_2 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = corvette_hull_2 }
-			modifier = { add = -999 has_tech = corvette_hull_3 }
-		}
-
-		target_variant = {
-			type = corvette_hull_2
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot = module_mineclearing
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_chain_gun
-				rear_1_custom_slot = module_minelaying
-			}
-		}
-	}
-
-	corvette_hull_3 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = corvette_hull_3 }
-			modifier = { add = -999 has_tech = corvette_hull_4 }
-		}
-
-		target_variant = {
-			type = corvette_hull_3
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_3
-				fixed_ship_auxillary_slot = module_aa_missiles_2
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_ciws_1
-				rear_1_custom_slot = module_light_helipad_1
-			}
-		}
-	}
-
-	corvette_hull_4 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = corvette_hull_4 }
-			modifier = { add = -999 has_tech = corvette_hull_5 }
-		}
-
-		target_variant = {
-			type = corvette_hull_4
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_4
-				fixed_ship_auxillary_slot = module_aa_missiles_3
-				fixed_ship_battery_slot = module_76mm_gun_2
-				front_1_custom_slot = module_ciws_2
-				rear_1_custom_slot = module_light_helipad_1
-			}
-		}
-	}
-
-	corvette_hull_5 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = corvette_hull_5 }
-			modifier = { add = -999 has_tech = corvette_hull_6 }
-		}
-
-		target_variant = {
-			type = corvette_hull_5
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_jet_turbine_power2
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_5
-				fixed_ship_auxillary_slot = module_asm_4
-				fixed_ship_battery_slot = module_76mm_gun_3
-				front_1_custom_slot = module_ciws_3
-				rear_1_custom_slot = module_light_helipad_1
-			}
-		}
-	}
-
-	corvette_hull_6 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = corvette_hull_6 }
-		}
-
-		target_variant = {
-			type = corvette_hull_6
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_jet_turbine_power3
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_6
-				fixed_ship_auxillary_slot = module_asm_5
-				fixed_ship_battery_slot = module_76mm_gun_4
-				front_1_custom_slot = module_ciws_4
-				rear_1_custom_slot = module_light_helipad_1
-			}
+			ship_depth_charge
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			light_ship_engine
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
 		}
 	}
 }
-generic_frigates = {
-	category = naval #Modules Finalized 11/08/2020
-	roles = { naval_frigate }
-
+corvettes = {
+	category = naval
+	
+	roles = {
+		naval_screen
+	}
+	
 	priority = {
-		base = 100
-		modifier = { #Should never build these
-			factor = 0
-			num_of_naval_factories < 5
-		}
-		modifier = {
-			factor = 100
-			OR = {
-				has_idea = regional_power
-				has_idea = large_power
-				has_idea = superpower
-			}
-		}
-		modifier = {
-			factor = 0.50
-			OR = {
-				has_idea = regional_power
-				has_idea = minor_power
-				has_idea = non_power
-			}
-		}
-		modifier = {
-			factor = 2.0
-			num_of_naval_factories > 10
-		}
-		modifier = {
-			factor = 0.5
-			tag = USA #USA is less likely to make frigates. They are more for minesweeps/layers
-		}
+		factor = 2500
 	}
-
-	blocked_for = {
-		DEN #Denmark - Unique Frigates AI
-		AST #Australia
-		USA
-		BRA
-		CAN
-		GER
-		GRE
-		HOL
-		IND
-		ITA
-		CHI
-		JAP
-		KOR
-		NKO
-		PER
-		POR
-		RAJ
-		SIA
-		SOV
-		SPR
-		SWE
-		TAI
-		TUR
-	}
-	frigate_default = {
-		role_icon_index = 2
+	
+	screen_default = {
+	
 		priority = {
-			factor = 0
+			factor = 250
 		}
-
+		
+		role_icon_index = 2
+		
 		target_variant = {
-			match_value = 1000.0
-			type = frigate_hull_1
-
+			match_value = 2000.0
+			
+			type = ship_hull_corvette
 			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_2 = module_anti_submarine_missile_1
-				fixed_ship_auxillary_slot_1 = module_torpedoes_1
-				fixed_ship_auxillary_slot = module_chain_gun
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_76mm_gun_1
-				rear_1_custom_slot = module_chain_gun
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_torpedo_slot = ship_torpedo
+				rear_1_custom_slot = ship_depth_charge
 			}
 		}
-
+	
 		allowed_modules = {
-			#Weaponry/Armanments
-			module_light_guns_category
-			module_torpedoes_category
-			module_anti_submarine_mortar_category
-			module_turret_missile_category
-			module_point_defense_system_category
-			module_vls_category
-			module_light_helipad_category
-			#Support Equipment
-			module_radar_category
-			module_sonar_category
-			module_fire_control_system_category
-			module_mineclearing_category
-			module_minelaying_category
-			module_light_surface_power_source_category
-		}
-	}
-
-	frigate_hull_1 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_1 }
-			modifier = { add = -999 has_tech = frigate_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			type = frigate_hull_1
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_2 = module_anti_submarine_missile_1
-				fixed_ship_auxillary_slot_1 = module_torpedoes_1
-				fixed_ship_auxillary_slot = module_chain_gun
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_76mm_gun_1
-				rear_1_custom_slot = module_chain_gun
-			}
-		}
-	}
-
-	frigate_hull_2 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_2 }
-			modifier = { add = -999 has_tech = frigate_hull_3 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			type = frigate_hull_2
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_2 = module_asm_1
-				fixed_ship_auxillary_slot_1 = module_asm_1
-				fixed_ship_auxillary_slot = module_ciws_1
-				fixed_ship_battery_slot = module_76mm_gun_2
-				front_1_custom_slot = module_ciws_1
-				rear_1_custom_slot = module_light_helipad_1
-			}
-		}
-	}
-
-	frigate_hull_3 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_3 }
-			modifier = { add = -999 has_tech = frigate_hull_4 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			type = frigate_hull_3
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_3
-				fixed_ship_auxillary_slot_2 = module_asm_2
-				fixed_ship_auxillary_slot_1 = module_ciws_2
-				fixed_ship_auxillary_slot = module_vls_sam_1
-				fixed_ship_battery_slot = module_76mm_gun_2
-				front_1_custom_slot = module_torpedoes_2
-				rear_1_custom_slot = module_light_helipad_1
-			}
-		}
-	}
-
-	frigate_hull_4 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_4 }
-			modifier = { add = -999 has_tech = frigate_hull_5 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			type = frigate_hull_4
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_jet_turbine_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_3
-				fixed_ship_auxillary_slot_2 = module_vls_sam_2
-				fixed_ship_auxillary_slot_1 = module_vls_asm_1
-				fixed_ship_auxillary_slot = module_aa_missiles_2
-				fixed_ship_battery_slot = module_76mm_gun_2
-				front_1_custom_slot = module_ciws_2
-				rear_1_custom_slot = module_light_helipad_2
-			}
-		}
-	}
-
-	frigate_hull_5 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_5 }
-			modifier = { add = -999 has_tech = frigate_hull_6 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			type = frigate_hull_5
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_jet_turbine_power2
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_5
-				fixed_ship_auxillary_slot_2 = module_ram_4
-				fixed_ship_auxillary_slot_1 = module_asm_4
-				fixed_ship_auxillary_slot = module_vls_sam_3
-				fixed_ship_battery_slot = module_76mm_gun_2
-				front_1_custom_slot = module_torpedoes_2
-				rear_1_custom_slot = module_light_helipad_2
-			}
-		}
-	}
-
-	frigate_hull_6 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_6 }
-		}
-
-		target_variant = {
-			type = frigate_hull_6
-			match_value = 2000
-
-			modules = {
-				fixed_ship_engine_slot = module_light_surface_jet_turbine_power3
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_6
-				fixed_ship_auxillary_slot_2 = module_ram_5
-				fixed_ship_auxillary_slot_1 = module_asm_5
-				fixed_ship_auxillary_slot = module_vls_sam_4
-				fixed_ship_battery_slot = module_76mm_gun_3
-				front_1_custom_slot = module_torpedoes_4
-				rear_1_custom_slot = module_light_helipad_2
-			}
+			ship_depth_charge
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			light_ship_engine
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
 		}
 	}
 }
+destroyers = {
+	category = naval
+	
+	roles = {
+		naval_screen
+	}
+	
+	priority = {
+		factor = 2500
+	}
+	
+	screen_default = {
+	
+		priority = {
+			factor = 250
+			modifier = {
+				factor = 10
+				is_major = no
+			}
+		}
+		
+		role_icon_index = 2
+		
+		target_variant = {
+			match_value = 2000.0
+			
+			type = ship_hull_destroyer
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_torpedo_slot = ship_torpedo
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+	
+		allowed_modules = {
+			ship_depth_charge
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			light_ship_engine
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
+		}
+	}
+}
+
 generic_destroyer = {
 	category = naval
-	roles = { naval_destroyer }
+	
+	
+	roles = {
+		naval_escort
+	}
+	
 	priority = {
-		base = 100
+		factor = 1000
 		modifier = {
-			factor = 25
-			num_of_naval_factories > 10
-		}
-		modifier = { ##Should be a kill switch here if you have less then 10 dockyards
-			factor = 0
-			num_of_naval_factories < 10
-		}
-		modifier = {
-			factor = 100
-			OR = {
-				has_idea = large_power
-				has_idea = great_power
-				has_idea = superpower
-			}
-		}
-		modifier = { ##Minors should avoid destroyers. Frigates and Corvettes are better suited for local needs
-			factor = 0.25
-			OR = {
-				has_idea = regional_power
-				has_idea = minor_power
-				has_idea = non_power
-			}
-		}
-		modifier = { #Nations with a higher preference for Destroyers
-			factor = 2.5
-			OR = {
-				tag = USA
-				tag = CHI
-				tag = ENG
-				tag = FRA
-				tag = SOV
-				tag = RAJ
-				tag = JAP
-				tag = SAF
-				tag = GER
-				tag = SPR
-				tag = ITA
-				tag = TUR
-			}
+			factor = 200
+			anti_submarine_strategy_required_trigger = yes
 		}
 	}
-
-	blocked_for = {
-		ARG # Argentina - Possesses Unique Destroyer Hulls
-		USA # United States
-		AST # Australia - POssesses Unique Destroyer Hulls
-		BRA
-		CAN
-		GER
-		GRE
-		HOL
-		IND
-		ITA
-		CHI
-		JAP
-		KOR
-		PER
-		POR
-		RAJ
-		SIA
-		SOV
-		SPR
-		SWE
-		TAI
-		TUR
-	}
-	destroyer_default = {
-		role_icon_index = 2
+	
+	escort_default = {
+	
 		priority = {
-			factor = 0
+			factor = 100
+			modifier = {
+				factor = 20
+				anti_submarine_strategy_required_trigger = yes
+			}
 		}
+
+		role_icon_index = 2
+		
 		target_variant = {
 			match_value = 1000.0
-
-			type = destroyer
+			
+			type = ship_hull_destroyer_1
 			modules = {
-				fixed_ship_engine_slot = module_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_3 = module_chain_gun
-				fixed_ship_auxillary_slot_2 = module_asm_1
-				fixed_ship_auxillary_slot = module_anti_submarine_mortar
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_torpedoes_1
-				mid_1_custom_slot = module_chain_gun
-				mid_2_custom_slot = module_fuel_tank
-				rear_1_custom_slot = module_light_helipad_1
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = empty
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_depth_charge }
+					upgrade > current
+				}
 			}
 		}
-
+		
 		allowed_modules = {
-			#Weaponry
-			module_turret_missile_category
-			module_vls_category
-			module_light_guns_category
-			module_heavy_guns_category
-			module_railguns_category
-			module_point_defense_system_category
-			module_torpedoes_category
-			module_anti_submarine_mortar_category
-
-			#Support
-			module_fuel_tanks_category
-			module_mineclearing_category
-			module_minelaying_category
-			module_radar_category
-			module_sonar_category
-			module_fire_control_system_category
-			module_surface_power_source_category
+			ship_depth_charge
+			ship_anti_air
+			ship_light_battery
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
 		}
 	}
-
-	destroyer_hull_1 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = destroyer_hull_1 }
-			modifier = { add = -999 has_tech = destroyer_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 2500.0
-
-			type = destroyer_hull_1
-			modules = {
-				fixed_ship_engine_slot = module_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_3 = module_chain_gun
-				fixed_ship_auxillary_slot_2 = module_asm_1
-				fixed_ship_auxillary_slot = module_anti_submarine_mortar
-				fixed_ship_battery_slot = module_76mm_gun_1
-				front_1_custom_slot = module_torpedoes_1
-				mid_1_custom_slot = module_chain_gun
-				mid_2_custom_slot = module_fuel_tank
-				rear_1_custom_slot = module_light_helipad_1
-			}
+}
+generic_destroyer_nr = {
+	category = naval
+	
+	
+	roles = {
+		naval_escort
+	}
+	
+	priority = {
+		factor = 1000
+		modifier = {
+			factor = 200
+			anti_submarine_strategy_required_trigger = yes
 		}
 	}
-
-	destroyer_hull_2 = {
-		role_icon_index = 2
+	
+	escort_default = {
+	
 		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = destroyer_hull_2 }
-			modifier = { add = -999 has_tech = destroyer_hull_3 } ##Prioritize the newer ship hulls
+			factor = 100
+			modifier = {
+				factor = 20
+				anti_submarine_strategy_required_trigger = yes
+			}
 		}
 
+		role_icon_index = 2
+		
 		target_variant = {
-			match_value = 3500.0
-
-			type = destroyer_hull_2
+			match_value = 1000.0
+			
+			type = ship_hull_destroyer_nr
 			modules = {
-				fixed_ship_engine_slot = module_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_3
-				fixed_ship_auxillary_slot_3 = module_vls_sam_2
-				fixed_ship_auxillary_slot_2 = module_asm_2
-				fixed_ship_auxillary_slot = module_torpedoes_2
-				fixed_ship_battery_slot = module_76mm_gun_2
-				front_1_custom_slot = module_76mm_gun_2
-				mid_1_custom_slot = module_ciws_2
-				mid_2_custom_slot = module_anti_submarine_missile_2
-				rear_1_custom_slot = module_light_helipad_1
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = empty
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_depth_charge }
+					upgrade > current
+				}
 			}
+		}
+		
+		allowed_modules = {
+			ship_depth_charge
+			ship_anti_air
+			ship_light_battery
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
 		}
 	}
-
-	destroyer_hull_3 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = destroyer_hull_3 }
-			modifier = { add = -999 has_tech = destroyer_hull_4 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 5500.0
-
-			type = destroyer_hull_3
-			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_4
-				fixed_ship_auxillary_slot_3 = module_vls_sam_3
-				fixed_ship_auxillary_slot_2 = module_asm_3
-				fixed_ship_auxillary_slot = module_ciws_3
-				fixed_ship_battery_slot = module_76mm_gun_3
-				front_1_custom_slot = module_torpedoes_2
-				mid_1_custom_slot = module_vls_asm_2
-				mid_2_custom_slot = module_ram_3
-				rear_1_custom_slot = module_light_helipad_1
-			}
+}
+generic_cutters = {
+	category = naval
+	
+	
+	roles = {
+		naval_escort
+	}
+	
+	priority = {
+		factor = 1000
+		modifier = {
+			factor = 200
+			anti_submarine_strategy_required_trigger = yes
 		}
 	}
-
-	destroyer_hull_4 = {
-		role_icon_index = 2
+	
+	cutter_default = {
+	
 		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = destroyer_hull_4 }
-			modifier = { add = -999 has_tech = destroyer_hull_5 } ##Prioritize the newer ship hulls
+			factor = 100
+			modifier = {
+				factor = 20
+				anti_submarine_strategy_required_trigger = yes
+			}
 		}
 
+		role_icon_index = 2
+		
 		target_variant = {
-			match_value = 7500.0
-
-			type = destroyer_hull_4
+			match_value = 1000.0
+			
+			type = ship_hull_cutter
 			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_5
-				fixed_ship_auxillary_slot_3 = module_vls_sam_4
-				fixed_ship_auxillary_slot_2 = module_vls_asm_3
-				fixed_ship_auxillary_slot = module_asm_4
-				fixed_ship_battery_slot = module_127mm_guns_3
-				front_1_custom_slot = module_torpedoes_2
-				mid_1_custom_slot = module_ciws_4
-				mid_2_custom_slot = module_ram_4
-				rear_1_custom_slot = module_light_helipad_2
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = empty
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_depth_charge }
+					upgrade > current
+				}
 			}
+		}
+		
+		allowed_modules = {
+			ship_depth_charge
+			ship_anti_air
+			ship_light_battery
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
 		}
 	}
-
-	destroyer_hull_5 = {
-		role_icon_index = 2
+}
+generic_corvettes = {
+	category = naval
+	
+	
+	roles = {
+		naval_escort
+	}
+	
+	priority = {
+		factor = 1000
+		modifier = {
+			factor = 200
+			anti_submarine_strategy_required_trigger = yes
+		}
+	}
+	
+	corvette_default = {
+	
 		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = destroyer_hull_5 }
+			factor = 100
+			modifier = {
+				factor = 20
+				anti_submarine_strategy_required_trigger = yes
+			}
 		}
 
+		role_icon_index = 2
+		
 		target_variant = {
-			match_value = 8500.0
-
-			type = destroyer_hull_5
+			match_value = 1000.0
+			
+			type = ship_hull_corvette
 			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power3
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_6
-				fixed_ship_auxillary_slot_3 = module_vls_sam_5
-				fixed_ship_auxillary_slot_2 = module_vls_asm_4
-				fixed_ship_auxillary_slot = module_vls_lam_3
-				fixed_ship_battery_slot = module_127mm_guns_4
-				front_1_custom_slot = module_torpedoes_4
-				mid_1_custom_slot = module_ciws_5
-				mid_2_custom_slot = module_ram_5
-				rear_1_custom_slot = module_light_helipad_2
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = empty
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_depth_charge }
+					upgrade > current
+				}
 			}
+		}
+		
+		allowed_modules = {
+			ship_depth_charge
+			ship_anti_air
+			ship_light_battery
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
+		}
+	}
+}
+generic_frigate = {
+	category = naval
+	
+	
+	roles = {
+		naval_escort
+	}
+	
+	priority = {
+		factor = 1000
+		modifier = {
+			factor = 200
+			anti_submarine_strategy_required_trigger = yes
+		}
+	}
+	
+	frigate_default = {
+	
+		priority = {
+			factor = 100
+			modifier = {
+				factor = 20
+				anti_submarine_strategy_required_trigger = yes
+			}
+		}
+
+		role_icon_index = 2
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_frigate
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = empty
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_depth_charge }
+					upgrade > current
+				}
+			}
+		}
+		
+		allowed_modules = {
+			ship_depth_charge
+			ship_anti_air
+			ship_light_battery
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
+		}
+	}
+}
+generic_frigate_nr = {
+	category = naval
+	
+	
+	roles = {
+		naval_escort
+	}
+	
+	priority = {
+		factor = 1000
+		modifier = {
+			factor = 200
+			anti_submarine_strategy_required_trigger = yes
+		}
+	}
+	
+	frigate_nr_default = {
+	
+		priority = {
+			factor = 100
+			modifier = {
+				factor = 20
+				anti_submarine_strategy_required_trigger = yes
+			}
+		}
+
+		role_icon_index = 2
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_frigate_3_nr
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = empty
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = ship_sonar
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = {
+					any_of = { ship_depth_charge }
+					upgrade > current
+				}
+			}
+		}
+		
+		allowed_modules = {
+			ship_depth_charge
+			ship_anti_air
+			ship_light_battery
+			ship_sonar
+			ship_fire_control_system
+			ship_radar
 		}
 	}
 }
 
-stealth_destroyer = {
+naval_ship_hull_escort_cruiser = {
+
 	category = naval
-	roles = { naval_stealth_destroyer }
+	
+	roles = {
+		naval_cruiser_light
+	}
+	
 	priority = {
-		base = 100
-		modifier = { #Only major naval powers will use this. America will be the most likely.
-			factor = 0
-			NOT = {
-				tag = USA
-				tag = CHI
-				tag = SOV
-				tag = FRA
-				tag = RAJ
-				tag = ENG
-				tag = GER
-				tag = BRA
-				tag = SAF
-			}
-		}
-		modifier = { #Major Naval Powers
-			factor = 1.25
-			OR = {
-				tag = USA
-				tag = CHI
-				tag = SOV
-				tag = FRA
-			}
-		}
+		factor = 1000
 	}
-	blocked_for = {
-		USA
-		BRA
-		CAN
-		GER
-		ITA
-		CHI
-		JAP
-		KOR
-		POR
-		RAJ
-		SOV
-		SPR
-		TUR
-	}
-
-	stealth_destroyer_hull_1 = {
-		role_icon_index = 2
+	cruiser_light_early = {
+		
 		priority = {
-			factor = 0
-		}
-
-		target_variant = {
-			match_value = 8500.0
-
-			type = stealth_destroyer
-			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_5
-				fixed_ship_auxillary_slot_3 = module_vls_asm_4
-				fixed_ship_auxillary_slot_2 = module_anti_submarine_missile_4
-				fixed_ship_auxillary_slot = module_ciws_5
-				fixed_ship_battery_slot = module_heavy_guns_3
-				front_1_custom_slot = module_vls_lam_4
-				mid_1_custom_slot = module_vls_sam_4
-				mid_2_custom_slot = module_ciws_5
-				rear_1_custom_slot = module_light_helipad_2
+			factor = 100
+			modifier = {
+				factor = 10
+				is_major = no
 			}
 		}
 
+		role_icon_index = 2
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_escort_cruiser
+			modules = {
+				fixed_ship_battery_slot = ship_rcc
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = ship_armor_medium_ceramic
+				fixed_ship_armor_slot = {
+					any_of = { ship_medium_armor ship_heavy_armor ship_light_armor }
+				}
+				fixed_ship_secondaries_slot = empty
+				rear_1_custom_slot = ship_rcc
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = {
+					any_of = { ship_torpedo ship_anti_air ship_rcc }
+				}
+			}
+		}
+		
 		allowed_modules = {
-			#Weaponry
-			module_turret_missile_category
-			module_vls_category
-			module_light_guns_category
-			module_point_defense_system_category
-			module_torpedoes_category
-			module_anti_submarine_mortar_category
-			module_railguns_category
-
-			#Support
-			module_fuel_tanks_category
-			module_mineclearing_category
-			module_minelaying_category
-			module_radar_category
-			module_sonar_category
-			module_fire_control_system_category
-			module_surface_power_source_category
+			ship_rcc
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			ship_fire_control_system
+			cruiser_ship_engine
+			ship_radar
+			ship_sonar
+			ship_airplane_launcher
 		}
 	}
+}
+naval_ship_hull_strike_cruiser = {
 
-	stealth_destroyer_hull_2 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = stealth_destroyer_hull_1 }
-			modifier = { add = -999 has_tech = stealth_destroyer_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 3500.0
-
-			type = stealth_destroyer_hull_2
-			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power3
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_6
-				fixed_ship_auxillary_slot_3 = module_vls_asm_5
-				fixed_ship_auxillary_slot_2 = module_anti_submarine_missile_5
-				fixed_ship_auxillary_slot = module_ciws_5
-				fixed_ship_battery_slot = module_railgun_3
-				front_1_custom_slot = module_vls_lam_5
-				mid_1_custom_slot = module_vls_sam_5
-				mid_2_custom_slot = module_ciws_5
-				rear_1_custom_slot = module_light_helipad_2
-			}
-		}
+	category = naval
+	
+	roles = {
+		naval_cruiser_light
 	}
-
-	stealth_destroyer_hull_3 = {
-		role_icon_index = 2
+	
+	priority = {
+		factor = 1000
+	}
+	cruiser_light_early = {
+		
 		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = stealth_destroyer_hull_3 }
+			factor = 100
+			modifier = {
+				factor = 10
+				is_major = no
+			}
 		}
 
+		role_icon_index = 2
+		
 		target_variant = {
-			match_value = 5500.0
-
-			type = stealth_destroyer_hull_3
+			match_value = 1000.0
+			
+			type = ship_hull_strike_cruiser
 			modules = {
-				fixed_ship_engine_slot = module_surface_fut_reactor_power
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_7
-				fixed_ship_auxillary_slot_3 = module_vls_asm_6
-				fixed_ship_auxillary_slot_2 = module_anti_submarine_missile_6
-				fixed_ship_auxillary_slot = module_ciws_6
-				fixed_ship_battery_slot = module_railgun_4
-				front_1_custom_slot = module_vls_lam_5
-				mid_1_custom_slot = module_vls_sam_6
-				mid_2_custom_slot = module_ciws_6
-				rear_1_custom_slot = module_light_helipad_2
+				fixed_ship_battery_slot = ship_rcc
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine
+				fixed_ship_armor_slot = {
+					any_of = { ship_medium_armor ship_heavy_armor ship_light_armor }
+				}
+				fixed_ship_secondaries_slot = empty
+				rear_1_custom_slot = ship_rcc
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = {
+					any_of = { ship_torpedo ship_anti_air }
+				}
 			}
+		}
+		
+		allowed_modules = {
+			ship_rcc
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			ship_fire_control_system
+			cruiser_ship_engine
+			ship_radar
+			ship_sonar
+			ship_airplane_launcher
 		}
 	}
 }
 
-#Cruisers, BattleCruisers, Battleships -- Heavy Vessels.
-cruiser_gun_based = { #Should be fairly unlikely but here is something for just the memes
+naval_cruiser_strike = {
 	category = naval
-	roles = { naval_cruiser }
+	
+	roles = {
+		naval_cruiser_heavy
+	}
+	
 	priority = {
-		factor = 100
+		factor = 800
+	}
+	capital_cruiser_early = {
+	
+		priority = {
+			factor = 100
+		}
+
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_strike_cruiser
+			modules = {
+				fixed_ship_battery_slot = ship_rcc
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				fixed_ship_armor_slot = {
+					any_of = { ship_medium_armor ship_heavy_armor ship_light_armor }
+				}
+				fixed_ship_secondaries_slot = ship_rcc
+				mid_1_custom_slot = {
+					any_of = { ship_anti_air ship_torpedo ship_rcc }
+				}
+				mid_2_custom_slot = {
+					any_of = { ship_airplane_launcher ship_anti_air ship_torpedo }
+				}
+				rear_1_custom_slot = ship_rcc
+			}
+		}
+		
+		allowed_modules = {
+			ship_anti_air
+			ship_rcc
+			ship_radar
+			ship_torpedo
+			ship_airplane_launcher
+		}
+	}
+}
+naval_cruiser_escort = {
+	category = naval
+	
+	roles = {
+		naval_cruiser_heavy
+	}
+	
+	priority = {
+		factor = 800
+	}
+	capital_cruiser_early = {
+	
+		priority = {
+			factor = 100
+		}
+
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_escort_cruiser
+			modules = {
+				fixed_ship_battery_slot = ship_rcc
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				fixed_ship_armor_slot = {
+					any_of = { ship_medium_armor ship_heavy_armor ship_light_armor }
+				}
+				fixed_ship_secondaries_slot = ship_rcc
+				mid_1_custom_slot = {
+					any_of = { ship_anti_air ship_torpedo ship_rcc }
+				}
+				mid_2_custom_slot = {
+					any_of = { ship_airplane_launcher ship_anti_air ship_torpedo }
+				}
+				rear_1_custom_slot = ship_rcc
+			}
+		}
+		
+		allowed_modules = {
+			ship_anti_air
+			ship_rcc
+			ship_radar
+			ship_torpedo
+			ship_airplane_launcher
+		}
+	}
+}
+
+naval_ship_hull_heavy_carrier = {
+	category = naval
+	
+	roles = {
+		naval_carrier
+	}
+	
+	priority = {
+		factor = 10
+		modifier = {
+			factor = 50
+			is_major = yes
+		}
+		modifier = {
+			num_of_naval_factories > 50
+			factor = 10
+		}
+	}
+
+	ship_hull_heavy_carrier_early = {
+	
+		priority = {
+			factor = 100
+			 
+		}
+
+		role_icon_index = 7
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_heavy_carrier
+			modules = {
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_engine_slot = carrier_ship_engine_1
+				fixed_ship_secondaries_slot = empty
+				front_1_custom_slot = empty
+			}
+		}
+		
+		allowed_modules = {
+			ship_anti_air
+			ship_fire_control_system
+			cruiser_ship_engine
+			heavy_ship_engine
+			carrier_ship_engine
+			ship_radar
+			ship_deck_space
+			ship_medium_armor
+			ship_heavy_armor
+			ship_light_armor
+		}
+	}
+}
+naval_ship_hull_cruiser_carrier = {
+	category = naval
+	
+	roles = {
+		naval_carrier
+	}
+	
+	priority = {
+		factor = 30
 		modifier = {
 			factor = 10
 			is_major = yes
 		}
 		modifier = {
-			factor = 25
-			num_of_naval_factories > 10
-		}
-		modifier = { ##Should be a kill switch here if you have less then 10 dockyards
-			factor = 0
-			num_of_naval_factories < 10
-		}
-		modifier = {
-			factor = 100
-			OR = {
-				has_idea = large_power
-				has_idea = great_power
-				has_idea = superpower
-			}
-		}
-		modifier = { ##Minors should avoid destroyers. Frigates and Corvettes are better suited for local needs
-			factor = 0.25
-			OR = {
-				has_idea = regional_power
-				has_idea = minor_power
-				has_idea = non_power
-			}
-		}
-		modifier = { #Most major navies will avoid this class of ship
-			factor = 0
-			OR = {
-				tag = USA
-				tag = CHI
-				tag = ENG
-				tag = FRA
-				tag = SPR
-				tag = ITA
-			}
-		}
-		modifier = {
-			factor = 0.30
-			OR = {
-				tag = RAJ
-				tag = ARG
-				tag = BRA
-				tag = MEX
-				tag = GER #Legacy of the Bismarck
-				tag = DEN
-				tag = SWE
-				tag = SOV
-			}
-		}
-	}
-	blocked_for = {
-		USA
-		ITA
-		CHI
-		JAP
-		SOV
-	}
-
-	cruiser_default = {
-		role_icon_index = 2
-		priority = {
-			factor = 0
-		}
-		target_variant = {
-			match_value = 1000.0
-
-			type = cruiser
-			modules = {
-				front_1_custom_slot = { module = module_light_guns_category upgrade = current }
-				mid_1_custom_slot = { module = module_point_defense_system_category upgrade = current }
-				mid_2_custom_slot = { module = module_torpedoes_category upgrade = current }
-				rear_1_custom_slot = { module = module_helipads_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_battery_slot_2 = { module = module_esm_category upgrade = current }
-				fixed_ship_battery_slot_3 = { module = module_vls_category upgrade = current }
-				fixed_ship_battery_slot_4 = { module = module_vls_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = { module = module_surface_power_source_category upgrade = current }
-			}
-		}
-		allowed_modules = {
-			#Weaponry
-			module_turret_missile_category
-			module_vls_category
-			module_light_guns_category
-			module_point_defense_system_category
-			module_torpedoes_category
-			module_anti_submarine_mortar_category
-			module_railguns_category
-
-			#Support
-			module_fuel_tanks_category
-			module_mineclearing_category
-			module_minelaying_category
-			module_radar_category
-			module_sonar_category
-			module_fire_control_system_category
-			module_surface_power_source_category
-		}
-	}
-	cruiser_hull_1 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = cruiser_hull_1 }
-			modifier = { add = -999 has_tech = cruiser_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 2000.0
-
-			type = cruiser_hull_1
-			modules = {
-				front_1_custom_slot = { module = module_light_guns_category upgrade = current }
-				mid_1_custom_slot = { module = module_point_defense_system_category upgrade = current }
-				mid_2_custom_slot = { module = module_torpedoes_category upgrade = current }
-				rear_1_custom_slot = { module = module_helipads_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_battery_slot_2 = { module = module_esm_category upgrade = current }
-				fixed_ship_battery_slot_3 = { module = module_vls_category upgrade = current }
-				fixed_ship_battery_slot_4 = { module = module_vls_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = { module = module_surface_power_source_category upgrade = current }
-			}
-		}
-	}
-	cruiser_hull_2 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = cruiser_hull_2 }
-			modifier = { add = -999 has_tech = cruiser_hull_3 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 3000.0
-
-			type = cruiser_hull_2
-			modules = {
-				front_1_custom_slot = { module = module_light_guns_category upgrade = current }
-				mid_1_custom_slot = { module = module_point_defense_system_category upgrade = current }
-				mid_2_custom_slot = { module = module_torpedoes_category upgrade = current }
-				rear_1_custom_slot = { module = module_helipads_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_battery_slot_2 = { module = module_esm_category upgrade = current }
-				fixed_ship_battery_slot_3 = { module = module_vls_category upgrade = current }
-				fixed_ship_battery_slot_4 = { module = module_vls_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = { module = module_surface_power_source_category upgrade = current }
-			}
-		}
-	}
-	cruiser_hull_3 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = cruiser_hull_3 }
-			modifier = { add = -999 has_tech = cruiser_hull_4 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 4000.0
-
-			type = cruiser_hull_3
-			modules = {
-				front_1_custom_slot = { module = module_light_guns_category upgrade = current }
-				mid_1_custom_slot = { module = module_point_defense_system_category upgrade = current }
-				mid_2_custom_slot = { module = module_torpedoes_category upgrade = current }
-				rear_1_custom_slot = { module = module_helipads_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_battery_slot_2 = { module = module_esm_category upgrade = current }
-				fixed_ship_battery_slot_3 = { module = module_vls_category upgrade = current }
-				fixed_ship_battery_slot_4 = { module = module_vls_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = { module = module_surface_power_source_category upgrade = current }
-			}
-		}
-	}
-	cruiser_hull_4 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = cruiser_hull_4 }
-			modifier = { add = -999 has_tech = cruiser_hull_5 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 5000.0
-
-			type = cruiser_hull_4
-			modules = {
-				front_1_custom_slot = { module = module_light_guns_category upgrade = current }
-				mid_1_custom_slot = { module = module_point_defense_system_category upgrade = current }
-				mid_2_custom_slot = { module = module_torpedoes_category upgrade = current }
-				rear_1_custom_slot = { module = module_helipads_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_battery_slot_2 = { module = module_esm_category upgrade = current }
-				fixed_ship_battery_slot_3 = { module = module_vls_category upgrade = current }
-				fixed_ship_battery_slot_4 = { module = module_vls_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = { module = module_surface_power_source_category upgrade = current }
-			}
-		}
-	}
-	cruiser_hull_5 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = cruiser_hull_5 }
-		}
-
-		target_variant = {
-			match_value = 6000.0
-
-			type = cruiser_hull_5
-			modules = {
-				front_1_custom_slot = { module = module_light_guns_category upgrade = current }
-				mid_1_custom_slot = { module = module_point_defense_system_category upgrade = current }
-				mid_2_custom_slot = { module = module_torpedoes_category upgrade = current }
-				rear_1_custom_slot = { module = module_helipads_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_battery_slot_2 = { module = module_esm_category upgrade = current }
-				fixed_ship_battery_slot_3 = { module = module_vls_category upgrade = current }
-				fixed_ship_battery_slot_4 = { module = module_vls_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = { module = module_surface_power_source_category upgrade = current }
-			}
-		}
-	}
-}
-
-##NOTE:
-##Not creating generic AI for battleships nor battlecruisers
-#battleship
-#battlecruiser
-
-#Carriers, Support Ships
-helicopter_operator = {
-	category = naval
-	roles = { naval_helicopter_operator }
-	priority = {
-		base = 100
-
-		modifier = {
-			factor = 100
-			OR = {
-				has_idea = regional_power
-				has_idea = large_power
-				has_idea = great_power
-				has_idea = superpower
-			}
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				has_idea = minor_power
-				has_idea = non_power
-			}
-		}
-		##Tag Specific Weights
-		modifier = { #Just a check to keep the AI from deciding it suddenly needs LHD/LHA
-			factor = 0.05
-			NOT = {
-				tag = USA
-				tag = ENG
-				tag = JAP
-				tag = CHI
-				tag = SOV
-				tag = FRA
-				tag = ITA
-				tag = GER
-				tag = SPR
-				tag = SAF
-			}
-		}
-		#25% more likely to build just cuz of tags - All these operate light carriers
-		modifier = {
-			factor = 1.25
-			OR = {
-				tag = USA
-				tag = ENG
-				tag = JAP
-				tag = CHI
-				tag = SOV
-				tag = FRA
-				tag = ITA
-				tag = GER
-				tag = SPR
-				tag = SAF
-			}
-		}
-		#Kill Switches/Modifiers based on dockyards
-		modifier = {
+			num_of_naval_factories > 50
 			factor = 10
-			num_of_naval_factories > 9
-		}
-		modifier = {
-			factor = 15
-			num_of_naval_factories > 15
-		}
-		modifier = {
-			factor = 0
-			num_of_naval_factories < 10
 		}
 	}
-	blocked_for = {
-		USA
-		BRA
-		CAN
-		GER
-		GRE
-		HOL
-		IND
-		ITA
-		CHI
-		KOR
-		PER
-		POR
-		RAJ
-		SIA
-		SOV
-		SPR
-		SWE
-		TAI
-		TUR
-	}
-	helicopter_operator_hull_1 = {
-		role_icon_index = 2
+
+	ship_hull_cruiser_carrier_early = {
+	
 		priority = {
-			factor = 0
+			factor = 100
+			 
 		}
 
+		role_icon_index = 7
+		
 		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator
+			match_value = 1000.0
+			
+			type = ship_hull_cruiser_carrier
 			modules = {
-				fixed_ship_engine_slot = module_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_3 = module_ciws_2
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_battery_slot = module_light_flight_deck_1
-				front_1_custom_slot = module_helipads_1
-				mid_1_custom_slot = module_aa_missiles_2
-				rear_1_custom_slot = module_helipads_1
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_engine_slot = carrier_ship_engine
+				fixed_ship_secondaries_slot = empty
+				front_1_custom_slot = empty
 			}
 		}
-
+		
 		allowed_modules = {
-			#Weaponry
-			module_light_guns_category
-			module_helipads_category
-			module_flight_decks_category
-			module_turret_missile_category
-			module_point_defense_system_category
-			module_vls_category
-			module_anti_submarine_mortar_category
-			#Support
-			module_radar_category
-			module_sonar_category
-			module_fire_control_system_category
-			module_surface_power_source_category
-			module_fuel_tanks_category
-		}
-	}
-
-	helicopter_operator_hull_1 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_1 }
-			modifier = { add = -999 has_tech = helicopter_operator_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_1
-			modules = {
-				fixed_ship_engine_slot = module_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_3 = module_ciws_2
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_battery_slot = module_light_flight_deck_1
-				front_1_custom_slot = module_helipads_1
-				mid_1_custom_slot = module_aa_missiles_2
-				rear_1_custom_slot = module_helipads_1
-			}
-		}
-	}
-
-	helicopter_operator_hull_2 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_2 }
-			modifier = { add = -999 has_tech = helicopter_operator_hull_3 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_2
-			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_3
-				fixed_ship_auxillary_slot_3 = module_ciws_3
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_battery_slot = module_light_flight_deck_2
-				front_1_custom_slot = module_helipads_2
-				mid_1_custom_slot = module_aa_missiles_3
-				rear_1_custom_slot = module_helipads_2
-			}
-		}
-	}
-
-	helicopter_operator_hull_3 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_3 }
-			modifier = { add = -999 has_tech = helicopter_operator_hull_4 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_3
-			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power3
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_5
-				fixed_ship_auxillary_slot_3 = module_ciws_5
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_2
-				fixed_ship_battery_slot = module_light_flight_deck_3
-				front_1_custom_slot = module_helipads_3
-				mid_1_custom_slot = module_vls_sam_4
-				rear_1_custom_slot = module_helipads_3
-			}
-		}
-	}
-
-	helicopter_operator_hull_4 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_4 }
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_4
-			modules = {
-				fixed_ship_engine_slot = module_surface_fut_reactor_power
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_7
-				fixed_ship_auxillary_slot_3 = module_ciws_6
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_3
-				fixed_ship_battery_slot = module_light_flight_deck_3
-				front_1_custom_slot = module_helipads_3
-				mid_1_custom_slot = module_vls_sam_5
-				rear_1_custom_slot = module_helipads_3
-			}
+			ship_anti_air
+			ship_fire_control_system
+			cruiser_ship_engine
+			heavy_ship_engine
+			carrier_ship_engine
+			ship_radar
+			ship_deck_space
+			ship_medium_armor
+			ship_heavy_armor
+			ship_light_armor
 		}
 	}
 }
-lhd_heli_operator = {
+naval_ship_hull_light_carrier = {
 	category = naval
-	roles = { naval_lhd }
+	
+	roles = {
+		naval_carrier
+	}
+	
 	priority = {
-		base = 100
-
+		factor = 30
 		modifier = {
-			factor = 100
-			OR = {
-				has_idea = regional_power
-				has_idea = large_power
-				has_idea = great_power
-				has_idea = superpower
-			}
+			factor = 20
+			is_major = yes
 		}
 		modifier = {
-			factor = 0
-			OR = {
-				has_idea = minor_power
-				has_idea = non_power
-			}
-		}
-		##Tag Specific Weights
-		modifier = { #Just a check to keep the AI from deciding it suddenly needs LHD/LHA
-			factor = 0.05
-			NOT = {
-				tag = USA
-				tag = ENG
-				tag = JAP
-				tag = CHI
-				tag = SOV
-				tag = FRA
-				tag = ITA
-				tag = GER
-				tag = SPR
-				tag = SAF
-			}
-		}
-		#25% more likely to build just cuz of tags - All these operate light carriers
-		modifier = {
-			factor = 1.25
-			OR = {
-				tag = USA
-				tag = ENG
-				tag = JAP
-				tag = CHI
-				tag = SOV
-				tag = FRA
-				tag = ITA
-				tag = GER
-				tag = SPR
-				tag = SAF
-			}
-		}
-		#Kill Switches/Modifiers based on dockyards
-		modifier = {
+			num_of_naval_factories > 50
 			factor = 10
-			num_of_naval_factories > 9
-		}
-		modifier = {
-			factor = 15
-			num_of_naval_factories > 15
-		}
-		modifier = {
-			factor = 0
-			num_of_naval_factories < 10
 		}
 	}
 
-	default_lha_basic = {
-		role_icon_index = 2
+	ship_hull_light_carrier_early = {
+	
 		priority = {
-			factor = 0
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator
-			modules = {
-				fixed_ship_engine_slot = module_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_3 = module_ciws_2
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_battery_slot = module_light_flight_deck_1
-				front_1_custom_slot = module_helipads_1
-				mid_1_custom_slot = module_aa_missiles_2
-				rear_1_custom_slot = module_helipads_1
-			}
-		}
-
-		allowed_modules = {
-			#Weaponry
-			module_light_guns_category
-			module_helipads_category
-			module_flight_decks_category
-			module_turret_missile_category
-			module_point_defense_system_category
-			module_vls_category
-			module_anti_submarine_mortar_category
-			#Support
-			module_radar_category
-			module_sonar_category
-			module_fire_control_system_category
-			module_surface_power_source_category
-			module_fuel_tanks_category
-		}
-	}
-
-	lha_1 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_1 }
-			modifier = { add = -999 has_tech = helicopter_operator_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_1
-			modules = {
-				fixed_ship_engine_slot = module_surface_diesel_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_3 = module_ciws_2
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_battery_slot = module_light_flight_deck_1
-				front_1_custom_slot = module_helipads_1
-				mid_1_custom_slot = module_aa_missiles_2
-				rear_1_custom_slot = module_helipads_1
-			}
-		}
-	}
-
-	lha_2 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_2 }
-			modifier = { add = -999 has_tech = helicopter_operator_hull_3 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_2
-			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_3
-				fixed_ship_auxillary_slot_3 = module_ciws_3
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_battery_slot = module_light_flight_deck_1
-				front_1_custom_slot = module_helipads_2
-				mid_1_custom_slot = module_aa_missiles_3
-				rear_1_custom_slot = module_helipads_2
-			}
-		}
-	}
-
-	lha_3 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_3 }
-			modifier = { add = -999 has_tech = helicopter_operator_hull_4 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_3
-			modules = {
-				fixed_ship_engine_slot = module_surface_jet_turbine_power3
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_5
-				fixed_ship_auxillary_slot_3 = module_ciws_5
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_2
-				fixed_ship_battery_slot = module_light_flight_deck_1
-				front_1_custom_slot = module_helipads_3
-				mid_1_custom_slot = module_vls_sam_4
-				rear_1_custom_slot = module_helipads_3
-			}
-		}
-	}
-
-	lha_4 = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = helicopter_operator_hull_4 }
-		}
-
-		target_variant = {
-			match_value = 1000.00
-			type = helicopter_operator_hull_4
-			modules = {
-				fixed_ship_engine_slot = module_surface_fut_reactor_power
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_7
-				fixed_ship_auxillary_slot_3 = module_ciws_6
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot = module_esm_3
-				fixed_ship_battery_slot = module_light_flight_deck_1
-				front_1_custom_slot = module_helipads_3
-				mid_1_custom_slot = module_vls_sam_5
-				rear_1_custom_slot = module_helipads_3
-			}
-		}
-	}
-}
-
-generic_carrier = {
-	category = naval
-	roles = { naval_carrier }
-	priority = {
-		factor = 100
-		modifier = {
-			factor = 0
-			num_of_naval_factories < 15
-		}
-		modifier = {
 			factor = 100
-			OR = {
-				has_idea = large_power
-				has_idea = superpower
-			}
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				has_idea = regional_power
-				has_idea = minor_power
-				has_idea = non_power
-			}
-		}
-		modifier = {
-			factor = 1.5
-			num_of_naval_factories > 14
-		}
-		modifier = {
-			factor = 2.0
-			num_of_naval_factories > 20
-		}
-		modifier = {
-			factor = 0.10
-			NOT = {
-				tag = USA
-				tag = ENG
-				tag = JAP
-				tag = CHI
-				tag = SOV
-				tag = FRA
-				tag = ITA
-				tag = GER
-				tag = SPR
-				tag = SAF
-			}
-		}
-	}
-	blocked_for = {
-		USA
-		BRA
-		GRE
-		ITA
-		CHI
-		JAP
-		KOR
-		RAJ
-		SIA
-		SOV
-		SPR
-	}
-
-	default_carriers = {
-		priority = {
-			factor = 0
+			 
 		}
 
 		role_icon_index = 7
-
+		
 		target_variant = {
 			match_value = 1000.0
-
-			type = carrier
+			
+			type = ship_hull_light_carrier
 			modules = {
-				fixed_ship_engine_slot = module_surface_oil_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_2 = module_ciws_2
-				fixed_ship_auxillary_slot_1 = module_ram_2
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_flight_deck = module_flight_deck_3
-				front_1_custom_slot = module_helipads_1
-				front_2_custom_slot = module_ciws_2
-				mid_1_custom_slot = module_ciws_2
-				mid_2_custom_slot = module_fuel_tank
-				mid_3_custom_slot = module_helipads_1
-				rear_1_custom_slot = module_ram_2
-				rear_2_custom_slot = module_helipads_1
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_engine_slot = carrier_ship_engine
+				fixed_ship_secondaries_slot = empty
+				front_1_custom_slot = empty
 			}
 		}
-
+		
 		allowed_modules = {
-			#Weaponry
-			module_flight_decks_category
-			module_helipads_category
-			module_point_defense_system_category
-			module_turret_missile_category
-			module_vls_category
-			#Support
-			module_radar_category
-			module_sonar_category
-			module_fire_control_system_category
-			module_surface_power_source_category
-		}
-	}
-
-	carrier_hull_1 = {
-		role_icon_index = 7
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = carrier_hull_1 }
-			modifier = { add = -999 has_tech = carrier_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 2000.0
-
-			type = carrier_hull_1
-			modules = {
-				fixed_ship_engine_slot = module_surface_oil_power
-				fixed_ship_fire_control_system_slot = module_analog_fire_control
-				fixed_ship_radar_slot = module_radar_2
-				fixed_ship_auxillary_slot_2 = module_ciws_2
-				fixed_ship_auxillary_slot_1 = module_ram_2
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_flight_deck = module_flight_deck_3
-				front_1_custom_slot = module_helipads_1
-				front_2_custom_slot = module_ciws_2
-				mid_1_custom_slot = module_ciws_2
-				mid_2_custom_slot = module_fuel_tank
-				mid_3_custom_slot = module_helipads_1
-				rear_1_custom_slot = module_ram_2
-				rear_2_custom_slot = module_helipads_1
-			}
-		}
-	}
-
-	carrier_hull_2 = {
-		role_icon_index = 7
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = carrier_hull_2 }
-			modifier = { add = -999 has_tech = carrier_hull_3 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 2000.0
-
-			type = carrier_hull_2
-			modules = {
-				fixed_ship_engine_slot = module_surface_oil_power
-				fixed_ship_fire_control_system_slot = module_digital_integrated_fire_control
-				fixed_ship_radar_slot = module_radar_3
-				fixed_ship_auxillary_slot_2 = module_ciws_3
-				fixed_ship_auxillary_slot_1 = module_ram_3
-				fixed_ship_auxillary_slot = module_esm_1
-				fixed_ship_flight_deck = module_flight_deck_4
-				front_1_custom_slot = module_helipads_2
-				front_2_custom_slot = module_ciws_3
-				mid_1_custom_slot = module_ciws_3
-				mid_2_custom_slot = module_fuel_tank
-				mid_3_custom_slot = module_helipads_2
-				rear_1_custom_slot = module_ram_3
-				rear_2_custom_slot = module_helipads_2
-			}
-		}
-	}
-
-	carrier_hull_3 = {
-		role_icon_index = 7
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = carrier_hull_3 }
-			modifier = { add = -999 has_tech = carrier_hull_4 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 2000.0
-
-			type = carrier_hull_3
-			modules = {
-				fixed_ship_engine_slot = module_surface_adv_reactor_power
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_5
-				fixed_ship_auxillary_slot_2 = module_ciws_4
-				fixed_ship_auxillary_slot_1 = module_ram_4
-				fixed_ship_auxillary_slot = module_esm_2
-				fixed_ship_flight_deck = module_flight_deck_6
-				front_1_custom_slot = module_helipads_2
-				front_2_custom_slot = module_ciws_4
-				mid_1_custom_slot = module_ciws_4
-				mid_2_custom_slot = module_helipads_2
-				mid_3_custom_slot = module_helipads_2
-				rear_1_custom_slot = module_ram_4
-				rear_2_custom_slot = module_helipads_2
-			}
-		}
-	}
-
-	carrier_hull_4 = {
-		role_icon_index = 7
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = carrier_hull_4 }
-			modifier = { add = -999 has_tech = carrier_hull_5 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			match_value = 2000.0
-
-			type = carrier_hull_4
-			modules = {
-				fixed_ship_engine_slot = module_surface_mod_reactor_power
-				fixed_ship_fire_control_system_slot = module_advanced_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_6
-				fixed_ship_auxillary_slot_2 = module_ciws_5
-				fixed_ship_auxillary_slot_1 = module_ram_5
-				fixed_ship_auxillary_slot = module_esm_3
-				fixed_ship_flight_deck = module_flight_deck_8
-				front_1_custom_slot = module_helipads_3
-				front_2_custom_slot = module_ciws_5
-				mid_1_custom_slot = module_ciws_5
-				mid_2_custom_slot = module_helipads_3
-				mid_3_custom_slot = module_helipads_3
-				rear_1_custom_slot = module_ram_5
-				rear_2_custom_slot = module_helipads_3
-			}
-		}
-	}
-
-	carrier_hull_5 = {
-		role_icon_index = 7
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = carrier_hull_5 }
-		}
-
-		target_variant = {
-			match_value = 2000.0
-
-			type = carrier_hull_5
-			modules = {
-				fixed_ship_engine_slot = module_surface_fut_reactor_power
-				fixed_ship_fire_control_system_slot = module_futuristic_integrated_missile_radar_control
-				fixed_ship_radar_slot = module_radar_7
-				fixed_ship_auxillary_slot_2 = module_ciws_6
-				fixed_ship_auxillary_slot_1 = module_ram_6
-				fixed_ship_auxillary_slot = module_esm_3
-				fixed_ship_flight_deck = module_flight_deck_10
-				front_1_custom_slot = module_helipads_3
-				front_2_custom_slot = module_ciws_6
-				mid_1_custom_slot = module_ciws_6
-				mid_2_custom_slot = module_helipads_3
-				mid_3_custom_slot = module_helipads_3
-				rear_1_custom_slot = module_ram_6
-				rear_2_custom_slot = module_helipads_3
-			}
+			ship_anti_air
+			ship_fire_control_system
+			cruiser_ship_engine
+			heavy_ship_engine
+			carrier_ship_engine
+			ship_radar
+			ship_deck_space
+			ship_medium_armor
+			ship_heavy_armor
+			ship_light_armor
 		}
 	}
 }
 
-#Subamrines
-generic_heavy_nuclear_submarine = {
+naval_submarine = {
 	category = naval
-	roles = { naval_attack_submarine }
-	priority = {
-		factor = 0
+	
+	roles = {
+		naval_submarine
 	}
-	blocked_for = {
-		USA
-		BRA
-		CAN
-		GER
-		GRE
-		HOL
-		IND
-		ITA
-		CHI
-		JAP
-		KOR
-		NKO
-		PER
-		POR
-		RAJ
-		SIA
-		SOV
-		SPR
-		SWE
-		TAI
-		TUR
-	}
-
-	nuclear_submarine_default = {
-		role_icon_index = 6
-		priority = {
-			factor = 0
-		}
-		target_variant = {
-			match_value = 1000.0
-			type = attack_submarine
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power
-				fixed_ship_radar_slot = module_sonar_1
-				fixed_ship_auxillary_slot_3 = empty
-				fixed_ship_auxillary_slot_2 = module_torpedoes_1
-				fixed_ship_auxillary_slot_1 = module_torpedoes_1
-				fixed_ship_auxillary_slot = module_minelaying
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
-			}
-		}
-	}
-
-	attack_submarine_hull_1 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = attack_submarine_hull_1 }
-			modifier = { add = -999 has_tech = attack_submarine_hull_2 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 1000.0
-			type = attack_submarine_hull_1
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power
-				fixed_ship_radar_slot = module_sonar_1
-				fixed_ship_auxillary_slot_3 = empty
-				fixed_ship_auxillary_slot_2 = module_torpedoes_1
-				fixed_ship_auxillary_slot_1 = module_torpedoes_1
-				fixed_ship_auxillary_slot = module_minelaying
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
-			}
-		}
-	}
-
-	attack_submarine_hull_2 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = attack_submarine_hull_2 }
-			modifier = { add = -999 has_tech = attack_submarine_hull_3 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 2000.0
-			type = attack_submarine_hull_2
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power2
-				fixed_ship_radar_slot = module_sonar_2
-				fixed_ship_auxillary_slot_3 = empty
-				fixed_ship_auxillary_slot_2 = module_torpedoes_1
-				fixed_ship_auxillary_slot_1 = module_torpedoes_1
-				fixed_ship_auxillary_slot = module_minelaying
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
-			}
-		}
-	}
-
-	attack_submarine_hull_3 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = attack_submarine_hull_3 }
-			modifier = { add = -999 has_tech = attack_submarine_hull_4 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 3000.0
-			type = attack_submarine_hull_3
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power2
-				fixed_ship_radar_slot = module_sonar_3
-				fixed_ship_auxillary_slot_3 = empty
-				fixed_ship_auxillary_slot_2 = module_sub_esm_1
-				fixed_ship_auxillary_slot_1 = module_torpedoes_2
-				fixed_ship_auxillary_slot = module_torpedoes_2
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
-			}
-		}
-	}
-
-	attack_submarine_hull_4 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = attack_submarine_hull_4 }
-			modifier = { add = -999 has_tech = attack_submarine_hull_5 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 4000.0
-			type = attack_submarine_hull_4
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power3
-				fixed_ship_radar_slot = module_sonar_4
-				fixed_ship_auxillary_slot_3 = module_torpedoes_2
-				fixed_ship_auxillary_slot_2 = module_sub_esm_2
-				fixed_ship_auxillary_slot_1 = module_vls_sub_asm_3
-				fixed_ship_auxillary_slot = module_torpedoes_2
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
-			}
-		}
-	}
-
-	attack_submarine_hull_5 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = attack_submarine_hull_5 }
-			modifier = { add = -999 has_tech = attack_submarine_hull_6 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 5000.0
-			type = attack_submarine_hull_5
-			modules = {
-				fixed_ship_engine_slot = module_sub_mod_reactor_power
-				fixed_ship_radar_slot = module_sonar_5
-				fixed_ship_auxillary_slot_3 = module_torpedoes_3
-				fixed_ship_auxillary_slot_2 = module_sub_esm_2
-				fixed_ship_auxillary_slot_1 = module_vls_sub_asm_4
-				fixed_ship_auxillary_slot = module_torpedoes_3
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_3
-			}
-		}
-	}
-
-	attack_submarine_hull_6 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = attack_submarine_hull_6 }
-		}
-		target_variant = {
-			match_value = 6000.0
-			type = attack_submarine_hull_6
-			modules = {
-				fixed_ship_engine_slot = module_sub_fut_reactor_power
-				fixed_ship_radar_slot = module_sonar_6
-				fixed_ship_auxillary_slot_3 = module_torpedoes_4
-				fixed_ship_auxillary_slot_2 = module_sub_esm_3
-				fixed_ship_auxillary_slot_1 = module_vls_sub_asm_5
-				fixed_ship_auxillary_slot = module_torpedoes_4
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_4
-			}
-		}
-	}
-}
-generic_missile_submarine = {
-	category = naval
-	roles = { naval_missile_submarine }
-	blocked_for = {
-		USA
-		ITA
-		CHI
-		JAP
-		KOR
-		NKO
-		RAJ
-		SOV
-		TAI
-	}
-
+	
 	priority = {
 		factor = 4
 		modifier = {
@@ -2097,164 +888,43 @@ generic_missile_submarine = {
 		}
 	}
 
-	missile_submarine_hull_1 = {
-		role_icon_index = 6
+	submarine_early = {
+	
 		priority = {
-			factor = 0
+			factor = 1
+			modifier = {
+				factor = 1
+			}
 		}
+		
+		role_icon_index = 6
+
 		target_variant = {
 			match_value = 1000.0
-			type = missile_submarine
+			
+			type = ship_hull_submarine
 			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power2
-				fixed_ship_radar_slot = module_sonar_1
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot_1 = module_vls_sub_lam_1
-				fixed_ship_auxillary_slot = module_vls_sub_asm_1
-				front_1_custom_slot = module_vls_sub_lam_1
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
+				fixed_ship_engine_slot = sub_ship_engine
+				fixed_ship_torpedo_slot = ship_torpedo
+				rear_1_custom_slot = empty
 			}
 		}
-	}
-
-	missile_submarine_hull_1 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = missile_submarine_hull_1 }
-			modifier = { add = -999 has_tech = missile_submarine_hull_2 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 1000.0
-			type = missile_submarine_hull_1
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power2
-				fixed_ship_radar_slot = module_sonar_1
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot_1 = module_vls_sub_lam_1
-				fixed_ship_auxillary_slot = module_vls_sub_asm_1
-				front_1_custom_slot = module_vls_sub_lam_1
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
-			}
+		
+		allowed_modules = {
+			sub_ship_engine
+			ship_sonar
+			ship_radar
 		}
 	}
-
-	missile_submarine_hull_2 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = missile_submarine_hull_2 }
-			modifier = { add = -999 has_tech = missile_submarine_hull_3 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 2000.0
-			type = missile_submarine_hull_2
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power2
-				fixed_ship_radar_slot = module_sonar_2
-				fixed_ship_auxillary_slot_2 = module_fuel_tank
-				fixed_ship_auxillary_slot_1 = module_vls_sub_lam_2
-				fixed_ship_auxillary_slot = module_vls_sub_asm_2
-				front_1_custom_slot = module_vls_sub_lam_2
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_1
-			}
-		}
-	}
-
-	missile_submarine_hull_3 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = missile_submarine_hull_3 }
-			modifier = { add = -999 has_tech = missile_submarine_hull_4 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 3000.0
-			type = missile_submarine_hull_3
-			modules = {
-				fixed_ship_engine_slot = module_sub_diesel_electric_power3
-				fixed_ship_radar_slot = module_sonar_3
-				fixed_ship_auxillary_slot_2 = module_sub_esm_1
-				fixed_ship_auxillary_slot_1 = module_vls_sub_lam_2
-				fixed_ship_auxillary_slot = module_vls_sub_asm_2
-				front_1_custom_slot = module_vls_sub_lam_2
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
-			}
-		}
-	}
-
-	missile_submarine_hull_4 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = missile_submarine_hull_4 }
-			modifier = { add = -999 has_tech = missile_submarine_hull_5 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 4000.0
-			type = missile_submarine_hull_4
-			modules = {
-				fixed_ship_engine_slot = module_sub_adv_reactor_power
-				fixed_ship_radar_slot = module_sonar_4
-				fixed_ship_auxillary_slot_2 = module_sub_esm_1
-				fixed_ship_auxillary_slot_1 = module_vls_sub_lam_3
-				fixed_ship_auxillary_slot = module_vls_sub_asm_3
-				front_1_custom_slot = module_vls_sub_lam_3
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_2
-			}
-		}
-	}
-
-	missile_submarine_hull_5 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = missile_submarine_hull_5 }
-			modifier = { add = -999 has_tech = missile_submarine_hull_6 } ##Prioritize the newer ship hulls
-		}
-		target_variant = {
-			match_value = 5000.0
-			type = missile_submarine_hull_5
-			modules = {
-				fixed_ship_engine_slot = module_sub_mod_reactor_power
-				fixed_ship_radar_slot = module_sonar_5
-				fixed_ship_auxillary_slot_2 = module_sub_esm_2
-				fixed_ship_auxillary_slot_1 = module_vls_sub_lam_4
-				fixed_ship_auxillary_slot = module_vls_sub_asm_4
-				front_1_custom_slot = module_vls_sub_lam_4
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_3
-			}
-		}
-	}
-
-	missile_submarine_hull_6 = {
-		role_icon_index = 6
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = missile_submarine_hull_6 }
-		}
-		target_variant = {
-			match_value = 6000.0
-			type = missile_submarine_hull_6
-			modules = {
-				fixed_ship_engine_slot = module_sub_fut_reactor_power
-				fixed_ship_radar_slot = module_sonar_6
-				fixed_ship_auxillary_slot_2 = module_sub_esm_2
-				fixed_ship_auxillary_slot_1 = module_vls_sub_lam_5
-				fixed_ship_auxillary_slot = module_vls_sub_asm_5
-				front_1_custom_slot = module_vls_sub_lam_5
-				fixed_ship_battery_slot = module_anti_ship_torpedoes_4
-			}
-		}
-	}
-
 }
 
-#Mine Vessels
-mine_sweeper = {
+naval_mine_sweeper = {
 	category = naval
-	roles = { naval_mine_sweeper }
-
+	
+	roles = {
+		naval_mine_sweeper
+	}
+	
 	priority = {
 		factor = 200
 		modifier = {
@@ -2262,56 +932,150 @@ mine_sweeper = {
 			has_war = yes
 		}
 	}
-
-	mine_sweeper_early = {
-		role_icon_index = 2
+	
+	mine_sweeper_light_early = { # base variant
+	
 		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_1 }
-			modifier = { add = -999 has_tech = frigate_hull_2 } ##Prioritize the newer ship hulls
-		}
-
-		target_variant = {
-			type = frigate_hull_1
-			match_value = 2000
-
-			modules = {
-				front_1_custom_slot = { module = module_turret_missile_category upgrade = current }
-				rear_1_custom_slot = { module = module_turret_missile_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_auxillary_slot = { module = module_point_defense_system_category upgrade = current }
-				fixed_ship_auxillary_slot_1 = module_anti_submarine_missile_2
-				fixed_ship_auxillary_slot_2 = { module = module_anti_submarine_mortar_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = module_light_surface_diesel_power
+			factor = 100
+			modifier = {
+				factor = 10
+				is_major = no
 			}
+		}
+		role_icon_index = 5
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_destroyer
+			modules = {
+				rear_1_custom_slot = ship_mine_sweeper_1
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				fixed_ship_anti_air_slot = ship_anti_air
+			}
+		}
+		requirements = {
+			module = ship_mine_sweeper_1
+		}
+		allowed_modules = {
+			ship_mine_warfare
+			ship_light_battery
+			ship_anti_air
+			ship_depth_charge
+			ship_fire_control_system
+			light_ship_engine
+			ship_radar
+			ship_sonar
 		}
 	}
+}
 
-	mine_sweeper_late = {
-		role_icon_index = 2
-		priority = {
-			base = -1
-			modifier = { add = 1000 has_tech = frigate_hull_2 }
-			modifier = { add = -999 has_tech = frigate_hull_3 } ##Prioritize the newer ship hulls
+naval_mine_layer = {
+	category = naval
+	
+	roles = {
+		naval_mine_layer
+	}
+	
+	priority = {
+		factor = 3
+		modifier = {
+			factor = 5
+			has_war = yes
 		}
-
-		target_variant = {
-			type = frigate_hull_2
-			match_value = 2000
-
-			modules = {
-				front_1_custom_slot = { module = module_turret_missile_category upgrade = current }
-				rear_1_custom_slot = { module = module_turret_missile_category upgrade = current }
-				fixed_ship_battery_slot = { module = module_light_guns_category upgrade = current }
-				fixed_ship_auxillary_slot = { module = module_point_defense_system_category upgrade = current }
-				fixed_ship_auxillary_slot_1 = module_anti_submarine_missile_3
-				fixed_ship_auxillary_slot_2 = { module = module_anti_submarine_mortar_category upgrade = current }
-				fixed_ship_radar_slot = { module = module_radar_category upgrade = current }
-				fixed_ship_fire_control_system_slot = { module = module_fire_control_system_category upgrade = current }
-				fixed_ship_engine_slot = module_light_surface_diesel_power
+		modifier = {
+			is_major = no
+			factor = 5
+		}
+	}
+	
+	mine_layer_light = {
+	
+		priority = {
+			factor = 10
+			modifier = {
+				factor = 10
+				num_of_naval_factories < 25 #not a major naval power
 			}
+		}
+		
+		role_icon_index = 4
+		
+		target_variant = {
+			match_value = 1000.0
+			 
+			type = ship_hull_destroyer
+			modules = {
+				rear_1_custom_slot = ship_mine_layer_1 
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_torpedo_slot = empty
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = {
+					any_of = { ship_sonar ship_radar }
+				}
+				fixed_ship_anti_air_slot = ship_anti_air
+			}
+		}
+		
+		requirements = {
+			module = ship_mine_layer_1
+		}
+		allowed_modules = {
+			ship_mine_layer_1
+			ship_anti_air
+			ship_light_battery
+			ship_fire_control_system
+			light_ship_engine
+			ship_torpedo
+			ship_radar
+			ship_sonar
+			ship_depth_charge
+		}
+	}
+	mine_layer_cruiser = {
+	
+		priority = {
+			factor = 10
+			modifier = {
+				factor = 10
+				num_of_naval_factories > 24 
+			}
+		}
+		
+		role_icon_index = 4
+		
+		target_variant = {
+			match_value = 2000.0
+			
+			type = ship_hull_destroyer
+			modules = {
+				rear_1_custom_slot = ship_mine_layer_1 
+				mid_2_custom_slot = ship_mine_layer_1 
+				fixed_ship_engine_slot < cruiser_ship_engine_3
+				fixed_ship_battery_slot = {
+					any_of = { ship_light_battery }
+					upgrade > current
+				}
+				fixed_ship_secondaries_slot = empty
+				fixed_ship_armor_slot = empty
+				fixed_ship_anti_air_slot = ship_anti_air
+			}
+		}
+		
+		requirements = {
+			module = ship_mine_layer_1
+		}
+		allowed_modules = {
+			ship_mine_layer_1
+			ship_light_battery
+			ship_anti_air
+			ship_fire_control_system
+			cruiser_ship_engine
+			ship_radar
+			ship_sonar
 		}
 	}
 }

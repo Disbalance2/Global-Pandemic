@@ -1,0 +1,23 @@
+state = {
+	id = 1167
+	name = "STATE_1167"
+	resources = {
+		#iron_ore = 10
+	}
+
+	history = {
+		owner = AST
+		set_demilitarized_zone = yes
+		add_dynamic_modifier = { modifier = antarctic_treaty }
+		victory_points = {
+			15038 1
+		}
+	}
+
+	provinces = {
+		15038
+	}
+	manpower = 1
+	buildings_max_level_factor = 0.010
+	state_category = antartic_station
+}

@@ -1,0 +1,259 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		tank_repair_plant = {
+			
+			#picture = 
+			allowed = {
+				original_tag = BLR
+			}
+		
+			available = {
+				has_completed_focus = BLR_updat_140_zavod
+		
+			}
+			research_bonus = {
+				armor = 0.15
+				artillery = 0.05
+				infantry_weapons = -0.05
+			}
+			
+			cost = 500
+			
+			traits = { heav_tank_manufacturer }
+			
+			modifier = {
+			}
+		}	
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+
+		Baranovicheski_Aviacionnyi = {
+			
+			cost = 700
+			
+			allowed = {
+				original_tag = BLR
+			}
+
+			research_bonus = {
+				cat_fighter_tech = 0.15
+				electronics = 0.1
+			}
+			
+			traits = { light_aircraft_development }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		orshansk = {
+			
+			allowed = {
+				original_tag = BLR
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.2
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+
+		MAZ = {
+			
+			allowed = {
+				original_tag = BLR
+			}
+
+			available = {
+				has_completed_focus = BLR_MAZ
+
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.1
+				cat_wheeled_vehicle = 0.15
+			}
+			
+			cost = 1200
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		BEL_AVTO = {
+				
+			allowed = {
+				original_tag = BLR
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.2
+			}
+			
+			cost = 1000
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		BELAZ = {
+			
+			allowed = {
+				original_tag = BLR
+			}
+
+			available = {
+				has_completed_focus = BLR_BELAZ_1
+
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.10
+				industry = 0.05
+			}
+			cost = 1100
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+		MZKT = {
+				
+			allowed = {
+				original_tag = BLR
+			}
+			
+			available = {
+				has_completed_focus = BLR_MZKT
+			}
+
+			research_bonus = {
+				cat_light_utility_vehicle = 0.15
+				cat_wheeled_vehicle = 0.1
+				mot_rockets = 0.15
+			}
+			
+			cost = 1200
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		radio_repair_zavod = {
+			
+			allowed = {
+				original_tag = BLR
+			}
+			
+			research_bonus = {
+				rocketry = 0.1
+				electronics = 0.15
+			}
+			
+			cost = 1000
+			
+			traits = { nuclear_research_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+
+	industrial_concern = {
+		
+
+		BelOMO = {
+
+			allowed = {
+				original_tag = BLR
+			}
+
+			research_bonus = {
+				electronics = 0.2
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		Bel_Gaz_Prom = {
+		
+			allowed = {
+				original_tag = BLR
+			}
+			
+			available = {
+				has_completed_focus = BLR_Belgazprom
+			}
+
+			research_bonus = {
+				industry = 0.15
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+			
+			modifier = {
+			}
+		}
+		KB_radar = {
+
+			allowed = {
+				original_tag = BLR
+			}
+
+			research_bonus = {
+				electronics = 0.1
+				industry = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		Bellegprom = {
+
+			allowed = {
+				original_tag = BLR
+			}
+			
+			available = {
+                has_completed_focus = BLR_Lighprom
+			}
+
+			research_bonus = {
+				industry = 0.18
+				infantry_weapons = 0.05
+			}
+			cost = 500
+			traits = { industrial_concern_dev }
+
+			modifier = {
+			}
+		}
+	}
+}

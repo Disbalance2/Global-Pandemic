@@ -1,694 +1,97 @@
-﻿capital = 176
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-2000.1.1 = {
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "SAU_2000_nsb"
-		else = {
-			set_oob = "SAU_2000_nonnsb"
-		}
-	}
-	set_cosmetic_tag = SAU_AUTH_S
-	set_country_flag = dynamic_flag
-	set_country_flag = dynamic_rebel_flag
-	set_variable = { gdp_per_capita = 40.406 }
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
 
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_naval_oob = "SAU_2000_naval_mtg"
-		else = {
-			set_naval_oob = "SAU_2000_naval_legacy"
-		}
-	}
+set_country_flag = COUNTRY_FLAG.MIDDLE_EAST
 
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "SAU_2000_bba"
-		else = {
-			set_air_oob = "SAU_2000_nonbba"
-		}
-	}
+capital = 292
 
+add_opinion_modifier = { target = ISR modifier = post_war }
 
-
-	add_ideas = {
-		sunni
-		unrestrained_corruption
-		LoAS_member
-		idea_gcc_member_state
-		birthplace_of_wahhabism
-		SAU_ailing_king
-		rentier_state
-		oil_dependency
-		GCC_censored_nation_01
-		conservative_society
-		shia_resistance_04
-		youth_radicalization
-		al_jazeera_allowed
-		saudi_expat
-		globalized_trade_economy
-		stagnation
-		defence_05
-		edu_04
-		health_04
-		social_06
-		bureau_03
-		police_03
-		police_05
-		volunteer_army
-		no_women_in_military
-		wahabi_ulema
-		small_medium_business_owners
-		saudi_royal_family
-		officer_advanced_training
-		intervention_limited_interventionism
-		small_shia_population
-	}
-
-	set_technology = {
-		integrated_transportation_system = 1
-		post_conventional_rail = 1
-		early_freight_locomotive = 1
-
-		legacy_doctrines = 1
-		combined_arms = 1
-
-		infantry_weapons = 1
-
-		#For Templates
-		command_control_equipment = 1
-		land_Drone_equipment = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		combat_eng_equipment = 1
-		early_helicopter = 1
-		transport_helicopter1 = 1
-
-		util_vehicle_0 = 1
-
-		night_vision_1 = 1
-		night_vision_2 = 1
-
-		body_armor_1980 = 1
-		camouflage = 1
-		camouflage2 = 1
-
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		decryption1 = 1
-		encryption1 = 1
-		radar = 1
-		internet1 = 1 	#1G
-		internet2 = 1
-		fuel_silos = 1
-
-		industrial_electrospun_polymeric_nanofibers = 1
-		multiwalled_carbon_nanotubes = 1
-		stereolitography = 1
-		early_3D_printers = 1
-		DNA_fingerprinting = 1
-		fuel_refining = 1
-		fuel_refining2 = 1
-		energy_efficiency = 1
-		energy_efficiency2 = 1
-		fuel_efficiency = 1
-		early_renewables = 1
-		renewables = 1
-		electrification_1 = 1
-		construction1 = 1
-	}
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_technology = {
-			mbt_tech = 1
-			afv_tech = 1
-			nsb_artillery_0 = 1
-			nsb_SP_arty_1 = 1
-			nsb_Anti_Air_0 = 1
-			nsb_SP_Anti_Air_0 = 1
-			light_tank_tech = 1
-			nsb_attack_helicopter_tech_1 = 1
-		}
-
-		create_equipment_variant = {
-			name = "Abu Fatma"
-			type = spart_hull_0
-			parent_version = 0
-			modules = {
-				arty_main_armament_slot = art_small_gun_gen1
-				chassis_type_slot = chassis_afv_gen0
-				engine_type_slot = tank_diesel_engine_gen1
-				conversion_type_slot = empty
-				special_type_slot_1 = support_ammo_small_gen1
-				special_type_slot_4 = art_battlestation_gen1
-			}
-			upgrades = {
-				art_nsb_fire_upgrade = 1
-			}
-			obsolete = yes
-			icon = "GFX_spart_hull_0_a"
-		}
-
-		else = {
-			set_technology = {
-				Early_APC = 1
-				APC_1 = 1
-				MBT_1 = 1
-				IFV_1 = 1
-				SP_arty_0 = 1
-				artillery_0 = 1
-				SP_R_arty_0 = 1
-				Anti_Air_0 = 1
-				SP_Anti_Air_0 = 1
-				Rec_tank_0 = 1
-				attack_helicopter1 = 1
-			}
-		}
-	}
-	if = {
-		limit = {
-			not = { has_dlc = "Man the Guns" }
-		}
-		set_technology = {
-			#Basic generic package for purchases to work
-			corvette_1 = 1
-			frigate_1 = 1
-			submarine_1 = 1
-			diesel_attack_submarine_1 = 1
-			landing_craft = 1
-		}
-	}
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_technology = {
-			tech_early_naval_weapon_systems = 1
-			frigate_hull_1 = 1
-			corvette_hull_1 = 1
-			tech_mtg_landing_craft = 1
-		}
-	}
-	### Economy
-	set_variable = { var = debt value = 751.668 }
-	set_variable = { var = int_investments value = 7 }
-	set_variable = { var = treasury value = 21 }
-	set_variable = { var = corporate_tax_rate value = 6 }
-	set_variable = { var = population_tax_rate value = 9 }
-
-	set_variable = { saudi_royal_family_opinion = 60 }
-	set_variable = { wahabi_ulema_opinion = 60 }
-
-	#Cyber
-	add_to_array = { cyber_targets = USA }
-	add_to_array = { cyber_targets = ISR }
-	add_to_array = { cyber_targets = PER }
-	add_to_array = { cyber_targets = SOV }
-	add_to_array = { cyber_targets = TUR }
-
-	#CT
-	set_country_flag = threat_level_substantial
-	set_variable = { threat_level = 35 }
-	set_variable = { radicalization = 35 }
-	add_to_array = { global.ct_states = THIS }
-	set_variable = { ct_training = 4 }
-	#Islamism
-	set_variable = { social_conservatism_government = 75 }
-	set_variable = { social_conservatism_society = 75 }
-	#Shia
-	set_variable = { shia_population = 15 }
-	#GCC
-	set_variable = { global.gcc_unity = 50 }
-	set_country_flag = gcc_dominant_member
-	add_to_array = { global.gcc_members = THIS }
-
-	#Influence system
-	init_influence = yes
-	set_variable = { domestic_influence_amount = 347 }
-	add_to_array = { influence_array = CHI.id }
-	add_to_array = { influence_array_val = 20 }
-	add_to_array = { influence_array = USA.id }
-	add_to_array = { influence_array_val = 80 }
-	add_to_array = { influence_array = ENG.id }
-	add_to_array = { influence_array_val = 15 }
-	add_to_array = { influence_array = RAJ.id }
-	add_to_array = { influence_array_val = 10 }
-	add_to_array = { influence_array = PAK.id }
-	add_to_array = { influence_array_val = 45 }
-	add_to_array = { influence_array = UAE.id }
-	add_to_array = { influence_array_val = 30 }
-	startup_influence = yes
-
-	add_opinion_modifier = { target = USA modifier = supports_us }
-	add_opinion_modifier = { target = JOR modifier = historic_friends }
-	add_opinion_modifier = { target = EGY modifier = historic_friends }
-	add_opinion_modifier = { target = MOR modifier = historic_friends }
-	add_opinion_modifier = { target = USA modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = CAN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ENG modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = IRE modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = FRA modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SPR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = POR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = AUS modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ITA modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = BEL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = HOL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = LUX modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = GER modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = DEN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = NOR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SWE modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = FIN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = POL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = EST modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = LAT modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = LIT modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = CZE modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SLO modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = HUN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ROM modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = BUL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = CRO modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = TUR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SWI modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ICE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = JOR modifier = historic_friends }
-	reverse_add_opinion_modifier = { target = EGY modifier = historic_friends }
-	reverse_add_opinion_modifier = { target = MOR modifier = historic_friends }
-	reverse_add_opinion_modifier = { target = PER modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = HOU modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = HEZ modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = BHR modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = KUW modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = UAE modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = QAT modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = OMA modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = USA modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = CAN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ENG modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = IRE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = FRA modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SPR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = POR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = AUS modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ITA modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = BEL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = HOL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = LUX modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = GER modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = DEN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = NOR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SWE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = FIN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = POL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = EST modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = LAT modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = LIT modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = CZE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SLO modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = HUN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ROM modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = BUL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = CRO modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = TUR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SWI modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ICE modifier = Arabian_Peninsula_West_Economical_Relations }
-
-	#License Equipment
-	add_relation_modifier = { target = USA modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = CAN modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = ENG modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = IRE modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = FRA modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = SPR modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = POR modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = AUS modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = ITA modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = BEL modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = HOL modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = LUX modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = GER modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = DEN modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = NOR modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = SWE modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = FIN modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = POL modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = EST modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = LAT modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = LIT modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = CZE modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = SLO modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = HUN modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = ROM modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = BUL modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = CRO modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = TUR modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = SWI modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = ICE modifier = Arabian_Peninsula_West_License_Equipment }
-	add_relation_modifier = { target = CHI modifier = Arabian_Peninsula_Asia_License_Equipment }
-	add_relation_modifier = { target = KOR modifier = Arabian_Peninsula_Asia_License_Equipment }
-	add_relation_modifier = { target = RAJ modifier = Arabian_Peninsula_Asia_License_Equipment }
-	add_relation_modifier = { target = JAP modifier = Arabian_Peninsula_Asia_License_Equipment }
-	add_relation_modifier = { target = SOV modifier = Arabian_Peninsula_Russia_License_Equipment }
-
-	# Major Oil Arab Importers
-	reverse_add_opinion_modifier = { target = USA modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = CHI modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = JAP modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = TAI modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = KOR modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = IND modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = SIN modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = PHI modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = MOR modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = SAF modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = FRA modifier = major_arab_oil_importer }
-	reverse_add_opinion_modifier = { target = SPR modifier = major_arab_oil_importer }
-
-	set_popularities = {
-		democratic = 1.0
-		communism = 11.0
-		fascism = 75.0
-		neutrality = 12.0
-		nationalist = 1.0
-	}
-	set_politics = {
-		ruling_party = fascism
-		last_election = "1999.1.23"
-		election_frequency = 48
-		elections_allowed = no
-	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0.01 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0 } #conservatism
-	set_variable = { party_pop_array^2 = 0 } #liberalism
-	set_variable = { party_pop_array^3 = 0 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0.1 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0.01 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0.7 } #Kingdom
-	set_variable = { party_pop_array^11 = 0.05 } #Caliphate
-	set_variable = { party_pop_array^12 = 0.11 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0.01 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0.01 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 10 }
-
-	startup_politics = yes
-
-	### Banned Parties & Balance
-	set_partyall_banned = yes
-	add_political_power = 300
-
-	create_country_leader = {
-		name = "Abdullah bin Abdulaziz Al-Saud"
-		picture = "Abdullah_bin_Abdulaziz_Al-Saud.dds"
-		ideology = Kingdom
-		traits = {
-			king
-			salafist_Kingdom
-			pro_american
-			anti_zionist
-			capable
-		}
-	}
-	every_controlled_state = {
-		set_variable = { productivity_state_var = 1173 }
-	}
-	set_variable = { overall_productivity = 1173 }
-
-	recruit_character = SAU_khalid_saud
-	recruit_character = SAU_abdullah_sultan
-	recruit_character = SAU_mohammed_otaibi
-	recruit_character = SAU_abdulrahman_banyan
-	recruit_character = SAU_mansour_turki
+1985.5.25 = {
+    # crating CCASG ((ССАГПЗ)
+	create_faction = CCASG
+	add_to_faction = SAU
+	add_to_faction = QAT
+	add_to_faction = BHR
+	add_to_faction = KUW
+	add_to_faction = OMA
+	add_to_faction = UAE
+	add_ideas = integration_in_ccasg
 }
 
-2017.1.1 = {
-	capital = 176
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "SAU_2000_nsb"
-		else = {
-			set_oob = "SAU_2017_nonnsb"
-		}
-	}
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_naval_oob = "SAU_2017_naval_mtg"
-		else = {
-			set_naval_oob = "SAU_2017_naval_legacy"
-		}
-	}
+2013.11.1 = {
+	set_variable = { budget_last_year = 74660 }
 
-	remove_ideas = {
-		shia_resistance_04
-		SAU_ailing_king
-	}
-
-	#Nat focus
-	complete_national_focus = GCC_the_gcc
-	complete_national_focus = GCC_military_union
-	complete_national_focus = GCC_joint_defense_agreement
-	complete_national_focus = GCC_limited_unified_command
-
-	set_country_flag = Major_Importer_US_Arms #Trends-in-international-arms-transfers-2016.pdf
-	set_variable = { saudi_royal_family_opinion = 50 }
-	set_variable = { wahabi_ulema_opinion = 50 }
-
-	#CT
-	set_variable = { threat_level = 45 }
-	set_variable = { radicalization = 35 }
-
-	if = {
-		limit = { has_dlc = "La Resistance" }
-		add_ideas = SAU_crown_prince_mbn_lar
-	}
-	if = {
-		limit = { NOT = { has_dlc = "La Resistance" } }
-		add_ideas = SAU_crown_prince_mbn
-	}
+	load_oob = "_tech_nato_minor_2013"
+	oob = "SAU_2013"
 
 	add_ideas = {
-		sunni
-		unrestrained_corruption
-
-		LoAS_member
-		idea_gcc_member_state
-		restoring_hope
-		rentier_state
-		oil_dependency
-		shia_resistance_05
-		youth_radicalization
-		cybercaliphate
-		al_jazeera_allowed
-		muslim_brotherhood_crackdown
-		saudi_expat
-		export_economy
-		stagnation
-		defence_06
-		edu_04
-		health_04
-		social_06
-		bureau_03
-		police_03
-		police_05
-		volunteer_army
-		no_women_in_military
-		intervention_regional_interventionism
+		arab_league_member
+		opec_member
+		gcc_member
+		regional_country
+		NPT
+	# laws
+		absolute_monarchy
+		unitary_state
+		theocracy
+		mixed_media
+		sharia_law
+		contract_army
+		professional_schools
+		restricted_immigration
+		market_economy
+		nationalization_of_extractive_industries
+		
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		national_social_security
+		pensions
+		average_terrorism
+		oil_spike
+		
+		islam_idea_lvl_3
 	}
 
-	set_technology = {
-		night_vision_3 = 1
-
-		SP_Anti_Air_1 = 1 #Shahine
-
-		util_vehicle_1 = 1
-		util_vehicle_2 = 1
-		util_vehicle_3 = 1
-		util_vehicle_4 = 1
-		util_vehicle_5 = 1 #Al-Masmak
-
-		microprocessors = 1
-		computing2 = 1
-		decryption2 = 1
-		encryption2 = 1
-		computing3 = 1
-		decryption3 = 1
-		encryption3 = 1
-		computing4 = 1
-		decryption4 = 1
-		encryption4 = 1
-		neural_networks_revival = 1
-		data_mining = 1
-		industrial_electrospun_polymeric_nanofibers = 1
-		stereolitography = 1
-		DNA_fingerprinting = 1
-		modern_gmo = 1
-		gene_therapy = 1
-
-		gprs = 1
-		internet3 = 1	#3G
-		edge = 1
-		umts = 1
-		hsupa = 1
-		internet4 = 1	#4G
-		lte = 1
-	}
-	if = {
-		limit = { NOT = { has_dlc = "No Step Back" } }
-		set_technology = {
-			APC_2 = 1
-			APC_3 = 1
-			APC_4 = 1 #AF-40 Al-Fahd
-		}
-	}
-	if = {
-		limit = {
-			not = { has_dlc = "Man the Guns" }
-		}
-		set_technology = {
-			#Basic generic package for purchases to work
-			corvette_1 = 1
-			frigate_1 = 1
-			submarine_1 = 1
-			diesel_attack_submarine_1 = 1
-			landing_craft = 1
-		}
-	}
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_technology = {
-			corvette_hull_1 = 1
-			corvette_hull_2 = 1
-
-			frigate_hull_1 = 1
-
-			tech_naval_systems_engineering = 1
-			tech_power_systems = 1
-
-			tech_combat_support_systems = 1
-			tech_fire_control = 1
-
-			tech_naval_weapon_systems = 1
-
-			tech_torpedoes = 1
-
-			tech_mtg_landing_craft = 1
-		}
-	}
-	add_opinion_modifier = { target = YEM modifier = military_cooperation }
-	add_opinion_modifier = { target = PER modifier = hostile_status }
-	add_opinion_modifier = { target = SYR modifier = hostile_status }
-	add_opinion_modifier = { target = HOU modifier = hostile_status }
-	add_opinion_modifier = { target = HEZ modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = PER modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = HOU modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = HEZ modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = SYR modifier = hostile_status }
-	reverse_add_opinion_modifier = { target = YEM modifier = military_cooperation }
-
-	#GCC
-	set_variable = { global.gcc_unity = 40 }
-	set_country_flag = supports_membership_JOR
-	set_country_flag = supports_membership_MOR
-
-	### Economy
-	set_variable = { var = debt value = 521 }
-	set_variable = { var = int_investments value = 55 }
-	set_variable = { var = treasury value = 489 }
-	set_variable = { var = corporate_tax_rate value = 6 }
-	set_variable = { var = population_tax_rate value = 9 }
-
-	set_popularities = {
-		democratic = 1.0
-		communism = 11.0
-		fascism = 67.0
-		neutrality = 20.0
-		nationalist = 1.0
-	}
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+	
 	set_politics = {
-		ruling_party = fascism
-		last_election = "2015.1.23"
+		ruling_party = democratic
+		last_election = "2014.1.1"
 		election_frequency = 48
 		elections_allowed = no
 	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0.01 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0 } #conservatism
-	set_variable = { party_pop_array^2 = 0 } #liberalism
-	set_variable = { party_pop_array^3 = 0 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0.1 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0.01 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0.62 } #Kingdom
-	set_variable = { party_pop_array^11 = 0.05 } #Caliphate
-	set_variable = { party_pop_array^12 = 0.19 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0.01 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0.01 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 10 }
-
-	startup_politics = yes
-
-	add_opinion_modifier = { target = SYR modifier = hostile_status }
-
-	#King Salman of Saudi Arabia, old and sick
-	create_country_leader = {
-		name = "Salman bin Abdulaziz Al-Saud"
-		picture = "Salman_bin_Abdulaziz_Al_Saud.dds"
-		expire = "2020.1.6"
-		ideology = Kingdom
-		traits = {
-			king
-			salafist_Kingdom
-			pro_american
-			alzheimer
-			incapable
-			greedy
-		}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 100
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
 	}
 
-	recruit_character = SAU_eid_shalawi
-	recruit_character = SAU_ahmed_asseri
+	create_country_leader = {
+		 name = "Salman bin Abdulaziz"
+		 desc = "POLITICS_SALMAN_BIN_ABDULAZIZ_DESC"
+		 picture = "gfx/leaders/SAU/portrait_salman_bin_abdulaziz.dds"
+         ideology = sunni_royalism
+		 traits = { trait_sunni_royalism }
+	}
+
+	create_country_leader = {
+		 name = "Abdullah bin Abdulaziz"
+		 desc = "POLITICS_ABDULLAH_BIN_ABDULAZIZ_DESC"
+		 picture = "gfx/leaders/SAU/portrait_abdullah_bin_abdulaziz.dds"
+         ideology = sunni_royalism
+         expire = "2015.1.23"
+		 traits = { trait_sunni_royalism }
+	}
+
 }

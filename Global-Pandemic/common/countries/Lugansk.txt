@@ -1,6 +1,4 @@
-#
+graphical_culture = post_ussr_gfx
+graphical_culture_2d = post_ussr_gfx
 
-graphical_culture = eastern_european_gfx
-graphical_culture_2d = eastern_european_2d
-
-color = { 248 49  178 }
+color = { 205  92  92 }

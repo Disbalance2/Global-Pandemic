@@ -8,278 +8,433 @@
 # can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
 #
 # division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
-#				  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
-#				  for example the current one is no longer available due to the can_use trigger saying so).
-#				  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
 #
 # fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
-#				 mechanics to be used for fallbacks, then just skip this option.
+#                 mechanics to be used for fallbacks, then just skip this option.
 #
 # unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
-#			 this option is available here mainly for a mods.
+#             this option is available here mainly for a mods.
 #
-# ordered - Is a list of all historical names.
-#		   Numbers must start from 1 and up.
-#		   Numbers can't repeat in one scope.
-#		   If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
-#		   All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
-#		   1st argument = The name. It must contain either:
-#						  %d (for decimal number placement)
-#						  %s (for string number placement - ROMAN numbers like XIV).
-#		   2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
-#									  where you choose the historical division name.
-#		   3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
-#									  the current game version.
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
 
-TUR_MECH_BRIG = {
-	name = "Mechanized Infantry Brigades"
-
-	for_countries = { TUR }
-
-	can_use = { always = yes }
-
-	division_types = { "Mech_Inf_Bat" "Arm_Inf_Bat" }
-
-	fallback_name = "%d Mekanize Piyade Tugayı"
-
-	ordered = {
-		1 = { "%d Mekanize Piyade Tugayı" }
-		4 = { "%d Mekanize Piyade Tugayı" }
-		8 = { "%d Mekanize Piyade Tugayı" }
-		12 = { "%d Mekanize Piyade Tugayı" }
-		14 = { "%d Mekanize Piyade Tugayı" }
-		16 = { "%d Mekanize Tugay" }
-		18 = { "%d Mekanize Piyade Tugayı" }
-		20 = { "%d Mekanize Tugay" }
-		25 = { "%d Mekanize Piyade Tugayı" }
-		28 = { "%d Mekanize Piyade Tugayı" }
-		39 = { "%d Mekanize Piyade Tugayı" }
-		54 = { "%d Mekanize Piyade Tugayı" }
-		55 = { "%d Mekanize Piyade Tugayı" }
-		65 = { "%d Mekanize Piyade Tugayı" }
-		70 = { "%d Mekanize Piyade Tugayı" }
-	}
-
-}
-
-TUR_MECH_DIV = {
-	name = "Mechanized Infantry Divisions"
-
-	for_countries = { TUR }
-
-	can_use = { always = yes }
-
-	division_types = { "Mech_Inf_Bat" "Arm_Inf_Bat" }
-
-	fallback_name = "%d Mekanize Piyade Tümeni"
-}
-
-TUR_ARM_BRIG = {
-	name = "Armoured Brigades"
-
-	for_countries = { TUR }
-
-	can_use = { always = yes }
-
-	division_types = { "armor_Bat" }
-
-	fallback_name = "%d Zırhlı Tugay"
-
-	ordered = {
-		1 = { "%d Zırhlı Tugay" }
-		4 = { "%d Zırhlı Tugay" }
-		5 = { "%d Zırhlı Tugay" }
-		14 = { "%d Zırhlı Tugay" }
-		95 = { "%d Zırhlı Tugay" }
-		172 = { "%d Zırhlı Tugay" }
-	}
-
-}
-
-TUR_ARM_DIV = {
-	name = "Tactical Armoured Divisions"
-
-	for_countries = { TUR }
-
-	can_use = { always = yes }
-
-	division_types = { "armor_Bat" }
-
-	fallback_name = "%d Taktik Zırhlı Tümen"
-
-	ordered = {
-		52 = { "%d Taktik Zırhlı Tümen" }
-	}
-
-}
-
-TUR_MOT_BRI = {
-	name = "Motorized Brigades"
-
-	for_countries = { TUR }
-
-	can_use = { always = yes }
-
-	division_types = { "Mot_Inf_Bat" }
-
-	fallback_name = "%d Motorize Piyade Tugayı"
-
-	ordered = {
-		2 = { "%d Motorize Piyade Tugayı" }
-		6 = { "%d Motorize Piyade Tugayı" }
-		9 = { "%d Motorize Piyade Tugayı" }
-		10 = { "%d Motorize Piyade Tugayı" }
-		11 = { "%d Motorize Piyade Tugayı" }
-		17 = { "%d Motorize Piyade Tugayı" }
-		34 = { "%d Motorize Piyade Tugayı" }
-		48 = { "%d Motorize Piyade Tugayı" }
-		49 = { "%d Motorize Piyade Tugayı" }
-		51 = { "%d Motorize Piyade Tugayı" }
-	}
-
-}
-
-TUR_MOT_DIV = {
-	name = "Tactical Motorized Divisions"
-
-	for_countries = { TUR }
-
-	can_use = { always = yes }
-
-	division_types = { "Mot_Inf_Bat" }
-
-	fallback_name = "%d Taktik Motorize Piyade Tümeni"
-
-	ordered = {
-		23 = { "%d Taktik Motorize Piyade Tümeni" }
-	}
-
-}
-
-TUR_INF_BRI = {
-	name = "Infantry Brigades"
-
-	for_countries = { TUR }
-
-	can_use = { always = yes }
-
-	division_types = { "L_Inf_Bat" }
-
-	fallback_name = "%d Piyade Tugayı"
-
-	ordered = {
-		2 = { "%d Piyade Alayı" }
-		19 = { "%d Piyade Tugayı" }
-	}
-
-}
-
-TUR_INF_DIV = {
+TUR_INF_01 = 
+{
 	name = "Infantry Divisions"
 
 	for_countries = { TUR }
 
 	can_use = { always = yes }
 
-	division_types = { "L_Inf_Bat" }
+	division_types = { "infantry" }
 
-	fallback_name = "%d Piyade Tümeni"
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { TUR_GAR_01 }
 
-	ordered = {
-		3 = { "%d Taktik Piyade Tümeni" }
-		15 = { "%d Piyade Tümeni" }
-		28 = { "%d Piyade Tümeni" }
-		39 = { "%d Piyade Tümeni" }
+	fallback_name = "%d. Piyade Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Piyade Tümeni" }
+		2 = { "%d. Piyade Tümeni" }
+		3 = { "%d. Piyade Tümeni" }
+		4 = { "%d. Piyade Tümeni" }
+		5 = { "%d. Piyade Tümeni" }
+		6 = { "%d. Piyade Tümeni" }
+		7 = { "%d. Piyade Tümeni" }
+		8 = { "%d. Piyade Tümeni" }
+		9 = { "%d. Piyade Tümeni" }
+		10 = { "%d. Piyade Tümeni" }
+		11 = { "%d. Piyade Tümeni" }
+		12 = { "%d. Piyade Tümeni" }
+		15 = { "%d. Piyade Tümeni" }
+		16 = { "%d. Piyade Tümeni" }
+		17 = { "%d. Piyade Tümeni" }
+		20 = { "%d. Piyade Tümeni" }
+		22 = { "%d. Piyade Tümeni" }
+		23 = { "%d. Piyade Tümeni" }
+		24 = { "%d. Piyade Tümeni" }
+		25 = { "%d. Piyade Tümeni" }
+		28 = { "%d. Piyade Tümeni" }
+		29 = { "%d. Piyade Tümeni" }
+		32 = { "%d. Piyade Tümeni" }
+		33 = { "%d. Piyade Tümeni" }
+		39 = { "%d. Piyade Tümeni" }
+		41 = { "%d. Piyade Tümeni" }
+		46 = { "%d. Piyade Tümeni" }
+		48 = { "%d. Piyade Tümeni" }
+		51 = { "%d. Piyade Tümeni" }
+		52 = { "%d. Piyade Tümeni" }
+		53 = { "%d. Piyade Tümeni" }
+		57 = { "%d. Piyade Tümeni" }
+		61 = { "%d. Piyade Tümeni" }
+		62 = { "%d. Piyade Tümeni" }
+		63 = { "%d. Piyade Tümeni" }
+		66 = { "%d. Piyade Tümeni" }
+		67 = { "%d. Piyade Tümeni" }
+		69 = { "%d. Piyade Tümeni" }
+		70 = { "%d. Piyade Tümeni" }
+		71 = { "%d. Piyade Tümeni" }
+		72 = { "%d. Piyade Tümeni" }
+		73 = { "%d. Piyade Tümeni" }
+		74 = { "%d. Piyade Tümeni" }
+		75 = { "%d. Piyade Tümeni" }
+		76 = { "%d. Piyade Tümeni" }
+		77 = { "%d. Piyade Tümeni" }
+		78 = { "%d. Piyade Tümeni" }
+		79 = { "%d. Piyade Tümeni" }
+		80 = { "%d. Piyade Tümeni" }
+		81 = { "%d. Piyade Tümeni" }
+		82 = { "%d. Piyade Tümeni" }
+
 	}
-
 }
 
-TUR_SPEC_FOR_BRI = {
-	name = "Commando Brigades"
+TUR_CAV_01 = 
+{
+	name = "Cavalry Divisions"
 
 	for_countries = { TUR }
 
 	can_use = { always = yes }
 
-	division_types = { "Special_Forces" }
+	division_types = { "mechanized_on_ifv_tracked" }
 
-	fallback_name = "%d Komando Tugayı"
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { GER_Gar_01 }
 
-	ordered = {
-		1 = { "%d Komando Tugayı" }
-		2 = { "%d Komando Tugayı" }
-		3 = { "%d Komando Tugayı" }
-		4 = { "%d Komando Tugayı" }
-		5 = { "Hakkâri Dağ ve Komando Tugayı" }
-		6 = { "Özel Kuvvetler Alayı" }
+	fallback_name = "%d. Süvari Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Süvari Tümeni" }
+		2 = { "%d. Süvari Tümeni" }
+		14 = { "%d. Süvari Tümeni" }
+		3 = { "%d. Süvari Tümeni" }
+		5 = { "%d. Süvari Tümeni" }
+		6 = { "%d. Süvari Tümeni" }
+		7 = { "%d. Süvari Tümeni" }
+		8 = { "%d. Süvari Tümeni" }
+		9 = { "%d. Süvari Tümeni" }
+		10 = { "%d. Süvari Tümeni" }
+
 	}
-
 }
 
-TUR_MAR_BRI = {
-	name = "Marine Brigades"
+TUR_MOT_01 = 
+{
+	name = "Motorised Divisions"
 
 	for_countries = { TUR }
 
 	can_use = { always = yes }
 
-	division_types = { "L_Marine_Bat" "Mot_Marine_Bat" "Mech_Marine_Bat" "Arm_Marine_Bat" }
+	division_types = { "motorized" }
 
-	fallback_name = "%d Amfibi Deniz Piyade Tugayı"
+	# Number reservation system will tie to another group.
+	link_numbering_with = { TUR_INF_01 }
 
-	ordered = {
-		1 = { "Amfibi Deniz Piyade Tugayı" }
+	fallback_name = "%d. Motorize Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Motorize Tümeni" }
+		2 = { "%d. Motorize Tümeni" }
+		3 = { "%d. Motorize Tümeni" }
+		4 = { "%d. Motorize Tümeni" }
+		5 = { "%d. Motorize Tümeni" }
+		6 = { "%d. Motorize Tümeni" }
+		7 = { "%d. Motorize Tümeni" }
+		8 = { "%d. Motorize Tümeni" }
+		9 = { "%d. Motorize Tümeni" }
+		10 = { "%d. Motorize Tümeni" }
+
 	}
-
 }
 
-TUR_MIL_UNITS = {
-	name = "Security Units"
+TUR_ARM_01 = 
+{
+	name = "Armoured Divisions"
 
 	for_countries = { TUR }
 
 	can_use = { always = yes }
 
-	division_types = { "Militia_Bat" "Mot_Militia_Bat" }
+	division_types = { "light_tank" "main_battle_tank" "main_battle_tank_te" "medium_tank" "ng_battle_tank" "unmanned_tank" }
 
-	fallback_name = "%d Güvenlik Birimi"
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { TUR_INF_01 }
 
-	ordered = {
-		1 = { "Güvenlik Birimi" }
+	fallback_name = "%d. Zirhli Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Zirhli Tümeni" }
+		2 = { "%d. Zirhli Tümeni" }
+		3 = { "%d. Zirhli Tümeni" }
+		4 = { "%d. Zirhli Tümeni" }
+		5 = { "%d. Zirhli Tümeni" }
+		6 = { "%d. Zirhli Tümeni" }
+		7 = { "%d. Zirhli Tümeni" }
+		8 = { "%d. Zirhli Tümeni" }
+		9 = { "%d. Zirhli Tümeni" }
+		10 = { "%d. Zirhli Tümeni" }
+
 	}
-
 }
 
-TUR_PARA_INF = {
-	name = "Paratrooper Brigades"
+TUR_MEC_01 = 
+{
+	name = "Mechanised Divisions"
 
 	for_countries = { TUR }
 
 	can_use = { always = yes }
 
-	division_types = { "L_Air_Inf_Bat" "Mot_Air_Inf_Bat" "Mech_Air_Inf_Bat" "Arm_Air_Inf_Bat" }
+	division_types = { "mechanized_on_ifv_tracked" }
 
-	fallback_name = "%d Hava İndirme Tugayı"
+	# Number reservation system will tie to another group.
+	link_numbering_with = { TUR_INF_01 }
 
-	ordered = {
-		1 = { "Hava İndirme Tugayı" }
+	fallback_name = "%d. Mekanize Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Mekanize Tümeni" }
+		2 = { "%d. Mekanize Tümeni" }
+		3 = { "%d. Mekanize Tümeni" }
+		4 = { "%d. Mekanize Tümeni" }
+		5 = { "%d. Mekanize Tümeni" }
+		6 = { "%d. Mekanize Tümeni" }
+		7 = { "%d. Mekanize Tümeni" }
+		8 = { "%d. Mekanize Tümeni" }
+		9 = { "%d. Mekanize Tümeni" }
+		10 = { "%d. Mekanize Tümeni" }
+
 	}
-
 }
 
-TUR_AIR_INF = {
-	name = "Air Assault Brigades"
+TUR_GAR_01 = 
+{
+	name = "Garrison Divisions"
 
 	for_countries = { TUR }
 
 	can_use = { always = yes }
 
-	division_types = { "L_Air_assault_Bat" "Arm_Air_assault_Bat" }
+	division_types = { "infantry" }
 
-	fallback_name = "%d Hava Saldırı Tugayı"
+	# Number reservation system will tie to another group.
+	link_numbering_with = { TUR_INF_01 }
 
-	ordered = {
-		1 = { "Hava Saldırı Tugayı" }
+	fallback_name = "%d. Piyade Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		14 = { "Çanakkale Bogazi Tugay"}
+		1 = { "%d. Piyade Tümeni" }
+		2 = { "%d. Piyade Tümeni" }
+		3 = { "%d. Piyade Tümeni" }
+		4 = { "%d. Piyade Tümeni" }
+		5 = { "%d. Piyade Tümeni" }
+		6 = { "%d. Piyade Tümeni" }
+		7 = { "%d. Piyade Tümeni" }
+		8 = { "%d. Piyade Tümeni" }
+		9 = { "%d. Piyade Tümeni" }
+		10 = { "%d. Piyade Tümeni" }
+		11 = { "%d. Piyade Tümeni" }
+		12 = { "%d. Piyade Tümeni" }
+		15 = { "%d. Piyade Tümeni" }
+		16 = { "%d. Piyade Tümeni" }
+		17 = { "%d. Piyade Tümeni" }
+		20 = { "%d. Piyade Tümeni" }
+		22 = { "%d. Piyade Tümeni" }
+		23 = { "%d. Piyade Tümeni" }
+		24 = { "%d. Piyade Tümeni" }
+		25 = { "%d. Piyade Tümeni" }
+		28 = { "%d. Piyade Tümeni" }
+		29 = { "%d. Piyade Tümeni" }
+		32 = { "%d. Piyade Tümeni" }
+		33 = { "%d. Piyade Tümeni" }
+		39 = { "%d. Piyade Tümeni" }
+		41 = { "%d. Piyade Tümeni" }
+		46 = { "%d. Piyade Tümeni" }
+		48 = { "%d. Piyade Tümeni" }
+		51 = { "%d. Piyade Tümeni" }
+		52 = { "%d. Piyade Tümeni" }
+		53 = { "%d. Piyade Tümeni" }
+		57 = { "%d. Piyade Tümeni" }
+		61 = { "%d. Piyade Tümeni" }
+		62 = { "%d. Piyade Tümeni" }
+		63 = { "%d. Piyade Tümeni" }
+		66 = { "%d. Piyade Tümeni" }
+		67 = { "%d. Piyade Tümeni" }
+		69 = { "%d. Piyade Tümeni" }
+		70 = { "%d. Piyade Tümeni" }
+		71 = { "%d. Piyade Tümeni" }
+		72 = { "%d. Piyade Tümeni" }
+		73 = { "%d. Piyade Tümeni" }
+		74 = { "%d. Piyade Tümeni" }
+		75 = { "%d. Piyade Tümeni" }
+		76 = { "%d. Piyade Tümeni" }
+		77 = { "%d. Piyade Tümeni" }
+		78 = { "%d. Piyade Tümeni" }
+		79 = { "%d. Piyade Tümeni" }
+		80 = { "%d. Piyade Tümeni" }
+		81 = { "%d. Piyade Tümeni" }
+		82 = { "%d. Piyade Tümeni" }
+
 	}
+}
 
+TUR_MAR_01 = 
+{
+	name = "Marine Divisions"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "marines_motorized" "marines_light_motorized" "marines_mechanized_on_apc_tracked" "marines_mechanized_on_apc_wheeled" "marines_mechanized_on_ifv_tracked" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { TUR_GAR_01 }
+
+	fallback_name = "%d. Dz. Piyade Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Dz. Piyade Tümeni" }
+		2 = { "%d. Dz. Piyade Tümeni" }
+		3 = { "%d. Dz. Piyade Tümeni" }
+		4 = { "%d. Dz. Piyade Tümeni" }
+		5 = { "%d. Dz. Piyade Tümeni" }
+		6 = { "%d. Dz. Piyade Tümeni" }
+		7 = { "%d. Dz. Piyade Tümeni" }
+		8 = { "%d. Dz. Piyade Tümeni" }
+		9 = { "%d. Dz. Piyade Tümeni" }
+		10 = { "%d. Dz. Piyade Tümeni" }
+
+	}
+}
+
+TUR_MTN_01 = 
+{
+	name = "Mountain Divisions"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers_motorized" "mountaineers_light_motorized" "mountaineers_mechanized_on_apc_tracked" "mountaineers_mechanized_on_apc_wheeled" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { TUR_MEC_01 }
+
+	fallback_name = "%d. Dag Tugayi"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Dag Tugayi" }
+		18 = { "%d. Dag Tugayi" }
+		39 = { "%d. Dag Tugayi" }
+		2 = { "Kirklareli Dag Tugayi" }
+		3 = { "Antalya Dag Tugayi" }
+		4 = { "%d. Dag Tugayi" }
+		5 = { "%d. Dag Tugayi" }
+		6 = { "%d. Dag Tugayi" }
+		7 = { "%d. Dag Tugayi" }
+		8 = { "%d. Dag Tugayi" }
+		9 = { "%d. Dag Tugayi" }
+		10 = { "%d. Dag Tugayi" }
+		11 = { "%d. Dag Tugayi" }
+		12 = { "%d. Dag Tugayi" }
+		13 = { "%d. Dag Tugayi" }
+		14 = { "%d. Dag Tugayi" }
+		15 = { "%d. Dag Tugayi" }
+		16 = { "%d. Dag Tugayi" }
+		17 = { "%d. Dag Tugayi" }
+		19 = { "%d. Dag Tugayi" }
+		20 = { "%d. Dag Tugayi" }
+		21 = { "%d. Dag Tugayi" }
+		22 = { "%d. Dag Tugayi" }
+		23 = { "%d. Dag Tugayi" }
+		24 = { "%d. Dag Tugayi" }
+		25 = { "%d. Dag Tugayi" }
+		26 = { "%d. Dag Tugayi" }
+		27 = { "%d. Dag Tugayi" }
+		28 = { "%d. Dag Tugayi" }
+		29 = { "%d. Dag Tugayi" }
+		30 = { "%d. Dag Tugayi" }
+		31 = { "%d. Dag Tugayi" }
+		32 = { "%d. Dag Tugayi" }
+		33 = { "%d. Dag Tugayi" }
+		34 = { "%d. Dag Tugayi" }
+		35 = { "%d. Dag Tugayi" }
+		36 = { "%d. Dag Tugayi" }
+		37 = { "%d. Dag Tugayi" }
+		38 = { "%d. Dag Tugayi" }
+
+	}
+}
+
+TUR_PAR_01 = 
+{
+	name = "Paratrooper Divisions"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "paratroopers_motorized" "paratroopers_light_motorized" "paratroopers_mechanized_on_apc_tracked" "paratroopers_mechanized_on_apc_wheeled" "paratroopers_mechanized_on_ifv_airdroppable" }
+
+	# Number reservation system will tie to another group.
+
+	fallback_name = "%d. Hv. Piyade Tümeni"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Hv. Piyade Tümeni" }
+		2 = { "%d. Hv. Piyade Tümeni" }
+		3 = { "%d. Hv. Piyade Tümeni" }
+		4 = { "%d. Hv. Piyade Tümeni" }
+		5 = { "%d. Hv. Piyade Tümeni" }
+		6 = { "%d. Hv. Piyade Tümeni" }
+		7 = { "%d. Hv. Piyade Tümeni" }
+		8 = { "%d. Hv. Piyade Tümeni" }
+		9 = { "%d. Hv. Piyade Tümeni" }
+		10 = { "%d. Hv. Piyade Tümeni" }
+
+	}
 }

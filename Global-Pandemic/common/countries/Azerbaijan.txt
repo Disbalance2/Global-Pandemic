@@ -1,5 +1,6 @@
-#Azerbaijan
-graphical_culture = middle_eastern_gfx
-graphical_culture_2d = middle_eastern_2d
 
-color = { 124  148  80 }
+
+graphical_culture = post_ussr_gfx
+graphical_culture_2d = post_ussr_2d	 
+
+color = { 219  112  147 }

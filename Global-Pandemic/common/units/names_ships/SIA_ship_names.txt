@@ -1,82 +1,121 @@
-﻿SIA_AIRCRAFT_CARRIERS_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_AIRCRAFT_CARRIERS
-	for_countries = { SIA }
-	type = ship
-	ship_types = {
-		carrier
-	}
-	fallback_name = "CV-%d"
-
-	unique = {
-		"Chakri Naruebet" "Sukhothai" "Ayutthaya" "Naresuan" "Thongthin" "Ramathibodi" "Taksin" "Mahidol" "Bhumibol Adulyadej" "Ananda Mahidol"
-	}
-}
-
-SIA_HELICOPTER_CARRIERS_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_HELICOPTER_CARRIERS
-	for_countries = { SIA }
-	type = ship
-	ship_types = {
-		helicopter_operator
-	}
-	fallback_name = "LHA-%d"
-
-	unique = {
-		"Mongkut" "Chulalongkorn" "Vajiravudh" "Prajadhipok" "Ananda Mahidol" "Bhumibol Adulyadej" "Vajiralongkorn" "Maha Vajiralongkorn"
-	}
-}
-
-SIA_DESTROYERS_HISTORICAL = {
+﻿##### SIAM/THAILAND NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+SIA_DD_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_DESTROYERS
-	for_countries = { SIA }
-	type = ship
-	ship_types = {
-		stealth_destroyer
-		destroyer
-	}
-	fallback_name = "DDG-%d"
 
-	unique = { ## Namelist 3
-		"Chulabhorn" "Suthida" "Sirindhorn" "Ubol Ratana" "Sirikit" "Galyani Vadhana" "Bajrakitiyabha" "Srirasm" "Dusit" "Krom Luang Voravan"
-		"Chumphon" "Krom Luang Chumphon" "Kamphaengphet" "Phitsanulok" "Khorat" "Mahasarakham" "Surin" "Si Sa Ket" "Yasothon" "Amnat Charoen"
+	for_countries = { SIA }
+
+	type = ship
+	#ship_types = { ship_hull_light destroyer }			
+
+	prefix = "HTMS "
+	fallback_name = "Reux phikhat %d"					
+
+	unique = {											
+		"Phra Ruang" "Maeklong" "Tachin" "Chonbori" "Trat" "Songkhla" "Phuke" "Pattani" "Surat Thani" "Chanthaburi" "Rayong" "Chumphon" 
+		"Kyongyai" "Kantan" "Takbai" "Bangpakong" "Prasae" 
 	}
 }
 
-SIA_FRIGATES_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_FRIGATES
-	for_countries = { SIA }
-	type = ship
-	ship_types = {
-		frigate
-	}
-	fallback_name = "FFG-%d"
-
-	unique = { ## Namelist 4
-		"Ubon Ratchathani" "Yasothon" "Buri Ram" "Nakhon Ratchasima" "Kalasin" "Sisaket" "Chaiyaphum" "Lopburi" "Sara Buri" "Nonthaburi" "Samut Prakan" "Nakhon Nayok" "Prachinburi" "Chachoengsao" "Sakaeo" "Chonburi" "Rayong" "Chanthaburi" "Trat" "Chumphon" "Ranong" "Phangnga" "Phuket" "Krabi" "Trang" "Satun" "Narathiwat" "Pattani" "Yala" "Songkhla"
-	}
-}
-
-### CORVETTE NAMES ###
-SIA_CORVETTE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CORVETTE
+### LIGHT CRUISER NAMES###
+SIA_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
 
 	for_countries = { SIA }
 
 	type = ship
-	ship_types = { corvette }
-	fallback_name = "KKG-%d"
+	#ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "HTMS "
+	fallback_name = "Fi Reuxrb %d"
 
 	unique = {
-		"Phra Nakhon" "Chao Phraya" "Sukhothai" "Ayutthaya" "Rattanakosin" "Dvaravati" "Lan Na" "Nan" "Ligor" "Srivijaya" "Naresuan" "Thonburi" "Thammasat" "Kasetsart" "Mahidol" "Chulalongkorn" "Silpakorn" "Ramkhamhaeng" "Mongkut" "Siam" "Angkor" "Khmer" "Pattani" "Nakhon Si Thammarat" "Chiang Mai" "Chiang Rai" "Lampang" "Phitsanulok" "Suthep" "Doi Inthanon" "Khao Yai" "Kaeng Krachan" "Erawan" "Bang Pa-In" "Saphan Mon" "Saphan Taksin" "Saphan Phut" "Saphan Daeng" "Saphan Khwai" "Saphan Lek" "Saphan Pla" "Saphan Pla Nakhon" "Saphan Khao" "Namtok Phlio" "Namtok Sai Yok" "Namtok Erawan" "Namtok Huai Mae Khamin" "Namtok Chet Sao Noi" "Namtok Tad Ton" "Chamlong" "Chatchai" "Chavalit" "Chinawat" "Chonlasit" "Chuan" "Chulanont" "Chumporn"
+		"Taksin" "Naresuan" "Chon Buri" "Samut Phrakan" "Si Racha" "Rayong" "Chanthaburi" "Khao Saming" "Ratanakosin" "Sukhothai" 
 	}
 }
 
-SIA_SUBMARINES_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_SUBMARINES
+### HEAVY CRUISER NAMES###
+SIA_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
 	for_countries = { SIA }
+
 	type = ship
-	ship_types = {
-		attack_submarine missile_submarine
+	#ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "HTMS "
+	fallback_name = "Reux Ladtrawen Hnak %d"
+
+	unique = {
+		"Sri Ayuthia" "Dhonburi" "Chon Buri" "Samut Phrakan" "Si Racha" "Rayong" "Chanthaburi" "Khao Saming" "Ratanakosin" "Sukhothai" 
 	}
-	fallback_name = "SS-%d"
+}
+
+
+### BATTLESHIP NAMES ###
+SIA_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { SIA }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "HTMS "
+	fallback_name = "Reuxrb %d"		
+
+	unique = {
+		"Krung Thep" "Thale Luang" "Ko Samui" "Ratanakosin" "Sukhothai" 
+	}
+}
+
+### BATTLECRUISER NAMES ###
+SIA_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { SIA }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "HTMS "
+	fallback_name = "Rb Khruy Sexr %d"		
+
+	unique = {
+		"Krung Thep" "Thale Luang" "Ko Samui" "Ratanakosin" "Sukhothai" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+SIA_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { SIA }
+
+	type = ship
+	#ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "HTMS "
+	fallback_name = "Reux Brrthuk Kheruxngbin %d"	
+
+	unique = {
+		"Muang Thai" "Ao Thai" "Chakri Nareubet"
+	}
+}
+
+### SUBMARINES ###
+SIA_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { SIA }
+
+	type = ship
+	#ship_types = { ship_hull_submarine submarine }
+	
+	prefix = "HTMS "
+	fallback_name = "Reux da na %d"
+	
+	unique = {
+		"Matchanu" "Wirun" "Sinsamut" "Phlai-chumphon" 
+	}
 }

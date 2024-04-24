@@ -38,9 +38,9 @@ capture_cyphers_raid = {
 
 	}
 	equipment = {
-#TALL-EIS = Original Value = IE-500; SE-100
-		Inf_equipment = 400
-		cnc_equipment = 80
+		army_salw_equipment = 500
+		army_ammunition_equipment = 500
+		support_equipment = 100
 	}
 }
 
@@ -51,11 +51,11 @@ capture_cyphers_seduction = {
 	picture = "GFX_phase_infiltrate_military_seduction"
 	icon = "GFX_phase_infiltrate_military_seduction_small"
 	requirements = {
-
+		
 	}
 
 	equipment = {
-
+		
 	}
 }
 
@@ -65,8 +65,8 @@ capture_cyphers_smuggle = {
 	outcome = capture_cyphers_smuggle_outcome
 	picture = "GFX_phase_capture_cyphers_smuggle"
 	icon = "GFX_phase_capture_cyphers_smuggle_small"
-	requirements = {
-
+	requirements = { 
+		
 	}
 
 	equipment = {
@@ -83,7 +83,7 @@ capture_cyphers_reverse_engineer = {
 	outcome = capture_cyphers_reverse_engineer_outcome
 	picture = "GFX_phase_capture_cyphers_reverse_engineer"
 	icon = "GFX_phase_capture_cyphers_reverse_engineer_small"
-	requirements = {
+	requirements = { 
 		FROM = { has_war = no }
 	}
 

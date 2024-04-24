@@ -1,715 +1,273 @@
-﻿capital = 835
-2000.1.1 = {
-	set_cosmetic_tag = MEX
+﻿# Economic Crisis edit for 0.7.6 alpha
 
-	set_country_flag = dynamic_flag
-	set_country_flag = dynamic_rebel_flag
-	set_variable = { gdp_per_capita = 17.943 }
-	set_country_flag = country_has_mbt_0_templates
-	set_country_flag = country_has_afv_0_templates
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
 
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_naval_oob = "MEX_2000_naval_mtg"
-		else = {
-			set_naval_oob = "MEX_2000_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "MEX_2000_nsb"
-		else = {
-			set_oob = "MEX_2000_nonnsb"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "MEX_2000_bba"
-		else = {
-			set_air_oob = "MEX_2000_nonbba"
-		}
-	}
+capital = 277
 
-	set_variable = { industrial_conglomerates_opinion = 80 }
-	set_variable = { small_medium_business_owners = 75 }
-	set_variable = { landowners_opinion = 60 }
-
-	add_opinion_modifier = { target = COL modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = COL modifier = spanish_speaking }
-	add_opinion_modifier = { target = ARG modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = ARG modifier = spanish_speaking }
-	add_opinion_modifier = { target = PRU modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = PRU modifier = spanish_speaking }
-	add_opinion_modifier = { target = VEN modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = VEN modifier = spanish_speaking }
-	add_opinion_modifier = { target = CHL modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = CHL modifier = spanish_speaking }
-	add_opinion_modifier = { target = ECU modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = ECU modifier = spanish_speaking }
-	add_opinion_modifier = { target = GUA modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = GUA modifier = spanish_speaking }
-	add_opinion_modifier = { target = BOL modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = BOL modifier = spanish_speaking }
-	add_opinion_modifier = { target = DOM modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = DOM modifier = spanish_speaking }
-	add_opinion_modifier = { target = HON modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = HON modifier = spanish_speaking }
-	add_opinion_modifier = { target = PAR modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = PAR modifier = spanish_speaking }
-	add_opinion_modifier = { target = ELS modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = ELS modifier = spanish_speaking }
-	add_opinion_modifier = { target = NIC modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = NIC modifier = spanish_speaking }
-	add_opinion_modifier = { target = COS modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = COS modifier = spanish_speaking }
-	add_opinion_modifier = { target = CUB modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = CUB modifier = spanish_speaking }
-	add_opinion_modifier = { target = PAN modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = PAN modifier = spanish_speaking }
-	add_opinion_modifier = { target = URG modifier = spanish_speaking }
-	reverse_add_opinion_modifier = { target = URG modifier = spanish_speaking }
-
-	# deliniates the amount of control each faction has over each state
-	every_owned_state = {
-		set_variable = { var = MEX_state_control value = 0 }
-		if = {
-			limit = {
-				THIS = {
-					is_core_of = SLA
-				}
-			}
-			set_variable = { var = MEX_sinola_state_control  value = 4 }
-		}
-		if = {
-			limit = {
-				THIS = {
-					is_core_of = TAM
-				}
-			}
-			set_variable = { var = MEX_tamaulpas_state_control  value = 4 }
-		}
-		if = {
-			limit = {
-				THIS = {
-					is_core_of = TRC
-				}
-			}
-			set_variable = { var = MEX_tierra_state_control  value = 4 }
-		}
-	}
-
-	# Starting tech
-	set_technology = {
-		integrated_transportation_system = 1
-		post_conventional_rail = 1
-		early_freight_locomotive = 1
-
-		legacy_doctrines = 1
-		superior_firepower = 1
-
-		infantry_weapons = 1
-
-		#DN-V Toro
-
-		night_vision_1 = 1
-		night_vision_2 = 1
-
-		command_control_equipment = 1
-		command_control_equipment1 = 1
-
-		#For templates
-		combat_eng_equipment = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		util_vehicle_0 = 1
-
-		body_armor_1980 = 1
-
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		decryption1 = 1
-		encryption1 = 1
-
-		radar = 1
-		internet1 = 1 	#1G
-		internet2 = 1
-		fuel_silos = 1
-
-		industrial_electrospun_polymeric_nanofibers = 1
-		multiwalled_carbon_nanotubes = 1
-		stereolitography = 1
-		early_3D_printers = 1
-		DNA_fingerprinting = 1
-		fuel_refining = 1
-		early_renewables = 1
-		renewables = 1
-		electrification_1 = 1
-		construction1 = 1
-	}
-	if = {
-		limit = { has_dlc = "No Step Back" }
-
-		set_technology = {
-			afv_tech = 1
-			diesel_engine_tech = 1
-			diesel_engine_tech_2 = 1
-			tank_components_tech = 1
-			nsb_artillery_0 = 1
-			nsb_Anti_Air_0 = 1
-			light_tank_tech = 1
-			light_tank_tech_1 = 1
-			light_tank_tech_2 = 1
-		}
-
-		create_equipment_variant = {
-			name = "HWK-11"
-			type = apc_hull_0
-			parent_version = 0
-			modules = {
-				main_armament_slot = afv_machine_gun
-				turret_type_slot = afv_no_turret
-				suspension_type_slot = afv_torsion_bar_suspension
-				armor_type_slot = afv_steel_armor_gen1
-				engine_type_slot = tank_diesel_engine_gen1
-				special_type_slot_1 = afv_additional_machine_guns
-				special_type_slot_4 = afv_battlestation_1
-			}
-			upgrades = {
-				afv_nsb_armor_upgrade = 1
-			}
-			obsolete = yes
-			icon = "GFX_apc_hull_0_a"
-		}
-
-		create_equipment_variant = {
-			name = "DN-III"
-			type = light_tank_hull_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = afv_machine_gun
-				turret_type_slot = afv_base_turret
-				chassis_type_slot = chassis_wheeled_afv_gen1
-				armor_type_slot = afv_alum_armor_gen1
-				engine_type_slot = tank_diesel_engine_gen2
-				reload_type_slot = light_tank_afv_automatic_loading
-				special_armament_type_slot = additional_machine_guns
-				special_type_slot_1 = afv_additional_machine_guns
-				special_type_slot_2 = afv_gun_ports
-				special_type_slot_3 = smoke_launchers
-				special_type_slot_4 = afv_battlestation_2
-			}
-			upgrades = {
-				afv_nsb_armor_upgrade = 0
-			}
-			obsolete = yes
-			icon = "GFX_USA_Rec_tank_0_medium"
-		}
-
-		create_equipment_variant = {
-			name = "DN-IV Caballo"
-			type = light_tank_hull_0
-			parent_version = 0
-			modules = {
-				main_armament_slot = apc_small_autocannon
-				turret_type_slot = afv_base_turret
-				chassis_type_slot = chassis_wheeled_afv_gen0
-				armor_type_slot = afv_alum_armor_gen1
-				engine_type_slot = tank_diesel_engine_gen1
-				reload_type_slot = light_tank_afv_automatic_loading
-				special_armament_type_slot = additional_machine_guns
-				special_type_slot_1 = afv_additional_machine_guns
-				special_type_slot_2 = afv_gun_ports
-				special_type_slot_3 = smoke_launchers
-				special_type_slot_4 = afv_battlestation_1
-			}
-			upgrades = {
-				afv_nsb_armor_upgrade = 0
-			}
-			obsolete = yes
-			icon = "GFX_USA_Rec_tank_1_medium"
-		}
-
-		create_equipment_variant = {
-			name = "DN-V Buffalo"
-			type = light_tank_hull_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = afv_assault_gun
-				turret_type_slot = afv_base_turret
-				chassis_type_slot = chassis_wheeled_afv_gen1
-				armor_type_slot = afv_alum_armor_gen1
-				engine_type_slot = tank_diesel_engine_gen2
-				reload_type_slot = light_tank_afv_automatic_loading
-				special_armament_type_slot = additional_machine_guns
-				special_type_slot_1 = smoke_launchers
-				special_type_slot_2 = smoke_launchers
-				special_type_slot_3 = empty
-				special_type_slot_4 = afv_battlestation_2
-			}
-			upgrades = {
-				afv_nsb_armor_upgrade = 0
-			}
-			icon = "GFX_USA_Rec_tank_1_medium"
-		}
-
-		else = {
-			set_technology = {
-				Early_APC = 1
-				APC_1 = 1
-				IFV_1 = 1
-				artillery_0 = 1
-				Anti_Air_0 = 1
-				Rec_tank_0 = 1
-				Rec_tank_1 = 1
-				Rec_tank_2 = 1
-			}
-		}
-	}
-	if = {
-		limit = {
-			not = { has_dlc = "Man the Guns" }
-		}
-		set_technology = {
-			landing_craft = 1
-			frigate_1 = 1
-		}
-	}
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_technology = {
-			corvette_hull_1 = 1
-
-			frigate_hull_1 = 1
-			frigate_hull_2 = 1
-			frigate_hull_3 = 1
-
-			destroyer_hull_1 = 1
-			destroyer_hull_2 = 1
-
-			attack_submarine_hull_1 = 1
-			attack_submarine_hull_2 = 1
-
-			tech_submarine_engineering = 1
-
-			tech_naval_systems_engineering = 1
-			tech_power_systems = 1
-
-			tech_combat_support_systems = 1
-			tech_fire_control = 1
-			tech_combat_radar = 1
-			tech_combat_radar_1 = 1
-			tech_combat_sonar = 1
-
-			tech_early_naval_weapon_systems = 1
-			tech_naval_weapon_systems = 1
-			tech_light_guns = 1
-
-			tech_point_defense_system = 1
-
-			tech_missile_systems = 1
-			tech_turret_missiles_surface = 1
-			tech_turret_missiles_aa = 1
-			tech_vls_surface = 1
-			tech_vls_aa = 1
-
-			tech_torpedoes = 1
-
-			tech_mtg_landing_craft = 1
-		}
-	}
-	add_ideas = {
-		#Economic Cycle
-		stagnation
-		#Corruption
-		unrestrained_corruption
-		#Faction 1
-		industrial_conglomerates
-		#Faction 2
-		small_medium_business_owners
-		#Faction 3
-		landowners
-
-		#Bureacracy
-		bureau_02
-		#Military Spending
-		defence_01
-		#Internal Security
-		police_04
-		#Education budget
-		edu_03
-		#Health budget
-		health_02
-		#Social spending
-		social_03
-
-		#Trade Law
-		semi_consumption_economy
-		#Conscription Law
-		partial_draft_army
-		#Women in the military
-		volunteer_women
-		#Foreign Intervention Law
-
-		#Officer Training
-		officer_military_school
-
-		#Other
-		christian
-
-
-	}
-
-	# Cartel System
-	set_variable = { cartel_political_influence = 20 }
-	set_variable = { strength_of_cartels = 40 }
-
-	#Influence system
-	init_influence = yes
-	set_variable = { domestic_influence_amount = 200 }
-	add_to_array = { influence_array = USA.id }
-	add_to_array = { influence_array_val = 100 }
-	add_to_array = { influence_array = CHI.id }
-	add_to_array = { influence_array_val = 20 }
-	startup_influence = yes
-
-	### Economy
-	set_variable = { var = debt value = 721 }
-	set_variable = { var = treasury value = 52 }
-	set_variable = { var = corporate_tax_rate value = 30 }
-	set_variable = { var = population_tax_rate value = 28 }
-	every_controlled_state = {
-		set_variable = { productivity_state_var = 622 }
-	}
-	set_variable = { overall_productivity = 622 }
-
-	set_popularities = {
-		democratic = 92.0
-		communism = 0.0
-		fascism = 0.0
-		neutrality = 8.0
-		nationalist = 0.0
-	}
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1999.7.1"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.37 } #conservatism
-	set_variable = { party_pop_array^2 = 0.39 } #liberalism
-	set_variable = { party_pop_array^3 = 0.16 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0.03 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0.05 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 2 }
-
-	startup_politics = yes
-
-	create_country_leader = {
-		name = "Ernesto Zedillo"
-		picture = "ernesto_zedillo.dds"
-		ideology = liberalism
-		traits = {
-			western_liberalism
-		}
-	}
-
-	set_variable = { term_limit = 1 }
-	set_variable = { current_term = 1 }
-
-	recruit_character = MEX_adolfo_martinez
-	recruit_character = MEX_alejandro_hernandez
-	recruit_character = MEX_juan_minjares
-	recruit_character = MEX_vidal_sanz
-	recruit_character = MEX_gilberto_andreu
-	recruit_character = MEX_alfrdo_gomez
-	recruit_character = MEX_carlos_munguia
-	recruit_character = MEX_daniel_ramirez
-	recruit_character = MEX_roble_gallardo
-	recruit_character = MEX_salvador_zepada
-	recruit_character = MEX_roberto_miranda
-	recruit_character = MEX_rigoberto_cortes
-	recruit_character = MEX_miguel_canchola
-	recruit_character = MEX_juan_organitos
+add_ideas = {
+    MEX_bitva_narkoti
+	regional_country
 }
 
-2017.1.1 = {
-	capital = 835
-	oob = "MEX_2017"
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_naval_oob = "MEX_2017_naval_mtg"
-		else = {
-			set_naval_oob = "MEX_2017_naval_legacy"
-		}
-	}
+set_country_flag = monroe_doctrine
 
+2013.11.1 = {
+	set_variable = { budget_last_year = 126200 }
 
-	# Starting tech
-	set_technology = {
-		legacy_doctrines = 1
-		infantry_mass_assault = 1
-
-		#FX-08
-		infantry_weapons = 1
-		infantry_weapons1 = 1
-		infantry_weapons2 = 1
-		infantry_weapons3 = 1
-		infantry_weapons4 = 1
-		support_weapons = 1
-		support_weapons2 = 1
-		tandem_charge_warheads = 1
-		squad_automatic_weapon = 1
-		support_weapons3 = 1
-		special_forces = 1
-
-		#DN-V Toro
-		Rec_tank_0 = 1
-		Rec_tank_1 = 1
-		Rec_tank_2 = 1
-
-		night_vision_1 = 1
-		night_vision_2 = 1
-		night_vision_3 = 1
-
-		command_control_equipment = 1
-		command_control_equipment1 = 1
-		command_control_equipment2 = 1
-
-		#For templates
-		combat_eng_equipment = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		artillery_0 = 1
-		Anti_Air_0 = 1
-		APC_1 = 1
-		util_vehicle_0 = 1
-
-		body_armor_2000 = 1
-
-		microprocessors = 1
-		computing2 = 1
-		decryption2 = 1
-		encryption2 = 1
-		computing3 = 1
-		decryption3 = 1
-		encryption3 = 1
-		computing4 = 1
-		decryption4 = 1
-		encryption4 = 1
-		neural_networks_revival = 1
-		data_mining = 1
-		industrial_electrospun_polymeric_nanofibers = 1
-		stereolitography = 1
-		DNA_fingerprinting = 1
-		modern_gmo = 1
-		gene_therapy = 1
-
-		gprs = 1
-		wifi = 1
-		internet3 = 1	#3G
-		edge = 1
-		umts = 1
-		hsupa = 1
-		internet4 = 1	#4G
-		lte = 1
-
-		construction1 = 1
-		construction2 = 1
-		excavation1 = 1
-		excavation2 = 1
-	}
-	if = {
-		limit = {
-			not = { has_dlc = "Man the Guns" }
-		}
-		set_technology = {
-			landing_craft = 1
-			frigate_1 = 1
-		}
-	}
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		set_technology = {
-			corvette_hull_1 = 1
-			corvette_hull_2 = 1
-
-			frigate_hull_1 = 1
-			frigate_hull_2 = 1
-			frigate_hull_3 = 1
-
-			destroyer_hull_1 = 1
-			destroyer_hull_2 = 1
-
-			attack_submarine_hull_1 = 1
-			attack_submarine_hull_2 = 1
-			attack_submarine_hull_3 = 1
-
-			tech_submarine_engineering = 1
-
-			tech_naval_systems_engineering = 1
-			tech_power_systems = 1
-			tech_power_systems_1 = 1
-
-			tech_combat_support_systems = 1
-			tech_fire_control = 1
-			tech_fire_control_1 = 1
-			tech_combat_radar = 1
-			tech_combat_radar_1 = 1
-			tech_combat_sonar = 1
-			tech_combat_sonar_1 = 1
-
-			tech_early_naval_weapon_systems = 1
-			tech_naval_weapon_systems = 1
-			tech_light_guns = 1
-			tech_light_guns_1 = 1
-
-			tech_point_defense_system = 1
-
-			tech_missile_systems = 1
-
-			tech_turret_missiles_surface = 1
-			tech_turret_missiles_surface_1 = 1
-
-			tech_turret_missiles_aa = 1
-			tech_turret_missiles_aa_1 = 1
-
-			tech_vls_surface = 1
-			tech_vls_surface_1 = 1
-
-			tech_vls_aa = 1
-			tech_vls_aa_1 = 1
-
-			tech_torpedoes = 1
-			tech_torpedoes_1 = 1
-
-			tech_mtg_landing_craft = 1
-		}
-	}
+	load_oob = "_tech_regional_2013"
+	oob = "MEX_2013"
+	
+	# government
 	add_ideas = {
-		unrestrained_corruption
-		christian
-		stagnation
-		defence_01
-		edu_03
-		health_02
-		social_03
-		bureau_02
-		police_04
-		partial_draft_army
-		volunteer_women
-		industrial_conglomerates
-		#civil_law
-
-		#tax_cost_13
+		mex_miguel_angel_hog
+		mex_salvador_cienfuegos_defm
+		mex_jose_antonio_fgm
+		mex_ildefonso_villareal_ecm
+		mex_genaro_luna_ssch
+		presidential_republic
+		administrative_federation
+		secular_state
+		free_media
+		suspended_liberties
+		mandatory_urgent_service
+		mixed_schools
+		open_immigration
+		market_economy
+		state-owned_enterprise
+		TPP_member
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		low_terrorism
+		NPT
+		nafta_member
 	}
 
-	#set_country_flag =
-	set_country_flag = TPP_Signatory
-	set_country_flag = Major_Importer_US_Arms #Trends-in-international-arms-transfers-2016.pdf
-	set_variable = { industrial_conglomerates_opinion = 80 }
-	set_variable = { small_medium_business_owners = 75 }
-	set_variable = { landowners_opinion = 60 }
-
-	#Nat focus
-
-	### Economy
-	set_variable = { var = debt value = 1045 }
-	set_variable = { var = treasury value = 178 }
-	set_variable = { var = int_investments value = 122 }
-	set_variable = { var = corporate_tax_rate value = 30 }
-	set_variable = { var = population_tax_rate value = 28 }
-
-	set_popularities = {
-		democratic = 47.0
-		communism = 38.0
-		fascism = 0.0
-		neutrality = 15.0
-		nationalist = 0.0
-	}
+	set_convoys = 100
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai__centrist
 	set_politics = {
-
-		ruling_party = democratic
+		ruling_party = neutrality
 		last_election = "2012.7.1"
 		election_frequency = 72
 		elections_allowed = yes
 	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.22 } #conservatism
-	set_variable = { party_pop_array^2 = 0.18 } #liberalism
-	set_variable = { party_pop_array^3 = 0.07 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0.38 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0.06 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0.05 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0.04 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 2 }
-
-	startup_politics = yes
+	set_popularities = {
+		communism = 0
+		reformism = 28
+		liberalism = 16
+		democratic = 25
+		neutrality = 31
+		fascism = 0
+		rad_islamists = 0
+	}
 
 	create_country_leader = {
 		name = "Enrique Peña Nieto"
-		picture = "Enrique_Pena_Nieto.dds"
-		ideology = liberalism
-		traits = {
-			western_liberalism
-		}
+		desc = "POLITICS_ENRIQUE_PENA_NIETO_DESC"
+		picture = "gfx/leaders/MEX/portrait_enrique_pena_nieto.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
 	}
 
-	retire_character = MEX_roble_gallardo
-	retire_character = MEX_roberto_miranda
+	create_country_leader = {
+		name = "Alberto Anaya"
+		desc = "POLITICS_ALBERTO_ANAYA_DESC"
+		picture = "gfx/leaders/MEX/portrait_alberto_anaya.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+
+	create_country_leader = {
+		name = "Alejandra Barrales"
+		desc = "POLITICS_ALEJANDRA_BARRALES_DESC"
+		picture = "gfx/leaders/MEX/portrait_alejandra_barrales.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Luis Castro Obregón"
+		desc = "POLITICS_LUIS_CASTRO_OBREGON_DESC"
+		picture = "gfx/leaders/MEX/portrait_luis_castro_obregon.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Ricardo Anaya Cortés"
+		desc = "POLITICS_RICARDO_ANAYA_CORTES_DESC"
+		picture = "gfx/leaders/MEX/portrait_ricardo_anaya_cortes.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Francisco Javier Álvarez"
+		desc = "POLITICS_FRANCISCO_JAVIER_ALVAREZ_DESC"
+		picture = "gfx/leaders/MEX/portrait_francisco_javier_alvarez.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+	
+	#Generals
+	create_field_marshal = {
+  		name = "Gerardo Clemente Ricardo Vega Garcia"
+  		portrait_path = "gfx/leaders/MEX/portrait_general_gerardo_clemente_ricardo_vega_garcia.dds"
+  		traits = { old_guard }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	
+	create_corps_commander = {
+		name = "Adolfo Dominguez Martinez"
+		portrait_path = "gfx/leaders/MEX/portrait_general_adolfo_dominguez_martinez.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Alejandro Saavedra Hernandez"
+		portrait_path = "gfx/leaders/MEX/portrait_general_alejandro_saavedra_hernandez.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Jose Luis Sanchez Leon"
+		portrait_path = "gfx/leaders/MEX/portrait_general_jose_luis_sanchez_leon.dds"
+		traits = {   }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Juan Manuel Diaz Organitos"
+		portrait_path = "gfx/leaders/MEX/portrait_general_juan_manuel_diaz_organitos.dds"
+		traits = { hill_fighter }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Miguel Angel Patino Canchola"
+		portrait_path = "gfx/leaders/MEX/portrait_general_miguel_angel_patino_canchola.dds"
+		traits = { artillery_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Rigoberto Garcia Cortes"
+		portrait_path = "gfx/leaders/MEX/portrait_general_rigoberto_garcia_cortes.dds"
+		traits = {   }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Roberto Francisco Miranda Moreno"
+		portrait_path = "gfx/leaders/MEX/portrait_general_roberto_francisco_miranda_moreno.dds"
+		traits = { tanks_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Salvador Gutierrez Plascencia"
+		portrait_path = "gfx/leaders/MEX/portrait_general_salvador_gutierrez_plascencia.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	#альтернативные лидеры, нужно их скорректировать
+
+	# Партия "MORENA" (Движение национальной реставрации) (центристы).
+	#create_country_leader = {
+	#	name = "Andrés Manuel López Obrador "
+	#	desc = "POLITICS_ANDRES_MANUEL_LOPEZ_OBRADOR_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_andres_manuel_lopez_bbrador.dds"
+	#	ideology = centrist_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
+
+	# Экологическая партия Мексики ("зелёные" консерваторы).
+	#create_country_leader = {
+	#	name = "Carlos Alberto Puente Salas"
+	#	desc = "POLITICS_CARLOS_ALBERTO_PUENTE_SALAS_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_carlos_alberto_puente_salas.dds"
+	#	ideology = green_conservatism 
+	#	traits = { trait_green_conservatism }
+	#}
+
+	#старые лидеры, не знаю понадобятся ли
+
+	#create_country_leader = {
+	#	name = "Andrés Manuel López Obrador"
+	#	desc = "POLITICS_ANDRES_MANUEL_LOPEZ_OBRADOR_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_andres_manuel_lopez_obrador.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Josefina Vázquez Mota"
+	#	desc = "POLITICS_JOSEFINA_VAZQUEZ_MOTA_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_josefina_vazquez_mota.dds"
+	#	ideology = liberal_democracy
+	#	traits = { trait_liberal_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Gabriel Quadri de la Torre"
+	#	desc = "POLITICS_GABRIEL_QUADRI_DE_LA_TORRE_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_gabriel_quadri_de_la_torre.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Pável Blanco Cabrera"
+	#	desc = "POLITICS_PAVEL_BLANCO_CABRERA_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_pavel_blanco_cabrera.dds"
+	#	ideology = leninism
+	#	traits = { trait_leninism }
+	#}
+
+	#create_country_leader = {
+	#	name = "Juan Carlos López Lee"
+	#	desc = "POLITICS_JUAN_CARLOS_LOPEZ_LEE_DESC"
+	#	picture = "gfx/leaders/MEX/portrait_juan_carlos_lopez_Lee.dds"
+	#	ideology = national_socialism
+	#	traits = { trait_national_socialism }
+	#}
 }

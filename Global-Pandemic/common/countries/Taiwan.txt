@@ -1,5 +1,0 @@
-#Taiwan
-graphical_culture = asian_gfx
-graphical_culture_2d = asian_2d
-
-color = { 82  142  15 }

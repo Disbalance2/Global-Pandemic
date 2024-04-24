@@ -1,379 +1,260 @@
-﻿capital = 716
-2000.1.1 = {
-	set_country_flag = dynamic_flag
-	set_country_flag = dynamic_rebel_flag
-	set_variable = { gdp_per_capita = 10.276 }
 
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "KAZ_2000_nsb"
-		else = {
-			set_oob = "KAZ_2000_nonnsb"
-		}
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+set_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
+set_country_flag = COUNTRY_FLAG.POST_USSR
+
+capital = 589 # Alma Alta
+
+# Перенос столицы в Астану
+1997.12.10 = {
+	capital = 590 # Astana
+}
+
+1991.12.23 = {
+    add_ideas = cis_member
+}
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
+}
+
+1996.4.26 = {
+    add_ideas = {
+		sco_member
+		turkic_council
+
 	}
+}
 
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "KAZ_2000_bba"
-		else = {
-			set_air_oob = "KAZ_2000_nonbba"
-		}
-	}
+2013.11.1 = {
+	set_variable = { budget_last_year = 23660 }
+	subtract_from_variable = { budget_reserve = -93000 }
 
-	set_cosmetic_tag = KAZ
+	oob = "KAZ_2013"
+	load_oob = "_tech_csto_regional_2013"
+	
 	add_ideas = {
-		unrestrained_corruption
-		sunni
-		rentier_state
-		export_economy
-		stable_growth
-		defence_01
-		edu_03
-		health_02
-		social_03
-		bureau_01
-		police_04
-		draft_army
-		volunteer_women
-		fossil_fuel_industry
-		oligarchs
-		international_bankers
-		multi_ethnic_state_idea
-		CES_broken_economy_idea_1
-		CES_outdated_army_idea
-		ces_post_soviet_legacy_idea
-		CES_western_opposition_idea
-		moderately_conservative_society
-		KAZ_high_emigration_5
-		KAZ_narcotraffic_1
-		officer_advanced_training
-		CSTO_member
+		kaz_serik_akhmetov_hog
+		kaz_adilbek_zhaksybekov_defm
+		kaz_erlan_idrissov_fgm
+		kaz_bakhyt_sultanov_ecm
+		kaz_kalmukhanbet_kassymov_ssch
 	}
+	
+	add_political_power = 0
+	set_stability = 0.5
+	set_convoys = 35
+	create_intelligence_agency = yes
 
-	#Islamism
-	set_variable = { social_conservatism_government = 50 }
-	set_variable = { social_conservatism_society = 50 }
-
-	#CT
-	set_country_flag = threat_level_low
-	set_variable = { threat_level = 15 }
-	set_variable = { radicalization = 5 }
-	add_to_array = { global.ct_states = THIS }
-
-	set_variable = { fossil_fuel_industry_opinion = 60 }
-	set_variable = { international_bankers_opinion = 80 }
-
-	add_opinion_modifier = { target = KYR modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = KYR modifier = russian_proficient }
-	add_opinion_modifier = { target = TRK modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = TRK modifier = russian_proficient }
-	add_opinion_modifier = { target = TAJ modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = TAJ modifier = russian_proficient }
-	add_opinion_modifier = { target = UZB modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = UZB modifier = russian_proficient }
-	add_opinion_modifier = { target = UKR modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = UKR modifier = russian_proficient }
-	add_opinion_modifier = { target = NOV modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = NOV modifier = russian_proficient }
-	add_opinion_modifier = { target = PMR modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = PMR modifier = russian_proficient }
-	add_opinion_modifier = { target = SOO modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = SOO modifier = russian_proficient }
-	add_opinion_modifier = { target = ABK modifier = russian_proficient }
-	reverse_add_opinion_modifier = { target = ABK modifier = russian_proficient }
-
-	set_technology = {
-		integrated_transportation_system = 1
-		post_conventional_rail = 1
-		early_freight_locomotive = 1
-
-		legacy_doctrines = 1
-		armoured_mass_assault = 1
-
-
-		night_vision_1 = 1
-		night_vision_2 = 1
-
-		#for templates
-		infantry_weapons = 1
-		combat_eng_equipment = 1
-		command_control_equipment = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		util_vehicle_0 = 1
-		early_helicopter = 1
-		transport_helicopter1 = 1
-
-		body_armor_1980 = 1
-		camouflage = 1
-		camouflage2 = 1
-
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		decryption1 = 1
-		encryption1 = 1
-
-		radar = 1
-		internet1 = 1 	#1G
-		internet2 = 1
-		fuel_silos = 1
-
-		industrial_electrospun_polymeric_nanofibers = 1
-		multiwalled_carbon_nanotubes = 1
-		stereolitography = 1
-		early_3D_printers = 1
-		DNA_fingerprinting = 1
-		fuel_refining = 1
-		early_renewables = 1
-		renewables = 1
-		electrification_1 = 1
-		construction1 = 1
+	set_country_flag = pai_nondem_authoritarian
+	
+	add_ideas = {
+		presidential_republic
+		secular_state
+		cencored_media
+		suspended_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		minimum_wage
+		mixed_economic
+		NPT
+		low_terrorism
 	}
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_technology = {
-			mbt_tech = 1
-			afv_tech = 1
-			nsb_artillery_0 = 1
-			SP_arty_0 = 1
-			nsb_Anti_Air_0 = 1
-			nsb_SP_Anti_Air_0 = 1
-			light_tank_tech = 1
-		}
-
-		else = {
-			set_technology = {
-				MBT_1 = 1
-				Early_APC = 1
-				APC_1 = 1
-				IFV_1 = 1
-				artillery_0 = 1
-				SP_arty_0 = 1
-				SP_R_arty_0 = 1
-				Anti_Air_0 = 1
-				SP_Anti_Air_0 = 1
-				Rec_tank_0 = 1
-			}
-		}
-	}
-
-	#Influence system
-	init_influence = yes
-	set_variable = { domestic_influence_amount = 150 }
-	add_to_array = { influence_array = SOV.id }
-	add_to_array = { influence_array_val = 140 }
-	add_to_array = { influence_array = CHI.id }
-	add_to_array = { influence_array_val = 37 }
-	add_to_array = { influence_array = USA.id }
-	add_to_array = { influence_array_val = 15 }
-	add_to_array = { influence_array = UZB.id }
-	add_to_array = { influence_array_val = 12 }
-	add_to_array = { influence_array = TUR.id }
-	add_to_array = { influence_array_val = 7 }
-	startup_influence = yes
-
-	### Economy
-	set_variable = { var = debt value = 33.064 }
-	set_variable = { var = treasury value = 3 }
-	set_variable = { var = corporate_tax_rate value = 16 }
-	set_variable = { var = population_tax_rate value = 9 }
-	#set_variable = { var = int_investments value = 87 }
-
-	set_popularities = {
-		democratic = 0.0
-		communism = 61.0
-		fascism = 0.0
-		neutrality = 39.0
-		nationalist = 0.0
-	}
+	
 	set_politics = {
-		ruling_party = communism
-		last_election = "1999.1.10"
+		ruling_party = neutrality
+		last_election = "2011.4.3"
 		election_frequency = 48
 		elections_allowed = yes
 	}
+	set_popularities = {
+		communism = 7
+		reformism = 15
+		liberalism = 6
+		democratic = 3
+		neutrality = 69
+		fascism = 0
+		rad_islamists = 0
+	}
 
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0 } #conservatism
-	set_variable = { party_pop_array^2 = 0 } #liberalism
-	set_variable = { party_pop_array^3 = 0 } #socialism
-	set_variable = { party_pop_array^4 = 0.239 } #Communist-State
-	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0.371 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0.188 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0.202 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 7 }
-
-	startup_politics = yes
+	#create_country_leader = {
+	#	name = "Kassym-Jomart Tokayev"
+	#	desc = "POLITICS_KASSYM-JOMART_TOKAYEV_DESC"
+	#	picture = "gfx/leaders/KAZ/portrait_kassym-jomart_tokayev.dds"
+	#	ideology = authoritarian_democracy
+	#	traits = { trait_authoritarian_democracy }
+	#}
 
 	create_country_leader = {
-		name = "Nursultan Nazarbayev"
-		picture = "nursultan_nazabayev.dds"
-		ideology = Autocracy
-		traits = {
-			emerging_Autocracy
-			elbasy
-			dictator
-			corruptible
-		}
+		name = "Nursultan Nazarbaev"
+		desc = "POLITICS_NURSULTAN_NAZARBAYEV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_nursultan_nazarbaev.dds"
+		ideology = authoritarian_democracy
+		#expire = "2019.3.20"
+		traits = { trait_authoritarian_democracy }
 	}
-	every_controlled_state = {
-		set_variable = { productivity_state_var = 575 }
-	}
-	set_variable = { overall_productivity = 575 }
 
-	recruit_character = KAZ_murat_maykeev
-	recruit_character = KAZ_saken_zhasuzakov
-	recruit_character = KAZ_zhandarbek_zhanzakov
-	recruit_character = KAZ_nurlan_ormanbetov
-	recruit_character = KAZ_okas_saparov
-	recruit_character = KAZ_talgat_zhanzhumenov
-	recruit_character = KAZ_daulet_ospanov
+	create_country_leader = {
+		name = "Jambyl Ahmetbekov"
+		desc = "POLITICS_JAMBYL_AHMETBEKOV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_jambyl_ahmetbekov.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Mukhtar Ablyazov"
+		desc = "POLITICS_MUKHTAR_ABLYAZOV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_mukhtar_ablyazov.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ali Bektaev"
+		desc = "POLITICS_ALI_BEKTAEV_DESC"
+		picture = "gfx/leaders/KAZ/portrait_ali_bektaev.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Yerzhan Malgazhguly Mayamerov"
+		desc = "POLITICS_MALGAZHULI_DESC"
+		picture = "GFX/leaders/KAZ/portrait_yerzhan_mayamerov.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+    #Generals
+	create_field_marshal = {
+		name = "Marat Husainov"
+		portrait_path = "gfx/leaders/KAZ/portrait_marat_husainov.dds"
+		traits = { assault_army_ops_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+    create_field_marshal = {
+		name = "Daulet Ospanov"
+		portrait_path = "gfx/leaders/KAZ/portrait_daulet_ospanov.dds"
+		traits = { old_guard desert_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+    create_field_marshal = {
+		name = "Murat Bektanov"
+		portrait_path = "gfx/leaders/KAZ/portrait_murat_bektanov.dds"
+		traits = { tanks_commander_expert }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Murat Maykeev"
+		portrait_path = "gfx/leaders/KAZ/portrait_murat_maykeev.dds"
+		traits = { specops_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Nurlan Kashaganov"
+		portrait_path = "gfx/leaders/KAZ/portrait_nurlan_kashaganov.dds"
+		traits = { old_guard organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Nurlan Ormanbetov"
+		portrait_path = "gfx/leaders/KAZ/portrait_nurlan_ormanbetov.dds"
+		traits = { panzer_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Okas Saparov"
+		portrait_path = "gfx/leaders/KAZ/portrait_okas_saparov.dds"
+		traits = { trait_engineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Saken Zhasuzakov"
+		portrait_path = "gfx/leaders/KAZ/portrait_saken_zhasuzakov.dds"
+		traits = { commando }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Talgat Muhtarov"
+		portrait_path = "gfx/leaders/KAZ/portrait_talgat_muhtarov.dds"
+		traits = { superior_tactician }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Talgat Zhanszhumenov"
+		portrait_path = "gfx/leaders/KAZ/portrait_talgat_zhanszhumenov.dds"
+		traits = { old_guard panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Zhandarbek Zhanzakov"
+		portrait_path = "gfx/leaders/KAZ/portrait_zhandarbek_zhanzakov.dds"
+		traits = { old_guard trait_mountaineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
 }
 
-2017.1.1 = {
-	capital = 716
-	if = {
-		limit = { has_dlc = "No Step Back" }
-		set_oob = "KAZ_2000_nsb"
-		else = {
-			set_oob = "KAZ_2017_nonnsb"
-		}
-	}
-
-
-
-	add_ideas = {
-		unrestrained_corruption
-		sunni
-		rentier_state
-		export_economy
-		stable_growth
-		defence_01
-		edu_03
-		health_02
-		social_03
-		bureau_01
-		police_04
-		draft_army
-		volunteer_women
-		fossil_fuel_industry
-		oligarchs
-		international_bankers
-		multi_ethnic_state_idea
-	}
-
-	#CT
-	clr_country_flag = threat_level_low
-	set_country_flag = threat_level_moderate
-	set_variable = { threat_level = 25 }
-
-	#set_country_flag =
-	set_country_flag = Major_Importer_RUS_Arms
-	set_variable = { fossil_fuel_industry_opinion = 60 }
-	set_variable = { international_bankers_opinion = 80 }
-
-	# Starting tech
-	set_technology = {
-		Arty_upgrade_1 = 1
-		Arty_upgrade_2 = 1
-		SP_arty_1 = 1
-		SP_arty_2 = 1
-
-		microprocessors = 1
-		computing2 = 1
-		decryption2 = 1
-		encryption2 = 1
-		computing3 = 1
-		decryption3 = 1
-		encryption3 = 1
-		computing4 = 1
-		decryption4 = 1
-		encryption4 = 1
-		neural_networks_revival = 1
-		data_mining = 1
-		industrial_electrospun_polymeric_nanofibers = 1
-		stereolitography = 1
-		DNA_fingerprinting = 1
-		modern_gmo = 1
-		gene_therapy = 1
-	}
-
-	### Economy
-	set_variable = { var = debt value = 88 }
-	set_variable = { var = treasury value = 30 }
-	set_variable = { var = int_investments value = 148 }
-	set_variable = { var = corporate_tax_rate value = 16 }
-	set_variable = { var = population_tax_rate value = 9 }
-
-	set_popularities = {
-		democratic = 9.5
-		communism = 89.3
-		fascism = 0.0
-		neutrality = 1.2
-		nationalist = 0.0
-	}
-	set_politics = {
-		ruling_party = communism
-		last_election = "2015.4.26"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.003 } #conservatism
-	set_variable = { party_pop_array^2 = 0.072 } #liberalism
-	set_variable = { party_pop_array^3 = 0.02 } #socialism
-	set_variable = { party_pop_array^4 = 0.071 } #Communist-State
-	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0.822 } #Autocracy
-	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0 } #Kingdom
-	set_variable = { party_pop_array^11 = 0 } #Caliphate
-	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0.012 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 7 }
-
-	startup_politics = yes
-
-	retire_character = KAZ_saken_zhasuzakov
-	recruit_character = KAZ_murat_bektanov
-}

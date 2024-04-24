@@ -1,5 +1,4 @@
-﻿##### Lithuania NAME LISTS #####
-
+﻿##### LITHUANIA NAME LISTS #####
 ### REGULAR DESTROYER NAMES###
 LIT_DD_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_DESTROYERS
@@ -7,53 +6,108 @@ LIT_DD_HISTORICAL = {
 	for_countries = { LIT }
 
 	type = ship
-	ship_types = { stealth_destroyer destroyer }
+	#ship_types = { ship_hull_light destroyer }			
 
-	prefix = "LKL "
-	fallback_name = "DDG-%d"
+	fallback_name = "Nakintojas %d"					
 
-	unique = {
-		"Akmena" "Alka" "Aukstaitija" "Banga" "Biruta" "Bitela" "Banga" "Dauska" "Deimena" "Deina" "Duksta" "Dzukija" "Egle" "Gelgaudiskis" "Girsteja" "Greta" "Gruzdutis" "Gudvila" "Ilga" "Izanga" "Jodvaris" "Juosta" "Jura" "Kalnas" "Kalvelis" "Kastitas" "Kirtis" "Kruzas" "Laumena" "Linksmas" "Lubinas" "Lusis"
+	unique = {											
+		"Silute" "Taurage" "Jurbarkas" "Alytus" "Trakai" "Druskininkai" 
 	}
 }
 
-LIT_FRIGATES_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_FRIGATES
-	for_countries = { LIT }
-	type = ship
-	ship_types = {
-		frigate
-	}
-	prefix = "LKL "
-	fallback_name = "FFG-%d"
-
-	unique = {
-		"Magelis" "Medis" "Nemunas" "Oazis" "Pajuris" "Pasaka" "Pelimas" "Pilka" "Praline" "Ramuma" "Ratilas" "Sausumos" "Senoji" "Siaubas" "Sidabrinis" "Staigmena" "Staigulys" "Staigus" "Stiprus" "Stumbrys" "Suvalkija" "Tamsa" "Tamsybe" "Trispalve" "Tujos" "Uoga" "Vaidila" "Vaiduoklis" "Vandenis" "Varnalabis" "Verpsta" "Vilkas" "Vingis" "Visgiriai" "Zaliasis" "Zara" "Zemaitija" "Zemyna" "Aitvaras" "Apvalusis" "Arklys" "Avilys" "Baltasis" "Bevardis" "Brolis" "Bulve"
-	}
-}
-
-### CORVETTE NAMES ###
-LIT_CORVETTE_HISTORICAL = {
-	name = NAME_THEME_HISTORICAL_CORVETTE
+### LIGHT CRUISER NAMES###
+LIT_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
 
 	for_countries = { LIT }
-	prefix = "LKL "
+
 	type = ship
-	ship_types = { corvette }
-	fallback_name = "KKG-%d"
+	#ship_types = { ship_hull_cruiser light_cruiser }
+	
+	fallback_name = "Sviesos Kreiseris %d"
 
 	unique = {
-		"Daugava" "Eglute" "Gandras" "Gelezinis" "Giriama" "Grafas" "Indas" "Jaunikis" "Kaimanai" "Kalvis" "Kamstis" "Kertis" "Kirtiklis" "Laukas" "Laukinis" "Liutas" "Maldzius" "Meska" "Miezeklis" "Muskatas" "Naktis" "Okeanas" "Orka" "Paukstis" "Pupele" "Rinktis" "Rudeninis" "Saulute" "Saulys" "Sedula" "Sirse" "Slyva" "Sniege" "Sudas" "Tapyba" "Tauras" "Uzrasas" "Vaidelis" "Vainikas" "Valgelis" "Vejas" "Verpstas" "Zvaigzde" "Zveris"
+		"Silute" "Taurage" "Jurbarkas" "Alytus" "Trakai" "Druskininkai" 
 	}
 }
 
-LIT_SUBMARINES_HISTORICAL = {
+### HEAVY CRUISER NAMES###
+LIT_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { LIT }
+
+	type = ship
+	#ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	fallback_name = "Sunkiuju Kreiseris %d"
+
+	unique = {
+		"Kaunas" "Moletai" "Vilnius" "Siauliai" "Plunge" "Palanga" 
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+LIT_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { LIT }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battleship }
+	
+	fallback_name = "Sarvuotiniai %d"		
+
+	unique = {
+		"Kaunas" "Moletai" "Vilnius" "Siauliai" "Plunge" "Palanga" 
+	}
+}
+
+### BATTLECRUISER NAMES ###
+LIT_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { LIT }
+
+	type = ship
+	#ship_types = { ship_hull_heavy battle_cruiser }
+	
+	fallback_name = "Linijinis Kreiseris %d"		
+
+	unique = {
+		"Silute" "Taurage" "Jurbarkas" "Alytus" "Trakai" "Druskininkai" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+LIT_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { LIT }
+
+	type = ship
+	#ship_types = { ship_hull_carrier carrier }
+	
+	fallback_name = "Lektuvnesio %d"	
+
+	unique = {
+		"Silute" "Taurage" "Jurbarkas" "Alytus" "Trakai" "Druskininkai" "Dzkas" "Slis" "Skalvis" 
+	}
+}
+
+### SUBMARINES ###
+LIT_SS_HISTORICAL = {
 	name = NAME_THEME_HISTORICAL_SUBMARINES
+
 	for_countries = { LIT }
-	prefix = "LKL "
+
 	type = ship
-	ship_types = {
-		attack_submarine missile_submarine
+	#ship_types = { ship_hull_submarine submarine }
+	
+	fallback_name = "Povandeninis %d"
+	
+	unique = {
+		"Silute" "Taurage" "Jurbarkas" "Alytus" "Trakai" "Druskininkai" 
 	}
-	fallback_name = "SS-%d"
 }
