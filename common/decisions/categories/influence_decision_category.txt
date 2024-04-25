@@ -1,0 +1,14 @@
+################
+##### Decisions for quick help ######
+################
+
+
+influence_desicions = {
+
+	icon = GFX_decisions_category_influence
+
+	allowed = {
+		always = yes
+	}
+	priority = 20
+}
