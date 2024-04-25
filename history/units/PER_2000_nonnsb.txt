@@ -1,0 +1,1057 @@
+﻿division_template = {
+	name = "Tip-e Zerehi" #Artesh
+	division_names_group = PER_ARM_01
+	regiments = {
+		armor_Bat = { x = 0 y = 0 }
+		armor_Bat = { x = 0 y = 1 }
+		armor_Bat = { x = 0 y = 2 }
+		Mech_Inf_Bat = { x = 1 y = 0 }
+		SP_AA_Bat = { x = 1 y = 1 }
+		SP_Arty_Bat = { x = 1 y = 2 }
+	}
+	support = {
+		Arm_Recce_Comp = { x = 0 y = 0 }
+		H_Engi_Comp = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Lashkar-e Zerehi" #Artesh
+	division_names_group = PER_ARM_02
+	regiments = {
+		armor_Bat = { x = 0 y = 0 }
+		armor_Bat = { x = 0 y = 1 }
+		armor_Bat = { x = 0 y = 2 }
+		armor_Bat = { x = 0 y = 3 }
+		armor_Bat = { x = 0 y = 4 }
+
+		SP_Arty_Bat = { x = 1 y = 0 }
+		SP_Arty_Bat = { x = 1 y = 1 }
+		SP_Arty_Bat = { x = 1 y = 2 }
+		SP_Arty_Bat = { x = 1 y = 3 }
+		SP_AA_Bat = { x = 1 y = 4 }
+
+		Mech_Inf_Bat = { x = 2 y = 0 }
+		Mech_Inf_Bat = { x = 2 y = 1 }
+		Arm_Inf_Bat = { x = 2 y = 2 }
+		Arm_Inf_Bat = { x = 2 y = 3 }
+		SP_AA_Bat = { x = 2 y = 4 }
+
+		Mot_Inf_Bat = { x = 3 y = 0 }
+		Mot_Inf_Bat = { x = 3 y = 1 }
+		Mot_Inf_Bat = { x = 3 y = 2 }
+	}
+	support = {
+		armor_Recce_Comp = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Tip-e Mechanize" #Artesh
+	division_names_group = PER_MEC_01
+	regiments = {
+		Arm_Inf_Bat = { x = 0 y = 0 }
+		Mot_Inf_Bat = { x = 0 y = 1 }
+		Mot_Inf_Bat = { x = 0 y = 2 }
+		armor_Bat = { x = 1 y = 0 }
+		SP_AA_Bat = { x = 2 y = 0 }
+		SP_Arty_Bat = { x = 2 y = 1 }
+	}
+	support = {
+		Mech_Recce_Comp = { x = 0 y = 0 }
+		H_Engi_Comp = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Tip-e Piade Nezam" #Artesh
+	division_names_group = PER_INF_01
+	regiments = {
+		Mot_Inf_Bat = { x = 0 y = 0 }
+		Mot_Inf_Bat = { x = 0 y = 1 }
+		Mot_Inf_Bat = { x = 0 y = 2 }
+		Mot_Inf_Bat = { x = 1 y = 0 }
+		Arty_Bat = { x = 1 y = 1 }
+		SP_Arty_Bat = { x = 1 y = 2 }
+	}
+	support = {
+		L_Engi_Comp = { x = 0 y = 0 }
+		armor_Comp = { x = 0 y = 1 }
+		#SP_AA_Battery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Lashkar-e Motorizeh" #Artesh
+	division_names_group = PER_INF_02
+	regiments = {
+		Mot_Inf_Bat = { x = 0 y = 0 }
+		Mot_Inf_Bat = { x = 0 y = 1 }
+		Mot_Inf_Bat = { x = 0 y = 2 }
+		Mot_Inf_Bat = { x = 0 y = 3 }
+		Mot_Inf_Bat = { x = 0 y = 4 }
+
+		Mot_Inf_Bat = { x = 1 y = 0 }
+		Mot_Inf_Bat = { x = 1 y = 1 }
+		Mot_Inf_Bat = { x = 1 y = 2 }
+		Mot_Inf_Bat = { x = 1 y = 3 }
+		Mot_Inf_Bat = { x = 1 y = 4 }
+
+		Arty_Bat = { x = 2 y = 0 }
+		Arty_Bat = { x = 2 y = 1 }
+		Arty_Bat = { x = 2 y = 2 }
+
+		armor_Bat = { x = 3 y = 0 }
+		SP_Arty_Bat = { x = 3 y = 1 }
+		SP_Arty_Bat = { x = 3 y = 2 }
+	}
+	support = {
+		Mot_Recce_Comp = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Lashkar-e Mechanize" #Artesh
+	division_names_group = PER_MEC_02
+	regiments = {
+		Mot_Inf_Bat = { x = 0 y = 0 }
+		Mot_Inf_Bat = { x = 0 y = 1 }
+		Mot_Inf_Bat = { x = 0 y = 2 }
+		Mot_Inf_Bat = { x = 0 y = 3 }
+
+		Mot_Inf_Bat = { x = 1 y = 0 }
+		Mot_Inf_Bat = { x = 1 y = 1 }
+		Mot_Inf_Bat = { x = 1 y = 2 }
+		Mot_Inf_Bat = { x = 1 y = 3 }
+
+		armor_Bat = { x = 2 y = 0 }
+		armor_Bat = { x = 2 y = 1 }
+		Arm_Inf_Bat = { x = 2 y = 2 }
+		Mech_Inf_Bat = { x = 2 y = 3 }
+		SP_AA_Bat = { x = 2 y = 4 }
+
+		SP_Arty_Bat = { x = 3 y = 0 }
+		SP_Arty_Bat = { x = 3 y = 1 }
+	}
+	support = {
+		Arty_Battery = { x = 0 y = 0 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Lashkar-e Komandoyee" #Artesh
+	division_names_group = PER_COM_01
+	regiments = {
+		L_Air_assault_Bat = { x = 0 y = 0 }
+		L_Air_assault_Bat = { x = 0 y = 1 }
+		L_Air_assault_Bat = { x = 0 y = 2 }
+		L_Air_assault_Bat = { x = 1 y = 0 }
+		L_Air_assault_Bat = { x = 1 y = 1 }
+		L_Air_assault_Bat = { x = 1 y = 2 }
+		L_Air_assault_Bat = { x = 2 y = 0 }
+		L_Air_assault_Bat = { x = 2 y = 1 }
+		L_Air_assault_Bat = { x = 2 y = 2 }
+		L_Air_assault_Bat = { x = 3 y = 0 }
+		Arty_Bat = { x = 3 y = 1 }
+	}
+
+	priority = 2
+}
+
+division_template = {
+	name = "Tip-e Komandoyee" #Artesh
+	division_names_group = PER_COM_02
+	regiments = {
+		Special_Forces = { x = 0 y = 0 }
+		Special_Forces = { x = 0 y = 1 }
+		Special_Forces = { x = 0 y = 2 }
+		Special_Forces = { x = 1 y = 0 }
+		Arty_Bat = { x = 1 y = 1 }
+	}
+	support = {
+		L_Engi_Comp = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Tip-e Chatrbaz" #Artesh
+	division_names_group = PER_AIR_01
+	regiments = {
+		Special_Forces = { x = 0 y = 0 }
+		L_Air_Inf_Bat = { x = 0 y = 1 }
+		L_Air_Inf_Bat = { x = 0 y = 2 }
+		L_Air_Inf_Bat = { x = 0 y = 3 }
+	}
+	support = {
+		L_Recce_Comp = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Tip-e Tofangdaran-e Daryayee" #Artesh
+	division_names_group = PER_MAR_01
+	regiments = {
+		L_Marine_Bat = { x = 0 y = 0 }
+		L_Marine_Bat = { x = 0 y = 1 }
+		L_Marine_Bat = { x = 0 y = 2 }
+		L_Marine_Bat = { x = 0 y = 3 }
+	}
+	support = {
+		L_Recce_Comp = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "IRGC Marine Brigade" #Sepah
+	regiments = {
+		Special_Forces = { x = 0 y = 0 }
+		L_Marine_Bat = { x = 0 y = 1 }
+		L_Marine_Bat = { x = 0 y = 2 }
+		L_Marine_Bat = { x = 0 y = 3 }
+		L_Marine_Bat = { x = 0 y = 4 }
+		L_Marine_Bat = { x = 1 y = 0 }
+		Arty_Bat = { x = 1 y = 1 }
+	}
+
+	priority = 2
+}
+
+division_template = {
+	name = "IRGC Quds Unit" #Sepah
+	regiments = {
+		Special_Forces = { x = 0 y = 0 }
+		Special_Forces = { x = 0 y = 1 }
+		Special_Forces = { x = 0 y = 2 }
+		Special_Forces = { x = 0 y = 3 }
+		Special_Forces = { x = 1 y = 0 }
+		Special_Forces = { x = 1 y = 1 }
+		Special_Forces = { x = 1 y = 2 }
+		Special_Forces = { x = 1 y = 3 }
+		Special_Forces = { x = 2 y = 0 }
+		Special_Forces = { x = 2 y = 1 }
+	}
+
+	priority = 2
+}
+
+division_template = {
+	name = "IRGC Infantry Brigade" #Sepah
+	regiments = {
+		Mot_Militia_Bat = { x = 0 y = 0 }
+		Mot_Militia_Bat = { x = 0 y = 1 }
+		Mot_Inf_Bat = { x = 1 y = 0 }
+		L_Inf_Bat = { x = 1 y = 1 }
+		SP_Arty_Bat = { x = 1 y = 2 }
+	}
+	support = {
+		Mot_Recce_Comp = { x = 0 y = 0 }
+		H_Engi_Comp = { x = 0 y = 1 }
+		SP_AA_Battery = { x = 0 y = 2 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "IRGC Armored Division" #Sepah
+	regiments = {
+		armor_Bat = { x = 0 y = 0 }
+		Arm_Inf_Bat = { x = 1 y = 0 }
+		Mot_Militia_Bat = { x = 1 y = 1 }
+		SP_Arty_Bat = { x = 1 y = 2 }
+		SP_AA_Bat = { x = 1 y = 3 }
+	}
+	support = {
+		Arm_Recce_Comp = { x = 0 y = 0 }
+		H_Engi_Comp = { x = 0 y = 1 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "IRGC Mechanized Division" #Sepah
+	regiments = {
+		Mech_Inf_Bat = { x = 0 y = 0 }
+		Mot_Militia_Bat = { x = 0 y = 1 }
+		Mot_Militia_Bat = { x = 0 y = 2 }
+		SP_Arty_Bat = { x = 1 y = 0 }
+		SP_AA_Bat = { x = 1 y = 1 }
+		armor_Bat = { x = 2 y = 0 }
+	}
+	support = {
+		Mot_Recce_Comp = { x = 0 y = 0 }
+		L_Engi_Comp = { x = 0 y = 1 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "IRGC Commando Division" #Sepah
+	regiments = {
+		Special_Forces = { x = 0 y = 0 }
+		Special_Forces = { x = 0 y = 1 }
+		Special_Forces = { x = 0 y = 2 }
+		Special_Forces = { x = 0 y = 3 }
+		Special_Forces = { x = 1 y = 0 }
+		SP_Arty_Bat = { x = 1 y = 1 }
+	}
+	support = {
+		L_Engi_Comp = { x = 0 y = 0 }
+		#SP_AA_Battery = { x = 0 y = 1 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "IRGC Airborne Brigade" #Sepah
+	regiments = {
+		Special_Forces = { x = 0 y = 0 }
+		L_Air_Inf_Bat = { x = 0 y = 1 }
+	}
+	support = {
+		L_Recce_Comp = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+
+units = {
+
+### IRGC (Sepah) ###
+	division = {
+		name = "7th Lashkar-e 'Vali Asr'"
+		location = 9059
+		division_template = "IRGC Armored Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "8th Lashkar-e 'Ashraf'"
+		location = 8074
+		division_template = "IRGC Armored Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "41st Lashkar-e 'Sarallah'"
+		location = 11249
+		division_template = "IRGC Armored Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "27th Lashkar-e 'Mohammed Rasool-Alla'"
+		location = 10837
+		division_template = "IRGC Mechanized Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "31st Lashkar-e 'Ashura'"
+		location = 10454
+		division_template = "IRGC Mechanized Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "4th Lashkar-e 'Besat'"
+		location = 3988
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "5th Lashkar-e 'Nasr'"
+		location = 2000
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "16th Lashkar-e 'Qods'"
+		location = 4609
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "17th Lashkar-e 'Ali Ibn Abi Talib'"
+		location = 10828
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "19th Lashkar-e 'Fajr'"
+		location = 4959
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "3rd Lashkar-e Takavar"
+		location = 4618
+		division_template = "IRGC Commando Division"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "10th Lashkar-e 'Seyyed al-Shohada'"
+		location = 10768
+		division_template = "IRGC Commando Division"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "22nd Lashkar-e 'Beit al-Moqdas'"
+		location = 3988
+		division_template = "IRGC Commando Division"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "25th Lashkar-e 'Karbala'"
+		location = 4580
+		division_template = "IRGC Commando Division"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "20th Tip-e 'Ramazan'"
+		location = 10837
+		division_template = "IRGC Armored Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "21st Tip-e 'Imam Reza'"
+		location = 1957
+		division_template = "IRGC Armored Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "60th Tip-e 'Ammar Yasir'"
+		location = 3908
+		division_template = "IRGC Armored Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "Tip-e 'Shahid Kazmi'"
+		location = 4618
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "11th Tip-e 'Amir al-Moomneen'"
+		location = 829
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "12th Tip-e 'Qaem al-Mohammed'"
+		location = 7602
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "18th Tip-e 'al-Ghadir'"
+		location = 7602
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "29th Tip-e 'Nabi Akram'"
+		location = 4356
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "32nd Tip-e 'Ansar al-Hussein'"
+		location = 8040
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "42nd Tip-e 'Ansar al-Rasool'"
+		location = 4356
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "44th Tip-e 'Qamr Bani Hashem'"
+		location = 2026
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "57th Tip-e 'Abo-Fazl'"
+		location = 5050
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "Tip-e 71st"
+		location = 1982
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "82nd Tip-e 'Sahab Alamar'"
+		location = 7969
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "83rd Tip-e 'Imam Sadiq'"
+		location = 2070
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+	division = {
+		name = "110th Tip-e 'Salman'"
+		location = 2070
+		division_template = "IRGC Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "23rd Tip-e 'al-Mahdi'"
+		location = 8117
+		division_template = "IRGC Airborne Brigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "Tofangdarane Daryayee-ye Sepah"
+		location = 7982
+		division_template = "IRGC Marine Brigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.01
+	}
+
+	### IRGC Quds (Jerusalem) Force ###
+
+	division = {
+		name = "Sepah-e Quds"
+		location = 9059
+		division_template = "IRGC Quds Unit"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.01
+	}
+
+	### Iranian Army (Artesh) ###
+
+	division = {
+		name = "21st Lashkar-e Motorizeh"
+		location = 1896
+		division_template = "Lashkar-e Motorizeh"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "28th Lashkar-e Motorizeh"
+		location = 5098
+		division_template = "Lashkar-e Motorizeh"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "30th Lashkar-e Motorizeh"
+		location = 7573
+		division_template = "Lashkar-e Motorizeh"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "64th Lashkar-e Motorizeh"
+		location = 7604
+		division_template = "Lashkar-e Motorizeh"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "77th Lashkar-e Motorizeh"
+		location = 5029
+		division_template = "Lashkar-e Motorizeh"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "84th Lashkar-e Motorizeh"
+		location = 5050
+		division_template = "Lashkar-e Motorizeh"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	#92nd Arm Div
+	division = {
+		name = "92nd Lashkar-e Zerehi"
+		location = 7953
+		division_template = "Lashkar-e Zerehi"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	#81st Arm Div
+	division = {
+		name = "81st Lashkar-e Zerehi"
+		location = 12773
+		division_template = "Lashkar-e Zerehi"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	#88th Arm Div
+	division = {
+		name = "88th Lashkar-e Zerehi"
+		location = 12895
+		division_template = "Lashkar-e Zerehi"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	#16th Arm Div
+	division = {
+		name = "16th Lashkar-e Zerehi"
+		location = 7969
+		division_template = "Lashkar-e Zerehi"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	#58th 'Zulfiqar' Commando Div
+	division = {
+		name = "58th Lashkar-e Takavar"
+		location = 11671
+		division_template = "Lashkar-e Komandoyee"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.01
+	}
+
+	#23rd Commando Div
+	division = {
+		name = "23rd Lashkar-e Takavar"
+		location = 10837
+		division_template = "Lashkar-e Komandoyee"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "25th Tip-e Takavar"
+		location = 6070
+		division_template = "Lashkar-e Komandoyee"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "35th Tip-e Takavar"
+		location = 12773
+		division_template = "Tip-e Komandoyee"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "45th Tip-e Takavar"
+		location = 7953
+		division_template = "Tip-e Komandoyee"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "40th Tip-e Piade Nezam"
+		location = 12793
+		division_template = "Tip-e Piade Nezam"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "41st Tip-e Piade Nezam"
+		location = 1636
+		division_template = "Tip-e Piade Nezam"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "71st Tip-e Mechanize"
+		location = 829
+		division_template = "Tip-e Mechanize"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "72nd Tip-e Mechanize"
+		location = 9074
+		division_template = "Tip-e Mechanize"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "55th Tip-e Chatrbaz"
+		location = 8117
+		division_template = "Tip-e Chatrbaz"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "36th Tip-e Mechanize"
+		location = 12793
+		division_template = "Tip-e Mechanize"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "37th Tip-e Zerehi"
+		location = 10797
+		division_template = "Tip-e Zerehi"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+	division = {
+		name = "38th Tip-e Zerehi"
+		location = 10806
+		division_template = "Tip-e Zerehi"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+
+#	division = {
+#		name = "11th Artillery Group"
+#		location = 12861
+#		division_template = "Artillery Group"
+#		start_experience_factor = 0.3
+#		start_equipment_factor = 0.01
+#	}
+
+#	division = {
+#		name = "22nd Artillery Group"
+#		location = 3936
+#		division_template = "Artillery Group"
+#		start_experience_factor = 0.3
+#		start_equipment_factor = 0.01
+#	}
+
+#	division = {
+#		name = "33rd Artillery Group"
+#		location = 10837
+#		division_template = "Artillery Group"
+#		start_experience_factor = 0.3
+#		start_equipment_factor = 0.01
+#	}
+
+#	division = {
+#		name = "44th Artillery Group"
+#		location = 8074
+#		division_template = "Artillery Group"
+#		start_experience_factor = 0.3
+#		start_equipment_factor = 0.01
+#	}
+
+#	division = {
+#		name = "55th Artillery Group"
+#		location = 8074
+#		division_template = "Artillery Group"
+#		start_experience_factor = 0.3
+#		start_equipment_factor = 0.01
+#	}
+
+#	division = {
+#		name = "840th MLRS Group"
+#		location = 5067
+#		division_template = "Missile Group"
+#		start_experience_factor = 0.3
+#		start_equipment_factor = 0.01
+#	}
+
+	division = {
+		name = "1st Tofangdaran-e Daryayee"
+		location = 7982
+		division_template = "Tip-e Tofangdaran-e Daryayee"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.01
+	}
+}
+
+instant_effect = {
+	### Land Equipment ###
+	#Inf Eq
+	add_equipment_to_stockpile = {
+		type = infantry_weapons #Licence produced German G3 rifle
+		amount = 70000
+	}
+
+	#ATGM
+
+	add_equipment_to_stockpile = {
+		type = Anti_tank_0 #Saeghe
+		amount = 3200
+	}
+	add_equipment_to_stockpile = {
+		type = Heavy_Anti_tank_1 #Toophan 5/Towsan-1
+		amount = 1200
+	}
+
+	#SP-AA
+
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0 #tigercat
+		amount = 15
+		producer = ENG
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0 #MIB-23 Hawk
+		amount = 150
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_1 #rapier
+		amount = 30
+		producer = ENG
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0	#SA-6/SA-5
+		amount = 208
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0 #FM-80 Crotale
+		amount = 250
+		producer = FRA
+	}
+
+	#MANPADS
+
+	add_equipment_to_stockpile = {
+		type = Anti_Air_1 #RS-70
+		amount = 50
+		producer = SWE
+	}
+	add_equipment_to_stockpile = {
+		type = Anti_Air_1 #Stinger
+		amount = 1020
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = Anti_Air_0 #SA-7
+		amount = 1150
+		producer = SOV
+	}
+
+	### Artillery
+	#Towed
+
+	add_equipment_to_stockpile = {
+		type = artillery_0 #D-30
+		amount = 430
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_0 #Type-59
+		amount = 1200
+		producer = CHI
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_0 #M114/M-101
+		amount = 200
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_0 #GC-5
+		amount = 80
+		producer = CAN
+	}
+
+	#SP Art
+
+	add_equipment_to_stockpile = {
+		type = SP_arty_0 #Raad-1
+		amount = 60
+	}
+	add_equipment_to_stockpile = {
+		type = SP_arty_1 #M109
+		amount = 220
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = SP_arty_0 #M-1978
+		amount = 30
+		producer = NKO
+	}
+
+	#MLRS
+
+	add_equipment_to_stockpile = {
+		type = SP_R_arty_0 #Grad
+		amount = 105
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = SP_R_arty_0 #var Iranian MLRS
+		amount = 857
+	}
+	add_equipment_to_stockpile = {
+		type = SP_R_arty_1 #Fajr-3
+		amount = 20
+	}
+
+	#C&C
+
+	add_equipment_to_stockpile = {
+		type = command_control_equipment1 #C3
+		amount = 8300
+	}
+
+### Vehicles ###
+	#MBT
+	add_equipment_to_stockpile = {
+		type = MBT_3 #Zulfiqar
+		amount = 40
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_1 #M60
+		amount = 150
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_1 #M48
+		amount = 168
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_1 #T-62
+		#version_name = "T-62"
+		amount = 75
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_2 #Safir-74
+		amount = 238
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_2 #T-72S
+		amount = 420
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_2 #Cheftain
+		amount = 150
+		producer = ENG
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_1 #T-55
+		amount = 100
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = MBT_1 #Type 59/69
+		amount = 400
+		producer = CHI
+	}
+
+	#Light Tanks
+	add_equipment_to_stockpile = {
+		type = Rec_tank_0 #Cascavel
+		amount = 35
+		producer = BRA
+	}
+	add_equipment_to_stockpile = {
+		type = Rec_tank_1 #Scorpion
+		amount = 80
+		producer = ENG
+	}
+
+	#IFV's
+	add_equipment_to_stockpile = {
+		type = IFV_1 #BMP-1
+		amount = 300
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = IFV_2 #Boragh
+		amount = 50
+	}
+	add_equipment_to_stockpile = {
+		type = IFV_3 #BMP-2
+		amount = 400
+		producer = SOV
+	}
+
+	#APC's
+	add_equipment_to_stockpile = {
+		type = APC_2 #M113
+		amount = 250
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = APC_1 #BTR-50/60
+		amount = 300
+		producer = SOV
+	}
+
+	#Utility vehicles
+	add_equipment_to_stockpile = {
+		type = util_vehicle_0 #Khawar?
+		amount = 12000
+	}
+
+	#Helicopters
+	add_equipment_to_stockpile = {
+		type = attack_helicopter1 #AH-1 Cobra
+		amount = 100
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = transport_helicopter1 #AB-214, AB-206, UH-1H etc
+		amount = 577
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = transport_helicopter1 #SA-319
+		amount = 10
+		producer = FRA
+	}
+	add_equipment_to_stockpile = {
+		type = transport_helicopter3 #CH-47C
+		amount = 45
+		producer = USA
+	}
+}

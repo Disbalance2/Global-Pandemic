@@ -1,0 +1,59 @@
+state = {
+	id = 664
+	name = "STATE_664"
+	manpower = 4071596
+	state_category = state_05
+
+	resources = {
+		oil = 13
+		tungsten = 2.000
+	}
+
+	history = {
+		owner = SOV
+		victory_points = {
+			1278 5
+		}
+		victory_points = {
+			4354 5
+		}
+		victory_points = {
+			12172 3
+		}
+		victory_points = {
+			6246 3
+		}
+		victory_points = {
+			4311 1
+		}
+		victory_points = {
+			4383 1
+		}
+		victory_points = {
+			1378 1
+		}
+
+		buildings = {
+			infrastructure = 2
+			internet_station = 2
+			arms_factory = 1
+			offices = 1
+			air_base = 4
+			industrial_complex = 1
+		}
+
+		add_core_of = SOV
+		add_core_of = BSH
+		2017.1.1 = {
+			#add_manpower = -118499
+			buildings = {
+				internet_station = 4
+				arms_factory = 2
+			}
+		}
+	}
+
+	provinces = {
+		273 291 1258 1278 1378 3289 4283 4311 4354 4383 6246 7300 7373 7416 7444 9349 10142 10226 12117 12130 12172 12200 
+	}
+}

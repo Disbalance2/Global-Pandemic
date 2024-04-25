@@ -1,0 +1,44 @@
+state = {
+	id = 662
+	name = "STATE_662"
+	manpower = 1204258
+	state_category = state_02
+
+	history = {
+		owner = SOV
+
+		
+		victory_points = {
+			9258 5
+		}
+		
+		victory_points = {
+			257 3
+		}
+		
+		victory_points = {
+			6291 1
+		}
+		victory_points = {
+			6382 1
+		}
+		buildings = {
+			infrastructure = 1
+			internet_station = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		add_core_of = SOV
+		2017.1.1 = {
+			buildings = {
+				internet_station = 2
+				arms_factory = 2
+			}
+			#add_manpower = -67258
+		}
+	}
+
+	provinces = {
+		257 3317 6291 6382 9258 9409 11309 11335
+	}
+}
