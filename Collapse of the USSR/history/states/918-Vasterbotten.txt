@@ -16,7 +16,7 @@ state = {
 		victory_points = {
 			109 1
 		}
-		owner = SWE
+		owner = FRA
 		add_core_of = SWE
 		if = {
 			limit = {

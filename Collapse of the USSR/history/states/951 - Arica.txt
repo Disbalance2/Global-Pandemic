@@ -11,7 +11,7 @@ state = {
 
 	history = {
 
-		owner = CHL
+		owner = FRA
 		add_core_of = CHL
 		add_claim_by = PRU
 

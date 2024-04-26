@@ -13,7 +13,7 @@ state = {
 			9296 3 
 		}
 		
-		owner = NOR
+		owner = FRA
 		add_core_of = NOR
 		buildings = {
 			infrastructure = 3

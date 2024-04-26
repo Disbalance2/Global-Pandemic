@@ -11,7 +11,7 @@ state={
 	}
 
 	history={
-		owner = IRQ
+		owner = FRA
 		victory_points = {
 			2097 10
 		}

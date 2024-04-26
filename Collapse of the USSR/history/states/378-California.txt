@@ -12,7 +12,7 @@ state={
 	}
 
 	history={
-		owner = USA
+		owner = FRA
 		buildings = {
 			infrastructure = 3 #was: 6
 			arms_factory = 2

@@ -5,7 +5,7 @@ state={
 		2198 5216 8185 8254 
 	}
 	history={
-		owner = BRA
+		owner = FRA
 		add_core_of = BRA
 	}
 	manpower=13541
