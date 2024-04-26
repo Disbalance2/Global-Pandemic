@@ -1,0 +1,19 @@
+﻿l_english:
+monarchism:0 "Monarchy"
+monarchism_noun:0 "Monarchy" #Ideology - noun
+monarchism_desc:0 "Monarchy is a form of government where the monarch is the head of state and obtains power through inheritance, marriage, or appointment. Depending on the constitutional structure of the state, the monarch may have varying degrees of authority."
+absolute_monarchy:0 "Absolute monarchy"
+absolute_monarchy_noun:0 "Absolute monarchy" #Ideology - noun
+absolute_monarchy_desc:0 "Absolute monarchy is an ideology that advocates for the complete authority of the monarch, independent of other branches of government."
+constitutional_monarchy:0 "Constitutional monarchy"
+constitutional_monarchy_noun:0 "Constitutional monarchy" #Ideology - noun
+constitutional_monarchy_desc:0 "Constitutional monarchy is an ideology that recognizes the role of the monarch in governing the state, but within the framework of a constitutional system where the monarch has limited powers defined by law and constitution."
+traditionalist_monarchy:0 "Traditionalist monarchy"
+traditionalist_monarchy_noun:0 "Traditionalist monarchy" #Ideology - noun
+traditionalist_monarchy_desc:0 "Traditionalist monarchy is an ideology that sees the monarchy as a symbolic role tied to the traditions and culture of the state."
+nationalist_monarchy:0 "Nationalist monarchy"
+nationalist_monarchy_noun:0 "Nationalist monarchy" #Ideology - noun
+nationalist_monarchy_desc:0 "Nationalist monarchy is an ideology that elevates the monarch as the head of the nation and assigns them an important role in preserving national identity."
+religious_monarchy:0 "Religious monarchy"
+religious_monarchy_noun:0 "Religious monarchy" #Ideology - noun
+religious_monarchy_desc:0 "Religious monarchy is an ideology that asserts that the monarch is an instrument of divine will and must follow religious beliefs and principles."
