@@ -5,7 +5,7 @@ state = {
 	manpower = 45819
 
 	history = {
-		owner = DEN
+		owner = FRA
 		add_core_of = DEN
 		buildings = {
 			infrastructure = 2

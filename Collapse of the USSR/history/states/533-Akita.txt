@@ -9,7 +9,7 @@ state={
 	}
 
 	history={
-		owner = JAP
+		owner = FRA
 		add_core_of = JAP
 		buildings = {
 		

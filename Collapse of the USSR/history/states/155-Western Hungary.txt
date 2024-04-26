@@ -10,7 +10,7 @@ state={
 		aluminium=60 # moved from Northern Hungary
 	}
 	history={
-		owner = HUN
+		owner = FRA
 		victory_points = {
 			11610 5 
 		}

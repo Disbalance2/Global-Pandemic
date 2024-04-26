@@ -11,7 +11,7 @@ state=
 	}
 	history=
 	{
-		owner = HAI
+		owner = FRA
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1

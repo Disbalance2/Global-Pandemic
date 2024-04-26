@@ -12,7 +12,7 @@ state = {
 
 	history = {
 
-		owner = PAR
+		owner = FRA
 		add_core_of = PAR
 		add_core_of = BOL
 

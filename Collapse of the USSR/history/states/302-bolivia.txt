@@ -12,7 +12,7 @@ state = {
 
 	history = {
 
-		owner = BOL
+		owner = FRA
 		add_core_of = BOL
 
 		buildings = {

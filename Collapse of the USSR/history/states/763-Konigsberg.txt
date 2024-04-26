@@ -6,7 +6,7 @@ state={
 	state_category = city
 
 	history={
-		owner = GER
+		owner = FRA
 		controller = GER
 		
 		victory_points = {

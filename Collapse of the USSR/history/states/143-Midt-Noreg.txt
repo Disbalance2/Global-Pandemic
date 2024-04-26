@@ -10,7 +10,7 @@ state = {
 		victory_points = {
 			3022 5
 		}
-		owner = NOR
+		owner = FRA
 		add_core_of = NOR
 		if = {
 			limit = {

@@ -29,12 +29,12 @@ state = {
 			13242 2 
 		}
 		
-		owner = ETH
+		owner = FRA
 		add_core_of = ETH
 		add_core_of = BEG
 
 		1936.6.1 = {
-			owner = ITA
+			owner = FRA
 			controller = ITA
 		}
 	}

@@ -7,7 +7,7 @@ state = {
 
 	history = {
 
-		owner = ARG
+		owner = FRA
 		add_core_of = ARG
 		add_claim_by = BOL
 

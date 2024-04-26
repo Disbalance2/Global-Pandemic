@@ -15,7 +15,7 @@ state = {
 
 	history = {
 
-		owner = MAL
+		owner = FRA
 		add_core_of = MAL
 
 		victory_points = {

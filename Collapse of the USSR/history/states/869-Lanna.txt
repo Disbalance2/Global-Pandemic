@@ -11,7 +11,7 @@ state={
 		buildings = {
 			infrastructure = 1
 		}
-		owner = SIA
+		owner = FRA
 		add_core_of = SIA
 	}
 	manpower=2000000

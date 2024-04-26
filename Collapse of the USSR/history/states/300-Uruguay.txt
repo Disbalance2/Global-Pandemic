@@ -12,7 +12,7 @@ state = {
 
 	history = {
 
-		owner = URG
+		owner = FRA
 		add_core_of = URG
 
 		buildings = {
