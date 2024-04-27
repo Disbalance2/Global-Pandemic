@@ -1,0 +1,26 @@
+state={
+	id=320
+	name="STATE_320"
+	manpower = 337810
+	state_category = large_city
+	
+	history={
+		owner = REK ##Контролирует область
+		controller = REK ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+			3918 20
+		}
+		buildings = { ##Постройки
+			infrastructure = 4 ##Инфраструктура
+			industrial_complex = 5 ##Заводы народа
+			anti_air_building = 2 ##Анти-аир
+			air_base = 6 ##Уровень воздушной базы
+		}
+		add_core_of = REK ##Потомственно принадлежит
+	}
+		
+	provinces={
+		197 2266 2528 2781 3145 3918 5319 5919  
+	}
+}
