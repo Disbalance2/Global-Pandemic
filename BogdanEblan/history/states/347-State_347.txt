@@ -1,7 +1,7 @@
 state={
 	id=347
 	name="STATE_347"
-	manpower = 58473
+	manpower = 205804
 	
 	history={
 		owner = REK ##Контролирует область
@@ -12,9 +12,10 @@ state={
 		}
 		buildings = { ##Постройки
 			infrastructure = 4 ##Инфраструктура
-			industrial_complex = 5 ##Заводы народа
-			anti_air_building = 2 ##Анти-аир
-			air_base = 6 ##Уровень воздушной базы
+			industrial_complex = 2 ##Заводы народа
+			arms_factory = 2
+			anti_air_building = 0 ##Анти-аир
+			air_base = 0 ##Уровень воздушной базы
 		}
 		add_core_of = REK ##Потомственно принадлежит
 	}
