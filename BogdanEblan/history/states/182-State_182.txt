@@ -1,9 +1,26 @@
 state={
 	id=182
 	name="STATE_182"
-	provinces={
-		413 505 634 1250 2043 3344 3593 4815 4995 5533 5572 5598 5614 
+	manpower = 29429
+	state_category = large_city
+	
+	history={
+		owner = ACS ##Контролирует область
+		controller = ACS ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    413 1
+		}
+		buildings = { ##Постройки
+			infrastructure = 4 ##Инфраструктура
+			arms_factory = 2
+			industrial_complex = 5 ##Заводы народа
+			air_base = 6 ##Уровень воздушной базы
+		}
+		add_core_of = ACS ##Потомственно принадлежит
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		32 413 505 634 1250 2043 3344 3593 4815 4995 5572 5598 5614 
+	}
 }

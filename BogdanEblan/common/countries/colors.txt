@@ -12,6 +12,10 @@ REK = { ##Например GEG
 	color = rgb { 190  106  222 } 
 	color_ui = rgb { 144 81 168 } ##Цвета Границы
 }
+ACS = { ##Например GEG
+	color = rgb { 50 74 178 }  
+	color_ui = rgb { 50 74 178 }  ##Цвета Границы
+}
 ENG = {
 	color = rgb { 201 56 93 }
 	color_ui = rgb { 255 73 121 }
