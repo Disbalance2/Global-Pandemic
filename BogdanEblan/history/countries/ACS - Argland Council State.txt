@@ -33,17 +33,17 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	monarchism = 10
+	monarchism = 0
 	neutrality = 25
-	democratic = 65
+	democratic = 75
 	fascism = 0
 	communism = 0
 }
 
 create_country_leader = {
-	name = "Ramposa III"
-	desc = "POLITICS_ADOLF_HITLER_DESC"
-	picture = "Ramposa_III.dds"
+	name = "Argland Council"
+	desc = "Argland_Council"
+	picture = "Argland_Council.dds"
 	expire = "1965.1.1"
 	ideology = socialism
 	traits = {

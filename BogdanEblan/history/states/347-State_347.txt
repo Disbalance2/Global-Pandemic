@@ -9,12 +9,14 @@ state={
 		controller = REK ##Необязательно
 		
 		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
-			5837 10
+			5837 5
 		}
 		buildings = { ##Постройки
-			infrastructure = 3 ##Инфраструктура
+			infrastructure = 4 ##Инфраструктура
 			industrial_complex = 2 ##Заводы народа
-			arms_factory = 1
+			arms_factory = 2
+			anti_air_building = 0 ##Анти-аир
+			air_base = 0 ##Уровень воздушной базы
 		}
 		add_core_of = REK ##Потомственно принадлежит
 	}

@@ -14,6 +14,7 @@ state={
 		buildings = { ##Постройки
 			infrastructure = 5 ##Инфраструктура
 			industrial_complex = 3 ##Заводы народа
+			arms_factory = 1
 			anti_air_building = 2 ##Анти-аир
 			air_base = 1 ##Уровень воздушной базы
 			dockyard = 2 ##Верфь

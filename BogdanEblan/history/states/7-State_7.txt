@@ -2,20 +2,20 @@ state={
 	id=7
 	name="STATE_7"
 	manpower = 1549300
-	state_category = large_city
+	state_category = megalopolis
 	
 	history={
 		owner = DWK ##Контролирует область
 		controller = DWK ##Необязательно
 		
 		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
-			1344 20
+		1344 20
 		}
 		buildings = { ##Постройки
-			infrastructure = 5 ##Инфраструктура
-			industrial_complex = 4 ##Заводы народа
-			air_base = 2 ##Уровень воздушной базы
-			arms_factory = 4
+			infrastructure = 8 ##Инфраструктура
+			industrial_complex = 2 ##Заводы народа
+			air_base = 1 ##Уровень воздушной базы
+			arms_factory = 3
 		}
 		add_core_of = DWK ##Потомственно принадлежит
 	}

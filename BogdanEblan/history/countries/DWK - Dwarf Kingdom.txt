@@ -42,7 +42,7 @@ set_popularities = {
 
 create_country_leader = {
 	name = "Regency Council"
-	desc = "POLITICS_ADOLF_HITLER_DESC"
+	desc = "Regency_Council"
 	picture = "Regency_Council.dds"
 	expire = "1965.1.1"
 	ideology = centrism
