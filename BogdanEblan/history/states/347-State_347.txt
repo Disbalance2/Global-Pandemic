@@ -2,6 +2,7 @@ state={
 	id=347
 	name="STATE_347"
 	manpower = 205804
+	state_category = large_city
 	
 	history={
 		owner = REK ##Контролирует область
