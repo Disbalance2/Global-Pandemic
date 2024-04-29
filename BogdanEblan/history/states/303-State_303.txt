@@ -12,11 +12,10 @@ state={
 	    1005 25
 		}
 		buildings = { ##Постройки
-			infrastructure = 4 ##Инфраструктура
-			industrial_complex = 5 ##Заводы народа
-			arms_factory = 3
-			anti_air_building = 2 ##Анти-аир
-			air_base = 5 ##Уровень воздушной базы
+			infrastructure = 2 ##Инфраструктура
+			industrial_complex = 4 ##Заводы народа
+			arms_factory = 2
+			air_base = 1 ##Уровень воздушной базы
 		}
 		add_core_of = REK ##Потомственно принадлежит
 	}

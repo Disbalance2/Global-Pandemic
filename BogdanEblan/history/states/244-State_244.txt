@@ -11,10 +11,6 @@ state={
 		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
         4293 5
 		}
-		buildings = { ##Постройки
-			infrastructure = 4 ##Инфраструктура
-			industrial_complex = 1 ##Заводы народа
-		}
 		add_core_of = REK ##Потомственно принадлежит
 	}
 		

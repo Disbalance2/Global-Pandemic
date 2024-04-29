@@ -12,12 +12,8 @@ state={
         5625 3
 		}
 		buildings = { ##Постройки
-			infrastructure = 2 ##Инфраструктура
-			industrial_complex = 0 ##Заводы народа
+			infrastructure = 1 ##Инфраструктура
 			dockyard = 1
-			5625 = {
-				naval_base = 1
-				}
 		}
 		add_core_of = REK ##Потомственно принадлежит
 	}
