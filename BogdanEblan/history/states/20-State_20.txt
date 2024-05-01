@@ -1,9 +1,13 @@
 state={
 	id=20
 	name="STATE_20"
-	provinces={
-		6596 
+	manpower = 181
+	state_category = rural
+	
+	history={
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		6596 6597
+	}
 }

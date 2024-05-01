@@ -12,15 +12,15 @@ state={
 	    5593 15
 		}
 		buildings = { ##Постройки
-			infrastructure = 4 ##Инфраструктура
-			industrial_complex = 5 ##Заводы народа
-			anti_air_building = 2 ##Анти-аир
-			air_base = 6 ##Уровень воздушной базы
+			infrastructure = 2 ##Инфраструктура
+			industrial_complex = 2 ##Заводы народа
+			anti_air_building = 1 ##Анти-аир
+			air_base = 1 ##Уровень воздушной базы
 		}
 		add_core_of = ACS ##Потомственно принадлежит
 	}
 		
 	provinces={
-		851 1246 3545 3988 5593 5616
+		851 1246 3545 3988 5593
 	}
 }

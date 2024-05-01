@@ -1,9 +1,24 @@
 state={
 	id=504
 	name="STATE_504"
-	provinces={
-		3348 6108 6129 
+	manpower = 28970
+	state_category = town
+	
+	history={
+		owner = ACS ##Контролирует область
+		controller = ACS ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    5577 3
+		}
+		buildings = { ##Постройки
+			infrastructure = 1 ##Инфраструктура
+		}
+		add_core_of = ACS		##Потомственно принадлежит
+		add_core_of = REK
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		94 939 1787 2983 3382 3655 5577 5585 5594
+	}
 }

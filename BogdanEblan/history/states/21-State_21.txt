@@ -1,9 +1,23 @@
 state={
 	id=21
 	name="STATE_21"
-	provinces={
-		6597 
+	manpower = 1904
+	state_category = rural
+	
+	history={
+		owner = REK ##Контролирует область
+		controller = REK ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    4818 1
+		}
+		buildings = { ##Постройки
+		}
+		add_core_of = REK
+		add_core_of = ACS ##Потомственно принадлежит
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		 1315 2498 2745 3047 4818 5660 5675
+	}
 }

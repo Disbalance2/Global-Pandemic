@@ -2,7 +2,7 @@ state={
 	id=267
 	name="STATE_267"
 	manpower = 127945
-	state_category = large_city
+	state_category = city
 	
 	history={
 		owner = ACS ##Контролирует область
@@ -12,15 +12,15 @@ state={
 	    4912 2
 		}
 		buildings = { ##Постройки
-			infrastructure = 4 ##Инфраструктура
-			industrial_complex = 5 ##Заводы народа
-			anti_air_building = 2 ##Анти-аир
-			air_base = 6 ##Уровень воздушной базы
+			infrastructure = 1 ##Инфраструктура
+			industrial_complex = 2 ##Заводы народа
+			anti_air_building = 1 ##Анти-аир
 		}
 		add_core_of = ACS ##Потомственно принадлежит
+		add_core_of = REK
 	}
 		
 	provinces={
-		2047 2907 3849 4912 5668 5692 5740
+		2047 2281 2907 3058 4912 5692 5740
 	}
 }

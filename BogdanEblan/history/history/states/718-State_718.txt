@@ -1,9 +1,0 @@
-state={
-	id=718
-	name="STATE_718"
-	provinces={
-		326 437 1142 2290 3732 4169 6425 6426 6433 6449 
-	}
-	manpower=0
-	buildings_max_level_factor=1.000
-}
