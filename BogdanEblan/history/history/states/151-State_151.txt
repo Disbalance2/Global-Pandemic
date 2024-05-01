@@ -1,0 +1,26 @@
+state={
+	id=151
+	name="STATE_151"
+	manpower = 13981
+	state_category = large_city
+	
+	history={
+		owner = ACS ##Контролирует область
+		controller = ACS ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    480 1
+		}
+		buildings = { ##Постройки
+			infrastructure = 4 ##Инфраструктура
+			industrial_complex = 5 ##Заводы народа
+			anti_air_building = 2 ##Анти-аир
+			air_base = 6 ##Уровень воздушной базы
+		}
+		add_core_of = ACS ##Потомственно принадлежит
+	}
+		
+	provinces={
+		480 731 944 1700 2547 2642 4436 4560 4662 5209
+	}
+}

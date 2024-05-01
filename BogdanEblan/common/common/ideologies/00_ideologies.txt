@@ -1,0 +1,303 @@
+ideologies = {
+	
+	democratic = {
+	
+		types = {
+			
+			conservatism = {
+			}
+		
+			liberalism = {
+			}
+		
+			socialism = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_DEMOCRATIC_1"
+			"FACTION_NAME_DEMOCRATIC_2"
+			"FACTION_NAME_DEMOCRATIC_3"
+			"FACTION_NAME_DEMOCRATIC_4"
+			"FACTION_NAME_DEMOCRATIC_5"
+			"FACTION_NAME_DEMOCRATIC_6"
+		}
+		
+		color = { 0 0 255 }
+		
+		rules = {
+			can_create_collaboration_government = no
+			can_declare_war_on_same_ideology = no
+			can_force_government = yes
+			can_send_volunteers = no
+			can_puppet = no
+			can_lower_tension = yes
+			can_only_justify_war_on_threat_country = yes
+			can_guarantee_other_ideologies = yes
+		}
+		
+		can_host_government_in_exile = yes
+		
+		war_impact_on_world_tension = 0.25		# no major danger, remember this this the 40s!
+		faction_impact_on_world_tension = 0.1
+		
+		modifiers = {
+			generate_wargoal_tension = 1.00
+			join_faction_tension = 0.80
+			lend_lease_tension = 0.50
+			send_volunteers_tension = 0.50
+			guarantee_tension = 0.25
+			annex_cost_factor = 0.5
+			civilian_intel_to_others = 20.0
+			army_intel_to_others = 5.0
+			navy_intel_to_others = 20.0
+			airforce_intel_to_others = 5
+		}
+		
+		faction_modifiers = {
+			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
+		}
+		ai_democratic = yes # uses the democratic AI behaviour
+	}
+
+
+	communism = {
+		
+		types = {
+		
+			marxism = {
+			}
+			
+			leninism = {
+			}
+			
+			stalinism = {
+			}
+			
+			anti_revisionism = {
+			}
+			
+			anarchist_communism = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_COMMUNIST_1"
+			"FACTION_NAME_COMMUNIST_2"
+			"FACTION_NAME_COMMUNIST_3"
+			"FACTION_NAME_COMMUNIST_4"
+			"FACTION_NAME_COMMUNIST_5"
+		}
+		
+		color = { 255 0 0 }
+		
+		war_impact_on_world_tension = 0.75		#Commie less threatening
+		faction_impact_on_world_tension = 0.5
+		
+		ai_communist = yes # uses the commie AI behaviour
+		
+		rules = {
+			can_force_government = no
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		
+		can_collaborate = yes
+		
+		modifiers = {
+			puppet_cost_factor = -0.3
+			civilian_intel_to_others = 10.0
+			army_intel_to_others = 7.5
+			navy_intel_to_others = 12.5
+			airforce_intel_to_others = 7.5
+			hidden_modifier = { join_faction_tension = -0.1 }
+		}
+		
+		faction_modifiers = {
+			
+		}
+
+	}
+
+	fascism = {
+	
+		types = {
+		
+			nazism = {
+			}
+
+			gen_nazism = {
+			}
+			
+			fascism_ideology = {
+			}
+			
+			falangism = {
+			}
+			
+			rexism = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_FASCIST_1"
+			"FACTION_NAME_FASCIST_2"
+			"FACTION_NAME_FASCIST_3"
+			"FACTION_NAME_FASCIST_4"
+			"FACTION_NAME_FASCIST_5"
+		}
+		
+		color = { 150 75 0 }
+		
+		war_impact_on_world_tension = 1.0			#evil!
+		faction_impact_on_world_tension = 1.0
+		
+		rules = {
+			can_force_government = no
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		
+		can_collaborate = yes
+		
+		modifiers = {
+			justify_war_goal_when_in_major_war_time = -0.80
+			civilian_intel_to_others = 15.0
+			army_intel_to_others = 10.0
+			navy_intel_to_others = 10.0
+			airforce_intel_to_others = 10.0
+			hidden_modifier = { join_faction_tension = -0.1 }
+		}
+
+		ai_fascist = yes # uses the fascist AI behaviour
+	}
+	
+	neutrality = {
+	
+		types = {
+		
+			despotism  = {
+			}
+			
+			oligarchism  = {
+			}
+
+			anarchism = {
+				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
+			}
+			
+			moderatism = {
+			}
+			
+			centrism = {
+			}
+		}
+
+		dynamic_faction_names = {
+			"FACTION_NAME_NONALIGNED_1"
+			"FACTION_NAME_NONALIGNED_2"
+			"FACTION_NAME_NONALIGNED_3"
+			"FACTION_NAME_NONALIGNED_4"
+			"FACTION_NAME_NONALIGNED_5"
+		}
+		
+		color = { 124 124 124 }
+		
+		
+		war_impact_on_world_tension = 0.25		#no major danger
+		faction_impact_on_world_tension = 0.1
+		
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_send_volunteers = no
+		}
+		
+		modifiers = {
+			#increased_influence_factor = 0.3 #30% easier to influence
+			generate_wargoal_tension = 0.5
+			join_faction_tension = 0.4
+			lend_lease_tension = 0.4
+			send_volunteers_tension = 0.4
+			guarantee_tension = 0.4
+			drift_defence_factor = -0.3	
+			civilian_intel_to_others = 20.0
+			army_intel_to_others = 10.0
+			navy_intel_to_others = 20.0
+			airforce_intel_to_others = 10.0
+		}
+		
+		faction_modifiers = {
+		}
+
+		ai_neutral = yes # 
+	}
+
+    monarchism = {
+	
+		types = {
+
+			absolute_monarchy = { # Идеология, которая отстаивает полную власть монарха, независимо от других органов государственной власти. 
+			}
+
+			constitutional_monarchy = { # Идеология, которая признает роль монарха в управлении государством, но в рамках конституционного строя, когда монарх имеет ограниченные полномочия, определенные законом и конституцией.
+			}
+
+			traditionalist_monarchy = { # Идеология, которая видит в монархии символическую роль, связанную с традициями и культурой государства.
+			}
+
+			nationalist_monarchy = { # Идеология, которая выдвигает монарха в качестве главы нации и придает ему важную роль в сохранении национальной идентичности.
+			}
+
+			religious_monarchy = { # Идеология, которая утверждает, что монарх является инструментом божественной воли и должен следовать религиозным установкам и принципам.
+			}
+
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_MONARCHIST_1"
+			"FACTION_NAME_MONARCHIST_2"
+			"FACTION_NAME_MONARCHIST_3"
+			"FACTION_NAME_MONARCHIST_4"
+			"FACTION_NAME_MONARCHIST_5"
+		}
+		
+		color = { 138 52 168 } # RGB Цвет 
+		
+		rules = { # Правила для идеологии
+			can_declare_war_on_same_ideology = yes # Может ли страна объявлять войну с страной у которой та-же идеология. Необязательно.
+			can_force_government = yes # Страна может изменить идеологию при мирном соглашении. Необходимо написать.
+			can_send_volunteers = yes # Страна может отправлять добровольцев. Необходимо написать.
+			can_puppet = yes # Страна может делать марионеточные нации в мирном соглашении. Необходимо написать.
+			can_lower_tension = no # Страна понижает мировое напряжение при мирном соглашении. Необязательно.
+			can_only_justify_war_on_threat_country = no # Страна может оправдать только нацию, которая создала мировую напряженность/угрозу. Необязательно.
+			can_guarantee_other_ideologies = yes # Может давать гарантии странам с другими идеологиями. Не требуется
+		}
+
+                can_host_government_in_exile = no #Может принять правительство в изгнании
+		
+		war_impact_on_world_tension = 0.5 # Изменяется с -1 на 1. Увеличивает или уменьшает мировое напряжение, созданное этой нацией
+		faction_impact_on_world_tension = 0.25 #  Изменяется от -1 до 1. Увеличивает или уменьшает влияние фракции на мировое напряжение
+		
+		modifiers = { # Модификаторы
+			generate_wargoal_tension = 0.25 # Требуемая мировая напряженность, чтобы начать оправдывать войну (от 0 до 1)
+			join_faction_tension = 0.5 # Требуемое мировое напряжение, чтобы присоединиться к фракции (от 0 до 1)
+			lend_lease_tension = 0.3 # Требуемое напряжение для начала ленд-лиза (от 0 до 1)
+			send_volunteers_tension = 0.3 # Требуемое напряжение для отправки добровольцев (от 0 до 1)
+			guarantee_tension = 0.4 # Требуемое напряжение, чтобы гарантировать нацию (от 0 до 1)
+			annex_cost_factor = 0.25 # Изменяет стоимость полной аннексии нации в мирном соглашении. 0,5 увеличит стоимость аннексии на 50% (-1 к 1)
+			justify_war_goal_when_in_major_war_time = 0.25 # Изменяет стоимость оправдания войны во время войны. 0,5 уменьшит время на 50% (от 0 до 1)
+			drift_defence_factor = 0.5 # Естественная защита от других идеологии # 0.3 обеспечит 30% защиту от дрейфа (-1 к 1)
+			puppet_cost_factor = 0 # Изменяет стоимость марионеточной нации в мирном соглашении (-1 к 1)
+		}
+
+		can_be_boosted = yes # Можете ли вы повысить популярность этой идеологии в другой стране
+		can_collaborate = yes # Про это ничего не написано
+		
+		faction_modifiers = { #модификаторы
+			faction_trade_opinion_factor = 0.50 #плюс 50% для торгового мнения
+		}
+
+		ai_neutral = yes # Тип поведения ИИ (democratic, communism, fascism, neutral или создайте новую)
+	}
+}

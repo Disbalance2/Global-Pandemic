@@ -1,0 +1,26 @@
+state={
+	id=316
+	name="STATE_316"
+	manpower = 33781
+	state_category = town
+	
+	history={
+		owner = REK ##Контролирует область
+		controller = REK ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    407 3
+		}
+		buildings = { ##Постройки
+			infrastructure = 1 ##Инфраструктура
+			industrial_complex = 1 ##Заводы народа
+			anti_air_building = 1 ##Анти-аир
+		}
+		add_core_of = REK ##Потомственно принадлежит
+		add_core_of = ACS
+	}
+		
+	provinces={
+		407 3140 3277 3283 4911 5114
+	}
+}
