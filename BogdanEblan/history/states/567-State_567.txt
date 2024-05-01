@@ -1,9 +1,25 @@
 state={
 	id=567
 	name="STATE_567"
-	provinces={
-		684 1573 2149 2881 3164 6182 6199 
+	manpower = 1245544
+	state_category = metropolis
+	
+	history={
+		owner = RHK ##Контролирует область
+		controller = RHK ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    684 15
+		}
+		buildings = { ##Постройки
+			infrastructure = 1 ##Инфраструктура
+			arms_factory = 1
+			industrial_complex = 2 ##Заводы народа
+		}
+		add_core_of = RHK
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		684 1573 2149 2881 3164 6182 6199  
+	}
 }

@@ -2,9 +2,16 @@ state={
 	id=20
 	name="STATE_20"
 	manpower = 181
-	state_category = rural
+	state_category = small_island
 	
 	history={
+		owner = RHK ##Контролирует область
+		controller = RHK ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    6596 1
+		}
+		add_core_of = RHK
 	}
 		
 	provinces={

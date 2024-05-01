@@ -1,0 +1,20 @@
+
+RHK = {
+	color = rgb {186  118  3}
+	color_ui = rgb { 139 20 20 }
+}
+
+REK = {
+	color = rgb {190  106  222}
+	color_ui = rgb { 190  106  222 }
+}
+
+ACS = {
+	color = rgb {50 74 178}
+	color_ui = rgb { 50 74 178 }
+}
+
+DWK = {
+	color = rgb {192 192 192}
+	color_ui = rgb { 192 192 192 }
+}

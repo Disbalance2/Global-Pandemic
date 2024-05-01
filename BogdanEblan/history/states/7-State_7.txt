@@ -12,9 +12,8 @@ state={
 		1344 20
 		}
 		buildings = { ##Постройки
-			infrastructure = 8 ##Инфраструктура
+			infrastructure = 3 ##Инфраструктура
 			industrial_complex = 2 ##Заводы народа
-			air_base = 1 ##Уровень воздушной базы
 			arms_factory = 3
 		}
 		add_core_of = DWK ##Потомственно принадлежит

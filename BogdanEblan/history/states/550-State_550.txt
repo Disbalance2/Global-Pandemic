@@ -1,9 +1,27 @@
 state={
 	id=550
 	name="STATE_550"
-	provinces={
-		899 1426 1988 2306 2926 3289 3384 3710 3998 4724 4956 6163 6184 
+	manpower = 3175904
+	state_category = megalopolis
+	
+	history={
+		owner = RHK ##Контролирует область
+		controller = RHK ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    6163 25
+		}
+		buildings = { ##Постройки
+			infrastructure = 2 ##Инфраструктура
+			arms_factory = 2
+			industrial_complex = 3 ##Заводы народа
+			anti_air_building = 1 ##Анти-аир
+			air_base = 1 ##Уровень воздушной базы
+		}
+		add_core_of = RHK
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		159 899 1426 1988 2306 2451 2926 3289 3384 3710 3998 4724 6163 6184 
+	}
 }

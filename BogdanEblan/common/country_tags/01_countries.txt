@@ -1,5 +1,6 @@
 KOS	= "countries/Kosovo.txt"
-TST	= "countries/Test.txt"
+TST	    = "countries/Test.txt"
 REK     = "countries/Re-Estize Kingdom.txt"
 DWK     = "countries/Dwarf Kingdom.txt"
 ACS     = "countries/Argland Council State.txt"
+RHK     = "countries/Roble Holy Kingdom.txt"
