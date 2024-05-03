@@ -1,9 +1,20 @@
 state={
 	id=485
 	name="STATE_485"
-	provinces={
-		640 1802 2085 2097 4322 4456 4566 4940 6052 
+	manpower = 14990
+	state_category = town
+	
+	history={
+		owner = RHK ##Контролирует область
+		controller = RHK ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    2085 1
+		}
+		add_core_of = RHK
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		640 1802 2085 2097 4322 4456 4566 4940 6052
+	}
 }

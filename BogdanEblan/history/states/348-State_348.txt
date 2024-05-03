@@ -1,24 +1,23 @@
 state={
 	id=348
 	name="STATE_348"
-	manpower = 981
-	state_category = large_city
+	manpower = 34981
+	state_category = town
 	
 	history={
 		owner = REK ##Контролирует область
 		controller = REK ##Необязательно
 		
 		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
-	    508 3
+	    4679 3
 		}
 		buildings = { ##Постройки
-			infrastructure = 2 ##Инфраструктура
 			industrial_complex = 1 ##Заводы народа
 		}
 		add_core_of = REK ##Потомственно принадлежит
 	}
 		
 	provinces={
-		508 2156 4679 5807 5855  
+		2156 4679 5807 5855  
 	}
 }

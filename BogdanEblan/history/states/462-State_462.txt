@@ -1,9 +1,24 @@
 state={
 	id=462
 	name="STATE_462"
-	provinces={
-		2652 5991 
+	manpower = 0
+	state_category = rural
+	
+	history={
+		owner = REK ##Контролирует область
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    508 1
+		}
+		buildings = { ##Постройки
+			infrastructure = 1 ##Инфраструктура
+			industrial_complex = 1 ##Заводы народа
+		}
+		add_core_of = RHK
+		add_core_of = GTN
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		508
+	}
 }
