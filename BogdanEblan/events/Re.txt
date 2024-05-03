@@ -1,0 +1,34 @@
+﻿###########################
+# RE Events
+###########################
+
+add_namespace = rek
+
+country_event = {
+	id = rek.1
+	title = rek.1.t
+	desc = rek.1.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = rek.1.a
+		
+		ai_chance = {
+		    base = 100
+		}	
+		
+		add_political_power = -10
+		
+	}
+	option = { 
+		name = rek.1.b
+		
+		ai_chance = {
+		    base = 100
+		}	
+		
+		add_political_power = -10
+	}
+}

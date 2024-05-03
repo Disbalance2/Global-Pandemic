@@ -1,0 +1,57 @@
+focus_tree = {
+	id = RE_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = REK
+		}
+	}
+
+	initial_show_position = {
+		x = 0
+	}
+
+	
+	default = no
+focus = {
+		id = REK_guarantee_the_constitution
+		icon = GFX_goal_generic_military_sphere
+		x = 12
+		y = 0
+		
+		prerequisite = {
+			focus = REK_Beginning
+        }
+        immediate = yes
+		relative_position_id = REK_orleanist_restoration
+		cost = 6.5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+		    country_event = {
+			    id = rek.1
+				}
+			add_stability = -0.2
+			add_political_power = -100
+		}
+    }
+	}
+	
