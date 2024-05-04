@@ -14,7 +14,7 @@ state={
 			infrastructure = 1 ##Инфраструктура
 			industrial_complex = 1 ##Заводы народа
 		}
-		add_core_of = RHK
+		add_core_of = REK
 		add_core_of = GTN
 	}
 		
