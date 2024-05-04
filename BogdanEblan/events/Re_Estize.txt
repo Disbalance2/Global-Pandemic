@@ -1,0 +1,33 @@
+add_namespace = re_estize
+
+country_event = {
+	id = re_estize.1
+	title = re_estize.1.t
+	desc = re_estize.1.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	
+	
+	option = {
+		name = re_estize.1.a
+		set_country_flag = GTN
+		GTN = {
+			transfer_state = 462
+			inherit_technology = REK  
+			load_oob = GTN_1936  
+		}
+	}
+	
+	option = {
+		name = re_estize.1.b
+		trigger = { is_ai = no }
+		set_country_flag = GTN
+		GTN = {
+			transfer_state = 462
+			inherit_technology = REK
+			load_oob = GTN_1936
+			GTN = { change_tag_from = REK } # Самое главное в этом коде — пересадка в другую страну.
+		}
+	}
+}
