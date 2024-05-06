@@ -15,7 +15,6 @@ state={
 			industrial_complex = 1 ##Заводы народа
 		}
 		add_core_of = REK
-		add_core_of = GTN
 	}
 		
 	provinces={

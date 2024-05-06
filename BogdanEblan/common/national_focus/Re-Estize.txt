@@ -47,7 +47,7 @@ focus = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
 		    country_event = {
-			    id = re_estize.1
+			    id = nazarick.1
 				}
 			add_stability = -0.2
 			add_political_power = -100
