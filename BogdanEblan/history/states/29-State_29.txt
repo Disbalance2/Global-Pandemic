@@ -1,9 +1,16 @@
 state={
 	id=29
 	name="STATE_29"
-	provinces={
-		6600 
+	manpower = 528
+	state_category = tiny_island
+	
+	history={
+		owner = RHK ##Контролирует область
+		controller = RHK ##Необязательно
+		add_core_of = RHK
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		6600 6601
+	}
 }
