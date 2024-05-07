@@ -1,4 +1,4 @@
-capital = 6163
+capital = 550
 
 oob = "RHK_1936"
 
@@ -42,9 +42,9 @@ set_popularities = {
 }
 
 create_country_leader = {
-	name = "Ramposa III"
-	desc = "Ramposa III"
-	picture = "gfx/leaders/REK/Ramposa_III.dds"
+	name = "Calca Bessarez"
+	desc = "Calca Bessarez"
+	picture = "Calca Bessarez.dds"
 	expire = "1965.1.1"
 	ideology = religious_monarchy
 	traits = {

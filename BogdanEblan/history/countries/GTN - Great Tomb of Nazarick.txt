@@ -34,4 +34,13 @@ set_popularities = {
 	monarchism = 100
 }
 
+create_country_leader = {
+	name = "Momonga"
+	desc = "Momonga"
+	picture = "Momonga.dds"
+	expire = "1965.1.1"
+	ideology = absolute_monarchy
+	traits = {
+	}
+}
 
