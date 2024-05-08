@@ -18,7 +18,7 @@ focus_tree = {
 	default = no
 focus = {
 		id = REK_guarantee_the_constitution
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_focus_REK_beginning_of_the_end
 		x = 12
 		y = 0
 		
