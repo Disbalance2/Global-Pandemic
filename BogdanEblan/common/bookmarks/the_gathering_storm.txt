@@ -14,7 +14,15 @@ bookmarks = {
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }	
-		}	
+		}
+		"BHR"={
+			history = "OTHER_GATHERING_STORM_DESC"
+			ideology = monarchism
+		}
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}		
 		"DWK"={
 			history = "OTHER_GATHERING_STORM_DESC"
 			ideology = neutrality
@@ -37,8 +45,7 @@ bookmarks = {
 		}
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
-			#123 = { rain_light = yes }	
-			
+			#123 = { rain_light = yes }		
 		}
 	}
 }

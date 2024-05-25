@@ -1,0 +1,10 @@
+﻿l_english:
+### Goals ###
+ REK_guarantee_the_constitution:0 "Beginning of the End"
+ REK_guarantee_the_constitution_desc:0 "A new story begins. The Kingdom of Re-Estize is in decline: its ruling elite is permeated with decay, corruption, and nepotism. The nobility is divided into factions, each vying for the throne. The kingdom's residents live in poverty, suffering from excessive taxes and raids from neighboring countries. \n\nSitting on the throne for some time now is King Ramzes III, who remains unaware of the state of affairs in the country: he is deceived and misled. However, amidst this bleak atmosphere, there is one person who has risen from humble origins to a high rank—the head of the royal guard and personal guard of the king, Gazef Stronoff. He endeavors to convey the true state of the state to the king. \n\nWhile turmoil begins in the kingdom, the rest of the world does not sit idle and promotes its own ideas. Interestingly, no one has noticed the appearance of strange old ruins north of E-Rantel. No one knows what this will lead to in the future."
+ 
+### Events ###
+ nazarick.1.t:0 "Strange Ruins"
+ nazarick.1.d:0 "While Re-Estize begins to degrade and self-destruct, the appearance of a strange, imposing structure accompanied by a tomb goes unnoticed. But since nobody knows about it, nobody cares. \n\nAnd what could be in those old ruins?"
+ nazarick.1.a:0 "Try to climb out of the pit and bring Re-Estize to prosperity!?"
+ nazarick.1.b:0 "Something sinister has pierced your soul and seized your body!"

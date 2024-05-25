@@ -1,9 +1,24 @@
 state={
 	id=9
 	name="STATE_9"
-	provinces={
-		2850 4945 5788 5790 
+	manpower = 100000
+	state_category = town
+	
+	history={
+		owner =  
+		controller =  
+		
+		victory_points = { 
+
+		}
+		buildings = { 
+			infrastructure = 1 
+			industrial_complex = 1 
+		}
+		add_core_of = 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+        2850 4945 5788 5790 
+	}
 }

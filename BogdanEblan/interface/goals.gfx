@@ -6290,7 +6290,7 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_REK_beginning_of_the_end"
-		texturefile = "gfx/interface/goals/focus_REK_beginning_of_the_end.dds"
+		texturefile = "gfx/interface/goals/Re-Estize/focus_REK_beginning_of_the_end.dds"
 	}
 
 }

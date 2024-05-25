@@ -1,9 +1,24 @@
 state={
 	id=4
 	name="STATE_4"
-	provinces={
-		1530 1907 3436 4868 5511 5517 
+	manpower = 100000
+	state_category = town
+	
+	history={
+		owner =  
+		controller =  
+		
+		victory_points = { 
+
+		}
+		buildings = { 
+			infrastructure = 1 
+			industrial_complex = 1 
+		}
+		add_core_of = 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+        1530 1907 3436 4868 5511 5517 
+	}
 }

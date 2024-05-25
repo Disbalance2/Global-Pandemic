@@ -3,7 +3,8 @@ add_namespace = nazarick
 country_event = {
     id = nazarick.1
     title = nazarick.1.t
-    desc = nazarick.1.desc
+    desc = nazarick.1.d
+	picture = GFX_report_event_weird_ruins
     is_triggered_only = yes
     fire_only_once = yes  
 
