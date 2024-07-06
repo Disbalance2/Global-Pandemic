@@ -1,9 +1,23 @@
 state={
 	id=450
 	name="STATE_450"
-	provinces={
-		1263 4404 
+	
+	manpower=1
+	state_category=wasteland
+
+	history={
+		owner = KZP
+		controller = KZP
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    5995 1
+		}
+		
+		add_core_of = KZP
+		add_core_of = BHR
+
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+
+	provinces={
+		1263 1695 1784 4333 4404 4819 5950 5995
+	}
 }

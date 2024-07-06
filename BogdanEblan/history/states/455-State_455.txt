@@ -1,24 +1,21 @@
+
 state={
 	id=455
 	name="STATE_455"
-	manpower = 6749
-	state_category = large_city
 	
+	manpower=1
+	state_category=wasteland
+
 	history={
-		owner = REK ##Контролирует область
-		controller = REK ##Необязательно
+		owner = KZP
+		controller = KZP
 		
-		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
-	    292 3
-		}
-		buildings = { ##Постройки
-			infrastructure = 4 ##Инфраструктура
-			industrial_complex = 1 ##Заводы народа
-		}
-		add_core_of = REK ##Потомственно принадлежит
+		add_core_of = KZP
+		add_core_of = REK
+
 	}
-		
+
 	provinces={
-		292 1456 1603 5976  
+		3429 3952 4019 4415 5174 
 	}
 }

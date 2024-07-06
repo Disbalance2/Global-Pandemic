@@ -26,3 +26,7 @@ BHR = {
 	color = rgb { 255  3  62 }
 	color_ui = rgb { 255  3  62 }
 }
+KZP = {
+	color = rgb { 248  243  43 }
+	color_ui = rgb { 147  170  0 }
+}

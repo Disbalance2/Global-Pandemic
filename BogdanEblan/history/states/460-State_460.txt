@@ -1,9 +1,20 @@
 state={
 	id=460
 	name="STATE_460"
+	
+	manpower=1
+	state_category=wasteland
+
+	history={
+		owner = KZP
+		controller = KZP
+		
+		add_core_of = KZP
+		add_core_of = BHR
+
+	}
+
 	provinces={
 		649 1238 2151 2831 3002 4136 4777 6065 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
 }
