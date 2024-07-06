@@ -10,7 +10,6 @@ state={
 		controller = KZP
 		
 		add_core_of = KZP
-		add_core_of = 
 
 	}
 
