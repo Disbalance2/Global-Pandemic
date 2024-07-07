@@ -9,13 +9,13 @@ state={
 		controller = BHR ##Необязательно
 		
 		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
-	    5590 15
+	    5241 15
 		}
 		buildings = { ##Постройки
 			infrastructure = 1 ##Инфраструктура
 			arms_factory = 2
 			industrial_complex = 2 ##Заводы народа
-			5590	 = {
+			5241	 = {
 				naval_base = 4 ## Морская база
 				}
 		}

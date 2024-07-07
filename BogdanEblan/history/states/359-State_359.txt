@@ -1,9 +1,22 @@
 state={
 	id=359
 	name="STATE_359"
-	provinces={
-		3734 3954 5844 5866 
+	
+	manpower=45100
+	state_category=town
+
+	history={
+		owner = BHR
+		controller = BHR
+		victory_points = {
+			5844 3 
+		}
+		add_core_of = BHR
+		add_core_of = REK
+
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+
+	provinces={
+		35 2156 3734 3954 5207 5844 5866  
+	}
 }

@@ -1,9 +1,27 @@
 state={
 	id=300
 	name="STATE_300"
-	provinces={
-	   4135 
+	
+	manpower=4885100
+	state_category=metropolis
+
+	history={
+		owner = BHR
+		controller = BHR
+		victory_points = {
+			1853 25 
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 2
+			industrial_complex = 2
+
+		}
+		add_core_of = BHR
+
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+
+	provinces={
+		619 1295 1853 3288 4135 4204 5061
+	}
 }

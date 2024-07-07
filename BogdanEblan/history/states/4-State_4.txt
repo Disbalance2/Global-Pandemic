@@ -5,17 +5,14 @@ state={
 	state_category = town
 	
 	history={
-		owner =  
-		controller =  
+		owner = TST
+		controller = TST
 		
-		victory_points = { 
-
-		}
 		buildings = { 
 			infrastructure = 1 
 			industrial_complex = 1 
 		}
-		add_core_of = 
+		add_core_of = TST
 	}
 		
 	provinces={

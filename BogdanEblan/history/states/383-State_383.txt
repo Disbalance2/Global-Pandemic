@@ -1,9 +1,16 @@
 state={
 	id=383
 	name="STATE_383"
-	provinces={
-		3232 3662 5891 
+	manpower = 9733
+	state_category = town
+	
+	history={
+		owner = BHR ##Контролирует область
+		controller = BHR ##Необязательно
+		add_core_of = BHR ##Потомственно принадлежит
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+		
+	provinces={
+		989 3232 3662 5861
+	}
 }

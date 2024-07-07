@@ -1,9 +1,21 @@
 state={
 	id=373
 	name="STATE_373"
-	provinces={
-		773 933 954 1805 3321 5098 
+	
+	manpower=211100
+	state_category=town
+
+	history={
+		owner = BHR
+		controller = BHR
+		victory_points = {
+			933 3 
+		}
+		add_core_of = BHR
+
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+
+	provinces={
+		773 933 954 1805 2812 3321 3700 4907 5098 
+	}
 }

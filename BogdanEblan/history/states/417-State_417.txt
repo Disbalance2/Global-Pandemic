@@ -10,21 +10,16 @@ state={
 			4451 3 
 		}
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
-			anti_air_building = 0
-			air_base = 0
-
+			infrastructure = 1
 		}
 		add_core_of = REK
+		add_core_of = BHR
 
 	}
 
 	provinces={
-		35 140 1915 2240 2438 4451 5898 5926 
+		1915 2240 2438 4451 5898 5926 
 	}
-	manpower=12981
-	buildings_max_level_factor=1.000
-	state_category=large_city
-	local_supplies=0.000
+	manpower=32981
+	state_category=town
 }

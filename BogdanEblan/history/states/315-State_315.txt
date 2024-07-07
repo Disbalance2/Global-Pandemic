@@ -1,11 +1,25 @@
-
 state={
 	id=315
 	name="STATE_315"
-	provinces={
-		224 661 2515 2617 3054 4215 4340 4369 4453 5741 5746 5785 
+	manpower = 2017900
+	state_category = large_city
+	
+	history={
+		owner = BHR ##Контролирует область
+		controller = BHR ##Необязательно
+		
+		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
+	    5785 15
+		}
+		buildings = { ##Постройки
+			infrastructure = 2 ##Инфраструктура
+			industrial_complex = 2 ##Заводы народа
+			arms_factory = 1
+		}
+		add_core_of = BHR ##Потомственно принадлежит
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
-	local_supplies=0.000
+		
+	provinces={
+		661 3054 4340 5785 5826 
+	}
 }
