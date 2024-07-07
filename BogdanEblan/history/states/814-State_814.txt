@@ -1,0 +1,21 @@
+state={
+	id=814
+	name="STATE_814"
+	manpower = 239500
+	state_category = town
+	
+	history={
+		owner = DWK ##Контролирует область
+		controller = DWK ##Необязательно
+		
+		buildings = { ##Постройки
+			infrastructure = 1
+			industrial_complex = 1 ##Заводы народа
+		}
+		add_core_of = DWK ##Потомственно принадлежит
+	}
+		
+	provinces={
+		3166 4105 4457 5236 7356  
+	}
+}

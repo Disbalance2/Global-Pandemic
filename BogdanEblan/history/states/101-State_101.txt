@@ -1,27 +1,31 @@
+
 state={
 	id=101
 	name="STATE_101"
-	manpower = 569403
-	state_category = large_city
-	
+
 	history={
-		owner = DWK ##Контролирует область
-		controller = DWK ##Необязательно
-		
-		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
-	    2971 10
+		owner = DWK
+		controller = DWK
+		victory_points = {
+			2971 10 
 		}
-		buildings = { ##Постройки
-			infrastructure = 4 ##Инфраструктура
-			industrial_complex = 3 ##Заводы народа
-			anti_air_building = 1 ##Анти-аир
-			air_base = 0 ##Уровень воздушной базы
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			anti_air_building = 1
+			air_base = 0
 			arms_factory = 1
+
 		}
-		add_core_of = DWK ##Потомственно принадлежит
+		add_core_of = DWK
+
 	}
-		
+
 	provinces={
-		1537 2625 2968 2971 4352 4387 4561 5084 5196 5721   
+		2625 2971 4561 5084 5196 
 	}
+	manpower=569403
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
 }

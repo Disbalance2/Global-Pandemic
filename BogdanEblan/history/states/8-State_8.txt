@@ -1,24 +1,28 @@
+
 state={
 	id=8
 	name="STATE_8"
-	manpower = 2349
-	state_category = large_city
-	
+
 	history={
-		owner = REK ##Контролирует область
-		controller = REK ##Необязательно
-		
-		victory_points = { ##Победные очки в регионе (379 - регион 20 - победные очки)
-	    4669 3
+		owner = REK
+		controller = REK
+		victory_points = {
+			4669 3 
 		}
-		buildings = { ##Постройки
-			infrastructure = 2 ##Инфраструктура
-			industrial_complex = 0 ##Заводы народа
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+
 		}
-		add_core_of = REK ##Потомственно принадлежит
+		add_core_of = REK
+
 	}
-		
+
 	provinces={
-		4647 4669 5759 
+		4387 4647 4669 5759 7354 
 	}
+	manpower=2349
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
 }
